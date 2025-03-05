@@ -1,1 +1,311 @@
-\section{Cambio de variables}
+\section{Estimación Puntual Paramétrica}
+\section*{Propiedades de los estimadores}
+Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado $\left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
+
+Un estimador del parámetro $\theta$ es un estadístico\\
+$T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ que se utiliza para determinar el valor desconocido $\theta$
+
+\section*{Estimadores centrados}
+$T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ es un estimador centrado para $\theta$ cuando $E_{\theta}[T]=\theta$. En general, se llama sesgo de un estimador a la diferencia $b(T, \theta)=E_{\theta}[T]-\theta$
+
+\section*{Propiedades de los estimadores (continuación)}
+Ejercicio ( $\bar{X}, S^{2}$ ) es un estimador centrado de $\theta=\left(\mu, \sigma^{2}\right)$\\
+Ejercicio $\sigma_{n}^{2}=b_{2}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}$ es un estimador centrado de $h(\theta)=\frac{n-1}{n} \sigma^{2}$ y $b\left(\sigma_{n}^{2}, \sigma^{2}\right)=-\frac{\sigma^{2}}{n}$
+
+\section*{Observaciones}
+ (1) Puede ser que no exista un estimador centrado de $\theta$\\
+(2) Si $T$ es un estimador centrado para $\theta$, en general $h(T)$ no tiene por qué ser centrado para $h(\theta)$\\
+(0) A pesar de que exista un estimador centrado para $\theta$, puede ser que no tenga sentido\\
+(- A pesar de que exista un estimador centrado para $\theta$, puede se que su varianza sea muy grande y no sea adecuado para la estimación
+
+\section*{Propiedades de los estimadores (continuación)}
+Ejercicio Para una m.a.s. $(\mathrm{n}=1)$ de $X \sim \operatorname{Bin}(1, \theta), T(X)=X^{2}$ no es un estimador centrado de $\theta^{2}$
+
+Ejercicio Para una m.a.s. $(\mathrm{n}=1)$ de $X \sim \operatorname{Bin}(1, \theta)$, no existe un estimador centrado de $\theta^{2}$
+
+Ejercicio Para una m.a.s. $(\mathrm{n}=1)$ de $X \sim \operatorname{Poisson}(\theta), T(X)=(-2)^{X}$ es centrado para $h(\theta)=e^{-3 \theta}$ y $V_{\theta}(T)=e^{4 \theta}-e^{-6 \theta} \underset{\theta \rightarrow \infty}{\longrightarrow} \infty$, pero no es un estimador de $h(\theta)$
+
+Ejercicio $\mathrm{Si} T_{j}, j=1,2, \ldots$ es una sucesión de estimadores centrados para $\theta$, entonces $\bar{T}_{k}=\frac{1}{k} \sum_{j=1}^{k} T_{j}$ es un estimador centrado para $\theta$\\
+Si además, los estimadores $T_{j}$ son independientes y $V_{\theta}\left(T_{j}\right)<\sigma^{2}<\infty, j=1,2, \ldots$, entonces $V_{\theta}\left(\bar{T}_{k}\right) \leq \frac{\sigma^{2}}{k} \underset{k \rightarrow \infty}{\longrightarrow} 0 \Rightarrow$ $\bar{T}_{k} \xrightarrow[k \rightarrow \infty]{P} \theta$ (Teorema de Markov)
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Estimadores consistentes}
+Una sucesión de estimadores $T_{n}=T\left(X_{1}, \ldots, X_{n}\right)$ es consistente para el parámetro $\theta$, si $T_{n} \xrightarrow[n \rightarrow \infty]{P} \theta, \forall \theta \in \Theta$, es decir si $\forall \varepsilon>0$ se tiene que $\lim _{n \rightarrow \infty} P_{\theta}\left(\left|T_{n}-\theta\right| \leq \varepsilon\right)=1, \forall \theta \in \Theta$
+
+Proposición 1 (condición suficiente) Si $T_{n}=T\left(X_{1}, \ldots, X_{n}\right)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, E_{\theta}\left[T_{n}\right] \underset{n \rightarrow \infty}{\longrightarrow} \theta$, $V_{\theta}\left(T_{n}\right) \underset{n \rightarrow \infty}{\longrightarrow} 0$, entonces $T_{n}$ es consistente para $\theta$
+
+Demostración $E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]=V_{\theta}\left(T_{n}\right)+b\left(T_{n}, \theta\right)^{2} \underset{n \rightarrow \infty}{\longrightarrow} 0, \forall \theta \in \Theta$ entonces $T_{n} \xrightarrow[n \rightarrow \infty]{\text { m.c. }} \theta, \forall \theta \in \Theta$
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Estimadores bayesianos}
+En la aproximación bayesiana $\theta$ es una v.a. con distribución inicial o a priori dada por una función de masa o de densidad $\pi(\theta)$. Cuando se observa una muestra se calcula la distribución final o a posteriori,
+
+$$
+  \begin{gathered}
+    \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{m\left(x_{1}, \ldots, x_{n}\right)} \\
+    m\left(x_{1}, \ldots, x_{n}\right)=\int_{\Theta} \pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right) d \theta
+  \end{gathered}
+$$
+
+donde $m$ se llama distribución predictiva
+
+Observación La idea es que antes de tomar la muestra, la información sobre $\theta$ viene dada por $\pi(\theta)$ y tras la experimentación se debe utilizar $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)$. El estimador bayesiano de $\theta$ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Ejercicio (Familias conjugadas)}
+Si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim \operatorname{Bin}(1, \theta)$ y $\theta \sim U(0,1)$, entonces $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) \sim \operatorname{Beta}\left(\sum_{i=1}^{n} x_{i}+1, n-\sum_{i=1}^{n} x_{i}+1\right)$
+
+En general, $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) \sim \operatorname{Beta}\left(\sum_{i=1}^{n} x_{i}+\alpha, n-\sum_{i=1}^{n} x_{i}+\beta\right)$ si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim \operatorname{Bin}(1, \theta)$ y $\theta \sim \operatorname{Beta}(\alpha, \beta)$
+
+En este caso, se dice que la familia de distribuciones iniciales $\operatorname{Beta}(\alpha, \beta)$ es conjugada de la familia de distribuciones de probabilidad $X \sim \operatorname{Bin}(1, \theta)$
+
+Además, $E\left[\theta \mid x_{1}, \ldots, x_{n}\right]=\frac{\sum_{i=1}^{n} x_{i}+\alpha}{n+\alpha+\beta}=\frac{n}{n+\alpha+\beta} \bar{x}+\frac{\alpha+\beta}{n+\alpha+\beta} \frac{\alpha}{\alpha+\beta}$
+
+\section*{Propiedades de los estimadores (continuación)}
+Ejercicio $\mathrm{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim N(\mu, \sigma)$ con $\sigma$ conocida y $\mu \sim N\left(\mu_{0}, \sigma_{0}\right)$, entonces $\pi\left(\mu \mid x_{1}, \ldots, x_{n}\right) \sim N\left(\mu_{1}, \sigma_{1}\right)$,
+
+$$
+  \begin{gathered}
+    \mu_{1}=\frac{\frac{\mu_{0}}{\sigma_{0}^{2}}+\frac{\bar{x}}{\sigma^{2}}}{\frac{1}{\sigma_{0}^{2}}+\frac{\frac{1}{\sigma^{2}}}{\frac{\sigma^{n}}{n}}}=\frac{\sigma^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \mu_{0}+\frac{n \sigma_{0}^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \bar{x} \\
+    \sigma_{1}=\sqrt{\frac{1}{\frac{1}{\sigma_{0}^{2}}+\frac{1}{\frac{\sigma^{2}}{n}}}}
+  \end{gathered}
+$$
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Estadístico suficiente bayesiano}
+$T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente bayesiano para $\theta$ (para la familia de funciones de distribución $\left.\left\{F_{\theta}\right\}_{\theta \in \Theta \subset \mathbb{R}^{\ell}}\right)$, respecto a la distribución inicial $\pi(\theta)$ sí $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\pi(\theta \mid t)$, con $T\left(x_{1}, \ldots, x_{n}\right)=t$Teorema $3 T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ sí y sólo sí $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
+
+\section*{Demostración}
+$$
+  \begin{aligned}
+     & \Rightarrow \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{\int_{\Theta} \pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right) d \theta}=\frac{\pi(\theta) g(t \mid \theta) f\left(x_{1}, \ldots, x_{n} \mid t, \theta\right)}{\int_{\Theta} \pi(\theta) g(t \mid \theta) f\left(x_{1}, \ldots, x_{n} t t, \theta\right) d \theta}= \\
+     & \frac{\pi(\theta) g(t \mid \theta)}{\int_{\Theta} \pi(\theta) g(t \mid \theta) d \theta}=\pi(\theta \mid t)                                                                                                                                                                                                                                                                                                  \\
+     & \Leftrightarrow) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)=\frac{\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) m\left(x_{1}, \ldots, x_{n}\right)}{\pi(\theta)}=\frac{\pi(\theta \mid t)}{\pi(\theta)} m\left(x_{1}, \ldots, x_{n}\right)
+  \end{aligned}
+$$
+
+\section*{Criterios de comparación de estimadores}
+\section*{Error cuadrático medio}
+Dado un estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$ de $\theta$, se denomina error cuadrático medio $\operatorname{ECM}(T, \theta)=E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]$
+
+Ejercicio $\operatorname{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s.( $n$ ) de $X \sim N(\mu, \sigma)$, entonces
+
+$$
+  \begin{gathered}
+    E C M(\bar{X}, \mu)=\frac{\sigma^{2}}{n} \\
+    E C M\left(S^{2}, \sigma^{2}\right)=V_{\theta}\left(S^{2}\right)=\frac{2 \sigma^{4}}{n-1} \\
+    E C M\left(\sigma_{n}^{2}, \sigma^{2}\right)=V_{\theta}\left(\sigma_{n}^{2}\right)+b\left(\sigma_{n}^{2}, \sigma\right)=\frac{2 n-1}{n^{2}} \sigma^{4}<\frac{2 \sigma^{4}}{n-1}
+  \end{gathered}
+$$
+
+\section*{Criterios de comparación de estimadores}
+\section*{Pérdida final esperada}
+Dado el estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ en la que se incurre por estimar $\theta$ mediante $T\left(x_{1}, \ldots, x_{n}\right)=t$, se define la pérdida final esperada $\circ$ riesgo a posteriori,
+
+$$
+  \operatorname{PFE}(t)=E\left[\mathcal{L}(t, \theta) \mid x_{1}, \ldots, x_{n}\right]=\int_{\Theta} \mathcal{L}(\theta, t) \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) d \theta
+$$
+
+Si $\mathcal{L}(\theta, t)=(\theta-t)^{2}$, entonces la pérdida final esperada se minimiza en $t^{*}=E\left[\theta \mid x_{1}, \ldots, x_{n}\right]$ (estimador bayesiano) y $\operatorname{PFE}(t)=V\left(\theta \mid x_{1}, \ldots, x_{n}\right)$
+
+Si $\mathcal{L}(\theta, t)=|\theta-t|$, entonces la pérdida final esperada se minimiza en la mediana de la distribución final (estimador bayesiano)
+
+\section*{Estimadores centrados de mínima varianza}
+$T^{*}=T^{*}\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado uniformemente de mínima varianza (ECUMV) para $\theta$ sí y sólo sí $E_{\theta}\left[T^{*}\right]=\theta$ y para cualquier otro estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}[T]=\theta$, se tiene que $V_{\theta}\left(T^{*}\right) \leq V_{\theta}(T), \forall \theta \in \Theta$
+
+Proposición 1 Si existe un ECUMV para $\theta$, entonces es único c.s.
+
+\section*{Demostración}
+Sean $T_{1}$ y $T_{2}$ ECUMV para $\theta$ y demostremos que entonces $T_{1} \stackrel{\text { c.s. }}{=} T_{2}$ Sea $T=\frac{T_{1}+T_{2}}{2}$. Entonces, $E_{\theta}[T]=\theta$ y $V_{\theta}(T) \leq V_{\theta}\left(T_{1}\right)$\\
+En efecto, $V_{\theta}(T)=\frac{1}{4}\left(V_{\theta}\left(T_{1}\right)+V_{\theta}\left(T_{2}\right)+2 \operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)\right)=\frac{V_{\theta}\left(T_{1}\right)}{2}+\frac{\operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)}{2} \leq V_{\theta}\left(T_{1}\right)$\\
+$1 \geq \rho_{\theta}\left(T_{1}, T_{2}\right)=\frac{\operatorname{Cov}\left(T_{1}, T_{2}\right)}{\sqrt{V_{\theta}\left(T_{1}\right) V_{\theta}\left(T_{2}\right)}}=\frac{\operatorname{Cov}\left(T_{1}, T_{2}\right)}{V_{\theta}\left(T_{1}\right)} \Rightarrow \operatorname{Cov}\left(T_{1}, T_{2}\right) \leq V_{\theta}\left(T_{1}\right)$\\
+Por lo tanto, $V_{\theta}(T)=V_{\theta}\left(T_{1}\right)=\operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)=$ y $\rho_{\theta}\left(T_{1}, T_{2}\right)=1 \Rightarrow$ $T_{1} \stackrel{\text { c.s. }}{=} a+b T_{2} \Rightarrow \theta=a+b \theta \Rightarrow a=0$ y $b=1$
+
+\section*{Estimadores centrados de mínima varianza (continuación)}
+Teorema 4 El ECUMV es función simétrica de las observaciones\\
+Ejercicio Para muestras de tamaño $n=2, T_{1}=\frac{X_{1}}{X_{2}}$ no puede puede ser ECUMV para $\theta$\\
+Si lo fuera, llamando $T_{2}=\frac{X_{2}}{X_{1}}$, se tendría $E_{\theta}\left[T_{2}\right]=E_{\theta}\left[T_{1}\right]$ y\\
+$V_{\theta}\left(T_{2}\right)=V_{\theta}\left(T_{1}\right)$ y el estimador $T=\frac{T_{1}+T_{2}}{2}=\frac{x_{1}^{2}+X_{2}^{2}}{X_{1} X_{2}}$ sería tal que $V_{\theta}(T)<V_{\theta}\left(T_{1}\right)$ (contradicción)\\
+En efecto, si \( V_{\theta}(T) = V_{\theta}(T_1) \), entonces \( T \overset{c.s.}{\equiv} T_1 \) \textbf{(contradicción)}\\
+En general si $T$ es centrado y consideramos las $n$ ! permutaciones posibles de la muestra, podemos definir los estimadores centrados $T_{j}$ al evaluar $T$ en la permutación j-ésima. Entonces, el estimador $\bar{T}=\frac{1}{n!} \sum_{j=1}^{n!} T_{j}$ es tal que $V_{\theta}(\bar{T}) \leq V_{\theta}\left(T_{j}\right), j=1, \ldots, n!$, siendo la desigualdad estricta si $T$ no es simétrico
+
+\section*{Estimadores centrados de mínima varianza}
+ (continuación)Teorema (caracterización del ECUMV)\\
+$T_{1}=T_{1}\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}\left[T_{1}\right]=\theta$ y $V_{\theta}\left(T_{1}\right)<\infty$ es el ECUMV para $\theta$ si y solo sí, cualquiera que sea $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}\left[T_{2}\right]=0$ y $V_{\theta}\left(T_{2}\right)<\infty, \forall \theta \in \Theta$, se tiene que $E_{\theta}\left[T_{1} T_{2}\right]=0$, $\forall \theta \in \Theta$
+
+\section*{Corolario 1}
+Si $T_{1}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ y $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ son ECUMV para $h_{1}(\theta)$ y $h_{2}(\theta)$ respectivamente, entonces $b_{1} T_{1}+b_{2} T_{2}$ es el ECUMV para $b_{1} h_{1}(\theta)+b_{2} h_{2}(\theta)$
+
+\section*{Estimadores centrados de mínima varianza (continuación)}
+Teorema de Rao-Blackwell $\mathrm{Si} T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado para $\theta$ con varianza finita y $S=S\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente, entonces $g(S)=E[T \mid S]$ es un estimador centrado para $\theta$ con varianza finita tal que $V_{\theta}(g(S)) \leq V_{\theta}(T)$
+
+\section*{Demostración}
+Como $S$ es suficiente, $g(S)=E[T \mid S]$ no depende de $\theta$ y es un estadístico. Además, $E_{\theta}[g(S)]=E_{\theta}[E[T \mid S]]=E_{\theta}[T]=\theta$ y\\
+$V_{\theta}(T)=E_{\theta}\left[(T-\theta)^{2}\right]=E_{\theta}\left[(T-g(S)+g(S)-\theta)^{2}\right]=$ $E_{\theta}\left[(T-g(S))^{2}\right]+E_{\theta}\left[(g(S)-\theta)^{2}\right]+2 E_{\theta}[(T-g(S))(g(S)-\theta)] \geq$ $V_{\theta}(g(S))$
+
+En efecto, $E_{\theta}[(T-g(S))(g(S)-\theta)]=\iint(t-g(s))(g(s)-\theta) d F_{\theta}(t, s)=\int(g(s)-\theta) \int(t-g(s)) d F(t \mid s) d F_{\theta}(s)=0$
+
+\section*{Estimadores centrados de mínima varianza (continuación)}
+Teorema de Lehmann-Schefeé Si $S=S\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente y completo para $\theta$ y $T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado para $\theta$ tal que $T=h(S)$, entonces $T$ es ECUMV para $\theta$
+
+\section*{Demostración}
+Como $S$ es suficiente y $T$ es centrado para $\theta, g(S)=E[T \mid S]$ es centrado para $\theta$ y $V_{\theta}(g(S)) \leq V_{\theta}(T)$. Además, para cualquier otro estimador $T_{1}$ centrado para $\theta, g_{1}(S)=E\left[T_{1} \mid S\right]$ es centrado para $\theta$ y $V_{\theta}\left(g_{1}(S)\right) \leq V_{\theta}\left(T_{1}\right)$. Por lo tanto, al ser $T$ completo y $E_{\theta}\left[g(S)-g_{1}(S)\right]=\theta-\theta=0, \forall \theta \in \Theta$, se tiene que $g(S) \stackrel{\text { c.s. }}{=} g_{1}(S)$. En particular, para $T_{1}=T=h(S), g_{1}(S)=E[h(S) \mid S]=h(S)=T$, y $V_{\theta}(T) \leq V_{\theta}\left(T_{1}\right)$, cualquiera que sea $T_{1}$ centrado para $\theta$
+
+\section*{Estimadores centrados de mínima varianza}
+ (continuación)Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\sum_{i=1}^{n} X_{i}$ es suficiente y completo, y $\bar{X}=h(T)$ es el ECUMV para $\theta$
+
+Ejercicio Si $X \sim$ Poisson $(\theta)$, encontrar el ECUMV para $d(\theta)=e^{-2 \theta}$ basado en una m.a.s.( $n$ )\\
+Indicación: $T=T\left(X_{1}, \ldots, X_{n}\right)=\left\{\begin{array}{ll}1 & \text { si } X_{1}+X_{2}=0 \\ 0 & \text { resto }\end{array}\right.$ es centrado para $d(\theta)=e^{-2 \theta}$ y $S=\sum_{i=1}^{n} X_{i}$ es suficiente y completo
+
+\section*{Cota para la varianza de un estimador}
+Consideremos $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}}$ modelo estadístico uniparamétrico contínuo (o discreto) y sea ( $X_{1}, \cdots X_{n}$ ) muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$ siendo $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$ su función de densidad (o de masa). Supongamos que se verifican las siguientes condiciones de regularidad:\\
+(1) $\Theta$ es un intervalo abierto de $\mathbb{R}$\\
+(2) $\operatorname{Sop}\left(f_{\theta}\right)=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: f_{\theta}\left(x_{1}, \cdots, x_{n}\right)>0\right\}$ no depende de $\theta$
+
+\begin{itemize}
+  \item $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$ y $\forall \theta \in \Theta, \exists \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$\\
+        (-) $\int_{\chi^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=0$\\
+        (0) $I_{n}(\theta)=E\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]<\infty($ cantidad de información de Fisher)
+\end{itemize}
+
+\section*{Cota para la varianza de un estimador}
+ (continuación)Teorema (Cota de Fréchet-Cramér-Rao) Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, E_{\theta}[T]=d(\theta)$ y $d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$, entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
+
+$$
+  P_{\theta}\left(\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: T\left(x_{1}, \cdots, x_{n}\right)=d(\theta)+k(\theta) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)=1, \forall \theta \in \theta
+$$
+
+Demostración $\exists d^{\prime}(\theta)$ puesto que
+
+$$
+  \begin{gathered}
+    d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right] \\
+    \left|d^{\prime}(\theta)\right| \leq E_{\theta}\left[\left|T \frac{\partial}{\partial \theta} \log f_{\theta}\right|\right] \leq \sqrt{E_{\theta}\left[T^{2}\right] E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]}<\infty \text { (desigualdad de Cauchy-Swartz) }
+  \end{gathered}
+$$
+
+\section*{Cota para la varianza de un estimador (continuación)}
+Además, $E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=0$ y por lo tanto,\\
+$V_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]=I_{n}(\theta)$\\
+En efecto, $0=\int_{x^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=\int_{x^{n}} \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$
+
+$$
+  =E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]
+$$
+
+Entonces, $\operatorname{Cov}_{\theta}\left[T, \frac{\partial}{\partial \theta} \log f_{\theta}\right]=E\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right]=d^{\prime}(\theta)$, y como $\rho_{\theta}^{2}\left(T, \frac{\partial}{\partial \theta} \log f_{\theta}\right)=\frac{d^{\prime}(\theta)^{2}}{V_{\theta}(T) V_{\theta}\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)} \leq 1$, se tiene que\\
+$d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta)$, con igualdad si y sólo si $\rho_{\theta}^{2}\left(T, \frac{\partial}{\partial \theta} \log f_{\theta}\right)=1$, es decir, si y sólo si $T \stackrel{\text { c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, es decir, si y sólo si existe una función $k(\theta)$ tal que $P_{\theta}\left(T=d(\theta)+k(\theta) \frac{\partial}{\partial \theta} f_{\theta}\right)=1$
+
+\section*{Cota para la varianza de un estimador (continuación)}
+En efecto, si $T \stackrel{\text { c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, entonces $d(\theta)=E_{\theta}[T]=a y$
+
+$$
+  d^{\prime}(\theta)=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right]=E_{\theta}\left[a \frac{\partial}{\partial \theta} \log f_{\theta}+b\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]=b I_{n}(\theta),
+$$
+
+y $b=\frac{d^{\prime}(\theta)}{l_{n}(\theta)}=k(\theta)$\\
+Proposición 2 Bajo las suposiciones anteriores, si T es un estadístico tal que $E_{\theta}[T]=d(\theta)$ y $V_{\theta}(T)=\frac{d^{\prime}(\theta)^{2}}{l_{n}(\theta)}$, entonces $T$ es ECUMV para d $(\theta)$
+
+Proposición 3 Bajo las suposiciones anteriores, si ( $X_{1}, \cdots X_{n}$ ) es m.a.s. (n) de $\left\{F_{\theta}, \theta \in \Theta\right\}$, entonces $I_{n}(\theta)=n I_{1}(\theta)$ Indicación: $f_{\theta}\left(x_{1}, \cdots x_{n}\right)=\prod_{i=1}^{n} f_{\theta}\left(x_{i}\right)$
+
+\section*{Cota para la varianza de un estimador (continuación)}
+Proposición 4 Bajo las suposiciones anteriores, si la distribución de $X$ pertenece a la familia exponencial uniparamétrica, es decir, $f_{\theta}(x)=c(\theta) h(x) e^{q_{1}(\theta) T_{1}(x)}$, con $q_{1}^{\prime}(\theta)$ no nula, entonces el estadístico $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(X_{i}\right)$ alcanza la cota de FCR para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$
+
+\section*{Demostración}
+$f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) e^{q_{1}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)}$\\
+$\frac{\partial}{\partial \theta} \log f_{\theta}=n \frac{c^{\prime}(\theta)}{c(\theta)}+q_{1}^{\prime}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$\\
+$\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)=a(\theta)+b(\theta) \frac{\partial}{\partial \theta} \log f_{\theta}, a(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}, b(\theta)=\frac{1}{n q_{1}^{\prime}(\theta)}$\\
+$\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$ es centrado para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$ y alcanza la cota
+
+\section*{Cota para la varianza de un estimador (continuación)}
+Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$
+
+Ejercicio Si se cumplen las condiciones de regularidad y además\\
+(1) $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n} y \forall \theta \in \Theta, \exists \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$\\
+(2) $\int_{\chi^{n}} \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=0$
+
+Entonces, $I_{n}(\theta)=-E\left[\frac{\partial^{2}}{\partial \theta^{2}} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]$\\
+Indicación: $\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)=\frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) \frac{1}{f_{\theta}\left(x_{1}, \cdots, x_{n}\right)}$
+
+\section*{Cota para la varianza de un estimador}
+ (continuación)\section*{Estimadores eficientes}
+Diremos que un estimador es eficiente para $d(\theta)$ si es centrado para $d(\theta)$ y su varianza alcanza la cota de FCR\\
+En general, se llama eficiencia de un estimador centrado de $d(\theta)$ a
+
+$$
+  e f(T, d(\theta))=\frac{d^{\prime}(\theta)^{2}}{I_{n}(\theta) V_{\theta}(T)} \leq 1
+$$
+
+\section*{Métodos de construcción de estimadores}
+Método de los momentos\\
+Este método consiste en elegir como estimador de un momento poblacional su momento muestral asociado, es decir\\
+(1) El estimador por el método de los momentos del momento poblacional respecto al origen de orden $\mathrm{k}, \alpha_{k}=E\left[X^{k}\right]$, es $a_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k}$\\
+(2) El estimador por el método de los momentos del momento poblacional respecto a la media de orden k ,
+
+$$
+  \beta_{k}=E\left[\left(X-\alpha_{1}\right)^{k}\right], \text { es } b_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k}
+$$
+
+Ejercicio Si $X \sim \operatorname{Gamma}(a, p)$, calcular un estimador por el método de los momentos de $\theta=(a, p)$ basado en una m.a.s. ( $n$ )
+
+\section*{Métodos de construcción de estimadores}
+\section*{(continuación)}
+\section*{Método de máxima verosimilitud}
+Supongamos que una urna contiene 6 bolas entre blancas y negras, no todas del mismo color, pero se ignora cuantas hay de cada uno. Para tratar de adivinar la composición de la urna se permiten dos extracciones con reemplazamiento de la misma y resultó que ninguna de ellas fue blanca. Dar una estimación de la probabilidad $\theta$ de que una bola extraída aleatoriamente de dicha urna sea blanca
+
+$$
+  \theta \in \Theta=\left\{\frac{1}{6}, \frac{2}{6}, \frac{3}{6}, \frac{4}{6}, \frac{5}{6}\right\}
+$$
+
+$T=X_{1}+X_{2} \equiv \mathrm{n}^{\circ}$ de blancas en las dos extracciones C.R. de la urna $\sim \operatorname{Bin}(2, \theta)$ y $f_{\theta}(t)=\binom{2}{t} \theta^{t}(1-\theta)^{2-t}, t=0,1,2$
+
+\section*{Métodos de construcción de estimadores}
+ (continuación)\begin{center}
+  \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    $\theta$                       & $1 / 6$ & $2 / 6$ & $3 / 6$ & $4 / 6$ & $5 / 6$ \\
+    \hline
+    $f_{\theta}(0)=(1-\theta)^{2}$ & 0.694   & 0.444   & 0.25    & 0.111   & 0.027   \\
+    \hline
+  \end{tabular}
+\end{center}
+
+Por lo tanto, la estimación $\hat{\theta}(0)=\frac{1}{6}$ y el estimador
+
+$$
+  \hat{\theta}=\hat{\theta}(T)=\left\{\begin{array}{lll}
+    1 / 6 & \text { si } & T=0 \\
+    1 / 2 & \text { si } & T=1 \\
+    5 / 6 & \text { si } & T=2
+  \end{array}\right.
+$$
+
+es el estimador de máxima verosimilitud (EMV)
+
+\section*{Métodos de construcción de estimadores}
+ (continuación)Sea $\left(X_{1}, \cdots X_{n}\right)$ una muestra con $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n} \mid \theta\right)$ función de densidad (o de masa), $\theta \in \Theta \subset \mathbb{R}^{\ell}$ Denotemos por $L\left(\theta \mid x_{1}, \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n} \mid \theta\right)$ a la función de verosimilitud de la muestra Un estimador $\hat{\theta}=\hat{\theta}\left(X_{1}, \cdots, X_{n}\right)$ se denomina estimador de máxima verosimilitud (EMV) de $\theta$, sí y sólo sí\\
+(1) $\hat{\theta}\left(x_{1}, \cdots, x_{n}\right) \in \Theta, \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
+(2) $L\left(\hat{\theta} \mid x_{1}, \cdots, x_{n}\right)=\sup _{\theta \in \Theta} L\left(\theta \mid x_{1}, \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
+o equivalentemente, sí y sólo sí\\
+(1) $\hat{\theta}\left(x_{1}, \cdots, x_{n}\right) \in \Theta, \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
+(2) $\log L\left(\hat{\theta} \mid x_{1}, \cdots, x_{n}\right)=\sup _{\theta \in \Theta} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$
+
+\section*{Métodos de construcción de estimadores (continuación)}
+Si $f_{\theta}$ es una función derivable respecto a $\theta$ en el interior del espacio paramétrico $\Theta$, la forma usual de determinar el estimador de máxima verosimilitud es examinar primero los máximos relativos de $f_{\theta}$, para compararlos después, con los valores sobre la frontera de $\Theta$. Ello conduce a resolver las ecuaciones de verosimilitud:
+
+$$
+  \frac{\partial}{\partial \theta_{j}} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right)=0, j=1, \cdots, \ell
+$$
+
+(en el supuesto de que $\theta=\left(\theta_{1}, \cdots, \theta_{\ell}\right)$ sea un parámetro $\ell$-dimensional), seleccionando las soluciones correspondientes a un máximo de $f_{\theta}$, es decir aquellas en las que la matriz hessiana $H=\left(\frac{\partial}{\partial \theta_{i}} \frac{\partial}{\partial \theta_{j}} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right)\right)_{i, j=1, \cdots, \ell}$ sea definida negativa
+
+\section*{Métodos de construcción de estimadores}
+ (continuación)
+
+\section*{Observaciones}
+ (1) EI EMV $\hat{\theta}$ no tiene por qué existir\\
+(2) El EMV $\hat{\theta}$ no tiene por qué ser único\\
+(3) El EMV $\hat{\theta}$ no tiene por qué ser centrado\\
+(4) El EMV $\hat{\theta}$ no tiene por qué ser suficiente, pero si $S=S\left(X_{1}, \cdots, X_{n}\right)$ es suficiente para $\theta$, entonces $\hat{\theta}=\hat{\theta}(S)$\\
+(5) Invariancia: Si $\hat{\theta}$ es el EMV de $\theta$, entonces $h(\hat{\theta})$ es el EMV de $h(\theta)$\\
+(6) Bajo ciertas condiciones de regularidad, si $\left(X_{1}, \cdots X_{n}\right)$ es m.a.s. $(\mathrm{n})$ y $\theta \in \mathbb{R}$, entonces $\sqrt{n}(\hat{\theta}-\theta) \underset{n \rightarrow \infty}{d} N\left(0, \frac{1}{\sqrt{l_{1}(\theta)}}\right)$ y por lo tanto, $\hat{\theta}$ es asintóticamente insesgado para $\theta$ y asintóticamente eficiente

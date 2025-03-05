@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  5 MAR 2025 11:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  5 MAR 2025 11:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/pablo/OneDriveUCM/Universidad/Estadística/vs/ApuntesEstadistica-1/main.tex
-(c:/Users/pablo/OneDriveUCM/Universidad/Estadística/vs/ApuntesEstadistica-1/main.tex
+**c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/Apuntes/main.tex
+(c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/Apuntes/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -695,7 +695,7 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@lib@dec@box=\box138
 ) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex))
 \symmatha=\mathgroup8
- (Preamble/Diagonal Matrix Command.tex) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+ (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
@@ -1192,24 +1192,25 @@ Package hyperref Info: Link coloring OFF on input line 8.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+esint on input line 14.
- (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
-File: uesint.fd 
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
- (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
- (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 14.
- (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
+
 
 [1
 
-{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc)
+{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc
+LaTeX Font Info:    Trying to load font information for U+esint on input line 2.
+ (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
+File: uesint.fd 
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+ (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 2.
+ (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd))
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1219,7 +1220,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 14
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.34 \newpage
+l.32 \newpage
               [1] (Theory/Theory.tex (Theory/1- Estadistica Descriptiva.tex)
 
 [2] (Theory/2 - Muestreo.tex
@@ -1387,28 +1388,28 @@ l.521 \begin{definición}[Estadísticos ordenados]
 
 [12]
 
-[13]
+[13])
+
+[14] (Theory/3 - Reduccion de Datos.tex
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 636.
+(mdframed)              on input line 3.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.636 \begin{definición}[Estadístico suficiente]
-                                                  
-
-[14]
+l.3 \begin{definición}[Estadístico suficiente]
+                                                
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 654.
+(mdframed)              on input line 21.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.654 \begin{teorema}[de Factorización de Fisher]
+l.21 ...egin{teorema}[de Factorización de Fisher]
                                                   
-Overfull \hbox (33.2289pt too wide) in paragraph at lines 672--673
+Overfull \hbox (33.2289pt too wide) in paragraph at lines 39--40
 \OT1/cmr/m/n/10.95 Ejercicio En-con-trar un es-tad^^S^^Psico su-fi-ciente para $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 si $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X []\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )$ $\OML/cmm/m/it/10.95 f[] [] \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 I[] [] \OT1/cmr/m/n/10.95 =$
  []
 
@@ -1417,19 +1418,19 @@ Overfull \hbox (33.2289pt too wide) in paragraph at lines 672--673
 [15]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 696.
+(mdframed)              on input line 63.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.696 ...nición}[Estadístico Minimal Suficiente]
+l.63 ...inición}[Estadístico Minimal Suficiente]
                                                   
-Underfull \hbox (badness 10000) in paragraph at lines 700--701
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
 
-Overfull \hbox (0.50887pt too wide) in paragraph at lines 711--712
+Overfull \hbox (0.50887pt too wide) in paragraph at lines 78--79
 \OT1/cmr/m/n/10.95 minimales su-fi-cien-tes-De-fi-namos la sigu-iente relaci^^Son de equiv-a-len-cia $[] \OML/cmm/m/it/10.95 R [] \OMS/cmsy/m/n/10.95 , []$
  []
 
@@ -1438,183 +1439,77 @@ Overfull \hbox (0.50887pt too wide) in paragraph at lines 711--712
 [16]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 729.
+(mdframed)              on input line 96.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.729 ...�n}[Familia exponencial $k$-paramétrica]
+l.96 ...ón}[Familia exponencial $k$-paramétrica]
                                                   
-Underfull \hbox (badness 10000) in paragraph at lines 738--740
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
- []
-
-
-Overfull \hbox (59.96371pt too wide) in paragraph at lines 746--748
-\OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 e[]$ \OT1/cmr/m/n/10.95 es in-de-pen-di-ente de $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 s^^S^^P $\OML/cmm/m/it/10.95 y$ \OT1/cmr/m/n/10.95 s^^Solo s^^S^^P $[][] \OML/cmm/m/it/10.95 q[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) [] =
- []
-
-
-Overfull \hbox (40.47147pt too wide) in paragraph at lines 750--754
-\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[\OT1/cmr/m/n/10.95 )$ pertenece a la fa-milia ex-po-nen-cial $\OML/cmm/m/it/10.95 k$\OT1/cmr/m/n/10.95 -param^^Setrica con $\OML/cmm/m/it/10.95 k \OT1/cmr/m/n/10.95 = 2$ $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 e[]$ 
  []
 
 
 
 [17]
-
-[18]
-Overfull \hbox (65.36746pt too wide) in paragraph at lines 785--787
-\OT1/cmr/m/n/10.95 Ejercicio Si $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; T \OT1/cmr/m/n/10.95 = []$ no es com-pleto In-di-caci^^Son: $\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 ) = []$ 
+Overfull \hbox (59.96371pt too wide) in paragraph at lines 113--115
+\OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 e[]$ \OT1/cmr/m/n/10.95 es in-de-pen-di-ente de $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 s^^S^^P $\OML/cmm/m/it/10.95 y$ \OT1/cmr/m/n/10.95 s^^Solo s^^S^^P $[][] \OML/cmm/m/it/10.95 q[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) [] =
  []
 
 
-Overfull \hbox (26.68552pt too wide) in paragraph at lines 808--809
-[]\OT1/cmr/m/n/10.95 Supuesto que se ha ob-ser-vado un valor mues-tral $[]$, la funci^^Son de $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 definida me-di-ante $\OML/cmm/m/it/10.95 L [] \OT1/cmr/m/n/10.95 =
+Overfull \hbox (40.47147pt too wide) in paragraph at lines 117--121
+\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[\OT1/cmr/m/n/10.95 )$ pertenece a la fa-milia ex-po-nen-cial $\OML/cmm/m/it/10.95 k$\OT1/cmr/m/n/10.95 -param^^Setrica con $\OML/cmm/m/it/10.95 k \OT1/cmr/m/n/10.95 = 2$ $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 e[]$ 
+ []
+
+
+
+[18]
+Overfull \hbox (65.36746pt too wide) in paragraph at lines 152--154
+\OT1/cmr/m/n/10.95 Ejercicio Si $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; T \OT1/cmr/m/n/10.95 = []$ no es com-pleto In-di-caci^^Son: $\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 ) = []$ 
  []
 
 
 
 [19]
-Overfull \hbox (58.25124pt too wide) in paragraph at lines 826--827
+Overfull \hbox (26.68552pt too wide) in paragraph at lines 175--176
+[]\OT1/cmr/m/n/10.95 Supuesto que se ha ob-ser-vado un valor mues-tral $[]$, la funci^^Son de $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 definida me-di-ante $\OML/cmm/m/it/10.95 L [] \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (58.25124pt too wide) in paragraph at lines 193--194
 \OT1/cmr/m/n/10.95 mon-eda al aire rep-re-sen-tado por la v.a. $\OML/cmm/m/it/10.95 J$ \OT1/cmr/m/n/10.95 tal que $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J \OT1/cmr/m/n/10.95 = 1) = \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J \OT1/cmr/m/n/10.95 = 2) = []$, si $\OML/cmm/m/it/10.95 E \OT1/cmr/m/n/10.95 = [][]$
  []
 
 
-Overfull \hbox (119.3316pt too wide) in paragraph at lines 826--827
+Overfull \hbox (119.3316pt too wide) in paragraph at lines 193--194
 \OT1/cmr/m/n/10.95 es el ex-per-i-mento mixto rep-re-sen-tado por la v.a. $(\OML/cmm/m/it/10.95 Z; J\OT1/cmr/m/n/10.95 )$ tal que $\OML/cmm/m/it/10.95 Z \OT1/cmr/m/n/10.95 = []$,
  []
 
 
 
-[20]
+[20]))
 
-[21]
-Overfull \hbox (105.90521pt too wide) in paragraph at lines 888--889
-\OT1/cmr/m/n/10.95 Si $[]$ es una m.a.s. $(\OML/cmm/m/it/10.95 n\OT1/cmr/m/n/10.95 )$ de $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X []\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )$ y $\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1)$, en-tonces $\OML/cmm/m/it/10.95 ^^Y [] \OMS/cmsy/m/n/10.95 ^^X [] []$ 
- []
-
-
-
-[22]
-Overfull \hbox (11.09148pt too wide) in paragraph at lines 921--922
-\OT1/cmr/m/n/10.95 Dado un es-ti-mador $\OML/cmm/m/it/10.95 T \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 T []$ \OT1/cmr/m/n/10.95 de $\OML/cmm/m/it/10.95 ^^R$\OT1/cmr/m/n/10.95 , se de-nom-ina er-ror cuadr^^Satico medio $[](\OML/cmm/m/it/10.95 T; ^^R\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 E[] []$ 
- []
-
-
-
-[23]
-
-[24]
-
-[25]
-
-[26]
-
-[27]
-
-[28]
-Overfull \hbox (60.05666pt too wide) in paragraph at lines 1132--1133
-\OT1/cmr/m/n/10.95 spon-di-entes a un m^^Saximo de $\OML/cmm/m/it/10.95 f[]$\OT1/cmr/m/n/10.95 , es de-cir aque-l-las en las que la ma-triz hes-siana $\OML/cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 = [][]$
- []
-
-) (Theory/6 - Contraste de Hipotesis.tex
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3.
-Package hyperref Info: bookmark level for unknown ejercicio defaults to 0 on input line 3.
-
-
-[29]
-Package mdframed Info: Not enough space on this page on input line 5.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 8.
-Package hyperref Info: bookmark level for unknown solucion defaults to 0 on input line 8.
-)
-
-[30] (Theory/Appendix.tex
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 6.
-
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.6 \begin{definición}[Media]
-                              
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 45.
-
-pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.45 \begin{teorema}[Linealidad de la Esperanza]
-                                                
-
-[31]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 81.
-
-pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.81 ...eorema}[Multiplicación de las Esperanzas]
-                                                  
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 114.
-
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.114 \begin{definición}[Varianza]
-                                   
-Package mdframed Info: Not enough space on this page on input line 128.
-
-
-[32]
-Package mdframed Info: Not enough space on this page on input line 128.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 164.
-
-
-[33]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 218.
-
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.218 ...in{definición}[Función Característica]
-                                                  
-
-[34]))
-
-[35] (main.aux)
+[21] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C169E1BCE537D18A8E4C7007CB275BA1;1912.
+(rerunfilecheck)             Checksum: 0CA8B8865DD9301C6B1B6CE6989B2E8F;1145.
  ) 
 Here is how much of TeX's memory you used:
- 36075 strings out of 473530
- 731133 string characters out of 5714794
- 1274220 words of memory out of 5000000
- 58350 multiletter control sequences out of 15000+600000
- 586687 words of font info for 152 fonts, out of 8000000 for 9000
+ 35842 strings out of 473530
+ 727496 string characters out of 5714794
+ 1273590 words of memory out of 5000000
+ 58243 multiletter control sequences out of 15000+600000
+ 577119 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,15n,112p,1152b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (36 pages, 518204 bytes).
+ 109i,15n,112p,1177b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on main.pdf (22 pages, 403802 bytes).
 PDF statistics:
- 633 PDF objects out of 1000 (max. 8388607)
- 235 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 420 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
