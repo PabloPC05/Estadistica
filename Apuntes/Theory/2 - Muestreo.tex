@@ -603,7 +603,7 @@ Finalmente, bajo el límite
 	\end{enumerate}
 \end{proof}
 
-
+\subsection{Estadísticos ordenados}
 \begin{definición}[Estadísticos ordenados]
 Sea $\left(X_{1}, \ldots, X_{n}\right)$ una m.a.s. $(n)$ de $X$. Podemos ordenar los valore de menor a mayor. A éstos se les llama estadísticos ordenados y se denotan por $X_{(1)} \leq X_{(2)} \leq \ldots \leq X_{(n)}$.
 Sus funciones de ditribución y densidad son:
@@ -718,6 +718,7 @@ J=
 	$\Rightarrow U_{R}=F\left(X_{(r)}\right)$ es el estadístico ordenado de orden $r$ asociado a una m.a.s. $(n)$ de una población $U=F(X) \sim U(0,1)$
 }
 
+\subsection{Ejercicios}
 \begin{problem}{2.1}
 	Sea $X$ una población de $Bernouilli(p = \frac{1}{2})$ y se consideran todas las m.a.s. posibles de tamaño 3. Para cada muestra calcúlese $\bar{X}, s^2, \mu y S^2$ y determínese sus distribuciones en el muestreo. 
 \end{problem}
@@ -763,11 +764,36 @@ J=
 	De una población con media $\mu$ desconocida y varianza 1, se toma una m.a.s. de tamaño n. ¿Cuál debe ser éste para que la media muestral diste en valor absoluto de la media de la población menos que 0,5, con una probabilidad mayor o igual que 0,95?
 \end{problem}
 \begin{sol}
-	El enunciado lo que nos pide es averiguar la n suficiente para que se cumpla que $P(|\bar{X}-\mu|<0.5)\geq 0.95 \iff P( -0.5 < \bar{X} - \mu < 0.5) \geq 0.95$.\\
-	Al ser $\bar{X}$ una variable aleatoria, podemos tipificarla pra obtener $Z = \frac{\bar{X}-\mu}{\sigma} \sim N(0,1)$. Donde $\sigma = \frac{1}{\sqrt{n}} \implies Z = \sqrt{n}(\bar{X}-\mu) \sim N(0,1)$.\\
-	Aplicando esta transformación a nuestra probabilidad obtenemos que: 
-	$$P\left(\frac{-0.5}{1/\sqrt{n}} < \sqrt{n}(\bar{X}-\mu) < \frac{0.5}{1/\sqrt{n}}\right) = P\left(-0.5\sqrt{n} < \sqrt{n}(\bar{X}-\mu) < 0.5\sqrt{n}\right) = P\left(0.5\sqrt{n} < Z < 0.5\sqrt{n}\right)$$
-	Entonces tenemos que: 
-	$$P\left(0.5\sqrt{n} < Z < 0.5\sqrt{n}\right) \geq 0.95$$
-	Finalmente al mirar en las tabasl de distribución normal estándar obtenemos que: $P(-1.)$
+	\\El enunciado nos pide es averiguar la n suficiente para que se cumpla que $P(|\bar{X}-\mu|<0.5)\geq 0.95 \iff P( -0.5 < \bar{X} - \mu < 0.5) \geq 0.95$.\\
+	Sabemos que $\bar{X} \sim N(\mu, \frac{1}{n})$. Por lo que 
+	para solucionarlo, haremos uso de la Desigualdad de Chebushev, la cual afirma que: $$ P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2} \quad \forall k > 0$$
+	Aplicando la desigualdad a nuestro caso, obtenemos que $k = 0.5$ y $\sigma = \frac{1}{\sqrt{n}}$. Por lo que:
+	$$P(|\bar{X} - \mu| \leq 0'5) \geq 0'95 \iff P(|\bar{X} - \mu| > 0'5) \leq 0'05 \implies \frac{1}{k^2} = 0'05 \implies n \geq 80$$
+\end{sol}
+\begin{problem}{2.3}
+	Dada una m.a.s. de tamaño n, calcúlese la distribución de la media muestral $\bar{X}$ cuando la población es: 
+	\begin{enumerate}
+		\item Bernouilli
+		\item Gamma
+		\item Exponencial
+	\end{enumerate}	
+\end{problem}
+\begin{sol}
+	\begin{enumerate}
+		\item \textbf{Bernouilli:} Si $X \sim Bernouilli(p) \implies \sum_{i = 1}^{n}X_i = S_n \sim Bin(n, p) \implies \bar{X} = \frac{S_n}{n} \implies P(\bar{X} = w) = P(S_n = nw) = \binom{n}{nw}p^{nw}(1-p)^{n(1-w)}$
+		\item \textbf{Gamma:} Si $X \sim Gamma(a, b) \implies \varphi_{X}(t) = (1 - \frac{it}{a})^{-b} \implies \varphi_{S_n}(t) = E[e^{i \cdot \frac{t}{n}\sum_{i = 1}^{n}X_i}] = E[e^{i\frac{t}{n}X_1}] \ldots E[e^{i\frac{t}{n}X_n}] = \left[\varphi(\frac{t}{n})\right]^n = (1- \frac{it}{an})^{-nb} \implies \bar{X} \sim Gamma(na,nb)$
+		\item \textbf{Exponencial:} Es un caso particular del apartado anterior dado que $X \sim Exponencial(\theta) = Gamma(\theta, 1) \implies \bar{x} \sim Gamma(n\theta, n)$.
+	\end{enumerate}
+\end{sol}
+\begin{problem}{2.4}
+	Dada una sucesion $\{X_n\}$ de variables aleatorias independientes con distribución $N(0,1)$ y un entero positivo $k$ se define: 
+	$$F_{k,m} = \left(\frac{1}{k}\sum_{i = 1}^k X_i^2 \right) / \left(\frac{1}{m}\sum_{i = k+1}^{k+m}X_i^2\right)$$
+	Pruébese que
+	\[
+	F_{k,m} \xrightarrow[m \to \infty]{\mathcal{L}} \frac{1}{k} X
+	\]
+	donde \( X \sim \chi^2_k \). 
+\end{problem}
+\begin{sol}
+
 \end{sol}
