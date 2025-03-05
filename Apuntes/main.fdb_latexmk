@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1741192696.98984 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741192700.22901 0
+["pdflatex"] 1741192953.25145 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741192956.63517 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741189210 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1739788850 12668 dc06899bf14948622113887d9b2f36fb ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740519544 10576 1e4a7696076481c0e8f238784591097f ""
@@ -289,14 +289,14 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Preamble/Preamble.tex" 1741189219 11962 525c0c72d759bfb336725e30c84de311 ""
   "Theory/1- Estadistica Descriptiva.tex" 1741185089 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
-  "Theory/2 - Muestreo.tex" 1741192696 33327 f830c4fcc8d1fd4abaecdba4c940c2db ""
+  "Theory/2 - Muestreo.tex" 1741192952 33421 78d9fb220662f68b824a1e9d8831cb10 ""
   "Theory/3 - Reduccion de Datos.tex" 1741185089 27091 b01c523ca8230fd83aa62be6ebf8f119 ""
   "Theory/Theory.tex" 1741185089 452 74b5bb8c00f0b2017fcfb149adda16eb ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" 1741185089 709 58753f39d72921152ceeb4b326f64e8f ""
-  "main.aux" 1741192699 7408 9fa18af4f1e8ae88e707774759cf04e0 "pdflatex"
-  "main.out" 1741192699 1145 0ca8b8865dd9301c6b1b6ce6989b2e8f "pdflatex"
+  "main.aux" 1741192956 7408 9fa18af4f1e8ae88e707774759cf04e0 "pdflatex"
+  "main.out" 1741192956 1145 0ca8b8865dd9301c6b1b6ce6989b2e8f "pdflatex"
   "main.tex" 1741185089 709 58753f39d72921152ceeb4b326f64e8f ""
-  "main.toc" 1741192699 673 94ad6a8a22dda46a141ac26987beffcf "pdflatex"
+  "main.toc" 1741192956 673 94ad6a8a22dda46a141ac26987beffcf "pdflatex"
   (generated)
   "main.aux"
   "main.log"
