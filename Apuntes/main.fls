@@ -1,6 +1,6 @@
-PWD c:\Users\pablo\OneDriveUCM\Universidad\Estadística\Practica_y_latex\Estadistica\Apuntes
+PWD c:\Users\pablo\OneDriveUCM\Universidad\Estadística\Practica_y_latex\Estadistica-1\Apuntes
 INPUT C:\Users\pablo\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\pablo\OneDriveUCM\Universidad\Estadística\Practica_y_latex\Estadistica\Apuntes\main.tex
+INPUT c:\Users\pablo\OneDriveUCM\Universidad\Estadística\Practica_y_latex\Estadistica-1\Apuntes\main.tex
 OUTPUT main.log
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -279,6 +279,8 @@ INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.c
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.cfg
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\bbold\bbold.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\bbold\bbold.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex

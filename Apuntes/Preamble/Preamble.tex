@@ -26,6 +26,8 @@
 \usepackage{stmaryrd}
 \usepackage{fvextra, csquotes}
 \usepackage{bbold}
+\usepackage{booktabs}
+
 \usetikzlibrary{calc}
 \usetikzlibrary{decorations.pathmorphing}
 \newcommand{\s}{\text{ }}%Space in math mode
@@ -376,3 +378,13 @@ mdframed={
 %Hyperlinks
 \usepackage{hyperref}
 
+\newenvironment{problem}[2][Ejercicio]{\begin{trivlist}
+  \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+  
+
+  \newenvironment{sol}
+  {\emph{Solución:}
+  }
+  {
+  \qed
+  }
