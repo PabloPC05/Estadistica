@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Estadística Descriptiva}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introducción}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Muestreo}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Modelos estadísticos}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Estadísticos muestrales}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Momentos}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Resultados de convergencias}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Estadísticos suficientes}{14}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Integrales de línea: campos escalares y vectoriales}{29}{section.3}%
+\contentsline {section}{\numberline {4}Appendix}{31}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Momentos Notables}{31}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Función Característica}{34}{subsection.4.2}%

@@ -1,0 +1,1143 @@
+\section{Muestreo}
+
+\subsection{Modelos estadísticos}
+
+\label{Modelo estidístico}
+\begin{definición}[Modelo Estadístico]
+Sea $(\omega, \mathcal{A}, \mathbb{P})$ un espacio de probabilidad asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \omega \to \mathbb{R}$ y su espacio medible asociado $(\chi, \mathcal{B})$.
+\\Un \textbf{modelo estadístico} es una terna $(\chi, \mathcal{B}, F)$, donde:
+\vspace{-\topsep}
+\begin{itemize}
+	\item $\chi$ es el espacio donde la variable aleatoria $X$ toma valores.
+	\item $\mathcal{B}$ es la $\sigma$-álgebra asociada a $\chi$. Generalmente se toma que $\mathcal{B} = \mathcal{B}(\mathbb{R})$.
+	\item $F$ es el conjunto de todas las posibles funciones de distribución que podemos considerar sobre $\mathcal{B}$.
+\end{itemize}
+\end{definición}
+
+\begin{definición}[Modelo Estadístico Paramétrico]
+Un \textbf{modelo estadístico paramétrico} es, al igual que el anteior, una terna $(\chi, \mathcal{B}, F)$, pero en este caso $F$ depende de un parámetro $\theta$ desconocido. \\
+Se define $F = \{F_{\theta} : \theta \in \Theta\}$, donde $\Theta$ es el espacio paramétrico, es decir, el conjunto de todos los posibles valores que puede tomar $\theta$ para que $F_\theta$ sea una función de distribución.
+De forma general se tiene que $\theta \in \Theta \subseteq \mathbb{R}^{k}$. \\
+Además se tienen dos enfoques según cómo se tome el comportamiento de $\theta$:
+\vspace{-\topsep}
+\begin{itemize}
+	\item \textbf{Enfoque frecuentista:} $\theta$ es un valor fijo pero desconocido.
+	\item \textbf{Enfoque bayesiano:} $\theta$ es una variable aleatoria.
+\end{itemize}
+\end{definición}
+
+\ejemplo{
+	\begin{enumerate}
+		\item Sea $X$ una variable aleatoria con distribución $N(\theta, 1)$, donde $\theta$ es un parámetro desconocido. Entonces, el modelo estadístico asociado a este experimento es $(\mathbb{R}, \mathcal{B}, F_{\theta}, \theta)$, donde $F_{\theta}(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}(x-\theta)^2}$. En este caso $\Theta = \mathbb{R}$.
+		\item Sea $X$-variable aleatoria con distribución $Bernouilli$, de parámetro $\theta$. Entonces en este caso, el modelo estadístico asociado es $(\{0,1\}, \mathcal{B}, F_{\theta}, \theta)$, donde $F_{\theta}(x) = \theta^x (1-\theta)^{1-x}$. En este caso $\Theta = [0,1]$.
+	\end{enumerate}
+}
+
+\begin{definición}[Muestra aleatoria simple]
+Sea $\left(X_{1}, \ldots, X_{n}\right)$ un conjunto de variables aleatorias independientes e idénticamente distribuidas (i.i.d.) entonces a dicho conjunto se le conoce como \textbf{muestra aleatoria simple} de tamaño n.
+\\ Por tanto tenemos que el modelo estadístico asociado es una terna $(\chi, \mathcal{B}, F)$, donde:
+\vspace{-\topsep}
+\begin{itemize}
+	\item $\chi = \mathbb{R}^{n}$.
+	\item $\mathcal{B} = \mathcal{B}(\mathbb{R}^{n})$.
+	\item $F = \{F_{\theta}^n : \theta \in \Theta\}$, donde $\Theta$ es el espacio paramétrico, donde:
+	      \[F_{\theta}^n(x_1, \ldots, x_n) = \prod_{i=1}^{n} F_{\theta}(x_i)\]
+\end{itemize}
+\end{definición}
+
+\begin{definición}[Función de Distibución Empírica]
+Sea $\left(X_{1}, \ldots, X_{n}\right)$ m.a.s. $(n) \sim X$ y denotemos por $\left(X_{(1)}, \ldots, X_{(n)}\right)$ a la muestra ordenada de menor a mayor. $\forall x \in \mathbb{R}$ fijo definimos la función distribución empírica como la variable aleatoria $$F_{n}(x)=\frac{1}{n} \sum_{i=1}^{n} I_{(-\infty, x]}\left(X_{i}\right)$$
+
+Observemos que
+
+$$
+	F_{n}(x)= \begin{cases}0 & \text { si } x<X_{(1)} \\ \frac{k}{n} & \text { si } X_{(k)}<x<X_{(k+1)}, k=1, \ldots, n-1 \\ 1 & \text { si } x \geq X_{(n)}\end{cases}
+$$
+
+Dada una realización particular de la muestra $\left(x_{1}, \ldots,
+	x_{n}\right), F_{n}(x)$ es una función de distribución asociada a una variable
+aleatoria discreta que toma valores $\left(x_{(1)}, \ldots, x_{(n)}\right)$ con
+función de masa $\left(\frac{1}{n}, \ldots, \frac{1}{n}\right)$
+\end{definición}
+
+\ejemplo{
+	Supongamos que tenemos una muestra aleatoria ordenada de tamaño $n = 5: \\
+		x_{(1)} = 2, x_{(2)} = 3, x_{(3)} = 5, x_{(4)} = 7 x_{(5)} = 9$. \\
+	Entones, por como se define la FDE $F_n(x) = \frac{1}{5} \sum_{i=1}^{5} I_{(-\infty, x]}(X_i)$, tenemos que:
+	\[
+		F_n(x) = \begin{cases}
+			0           & \text{si } x \geq 2     \\
+			\frac{1}{5} & \text{si } 2 \geq x < 3 \\
+			\frac{2}{5} & \text{si } 3 \geq x < 5 \\
+			\frac{3}{5} & \text{si } 5 \geq x < 7 \\
+			\frac{4}{5} & \text{si } 7 \geq x < 9 \\
+			1           & \text{si } x \geq 9
+		\end{cases}
+	\]
+	De manera que cada vez que $x$ alcanza un valor de la muestra, la función de distribución empírica aumenta en $\frac{1}{n} =0,2$.
+}
+
+\begin{proposición}[Propiedades de la Función de Distribución Empírica]
+Sea una muestra aleatoria \( X_1, X_2, \dots, X_n \) de una variable aleatoria \( X \) con función de distribución \( F(x) \). Definimos la función de distribución empírica como:
+
+$$
+	F_n(x) = \frac{1}{n} \sum_{i=1}^{n} \chi_{(-\infty,x]}(X_i)
+$$
+
+donde \( \chi_{(-\infty,x]}(X_i) \) es la función indicadora que toma el valor \( 1 \) si \( X_i \leq x \) y \( 0 \) en caso contrario.
+
+\begin{enumerate}
+	\item \textbf{Interpretación probabilística:}
+	      La función indicadora \( \chi_{(-\infty,x]}(X_i) \) sigue una distribución Bernoulli con parámetro \( F(x) \), es decir:
+
+	      $$
+		      \chi_{(-\infty,x]}(X_i) \sim \text{Bernoulli}(F(x))
+	      $$
+
+	      Por tanto también podemos afirmar que: $$\chi_{(-\infty,x]}(X_i) \sim \text{Bin}(1, F(x))$$
+
+	      Además, la suma de estas variables sigue una distribución binomial:
+
+	      $$ \sum_{i=1}^{n} \chi_{(-\infty,x]}(X_i) \sim \text{Bin}(n, F(x)) $$
+	\item \textbf{Esperanza y varianza:}
+	      Para un valor fijo de \( x \), se cumple que:
+
+	      $$ E[F_n(x)] = F(x) $$
+
+	      lo que indica que \( F_n(x) \) es un estimador insesgado de \( F(x) \).
+	      La varianza está dada por:
+
+	      $$ V[F_n(x)] = \frac{F(x)(1 - F(x))}{n} \underset{n \to \infty}{\longrightarrow} 0 $$
+
+	\item \textbf{Convergencia:}
+	      \begin{enumerate}
+		      \item \textbf{Convergencia casi segura:}
+
+		            $$ F_n(x) \underset{n \to \infty}{\xrightarrow{c.s.}} F(x) $$
+
+		      \item \textbf{Convergencia en distribución:}
+		            Se cumple la normalidad asintótica:
+
+		            $$ \frac{F_n(x) - F(x)}{\sqrt{\frac{F(x)(1-F(x))}{n}}} \underset{n \to \infty}{\xrightarrow{d}} N(0,1) $$
+
+	      \end{enumerate}
+
+	\item \textbf{Intervalo de confianza para \( F(x) \):}
+	      Dada una realización particular de la muestra \( (x_1, \dots, x_n) \), se puede construir un intervalo de confianza asintótico para \( F(x) \) de nivel \( 1 - \alpha \):
+
+	      $$ IC_{1-\alpha}(F(x)) = \left( F_n(x) - \frac{z_{\alpha/2}}{2\sqrt{n}}, F_n(x) + \frac{z_{\alpha/2}}{2\sqrt{n}} \right) $$
+
+	      donde \( z_{\alpha/2} \) es el cuantil de la distribución normal estándar.
+
+\end{enumerate}
+\end{proposición}
+
+\begin{teorema}[de Glivenko-Cantelli]
+	Sea $\left(X_{1}, \ldots, X_{n}\right)$ m.a.s.$(n) \sim X$ con función de distribucióm empírica $F_{n}(x)$ y sea $F(x)$ la función de distribución de $X$, es decir, de la población total. Entonces se cumple que:
+	\[\lim _{n \rightarrow \infty} P\left(w: \operatorname{Sup}_{x}\left|F_{n}(x)-F(x)\right|<\epsilon\right)=1, \ \forall \epsilon>0\]
+\end{teorema}
+
+\begin{corolario}
+	El Teorema de Glivenko-Cantelli permite realizar una técnica estadística denominda \textbf{método de sustitución (Plug-In)} la cual se basa en la sustitución de parámetros desconocidos por sus estimaciones sobre una muestra. Por ejemplo:
+	\begin{enumerate}
+		\item Se puede estimar la media poblacional $\mu$ por la media muestral $\bar{X} = \int x\partial{F_n(x)} = \frac{1}{n}\sum_{i = 1}^{n}x_i $.
+		\item Se puede estimar la varianza poblacional $\sigma^2$ por la varianza muestral $S^2 = \int (x - \bar{x})dF_n(x) = \frac{1}{n}\sum_{i = 1}^{n}(x_i - \bar{x})^2 = \sigma_n^2$.
+	\end{enumerate}
+\end{corolario}
+
+\subsection{Estadísticos muestrales}
+
+\begin{definición}[Estadístico muestral]
+Sea $\left(X_{1}, \ldots, X_{n}\right)$ m.a.s.$(n) \sim X$ y sea $T: \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ medible (integrable), bien definida y no dependiente de parámetros desconocidos, se le llama \textbf{estadístico muestral}
+\end{definición}
+
+\ejemplo{
+	Desacamos los siguientes estadísticos muestrales:
+	\begin{enumerate}
+		\item Media muestral $T\left(X_{1}, \ldots, X_{n}\right)=\frac{1}{n} \sum_{i=1}^{n}
+			      X_{i}=\bar{X}$
+		\item  Cuasivarianza muestral $T\left(X_{1}, \ldots, X_{n}\right)=\frac{1}{n-1}
+			      \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}=S_{n}^{2}$
+		\item $T\left(X_{1}, \ldots, X_{n}\right)=\left(\bar{X}, S_{n}^{2}\right)$
+	\end{enumerate}
+}
+\subsection{Momentos}
+
+Sea $\left(X_{1}, \cdots X_{n}\right)$ m.a.s.(n) de $X, \ \mu=E[X]$ y
+$\sigma=\sqrt{V(X)}$.
+\begin{definición}[Momento Muestral]
+Se define el momento muestral de orden $k$ respecto al origen como
+\[a_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k}\]
+y el momento muestral de orden $k$ respecto a la media como
+\[b_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k}\]
+\end{definición}
+
+\begin{observación}
+\vspace{-\topsep} % Removes the default vertical spacing
+\vspace{-\topsep} % Removes the default vertical spacing
+\vspace{-\topsep} % Removes the default vertical spacing
+\begin{itemize}
+	\item El momento muestral de orden 1 respecto al origen es la media muestral $(a_1 =
+		      \bar{X})$.
+	\item El momento muestral de orden 2 respecto a la media es la varianza muestral
+	      $(b_2 = \sigma_n^2)$.
+\end{itemize}
+\end{observación}
+
+\begin{definición}[Momento Poblacional]
+Se define el momento poblacional de orden $k$ respecto al origen como
+\[\alpha_{k}=E\left[X^{k}\right]\]
+y el momento poblacional de orden $k$ respecto a la media como
+\[\beta_{k}=E\left[(X-\mu)^{k}\right]\]
+\end{definición}
+
+\begin{observación}
+\vspace{-\topsep} % Removes the default vertical spacing
+\vspace{-\topsep} % Removes the default vertical spacing
+\vspace{-\topsep} % Removes the default vertical spacing
+\begin{itemize}
+	\item El momento poblacional de orden 1 respecto al origen es la media poblacional
+	      $(\alpha_1 = \mu)$.
+	\item El momento poblacional de orden 2 respecto a la media es la varianza
+	      poblacional $(\beta_2 = \sigma^2)$.
+\end{itemize}
+\end{observación}
+
+\begin{proposición}[Propiedades asintóticas de los momentos muestrales]
+Sea $\left(X_{1}, \ldots, X_{n}\right)$ m.a.s.$(n)$ de $X \sim N(\mu, \sigma)$, entonces se cumple que:
+\begin{enumerate}
+	\item Momentos muestrales respecto al origen:
+	      \begin{enumerate}
+		      \item $$    a_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k} \xrightarrow[n \rightarrow \infty]{\text{c.s.}} \alpha_{k}=E\left[X^{k}\right]$$
+		      \item $$     \bar{X} \xrightarrow[n \rightarrow \infty]{\text{c.s.}} \mu \quad \text{(Ley Fuerte de Kintchine, } \mu<\infty \text{)}$$
+	      \end{enumerate}
+	\item Momentos muestrales respecto a la esperanza/media:
+	      \begin{enumerate}
+		      \item  $$b_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k} \xrightarrow[n \rightarrow \infty]{\text{c.s.}} \beta_{k}=E\left[(X-\mu)^{k}\right]$$
+		      \item $$ \sigma_n^2 = \frac{1}{n}\sum_{i = 1}^{n}(X_i - \bar{X})^2 \underset{n \to \infty}{\xrightarrow{c.s.}} \sigma^2 $$
+		      \item $$ S_n^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(X_i - \bar{X})^2\underset{n \to \infty}{\xrightarrow{c.s.}} \sigma^2 $$
+	      \end{enumerate}
+\end{enumerate}
+\end{proposición}
+
+
+\textbf{Propiedades asintóticas de los momentos muestrales}\\
+
+\[
+	\sqrt{n} \frac{a_k-\alpha_k}{\sqrt{a_{2k}-a_k^2}} \xrightarrow[n \rightarrow \infty]{d} Z \sim N(0,1)
+\]
+
+\[
+	\sqrt{n} \frac{\bar{X}-\mu}{\sigma} \xrightarrow[n \rightarrow \infty]{d} Z \sim N(0,1), \quad \sigma=\sqrt{E\left[X^{2}\right]-\mu^{2}}
+\]
+\[
+	\text{(Teorema Central del Límite de Levy-Lindeberg, } \mu<\infty, \sigma<\infty \text{)}
+\]
+
+\[
+	\sqrt{n} \frac{b_{k}-\beta_{k}}{\sqrt{\beta_{2k}-\beta_{k}^{2}-2k \beta_{k-1} \beta_{k+1}+k^{2} \beta_{k-1}^{2} \beta_{2}}} \xrightarrow[n \rightarrow \infty]{d} Z \sim N(0,1)
+\]
+
+\[
+	\sqrt{n} \frac{\sigma_n^2-\sigma^2}{\sqrt{\beta^4-\sigma^4}} \xrightarrow[n \rightarrow \infty]{d} Z \sim N(0,1)
+\]
+
+\subsection{Resultados de convergencias}
+
+\begin{teorema}[de Slutsky]
+	Si $X_{n} \xrightarrow[n \rightarrow \infty]{d} X$ y $Y_{n} \xrightarrow[n \rightarrow \infty]{P}$ a entonces
+	\begin{enumerate}
+		\item $Y_{n} X_{n} \xrightarrow[n \rightarrow \infty]{d} a X$
+		\item $X_{n}+Y_{n} \xrightarrow[n \rightarrow \infty]{d} X+a$
+		\item $\frac{X_{n}}{Y_{n}} \xrightarrow[n \rightarrow \infty]{d} \frac{X}{a}$ siempre que $a \neq 0$
+	\end{enumerate}
+\end{teorema}
+
+\begin{lema}
+	Si $\left\{a_{n}\right\}$ es una sucesión de constantes con $\lim _{n \rightarrow \infty} a_{n}=+\infty$ y $a$ es un número fijo tal que
+	\[a_{n}\left(X_{n}-a\right) \xrightarrow[n \rightarrow \infty]{d} X\]
+	entonces para cualquier función $g: \mathbb{R} \to \mathbb{R}$ con derivada
+	continua y no nula en a se tiene que
+	$a_{n}\left(g\left(X_{n}\right)-g(a)\right) \underset{n \rightarrow
+			\infty}{\stackrel{d}{\longrightarrow}} g^{\prime}(a) X$
+\end{lema}
+
+\ejemplo{
+Sea $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n)$ de $X \sim N(\mu, \sigma)$, se pide calcular la distribución de la media muestral:\\
+Tenemos que $\varphi_{X}(t)=e^{i t \mu-\frac{1}{2} t^{2} \sigma^{2}} \implies$\\
+$E\left[e^{\bar{X}}\right] = \varphi_{\bar{X}}(t)=E\left[e^{it \frac{1}{n} \sum_{i=1}^{n}
+				X_{i}}\right]=\varphi_{\sum_{i=1}^{n}
+		X_{i}}\left(\frac{t}{n}\right)=\left(\varphi_{X}\left(\frac{t}{n}\right)\right)^{n}=e^{i
+	t \mu-\frac{1}{2} \frac{\sigma^{2}}{n} t^{2}}$.\\ Por lo tanto $\bar{X}
+	\sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
+}
+\leavevmode
+
+\ejemplo{
+	Sea \( X_1, \dots, X_n \) una muestra aleatoria simple de una variable aleatoria \( X \sim N(0, \sigma) \). La función de densidad de \( X \) es:
+
+	\[
+		f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2\sigma^2} x^2}
+	\]
+
+	Calculemos la distribución de \( a_2 = \frac{1}{n} \sum_{i=1}^{n} X_i^2 \)
+
+	Definimos la variable estandarizada:
+
+	\[
+		Z_i = \frac{X_i}{\sigma} \sim N(0,1).
+	\]
+
+	Entonces, la suma de los cuadrados sigue una distribución chi-cuadrado:
+
+	\[
+		\sum_{i=1}^{n} Z_i^2 \sim \chi_n^2.
+	\]
+
+	La distribución chi-cuadrado con \( n \) grados de libertad es un caso particular de la distribución Gamma:
+
+	\[
+		\chi_n^2 \sim \text{Gamma} \left( a = \frac{1}{2}, p = \frac{n}{2} \right).
+	\]
+
+	Donde:
+	- \( a = \frac{1}{2} \) es el **parámetro de forma**.
+	- \( p = \frac{n}{2} \) es el **parámetro de escala**.
+
+	La función de densidad de la suma de cuadrados es:
+
+	\[
+		f_{\sum_{i=1}^{n} Z_i^2}(y) = \frac{1}{2^{n/2} \Gamma(n/2)} y^{n/2-1} e^{-y/2}.
+	\]
+
+	Como \( X_i^2 = \sigma^2 Z_i^2 \), al tomar la media muestral obtenemos:
+
+	\[
+		a_2 = \frac{1}{n} \sum_{i=1}^{n} X_i^2 = \sigma^2 \frac{1}{n} \sum_{i=1}^{n} Z_i^2.
+	\]
+
+	Sustituyendo la distribución Gamma de la suma de \( Z_i^2 \), se tiene:
+
+	\[
+		a_2 \sim \text{Gamma} \left( a = \frac{n}{2\sigma^2}, p = \frac{n}{2} \right).
+	\]
+
+	Para muestras grandes, usando el **Teorema Central del Límite**, la variable estandarizada:
+
+	\[
+		\sigma^2 \sqrt{\frac{n}{2\sigma^2}} (a_2 - \sigma^2)
+	\]
+
+	converge en distribución a una normal estándar:
+
+	\[
+		N(0,1).
+	\]
+
+	Este resultado es fundamental en inferencia estadística, ya que muestra que la varianza muestral puede aproximarse por una normal para muestras grandes.
+
+}
+
+\begin{lema}
+	Si \( Y \sim \operatorname{Gamma}(a, p) \), entonces \( T = 2a Y \sim \operatorname{Gamma}\left(\frac{1}{2}, p\right) \).
+\end{lema}
+
+\begin{proof}
+	Sabemos que la función de densidad de probabilidad de una variable aleatoria \( Y \) que sigue una distribución Gamma con parámetros \( a \) y \( p \) es:
+
+	\[
+		f_{Y}(y) = \frac{a^{p}}{\Gamma(p)} e^{-a y} y^{p-1}, \quad y \geq 0.
+	\]
+
+	Ahora, definimos la variable \( T \) como \( T = 2a Y \), lo que implica que \(
+	Y = \frac{1}{2a} T \). Usamos el cambio de variable para encontrar la función
+	de densidad de probabilidad de \( T \). El jacobiano de este cambio es:
+
+	\[
+		J = \left| \frac{dY}{dT} \right| = \frac{1}{2a}.
+	\]
+
+	Por lo tanto, la función de densidad de probabilidad de \( T \) se obtiene
+	sustituyendo en la fórmula general para el cambio de variable:
+
+	\[
+		f_{T}(t) = f_{Y}\left(\frac{1}{2a} t\right) \cdot \frac{1}{2a}.
+	\]
+
+	Sustituyendo la expresión de \( f_Y(y) \), obtenemos:
+
+	\[
+		f_{T}(t) = \frac{a^{p}}{\Gamma(p)} e^{-a \left(\frac{1}{2a} t\right)} \left( \frac{1}{2a} t \right)^{p-1} \cdot \frac{1}{2a}.
+	\]
+
+	Simplificando, tenemos:
+
+	\[
+		f_{T}(t) = \frac{\left( \frac{1}{2} \right)^{p}}{\Gamma(p)} e^{-\frac{1}{2} t} t^{p-1}, \quad t \geq 0.
+	\]
+
+	Esta es precisamente la función de densidad de una distribución Gamma con
+	parámetros \( \left( \frac{1}{2}, p \right) \), lo que demuestra que \( T \sim
+	\operatorname{Gamma}\left( \frac{1}{2}, p \right) \).
+\end{proof}
+
+\ejemplo{
+Sea $\left(X_{1}, \dots, X_{n}\right)$ una m.a.s.(n) de $X \sim N(0, \sigma)$.
+Entonces, la función de densidad es:
+
+\[
+	f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{x^2}{2\sigma^{2}}}
+\]
+
+Se pide calcular la distribución de
+
+\[
+	a_{2}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{2}
+\]
+
+Tipificando las variables aleatorias \( X_i \) como:
+
+\[
+	Z_{i}=\frac{X_{i}}{\sigma} \sim N(0,1),
+\]
+
+se tiene que
+
+\[
+	\sum_{i=1}^{n} Z_{i}^{2} \sim \chi_{n}^{2} \equiv \operatorname{Gamma} \left(a=\frac{1}{2}, p=\frac{n}{2} \right)
+\]
+
+La función de densidad de esta suma es:
+
+\[
+	f_{\sum_{i=1}^{n} Z_{i}^{2}}(y) = \frac{1}{2^{\frac{n}{2}} \Gamma\left(\frac{n}{2}\right)} e^{-\frac{y}{2}} y^{\frac{n}{2}-1}
+\]
+
+Dado que
+
+\[
+	a_{2} = \frac{1}{n} \sum_{i=1}^{n} X_{i}^{2} = \frac{\sigma^{2}}{n} \sum_{i=1}^{n} Z_{i}^{2},
+\]
+
+definimos el cambio de variable
+
+\[
+	J = \frac{n}{\sigma^{2}}.
+\]
+
+Por lo tanto, la función de densidad de $a_2$ es:
+
+\[
+	f_{a_{2}}(t) = f_{\sum_{i=1}^{n} Z_{i}^{2}} \left( \frac{n}{\sigma^{2}} t \right) \frac{n}{\sigma^{2}} = \frac{\left(\frac{n}{2\sigma^{2}}\right)^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}\right)} e^{-\frac{n}{2\sigma^{2}} t} t^{\frac{n}{2}-1}.
+\]
+
+Por lo tanto,
+
+\[
+	a_{2} = \frac{1}{n} \sum_{i=1}^{n} X_{i}^{2} \sim \operatorname{Gamma} \left(a=\frac{2\sigma^{2}}{n} , p=\frac{n}{2}\right).
+\]
+
+Finalmente, bajo el límite
+
+\[
+	\sigma^{2} \sqrt{\frac{n}{2}}\left(a_{2}-\sigma^{2}\right) \xrightarrow{d} N(0,1) \quad \text{cuando } n \to \infty.
+\]
+}
+
+\begin{teorema}[de Fisher]
+	Sea $\left(X_{1}, \dots, X_{n}\right)$ una m.a.s. $(n)$ de $X \sim N(\mu, \sigma)$, con $\mu$ y $\sigma$ desconocidos. Se cumple que:
+
+	\begin{enumerate}
+
+		\item La media muestral y la varianza muestral:
+
+		      \[
+			      \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_{i}, \quad S^{2} = \frac{1}{n-1} \sum_{i=1}^{n} \left(X_{i} - \bar{X} \right)^{2}
+		      \]
+
+		      son variables aleatorias independientes.
+
+		\item Sus distribuciones son:
+
+		      \[
+			      \bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right),
+		      \]
+
+		      \[
+			      \frac{(n-1) S^{2}}{\sigma^{2}} \sim \chi_{n-1}^{2}.
+		      \]
+
+		\item La siguiente variable aleatoria sigue una distribución t de Student:
+
+		      \[
+			      \frac{\bar{X} - \mu}{\frac{S}{\sqrt{n}}} \sim t_{n-1}.
+		      \]
+
+	\end{enumerate}
+\end{teorema}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+		%Demostración del primer punto%
+		\item $$ \bar{X} = \frac{1}{n}\sum_{i = 1}^{n}X_i \text{ y } S^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(X_i -\bar{X})^2 \text{ son independientes} \iff X_i - \bar{X} \text{ y } \bar{X} \text{ son independientes}$$
+		      $ \implies$ Veamos la independencia a través de la covarianza: $Cov(X_i -\bar{X}, \bar{X}) = 0$?\\
+		      $$ Cov(X_i - \bar{X}, \bar{X}) = E[(X_i - \bar{X})\bar{X}] - E[X_i- \bar{X}]E[\bar{X}] = E[(X_i - \bar{X}\bar{X})] - (E[X_i] - E[\bar{X}])E[\bar{X}] = $$ $$ = E[(X_i - \bar{X})\bar{X}] - (\mu - \mu)\mu = E[X_i \cdot \bar{X}] - E[\bar{X}^2] = E[X_i\cdot \bar{X}] - (V[X]+ E[\bar{X}]^2) = E[X_i \cdot \bar{X}] - (\frac{\sigma^2}{n} + \mu^2) = $$ $$ = E[\frac{1}{n}X_1\cdot X_i + \ldots + \frac{1}{n}X_i^2 + \ldots + \frac{1}{n}X_n\cdot X_i] - (\frac{\sigma^2}{n} - \mu^2) = $$ $$ = \frac{1}{n}(E[X_1X_i] + \ldots + E[X_nX_i]) +\frac{1}{n}E[X_i^2] - (\frac{\sigma^2}{n} + \mu^2) = $$ $$ = \frac{n-1}{n}(\mu^2) + \frac{1}{n}(\sigma^2 + \mu^2) - (\frac{\sigma^2}{n} + \mu^2) = $$ $$ = \frac{n-1}{n}\mu^2 + \frac{\mu^2}{n} - \mu^2 + \frac{\sigma^2}{n} - \frac{\sigma^2}{n} = 0 \implies$$ $$ Cov(X_i - \bar{X}, \bar{X}) = 0 \implies \text{son independientes}$$.\\
+
+		      %Demostracion del segundo punto%
+		\item Denotemos por $S_{n+1}^{2}=\frac{1}{n} \sum_{i=1}^{n+1}\left(X_{i}-\bar{X}_{n+1}\right)^{2}$\\
+		      Demostremos que $n S_{n+1}^{2}=(n-1) S_{n}^{2}+\left(X_{n+1}-\bar{X}_{n}\right)^{2} \frac{n}{n+1}$\\
+		      $n S_{n+1}^{2}=\sum_{i=1}^{n+1}\left(X_{i}-\bar{X}_{n+1}^{2}\right)=\sum_{i=1}^{n}\left(\left(X_{i}-\bar{X}_{n}\right)+\left(\bar{X}_{n}-\bar{X}_{n+1}\right)\right)^{2}+\left(X_{n+1}-\bar{X}_{n+1}\right)^{2}=$\\
+		      $(n-1) S_{n}^{2}+n\left(\bar{X}_{n}-\bar{X}_{n+1}\right)^{2}+\left(X_{n+1}-\bar{X}_{n+1}\right)^{2} + \sum_{i=0}^{n}2\left(X_{i}-\bar{X}_{n}\right)\left(\bar{X}_{n}-\bar{X}_{n+1}\right)=$\\
+		      $(n-1) S_{n}^{2}+n\left(\bar{X}_{n}-\bar{X}_{n+1}\right)^{2}+\left(X_{n+1}-\bar{X}_{n+1}\right)^{2} + 2\left(\bar{X}_{n}-\bar{X}_{n+1}\right)\sum_{i=0}^{n}\left(X_{i}-\bar{X}_{n}\right)=$\\
+		      $(n-1) S_{n}^{2}+n\left(\bar{X}_{n}-\bar{X}_{n+1}\right)^{2}+\left(X_{n+1}-\bar{X}_{n+1}\right)^{2}=$\\
+		      En seste ultimo paso se desarrollan cuadrados, y se aplica la definicion de $\bar{X}_{n} = \frac{1}{n} \sum_{i=1}^{n} X_{i} \leftrightarrow n \bar{X}_{n} = \sum_{i=1}^{n} X_{i}$\\
+		      Ahora si se aplica que $\bar{X}_{n+1}=\frac{n \bar{X}_{n}+X_{n+1}}{n+1} \leftrightarrow \left(X_{n+1}-\bar{X}_{n+1}\right) = \frac{(n+1)X_{n+1}-n\bar{X}_{n}-X_{n+1}}{n+1}$\\
+		      $(n-1) S_{n}^{2}+\left(X_{n+1}-\bar{X}_{n}\right)^{2} \frac{n}{(n+1)^2}+\left(X_{n+1}-\bar{X}_{n}\right)^{2} \frac{n^2}{(n+1)^2}=$\\
+		      $(n-1) S_{n}^{2}+\left(X_{n+1}-\bar{X}_{n}\right)^{2} \frac{n}{n+1}$\\
+		      Asi ya tenemos el resultado deseado
+
+		      Ahora veamos: $\left(\frac{X_{n+1} -\bar{X}_n}{\sigma\sqrt{\frac{n+1}{n}}}\right)^2 \sim \chi_1^2$\\
+		      \begin{align}
+			      Usemos: X_{n+1} \sim N(\mu, \sigma) \text{ y } \bar{X}_n \sim N(\mu, \frac{\sigma}{\sqrt{n}}) \\
+			      X_{n+1} - \bar{X}_n \sim N(0, \sigma \sqrt{\frac{n+1}{n}})                                    \\
+			      \left(\frac{X_{n+1} - \bar{X}_n}{\sigma\sqrt{\frac{n+1}{n}}}\right) \sim N(0,1) \sim \chi_1^2
+		      \end{align}
+		      Finalmente apliquemos induccion:
+		      Nuestro caso base es el siguiente:
+		      $\frac{1S_{2}^{2}}{\sigma^{2}}=\frac{1}{\sigma^{2}}\left(\left(X_{1}-\bar{X}_{2}\right)^{2}+\left(X_{2}-\bar{X}_{2}\right)^{2}\right)=\frac{1}{\sigma^{2}}\left(\left(X_{1}-\frac{X_1+X_2}{2}\right)^{2}+\left(X_{2}-\frac{X_1+X_2}{2}\right)^{2}\right)=$\\
+		      $\frac{1}{\sigma^{2}}\left(\frac{1}{4}\left(X_{1}-X_{2}\right)^{2}+\frac{1}{4}\left(X_{2}-X_{1}\right)^{2}\right)=\frac{1}{\sigma^{2}}\frac{1}{2}\left(X_{2}-\bar{X_{1}}\right)^{2}=$\\
+		      $\left(\frac{\left(X_{2}-\bar{X_{1}}\right)}{\sigma\sqrt{2}}\right)^{2} \sim \chi_{1}^{2}$\\ Por lo visto antes
+		      Nuestra hipotesis de induccion es que $\frac{(n-1) S_{n}^{2}}{\sigma^{2}} \sim \chi_{n-1}^{2}$\\
+		      Asi, por inducción (teniendo en cuenta que $S_{n}^{2}$ y $\bar{X}_{n}$ son independientes por (1))\\
+		      $\frac{nS_{n+1}^{2}}{\sigma^{2}} = \frac{(n-1) S_{n}^{2}}{\sigma^{2}}+\left(\frac{X_{n+1}-\bar{X}_{n}}{\sigma \sqrt{\frac{n+1}{n}}}\right)^{2} \sim \chi_{n-1}^{2} + \chi_{1}^{2} \sim \chi_{n}^{2}$
+
+		      % Demostración del tercer punto%
+		\item Se deduce de los anteriores
+	\end{enumerate}
+\end{proof}
+
+
+\begin{definición}[Estadísticos ordenados]
+Sea $\left(X_{1}, \ldots, X_{n}\right)$ una m.a.s. $(n)$ de $X$. Podemos ordenar los valore de menor a mayor. A éstos se les llama estadísticos ordenados y se denotan por $X_{(1)} \leq X_{(2)} \leq \ldots \leq X_{(n)}$.
+Sus funciones de ditribución y densidad son:
+$$F_{X_{(n)}}(x)=F(x)^{n} \implies f_{X_{(n)}}(x)= \frac{\partial}{\partial{x}}(F(x)^n) = n F(x)^{n-1} f(x)$$
+$$F_{X_{(1)}}(x)=1-(1-F(x))^{n} \implies f_{X_{(1)}}(x)= \frac{\partial}{\partial{x}}(1-(1-F(x))^n) = n(1-F(x))^{n-1} f(x)$$
+$$F_{X_{(r)}}(x) = P\left(\sum_{i=1}^{n} I_{(-\infty, x]}(X_i) \geq r\right) = P(\operatorname{Bin}(n, F(x)) \geq r) = \sum_{j=r}^{n} \binom{n}{j} F(x)^j(1-F(x))^{n-j} \implies$$  $$\\ f_{X_{(r)}}(x) = \binom{n}{r} r F(x)^{r-1}(1-F(x))^{n-r} f(x)$$
+$$f_{\left(X_{(r)}, X_{(s)}\right)}(x, y) = \frac{n!}{(r-1)!(s-r-1)!(n-s)!} F(x)^{r-1}(F(y)-F(x))^{s-r-1}(1-F(y))^{n-s} f(x) f(y)$$
+$$f_{\left(X_{(1)}, \ldots, X_{(n)}\right)}(y_1, \ldots, y_n) = n! \prod_{j=1}^{n} f(y_j) \text{ si } y_1 < \ldots < y_n$$
+\end{definición}
+
+\ejemplo{
+	Sea $X_1, X_2, \dots, X_n$ una muestra aleatoria simple de una distribución uniforme en $(0,1)$, es decir:
+
+	$$ X_1, X_2, \dots, X_n \overset{i.i.d}{\sim} U(0,1) $$
+
+	La función de distribución acumulada de una variable uniforme en $(0,1)$ es:
+
+	$$ F(x) =
+		\begin{cases}
+			0, & x \leq 0  \\
+			x, & 0 < x < 1 \\
+			1, & x \geq 1
+		\end{cases} $$
+
+	Ordenando la muestra de menor a mayor, los estadísticos ordenados se denotan como $X_{(1)} \leq X_{(2)} \leq \dots \leq X_{(n)}$. Se quiere encontrar la función de densidad de estos valores ordenados.
+
+	Para el máximo, $X_{(n)}$, se tiene que su función de distribución es:
+
+	$$ P(X_{(n)} \leq x) = P(X_1 \leq x, X_2 \leq x, \dots, X_n \leq x) $$
+
+	Dado que los datos son independientes, esto se factoriza como:
+
+	$$ P(X_{(n)} \leq x) = F(x)^n = x^n, \quad 0 < x < 1 $$
+
+	Derivando se obtiene la función de densidad:
+
+	$$ f_{X_{(n)}}(x) = \frac{d}{dx} x^n = n x^{n-1}, \quad 0 < x < 1 $$
+
+	Es decir, $X_{(n)} \sim Beta(n,1)$.
+
+	Para el mínimo, $X_{(1)}$, la función de distribución se obtiene como:
+
+	$$ P(X_{(1)} \leq x) = 1 - P(X_{(1)} > x) = 1 - P(X_1 > x, X_2 > x, \dots, X_n > x) $$
+
+	Por independencia,
+
+	$$ P(X_1 > x, X_2 > x, \dots, X_n > x) = (1 - F(x))^n = (1-x)^n $$
+
+	Por lo que,
+
+	$$ P(X_{(1)} \leq x) = 1 - (1-x)^n, \quad 0 < x < 1 $$
+
+	Derivando se obtiene la densidad:
+
+	$$ f_{X_{(1)}}(x) = n (1-x)^{n-1}, \quad 0 < x < 1 $$
+
+	De manera general, para el $r$-ésimo estadístico ordenado, su densidad es:
+
+	$$ f_{X_{(r)}}(x) = \frac{n!}{(r-1)! (n-r)!} x^{r-1} (1-x)^{n-r}, \quad 0 < x < 1 $$
+
+	lo que implica que $X_{(r)} \sim Beta(r, n-r+1)$.
+
+	La densidad conjunta del mínimo y el máximo de la muestra es:
+
+	$$ f_{X_{(1)}, X_{(n)}}(x,y) = n(n-1)(y-x)^{n-2}, \quad 0 < x < y < 1 $$
+
+	Esto muestra cómo la distribución de los estadísticos ordenados sigue distribuciones beta en función de la posición del orden estadístico dentro de la muestra.
+
+}
+
+
+\ejemplo{
+Calcular la distribución del rango muestral
+
+$$
+	\left.\left.\begin{array}{l}
+		R=X_{(n)}-X_{(1)} \\
+		H=\frac{X_{(n)}+X_{(1)}}{2}
+	\end{array}\right\} \begin{array}{c}
+		X_{(n)}=H+\frac{R}{2} \\
+		X_{(1)}=H-\frac{R}{2}
+	\end{array}\right\} J=\left|\begin{array}{cc}
+		1 & -\frac{1}{2} \\
+		1 & \frac{1}{2}
+	\end{array}\right|=1 .
+$$
+
+\[
+	0 < x < y < 1 \Rightarrow \frac{r}{2} < h < 1 - \frac{r}{2}
+\]
+
+\[
+	g_{(R,H)}(r,h) = f_{(X_{(1)},X_{(n)})} \left(h - \frac{r}{2}, h + \frac{r}{2} \right) = 1 - n(n-1) r^{n-2}
+\]
+
+\[
+	g_R(r) = n(n-1) r^{n-2} (1 - r) \Rightarrow R \sim \operatorname{Beta}(n-1,2)
+\]
+
+}
+
+\vspace{1em} % Adds vertical space of 1em
+
+\ejemplo{
+	Sea $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$ tal que $F(x)=P(X \leq x)$\\
+	Se pide calcular la distribución de $U=F(X)$ y de $U_{R}=F\left(X_{(r)}\right)$\\
+	$G_{U}(u)=P(U \leq u)=P(F(X) \leq u)=P\left(X \leq F^{-1}(u)\right)=F\left(F^{-1}(u)\right)=u, \quad 0<u<1$\\
+	$\Rightarrow U=F(X) \sim U(0,1)$\\
+	$G_{U_{R}}(u)=P\left(U_{R} \leq u\right)=P\left(F\left(X_{(r)}\right) \leq u\right)=P\left(X_{(r)} \leq F^{-1}(u)\right)=$\\
+	$F_{X_{(r)}}\left(F^{-1}(u)\right)=\sum_{j=r}^{n}\binom{n}{j} F\left(F^{-1}(u)\right)^{j}\left(1-F\left(F^{-1}(u)\right)\right)^{n-j}=\sum_{j=r}^{n}\binom{n}{j} u^{j}(1-u)^{n-j}$\\
+	$\Rightarrow U_{R}=F\left(X_{(r)}\right)$ es el estadístico ordenado de orden $r$ asociado a una m.a.s. $(n)$ de una población $U=F(X) \sim U(0,1)$
+}
+
+\subsection{Estadísticos suficientes}
+
+\begin{definición}[Estadístico suficiente]
+Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado ( $\left.\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$\\
+$T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ (para la familia de funciones de distribución $\left\{F_{\theta}\right\}_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$ ), sí y sólo sí la distribución de probabilidad de la muestra condicionada por $T$ es independiente de $\theta$
+\end{definición}
+
+\ejemplo{
+Demostrar que si $X \sim \operatorname{Bin}(1, \theta)$, entonces $T=\sum_{i=1}^{n} X_{i} \sim \operatorname{Bin}(n, \theta)$ es suficiente para $\theta$\\
+$P_{\theta}(X=x)=\left.\theta^{x}(1-\theta)^{1-x}\right|_{\{0,1\}}(x)$\\
+$P_{\theta}\left(\sum_{i=1}^{n} X_{i}=t\right)=\binom{n}{t} \theta^{t}(1-\theta)^{n-t}\left\{_{\{0,1, \ldots, n\}}(t)\right.$\\
+$P_{\theta}\left(X_{1}=x_{1}, \ldots, X_{n}=x_{n}\right)=\prod_{i=1}^{n} \theta^{x_{i}}(1-\theta)^{1-x_{i}} I_{\{0,1\}}\left(x_{i}\right)=$\\
+$\theta^{\sum_{i=1}^{n} x_{i}}(1-\theta)^{n-\sum_{i=1}^{n} x_{i}} \prod_{i=1}^{n} l_{\{0,1\}}\left(x_{i}\right)$\\
+Si $\sum_{i=1}^{n} x_{i}=t, P_{\theta}\left(X_{1}=x_{1}, \ldots, X_{n}=x_{n} \mid \sum_{i=1}^{n} X_{i}=t\right)=$\\
+$\frac{P_{\theta}\left(X_{1}=x_{1}, \ldots, x_{n-1}=x_{n-1}, X_{n}=t-\sum_{i=1}^{n-1} x_{i}\right)}{P\left(\sum_{i=1}^{n} X_{i}=t\right)}=\frac{\theta^{t}(1-\theta)^{n-t}}{\left(\begin{array}{l}n \\ t\end{array} \theta^{t}(1-\theta)^{n-t}\right.}=\frac{1}{\binom{n}{t}}, t=0,1, \ldots, n$
+}
+
+
+\subsection*{Teorema de Factorización de Fisher}
+
+\begin{teorema}[de Factorización de Fisher]
+	Teorema de Factorización (caracterización de estadísticos suficientes) $T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ sí y sólo sí existen funciones reales positivas $h: \mathbb{R}^{n} \longrightarrow \mathbb{R}$ y $g_{\theta}: \mathbb{R}^{m} \longrightarrow \mathbb{R}$ tales que $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)$, donde $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)$ es la función de densidad o de masa de la muestra
+\end{teorema}
+
+
+\begin{proof}
+	\leavevmode
+	$\Leftrightarrow)$ Si $T\left(x_{1}, \ldots, x_{n}\right)=t$,\\
+	$f_{\theta}\left(x_{1}, \ldots, x_{n} \mid t\right)=\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}(t)}=\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{\sum_{\left\{\left(y_{1}, \ldots, y_{n}\right): T\left(y_{1}, \ldots, y_{n}\right)=t\right\}} f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=$\\
+	$\frac{h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}(t)}{\sum_{\left\{\left(y_{1}, \ldots, y_{n}\right): T\left(y_{1}, \ldots, y_{n}\right)=t\right\}} h\left(y_{1}, \ldots, y_{n}\right) g_{\theta}(t)}=\frac{h\left(x_{1}, \ldots, x_{n}\right)}{\left.\sum_{\left.\left\{y_{1}, \ldots, y_{n}\right): T\left(y_{1}, \ldots, y_{n}\right)=t\right\}}\right\}\left(y_{1}, \ldots, y_{n}\right)}$ es\\
+	independiente de $\theta \Rightarrow T$ es suficiente para $\theta$\\
+	$\Rightarrow)$ Sea $T=T\left(X_{1}, \cdots X_{n}\right)$ un estadístico suficiente para $\theta \Rightarrow$ $f_{\theta}\left(x_{1}, \ldots, x_{n} \mid t\right)$ es independiente de $\theta$\\
+	Si $T\left(x_{1}, \ldots, x_{n}\right)=t, f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=f_{\theta}\left(x_{1}, \ldots, x_{n} \mid t\right) f_{\theta}(t)=$ $h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)$
+\end{proof}
+
+
+
+\section*{Teorema de Factorización de Fisher (continuación)}
+Ejercicio Encontrar un estadísico suficiente para $\theta$ si $X \sim \operatorname{Bin}(1, \theta)$ $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod_{i=1}^{n} \theta^{x_{i}}(1-\theta)^{1-x_{i}} I_{\{0,1\}}\left(x_{i}\right)=$ $\theta^{\sum_{i=1}^{n} x_{i}}(1-\theta)^{n-\sum_{i=1}^{n} x_{i}} \prod_{i=1}^{n} I_{\{0,1\}}\left(x_{i}\right)=g_{\theta}\left(\sum_{i=1}^{n} x_{i}\right) h\left(x_{1}, \ldots, x_{n}\right) \Rightarrow$ $T=\sum_{i=1}^{n} X_{i}$ es suficiente para $\theta$
+
+\section*{Ejercicios propuestos}
+$1 T=\sum_{i=1}^{n} X_{i}$ es suficiente para $\theta$ si $X \sim \operatorname{Poisson}(\theta)$\\
+2 La propia muestra $\left(X_{1}, \ldots, X_{n}\right)$ y el estadístico ordenado $\left(X_{(1)}, \ldots, X_{(n)}\right)$ son suficientes para $\theta$\\
+3 Si $T=T\left(X_{1}, \cdots X_{n}\right)$ es suficiente para $\theta$ entonces cualquier biyección $S=S(T)$ también es suficiente para $\theta$\\
+4 Si $T=T\left(X_{1}, \cdots X_{n}\right)$ y $S=S\left(X_{1}, \cdots X_{n}\right)$ son dos estadísticos suficientes para $\theta$, entonces también es suficiente para $\theta$ el estadístico ( $T, S$ )
+
+\section*{Teorema de Factorización de Fisher (continuación)}
+$5 T=\bar{X}$ es suficiente para $\mu$ si $X \sim N\left(\mu, \sigma_{0}\right), \sigma_{0}$ conocida\\
+$6 T=\sum_{i=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}$ es suficiente para $\sigma$ si $X \sim N\left(\mu_{0}, \sigma\right), \mu_{0}$ conocida\\
+$7 T=\left(\sum_{i=1}^{n} X_{i}, \sum_{i=1}^{n} X_{i}^{2}\right)$ es suficiente para $\theta=(\mu, \sigma)$ si $X \sim N(\mu, \sigma), \mu$ y $\sigma$ desconocidas $\Rightarrow\left(\bar{X}, S_{n}^{2}\right)$ también es suficiente
+
+8 Los estadísticos $\left(X_{(1)}, X_{(n)}\right)$ y $X_{(n)}$ son suficientes para $\theta$ si $X \sim U(0, \theta)$\\
+9 El estadístico $\left(X_{(1)}, X_{(n)}\right)$ es suficiente para $\theta$ si $X \sim U\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)$
+
+\subsection*{Estadístico minimal suficiente}
+
+Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $A_{t}=\left\{\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n}: T\left(x_{1}, \ldots, x_{n}\right)=t\right\}$ (órbita)\\
+$K_{T}=\left\{A_{t}, t \in \mathbb{R}^{m}\right\}$ es una partición disjunta de $\chi^{n} \mathrm{y}$ se denomina partición inducida por el estadístico $T$
+
+Se dice que $K_{T}$ es suficiente sí y sólo si $T$ es suficiente\\
+Dados dos estadísticos $T=T\left(X_{1}, \cdots X_{n}\right)$ y $S=S\left(X_{1}, \cdots X_{n}\right), K_{S}$ es una subpartición de $K_{T}$, sí y sólo sí $\forall B \in K_{S}, \exists A \in K_{T}$ tal que $B \subset A$. En este caso, se dice que $K_{T}$ es una partición menos fina que $K_{S}$
+
+\begin{definición}[Estadístico Minimal Suficiente]
+\vspace{-\baselineskip}
+\vspace{-\baselineskip}
+\begin{enumerate}
+	\item $T=T\left(X_{1}, \cdots X_{n}\right)$ es minimal suficiente sí y sólo sí $K_{T}$ es suficiente y $\forall S=S\left(X_{1}, \cdots X_{n}\right)$ suficiente, $K_{S}$ es una subpartición de $K_{T}$\\
+	\item $T=T\left(X_{1}, \cdots X_{n}\right)$ es minimal suficiente sí y sólo sí $T$ es suficiente y $\forall S=S\left(X_{1}, \cdots X_{n}\right)$ suficiente, $\exists \psi$ tal que $\psi(S)=T$
+\end{enumerate}
+\end{definición}
+
+\begin{proof}
+	$\Rightarrow)$ Sea $S$ suficiente, si $S\left(x_{1}, \ldots, x_{n}\right)=S\left(y_{1}, \ldots, y_{n}\right)=s \Rightarrow$ $\left(x_{1}, \ldots, x_{n}\right),\left(y_{1}, \ldots, y_{n}\right) \in B_{s} \Rightarrow \exists A_{t} \in K_{T}$ tal que $B_{s} \subset A_{t} \Rightarrow$ $T\left(x_{1}, \ldots, x_{n}\right)=T\left(y_{1}, \ldots, y_{n}\right)=t \Rightarrow \exists \psi$ tal que $\psi(S)=T$ y $T$ es suficiente\\
+	$\Leftrightarrow)$ Sea $S$ suficiente y $\varphi$ tal que $\psi(S)=T \Rightarrow T$ es suficiente y si $S\left(x_{1}, \ldots, x_{n}\right)=S\left(y_{1}, \ldots, y_{n}\right)=s \Rightarrow T\left(x_{1}, \ldots, x_{n}\right)=$ $\psi\left(S\left(x_{1}, \ldots, x_{n}\right)\right)=\psi(s)=\psi\left(S\left(y_{1}, \ldots, y_{n}\right)\right)=T\left(y_{1}, \ldots, y_{n}\right) \Rightarrow$ $B_{s} \subset A_{\psi(s)} \Rightarrow K_{S}$ es una subpartición de $K_{T}$
+\end{proof}
+
+\section*{Teorema de caracterización de estadísticos}
+minimales suficientesDefinamos la siguiente relación de equivalencia $\left(x_{1}, \ldots, x_{n}\right) R\left(y_{1}, \ldots, y_{n}\right) \Leftrightarrow \frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}$ es independiente de $\theta$ Asignemos a cada clase del conjunto cociente un valor $t$ y definamos el estadístico $T=T\left(X_{1}, \ldots, X_{n}\right)$ tal que $\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}$ es independiente de $\theta$ cuando $T\left(x_{1}, \ldots, x_{n}\right)=t=T\left(y_{1}, \ldots, y_{n}\right)$. Entonces $T$ es minimal suficiente
+
+\section*{Demostración}
+Supongamos que $T$ es suficiente y demostremos que es minimal Sea $S=S\left(X_{1}, \ldots, X_{n}\right)$ suficiente y $\left(x_{1}, \ldots, x_{n}\right),\left(y_{1}, \ldots, y_{n}\right) \in B_{s} \Rightarrow$ $\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=\frac{h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}(s)}{h\left(y_{1}, \ldots, y_{n}\right) g_{\theta}(s)}=\frac{h\left(x_{1}, \ldots, x_{n}\right)}{h\left(y_{1}, \ldots, y_{n}\right)}$ es independiente de $\theta \Rightarrow \exists t$ tal que $\left(x_{1}, \ldots, x_{n}\right),\left(y_{1}, \ldots, y_{n}\right) \in A_{t} \Rightarrow K_{S}$ es una subpartición de $K_{T}$
+
+\section*{Teorema de caracterización de estadísticos minimales suficientes (continuación)}
+Demotremos ahora que $T$ es suficiente (caso discreto)\\
+Si $T\left(x_{1}, \ldots, x_{n}\right)=t, f_{\theta}\left(x_{1}, \ldots, x_{n} \mid t\right)=\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}(t)}=$\\
+$\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{\sum_{\left\{\left(y_{1}, \ldots, y_{n}\right): T\left(y_{1}, \ldots, y_{n}\right)=t\right\}} f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=\frac{1}{\sum_{\left(y_{1}, \ldots, y_{n}\right) \in A_{t}} \frac{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}}$ es independiente de $\theta \Rightarrow T$ es suficiente para $\theta$
+
+Ejercicio $\sum_{i=1}^{n} X_{i}$ es minimal suficiente para $\theta$ si $X \sim \operatorname{Bin}(1, \theta)$\\
+$f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\left.\prod_{i=1}^{n} \theta^{x_{i}}(1-\theta)^{1-x_{i}}\right|_{\{0,1\}}\left(x_{i}\right)=$\\
+$\theta^{\sum_{i=1}^{n} x_{i}}(1-\theta)^{n-\sum_{i=1}^{n=1} x_{i}} \prod_{i=1}^{n} I_{\{0,1\}}\left(x_{i}\right)$\\
+$\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=\left(\frac{\theta}{1-\theta}\right)^{\sum_{i=1}^{n} x_{i}-\sum_{i=1}^{n} y_{i}}$ es independiente de $\theta$ cuando\\
+$\sum_{i=1}^{n} x_{i}=\sum_{i=1}^{n} y_{i}$
+
+\subsection*{Familia exponencial $k$-paramétrica}
+
+\begin{definición}[Familia exponencial $k$-paramétrica]
+Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado ( $\left.\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
+
+La distribución de $X$ pertenece a la familia exponencial $k$-paramétrica sí y sólo sí
+\[f_{\theta}(x)=c(\theta) h(x) e^{\sum_{j=1}^{k} q_{j}(\theta) T_{j}(x)}\]
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) e^{\sum_{j=1}^{k} q_{j}(\theta) \sum_{i=1}^{n} T_{j}\left(x_{i}\right)}\]
+Entonces, $\left(\sum_{i=1}^{n} T_{1}\left(X_{i}\right), \ldots, \sum_{i=1}^{n} T_{k}\left(X_{i}\right)\right)$ es suficiente para $\theta$ (Teorema de factorización) y se le denomina estadístico natural
+\end{definición}
+
+\[X \sim N(\sigma, \mu) \quad f_\theta = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2\sigma^2}(x - \mu)^2}\]
+Como $(x- \mu)^2 = x^2 + \mu^2 -2x\mu$\\
+\[f_\theta = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2\sigma^2}x^2}e^{\frac{\mu}{\sigma^2}x}e^{-\frac{\mu^2}{2\sigma^2}}\]
+
+\section*{Familia exponencial $k$-paramétrica (continuación)}
+Teorema 1 Sean $\theta_{1} \ldots, \theta_{k} \in \Theta \subset \mathbb{R}^{\ell}$ tales que los vectores $c_{r}=\left(q_{1}\left(\theta_{r}\right), \ldots, q_{k}\left(\theta_{r}\right)\right), r=1, \ldots, k$ son linealmente independientes, entonces el estadístico natural suficiente de la familia exponencial $k$-paramétrica es minimal
+
+\section*{Demostración}
+$\frac{f_{f}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=\frac{c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) \sum^{\sum_{j=1}^{k} q_{j}(\theta) \sum_{i=1}^{n} T_{j}\left(x_{i}\right)}}{c(\theta)^{n} \prod_{i=1}^{n} h\left(y_{i}\right) e^{\sum_{j=1}^{k} q_{j}(\theta) \sum_{i=1}^{n} T_{j}\left(y_{i}\right)}}$\\
+$=\frac{\prod_{i=1}^{n} h\left(x_{i}\right)}{\prod_{i=1}^{i} h\left(y_{i}\right)} e^{\sum_{j=1}^{k} q_{j}(\theta)\left(\sum_{i=1}^{n} T_{j}\left(x_{i}\right)-\sum_{i=1}^{n} T_{j}\left(y_{i}\right)\right)}$ es independiente de $\theta$ sí $y$ sólo sí $\sum_{j=1}^{k} q_{j}(\theta)\left(\sum_{i=1}^{n} T_{j}\left(x_{i}\right)-\sum_{i=1}^{n} T_{j}\left(y_{i}\right)\right)=0$. En este caso, el sistema homogéneo $\sum_{j=1}^{k} q_{j}\left(\theta_{r}\right)\left(\sum_{i=1}^{n} T_{j}\left(x_{i}\right)-\sum_{i=1}^{n} T_{j}\left(y_{i}\right)\right)=0$, $r=1, \ldots, k$, sólo admite la solución $\sum_{i=1}^{n} T_{j}\left(x_{i}\right)-\sum_{i=1}^{n} T_{j}\left(y_{i}\right)=0$, $r=1, \ldots, k$. Entonces $\left(\sum_{i=1}^{n} T_{1}\left(X_{i}\right), \ldots, \sum_{i=1}^{n} T_{k}\left(X_{i}\right)\right)$ es minimal (Teorema de caracterización de estadísticos minimales suficientes)
+
+\section*{Familia exponencial $k$-paramétrica (continuación)}
+Ejercicio $T=\left(\sum_{i=1}^{n} X_{i}, \sum_{i=1}^{n} X_{i}^{2}\right)$ es minimal suficiente para $\theta=(\mu, \sigma)$ si $X \sim N(\mu, \sigma), \mu$ y $\sigma$ desconocidas $\Rightarrow\left(\bar{X}, S_{n}^{2}\right)$ también es minimal suficiente\\
+$N(\mu, \sigma)$ pertenece a la familia exponencial $k$-paramétrica con $k=2$ $f_{\theta}(x)=\frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2 \sigma^{2}}(x-\mu)^{2}}=c(\theta) h(x) e^{-\frac{1}{2 \sigma^{2}} x^{2}+\frac{\mu}{\sigma^{2}} x}$\\
+$\Rightarrow T=\left(\sum_{i=1}^{n} X_{i}, \sum_{i=1}^{n} X_{i}^{2}\right)$ es natural suficiente para $\theta$\\
+Además, $q_{1}(\theta)=\frac{\mu}{\sigma^{2}}$ y $q_{2}(\theta)=-\frac{1}{2 \sigma^{2}}$ y tomando $\theta_{1}=(0,1)$ y $\theta_{2}=(1,1)$, los vectores $c_{1}=\left(q_{1}\left(\theta_{1}\right), q_{2}\left(\theta_{1}\right)\right)=\left(0,-\frac{1}{2}\right)$ y $c_{2}=\left(q_{1}\left(\theta_{2}\right), q_{2}\left(\theta_{2}\right)\right)=\left(1,-\frac{1}{2}\right)$ son linealmente independientes $\Rightarrow T$ es minimal
+
+\section*{Familia exponencial $k$-paramétrica (continuación)}
+$S_{n}^{2}=\frac{n}{n-1}\left(\sum_{i=1}^{n} X_{i}^{2}-n \bar{X}^{2}\right)$\\
+Denotemos por $(W, Z)=\left(\sum_{i=1}^{n} X_{i}, \sum_{i=1}^{n} X_{i}^{2}\right)$ y\\
+$(F, G)=\left(\bar{X}, S_{n}^{2}\right)=\left(\frac{w}{n}, \frac{n}{n-1}\left(Z-\frac{W^{2}}{n}\right)\right)$\\
+Transformación inversa ( $W=n F, Z=\frac{n-1}{n} G+n F^{2}$ )\\
+$J=\left|\begin{array}{ll}n & 0 \\ 2 n F & \frac{n-1}{n}\end{array}\right|=n-1 \neq 0$ si $n \geq 2$\\
+Por lo tanto existe una transformación biyectiva $\psi_{1}$ tal que $(F, G)=\psi_{1}(W, Z)$ y como $(W, Z)$ es minimal suficiente, $\forall S$ suficiente, existe una transformación $\psi_{2}$ tal que $\psi_{2}(S)=(W, Z)$. Por lo tanto, $\psi_{1} \psi_{2}(S)=\psi_{1}(W, Z)=(F, G)$ y $(F, G)$ es minimal suficiente
+
+\section*{Estadísticos Ancilarios y Completos}
+Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado ( $\left.\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
+
+El estadístico $U=U\left(X_{1}, \ldots, X_{n}\right)$ es ancilario para $\theta$ si su distribución en el muestreo es independiente de $\theta$
+
+Ejercicio $\mathrm{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s.( $n$ ) de $X \sim N\left(\mu, \sigma_{0}\right), \sigma_{0}$ conocida, entonces $U\left(X_{1}, \ldots, X_{n}\right)=X_{1}-X_{2} \sim N\left(0, \sigma_{0} \sqrt{2}\right)$ es un estadístico ancilario para $\mu$
+
+La familia de distribuciones de probabilidad $\left\{G_{\theta}\left(y_{1}, \ldots, y_{m}\right)\right\}_{\theta \in \Theta \subset \mathbb{R}^{e}}$ es completa sí y sólo sí para cualquier función real $h\left(y_{1}, \ldots, y_{m}\right)$ con $h\left(Y_{1}, \ldots, Y_{m}\right)$ medible y tal que $E_{\theta}\left[h\left(Y_{1}, \ldots, Y_{m}\right)\right]=0, \forall \theta \in \Theta$, se sigue que $h\left(Y_{1}, \ldots, Y_{m}\right) \stackrel{C S}{=} 0$
+
+\section*{Estadísticos Ancilarios y Completos (continuación)}
+Ejercicio La familia de distribuciones de probabilidad $\operatorname{Bin}(n, \theta)$ es completa\\
+Sea $Y \sim \operatorname{Bin}(n, \theta)$,\\
+$E_{\theta}[h(Y)]=\sum_{i=1}^{n} h(i)\binom{n}{i} \theta^{i}(1-\theta)^{n-i}=$\\
+$(1-\theta)^{n} \sum_{i=1}^{n} h(i)\binom{n}{i}\left(\frac{\theta}{1-\theta}\right)^{i}=0, \forall \theta \in(0,1)$,\\
+que es un polinomio de grado $n$ en $\frac{\theta}{1-\theta} \in(0, \infty)$, luego para que sea nulo, ha de ser $h(i)=0, \forall i=1, \ldots, n$. Por lo tanto $h(Y) \stackrel{c s}{=} 0$
+
+Ejercicio La familia de distribuciones de probabilidad $N(0, \theta)$ no es completa\\
+Sea $Y \sim N(0, \theta)$ y $h(Y)=Y$, entonces $E_{\theta}[h(Y)]=E_{\theta}[Y]=0$ $\forall \theta>0$, sin embargo $h(Y)=Y$ no es idénticamente nula c.s.
+
+\section*{Estadísticos Ancilarios y Completos (continuación)}
+El estadístico $T=T\left(X_{1}, \ldots, X_{n}\right)$ es completo sí y sólo sí su distribución en el muestreo es una familia de distribuciones de probabilidad completa
+
+Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\sum_{i=1}^{n} X_{i} \sim \operatorname{Bin}(n, \theta)$ es completo\\
+Ejercicio Si $X \sim N(\theta, \theta), T=\left(\sum_{i=1}^{n} X_{i}, \sum_{i=1}^{n} X_{i}^{2}\right)$ no es completo Indicación: $h(T)=\left(2\left(\sum_{i=1}^{n} X_{i}\right)^{2}-(n+1) \sum_{i=1}^{n} X_{i}^{2}\right)$
+
+Ejercicio Si $S=S\left(X_{1}, \ldots, X_{n}\right)$ es suficiente y completo, entonces es minimal suficiente Indicación: Demostrar que si $T=T\left(X_{1}, \ldots, X_{n}\right)$ es minimal suficiente, entonces $S \stackrel{\text { cs }}{=} E[S \mid T]$ y por lo tanto $S$ es función de $T$
+
+\section*{Estadísticos Ancilarios y Completos (continuación)}
+Teorema 2 El estadístico natural $\left(\sum_{i=1}^{n} T_{1}\left(X_{i}\right), \ldots, \sum_{i=1}^{n} T_{k}\left(X_{i}\right)\right)$ de la familia de distribuciones exponencial $k$-paramétrica, $\left\{f_{\theta}(x)=c(\theta) h(x) e^{\sum_{j=1}^{k} q_{j}(\theta) T_{j}(x)}\right\}_{\theta \in \Theta \subset \mathbb{R}^{e}}$, es completo si la imagen de la aplicación $q=\left(q_{1}(\theta), \ldots, q_{k}(\theta)\right): \Theta \longrightarrow \mathbb{R}^{k}$ contiene un rectángulo abierto de $\mathbb{R}^{k}$
+
+Observación Si $X \sim N(\theta, \theta), q=\left(q_{1}(\theta), q_{2}(\theta)\right)=\left(\frac{1}{\theta},-\frac{1}{2 \theta^{2}}\right) \Rightarrow$ $q_{2}(\theta)=-\frac{1}{2} q_{1}(\theta)^{2}, \forall \theta>0$, que es una rama de parábola, y que por lo tanto no contiene ningún abierto de $\mathbb{R}^{2}$
+
+\section*{Estadísticos Ancilarios y Completos (continuación)}
+Teorema de Basu Si $T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente y completo y $U=U\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico ancilario, entonces $T$ y $U$ son independientes
+
+Demostración $T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente $\Rightarrow$ $f\left(x_{1}, \ldots, x_{n} \mid t\right)$ es independiente de $\theta \Rightarrow$ $f(u \mid t)=\sum_{\left(x_{1}, \ldots, x_{n}\right): U\left(x_{1}, \ldots, x_{n}\right)=u} f\left(x_{1}, \ldots, x_{n} \mid t\right)$ es independiente de $\theta$ Además, como $T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico completo y la función $h(t)=f(u \mid t)-f(u)$ tiene media $0, \forall \theta$, respecto a la distribución de $T \sim f_{\theta}(t) \Rightarrow f(u \mid t) \stackrel{c s}{=} f(u)$
+
+Ejercicio Si $X \sim U(0, \theta)$, entonces $X_{(n)}$ y $\frac{X_{(1)}}{X_{(n)}}$ son independientes
+
+\section*{Principios de reducción de datos}
+Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado $\left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
+
+\section*{Principio de verosimilitud}
+La idea es considerar la distribución de probabilidad de la muestra, no como función de $\left(x_{1}, \ldots, x_{n}\right)$ sino como función del parámetro $\theta$ desconocido
+
+Supuesto que se ha observado un valor muestral $\left(x_{1}, \ldots, x_{n}\right)$, la función de $\theta$ definida mediante $L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=f\left(x_{1}, \ldots, x_{n} \mid \theta\right)$, se llama función de verosimilitud, siendo $f\left(x_{1}, \ldots, x_{n} \mid \theta\right)$ la función de densidad o de masa de la muestra
+
+\section*{Principios de reducción de datos (continuación)}
+Si $\mathbf{x}=\left(x_{1}, \ldots, x_{n}\right)$ e $\mathbf{y}=\left(y_{1}, \ldots, y_{m}\right)$ son dos puntos muestrales, tales que existe una constante $c(\mathbf{x}, \mathbf{y})$ verificando que $L_{1}(\theta \mid \mathbf{x})=c(\mathbf{x}, \mathbf{y}) L_{2}(\theta \mid \mathbf{y})$, entonces la evidencia estadística que suministran ambos puntos debe ser idéntica
+
+Dos aspectos son importantes en esta definición. El primero es que la evidencia estadística se toma en un sentido amplio y no se define, así puede ser ésta, un estadístico muestral, un estadístico suficiente, un intervalo de confianza, etc. El segundo es que las dos funciones de verosimilitud no tienen por qué estar obligatoriamente definidas en el mismo espacio muestral. Realmente la evidencia estadística depende del experimento bajo estudio $E$ y del punto observado y debe expresarse como $E v(E, \mathbf{x}), E=\left(\chi^{n}, f(\mathbf{x} \mid \theta)\right)_{\theta \in \Theta \subset \mathbb{R}^{e}}$
+
+\section*{Principios de reducción de datos (continuación)}
+Ejercicio $\operatorname{Ev}\left(E_{1}, t\right)=\operatorname{Ev}\left(E_{2}, n\right)$, si\\
+$E_{1}=(\{0,1, \ldots, n\}, \operatorname{Bin}(n, \theta))_{\theta \in(0,1)}, f(t \mid \theta)=\binom{n}{t} \theta^{t}(1-\theta)^{n-t}$\\
+$E_{2}=(\mathbb{N}, B N(t, \theta))_{\theta \in(0,1)}, g(n \mid \theta)=\binom{n-1}{t-1} \theta^{t}(1-\theta)^{n-t}$\\
+Ejercicio Los procedimientos bayesianos, por estar basados en la distribución de probabilidad final o a posteriori, satisfacen el principio de verosimilitud, ya que si $\mathbf{x}=\left(x_{1}, \ldots, x_{n}\right)$ e $\mathbf{y}=\left(y_{1}, \ldots, y_{m}\right)$ satisfacen el principio de verosimilitud, entonces $\pi_{1}(\theta \mid \mathbf{x})=\pi_{2}(\theta \mid \mathbf{y})$
+
+\section*{Principio de suficiencia}
+En un experimento $E=\left(\chi^{n}, f(\mathbf{x} \mid \theta)\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$, si $T=T(\mathbf{X})$ es un estadístico suficiente para $\theta$ y se tiene que $T(\mathbf{x})=T(\mathbf{y})$, entonces $E v(E, \mathbf{x})=E v(E, \mathbf{y})$
+
+\section*{Principios de reducción de datos (continuación)}
+\section*{Principio de condicionalidad}
+Dados dos experimentos $E_{1}=\left(\chi^{n}, f_{1}(\mathbf{x} \mid \theta)\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}} y$ $E_{2}=\left(\chi^{m}, f_{2}(\mathbf{y} \mid \theta)\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, y$ el lanzamiento de una moneda al aire representado por la v.a. $J$ tal que $P(J=1)=P(J=2)=\frac{1}{2}$, si $E=\left(\chi^{n} \cup \chi^{m} \times\{1,2\}, f(\mathbf{x}, j \mid \theta)\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$ es el experimento mixto representado por la v.a. $(Z, J)$ tal que $Z=\left\{\begin{array}{ll}X & \text { si } J=1 \\ Y & \text { si } J=2\end{array}, f(\mathbf{x}, 1 \mid \theta)=\frac{1}{2} f_{1}(\mathbf{x} \mid \theta), f(\mathbf{y}, 2 \mid \theta)=\frac{1}{2} f_{2}(\mathbf{y} \mid \theta)\right.$, entonces $\operatorname{Ev}(E,(\mathbf{x}, 1))=\operatorname{Ev}\left(E_{1}, \mathbf{x}\right)$ y $\operatorname{Ev}(E,(\mathbf{y}, 1))=\operatorname{Ev}\left(E_{2}, \mathbf{y}\right)$
+
+El principio de condicionalidad dice algo bastante intuitivo: mecanismos aleatorios que no dependan del valor a determinar $\theta$, no proporcionan evidencia sobre él (aleatorización en los contrastes de hipótesis para conseguir un test de tamaño determinado)
+
+\section*{Teorema de Birnbaum}
+\section*{El principio de verosimilitud es equivalente a los principios de suficiencia y condicionalidad}
+Observación El Teorema de Birnbaum es importante desde el punto de vista de los fundamentos de la Estadística. Muchos de los procedimientos estadísticos usuales violan el principio de verosimilitud, en concreto los procedimientos que se basan en la distribución en el muestreo de un estadístico pueden hacerlo. Por ejemplo, si se pasa de un modelo binomial a uno binomial negativo, la función de masa cambia y por lo tanto los IC pueden cambiar. Sin embargo, a la luz del teorema, esto significa contradecir el principio de suficiencia, que es compartido por toda aproximación a la inferencia, o el principio de condicionalidad, que parece bastante aséptico. El teorema de Birnbaum constituye uno de los motivos por los que el principio de verosimilitud no es universalmente aceptado, a pesar de que como se verá, la función de verosimilitud posee muchas buenas propiedades estadísticas
+
+\section*{Propiedades de los estimadores}
+Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado $\left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
+
+Un estimador del parámetro $\theta$ es un estadístico\\
+$T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ que se utiliza para determinar el valor desconocido $\theta$
+
+\section*{Estimadores centrados}
+$T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ es un estimador centrado para $\theta$ cuando $E_{\theta}[T]=\theta$. En general, se llama sesgo de un estimador a la diferencia $b(T, \theta)=E_{\theta}[T]-\theta$
+
+\section*{Propiedades de los estimadores (continuación)}
+Ejercicio ( $\bar{X}, S^{2}$ ) es un estimador centrado de $\theta=\left(\mu, \sigma^{2}\right)$\\
+Ejercicio $\sigma_{n}^{2}=b_{2}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}$ es un estimador centrado de $h(\theta)=\frac{n-1}{n} \sigma^{2}$ y $b\left(\sigma_{n}^{2}, \sigma^{2}\right)=-\frac{\sigma^{2}}{n}$
+
+\section*{Observaciones}
+ (1) Puede ser que no exista un estimador centrado de $\theta$\\
+(2) Si $T$ es un estimador centrado para $\theta$, en general $h(T)$ no tiene por qué ser centrado para $h(\theta)$\\
+(0) A pesar de que exista un estimador centrado para $\theta$, puede ser que no tenga sentido\\
+(- A pesar de que exista un estimador centrado para $\theta$, puede se que su varianza sea muy grande y no sea adecuado para la estimación
+
+\section*{Propiedades de los estimadores (continuación)}
+Ejercicio Para una m.a.s. $(\mathrm{n}=1)$ de $X \sim \operatorname{Bin}(1, \theta), T(X)=X^{2}$ no es un estimador centrado de $\theta^{2}$
+
+Ejercicio Para una m.a.s. $(\mathrm{n}=1)$ de $X \sim \operatorname{Bin}(1, \theta)$, no existe un estimador centrado de $\theta^{2}$
+
+Ejercicio Para una m.a.s. $(\mathrm{n}=1)$ de $X \sim \operatorname{Poisson}(\theta), T(X)=(-2)^{X}$ es centrado para $h(\theta)=e^{-3 \theta}$ y $V_{\theta}(T)=e^{4 \theta}-e^{-6 \theta} \underset{\theta \rightarrow \infty}{\longrightarrow} \infty$, pero no es un estimador de $h(\theta)$
+
+Ejercicio $\mathrm{Si} T_{j}, j=1,2, \ldots$ es una sucesión de estimadores centrados para $\theta$, entonces $\bar{T}_{k}=\frac{1}{k} \sum_{j=1}^{k} T_{j}$ es un estimador centrado para $\theta$\\
+Si además, los estimadores $T_{j}$ son independientes y $V_{\theta}\left(T_{j}\right)<\sigma^{2}<\infty, j=1,2, \ldots$, entonces $V_{\theta}\left(\bar{T}_{k}\right) \leq \frac{\sigma^{2}}{k} \underset{k \rightarrow \infty}{\longrightarrow} 0 \Rightarrow$ $\bar{T}_{k} \xrightarrow[k \rightarrow \infty]{P} \theta$ (Teorema de Markov)
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Estimadores consistentes}
+Una sucesión de estimadores $T_{n}=T\left(X_{1}, \ldots, X_{n}\right)$ es consistente para el parámetro $\theta$, si $T_{n} \xrightarrow[n \rightarrow \infty]{P} \theta, \forall \theta \in \Theta$, es decir si $\forall \varepsilon>0$ se tiene que $\lim _{n \rightarrow \infty} P_{\theta}\left(\left|T_{n}-\theta\right| \leq \varepsilon\right)=1, \forall \theta \in \Theta$
+
+Proposición 1 (condición suficiente) Si $T_{n}=T\left(X_{1}, \ldots, X_{n}\right)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, E_{\theta}\left[T_{n}\right] \underset{n \rightarrow \infty}{\longrightarrow} \theta$, $V_{\theta}\left(T_{n}\right) \underset{n \rightarrow \infty}{\longrightarrow} 0$, entonces $T_{n}$ es consistente para $\theta$
+
+Demostración $E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]=V_{\theta}\left(T_{n}\right)+b\left(T_{n}, \theta\right)^{2} \underset{n \rightarrow \infty}{\longrightarrow} 0, \forall \theta \in \Theta$ entonces $T_{n} \xrightarrow[n \rightarrow \infty]{\text { m.c. }} \theta, \forall \theta \in \Theta$
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Estimadores bayesianos}
+En la aproximación bayesiana $\theta$ es una v.a. con distribución inicial o a priori dada por una función de masa o de densidad $\pi(\theta)$. Cuando se observa una muestra se calcula la distribución final o a posteriori,
+
+$$
+	\begin{gathered}
+		\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{m\left(x_{1}, \ldots, x_{n}\right)} \\
+		m\left(x_{1}, \ldots, x_{n}\right)=\int_{\Theta} \pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right) d \theta
+	\end{gathered}
+$$
+
+donde $m$ se llama distribución predictiva
+
+Observación La idea es que antes de tomar la muestra, la información sobre $\theta$ viene dada por $\pi(\theta)$ y tras la experimentación se debe utilizar $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)$. El estimador bayesiano de $\theta$ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Ejercicio (Familias conjugadas)}
+Si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim \operatorname{Bin}(1, \theta)$ y $\theta \sim U(0,1)$, entonces $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) \sim \operatorname{Beta}\left(\sum_{i=1}^{n} x_{i}+1, n-\sum_{i=1}^{n} x_{i}+1\right)$
+
+En general, $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) \sim \operatorname{Beta}\left(\sum_{i=1}^{n} x_{i}+\alpha, n-\sum_{i=1}^{n} x_{i}+\beta\right)$ si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim \operatorname{Bin}(1, \theta)$ y $\theta \sim \operatorname{Beta}(\alpha, \beta)$
+
+En este caso, se dice que la familia de distribuciones iniciales $\operatorname{Beta}(\alpha, \beta)$ es conjugada de la familia de distribuciones de probabilidad $X \sim \operatorname{Bin}(1, \theta)$
+
+Además, $E\left[\theta \mid x_{1}, \ldots, x_{n}\right]=\frac{\sum_{i=1}^{n} x_{i}+\alpha}{n+\alpha+\beta}=\frac{n}{n+\alpha+\beta} \bar{x}+\frac{\alpha+\beta}{n+\alpha+\beta} \frac{\alpha}{\alpha+\beta}$
+
+\section*{Propiedades de los estimadores (continuación)}
+Ejercicio $\mathrm{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim N(\mu, \sigma)$ con $\sigma$ conocida y $\mu \sim N\left(\mu_{0}, \sigma_{0}\right)$, entonces $\pi\left(\mu \mid x_{1}, \ldots, x_{n}\right) \sim N\left(\mu_{1}, \sigma_{1}\right)$,
+
+$$
+	\begin{gathered}
+		\mu_{1}=\frac{\frac{\mu_{0}}{\sigma_{0}^{2}}+\frac{\bar{x}}{\sigma^{2}}}{\frac{1}{\sigma_{0}^{2}}+\frac{\frac{1}{\sigma^{2}}}{\frac{\sigma^{n}}{n}}}=\frac{\sigma^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \mu_{0}+\frac{n \sigma_{0}^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \bar{x} \\
+		\sigma_{1}=\sqrt{\frac{1}{\frac{1}{\sigma_{0}^{2}}+\frac{1}{\frac{\sigma^{2}}{n}}}}
+	\end{gathered}
+$$
+
+\section*{Propiedades de los estimadores (continuación)}
+\section*{Estadístico suficiente bayesiano}
+$T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente bayesiano para $\theta$ (para la familia de funciones de distribución $\left.\left\{F_{\theta}\right\}_{\theta \in \Theta \subset \mathbb{R}^{\ell}}\right)$, respecto a la distribución inicial $\pi(\theta)$ sí $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\pi(\theta \mid t)$, con $T\left(x_{1}, \ldots, x_{n}\right)=t$Teorema $3 T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ sí y sólo sí $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
+
+\section*{Demostración}
+$$
+	\begin{aligned}
+		 & \Rightarrow \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{\int_{\Theta} \pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right) d \theta}=\frac{\pi(\theta) g(t \mid \theta) f\left(x_{1}, \ldots, x_{n} \mid t, \theta\right)}{\int_{\Theta} \pi(\theta) g(t \mid \theta) f\left(x_{1}, \ldots, x_{n} t t, \theta\right) d \theta}= \\
+		 & \frac{\pi(\theta) g(t \mid \theta)}{\int_{\Theta} \pi(\theta) g(t \mid \theta) d \theta}=\pi(\theta \mid t)                                                                                                                                                                                                                                                                                                  \\
+		 & \Leftrightarrow) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)=\frac{\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) m\left(x_{1}, \ldots, x_{n}\right)}{\pi(\theta)}=\frac{\pi(\theta \mid t)}{\pi(\theta)} m\left(x_{1}, \ldots, x_{n}\right)
+	\end{aligned}
+$$
+
+\section*{Criterios de comparación de estimadores}
+\section*{Error cuadrático medio}
+Dado un estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$ de $\theta$, se denomina error cuadrático medio $\operatorname{ECM}(T, \theta)=E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]$
+
+Ejercicio $\operatorname{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s.( $n$ ) de $X \sim N(\mu, \sigma)$, entonces
+
+$$
+	\begin{gathered}
+		E C M(\bar{X}, \mu)=\frac{\sigma^{2}}{n} \\
+		E C M\left(S^{2}, \sigma^{2}\right)=V_{\theta}\left(S^{2}\right)=\frac{2 \sigma^{4}}{n-1} \\
+		E C M\left(\sigma_{n}^{2}, \sigma^{2}\right)=V_{\theta}\left(\sigma_{n}^{2}\right)+b\left(\sigma_{n}^{2}, \sigma\right)=\frac{2 n-1}{n^{2}} \sigma^{4}<\frac{2 \sigma^{4}}{n-1}
+	\end{gathered}
+$$
+
+\section*{Criterios de comparación de estimadores}
+\section*{Pérdida final esperada}
+Dado el estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ en la que se incurre por estimar $\theta$ mediante $T\left(x_{1}, \ldots, x_{n}\right)=t$, se define la pérdida final esperada $\circ$ riesgo a posteriori,
+
+$$
+	\operatorname{PFE}(t)=E\left[\mathcal{L}(t, \theta) \mid x_{1}, \ldots, x_{n}\right]=\int_{\Theta} \mathcal{L}(\theta, t) \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) d \theta
+$$
+
+Si $\mathcal{L}(\theta, t)=(\theta-t)^{2}$, entonces la pérdida final esperada se minimiza en $t^{*}=E\left[\theta \mid x_{1}, \ldots, x_{n}\right]$ (estimador bayesiano) y $\operatorname{PFE}(t)=V\left(\theta \mid x_{1}, \ldots, x_{n}\right)$
+
+Si $\mathcal{L}(\theta, t)=|\theta-t|$, entonces la pérdida final esperada se minimiza en la mediana de la distribución final (estimador bayesiano)
+
+\section*{Estimadores centrados de mínima varianza}
+$T^{*}=T^{*}\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado uniformemente de mínima varianza (ECUMV) para $\theta$ sí y sólo sí $E_{\theta}\left[T^{*}\right]=\theta$ y para cualquier otro estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}[T]=\theta$, se tiene que $V_{\theta}\left(T^{*}\right) \leq V_{\theta}(T), \forall \theta \in \Theta$
+
+Proposición 1 Si existe un ECUMV para $\theta$, entonces es único c.s.
+
+\section*{Demostración}
+Sean $T_{1}$ y $T_{2}$ ECUMV para $\theta$ y demostremos que entonces $T_{1} \stackrel{\text { c.s. }}{=} T_{2}$ Sea $T=\frac{T_{1}+T_{2}}{2}$. Entonces, $E_{\theta}[T]=\theta$ y $V_{\theta}(T) \leq V_{\theta}\left(T_{1}\right)$\\
+En efecto, $V_{\theta}(T)=\frac{1}{4}\left(V_{\theta}\left(T_{1}\right)+V_{\theta}\left(T_{2}\right)+2 \operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)\right)=\frac{V_{\theta}\left(T_{1}\right)}{2}+\frac{\operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)}{2} \leq V_{\theta}\left(T_{1}\right)$\\
+$1 \geq \rho_{\theta}\left(T_{1}, T_{2}\right)=\frac{\operatorname{Cov}\left(T_{1}, T_{2}\right)}{\sqrt{V_{\theta}\left(T_{1}\right) V_{\theta}\left(T_{2}\right)}}=\frac{\operatorname{Cov}\left(T_{1}, T_{2}\right)}{V_{\theta}\left(T_{1}\right)} \Rightarrow \operatorname{Cov}\left(T_{1}, T_{2}\right) \leq V_{\theta}\left(T_{1}\right)$\\
+Por lo tanto, $V_{\theta}(T)=V_{\theta}\left(T_{1}\right)=\operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)=$ y $\rho_{\theta}\left(T_{1}, T_{2}\right)=1 \Rightarrow$ $T_{1} \stackrel{\text { c.s. }}{=} a+b T_{2} \Rightarrow \theta=a+b \theta \Rightarrow a=0$ y $b=1$
+
+\section*{Estimadores centrados de mínima varianza (continuación)}
+Teorema 4 El ECUMV es función simétrica de las observaciones\\
+Ejercicio Para muestras de tamaño $n=2, T_{1}=\frac{X_{1}}{X_{2}}$ no puede puede ser ECUMV para $\theta$\\
+Si lo fuera, llamando $T_{2}=\frac{X_{2}}{X_{1}}$, se tendría $E_{\theta}\left[T_{2}\right]=E_{\theta}\left[T_{1}\right]$ y\\
+$V_{\theta}\left(T_{2}\right)=V_{\theta}\left(T_{1}\right)$ y el estimador $T=\frac{T_{1}+T_{2}}{2}=\frac{x_{1}^{2}+X_{2}^{2}}{X_{1} X_{2}}$ sería tal que $V_{\theta}(T)<V_{\theta}\left(T_{1}\right)$ (contradicción)\\
+En efecto, si \( V_{\theta}(T) = V_{\theta}(T_1) \), entonces \( T \overset{c.s.}{\equiv} T_1 \) \textbf{(contradicción)}\\
+En general si $T$ es centrado y consideramos las $n$ ! permutaciones posibles de la muestra, podemos definir los estimadores centrados $T_{j}$ al evaluar $T$ en la permutación j-ésima. Entonces, el estimador $\bar{T}=\frac{1}{n!} \sum_{j=1}^{n!} T_{j}$ es tal que $V_{\theta}(\bar{T}) \leq V_{\theta}\left(T_{j}\right), j=1, \ldots, n!$, siendo la desigualdad estricta si $T$ no es simétrico
+
+\section*{Estimadores centrados de mínima varianza}
+ (continuación)Teorema (caracterización del ECUMV)\\
+$T_{1}=T_{1}\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}\left[T_{1}\right]=\theta$ y $V_{\theta}\left(T_{1}\right)<\infty$ es el ECUMV para $\theta$ si y solo sí, cualquiera que sea $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}\left[T_{2}\right]=0$ y $V_{\theta}\left(T_{2}\right)<\infty, \forall \theta \in \Theta$, se tiene que $E_{\theta}\left[T_{1} T_{2}\right]=0$, $\forall \theta \in \Theta$
+
+\section*{Corolario 1}
+Si $T_{1}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ y $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ son ECUMV para $h_{1}(\theta)$ y $h_{2}(\theta)$ respectivamente, entonces $b_{1} T_{1}+b_{2} T_{2}$ es el ECUMV para $b_{1} h_{1}(\theta)+b_{2} h_{2}(\theta)$
+
+\section*{Estimadores centrados de mínima varianza (continuación)}
+Teorema de Rao-Blackwell $\mathrm{Si} T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado para $\theta$ con varianza finita y $S=S\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente, entonces $g(S)=E[T \mid S]$ es un estimador centrado para $\theta$ con varianza finita tal que $V_{\theta}(g(S)) \leq V_{\theta}(T)$
+
+\section*{Demostración}
+Como $S$ es suficiente, $g(S)=E[T \mid S]$ no depende de $\theta$ y es un estadístico. Además, $E_{\theta}[g(S)]=E_{\theta}[E[T \mid S]]=E_{\theta}[T]=\theta$ y\\
+$V_{\theta}(T)=E_{\theta}\left[(T-\theta)^{2}\right]=E_{\theta}\left[(T-g(S)+g(S)-\theta)^{2}\right]=$ $E_{\theta}\left[(T-g(S))^{2}\right]+E_{\theta}\left[(g(S)-\theta)^{2}\right]+2 E_{\theta}[(T-g(S))(g(S)-\theta)] \geq$ $V_{\theta}(g(S))$
+
+En efecto, $E_{\theta}[(T-g(S))(g(S)-\theta)]=\iint(t-g(s))(g(s)-\theta) d F_{\theta}(t, s)=\int(g(s)-\theta) \int(t-g(s)) d F(t \mid s) d F_{\theta}(s)=0$
+
+\section*{Estimadores centrados de mínima varianza (continuación)}
+Teorema de Lehmann-Schefeé Si $S=S\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente y completo para $\theta$ y $T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado para $\theta$ tal que $T=h(S)$, entonces $T$ es ECUMV para $\theta$
+
+\section*{Demostración}
+Como $S$ es suficiente y $T$ es centrado para $\theta, g(S)=E[T \mid S]$ es centrado para $\theta$ y $V_{\theta}(g(S)) \leq V_{\theta}(T)$. Además, para cualquier otro estimador $T_{1}$ centrado para $\theta, g_{1}(S)=E\left[T_{1} \mid S\right]$ es centrado para $\theta$ y $V_{\theta}\left(g_{1}(S)\right) \leq V_{\theta}\left(T_{1}\right)$. Por lo tanto, al ser $T$ completo y $E_{\theta}\left[g(S)-g_{1}(S)\right]=\theta-\theta=0, \forall \theta \in \Theta$, se tiene que $g(S) \stackrel{\text { c.s. }}{=} g_{1}(S)$. En particular, para $T_{1}=T=h(S), g_{1}(S)=E[h(S) \mid S]=h(S)=T$, y $V_{\theta}(T) \leq V_{\theta}\left(T_{1}\right)$, cualquiera que sea $T_{1}$ centrado para $\theta$
+
+\section*{Estimadores centrados de mínima varianza}
+ (continuación)Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\sum_{i=1}^{n} X_{i}$ es suficiente y completo, y $\bar{X}=h(T)$ es el ECUMV para $\theta$
+
+Ejercicio Si $X \sim$ Poisson $(\theta)$, encontrar el ECUMV para $d(\theta)=e^{-2 \theta}$ basado en una m.a.s.( $n$ )\\
+Indicación: $T=T\left(X_{1}, \ldots, X_{n}\right)=\left\{\begin{array}{ll}1 & \text { si } X_{1}+X_{2}=0 \\ 0 & \text { resto }\end{array}\right.$ es centrado para $d(\theta)=e^{-2 \theta}$ y $S=\sum_{i=1}^{n} X_{i}$ es suficiente y completo
+
+\section*{Cota para la varianza de un estimador}
+Consideremos $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}}$ modelo estadístico uniparamétrico contínuo (o discreto) y sea ( $X_{1}, \cdots X_{n}$ ) muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$ siendo $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$ su función de densidad (o de masa). Supongamos que se verifican las siguientes condiciones de regularidad:\\
+(1) $\Theta$ es un intervalo abierto de $\mathbb{R}$\\
+(2) $\operatorname{Sop}\left(f_{\theta}\right)=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: f_{\theta}\left(x_{1}, \cdots, x_{n}\right)>0\right\}$ no depende de $\theta$
+
+\begin{itemize}
+	\item $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$ y $\forall \theta \in \Theta, \exists \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$\\
+	      (-) $\int_{\chi^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=0$\\
+	      (0) $I_{n}(\theta)=E\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]<\infty($ cantidad de información de Fisher)
+\end{itemize}
+
+\section*{Cota para la varianza de un estimador}
+ (continuación)Teorema (Cota de Fréchet-Cramér-Rao) Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, E_{\theta}[T]=d(\theta)$ y $d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$, entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
+
+$$
+	P_{\theta}\left(\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: T\left(x_{1}, \cdots, x_{n}\right)=d(\theta)+k(\theta) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)=1, \forall \theta \in \theta
+$$
+
+Demostración $\exists d^{\prime}(\theta)$ puesto que
+
+$$
+	\begin{gathered}
+		d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right] \\
+		\left|d^{\prime}(\theta)\right| \leq E_{\theta}\left[\left|T \frac{\partial}{\partial \theta} \log f_{\theta}\right|\right] \leq \sqrt{E_{\theta}\left[T^{2}\right] E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]}<\infty \text { (desigualdad de Cauchy-Swartz) }
+	\end{gathered}
+$$
+
+\section*{Cota para la varianza de un estimador (continuación)}
+Además, $E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=0$ y por lo tanto,\\
+$V_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]=I_{n}(\theta)$\\
+En efecto, $0=\int_{x^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=\int_{x^{n}} \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$
+
+$$
+	=E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]
+$$
+
+Entonces, $\operatorname{Cov}_{\theta}\left[T, \frac{\partial}{\partial \theta} \log f_{\theta}\right]=E\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right]=d^{\prime}(\theta)$, y como $\rho_{\theta}^{2}\left(T, \frac{\partial}{\partial \theta} \log f_{\theta}\right)=\frac{d^{\prime}(\theta)^{2}}{V_{\theta}(T) V_{\theta}\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)} \leq 1$, se tiene que\\
+$d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta)$, con igualdad si y sólo si $\rho_{\theta}^{2}\left(T, \frac{\partial}{\partial \theta} \log f_{\theta}\right)=1$, es decir, si y sólo si $T \stackrel{\text { c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, es decir, si y sólo si existe una función $k(\theta)$ tal que $P_{\theta}\left(T=d(\theta)+k(\theta) \frac{\partial}{\partial \theta} f_{\theta}\right)=1$
+
+\section*{Cota para la varianza de un estimador (continuación)}
+En efecto, si $T \stackrel{\text { c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, entonces $d(\theta)=E_{\theta}[T]=a y$
+
+$$
+	d^{\prime}(\theta)=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right]=E_{\theta}\left[a \frac{\partial}{\partial \theta} \log f_{\theta}+b\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]=b I_{n}(\theta),
+$$
+
+y $b=\frac{d^{\prime}(\theta)}{l_{n}(\theta)}=k(\theta)$\\
+Proposición 2 Bajo las suposiciones anteriores, si T es un estadístico tal que $E_{\theta}[T]=d(\theta)$ y $V_{\theta}(T)=\frac{d^{\prime}(\theta)^{2}}{l_{n}(\theta)}$, entonces $T$ es ECUMV para d $(\theta)$
+
+Proposición 3 Bajo las suposiciones anteriores, si ( $X_{1}, \cdots X_{n}$ ) es m.a.s. (n) de $\left\{F_{\theta}, \theta \in \Theta\right\}$, entonces $I_{n}(\theta)=n I_{1}(\theta)$ Indicación: $f_{\theta}\left(x_{1}, \cdots x_{n}\right)=\prod_{i=1}^{n} f_{\theta}\left(x_{i}\right)$
+
+\section*{Cota para la varianza de un estimador (continuación)}
+Proposición 4 Bajo las suposiciones anteriores, si la distribución de $X$ pertenece a la familia exponencial uniparamétrica, es decir, $f_{\theta}(x)=c(\theta) h(x) e^{q_{1}(\theta) T_{1}(x)}$, con $q_{1}^{\prime}(\theta)$ no nula, entonces el estadístico $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(X_{i}\right)$ alcanza la cota de FCR para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$
+
+\section*{Demostración}
+$f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) e^{q_{1}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)}$\\
+$\frac{\partial}{\partial \theta} \log f_{\theta}=n \frac{c^{\prime}(\theta)}{c(\theta)}+q_{1}^{\prime}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$\\
+$\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)=a(\theta)+b(\theta) \frac{\partial}{\partial \theta} \log f_{\theta}, a(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}, b(\theta)=\frac{1}{n q_{1}^{\prime}(\theta)}$\\
+$\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$ es centrado para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$ y alcanza la cota
+
+\section*{Cota para la varianza de un estimador (continuación)}
+Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$
+
+Ejercicio Si se cumplen las condiciones de regularidad y además\\
+(1) $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n} y \forall \theta \in \Theta, \exists \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$\\
+(2) $\int_{\chi^{n}} \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=0$
+
+Entonces, $I_{n}(\theta)=-E\left[\frac{\partial^{2}}{\partial \theta^{2}} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]$\\
+Indicación: $\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)=\frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) \frac{1}{f_{\theta}\left(x_{1}, \cdots, x_{n}\right)}$
+
+\section*{Cota para la varianza de un estimador}
+ (continuación)\section*{Estimadores eficientes}
+Diremos que un estimador es eficiente para $d(\theta)$ si es centrado para $d(\theta)$ y su varianza alcanza la cota de FCR\\
+En general, se llama eficiencia de un estimador centrado de $d(\theta)$ a
+
+$$
+	e f(T, d(\theta))=\frac{d^{\prime}(\theta)^{2}}{I_{n}(\theta) V_{\theta}(T)} \leq 1
+$$
+
+\section*{Métodos de construcción de estimadores}
+Método de los momentos\\
+Este método consiste en elegir como estimador de un momento poblacional su momento muestral asociado, es decir\\
+(1) El estimador por el método de los momentos del momento poblacional respecto al origen de orden $\mathrm{k}, \alpha_{k}=E\left[X^{k}\right]$, es $a_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k}$\\
+(2) El estimador por el método de los momentos del momento poblacional respecto a la media de orden k ,
+
+$$
+	\beta_{k}=E\left[\left(X-\alpha_{1}\right)^{k}\right], \text { es } b_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k}
+$$
+
+Ejercicio Si $X \sim \operatorname{Gamma}(a, p)$, calcular un estimador por el método de los momentos de $\theta=(a, p)$ basado en una m.a.s. ( $n$ )
+
+\section*{Métodos de construcción de estimadores}
+\section*{(continuación)}
+\section*{Método de máxima verosimilitud}
+Supongamos que una urna contiene 6 bolas entre blancas y negras, no todas del mismo color, pero se ignora cuantas hay de cada uno. Para tratar de adivinar la composición de la urna se permiten dos extracciones con reemplazamiento de la misma y resultó que ninguna de ellas fue blanca. Dar una estimación de la probabilidad $\theta$ de que una bola extraída aleatoriamente de dicha urna sea blanca
+
+$$
+	\theta \in \Theta=\left\{\frac{1}{6}, \frac{2}{6}, \frac{3}{6}, \frac{4}{6}, \frac{5}{6}\right\}
+$$
+
+$T=X_{1}+X_{2} \equiv \mathrm{n}^{\circ}$ de blancas en las dos extracciones C.R. de la urna $\sim \operatorname{Bin}(2, \theta)$ y $f_{\theta}(t)=\binom{2}{t} \theta^{t}(1-\theta)^{2-t}, t=0,1,2$
+
+\section*{Métodos de construcción de estimadores}
+ (continuación)\begin{center}
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		$\theta$                       & $1 / 6$ & $2 / 6$ & $3 / 6$ & $4 / 6$ & $5 / 6$ \\
+		\hline
+		$f_{\theta}(0)=(1-\theta)^{2}$ & 0.694   & 0.444   & 0.25    & 0.111   & 0.027   \\
+		\hline
+	\end{tabular}
+\end{center}
+
+Por lo tanto, la estimación $\hat{\theta}(0)=\frac{1}{6}$ y el estimador
+
+$$
+	\hat{\theta}=\hat{\theta}(T)=\left\{\begin{array}{lll}
+		1 / 6 & \text { si } & T=0 \\
+		1 / 2 & \text { si } & T=1 \\
+		5 / 6 & \text { si } & T=2
+	\end{array}\right.
+$$
+
+es el estimador de máxima verosimilitud (EMV)
+
+\section*{Métodos de construcción de estimadores}
+ (continuación)Sea $\left(X_{1}, \cdots X_{n}\right)$ una muestra con $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n} \mid \theta\right)$ función de densidad (o de masa), $\theta \in \Theta \subset \mathbb{R}^{\ell}$ Denotemos por $L\left(\theta \mid x_{1}, \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n} \mid \theta\right)$ a la función de verosimilitud de la muestra Un estimador $\hat{\theta}=\hat{\theta}\left(X_{1}, \cdots, X_{n}\right)$ se denomina estimador de máxima verosimilitud (EMV) de $\theta$, sí y sólo sí\\
+(1) $\hat{\theta}\left(x_{1}, \cdots, x_{n}\right) \in \Theta, \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
+(2) $L\left(\hat{\theta} \mid x_{1}, \cdots, x_{n}\right)=\sup _{\theta \in \Theta} L\left(\theta \mid x_{1}, \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
+o equivalentemente, sí y sólo sí\\
+(1) $\hat{\theta}\left(x_{1}, \cdots, x_{n}\right) \in \Theta, \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
+(2) $\log L\left(\hat{\theta} \mid x_{1}, \cdots, x_{n}\right)=\sup _{\theta \in \Theta} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$
+
+\section*{Métodos de construcción de estimadores (continuación)}
+Si $f_{\theta}$ es una función derivable respecto a $\theta$ en el interior del espacio paramétrico $\Theta$, la forma usual de determinar el estimador de máxima verosimilitud es examinar primero los máximos relativos de $f_{\theta}$, para compararlos después, con los valores sobre la frontera de $\Theta$. Ello conduce a resolver las ecuaciones de verosimilitud:
+
+$$
+	\frac{\partial}{\partial \theta_{j}} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right)=0, j=1, \cdots, \ell
+$$
+
+(en el supuesto de que $\theta=\left(\theta_{1}, \cdots, \theta_{\ell}\right)$ sea un parámetro $\ell$-dimensional), seleccionando las soluciones correspondientes a un máximo de $f_{\theta}$, es decir aquellas en las que la matriz hessiana $H=\left(\frac{\partial}{\partial \theta_{i}} \frac{\partial}{\partial \theta_{j}} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right)\right)_{i, j=1, \cdots, \ell}$ sea definida negativa
+
+\section*{Métodos de construcción de estimadores}
+ (continuación)
+
+\section*{Observaciones}
+ (1) EI EMV $\hat{\theta}$ no tiene por qué existir\\
+(2) El EMV $\hat{\theta}$ no tiene por qué ser único\\
+(3) El EMV $\hat{\theta}$ no tiene por qué ser centrado\\
+(4) El EMV $\hat{\theta}$ no tiene por qué ser suficiente, pero si $S=S\left(X_{1}, \cdots, X_{n}\right)$ es suficiente para $\theta$, entonces $\hat{\theta}=\hat{\theta}(S)$\\
+(5) Invariancia: Si $\hat{\theta}$ es el EMV de $\theta$, entonces $h(\hat{\theta})$ es el EMV de $h(\theta)$\\
+(6) Bajo ciertas condiciones de regularidad, si $\left(X_{1}, \cdots X_{n}\right)$ es m.a.s. $(\mathrm{n})$ y $\theta \in \mathbb{R}$, entonces $\sqrt{n}(\hat{\theta}-\theta) \underset{n \rightarrow \infty}{d} N\left(0, \frac{1}{\sqrt{l_{1}(\theta)}}\right)$ y por lo tanto, $\hat{\theta}$ es asintóticamente insesgado para $\theta$ y asintóticamente eficiente

@@ -1,0 +1,274 @@
+\section{Appendix}
+
+\subsection{Momentos Notables}
+
+\subsection*{Media}
+\begin{definición}[Media]
+Distinguimos entre casos discretos y continuos:
+\begin{itemize}
+    \item \textbf{Caso discreto: } Se define la media de una variable aleatoria discreta $X$ como:
+          \begin{equation}
+              \mu = E(X) = \sum_{i=1}^{n} x_i \cdot p_i
+          \end{equation}
+          donde $x_i$ son los valores que puede tomar la variable aleatoria y $p_i$ son las probabilidades asociadas a cada valor.
+    \item \textbf{Caso continuo: } Se define la media de una variable aleatoria continua $X$ como:
+          \begin{equation}
+              \mu = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
+          \end{equation}
+          donde $f(x)$ es la función de densidad de probabilidad de la variable aleatoria.
+\end{itemize}
+\end{definición}
+
+\subsection*{Propiedades}
+
+Si \( X \) y \( Y \) son \textbf{variables aleatorias} con esperanza finita y
+\( a, b, c \in \mathbb{R} \) son constantes entonces
+
+\begin{enumerate}
+    \item \( E[c] = c \).
+    \item \( E[cX] = c E[X] \).
+    \item Si \( X \geq 0 \) entonces \( E[X] \geq 0 \).
+    \item Si \( X \leq Y \) entonces \( E[X] \leq E[Y] \).
+    \item Si \( X \) está delimitada por dos números reales, \( a \) y \( b \), esto es
+          \( a < X < b \) entonces también lo está su media, es decir,
+          \[
+              a < E[X] < b.
+          \]
+    \item Si \( Y = a + bX \), entonces
+          \[
+              E[Y] = E[a + bX] = a + b E[X].
+          \]
+    \item En general, \( E[XY] \neq E[X] E[Y] \), la igualdad sólo se cumple cuando las
+          variables aleatorias son independientes.
+\end{enumerate}
+
+\begin{teorema}[Linealidad de la Esperanza]
+    El operador esperanza \( E[\cdot] \) es una \textbf{aplicación lineal}, pues para cualesquiera \textbf{variables aleatorias} \( X \) y \( Y \) y cualquier constante \( c \) tal que \( c \in \mathbb{R} \), se cumple lo siguiente:
+
+    \[
+        E[X + Y] = E[X] + E[Y]
+    \]
+
+    \[
+        E[cX] = c E[X]
+    \]
+\end{teorema}
+
+\begin{proof}
+    Demostrar este resultado es sencillo. Si consideramos que \( X \) y \( Y \) son \textbf{variables aleatorias} discretas, entonces
+
+    \[
+        E[X + Y] = \sum_{x,y} (x + y) P(X = x, Y = y)
+    \]
+
+    \[
+        = \sum_{x,y} x P(X = x, Y = y) + \sum_{x,y} y P(X = x, Y = y)
+    \]
+
+    \[
+        = \sum_{x} x P(X = x, Y = y) + \sum_{y} y \sum_{x} P(X = x, Y = y)
+    \]
+
+    \[
+        = \sum_{x} x P(X = x) + \sum_{y} y P(Y = y)
+    \]
+
+    \[
+        = E[X] + E[Y]
+    \]
+\end{proof}
+
+\begin{teorema}[Multiplicación de las Esperanzas]
+    Sean \( X_1, \dots, X_n \) \textbf{variables aleatorias independientes}, tales que
+    \( \exists E[X_i] \ \forall i = 1 \dots n \). Entonces \( \exists E[X_1 \cdots X_n] \), y se verifica:
+
+    \[
+        E[X_1 \cdots X_n] = E[X_1] \cdots E[X_n] = \prod_{i=1}^{n} E[X_i]
+    \]
+\end{teorema}
+
+\begin{proof}
+    La demostración de este resultado es muy sencilla, sólo hay que considerar el concepto de independencia.
+    El resultado se demuestra sólo para el caso discreto bidimensional (la demostración del caso continuo es análoga).
+
+    \[
+        E[XY] = \sum_x \sum_y xy \, P(X = x, Y = y)
+    \]
+
+    \[
+        = \sum_x \sum_y xy \, P(X = x) P(Y = y)
+    \]
+
+    \[
+        = \sum_x x \, P(X = x) \sum_y y \, P(Y = y)
+    \]
+
+    \[
+        = E[X] E[Y]
+    \]
+
+\end{proof}
+
+\subsection*{Varianza}
+
+\begin{definición}[Varianza]
+Distinguimos entre casos discretos y continuos:
+\begin{itemize}
+    \item \textbf{Caso discreto: } Se define la varianza de una variable aleatoria discreta $X$ como:
+          \begin{equation}
+              \sigma^2 = Var(X) = \sum_{i=1}^{n} (x_i - \mu)^2 \cdot p_i
+          \end{equation}
+          donde $x_i$ son los valores que puede tomar la variable aleatoria, $p_i$ son las probabilidades asociadas a cada valor y $\mu$ es la media de la variable aleatoria.
+    \item \textbf{Caso continuo: } Se define la varianza de una variable aleatoria continua $X$ como:
+          \begin{equation}
+              \sigma^2 = Var(X) = \int_{-\infty}^{\infty} (x - \mu)^2 \cdot f(x) \, dx
+          \end{equation}
+          donde $f(x)$ es la función de densidad de probabilidad de la variable aleatoria y $\mu$ es la media de la variable aleatoria.
+\end{itemize}
+\end{definición}
+
+La varianza también puede ser expresada como:
+
+\begin{equation}
+    \sigma^2 = \operatorname{Var}(X) = E[(X - E[X])^2]
+    = E[X^2 - 2XE[X] + E[X]^2]
+\end{equation}
+
+\begin{equation}
+    = E[X^2] - 2E[X] E[X] + E[X]^2
+    = E[X^2] - E[X]^2
+\end{equation}
+
+La varianza también puede ser vista como covarianza de una variable consigo
+misma:
+
+\begin{equation}
+    \sigma^2 = \operatorname{Var}(X) = \operatorname{Cov}(X, X)
+\end{equation}
+
+\subsection*{Propiedades}
+
+Si \( X \) y \( Y \) son \textbf{variables aleatorias} con varianza finita
+entonces
+
+\begin{enumerate}
+    \item \( \operatorname{Var}(X) \geq 0 \).
+    \item \( \operatorname{Var}(X) = 0 \) si y sólo si \( X \) es constante.
+    \item \( \operatorname{Var}(X) = 0 \iff \exists c \in \mathbb{R} \) tal que \( P(X = c) = 1 \).
+    \item \(\operatorname{Var}(X+a) = \operatorname{Var}(X)\).
+    \item \(\operatorname{Var}(aX) = a^2 \operatorname{Var}(X)\).
+    \item \(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2 \operatorname{Cov}(X,Y)\).
+    \item \(\operatorname{Var}(X-Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) - 2 \operatorname{Cov}(X,Y)\).
+\end{enumerate}
+
+\begin{teorema}[Identidad de Bienaymé]
+    En general, para la suma de $n$ variables aleatorias $X_1, X_2, \dots, X_n$ se cumple que
+    \begin{equation}
+        \operatorname{Var}(X_1 + X_2 + \dots + X_n) = \sum_{i,j = 1}^{n} \operatorname{Cov}(X_i, X_j) = \sum_{i = 1}^{n} \operatorname{Var}(X_i) + \sum_{i \neq j} \operatorname{Cov}(X_i, X_j)
+    \end{equation}
+\end{teorema}
+
+Si las variables aleatorias son independientes, entonces la covarianza entre
+ellas es nula, y la varianza de la suma de las variables aleatorias es la suma
+de las varianzas de las variables aleatorias, es decir, se cumple que
+
+\begin{equation}
+    \operatorname{Var}(X_1 + X_2 + \dots + X_n) = \sum_{i = 1}^{n} \operatorname{Var}(X_i)
+\end{equation}
+
+\subsection*{Producto de Variables Aleatorias}
+
+\begin{itemize}
+    \item \textbf{Variables Aleatorias Independientes}
+          Si dos variables \(X\) e \(Y\) son \textbf{independientes}, la varianza de su producto está dada por:
+
+          \[
+              \operatorname{Var}(XY) = [E(X)]^2 \operatorname{Var}(Y) + [E(Y)]^2 \operatorname{Var}(X) + \operatorname{Var}(X) \operatorname{Var}(Y).
+          \]
+
+          De manera equivalente, utilizando las propiedades básicas de la esperanza, se
+          expresa como:
+
+          \[
+              \operatorname{Var}(XY) = E(X^2) E(Y^2) - [E(X)]^2 [E(Y)]^2.
+          \]
+    \item \textbf{Variables Aleatorias Correlacionadas}
+          En general, si dos variables son \textbf{estadísticamente dependientes}, entonces la varianza de su producto está dada por:
+
+          \[
+              \operatorname{Var}(XY) = E[X^2 Y^2] - [E(XY)]^2
+          \]
+
+          \[
+              = \operatorname{Cov}(X^2, Y^2) + E(X^2) E(Y^2) - [E(XY)]^2
+          \]
+
+          \[
+              = \operatorname{Cov}(X^2, Y^2) + (\operatorname{Var}(X) + [E(X)]^2)(\operatorname{Var}(Y) + [E(Y)]^2)
+          \]
+
+          \[
+              - [\operatorname{Cov}(X, Y) + E(X) E(Y)]^2
+          \]
+
+\end{itemize}
+
+\subsection{Función Característica}
+
+\begin{definición}[Función Característica]
+    La \textbf{función característica} de una variable aleatoria \( X \) es una función $\varphi_X(t) : \mathbb{R} \to \mathbb{C}$ definida como:
+
+    \[
+        \varphi_X(t) = E[e^{itX}] = \int_{-\infty}^{\infty} e^{itx} f(x) \, dx
+    \]
+
+    donde \( i \) es la unidad imaginaria y \( t \) es un número real.
+\end{definición}
+
+Cuando los momentos de una variable aleatoria existen, se pueden calcular mediante las derivadas de la función característica. De modo que se puede obtener derivando formalmente a ambos lados de la definición y tomando \( t = 0 \):
+
+\[
+    \varphi_X^{(n)}(0) = i^n E[X^n]
+\]
+
+\subsection*{Propiedades}
+
+\begin{itemize}
+    \item La función característica de una variable aleatoria real siempre existe, ya que es una integral de una función continua acotada sobre un espacio cuya medida es finita.
+    \item Una función característica es \textbf{uniformemente continua} en todo el espacio.
+    \item No se anula en una región alrededor de cero: $\varphi(0) = 1$.
+    \item Es acotada: $|\varphi(t)| \leq 1$.
+    \item Es \textbf{hermítica}: $\varphi(-t) = \overline{\varphi(t)}$. En particular, la función característica de una variable aleatoria simétrica (alrededor del origen) es de valores reales y \textbf{par}.
+    \item Existe una \textbf{biyección} entre \textbf{distribuciones de probabilidad} y funciones características. Es decir, dos variables aleatorias $X_1$ y $X_2$ tienen la misma distribución de probabilidad si y solo si $\varphi_{X_1} = \varphi_{X_2}$.
+    \item Si una variable aleatoria $X$ tiene \textbf{momentos} hasta orden $k$, entonces su función característica $\varphi_X$ es $k$ veces continuamente diferenciable en toda la recta real. En este caso:
+    \[
+    E[X^k] = i^{-k} \varphi_X^{(k)}(0).
+    \]
+    \item Si una función característica $\varphi_X$ tiene derivada de orden $k$ en cero, entonces la variable aleatoria $X$ tiene todos los momentos hasta $k$ si $k$ es par, pero solo hasta $k-1$ si $k$ es impar.
+    \[
+    \varphi_X^{(k)}(0) = i^k E[X^k].
+    \]
+    \item Si $X_1, ..., X_n$ son variables aleatorias independientes y $a_1, ..., a_n$ son constantes, entonces la función característica de la combinación lineal de las variables $X_i$ es
+    \[
+    \varphi_{a_1 X_1 + \dots + a_n X_n}(t) = \varphi_{X_1}(a_1 t) \cdots \varphi_{X_n}(a_n t).
+    \]
+    Un caso particular es la suma de dos variables aleatorias independientes $X_1$ y $X_2$, en cuyo caso se cumple
+    \[
+    \varphi_{X_1 + X_2}(t) = \varphi_{X_1}(t) \cdot \varphi_{X_2}(t).
+    \]
+    \item Sean $X$ y $Y$ dos variables aleatorias con funciones características $\varphi_X$ y $\varphi_Y$. $X$ y $Y$ son independientes si y solo si
+    \[
+    \varphi_{X,Y}(s,t) = \varphi_X(s) \varphi_Y(t) \quad \text{para todo } (s,t) \in \mathbb{R}^2.
+    \]
+    \item El comportamiento en la cola de la función característica determina la \textbf{suavidad} de la función de densidad correspondiente.
+    \item Sea la variable aleatoria $Y = aX + b$, una transformación lineal de la variable aleatoria $X$. La función característica de $Y$ es
+    \[
+    \varphi_Y(t) = e^{itb} \varphi_X(at).
+    \]
+    Para vectores aleatorios $\mathbf{X}$ y $\mathbf{Y} = A\mathbf{X} + \mathbf{B}$ (donde $A$ es una matriz constante y $\mathbf{B}$ un vector constante), se tiene
+    \[
+    \varphi_{\mathbf{Y}}(t) = e^{i t^T \mathbf{B}} \varphi_{\mathbf{X}}(A^T t).
+    \]
+\end{itemize}
+
+
