@@ -709,14 +709,49 @@ J=
 \vspace{1em} % Adds vertical space of 1em
 
 \ejemplo{
-	Sea $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$ tal que $F(x)=P(X \leq x)$\\
-	Se pide calcular la distribución de $U=F(X)$ y de $U_{R}=F\left(X_{(r)}\right)$\\
-	$G_{U}(u)=P(U \leq u)=P(F(X) \leq u)=P\left(X \leq F^{-1}(u)\right)=F\left(F^{-1}(u)\right)=u, \quad 0<u<1$\\
-	$\Rightarrow U=F(X) \sim U(0,1)$\\
-	$G_{U_{R}}(u)=P\left(U_{R} \leq u\right)=P\left(F\left(X_{(r)}\right) \leq u\right)=P\left(X_{(r)} \leq F^{-1}(u)\right)=$\\
-	$F_{X_{(r)}}\left(F^{-1}(u)\right)=\sum_{j=r}^{n}\binom{n}{j} F\left(F^{-1}(u)\right)^{j}\left(1-F\left(F^{-1}(u)\right)\right)^{n-j}=\sum_{j=r}^{n}\binom{n}{j} u^{j}(1-u)^{n-j}$\\
-	$\Rightarrow U_{R}=F\left(X_{(r)}\right)$ es el estadístico ordenado de orden $r$ asociado a una m.a.s. $(n)$ de una población $U=F(X) \sim U(0,1)$
+	Sea $\left(X_{1}, \dots, X_{n}\right)$ una muestra aleatoria simple (m.a.s.) de tamaño $n$ de una variable aleatoria $X$, cuya función de distribución es  
+	\[
+	F(x) = P(X \leq x).
+	\]
+	
+	Se desea calcular la distribución de las variables  
+	\[
+	U = F(X) \quad \text{y} \quad U_{R} = F\left(X_{(r)}\right).
+	\]
+	
+	Para la variable $U$, tenemos:  
+	\[
+	G_{U}(u) = P(U \leq u) = P(F(X) \leq u) = P\left(X \leq F^{-1}(u)\right).
+	\]
+	Utilizando la propiedad de la función de distribución inversa, se obtiene:  
+	\[
+	F\left(F^{-1}(u)\right) = u, \quad 0 < u < 1.
+	\]
+	Por lo tanto,  
+	\[
+	U = F(X) \sim U(0,1).
+	\]
+
+	Ahora, para la distribución de $U_R$:  
+	\[
+	G_{U_{R}}(u) = P\left(U_{R} \leq u\right) = P\left(F\left(X_{(r)}\right) \leq u\right) = P\left(X_{(r)} \leq F^{-1}(u)\right).
+	\]
+	Esto es equivalente a la función de distribución del estadístico ordenado:  
+	\[
+	F_{X_{(r)}}\left(F^{-1}(u)\right) = \sum_{j=r}^{n} \binom{n}{j} F\left(F^{-1}(u)\right)^{j} \left(1 - F\left(F^{-1}(u)\right)\right)^{n-j}.
+	\]
+	Reescribiendo en términos de $u$:  
+	\[
+	G_{U_{R}}(u) = \sum_{j=r}^{n} \binom{n}{j} u^{j} (1-u)^{n-j}.
+	\]
+	
+	Por lo tanto, el estadístico ordenado de orden $r$ asociado a la muestra aleatoria sigue la distribución  
+	\[
+	U_{R} = F\left(X_{(r)}\right),
+	\]
+	donde la población original $U = F(X)$ sigue una distribución uniforme en el intervalo $(0,1)$.
 }
+
 
 \subsection{Ejercicios}
 \begin{problem}{2.1}
@@ -768,7 +803,7 @@ J=
 	Sabemos que $\bar{X} \sim N(\mu, \frac{1}{n})$. Por lo que 
 	para solucionarlo, haremos uso de la Desigualdad de Chebushev, la cual afirma que: $$ P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2} \quad \forall k > 0$$
 	Aplicando la desigualdad a nuestro caso, obtenemos que $k = 0.5$ y $\sigma = \frac{1}{\sqrt{n}}$. Por lo que:
-	$$P(|\bar{X} - \mu| \leq 0'5) \geq 0'95 \iff P(|\bar{X} - \mu| > 0'5) \leq 0'05 \implies \frac{1}{k^2} = 0'05 \implies n \geq 80$$
+	$$P(|\bar{X} - \mu| \leq 0'5) \geq 0'95 \iff P(|\bar{X} - \mu| > 0'5) \leq 0'05 \implies \begin{cases} \frac{1}{k^2} = 0'05 \\ \frac{k}{\sqrt{n}} = 0,5 \end{cases} \implies n \geq 80$$
 \end{sol}
 \begin{problem}{2.3}
 	Dada una m.a.s. de tamaño n, calcúlese la distribución de la media muestral $\bar{X}$ cuando la población es: 
@@ -795,5 +830,20 @@ J=
 	donde \( X \sim \chi^2_k \). 
 \end{problem}
 \begin{sol}
-
+	Por las propiedades de las distribuciones normales, tenemos que: $$X_i \sim N(0,1) \implies X_i^2 \sim \chi^2_1 \implies \sum_{i = 1}^{n} X_i^2 \sim \chi_n^2$$
+	De esta manera podemos ver los sumandos como el calculo de la media muestral: $$\bar{X} = \frac{1}{m} \sum_{i = k+1}^{k+m} \chi^2_1 \implies $$ Por la Ley Fuerte de los Grandes Números tenemos que $$\bar{X} \xrightarrow[m \to \infty]{\mathcal{L}} E[\chi^2_1] = 1$$ 
+	Finalmente como el segundo sumatorio $\sum_{i = 1}^{k} X_i^2$ se mantiene constante(pues sólo se está modificando $k$) tenemos que, por el Teorema de Slutsky, $$F_{k,m} \xrightarrow[m \to \infty]{\mathcal{L}} \frac{1}{k} \chi_k^2$$
+\end{sol}
+\begin{problem}{2.5}
+	Demuéstrese que para una m.a.s. de tamaño $n$ tales que $$P(X = x_i) = p_i \forall i \in \N$$ se cumple que la distribución del estadístico ordenado $X_{(k)}$ es discreta y viene dada por: 
+	$$P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j} (F(x_j))^j(1-F(x_j))^{n-j}$$ 
+	\\
+	$$P(X_{(k)} = x_i) = \sum_{j = k}^{n} \binom{n}{j}[(F(x_j))^j(1 - F(x_i))^{n-j} - F(x_{i-1})^j(1 - F(x_{i-1}))^{n-j}]$$	
+\end{problem}
+\begin{sol}
+	Sea una m.a.s. $\left(X_1, X_2, \ldots, X_n\right)$. \\Sea entonces el conjunto de variables aleatorias $$I_j = \begin{cases} 1, \quad \text{si } X_j \leq x \\ 0, \quad \text{si } X_j > x \end{cases} \implies I_j \sim Bernouilli$$ con una probabilidad $P(I_j = 1) = P(X_j \leq x) = F_j(x)$\\ Al ser variables aleatorias independientes con distirbución Bernouilli, se cumple que $$\sum_{j = 1}^{n} I_j = S \sim Bin(n, F(x))$$\\
+	Nos piden calcular que $P(X_{(k)} \leq x_i)$, lo cual es equivalente a que nos pregunten la probabilidad de que haya al menos $k$ valores menores o iguales a $x_i$: $P(S \geq k)$. Por lo que podemos escribir: 
+	$$P(S \geq k) = P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j}(F(X_i))^j(1 - F(X_i))^{n-j}$$
+	Finalmente, nos queda sólo calcular la probabilidad de que $P(X_{(k)} = x_i)$ pero esto es igual a hacer: 
+	$$P(X_{(k)} = x_i) = P(X_{(k)} \leq x_i) - P(X_{(k)} \leq x_{i-1})$$
 \end{sol}

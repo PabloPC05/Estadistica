@@ -8,4 +8,4 @@
 \contentsline {subsection}{\numberline {2.4}Resultados de convergencias}{8}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Estadísticos ordenados}{14}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Ejercicios}{16}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Reducción de Datos}{18}{section.3}%
+\contentsline {section}{\numberline {3}Reducción de Datos}{20}{section.3}%

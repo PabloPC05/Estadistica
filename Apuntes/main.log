@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  5 MAR 2025 22:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  6 MAR 2025 13:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1416,9 +1416,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 706--706
 
 [16
 
-])
+]
 
-[17] (Theory/3 - Reduccion de Datos.tex
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 839--841
+
+ []
+
+
+
+[18])
+
+[19] (Theory/3 - Reduccion de Datos.tex
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 3.
@@ -1443,7 +1452,7 @@ Overfull \hbox (33.2289pt too wide) in paragraph at lines 39--40
 
 
 
-[18]
+[20]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 63.
@@ -1464,7 +1473,7 @@ Overfull \hbox (0.50887pt too wide) in paragraph at lines 78--79
 
 
 
-[19]
+[21]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 96.
@@ -1480,7 +1489,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
 
 
-[20]
+[22]
 Overfull \hbox (59.96371pt too wide) in paragraph at lines 113--115
 \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 e[]$ \OT1/cmr/m/n/10.95 es in-de-pen-di-ente de $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 s^^S^^P $\OML/cmm/m/it/10.95 y$ \OT1/cmr/m/n/10.95 s^^Solo s^^S^^P $[][] \OML/cmm/m/it/10.95 q[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) [] =
  []
@@ -1492,14 +1501,14 @@ Overfull \hbox (40.47147pt too wide) in paragraph at lines 117--121
 
 
 
-[21]
+[23]
 Overfull \hbox (65.36746pt too wide) in paragraph at lines 152--154
 \OT1/cmr/m/n/10.95 Ejercicio Si $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; T \OT1/cmr/m/n/10.95 = []$ no es com-pleto In-di-caci^^Son: $\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 ) = []$ 
  []
 
 
 
-[22]
+[24]
 Overfull \hbox (26.68552pt too wide) in paragraph at lines 175--176
 []\OT1/cmr/m/n/10.95 Supuesto que se ha ob-ser-vado un valor mues-tral $[]$, la funci^^Son de $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 definida me-di-ante $\OML/cmm/m/it/10.95 L [] \OT1/cmr/m/n/10.95 =
  []
@@ -1516,9 +1525,9 @@ Overfull \hbox (119.3316pt too wide) in paragraph at lines 193--194
 
 
 
-[23]))
+[25]))
 
-[24] (main.aux)
+[26] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1527,17 +1536,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1A0574E4BE2A2AD96E7CFBEE9A820942;1426.
  ) 
 Here is how much of TeX's memory you used:
- 35933 strings out of 473530
- 729097 string characters out of 5714794
+ 35936 strings out of 473530
+ 729130 string characters out of 5714794
  1271476 words of memory out of 5000000
- 58323 multiletter control sequences out of 15000+600000
+ 58324 multiletter control sequences out of 15000+600000
  576772 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,15n,112p,1179b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (25 pages, 402350 bytes).
+Output written on main.pdf (27 pages, 407466 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 135 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 
