@@ -1,64 +1,166 @@
 \section{Reducción de Datos}
 
+
 \begin{definición}[Estadístico suficiente]
   Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado ( $\left.\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$\\
-  $T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ (para la familia de funciones de distribución $\left\{F_{\theta}\right\}_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$ ), sí y sólo sí la distribución de probabilidad de la muestra condicionada por $T$ es independiente de $\theta$
-  \end{definición}
+  $T: \mathbb{R}^n \to \mathbb{R}^m$ es un estadístico suficiente para $\theta$ cuando $\forall (x_1, \ldots, x_n) \in \Omega$ se cumple que: 
+  $$P(X_1 = x_1, \ldots, X_n = x_n | T = t) \text{	 no depende de } \theta \quad \forall t \in \mathbb{R}^m$$
+\end{definición}
+
+
+\ejemplo{
+  Sabiendo que $X \sim Bin(1, \theta)$, veamos si se cumple que el estadístico $T = \sum_{i = 1}^{n} X_i$ es suficiente para $\theta$\\
+  Tenemos que:
+  $$X_i \sim Bin(1, \theta) \implies T = \sum_{i = 1}^n X_i \sim Bin(n, \theta)$$
+  Para saber si un estadístico es suficiente necesitamos además la funcion de distribucion de la muestra, que en este caso: 
+  $$X_i \sim Bin(1, \theta) \equiv Bernoulli(\theta)$$ $$\implies P(X_1 = x_1, \ldots, X_n = x_n) = \prod_{i = 1}^{n} \theta^{x_i} (1 - \theta)^{1 - x_i} = \theta^{\sum_{i = 1}^{n} x_i} (1 - \theta)^{n - \sum_{i = 1}^{n} x_i} \prod_{i = 1}^{n}$$
+  Para ver si es suficiente, necesitamos calcular la probabilidad condicionada de la muestra dado el estadístico, que en este caso es:
+  $$P(X_1 = x_1, \ldots, X_n = x_n | \sum_{i = 1}^{n} X_i = t) = \frac{P(X_1 = x_1, \ldots, X_n = x_n)}{P(\sum_{i = 1}^{n} X_i = t)} = \frac{\theta^{\sum_{i = 1}^{n} x_i} (1 - \theta)^{n - \sum_{i = 1}^{n} x_i}}{\binom{n}{t} \theta^t (1 - \theta)^{n - t}} = \frac{1}{\binom{n}{t}}$$
+}
   
-  \ejemplo{
-  Demostrar que si $X \sim \operatorname{Bin}(1, \theta)$, entonces $T=\sum_{i=1}^{n} X_{i} \sim \operatorname{Bin}(n, \theta)$ es suficiente para $\theta$\\
-  $P_{\theta}(X=x)=\left.\theta^{x}(1-\theta)^{1-x}\right|_{\{0,1\}}(x)$\\
-  $P_{\theta}\left(\sum_{i=1}^{n} X_{i}=t\right)=\binom{n}{t} \theta^{t}(1-\theta)^{n-t}\left\{_{\{0,1, \ldots, n\}}(t)\right.$\\
-  $P_{\theta}\left(X_{1}=x_{1}, \ldots, X_{n}=x_{n}\right)=\prod_{i=1}^{n} \theta^{x_{i}}(1-\theta)^{1-x_{i}} I_{\{0,1\}}\left(x_{i}\right)=$\\
-  $\theta^{\sum_{i=1}^{n} x_{i}}(1-\theta)^{n-\sum_{i=1}^{n} x_{i}} \prod_{i=1}^{n} l_{\{0,1\}}\left(x_{i}\right)$\\
-  Si $\sum_{i=1}^{n} x_{i}=t, P_{\theta}\left(X_{1}=x_{1}, \ldots, X_{n}=x_{n} \mid \sum_{i=1}^{n} X_{i}=t\right)=$\\
-  $\frac{P_{\theta}\left(X_{1}=x_{1}, \ldots, x_{n-1}=x_{n-1}, X_{n}=t-\sum_{i=1}^{n-1} x_{i}\right)}{P\left(\sum_{i=1}^{n} X_{i}=t\right)}=\frac{\theta^{t}(1-\theta)^{n-t}}{\left(\begin{array}{l}n \\ t\end{array} \theta^{t}(1-\theta)^{n-t}\right.}=\frac{1}{\binom{n}{t}}, t=0,1, \ldots, n$
-  }
+  \subsection{Teorema de Factorización de Fisher}
   
-  
-  \subsection*{Teorema de Factorización de Fisher}
-  
-  \begin{teorema}[de Factorización de Fisher]
-    Teorema de Factorización (caracterización de estadísticos suficientes) $T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ sí y sólo sí existen funciones reales positivas $h: \mathbb{R}^{n} \longrightarrow \mathbb{R}$ y $g_{\theta}: \mathbb{R}^{m} \longrightarrow \mathbb{R}$ tales que $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)$, donde $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)$ es la función de densidad o de masa de la muestra
+  \begin{teorema}[de Factorización de Fisher (Caracterización de estadísticos suficientes)]
+    $T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ sí y sólo sí existen funciones reales positivas $h: \mathbb{R}^{n} \longrightarrow \mathbb{R}$ y $g_{\theta}: \mathbb{R}^{m} \longrightarrow \mathbb{R}$ tales que $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)$, donde $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)$ es la función de densidad o de masa de la muestra
   \end{teorema}
   
   
   \begin{proof}
-    \leavevmode
-    $\Leftrightarrow)$ Si $T\left(x_{1}, \ldots, x_{n}\right)=t$,\\
-    $f_{\theta}\left(x_{1}, \ldots, x_{n} \mid t\right)=\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}(t)}=\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{\sum_{\left\{\left(y_{1}, \ldots, y_{n}\right): T\left(y_{1}, \ldots, y_{n}\right)=t\right\}} f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=$\\
-    $\frac{h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}(t)}{\sum_{\left\{\left(y_{1}, \ldots, y_{n}\right): T\left(y_{1}, \ldots, y_{n}\right)=t\right\}} h\left(y_{1}, \ldots, y_{n}\right) g_{\theta}(t)}=\frac{h\left(x_{1}, \ldots, x_{n}\right)}{\left.\sum_{\left.\left\{y_{1}, \ldots, y_{n}\right): T\left(y_{1}, \ldots, y_{n}\right)=t\right\}}\right\}\left(y_{1}, \ldots, y_{n}\right)}$ es\\
-    independiente de $\theta \Rightarrow T$ es suficiente para $\theta$\\
-    $\Rightarrow)$ Sea $T=T\left(X_{1}, \cdots X_{n}\right)$ un estadístico suficiente para $\theta \Rightarrow$ $f_{\theta}\left(x_{1}, \ldots, x_{n} \mid t\right)$ es independiente de $\theta$\\
-    Si $T\left(x_{1}, \ldots, x_{n}\right)=t, f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=f_{\theta}\left(x_{1}, \ldots, x_{n} \mid t\right) f_{\theta}(t)=$ $h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)$
+    Esta demostración se desarrolla tomando el caso en el que $X$ sea una v.a. discreta. 
+    \begin{itemize}
+      \item $(\Rightarrow):$ Supongamos que $T$ es suficiente, entonces como la distribución de la muestra condicionada al estadístico no depende de $\theta$, podemos escribir:
+      $$ f_{\theta}(x_1, \ldots, x_n | t) = \frac{f_{\theta}(x_1, \ldots, x_n)}{f_{\theta}(t)} \text{es independiente de } \theta$$
+      $$\implies f_{\theta}(x_1, \ldots, x_n) = f_{\theta}(t) \cdot f_{\theta}(x_1, \ldots, x_n | t) \implies$$
+      Simplemente tomamos $h(x_1, \ldots, x_n) = f_{\theta}(t)$ y $g_{\theta}(t) = f_{\theta}(x_1, \ldots, x_n | t)$
+      \item $(\Leftarrow)$: Supongamos que $f_{\theta}(x_1, \ldots, x_n) = h(x_1, \ldots, x_n) \cdot g_{\theta}(T(x_1, \ldots, x_n))$, entonces:\\
+      $$ f_{\theta}(x, \ldots, x_n | t = T(x_1, \ldots, x_n)) = \frac{f_{\theta}(x_1, \ldots, x_n)}{f_{\theta}(t)} = \frac{f_{\theta}(x_1, \ldots, x_n)}{\sum_{(y_1, \ldots, y_m) : T(y_1, \ldots, y_n) = t} f_{\theta}(y_1, \ldots, y_n)} = $$ $$ = \frac{h(x_1, \ldots, x_n) \cdot g_{\theta}(t)}{\sum_{(y_1, \ldots, y_m) : T(y_1, \ldots, y_n) = t} h(y_1, \ldots, y_n) \cdot g_{\theta}(t)} = \frac{h(x_1, \ldots, x_n)}{\sum_{(y_1, \ldots, y_m) : T(y_1, \ldots, y_n) = t} h(y_1, \ldots, y_n)}$$ La cual es una expresión no dependiente de $\theta$, por lo que $T$ es suficiente.
+    \end{itemize}
   \end{proof}
+
+  \begin{proposición}
+    Si $T$ es suficiente para $\theta$ y $S$ es una biyección, entonces $S(T)$ es suficiente para $\theta$
+  \end{proposición}
+
+  \begin{proposición}
+    Si $T$ es suficiente para $\theta$ y $S$ es una función medible (en estadística-integrable), entonces $S(T)$ es suficiente para $\theta$
+  \end{proposición}
+
+  \begin{proposición}
+    Ssea $X$ variable aleatoria, con $\sigma$ y $\delta$ parámetros, entonces si $T_1$ es suficiente para $\sigma$ y $T_2$ es suficiente para $\delta$ $\iff$ $T = (T_1, T_2)$ es suficiente para $(\sigma, \delta)$
+  \end{proposición}
+
+  \subsection{Ejemplos de Factorización de Fisher}
+
+  \ejemplo{
+    Veamos si $\theta$ es un parámetro suficiente para el ejemplo anterior, utilizando la Factorización de Fisher.\\
+    Como $X \sim \text{Bin}(1, \theta) \equiv \text{Bernoulli}(\theta)$, tenemos que la función de verosimilitud es:
+    \[
+    f_{\theta}(x_1, \ldots, x_n) = \prod_{i=1}^{n} \theta^{x_i} (1 - \theta)^{1 - x_i} \cdot I_{\{0,1\}}(x_i),
+    \]
+    donde $I_{\{0,1\}}(x_i)$ es la función indicadora que asegura que $x_i \in \{0, 1\}$. Esto se puede escribir como:
+    \[
+    f_{\theta}(x_1, \ldots, x_n) = \theta^{\sum_{i=1}^{n} x_i} (1 - \theta)^{n - \sum_{i=1}^{n} x_i} \prod_{i=1}^{n} I_{\{0,1\}}(x_i).
+    \]
+    Por lo que tomando $h(x_1, \ldots, x_n) = \prod_{i = 1}^{n} I_{\{0,1\}}(x_i)$ y $g_{\theta}(T(x_1, \ldots, x_n)) = \theta^t (1 - \theta)^{n - t}$, tenemos que $T = \sum_{i=1}^{n} X_i$ es un estadístico suficiente para $\theta$.
+  }
+
+  \ejemplo{
+    Sea $X \sim Poisson(\theta)$ veamos si el estadístico $T = \sum_{i = 1}^{n} X_i$ es suficiente para $\theta$\\
+    Calculemos primero la función de densidad asociada a la muestra: 
+    $$X_i \sim Poisson(\theta) \implies f_{x_i}(x_i) = \frac{e^{-\theta} \theta^{x_i}}{x_i!} \implies f_{\theta}(x_1, \ldots, x_n) = \prod_{i = 1}^{n} \frac{e^{-\theta} \theta^{x_i}}{x_i!} = e^{-n\theta} \theta^{\sum_{i = 1}^{n} x_i} \prod_{i = 1}^{n} \frac{1}{x_i!}$$
+    Por lo que tomando $h(x_1, \ldots, x_n) = \prod_{i = 1}^{n} \frac{1}{x_i!}$ y $g_{\theta}(T(x_1, \ldots, x_n)) = e^{-n\theta} \theta^t$ demostramos que $T(x_1, \ldots, x_n) = \sum_{i = 1}^{n}$ es un estadístico suficiente para $\theta$
+  }
+
+  \ejemplo{
+    3 Si $T=T\left(X_{1}, \cdots X_{n}\right)$ es suficiente para $\theta$ entonces cualquier biyección $S=S(T)$ también es suficiente para $\theta$\\
+  NO LO ENTIENDO, PREGUNTAR
+  }
+  \ejemplo{
+    Supongamos que tenemos un estadístico $T$ suficiente para el parámetro $\theta$ y una biyección $S$, demostremos que $S(T)$ también es suficiente para $\theta$\\
+    Por el Teorema de Caracterización de Fisher tenemos que: 
+    $$f_{\theta}(x_1, \ldots, x_n) = h(x_1, \ldots, x_n) \cdot g_{\theta}(T(x_1, \ldots, x_n))$$ para alguna función $h$ y $g_{\theta}$\\ 
+    $$\iff f_{\theta}(x_1, \ldots, x_n) = h(x_1, \ldots, x_n) \cdot g_{\theta}(S^{-1}(S(T(x_1, \ldots, x_n))))$$ $$ \iff f_{\theta}(x_1, \ldots, x_n) = h(x_1, \ldots, x_n) \cdot g'_{\theta}(S(T(x_1, \ldots, x_n))) \implies$$
+    Entones por el Teorema de Caracterización de Fisher, $S(T)$ es suficiente para $\theta$
+  }
+
+  \ejemplo{
+    Veamos si $T = \bar{X} = \sum_{i = 1}^{n}X_i$ es suficiente para $\mu$ si $X \sim N(\mu, \sigma_0)$ con $\sigma_0$ conocida:\\
+    $$X_i \sim N(\mu, \sigma_0) \implies f_{\mu}(x) = \frac{1}{\sigma_0 \sqrt{2\pi}} e^{-\frac{1}{2\sigma_0^2}(x - \mu)^2}$$
+    $$\implies T = \bar{X} \implies f_{\mu}(x_1, \ldots, x_n) = \prod_{i = 1}^{n} \frac{1}{\sigma_0 \sqrt{2\pi}} e^{-\frac{1}{2\sigma_0^2}(x_i - \mu)^2} = \left(\frac{1}{\sigma_0 \sqrt{2\pi}}\right)^n e^{-\frac{1}{2\sigma_0^2}\sum_{i = 1}^{n}(x_i - \mu)^2}$$
+    $\implies$ Tomando $h(x_1, \ldots, x_n) = \left(\frac{1}{\sigma_0 \sqrt{2\pi}}\right)^n$ y $g_{\mu}(T(x_1, \ldots, x_n)) = e^{-\frac{1}{2\sigma_0^2}\sum_{i = 1}^{n}(x_i - \mu)^2}$, tenemos que $T = \bar{X} = \sum_{i = 1}^{n}X_i$ es suficiente para $\mu$
+  }
+
+  \ejemplo{
+    Sea el estadístico $T = \left(\sum_{i = 1}^{n}X_i, \sum_{i = 1}^{n} X_i^2 \right)$ suficiente para $\theta = (\mu, \sigma)$ si $X \sim N(\mu, \sigma)$ con $\mu$ y $\sigma$ desconocidas. Veamos si $\left(\bar{X}, S_n^2\right)$ también es suficiente para $\theta$: \\
+    $$\bar{X} = \frac{1}{n} \sum_{i = 1}^{n} X_i \quad S_n^2 = \frac{1}{n - 1} \left(\sum_{i = 1}^{n} X_i^2 - n\bar{X}^2\right) \implies$$
+
+    $$\text{Sea la biyección } S: \mathbb{R}^2 \to \mathbb{R}^2 \text{ dada por } S(x,y) = \left(\frac{1}{n}x, \frac{1}{n-1}\left(y - \frac{1}{n}x^2\right)\right) \implies$$ 
+
+
+    $$ S(T = \left(\sum_{i = 1}^{n}X_i, \sum_{i = 1}^{n} X_i^2 \right)) = \left(\frac{1}{n}\sum_{i = 1}^{n}X_i, \frac{1}{n-1}\sum_{i = 1}^{n}X_i^2 - \bar{X}^2\right) = \left(\bar{X}, S_n^2 \right)$$
+    Entonces por el Teorema de Caracterización de Fisher, $\left(\bar{X}, S_n^2\right)$ es suficiente para $\theta$
+  }
+
+  \ejemplo{
+      Si $X \sim U(0, \theta)$, veamos si el estadístico $T = (X_{(1)}, X_{(n)})$ es suficiente para $\theta$:\\
+      $$ X \sim U(0, \theta) \implies f_{\theta}(x) = \frac{1}{\theta} \cdot I_{(0, \theta)}(x) \implies f_{\theta}(x_1, \ldots, x_n) = \prod_{i = 1}^{n} \frac{1}{\theta} \cdot I_{(0, \theta)}(x_i) = \frac{1}{\theta^n} \cdot I_{(0, \theta)}(X_{(1)}) \cdot I_{(0, \theta)}(X_{(n)})$$
+      $$\implies \text{Tomando } h(x_1, \ldots, x_n) = 1  \text{ y } g_{\theta}(T(x_1, \ldots, X_n)) = \frac{1}{\theta^n} I_{(0, \theta)}(X_{(1)}) \cdot I_{(0, \theta)}(X_{(n)})$$
+  }
+
+  \ejemplo{
+    Si $X \sim U(0, \theta)$, veamos si el estadístico $T = X_{(n)}$ es suficiente para $\theta$:\\
+      $$ X \sim U(0, \theta) \implies f_{\theta}(x) = \frac{1}{\theta} \cdot I_{(0, \theta)}(x) \implies f_{\theta}(x_1, \ldots, x_n) = \prod_{i = 1}^{n} \frac{1}{\theta} \cdot I_{(0, \theta)}(x_i) = \frac{1}{\theta^n} \cdot I_{(0, \theta)}(X_{(n)})$$
+      $$\implies \text{Tomando } h(x_1, \ldots, x_n) = 1  \text{ y } g_{\theta}(T(x_1, \ldots, X_n)) = \frac{1}{\theta^n} I_{(0, \theta)}(X_{(n)})$$
+  }
+
+  \ejemplo{
+    Si $X \sim U\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)$, veamos si el estadístico $T = (X_{(1)}, X_{(n)})$ es suficiente para $\theta$:\\
+    $$X \sim U(-\frac{\theta}{2}, \frac{\theta}{2}) \implies f_{\theta}(x) = \frac{1}{\theta} \cdot I_{\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)}(x)$$ $$\implies f_{\theta}(x_1, \ldots, x_n) = \prod_{i = 1}^{n} \frac{1}{\theta} \cdot I_{\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)}(x_i) = \frac{1}{\theta^n} \cdot I_{\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)}(X_{(1)}) \cdot I_{\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)}(X_{(n)})$$
+    $$\implies \text{Tomando } h(x_1, \ldots, x_n) = 1  \text{ y } g_{\theta}(T(x_1, \ldots, X_n)) = \frac{1}{\theta^n} I_{\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)}(X_{(1)}) \cdot I_{\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)}(X_{(n)})$$
+  }
   
+  \subsection{Estadístico minimal suficiente}
+
+  \begin{definición}[Órbita]
+    Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $A_{t}=\left\{\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n}: T\left(x_{1}, \ldots, x_{n}\right)=t\right\}$ cómo la órbita de $ t = 5$\\
+  \end{definición}
+
+  \ejemplo{
+    Dado un m.a.s. de tamaño n = 3, definimos el \underline{rango muestral} como $T(x_1, x_2, x_3) = (x_{max}, x_{min})$\\
+    Si por ejemplo tomamos el resultado $t = 5$ definimos la órbita de $t = 5$ al conjunto $A_5 = \{(x_1, \ldots, x_n) \in \mathbb{R}^3 : max(x_1, x_2, x_3) - min(x_1, x_2, x_3) = 5\}$ cuyos elementos podrían ser por ejemplo: 
+    \begin{itemize}
+      \item $(2, 3, 7) \in A_5 \quad (7 - 2 = 5)$
+      \item $(10, 12, 15) \in A_5 \quad (15 - 10 = 5)$
+      \item $(-1, 4, -5) \notin A_5 \quad (4 - (-6) = 10 \neq 5)$
+    \end{itemize}
+  }
   
-  
-  \section*{Teorema de Factorización de Fisher (continuación)}
-  Ejercicio Encontrar un estadísico suficiente para $\theta$ si $X \sim \operatorname{Bin}(1, \theta)$ $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod_{i=1}^{n} \theta^{x_{i}}(1-\theta)^{1-x_{i}} I_{\{0,1\}}\left(x_{i}\right)=$ $\theta^{\sum_{i=1}^{n} x_{i}}(1-\theta)^{n-\sum_{i=1}^{n} x_{i}} \prod_{i=1}^{n} I_{\{0,1\}}\left(x_{i}\right)=g_{\theta}\left(\sum_{i=1}^{n} x_{i}\right) h\left(x_{1}, \ldots, x_{n}\right) \Rightarrow$ $T=\sum_{i=1}^{n} X_{i}$ es suficiente para $\theta$
-  
-  \section*{Ejercicios propuestos}
-  $1 T=\sum_{i=1}^{n} X_{i}$ es suficiente para $\theta$ si $X \sim \operatorname{Poisson}(\theta)$\\
-  2 La propia muestra $\left(X_{1}, \ldots, X_{n}\right)$ y el estadístico ordenado $\left(X_{(1)}, \ldots, X_{(n)}\right)$ son suficientes para $\theta$\\
-  3 Si $T=T\left(X_{1}, \cdots X_{n}\right)$ es suficiente para $\theta$ entonces cualquier biyección $S=S(T)$ también es suficiente para $\theta$\\
-  4 Si $T=T\left(X_{1}, \cdots X_{n}\right)$ y $S=S\left(X_{1}, \cdots X_{n}\right)$ son dos estadísticos suficientes para $\theta$, entonces también es suficiente para $\theta$ el estadístico ( $T, S$ )
-  
-  \section*{Teorema de Factorización de Fisher (continuación)}
-  $5 T=\bar{X}$ es suficiente para $\mu$ si $X \sim N\left(\mu, \sigma_{0}\right), \sigma_{0}$ conocida\\
-  $6 T=\sum_{i=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}$ es suficiente para $\sigma$ si $X \sim N\left(\mu_{0}, \sigma\right), \mu_{0}$ conocida\\
-  $7 T=\left(\sum_{i=1}^{n} X_{i}, \sum_{i=1}^{n} X_{i}^{2}\right)$ es suficiente para $\theta=(\mu, \sigma)$ si $X \sim N(\mu, \sigma), \mu$ y $\sigma$ desconocidas $\Rightarrow\left(\bar{X}, S_{n}^{2}\right)$ también es suficiente
-  
-  8 Los estadísticos $\left(X_{(1)}, X_{(n)}\right)$ y $X_{(n)}$ son suficientes para $\theta$ si $X \sim U(0, \theta)$\\
-  9 El estadístico $\left(X_{(1)}, X_{(n)}\right)$ es suficiente para $\theta$ si $X \sim U\left(-\frac{\theta}{2}, \frac{\theta}{2}\right)$
-  
-  \subsection*{Estadístico minimal suficiente}
-  
-  Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $A_{t}=\left\{\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n}: T\left(x_{1}, \ldots, x_{n}\right)=t\right\}$ (órbita)\\
-  $K_{T}=\left\{A_{t}, t \in \mathbb{R}^{m}\right\}$ es una partición disjunta de $\chi^{n} \mathrm{y}$ se denomina partición inducida por el estadístico $T$
-  
-  Se dice que $K_{T}$ es suficiente sí y sólo si $T$ es suficiente\\
-  Dados dos estadísticos $T=T\left(X_{1}, \cdots X_{n}\right)$ y $S=S\left(X_{1}, \cdots X_{n}\right), K_{S}$ es una subpartición de $K_{T}$, sí y sólo sí $\forall B \in K_{S}, \exists A \in K_{T}$ tal que $B \subset A$. En este caso, se dice que $K_{T}$ es una partición menos fina que $K_{S}$
+  \begin{definición}[Partición Inducida]
+    Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $K_{T}=\left\{A_{t}: t \in \mathbb{R}^{m}\right\}$ cómo la partición inducida por $T$\\
+  \end{definición}
+
+  \ejemplo{
+    Sea una muestra aleatoria simple de tamaño $n = 2$ tal que el espacio muestral de cada una de las variables aleatorias es $\chi = \{1, 2, 3\}$ y definimos el estadístico $T(x_1, x_2) = (x_1 + x_2)$\\
+    Entonces, podemos deinir algunas órbitas de $T$:
+    \begin{itemize}
+      \item $A_2 = \{(1, 1), (2, 0), (0, 2)\}$
+      \item $A_3 = \{(1, 2), (2, 1)\}$
+      \item $A_4 = \{(2, 2)\}$
+      \item $A_5 = \{(3, 2), (2, 3)\}$
+      \item ...
+    \end{itemize}
+    Así, una partición inducida por $T$ sería $K_T = \{A_2, A_3, A_4, A_5, ...\}$
+  }
+
+  \begin{proposición}
+    Se dice que $\mathcal{K}_{T}$ es suficiente sí y sólo si $T$ es suficiente\\
+  \end{proposición}
+
+  \begin{proposición}
+    Dado dos estadísticos $T = T(X_1, \dots, X_n)$ y $S = S(X_1, \dots, X_n)$, se dice que $\mathcal{K}_S$ es una subpartición de $\mathcal{K}_T$ si y solo si:  
+    $$ \forall B \in \mathcal{K}_S, \ \exists A \in \mathcal{K}_T \text{ tal que } B \subset A.$$
+    En este caso, se dice que $\mathcal{K}_T$ es una partición menos fina que $\mathcal{K}_S$.
+  \end{proposición}
   
   \begin{definición}[Estadístico Minimal Suficiente]
   \vspace{-\baselineskip}

@@ -9,3 +9,6 @@
 \contentsline {subsection}{\numberline {2.5}Estadísticos ordenados}{14}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Ejercicios}{16}{subsection.2.6}%
 \contentsline {section}{\numberline {3}Reducción de Datos}{20}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Teorema de Factorización de Fisher}{20}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Ejemplos de Factorización de Fisher}{21}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Estadístico minimal suficiente}{23}{subsection.3.3}%
