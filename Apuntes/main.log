@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  9 MAR 2025 17:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  9 MAR 2025 22:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1662,33 +1662,58 @@ l.290   E
 
 [27]
 Package mdframed Info: Not enough space on this page on input line 293.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 298.
 
-Overfull \hbox (65.36746pt too wide) in paragraph at lines 318--320
-\OT1/cmr/m/n/10.95 Ejercicio Si $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; T \OT1/cmr/m/n/10.95 = []$ no es com-pleto In-di-caci^^Son: $\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 ) = []$ 
- []
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.298 	U
+        n estadístico $U(X_1, \ldots, X_n)$ es ancilario para $\theta$ si s...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 306.
 
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.306 	L
+        a familia $\mathcal{P} = \{f_{\theta}(x_1, \ldots, x_n) : \theta \in...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 326.
 
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.326 	U
+        n estadístico $T$ (no necesariamente suficiente) se dice completo, ...
 
 [28]
-Overfull \hbox (26.68552pt too wide) in paragraph at lines 341--342
+
+[29]
+
+[30]
+Overfull \hbox (26.68552pt too wide) in paragraph at lines 419--420
 []\OT1/cmr/m/n/10.95 Supuesto que se ha ob-ser-vado un valor mues-tral $[]$, la funci^^Son de $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 definida me-di-ante $\OML/cmm/m/it/10.95 L [] \OT1/cmr/m/n/10.95 =
  []
 
 
-
-[29]
-Overfull \hbox (58.25124pt too wide) in paragraph at lines 359--360
+Overfull \hbox (58.25124pt too wide) in paragraph at lines 437--438
 \OT1/cmr/m/n/10.95 mon-eda al aire rep-re-sen-tado por la v.a. $\OML/cmm/m/it/10.95 J$ \OT1/cmr/m/n/10.95 tal que $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J \OT1/cmr/m/n/10.95 = 1) = \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J \OT1/cmr/m/n/10.95 = 2) = []$, si $\OML/cmm/m/it/10.95 E \OT1/cmr/m/n/10.95 = [][]$
  []
 
 
-Overfull \hbox (119.3316pt too wide) in paragraph at lines 359--360
+Overfull \hbox (119.3316pt too wide) in paragraph at lines 437--438
 \OT1/cmr/m/n/10.95 es el ex-per-i-mento mixto rep-re-sen-tado por la v.a. $(\OML/cmm/m/it/10.95 Z; J\OT1/cmr/m/n/10.95 )$ tal que $\OML/cmm/m/it/10.95 Z \OT1/cmr/m/n/10.95 = []$,
  []
 
-))
 
-[30] (main.aux)
+
+[31]))
+
+[32] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1697,17 +1722,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 159177BAB1EB0FEF6A534E75838466AE;3013.
  ) 
 Here is how much of TeX's memory you used:
- 35972 strings out of 473530
- 730216 string characters out of 5714794
- 1275089 words of memory out of 5000000
- 58355 multiletter control sequences out of 15000+600000
- 572087 words of font info for 88 fonts, out of 8000000 for 9000
+ 36002 strings out of 473530
+ 730678 string characters out of 5714794
+ 1275275 words of memory out of 5000000
+ 58377 multiletter control sequences out of 15000+600000
+ 573522 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,15n,112p,1177b,1134s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (31 pages, 415160 bytes).
+Output written on main.pdf (33 pages, 423663 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 143 named destinations out of 1000 (max. 500000)
+ 499 PDF objects out of 1000 (max. 8388607)
+ 146 named destinations out of 1000 (max. 500000)
  285 words of extra memory for PDF output out of 10000 (max. 10000000)
 

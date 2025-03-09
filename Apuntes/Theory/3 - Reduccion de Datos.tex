@@ -294,29 +294,107 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 
   
 \subsection{Estadísticos Ancilarios y Completos}
-Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado ( $\left.\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
-  
-El estadístico $U=U\left(X_{1}, \ldots, X_{n}\right)$ es ancilario para $\theta$ si su distribución en el muestreo es independiente de $\theta$
-  
-Ejercicio $\mathrm{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s.( $n$ ) de $X \sim N\left(\mu, \sigma_{0}\right), \sigma_{0}$ conocida, entonces $U\left(X_{1}, \ldots, X_{n}\right)=X_{1}-X_{2} \sim N\left(0, \sigma_{0} \sqrt{2}\right)$ es un estadístico ancilario para $\mu$
-  
-La familia de distribuciones de probabilidad $\left\{G_{\theta}\left(y_{1}, \ldots, y_{m}\right)\right\}_{\theta \in \Theta \subset \mathbb{R}^{e}}$ es completa sí y sólo sí para cualquier función real $h\left(y_{1}, \ldots, y_{m}\right)$ con $h\left(Y_{1}, \ldots, Y_{m}\right)$ medible y tal que $E_{\theta}\left[h\left(Y_{1}, \ldots, Y_{m}\right)\right]=0, \forall \theta \in \Theta$, se sigue que $h\left(Y_{1}, \ldots, Y_{m}\right) \stackrel{C S}{=} 0$
-  
-\section*{Estadísticos Ancilarios y Completos (continuación)}
-Ejercicio La familia de distribuciones de probabilidad $\operatorname{Bin}(n, \theta)$ es completa\\
-Sea $Y \sim \operatorname{Bin}(n, \theta)$,\\
-$E_{\theta}[h(Y)]=\sum_{i=1}^{n} h(i)\binom{n}{i} \theta^{i}(1-\theta)^{n-i}=$\\
-$(1-\theta)^{n} \sum_{i=1}^{n} h(i)\binom{n}{i}\left(\frac{\theta}{1-\theta}\right)^{i}=0, \forall \theta \in(0,1)$,\\
-que es un polinomio de grado $n$ en $\frac{\theta}{1-\theta} \in(0, \infty)$, luego para que sea nulo, ha de ser $h(i)=0, \forall i=1, \ldots, n$. Por lo tanto $h(Y) \stackrel{c s}{=} 0$
-  
-Ejercicio La familia de distribuciones de probabilidad $N(0, \theta)$ no es completa\\
-Sea $Y \sim N(0, \theta)$ y $h(Y)=Y$, entonces $E_{\theta}[h(Y)]=E_{\theta}[Y]=0$ $\forall \theta>0$, sin embargo $h(Y)=Y$ no es idénticamente nula c.s.
-  
-\section*{Estadísticos Ancilarios y Completos (continuación)}
-El estadístico $T=T\left(X_{1}, \ldots, X_{n}\right)$ es completo sí y sólo sí su distribución en el muestreo es una familia de distribuciones de probabilidad completa
-  
-Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\sum_{i=1}^{n} X_{i} \sim \operatorname{Bin}(n, \theta)$ es completo\\
-Ejercicio Si $X \sim N(\theta, \theta), T=\left(\sum_{i=1}^{n} X_{i}, \sum_{i=1}^{n} X_{i}^{2}\right)$ no es completo Indicación: $h(T)=\left(2\left(\sum_{i=1}^{n} X_{i}\right)^{2}-(n+1) \sum_{i=1}^{n} X_{i}^{2}\right)$
+\begin{definición}
+	Un estadístico $U(X_1, \ldots, X_n)$ es ancilario para $\theta$ si su distribución en la muestra es independiente de $\theta$
+\end{definición}
+
+\ejemplo{
+	Sea una población que sigue una distribucion normal $N(\theta. \sigma_0)$ con $\sigma_0$ conocida, tomemos una m.a.s. de tamaño $n$ tal que $U(X_1, \ldots, X_n) = X_1 - X-2 \sim  N(0, \sqrt{2\sigma_0})$ que no depende de $\theta$ por lo que $U$ es un estadístico ancilario para $\theta$.
+}
+
+\begin{definición}
+	La familia $\mathcal{P} = \{f_{\theta}(x_1, \ldots, x_n) : \theta \in \Theta \subset \mathbb{R}^{\mathcal{l}}\}$ es completa si para cualquier función real $g(X_1, \ldots, x_n$) tal que $E_{\theta}[g(X_1, \ldots, X_n)] = 0, \ \forall \theta \in \Theta \implies g(X_1, \ldots, X_n) \stackrel{c.s.}{=} 0$
+\end{definición}
+
+\ejemplo{
+	Veamos si la familia de distribuciones $Bin(n, \theta)$ es completa: \\
+	Sea $Y \sim Bin(n, \theta)$, entonces:
+	$$E_{\theta}[h(Y)] = \sum_{i = 1}^{n}h(i)\binom{n}{i}\theta^i(1 - \theta)^{n - i} = (1 - \theta)^{n}\sum_{i = 1}^{n} h(i) \binom{n}{i}\left(\frac{\theta}{1 - \theta}\right)^i = 0, \ \forall \theta \in (0, 1)$$
+	Si definimos la variable $x = \frac{\theta}{1 - \theta} \implies$ $$\sum_{i = 1}^{n}h(i)\binom{n}{i}x^i = 0 \text{ es un polinomio de grado $n$ en $x$} \implies h(i) = 0, \ \forall i = 1, \ldots, n \implies h(Y) \stackrel{c.s.}{=} 0$$
+	Por lo que la familia de distribuciones $Bin(n, \theta)$ es completa
+}
+
+\ejemplo{
+	Veamos si la familia de distribuciones $N(0, \theta)$ es completa: \\
+	Sea $Y \sim N(0, \theta)$, entonces:
+	Si tomamos la función real identidad, definida por $g(Y) = Y$, entonces: 
+	$$E_{\theta}[g(Y)] = E_{\theta}[Y] = 0, \ \forall \theta > 0, \text{ pero } g(Y) = Y \text{ no es idénticamente nula c.s.}$$
+	Por lo que la familia de distribuciones $N(0, \theta)$ no es completa
+}
+
+\begin{definición}
+	Un estadístico $T$ (no necesariamente suficiente) se dice completo, cuando: 
+	$$\forall g \text{-medible(integrable) tal que } E_{\theta}[\varphi(t)] = 0 \implies g(t) \stackrel{c.s.}{=} 0$$
+	Es decir, 
+	Se dice que un estadístico es completo si no existe función $g(x_1, \ldots, x_n)$ tal que $E_{\theta}[g(T)] = 0$ a menos rque $g(X) \stackrel{c.s.}{=} 0$
+	\\ Alternativamente, también se puede decir, que el estadístico es completo si y solo sí su distribución en el muestreo es una familia de distribuciones de probabilidad completa
+\end{definición}
+
+\ejemplo{
+
+Dado que cada \( X_i \sim \text{Bin}(1, \theta) \), la suma 
+
+\[
+T = \sum_{i=1}^{n} X_i
+\]
+
+sigue una distribución binomial con parámetros \( n \) y \( \theta \):
+
+\[
+T \sim \text{Bin}(n, \theta).
+\]
+
+Para demostrar que \( T \) es un estadístico completo, consideremos una función \( g(T) \) tal que:
+
+\[
+E_\theta[g(T)] = 0, \quad \forall \theta \in (0,1).
+\]
+
+Calculando la esperanza,
+
+\[
+E_\theta[g(T)] = \sum_{i=0}^{n} g(i) \binom{n}{i} \theta^i (1 - \theta)^{n - i}.
+\]
+
+Factorizando \( (1 - \theta)^n \):
+
+\[
+E_\theta[g(T)] = (1 - \theta)^n \sum_{i=0}^{n} g(i) \binom{n}{i} \left( \frac{\theta}{1 - \theta} \right)^i.
+\]
+
+Definiendo \( x = \frac{\theta}{1 - \theta} \), obtenemos:
+
+\[
+\sum_{i=0}^{n} g(i) \binom{n}{i} x^i = 0, \quad \forall x \in (0, \infty).
+\]
+
+Dado que el lado izquierdo es un polinomio de grado \( n \) en \( x \) que se anula para todo \( x \), por el \textbf{teorema fundamental del álgebra}, los coeficientes del polinomio deben ser todos cero:
+
+\[
+g(i) \binom{n}{i} = 0, \quad \forall i = 0, \dots, n.
+\]
+
+Como los coeficientes binomiales \( \binom{n}{i} \) son distintos de cero, se sigue que:
+
+\[
+g(i) = 0, \quad \forall i.
+\]
+
+Por lo tanto, \( g(T) = 0 \) casi seguramente, lo que implica que \( T \) es un estadístico \textbf{completo}
+}
+
+\ejemplo{
+	Veamos si dado $X \sim N(\theta, \theta)$ el estadístico $T = \left(\sum_{i = 1}^{n}X_i, \sum_{i = 1}^{n}X_i^2\right)$ es completo:\\
+	Por las propiedades de las esperanzas tenemos que:
+	$$\sum_{i = 1}^{n}E[X_i] = n\theta, \sum_{i = 1}^{n}E[X_i^2] = n(E[X_i^2]) = n(\theta + \theta^2)$$
+	Sea $h(t) = (2(\sum_{i = 1}^{n}X_i)^2 - (n + 1)\sum_{i = 1}^{n}X_i^2)$, entonces:
+	$$E_{\theta}[h(T)] = 2E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] - (n+1)E[\sum_{i = 1}^{n}X_i^2] = 2E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] - (n+1)\sum_{i = 1}^{n}E[X_i^2] $$
+	Recordemos que $Var(Y) = E[Y^2] - (E[Y])^2$, entonces:
+	$$E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] = Var\left(\sum_{i = 1}^{n}X_i\right) + (E\left[\sum_{i = 1}^{n}X_i\right])^2 = n\theta^2 + n^2\theta^2 = n\theta^2(n+1)$$	
+	$$E[X_i^2] = Var(X_i) + (E[X_i])^2 = \theta^2 + \theta^2 = 2\theta^2 \implies E_{\theta}[\sum_{i = 1}^{n}X_i^2] = 2n\theta^2$$
+	$$\implies E_{\theta}[h(T)] = 2n\theta^2(n+1) - (n+1)2n\theta^2 \implies E_{\theta}[h(T)] = 0, \ \forall \theta \in \Theta$$
+	Pero $h(T) = 2(\sum_{i = 1}^{n}X_i)^2 - (n + 1)\sum_{i = 1}^{n}X_i^2 \neq 0$ por lo que $T$ no es completo
+}
   
 Ejercicio Si $S=S\left(X_{1}, \ldots, X_{n}\right)$ es suficiente y completo, entonces es minimal suficiente Indicación: Demostrar que si $T=T\left(X_{1}, \ldots, X_{n}\right)$ es minimal suficiente, entonces $S \stackrel{\text { cs }}{=} E[S \mid T]$ y por lo tanto $S$ es función de $T$
   
