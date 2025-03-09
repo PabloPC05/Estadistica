@@ -1,10 +1,10 @@
 INFO:  latexindent.pl version 3.24.4, 2024-07-18, a script to indent .tex files
        latexindent.pl lives here: C:/Users/pablo/AppData/Local/Programs/MiKTeX/scripts/latexindent/
-       Sun Mar  9 12:11:08 2025
-       Filename: c:\Users\pablo\OneDriveUCM\Universidad\Estadística\Practica_y_latex\Estadistica-1\Apuntes\Theory\3 - Reduccion de Datos.tex
+       Sun Mar  9 12:11:13 2025
+       Reading input from STDIN
 INFO:  Processing switches:
 INFO:  Directory for backup files and log file indent.log:
-       c:\Users\pablo\OneDriveUCM\Universidad\Estadística\Practica_y_latex\Estadistica-1\Apuntes\Theory
+       .
 INFO:  Perl modules are being loaded from the following directories:
        C:/Strawberry/perl/lib/FindBin.pm
        C:/Strawberry/perl/vendor/lib/YAML/Tiny.pm
