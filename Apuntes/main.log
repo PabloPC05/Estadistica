@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  10 MAR 2025 22:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  11 MAR 2025 13:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,7 +756,12 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
+) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen330
+))
 \symmatha=\mathgroup8
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -766,22 +771,22 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@cnth=\count385
 \Gm@cntv=\count386
 \c@Gm@tempcnt=\count387
-\Gm@bindingoffset=\dimen330
-\Gm@wd@mp=\dimen331
-\Gm@odd@mp=\dimen332
-\Gm@even@mp=\dimen333
-\Gm@layoutwidth=\dimen334
-\Gm@layoutheight=\dimen335
-\Gm@layouthoffset=\dimen336
-\Gm@layoutvoffset=\dimen337
+\Gm@bindingoffset=\dimen331
+\Gm@wd@mp=\dimen332
+\Gm@odd@mp=\dimen333
+\Gm@even@mp=\dimen334
+\Gm@layoutwidth=\dimen335
+\Gm@layoutheight=\dimen336
+\Gm@layouthoffset=\dimen337
+\Gm@layoutvoffset=\dimen338
 \Gm@dimlist=\toks53
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen338
-\ESO@tempdimb=\dimen339
+\ESO@tempdima=\dimen339
+\ESO@tempdimb=\dimen340
 ) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
-\wrapoverhang=\dimen340
-\WF@size=\dimen341
+\wrapoverhang=\dimen341
+\WF@size=\dimen342
 \c@WF@wrappedlines=\count388
 \WF@box=\box142
 \WF@everypar=\toks54
@@ -800,7 +805,7 @@ Package chngcntr Info: \counterwithout already defined.
 ) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/02/02 v25.3 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
 \babel@savecnt=\count390
-\U@D=\dimen342
+\U@D=\dimen343
 \l@unhyphenated=\language79
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read5
@@ -860,10 +865,10 @@ Package: thm-amsthm 2023/05/04 v0.76
 )) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip69
-\fb@frw=\dimen343
-\fb@frh=\dimen344
-\FrameRule=\dimen345
-\FrameSep=\dimen346
+\fb@frw=\dimen344
+\fb@frh=\dimen345
+\FrameRule=\dimen346
+\FrameSep=\dimen347
 ) (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
@@ -977,12 +982,12 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myTheoremStyle' on input line 148.
+(thmtools)             that uses `style=myTheoremStyle' on input line 149.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightRed, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myTheoremStyle' on input line 148.
-Package thmtools Info: Automatically pulling in `thmdef-mdframed' on input line 155.
+(thmtools)             that uses `style=myTheoremStyle' on input line 149.
+Package thmtools Info: Automatically pulling in `thmdef-mdframed' on input line 156.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/thmtools\thmdef-mdframed.sty
 Package: thmdef-mdframed 2023/05/04 v0.76
 )
@@ -990,47 +995,47 @@ Package: thmdef-mdframed 2023/05/04 v0.76
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myPropositionStyle' on input line 172.
+(thmtools)             that uses `style=myPropositionStyle' on input line 173.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightOrange, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myPropositionStyle' on input line 172.
+(thmtools)             that uses `style=myPropositionStyle' on input line 173.
 \c@proposición=\count401
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myCorollaryStyle' on input line 196.
+(thmtools)             that uses `style=myCorollaryStyle' on input line 197.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightOrange, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myCorollaryStyle' on input line 196.
+(thmtools)             that uses `style=myCorollaryStyle' on input line 197.
 \c@corolario=\count402
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myLemmaStyle' on input line 220.
+(thmtools)             that uses `style=myLemmaStyle' on input line 221.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightOrange, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myLemmaStyle' on input line 220.
+(thmtools)             that uses `style=myLemmaStyle' on input line 221.
 \c@lema=\count403
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myDefinitionStyle' on input line 244.
+(thmtools)             that uses `style=myDefinitionStyle' on input line 245.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightBlue, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myDefinitionStyle' on input line 244.
+(thmtools)             that uses `style=myDefinitionStyle' on input line 245.
 \c@definición=\count404
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myObservationStyle' on input line 268.
+(thmtools)             that uses `style=myObservationStyle' on input line 269.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightGreen, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=myObservationStyle' on input line 268.
+(thmtools)             that uses `style=myObservationStyle' on input line 269.
 \c@observación=\count405
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1072,19 +1077,19 @@ Package tocloft Info: The document has section divisions on input line 51.
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=EjercicioStyle' on input line 350.
+(thmtools)             that uses `style=EjercicioStyle' on input line 351.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightPurple, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=EjercicioStyle' on input line 350.
+(thmtools)             that uses `style=EjercicioStyle' on input line 351.
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=SolucionStyle' on input line 369.
+(thmtools)             that uses `style=SolucionStyle' on input line 370.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=White, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=SolucionStyle' on input line 369.
+(thmtools)             that uses `style=SolucionStyle' on input line 370.
 \c@ejercicio=\count408
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
@@ -1099,7 +1104,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count409
 )
-\@linkdim=\dimen347
+\@linkdim=\dimen348
 \Hy@linkcounter=\count410
 \Hy@pagecounter=\count411
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
@@ -1125,15 +1130,15 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
 \c@Hy@tempcnt=\count413
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen348
+\XeTeXLinkMargin=\dimen349
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count414
-\Field@Width=\dimen349
-\Fld@charsize=\dimen350
+\Field@Width=\dimen350
+\Fld@charsize=\dimen351
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1196,13 +1201,13 @@ LaTeX Font Info:    ... okay on input line 8.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count421
-\scratchdimen=\dimen351
+\scratchdimen=\dimen352
 \scratchbox=\box150
 \nofMPsegments=\count422
 \nofMParguments=\count423
 \everyMPshowfont=\toks66
 \MPscratchCnt=\count424
-\MPscratchDim=\dimen352
+\MPscratchDim=\dimen353
 \MPnumerator=\count425
 \makeMPintoPDFobject=\count426
 \everyMPtoPDFconversion=\toks67
@@ -1517,67 +1522,67 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 49.
 
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+
+ []
+
+
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 84--84
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-
- []
-
-
-Overfull \hbox (12.32956pt too wide) detected at line 108
+Overfull \hbox (12.32956pt too wide) detected at line 104
 \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = [] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) = [] [] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) = [] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+
  []
 
 
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 124.
+(mdframed)              on input line 120.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.124 \begin{definición}[Órbita]
+l.120 \begin{definición}[Órbita]
                                   
-Underfull \hbox (badness 10000) in paragraph at lines 124--126
+Underfull \hbox (badness 10000) in paragraph at lines 120--122
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 138.
+(mdframed)              on input line 134.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.138 \begin{definición}[Partición Inducida]
+l.134 \begin{definición}[Partición Inducida]
                                               
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
 
  []
 
@@ -1586,204 +1591,201 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--140
 [23]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 156.
+(mdframed)              on input line 152.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.156 	S
+l.152 	S
         e dice que $\mathcal{K}_{T}$ es suficiente sí y sólo si $T$ es suf...
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 160.
+(mdframed)              on input line 156.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.160 	D
+l.156 	D
         ado dos estadísticos $T = T(X_1, \dots, X_n)$ y $S = S(X_1, \dots, ...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 165.
+(mdframed)              on input line 161.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.165 ...nición}[Estadístico Minimal Suficiente]
+l.161 ...nición}[Estadístico Minimal Suficiente]
                                                   
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 186.
+(mdframed)              on input line 182.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.186 ...ción de equivalencia minimal suficiente]
+l.182 ...ción de equivalencia minimal suficiente]
                                                   
-Package mdframed Info: Not enough space on this page on input line 190.
-
 
 [24]
-Package mdframed Info: Not enough space on this page on input line 190.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 192.
+(mdframed)              on input line 188.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.192 ...tadísticos minimales (Lehmann-Scheffé)]
+l.188 ...tadísticos minimales (Lehmann-Scheffé)]
                                                   
-Overfull \hbox (16.3433pt too wide) in paragraph at lines 192--194
+Overfull \hbox (16.3433pt too wide) in paragraph at lines 188--190
 []\OT1/cmr/m/it/10.95 A cada clase de equiv-a-len-cia an-te-rior le asig-namos un valor $\OML/cmm/m/it/10.95 t$ \OT1/cmr/m/it/10.95 y defin-i-mos un es-tad^^S^^Pstico $\OML/cmm/m/it/10.95 T \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; [] ; X[]\OT1/cmr/m/n/10.95 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--212
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 215.
+(mdframed)              on input line 211.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.215   R
+l.211   R
          ecordemos que $\forall T' \text{ suficiente } \exists \varphi : \va...
 
 [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 228.
+(hyperref)                removing `math shift' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 228.
+(hyperref)                removing `math shift' on input line 224.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 231.
+(mdframed)              on input line 227.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.231 ...ión}[Familia exponencial k-paramétrica]
+l.227 ...ión}[Familia exponencial k-paramétrica]
                                                   
-Overfull \hbox (12.76677pt too wide) detected at line 244
+Overfull \hbox (12.76677pt too wide) detected at line 240
 \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 f[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ))[] [] \OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ))[] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 e[]
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 248.
+(mdframed)              on input line 244.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.248   S
+l.244   S
          ean $\theta_1, \ldots, \theta_k \in \Theta \subset \mathbb{R}^{\ell...
 
 [26]
-Overfull \hbox (6.88681pt too wide) detected at line 287
+Overfull \hbox (6.88681pt too wide) detected at line 283
  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) = [][] \OML/cmm/m/it/10.95 e[]
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 290.
+(mdframed)              on input line 286.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.290   E
+l.286   E
          n las familias k-paramétricas exponenciales, es decir, aquellas de...
 
 [27]
-Package mdframed Info: Not enough space on this page on input line 293.
+Package mdframed Info: Not enough space on this page on input line 289.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 298.
+(mdframed)              on input line 294.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.298 	U
+l.294 	U
         n estadístico $U(X_1, \ldots, X_n)$ es ancilario para $\theta$ si s...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 306.
+(mdframed)              on input line 302.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.306 	L
+l.302 	L
         a familia $\mathcal{P} = \{f_{\theta}(x_1, \ldots, x_n) : \theta \in...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 326.
+(mdframed)              on input line 322.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.326 	U
+l.322 	U
         n estadístico $T$ (no necesariamente suficiente) se dice completo, ...
 
 [28]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 387.
+(mdframed)              on input line 383.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.387 	S
+l.383 	S
         i $T_1$ y $T_2$ son estadísticos completos, entonces $(T_1, T_2)$ t...
 
 [29]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 404.
+(mdframed)              on input line 400.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.404 	R
+l.400 	R
         ecordemos que:
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 413.
+(mdframed)              on input line 409.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.413 \begin{teorema}[Teorema de Bahadur]
+l.409 \begin{teorema}[Teorema de Bahadur]
                                          
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 420.
+(mdframed)              on input line 416.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.420 		R
+l.416 		R
          ecordemos la propiedad de las esperanzas, \underline{propiedad de l...
 
 [30]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 441.
+(mdframed)              on input line 437.
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--448
+Underfull \hbox (badness 10000) in paragraph at lines 441--444
 
  []
 
@@ -1792,100 +1794,132 @@ Package mdframed Warning: You got a bad break
 (mdframed)                because the last box will be empty
 (mdframed)                you have to change it manually
 (mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 456.
+(mdframed)                or something else on input line 452.
 
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 456.
+(mdframed)              on input line 452.
 
 
 [31]
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 456.
+(mdframed)                You have to change the settings on input line 452.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 460.
+(mdframed)              on input line 456.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.460 	E
+l.456 	E
         l estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = ...
+<Graficos/geogebra-export.png, id=379, 341.43307pt x 267.00066pt>
+File: Graficos/geogebra-export.png Graphic file (type png)
+<use Graficos/geogebra-export.png>
+Package pdftex.def Info: Graficos/geogebra-export.png  used on input line 506.
+(pdftex.def)             Requested size: 239.59973pt x 187.37177pt.
+
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 487.
+(mdframed)              on input line 527.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 527.
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--510
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+\OT1/cmr/m/n/10.95 Recordemos adem^^Sas cu^^Sales son las fun-ciones de den-si-dad de los m^^Saximos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+\OT1/cmr/m/n/10.95 y lo m^^S^^Pnimos ($[]$):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
 
  []
 
 
-Overfull \hbox (43.58176pt too wide) detected at line 510
+
+[33 <./Graficos/geogebra-export.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 530.
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--553
+
+ []
+
+
+Overfull \hbox (43.58176pt too wide) detected at line 553
 \OT1/cmr/m/n/10.95 = 1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] > x\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A [] ^^A \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] > x\OT1/cmr/m/n/10.95 ) = 1 \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ))[] = 1 \OMS/cmsy/m/n/10.95 ^^@ [][]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 n [][] \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )[]
  []
 
 
 
-[32]
+[34]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 526.
+(mdframed)              on input line 569.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.526 \begin{teorema}[Principio de verosimilitud]
+l.569 \begin{teorema}[Principio de verosimilitud]
                                                  
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 531.
+(mdframed)              on input line 574.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.531 	S
+l.574 	S
         ean dos muestras $X = (x_1, \ldots, x_n)$ e $Y = (y_1, \ldots, y_m)$...
-Underfull \hbox (badness 10000) in paragraph at lines 539--539
+Underfull \hbox (badness 10000) in paragraph at lines 582--582
 
  []
 
-
-
-[33]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 542.
+(mdframed)              on input line 585.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.542 ...n{proposición}[Principio de suficiencia]
+l.585 ...n{proposición}[Principio de suficiencia]
                                                   
+
+[35]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 550.
+(mdframed)              on input line 593.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.550 ...oposición}[Principio de condicionalidad]
+l.593 ...oposición}[Principio de condicionalidad]
                                                   
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 558.
+(mdframed)              on input line 601.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.558 \begin{teorema}[Teorema de Birnbaum]
+l.601 \begin{teorema}[Teorema de Birnbaum]
                                           ))
 
-[34]
-
-[35] (main.aux)
+[36] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1894,17 +1928,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 755C7B941010975DC10B97B9F5AD126F;3354.
  ) 
 Here is how much of TeX's memory you used:
- 46064 strings out of 473530
- 1069152 string characters out of 5714794
- 1722048 words of memory out of 5000000
- 68302 multiletter control sequences out of 15000+600000
+ 46587 strings out of 473530
+ 1083760 string characters out of 5714794
+ 1729476 words of memory out of 5000000
+ 68816 multiletter control sequences out of 15000+600000
  575653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,15n,112p,1034b,2239s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,15n,112p,1034b,2241s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (36 pages, 461971 bytes).
+Output written on main.pdf (37 pages, 748441 bytes).
 PDF statistics:
- 535 PDF objects out of 1000 (max. 8388607)
- 154 named destinations out of 1000 (max. 500000)
- 301 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 157 named destinations out of 1000 (max. 500000)
+ 306 words of extra memory for PDF output out of 10000 (max. 10000000)
 

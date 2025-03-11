@@ -72,10 +72,6 @@
 }
 
 \ejemplo{
-	3 Si $T=T\left(X_{1}, \cdots X_{n}\right)$ es suficiente para $\theta$ entonces cualquier biyección $S=S(T)$ también es suficiente para $\theta$\\
-	NO LO ENTIENDO, PREGUNTAR
-}
-\ejemplo{
 	Supongamos que tenemos un estadístico $T$ suficiente para el parámetro $\theta$ y una biyección $S$, demostremos que $S(T)$ también es suficiente para $\theta$\\
 	Por el Teorema de Caracterización de Fisher tenemos que: 
 	$$f_{\theta}(x_1, \ldots, x_n) = h(x_1, \ldots, x_n) \cdot g_{\theta}(T(x_1, \ldots, x_n))$$ para alguna función $h$ y $g_{\theta}$\\ 
@@ -457,7 +453,7 @@ Por lo tanto, \( g(T) = 0 \) casi seguramente, lo que implica que \( T \) es un 
   
 
 \begin{teorema}	
-	El estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = 1}^{n}T_k(X_i))$ de la familia exponencial $k$-paramétrica, $\{f_{\theta}(x) = c(\theta)h(x)e^{\sum_{j = 1}^{k}q_j(\theta)T_j(x)}\}_{\theta \in \Theta \subset \mathbb{R}^{\mathcal{e}}}$, es completo si la imagen de la aplicación $q = (q_1(\theta), \ldots, q_k(\theta)): \Theta \to \mathbb{R}^k$ contiene un rectángulo abierto de $\mathbb{R}^k$
+	El estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = 1}^{n}T_k(X_i))$ de la familia exponencial $k$-paramétrica, $\{f_{\theta}(x) = c(\theta)h(x)e^{\sum_{j = 1}^{k}q_j(\theta)T_j(x)}\}_{\theta \in \Theta \subset \mathbb{R}^{\mathcal{e}}}$, es completo si la imagen de la aplicación $q = (q_1(\theta), \ldots, q_k(\theta)): \Theta \to \mathbb{R}^k$ contiene un rectángulo abierto de $\mathbb{R}^k $ no trivial. 
 \end{teorema}
 
 \ejemplo{
@@ -481,6 +477,53 @@ Por lo tanto, \( g(T) = 0 \) casi seguramente, lo que implica que \( T \) es un 
 			\end{axis}
 		\end{tikzpicture}
 	\end{center}
+}
+
+\ejemplo{
+	Sea $X \sim Bernoulli(\theta) \implies P(X = x) = \theta^x(1 - \theta)^{1 - x} \implies$
+	$$\text{Sea una m.a.s. de tamaño } n \implies P(\vec{X} = \vec{x}) = \theta^{\sum x_i}(1- \theta)^{n - \sum x_i} = \left(\frac{\theta}{1 - \theta}\right)^{\sum x_i} \cdot (1 - \theta)^n = $$
+	En este caso, la distribución no tiene exponencial, pero se puede refactrizar para obtenerlo: \\
+	Recordemos que $a^b = e^{b \cdot ln(a)}$, entonces, aplicando ésto aquí obtenemos que: 
+	$$ =  e^{\sum x_i \cdot ln(\frac{\theta}{1 - \theta})} \cdot (1 - \theta)^n$$
+	En donde tenemos por la forma general de las familias exponenciales k-paramétricas, que es de la forma: 
+	\begin{itemize}
+		\item $T(\vec{x}) = \sum x_i$
+		\item $q(\theta) = ln(\frac{\theta}{1 - \theta}) $
+		\item $c(\theta) = (1 - \theta)^n $
+		\item $h(\vec{x}) = 1$
+	\end{itemize}
+	Entonces, podemos obtener que como $(X_1 \ldots, X_n)$ pertenece a la famiia exponencial k-paramétrica, obtenemos que su estadístico natural $(T(\vec{x}) = \sum x_i)$ es suficiente. 
+	Y como $$g(\theta) = \frac{\theta}{1 - \theta} \neq 0 \implies \text{ el estadístico natural } \sum x_i \text{ es minimal}$$
+	Ya que un vector de una dimensión es siempre linealmente independiente si y sólo si no es nulo. \\
+	Por último, veamos que el estadístico natural es completo: \\
+	Para ello aplicaremos el teorema anterior y para ello analizaremos el conjunto imaagen de $q(\theta)$:
+	$$Im(q(\theta)) = \{ln(\frac{\theta}{1 - \theta}) : \theta \in \Theta = (0,1)\} \text{ ya que se trata de una distribución Bernoulli}$$
+	Por último dado que la función tiene una gráfica así:
+	\begin{center}
+	\includegraphics[width=0.5\linewidth]{Graficos/geogebra-export.png}
+	\end{center}
+	La imagen coincide con los números reales $\mathbb{R}$ por lo que contiene un conjunto abierto no trivial y por tanto el estadístico natural $\sum x_i$ es completo. 
+}
+
+Ahora veamos otro ejemplo en el que no se puede provocar la perteniencia a la familia exponencial: 
+
+\ejemplo{
+	Sea $X \sim U(\theta, 7\theta) \implies f_{\theta}(x) = \frac{1}{6\theta}\cdot I_{(\theta, 7\theta)}(x) \implies$
+	$$f_{\theta}(\vec{x}) = \left(\frac{1}{6\theta}\right)^n \cdot I_{(\theta, 7\theta)}(x_{(1)}) \cdot I_{(\theta, 7\theta)}(x_{(n)})$$
+	Entonces por el Teorema de Factorización de Fisher, tenemos que el estadístico $T(\vec{x}) = (x_{(1)}, x_{(n)})$ es suficiente.\\
+	\begin{observación}
+		Como la función indicadora depende de $\theta$, entonces la distribución no pertenece a la familia exponencial
+	\end{observación}
+	Recordemos además cuáles son las funciones de densidad de los máximos y lo mínimos (\underline{aunque en la práctica real hace falta demostrarlo siempre}): 
+	$\begin{cases}
+		f_{\theta}(x_{(n)}) = n(F_X(x))^{n-1} \cdot f_X(x) \\
+		f_{\theta}(x_{(1)}) = n(1 - F_X(x))^{n-1} \cdot f_X(x)
+	\end{cases} \implies$
+	Saquemos primero la esperanza del máximo: \\
+	$$E_{\theta}[x_{(n)}] = \int_{\theta}^{6\theta} x\cdot n\left(\frac{x - \theta}{6\theta}\right)^{n-1} \cdot \frac{1}{6\theta} = dx$$
+	Para calcularla introduzcamos el cambio de variable: $\begin{cases} x = u \\ dv = f_{\theta}(x_{(n)}) \end{cases} \implies$
+	$$ = \left[x \cdot \left(\frac{x - \theta}{6\theta}\right)^n\right]^{7\theta}_{x = \theta} - \int_{\theta}^{6\theta}\left(\frac{x - \theta}{6\theta}\right)^n dx$$
+
 }
 
 

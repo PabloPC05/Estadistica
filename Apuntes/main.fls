@@ -344,6 +344,10 @@ INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgf
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryarrows.code.tex
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryarrows.code.tex
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
@@ -581,6 +585,13 @@ INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold10.tfm
 INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold7.tfm
 INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha10.tfm
 INPUT C:\Users\pablo\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha7.tfm
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
