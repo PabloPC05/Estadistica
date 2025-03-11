@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1741695550.21846 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741695557.70836 0
-  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741277327 81245 e934491651270ee8e50db9289c70f8a4 ""
+["pdflatex"] 1741719461.89139 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741719471.94923 0
+  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741696821 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1739788850 12668 dc06899bf14948622113887d9b2f36fb ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740519544 10576 1e4a7696076481c0e8f238784591097f ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi657/bbold10.pk" 1740519547 13648 a477ae08fafb36b1e903c2906c21f497 ""
@@ -335,13 +335,13 @@
   "Preamble/Preamble.tex" 1741693104 12039 d4179fd1b41fcfa14fda833bd7edc16f ""
   "Theory/1- Estadistica Descriptiva.tex" 1741185089 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
   "Theory/2 - Muestreo.tex" 1741263974 37489 b24087efc4382c3846169c0ac2c589a2 ""
-  "Theory/3 - Reduccion de Datos.tex" 1741695542 45292 e9ce18d8a234a12d9a773f1bc8de2eb0 ""
-  "Theory/Theory.tex" 1741185089 452 74b5bb8c00f0b2017fcfb149adda16eb ""
+  "Theory/3 - Reduccion de Datos.tex" 1741719450 49995 a079a08203377f355eaa4fffddac59f1 ""
+  "Theory/Theory.tex" 1741696555 452 74b5bb8c00f0b2017fcfb149adda16eb ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1741695557 16178 c965fe04b8e3faba7d6efcb511af3860 "pdflatex"
-  "main.out" 1741695557 3354 755c7b941010975dc10b97b9f5ad126f "pdflatex"
+  "main.aux" 1741719471 16095 679c009a8761e6869f3e92b6f7f9476c "pdflatex"
+  "main.out" 1741719471 3354 755c7b941010975dc10b97b9f5ad126f "pdflatex"
   "main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1741695557 1659 fb3e323c6a11179d2c405b94666d3571 "pdflatex"
+  "main.toc" 1741719471 1659 38fe57469e70b45778a3101a3ffc96c3 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

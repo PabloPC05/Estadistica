@@ -318,6 +318,102 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 	Por lo que la familia de distribuciones $N(0, \theta)$ no es completa
 }
 
+\ejemplo{
+	Sea $X$ una variable aleatoria discreta $D_x = \{1, 2, 3\}$ comprobemos si $X$ es completa:
+	Tenemos que: 
+	$\begin{cases}
+		P_{\theta}(X = 1) = \theta - 3 \\
+		P_{\theta}(X = 2) = 2\theta - 1 \\
+		P_{\theta}(X = 3) = 3 - 3\theta
+	\end{cases}$
+	Tomemos el estadístico $T_1(x_1, \ldots, x_n) = x_1$ y comprobemos si es completo: \\
+	Saea $\varphi$ función real que actúa sobre el soporte $D_x$, entonces:
+	$$E_{\theta}[\varphi(T_1)] = \varphi(1) \cdot P(X = 1) + \varphi(2) \cdot P(X = 2) + \varphi(3) \cdot P(X = 3) = $$
+	$$ = \varphi(1)(\theta - 3) + \varphi(2)(2\theta - 1) + \varphi(3)(3 - 3\theta) = \theta(\varphi(1) + 2\varphi(2) - 3\varphi(3)) - 3\varphi(1) + \varphi(2) + 3\varphi(3) = $$
+	Pero este sistema de ecuaciones es un sistema compatible indeterminado, por lo que no tiene una única solución y por tanto no tiene porqué cumplirse que $\varphi(T_1) = 0$ c.s. $\implies T_1$ no es completo.
+}
+
+\ejemplo{
+	Sea $X$ una variable aleatoria discreta $D_x = \{1, 2, 3\}$ comprobemos si $X$ es completa:
+	Tenemos que: 
+	$\begin{cases}
+		P_{\theta}(X = 1) = \theta^2 + \theta \\
+		P_{\theta}(X = 2) = 1 -2\theta^2 \\
+		P_{\theta}(X = 3) = \theta^2 - \theta
+	\end{cases}$
+	$\implies$
+	$$E_{\theta}[\varphi(T)] = \varphi(1) \cdot P(X = 1) + \varphi(2) \cdot P(X = 2) + \varphi(3) \cdot P(X = 3) = $$
+	$$ = \varphi(1)(\theta^2 + \theta) + \varphi(2)(1 - 2\theta^2) + \varphi(3)(\theta^2 - \theta) = \theta^2(\varphi(1) -2\varphi(2) + \varphi(3)) + \theta(\varphi(1) - \varphi(3)) + \varphi(2) = 0$$
+	Lo cual se trata de un polinomio de grado 2 en $\theta$ por lo que podría tener solución:
+	$$\begin{cases}
+		\varphi(1) - 2\varphi(2) + \varphi(3) = 0 \\
+		\varphi(1) - \varphi(3) = 0 \\
+		\varphi(2) = 0
+	\end{cases}$$
+	$\implies \varphi(1) = \varphi(3) = \varphi(2) = 0 \implies \varphi(T) = 0$ c.s. $\implies T$ es completo
+}
+
+\ejemplo{
+	ea $X$ una variable aleatoria discreta con dominio \( D_X = \{0\} \cup \mathbb{N} \). Queremos comprobar si $X$ es completa. Los valores de probabilidad vienen dados por:
+
+	\[
+	P(X = -1) = \theta, \quad P(X = x) = \theta^x(1-\theta)^2, \quad \forall x \in \mathbb{N}
+	\]
+	
+	Por definición, verificamos si \(E[\varphi(X)] = 0\) implica \(\varphi(X) = 0\) para toda función medible. Calculamos la esperanza:
+	
+	\[
+	E[\varphi(X)] = \varphi(-1) P(X = -1) + \sum_{k = 0}^{+\infty} \varphi(k) P(X = k)
+	\]
+	
+	\[
+	= \varphi(-1) \theta + \sum_{k = 0}^{+\infty} \varphi(k) \theta^k (1 - \theta)^2
+	\]
+	
+	Factorizando:
+	
+	\[
+	E[\varphi(X)] = \varphi(-1)\theta + (1-\theta)^2 \sum_{k = 0}^{+\infty} \varphi(k) \theta^k = 0
+	\]
+	
+	Para todo \( \theta \), lo que nos lleva a estudiar la ecuación funcional:
+	
+	\[
+	\varphi(-1)\theta + (1-\theta)^2 \sum_{k = 0}^{+\infty} \varphi(k) \theta^k = 0, \quad \forall \theta
+	\]
+	
+	Esta ecuación es un **polinomio en \(\theta\)**. Para que se cumpla para todo \(\theta\), cada coeficiente debe anularse individualmente. Analizando los coeficientes del desarrollo en serie de potencias:
+	
+	1. **Coeficiente de \(\theta^{-1}\)**: No hay términos de este tipo, por lo que no impone restricciones.
+	2. **Coeficiente de \(\theta^0\)**:
+	   \[
+	   (1 - \theta)^2 \varphi(0) = 0 \implies \varphi(0) = 0
+	   \]
+	3. **Coeficiente de \(\theta^1\)**:
+	   \[
+	   \varphi(-1) + (1-\theta)^2 \varphi(1) = 0
+	   \]
+	
+	   Evaluando en \(\theta = 1\):
+	   \[
+	   \varphi(-1) + 0 = 0 \implies \varphi(-1) = 0
+	   \]
+	
+	4. **Para \( k \geq 1 \), los coeficientes del polinomio también deben anularse:**
+	   \[
+	   \varphi(k) = 0, \quad \forall k \in \mathbb{N}
+	   \]
+	
+	Por lo tanto, se concluye que **la única solución posible es la trivial**:
+	
+	\[
+	\varphi(k) = 0, \quad \forall k \in D_X
+	\]
+	
+	**Conclusión:** La variable aleatoria \( X \) es **completa**.
+	
+}
+
 \begin{definición}
 	Un estadístico $T$ (no necesariamente suficiente) se dice completo, cuando: 
 	$$\forall g \text{-medible(integrable) tal que } E_{\theta}[\varphi(t)] = 0 \implies g(t) \stackrel{c.s.}{=} 0$$
@@ -520,10 +616,14 @@ Ahora veamos otro ejemplo en el que no se puede provocar la perteniencia a la fa
 		f_{\theta}(x_{(1)}) = n(1 - F_X(x))^{n-1} \cdot f_X(x)
 	\end{cases} \implies$
 	Saquemos primero la esperanza del máximo: \\
-	$$E_{\theta}[x_{(n)}] = \int_{\theta}^{6\theta} x\cdot n\left(\frac{x - \theta}{6\theta}\right)^{n-1} \cdot \frac{1}{6\theta} = dx$$
-	Para calcularla introduzcamos el cambio de variable: $\begin{cases} x = u \\ dv = f_{\theta}(x_{(n)}) \end{cases} \implies$
-	$$ = \left[x \cdot \left(\frac{x - \theta}{6\theta}\right)^n\right]^{7\theta}_{x = \theta} - \int_{\theta}^{6\theta}\left(\frac{x - \theta}{6\theta}\right)^n dx$$
-
+	$$E_{\theta}[x_{(n)}] = \int_{\theta}^{7\theta} x\cdot n\left(\frac{x - \theta}{6\theta}\right)^{n-1} \cdot \frac{1}{6\theta}dx =$$
+	Para calcularla introduzcamos el cambio de variable, para usar la regla de la multipicación: $\begin{cases} x = u \\ dv = f_{\theta}(x_{(n)}) \end{cases} \implies$
+	$$ = \left[x \cdot \left(\frac{x - \theta}{6\theta}\right)^n\right]^{7\theta}_{x = \theta} - \int_{\theta}^{7\theta} \left(\frac{x - \theta}{6\theta}\right)^{n} dx = 7\theta - \int_{y = 0}^{y = 1} y^n \cdot 6\theta dy = 7\theta - 6\theta \cdot \frac{1}{n+1} = \theta\frac{7n+1}{n+1}\theta$$
+	Ahora, realicemoslo para el mínimo:\\
+	$$E[x_{(1)}] = \int_{\theta}^{7\theta} x\cdot n\left(1 - \frac{x - \theta}{6\theta}\right)^{n-1} \cdot \frac{1}{6\theta}dx = \int^{7\theta}_{\theta} x\cdot n\left(\frac{7\theta - x}{6\theta}\right)^{n-1} \cdot \frac{1}{6\theta}dx =$$
+	Al igual que antes introduzcamos un cambio de variable para calcularla: 
+	$$ = \left[x \cdot \left(1 - \frac{x - \theta}{6\theta}\right)^n\right]^{7\theta}_{x = \theta} - \int_{\theta}^{7\theta} \left(\frac{7\theta - x}{6\theta}\right)^{n} dx = -\theta - \int_{1}^{0} y^n(-6\theta)dy =  -\theta - 6\theta\left[\frac{y^{n+1}}{n+1}\right]^{1}_{0} = -\theta - 6\theta\frac{1}{n+1}$$
+	HAY QUE TERMINAR ESTE EJEMPLO
 }
 
 

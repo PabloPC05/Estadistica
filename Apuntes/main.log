@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  11 MAR 2025 13:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  11 MAR 2025 19:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1730,196 +1730,198 @@ pdfTeX warning (ext4): destination with the same identifier (name{definici\303\2
                    \relax 
 l.302 	L
         a familia $\mathcal{P} = \{f_{\theta}(x_1, \ldots, x_n) : \theta \in...
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 322.
-
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.322 	U
-        n estadístico $T$ (no necesariamente suficiente) se dice completo, ...
 
 [28]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 383.
-
-pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.383 	S
-        i $T_1$ y $T_2$ son estadísticos completos, entonces $(T_1, T_2)$ t...
 
 [29]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 400.
+(mdframed)              on input line 418.
 
-pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.400 	R
-        ecordemos que:
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 409.
-
-pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.409 \begin{teorema}[Teorema de Bahadur]
-                                         
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 416.
-
-pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.416 		R
-         ecordemos la propiedad de las esperanzas, \underline{propiedad de l...
+l.418 	U
+        n estadístico $T$ (no necesariamente suficiente) se dice completo, ...
 
 [30]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 437.
+(mdframed)              on input line 479.
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--444
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.479 	S
+        i $T_1$ y $T_2$ son estadísticos completos, entonces $(T_1, T_2)$ t...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 496.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.496 	R
+        ecordemos que:
+Package mdframed Info: Not enough space on this page on input line 503.
+
+
+[31]
+Package mdframed Info: Not enough space on this page on input line 503.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 505.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.505 \begin{teorema}[Teorema de Bahadur]
+                                         
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 512.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.512 		R
+         ecordemos la propiedad de las esperanzas, \underline{propiedad de l...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 533.
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--540
 
  []
 
 
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 452.
 
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 452.
-
-
-[31]
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 452.
-
+[32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 456.
+(mdframed)              on input line 552.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.456 	E
+l.552 	E
         l estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = ...
-<Graficos/geogebra-export.png, id=379, 341.43307pt x 267.00066pt>
+
+[33]
+<Graficos/geogebra-export.png, id=388, 341.43307pt x 267.00066pt>
 File: Graficos/geogebra-export.png Graphic file (type png)
 <use Graficos/geogebra-export.png>
-Package pdftex.def Info: Graficos/geogebra-export.png  used on input line 506.
+Package pdftex.def Info: Graficos/geogebra-export.png  used on input line 602.
 (pdftex.def)             Requested size: 239.59973pt x 187.37177pt.
 
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 527--527
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 627--627
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 527.
+(mdframed)              on input line 627.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 527.
+ mdframed uses option nobreak mdframed on input line 627.
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--527
+Underfull \hbox (badness 10000) in paragraph at lines 627--627
 \OT1/cmr/m/n/10.95 Recordemos adem^^Sas cu^^Sales son las fun-ciones de den-si-dad de los m^^Saximos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--527
+Underfull \hbox (badness 10000) in paragraph at lines 627--627
 \OT1/cmr/m/n/10.95 y lo m^^S^^Pnimos ($[]$):
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--527
+Underfull \hbox (badness 10000) in paragraph at lines 627--627
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 627--627
 
-[33 <./Graficos/geogebra-export.png>]
+ []
+
+
+Overfull \hbox (16.2945pt too wide) detected at line 627
+\OT1/cmr/m/n/10.95 = [][] \OMS/cmsy/m/n/10.95 ^^@ [][] [][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ [][] \OML/cmm/m/it/10.95 y[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dy \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ^^R [][] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ^^R[]
+ []
+
+
+
+[35 <./Graficos/geogebra-export.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 530.
+(mdframed)              on input line 630.
 
-Underfull \hbox (badness 10000) in paragraph at lines 553--553
+Underfull \hbox (badness 10000) in paragraph at lines 653--653
 
  []
 
 
-Overfull \hbox (43.58176pt too wide) detected at line 553
+Overfull \hbox (43.58176pt too wide) detected at line 653
 \OT1/cmr/m/n/10.95 = 1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] > x\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A [] ^^A \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] > x\OT1/cmr/m/n/10.95 ) = 1 \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ))[] = 1 \OMS/cmsy/m/n/10.95 ^^@ [][]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 n [][] \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )[]
  []
 
 
 
-[34]
+[36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 569.
+(mdframed)              on input line 669.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.569 \begin{teorema}[Principio de verosimilitud]
+l.669 \begin{teorema}[Principio de verosimilitud]
                                                  
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 574.
+(mdframed)              on input line 674.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.574 	S
+l.674 	S
         ean dos muestras $X = (x_1, \ldots, x_n)$ e $Y = (y_1, \ldots, y_m)$...
-Underfull \hbox (badness 10000) in paragraph at lines 582--582
+Underfull \hbox (badness 10000) in paragraph at lines 682--682
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 585.
+(mdframed)              on input line 685.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.585 ...n{proposición}[Principio de suficiencia]
+l.685 ...n{proposición}[Principio de suficiencia]
                                                   
 
-[35]
+[37]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 593.
+(mdframed)              on input line 693.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.593 ...oposición}[Principio de condicionalidad]
+l.693 ...oposición}[Principio de condicionalidad]
                                                   
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 601.
+(mdframed)              on input line 701.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.601 \begin{teorema}[Teorema de Birnbaum]
+l.701 \begin{teorema}[Teorema de Birnbaum]
                                           ))
 
-[36] (main.aux)
+[38] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1928,17 +1930,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 755C7B941010975DC10B97B9F5AD126F;3354.
  ) 
 Here is how much of TeX's memory you used:
- 46587 strings out of 473530
- 1083760 string characters out of 5714794
- 1729476 words of memory out of 5000000
- 68816 multiletter control sequences out of 15000+600000
+ 46591 strings out of 473530
+ 1083788 string characters out of 5714794
+ 1734151 words of memory out of 5000000
+ 68818 multiletter control sequences out of 15000+600000
  575653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,15n,112p,1034b,2241s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (37 pages, 748441 bytes).
+Output written on main.pdf (39 pages, 756298 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 157 named destinations out of 1000 (max. 500000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 159 named destinations out of 1000 (max. 500000)
  306 words of extra memory for PDF output out of 10000 (max. 10000000)
 

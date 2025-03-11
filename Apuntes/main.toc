@@ -15,5 +15,5 @@
 \contentsline {subsection}{\numberline {3.4}Teorema de caracterización de estadísticos minimales suficientes}{24}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Familia exponencial $k$-paramétrica}{26}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Estadísticos Ancilarios y Completos}{28}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Principios de reducción de datos}{35}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Ejercicios}{36}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.7}Principios de reducción de datos}{37}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Ejercicios}{38}{subsection.3.8}%
