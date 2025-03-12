@@ -704,7 +704,28 @@ Ahora veamos otro ejemplo en el que no se puede provocar la perteniencia a la fa
 
 \subsection{Ejercicios}
 \begin{problem}{2.1}
-	Sea $X$ muestra de una población $N(0, \sigma)$, ¿Es $|X|$ un estadístico suficiente?
+	Sea $X$ muestra de una población $N(0, \sigma)$, ¿Es $T(X) = |X|$ un estadístico suficiente?
+\end{problem}
+\begin{sol}
+	Recordemos la definición de estadístico suficiente por definición: Dado un estadístico $T$ en este caso $T(X) = |X|$ y una muestra $\vec{x}$ se dice que $T$ es suficiente si $f_{\theta}(\vec{X} = \vec{x} | T = t)$ \\
+	Empecemos definiendo la distribución que sigue el estadístico $T$: 
+	$$P(|X| \leq a) = P(-a \leq X \leq a) = P(X \leq a) - P(X \leq -a) = F(a) - F(-a) = 2F(a) = 2\int_{0}^{a}f_{X}(x)dx$$
+	$$\implies f_{|X|}(x) = 2f_{X}(x) = 2\cdot \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x - \mu)^2}{2\sigma^2}} \implies \text{ Si } X \sim N(0, \sigma) \implies f_{|X|}(x) = \frac{\sqrt{2}}{\sigma\sqrt{\pi}}\cdot e^{-\frac{x^2}{2\sigma^2}}$$
+	Entonces veamos el cociente de las dos funciones de densidad:
+	$$P(X = x | T = t) = \frac{f_{\sigma}(x)}{f_{\sigma}(t)} = \frac{\frac{1}{\sigma\sqrt{2\pi}}\cdot e^{-\frac{x^2}{2\sigma^2}}}{\frac{\sqrt{2}}{\sigma\sqrt{\pi}} \cdot e^{-\frac{x^2}{2\sigma^2}}} = \frac{1}{2}$$
+	Lo cual no depende del parámetro $\sigma$ y por tanto por definición, el estadístico es suficiente. 
+\end{sol}
+
+\begin{problem}{2.2}
+	Encuentra un estadístico suficiente para una m.a.s. de tamaño $n$ de cada una de las siguientes poblaciones: 
+	\begin{enumerate}
+		\item $Beta(\alpha, \beta) : \alpha > 0, \beta > 0$
+		\item $Gamma(a, p) : a > 0, p > 0$
+		\item $p_{N_1 N_2}(x) = \frac{1}{N_2 - N_1} \cdot I_{N_1 + 1, N_1 +2 \ldots, N_2}(x) : N_1 < N_2$
+		\item $f_{\theta}(x) = e^{-x + \theta}\cdot I_{\theta, \infty}(x)$
+		\item $f_{\mu, \sigma}(x) = \frac{1}{x\sigma\sqrt{2\pi}}e^{-\frac{1}{2\sigma^2}(ln(x - \mu))^2}\cdot I_{0, \infty}$
+		\item $p_{\theta, p}(x) = (1 - p)p^{x - \theta} \cdot I_{\theta, \theta + 1, \ldots }(x)$
+	\end{enumerate}
 \end{problem}
 \begin{sol}
 	
