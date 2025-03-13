@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1741872182.83505 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741872193.08242 0
+["pdflatex"] 1741905594.46491 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741905604.26908 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741696821 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1739788850 12668 dc06899bf14948622113887d9b2f36fb ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740519544 10576 1e4a7696076481c0e8f238784591097f ""
@@ -335,13 +335,13 @@
   "Preamble/Preamble.tex" 1741693104 12039 d4179fd1b41fcfa14fda833bd7edc16f ""
   "Theory/1- Estadistica Descriptiva.tex" 1741185089 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
   "Theory/2 - Muestreo.tex" 1741263974 37489 b24087efc4382c3846169c0ac2c589a2 ""
-  "Theory/3 - Reduccion de Datos.tex" 1741872181 57672 fd101bc968a3672ea86d0028f54208c2 ""
+  "Theory/3 - Reduccion de Datos.tex" 1741905593 64007 2fa7a8dc59d7ea4f75e260a409dc1422 ""
   "Theory/Theory.tex" 1741696555 452 74b5bb8c00f0b2017fcfb149adda16eb ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1741872192 16339 2fbc54e6ee02088bd4bfc76ee236491a "pdflatex"
-  "main.out" 1741872192 3354 755c7b941010975dc10b97b9f5ad126f "pdflatex"
+  "main.aux" 1741905603 16339 d80dda6e4e951bd7d63c5f8ac8dbc1d9 "pdflatex"
+  "main.out" 1741905603 3354 755c7b941010975dc10b97b9f5ad126f "pdflatex"
   "main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1741872192 1659 38fe57469e70b45778a3101a3ffc96c3 "pdflatex"
+  "main.toc" 1741905603 1659 38fe57469e70b45778a3101a3ffc96c3 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

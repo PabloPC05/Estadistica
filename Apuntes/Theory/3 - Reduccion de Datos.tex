@@ -776,6 +776,69 @@ Ahora veamos otro ejemplo en el que no se puede provocar la perteniencia a la fa
 		$$E[T_1] = \int_{\theta}^{4\theta}x \cdot n\left(\frac{x - \theta}{3\theta}\right)^{n-1} \cdot \frac{1}{3\theta}dx = \left[x\cdot \left(\frac{x - \theta}{3\theta}\right)^n\right]_{\theta}^{4\theta} - \int_{\theta}^{4\theta} \left(\frac{x - \theta}{3\theta}\right)^n dx = 4\theta - 3\theta\int_{0}^{1}y^n dy = $$ $$ = 4\theta - 3\theta\frac{1}{n+1} = \theta\frac{4n + 1}{n+1}$$
 		%El minimo%
 		\item $$f_{\theta}(x_{(1)}) = n(1 - F(x))^{n-1} \cdot f_{\theta}(x) = n\left(1 - \frac{x - \theta}{3\theta}\right)^{n-1} \cdot \frac{1}{3\theta} = \frac{n}{3\theta^n}(4\theta - x)^{n-1} \implies$$
-		$$[T_2] = \int_{\theta}^{4\theta} x \cdot n\left(1 - \frac{x - \theta}{3\theta}\right)^{n-1} \cdot \frac{1}{3\theta}dx = \left[x\cdot \left(1 - \frac{x - \theta}{3\theta}\right)^n\right]_{\theta}^{4\theta} - \int_{\theta}^{4\theta} \left(\frac{4\theta - x}{3\theta}\right)^n dx = $$ $$ = 4\theta - 3\theta\int_{0}^{1}y^n dy = -\theta - 3\theta\frac{1}{n+1} = -\theta\frac{n + 4}{n+1}$$
+		$$E[T_2] = \int_{\theta}^{4\theta} x \cdot n\left(1 - \frac{x - \theta}{3\theta}\right)^{n-1} \cdot \frac{1}{3\theta}dx = \left[x\cdot -\left(1 - \frac{x - \theta}{3\theta}\right)^n\right]_{\theta}^{4\theta} - \int_{\theta}^{4\theta} \left(\frac{4\theta - x}{3\theta}\right)^n dx = $$ $$ = \theta - 3\theta\int_{0}^{1}y^n dy = \theta - 3\theta\frac{1}{n+1} = \theta\frac{4n + 1}{n+1}$$
 	\end{enumerate} 
+\end{sol}
+
+\begin{problem}{2.4}
+	Sea una m.a.s. de una población que sigue una variable aleatoria $X$ con función de densidad: 
+	$$f_{\theta}(x) = e^{-(x - \theta)} \cdot I_{(\theta, +\infty)}(x)$$
+	\begin{enumerate}
+		\item Pruébese que $T(\vec{X}) = X_{(1)}$ es un estadístico suficiente y completo para $\theta$
+		\item Mediante el Teorema de Basu, pruébese que $X_{(1)}$ y $S^2$ son independientes. 
+	\end{enumerate} 
+\end{problem}
+\begin{sol}
+	Antes de comenzar con la resolución del problema, calculemos la función de densidad de la muestra: 
+	$$f_{\theta}(\vec{x}) = e^{-\sum_{i = 1}^{n}x_i + n\theta} \cdot I_{\theta, +\infty}(x_{(1)})$$
+	\begin{enumerate}
+		\item Para demostrar la suficiencia usaremos el Teorema de Factorización de Fisher con: $f_{\theta}(\vec{x}) = h(\vec{x}) \cdot g_{\theta}(T(\vec{x})) = e^{-\sum_{i = 1}^{n}x_i + n\theta} \cdot I_{\theta, +\infty}(x_{(1)})$ y $T(\vec{x}) = (x_{(1)}, \sum x_i)$\\
+		Ahora veamos la completitud: Sea una función real $g(x)$ que cumpla que: $$E[g(x_{(1)})] = 0 = \int_{\theta}^{+\infty}g(x)f_{\theta}(x)dx = \int_{\theta}^{+\infty}g(x)e^{-x + \theta}dx$$
+		Si tomamos cómo función $H(x) = \int_{t > 0}^{+\infty} e^{-y}$ sabemos que dicha función es positiva en todo su dominio, por lo que la únia manera de que la integral anterior sea nula es que $g(x) = 0$ c.s. $\implies$ el estadístico es completo.
+		\item El Teorema de Basu, nos dice que si $T$ es un estadístico suficiente y completo y $U$ es un estadístico ancilario, entonces $T$ y $U$ son independientes. En este caso, sabemos que $X_{(1)}$ es completo y suficiente, y por el Teorema de Basu, sabemos que $X_{(1)}$ y $S^2$ son independientes.
+		Entonces debemos comprobar que $S^2$ es ancilario: 
+		$$ f_{\theta} = e^{-(x - \theta)} \implies X \sim Exponencial(1) + \theta \implies S^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(X_i - \bar{X})^2 =$$  $$= \frac{1}{n-1}\sum_{i = 1}^{n} (X_i - \theta + \theta - \bar{X})^2 = \frac{1}{n-1}\sum_{i = 1}^{n} (X_i - \theta - (\bar{X} - \theta)^2) = \frac{1}{n-1}\sum_{i = 1}^{n} (Z_i - \bar{Z})^2 \implies $$ $$\implies Z \sim Exponencial(1) \text{ no depende de } \theta \implies S^2 \text{ es ancilario}$$
+		Por tanto por el Teorema de Basu, ambos estadísticos son independientes.
+	\end{enumerate}
+\end{sol}
+\begin{problem}{2.5}
+	Sea una población que sigue una variable aleatoria $X$ con fucniones de masa: 
+	$$P_{\theta}(X = -1) = \theta \quad P_{\theta}(X = x) = (1 - \theta)^2\cdot\theta^x\cdot I_{0 \cup \mathbb{N}}(x)$$
+	Con $\theta \in (0, 1)$	y el tamaño de la muestra $n = 1$ ¿El estadístico $X$ es completo?
+\end{problem}
+\begin{sol}
+	$$E[X] = \sum_{i = 0}^{+\infty} P(X = i) \cdot i = -1\cdot P(X = -1) + \sum_{i = 1}^{+\infty} P_{\theta}(X = i) \cdot i = -1 \cdot \theta + \sum_{i = 1}^{n} (1 - \theta)^2 \cdot i\theta^{i} = $$ $$ = -\theta + (1 - \theta) \sum_{i = 1}^{n}i\theta^{i} = -\theta + (1 - \theta)t'(x) \text{ donde } t(x) = \sum_{i = 1}^{\infty}\theta^i = \frac{\theta}{1 - \theta} \implies t'(x) = \frac{1}{(1-\theta)^2}$$ $$\implies E[X] = -\theta + (1 - \theta)^2\theta(\frac{1}{(1 - \theta)^2}) = -\theta + \theta = 0$$
+	Entonces, como $E[X] = 0$, $X$ no es completo.
+\end{sol}
+\begin{problem}{2.6}
+	Sea m.a.s. de tamaño $n$ de una población $N(\alpha\sigma, \sigma) : \alpha \in \mathbb{R}$ veamos si el estadístico $T(\vec{X}) = (\sum_{i = 1}^{n}X_i, \sum_{i = 1}^{n}X_i^2)$ es suficiente y completo para $\sigma$.
+\end{problem}
+\begin{sol}
+	$$X \sim N(\alpha\sigma, \sigma) \implies f_{\sigma}(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x - \alpha\sigma)^2}{2\sigma^2}} \implies f_{\sigma}(\vec{x}) = \prod_{i = 1}^{n}f_{\sigma}(x_i) = \left(\frac{1}{\sigma\sqrt{2\pi}}\right)^n \cdot e^{-\frac{1}{2\sigma^2}\sum_{i = 1}^{n}(x_i - \alpha\sigma)^2}$$
+	Entonces descomoponiendo: $(x_i - \alpha\sigma)^2 = x_i^2 + \alpha^2\sigma^2 - 2\alpha\sigma x_i \implies$
+	$$f_{\sigma}(\vec{x}) = \left(\frac{1}{\sigma\sqrt{2\pi}}\right)^n \cdot e^{-\frac{1}{2\sigma^2}\sum_{i = 1}^{n}x_i^2 + \frac{\alpha}{\sigma}\sum_{i = 1}^{n}x_i  - \frac{n\alpha^2}{2}} $$
+	Entonces por el Teorema de Factorización de Fisher, tenemos que el estadístico $T(\vec{x}) = (\sum_{i = 1}^{n}x_i, \sum_{i = 1}^{n}x_i^2)$ es suficiente. \\
+	Ahora veamos si es completo:\\
+	$$E\left[\sum_{i = 1}^{n}X_i\right] = n\alpha\sigma \quad E\left[\sum_{i = 1}^{n}X_i^2\right] = n\sigma^2 + n\alpha^2\sigma^2 = (1 + n\alpha^2)n\sigma^2$$
+	Pero la función 
+	$$g(\vec{T}) = \frac{1}{1 + n\alpha^2}\left(\sum_{i = 1}^{n}X_i\right)^2 - \frac{1}{1 + \alpha^2}\sum_{i = 1}^{n}X_i^2 \implies E[g(\vec{T})] = 0$$
+	Pero la función no es nula en casi todo punto, por lo que no es completo. 
+\end{sol}
+\begin{problem}{2.7}
+	Sea una población con variable aleatoria $X \sim Uniforme(\theta, \theta + 1)$ y una m.a.s. de tamaño $n$ de dicha población. Entonces, 
+	\begin{enumerate}
+		\item Encuentra un estadístico suficiente para $\theta$
+		\item Comprueba si el recorrido muestral $R = X_{(n)} - X_{(1)}$ es un estadístico ancilario
+		\item Si la función de de distribución sufriera un desplazamiento de $F_{\theta}(x) = F(x - \theta)$ Comprueba si se conserva la propiedad del apartado anterior
+	\end{enumerate}
+\end{problem}
+\begin{sol}
+	\begin{enumerate}
+		\item $X \sim Uniforme(\theta, \theta + 1) \implies f_{\theta}(x) = \frac{1}{\theta + 1 - \theta} \cdot I_{(\theta, \theta + 1)} = 1 \cdot I_{(\theta, \theta +1)}(x) \implies f_{\theta}(\vec{x}) = I_{(\theta, \theta + 1)}(x{(1)})\cdot I_{(\theta, \theta +1)}(x_{(n)})  \implies$ por el Teorema de Factorización de Fisher, el estadístico $T(\vec{x}) = (x_{(1)}, x_{(n)})$ es suficiente.
+		\item Calculemos las funciones de distribución del máximo y el mínimo: 
+		\begin{itemize}
+			\item $$f_{\theta}(x_{(n)}) = n(F(x))^{n-1} \cdot f_{\theta}(x_{(n)}) = n\left(\frac{x - \theta}{1}\right)^{n-1} \cdot 1 = n(x - \theta)^{n-1}$$  $$\implies E[X_{(n)}] = \int_{\theta}^{\theta + 1}x \cdot n(x - \theta)^{n-1}dx = \frac{n}{n+1}(\theta + 1)$$
+			\item $$f_{\theta}(x_{(1)}) = n(1 - F(x))^{n-1} \cdot f_{\theta}(x_{(1)}) = n\left(1 - \frac{x - \theta}{1}\right)^{n-1} \cdot 1 = n(\theta + 1 - x)^{n-1}$$ $$\implies E[X_{(1)}] = \int_{\theta}^{\theta + 1}x \cdot n(\theta + 1 - x)^{n-1}dx = \frac{n}{n+1}\theta$$
+		\end{itemize}
+	\end{enumerate}
 \end{sol}
