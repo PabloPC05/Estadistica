@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1741954903.74462 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741954913.69719 0
+["pdflatex"] 1741971612.46545 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741971619.14628 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741696821 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1739788850 12668 dc06899bf14948622113887d9b2f36fb ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740519544 10576 1e4a7696076481c0e8f238784591097f ""
@@ -336,13 +336,13 @@
   "Theory/1- Estadistica Descriptiva.tex" 1741185089 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
   "Theory/2 - Muestreo.tex" 1741263974 37489 b24087efc4382c3846169c0ac2c589a2 ""
   "Theory/3 - Reduccion de Datos.tex" 1741953256 68149 cfda9827708a63d9501c5e86a3490ab5 ""
-  "Theory/4 - Estimacion Puntual Parametrica.tex" 1741954902 31137 2dec384c997414c22f3c493206eb121e ""
-  "Theory/Theory.tex" 1741953280 454 91b5923f3f78023c1d1273f641692812 ""
+  "Theory/4 - Estimacion Puntual Parametrica.tex" 1741971608 33265 724456268baa61323490a78bf832509b ""
+  "Theory/Theory.tex" 1741970634 452 1d0f3ae3a9973c1d665585c931604ff5 ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1741954912 17281 8102a76f64374a4986957ad50491fc8e "pdflatex"
-  "main.out" 1741954912 3560 cc98c129ac33f437c21b666ee57ab12d "pdflatex"
+  "main.aux" 1741971618 17525 74e25d8dbdd6ccbac79c8225d5b1ee60 "pdflatex"
+  "main.out" 1741971618 3560 cc98c129ac33f437c21b666ee57ab12d "pdflatex"
   "main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1741954912 1748 41717129de6765039adf53a4a27856ef "pdflatex"
+  "main.toc" 1741971618 1748 41717129de6765039adf53a4a27856ef "pdflatex"
   (generated)
   "main.aux"
   "main.log"

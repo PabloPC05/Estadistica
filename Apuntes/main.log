@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  14 MAR 2025 13:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  14 MAR 2025 18:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1997,20 +1997,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--20
 
 
 [45]
-Overfull \hbox (105.90521pt too wide) in paragraph at lines 67--68
-\OT1/cmr/m/n/10.95 Si $[]$ es una m.a.s. $(\OML/cmm/m/it/10.95 n\OT1/cmr/m/n/10.95 )$ de $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X []\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )$ y $\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1)$, en-tonces $\OML/cmm/m/it/10.95 ^^Y [] \OMS/cmsy/m/n/10.95 ^^X [] []$ 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 40.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40   \vspace
+              {-\topsep} % Removes the default vertical spacing
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
+
  []
 
 
 
 [46]
-Overfull \hbox (11.09148pt too wide) in paragraph at lines 100--101
-\OT1/cmr/m/n/10.95 Dado un es-ti-mador $\OML/cmm/m/it/10.95 T \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 T []$ \OT1/cmr/m/n/10.95 de $\OML/cmm/m/it/10.95 ^^R$\OT1/cmr/m/n/10.95 , se de-nom-ina er-ror cuadr^^Satico medio $[](\OML/cmm/m/it/10.95 T; ^^R\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 E[] []$ 
+Overfull \hbox (105.90521pt too wide) in paragraph at lines 96--97
+\OT1/cmr/m/n/10.95 Si $[]$ es una m.a.s. $(\OML/cmm/m/it/10.95 n\OT1/cmr/m/n/10.95 )$ de $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X []\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )$ y $\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1)$, en-tonces $\OML/cmm/m/it/10.95 ^^Y [] \OMS/cmsy/m/n/10.95 ^^X [] []$ 
  []
 
 
 
 [47]
+Overfull \hbox (11.09148pt too wide) in paragraph at lines 129--130
+\OT1/cmr/m/n/10.95 Dado un es-ti-mador $\OML/cmm/m/it/10.95 T \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 T []$ \OT1/cmr/m/n/10.95 de $\OML/cmm/m/it/10.95 ^^R$\OT1/cmr/m/n/10.95 , se de-nom-ina er-ror cuadr^^Satico medio $[](\OML/cmm/m/it/10.95 T; ^^R\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 E[] []$ 
+ []
+
+
 
 [48]
 
@@ -2021,13 +2035,15 @@ Overfull \hbox (11.09148pt too wide) in paragraph at lines 100--101
 [51]
 
 [52]
-Overfull \hbox (60.05666pt too wide) in paragraph at lines 311--312
+
+[53]
+Overfull \hbox (60.05666pt too wide) in paragraph at lines 340--341
 \OT1/cmr/m/n/10.95 spon-di-entes a un m^^Saximo de $\OML/cmm/m/it/10.95 f[]$\OT1/cmr/m/n/10.95 , es de-cir aque-l-las en las que la ma-triz hes-siana $\OML/cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 = [][]$
  []
 
 ))
 
-[53] (main.aux)
+[54] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2036,17 +2052,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CC98C129AC33F437C21B666EE57AB12D;3560.
  ) 
 Here is how much of TeX's memory you used:
- 46708 strings out of 473530
- 1085556 string characters out of 5714794
- 1734339 words of memory out of 5000000
- 68841 multiletter control sequences out of 15000+600000
+ 46715 strings out of 473530
+ 1085680 string characters out of 5714794
+ 1734386 words of memory out of 5000000
+ 68848 multiletter control sequences out of 15000+600000
  575653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,15n,112p,1034b,2241s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (54 pages, 841994 bytes).
+Output written on main.pdf (55 pages, 847049 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
+ 723 PDF objects out of 1000 (max. 8388607)
  250 named destinations out of 1000 (max. 500000)
  314 words of extra memory for PDF output out of 10000 (max. 10000000)
 
