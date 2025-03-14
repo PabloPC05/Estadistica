@@ -1,15 +1,30 @@
 \section{Estimación Puntual Paramétrica}
-\section*{Propiedades de los estimadores}
-Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado $\left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
 
-Un estimador del parámetro $\theta$ es un estadístico\\
-$T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ que se utiliza para determinar el valor desconocido $\theta$
+\begin{definición}[Estimador]
+  Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a un experimento aleatorio $\mathcal{E}$, una variable aleatoria observable $X: \Omega \longrightarrow \mathbb{R}$ y su modelo estadístico asociado $\left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}, \mathcal{B}=\mathcal{B}(\mathbb{R})$, y $\left(X_{1}, \cdots X_{n}\right)$ m.a.s. $(n) \sim X$
+  \\Un estimador del parámetro $\theta$ es un estadístico $T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ que se utiliza para determinar el valor desconocido $\theta$
+\end{definición}
 
-\section*{Estimadores centrados}
-$T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ es un estimador centrado para $\theta$ cuando $E_{\theta}[T]=\theta$. En general, se llama sesgo de un estimador a la diferencia $b(T, \theta)=E_{\theta}[T]-\theta$
+\begin{definición}[Estimador centrado]
+  Dado un estimador $T = T(X_1, \ldots X_n): \chi^{n} \to \Theta$ se dice que es centrado para $\theta$ cuando $E_{\theta}[T] = \theta$. 
+\end{definición}
 
-\section*{Propiedades de los estimadores (continuación)}
-Ejercicio ( $\bar{X}, S^{2}$ ) es un estimador centrado de $\theta=\left(\mu, \sigma^{2}\right)$\\
+\begin{definición}[Sesgo]
+  Se llama sesgo de un estimador a la diferencia $b(T, \theta) = E_{\theta}[T] - \theta$
+\end{definición}
+
+\ejemplo{
+  Veamos que el estadístico $T = (\bar{X}, S^2)$ es un estimador centrado de $\theta = (\mu, \sigma^2):$\\
+  $$E[\bar{X}] = E\left[\frac{1}{n}\sum_{i  = 1}^{n} X_i \right] = \frac{1}{n} \sum_{i = 1}^{n}E[X_i] = \frac{1}{n} \sum_{i = 1}^{n} \mu = \mu$$
+  $$E[S^2] = E\left[\frac{1}{n-1}\sum_{i  = 1}^{n} (X_i - \bar{X})^2 \right] = \frac{1}{n-1} \sum_{i = 1}^{n}E[(X_i - \bar{X})^2] = \frac{1}{n-1} \sum_{i = 1}^{n} \sigma^2 = \sigma^2$$
+}
+
+\ejemplo{
+  
+}
+
+
+
 Ejercicio $\sigma_{n}^{2}=b_{2}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}$ es un estimador centrado de $h(\theta)=\frac{n-1}{n} \sigma^{2}$ y $b\left(\sigma_{n}^{2}, \sigma^{2}\right)=-\frac{\sigma^{2}}{n}$
 
 \section*{Observaciones}

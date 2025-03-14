@@ -832,13 +832,53 @@ Ahora veamos otro ejemplo en el que no se puede provocar la perteniencia a la fa
 		\item Si la función de de distribución sufriera un desplazamiento de $F_{\theta}(x) = F(x - \theta)$ Comprueba si se conserva la propiedad del apartado anterior
 	\end{enumerate}
 \end{problem}
-\begin{sol}
+\begin{sol}1
 	\begin{enumerate}
 		\item $X \sim Uniforme(\theta, \theta + 1) \implies f_{\theta}(x) = \frac{1}{\theta + 1 - \theta} \cdot I_{(\theta, \theta + 1)} = 1 \cdot I_{(\theta, \theta +1)}(x) \implies f_{\theta}(\vec{x}) = I_{(\theta, \theta + 1)}(x{(1)})\cdot I_{(\theta, \theta +1)}(x_{(n)})  \implies$ por el Teorema de Factorización de Fisher, el estadístico $T(\vec{x}) = (x_{(1)}, x_{(n)})$ es suficiente.
 		\item Calculemos las funciones de distribución del máximo y el mínimo: 
 		\begin{itemize}
-			\item $$f_{\theta}(x_{(n)}) = n(F(x))^{n-1} \cdot f_{\theta}(x_{(n)}) = n\left(\frac{x - \theta}{1}\right)^{n-1} \cdot 1 = n(x - \theta)^{n-1}$$  $$\implies E[X_{(n)}] = \int_{\theta}^{\theta + 1}x \cdot n(x - \theta)^{n-1}dx = \frac{n}{n+1}(\theta + 1)$$
-			\item $$f_{\theta}(x_{(1)}) = n(1 - F(x))^{n-1} \cdot f_{\theta}(x_{(1)}) = n\left(1 - \frac{x - \theta}{1}\right)^{n-1} \cdot 1 = n(\theta + 1 - x)^{n-1}$$ $$\implies E[X_{(1)}] = \int_{\theta}^{\theta + 1}x \cdot n(\theta + 1 - x)^{n-1}dx = \frac{n}{n+1}\theta$$
+			\item $$f_{\theta}(x_{(n)}) = n(F(x))^{n-1} \cdot f_{\theta}(x_{(n)}) = n\left(\frac{x - \theta}{1}\right)^{n-1} \cdot 1 = n(x - \theta)^{n-1}$$ 
+			\item $$f_{\theta}(x_{(1)}) = n(1 - F(x))^{n-1} \cdot f_{\theta}(x_{(1)}) = n\left(1 - \frac{x - \theta}{1}\right)^{n-1} \cdot 1 = n(\theta + 1 - x)^{n-1} \implies$$
+			Cuando intentamos calcular la probabilidad $P(R \leq r)$ estamos calculando la probabilidad de que el máximo y el mínimo estén a menos de una distancia $r$, entonces: 
+			$$P(R \leq r) = \int_{\theta}^{\theta +1} f_{X_{(n)}}(x) \cdot P(x - X_{(1)} \leq r)dx$$
+			Intuitivamente, esta expresión nos dice la probabilidad de que un punto $x$ del intervalo sea el máximo por la probabilidad de que la distancia de ese número menos el mínimo esté a una distancia menor que $r \implies$
+			$$P(R \leq r) = \int_{\theta}^{\theta +1} n(x - \theta)^{n-1} \cdot P(x - X_{(1)} \leq r)dx = \int_{\theta}^{\theta +1} n(x - \theta)^{n-1} \cdot P(X_{(1)} \geq x - r)dx =$$ $$ = \int_{\theta}^{\theta +1} n(x - \theta)^{n-1} \cdot (1 - P(X_{(1)} \leq x - r))dx = \int_{\theta}^{\theta +1} n(x - \theta)^{n-1} \cdot (\theta + 1 - x + r)^n dx = $$ $$ = \int_{0}^{1} n y^{n-1}\cdot (1 + r - y)^{n}dy$$
+			Donde $y = x - \theta$ y $r = r - \theta$ y dado que es una expresión que no depende de $\theta$ llegamos a que el estadístico es ancilario. 
+			\item Si tenemos en cuenta el caso general del desplazamiento en una distribución uniforme: $$F_{\theta}(x) = F(x - \theta)  \implies P:{\theta}(r) = P(X_{(n)} - X_{(1)} \leq r) \implies$$
+			Si hacemos el cambio de varibale $Z_i = X_i - \theta$ obtenemos que $Z_{(n)} - Z_{(1)} = X_{(n)} - X_{(1)}$ y por tanto, el recorrido muestral sigue siendo un estadístico ancilario.  
 		\end{itemize}
+	\end{enumerate}
+\end{sol}
+\begin{problem}{2.8}
+	Dada una m.a.s. de tamaño $n$ de una población donde se sigue la siguiente función de densidad: 
+	$$f_{\theta}(x) = \frac{2x}{\theta^2}\cdot I_{(0, \theta)}(x)$$
+	Entonces: 
+	\begin{enumerate}
+		\item Comprueba si $T(\vec{X}) = (X_{(n)}, \prod_{i = 1}^{n}X_i)$ es suficiente para $\theta$ y si además es minimal. 
+		\item Comprueba también si $T_2(\vec{x}) = X_{(n)}$ es un estadístico completo. 
+	\end{enumerate}
+\end{problem}
+\begin{sol}
+	\begin{enumerate}
+		\item $$f_{\theta}(x) = \frac{2x}{\theta^2} \cdot I_{(0, \theta)}(x) \implies f_{\theta}(\vec{x}) = \prod_{i = 1}^{n}f_{\theta}(x_i) = \frac{2^n}{\theta^{2n}} \cdot \prod_{i = 1}^{n}x_i \cdot I_{(0, \theta)}(x_{(n)})$$
+		Entonces por el Teorema de Factorización de Fisher, el estadístico $T(\vec{x}) = (X_{(n)}, \prod_{i = 1}^{n}X_i)$ es suficiente. Para comprobar si es minimal, veamos que: \\
+		Dadas dos muestras $\vec{x}$ y $\vec{y} \implies$ $$\frac{f_{\theta}(\vec{x})}{f_{\theta}(\vec{y})} = \frac{\frac{2^n}{\theta^{2n}} \cdot \prod_{i = 1}^{n}x_i \cdot I_{(0, \theta)}(x_{(n)})}{\frac{2^n}{\theta^{2n}} \cdot \prod_{i = 1}^{n}y_i \cdot I_{(0, \theta)}(y_{(n)})} = \frac{\prod_{i = 1}^{n}x_i \cdot I_{(0, \theta)}(x_{(n)})}{\prod_{i = 1}^{n}y_i \cdot I_{(0, \theta)}(y_{(n)})}$$
+		Entonces, el cociente no depende de $\theta \iff T(\vec{x}) = T(\vec{y})$ por lo que el estadístico es minimal.
+		\item Comprobemos que el estadístico $T_2(\vec{x}) = X_{(n)}$ es completo: \\
+		Cómo es un máximo la función de densidad sigue una fórmula: 
+		$$f_{X_{(n)}} = n(F(x))^{n-1} \cdot f_{X}(x) = n\left(\frac{x^2}{\theta^2}\right)^{n-1} \cdot \frac{2x}{\theta^2} = 2n\left(\frac{x^{2n-1}}{\theta^{2n}}\right)$$
+		Entonces, para una función real $g(x)$ queremos ver si que $E[g(X_{(n)})] = 0$ implica que $g(x) = 0$ c.s.\\
+		$$E[g(X_{(n)})] = \int_{0}^{\theta}g(x)2n\left(\frac{x^{2n-1}}{\theta^{2n}}\right)dx = \frac{2n}{\theta^{2n}}\int_{0}^{\theta}g(x) \cdot x^{2n-1}dx = 0 \implies$$
+		Aplicando la Regla de Leibniz para derivadas de integrales: 
+		$$\frac{d}{d\theta}\int_{a(\theta)}^{b(\theta)} f(x, \theta)dx = f(b(\theta), \theta) \cdot \frac{d}{d\theta}(b(\theta)) - f(a(\theta), \theta) \cdot \frac{d}{d\theta}(a(\theta)) + \int_{a(\theta)}^{b(\theta)} \frac{\partial}{\partial \theta}f(\theta, x) dx$$
+		En nuestro caso, podemos sustituir usando: 
+		\begin{itemize}
+			\item $f(x, \theta) = g(x)\cdot x^{2n-1}$
+			\item $b(\theta) = \theta$
+			\item $a(\theta) = 0$
+		\end{itemize}
+		Entones tenemos que:
+		$$\frac{d}{d\theta}\int_{0}^{\theta}g(x) \cdot x^{2n-1}dx = g(\theta)\cdot \theta^{2n-1} - g(0)\cdot 0^{2n-1} + \int_{0}^{\theta} \frac{\partial}{\partial \theta}(g(x) \cdot x^{2n-1})dx = $$ $$ = g(\theta)\cdot \theta^{2n-1} = 0 \implies g(\theta) = 0 \implies g(x) = 0 \text{ c.s.}$$
+		Entones el estadístico $T_2(\vec{x}) = X_{(n)}$ es completo.
 	\end{enumerate}
 \end{sol}
