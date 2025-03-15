@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1741971612.46545 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1741971619.14628 0
+["pdflatex"] 1742041353.21775 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742041365.25711 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741696821 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1739788850 12668 dc06899bf14948622113887d9b2f36fb ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740519544 10576 1e4a7696076481c0e8f238784591097f ""
@@ -71,6 +71,7 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1247596666 35660 fb24af7afbadb71801619f1415838111 ""
+  "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1247596670 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1247596670 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -336,13 +337,13 @@
   "Theory/1- Estadistica Descriptiva.tex" 1741185089 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
   "Theory/2 - Muestreo.tex" 1741263974 37489 b24087efc4382c3846169c0ac2c589a2 ""
   "Theory/3 - Reduccion de Datos.tex" 1741953256 68149 cfda9827708a63d9501c5e86a3490ab5 ""
-  "Theory/4 - Estimacion Puntual Parametrica.tex" 1741971608 33265 724456268baa61323490a78bf832509b ""
+  "Theory/4 - Estimacion Puntual Parametrica.tex" 1742041352 37286 aa1fd9fcb4cfd2e318ba1d917f352502 ""
   "Theory/Theory.tex" 1741970634 452 1d0f3ae3a9973c1d665585c931604ff5 ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1741971618 17525 74e25d8dbdd6ccbac79c8225d5b1ee60 "pdflatex"
-  "main.out" 1741971618 3560 cc98c129ac33f437c21b666ee57ab12d "pdflatex"
+  "main.aux" 1742041363 19009 996e21d903001cc4d915242bfbf494ae "pdflatex"
+  "main.out" 1742041363 3731 16d8a4fd9c67e46825c00d31d978f1fa "pdflatex"
   "main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1741971618 1748 41717129de6765039adf53a4a27856ef "pdflatex"
+  "main.toc" 1742041363 1837 582f4cfa1dc081a9b610bc75600bc02c "pdflatex"
   (generated)
   "main.aux"
   "main.log"

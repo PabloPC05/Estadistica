@@ -5,7 +5,7 @@
   \\Un estimador del parámetro $\theta$ es un estadístico $T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \longrightarrow \Theta$ que se utiliza para determinar el valor desconocido $\theta$
 \end{definición}
 
-\begin{definición}[Estimador centrado]
+\begin{definición}[Estimador centrado o insesgado]
   Dado un estimador $T = T(X_1, \ldots X_n): \chi^{n} \to \Theta$ se dice que es centrado para $\theta$ cuando $E_{\theta}[T] = \theta$. 
 \end{definición}
 
@@ -61,45 +61,82 @@
 
 
 \ejemplo{
-  Sea una m.a.s. de tamaño $n = 1$ que sigue una distribución $X \sim Poisson(\theta)$ demuestra que $T(X) = e^{-2\theta}$ es un estimador centrado para $h(\theta) = e^{-3\theta}$, pero $Var_{\theta}(T) = e^{4\theta} - e^{-6\theta} \to \infty$ no es un estimador de $h(\theta)$: 
+  Sea una m.a.s. de tamaño $n = 1$ que sigue una distribución $X \sim Poisson(\theta)$ demuestra que $T(X) = (-2)^x$ es un estimador centrado para $h(\theta) = e^{-3\theta}$, pero $Var_{\theta}(T) = e^{4\theta} - e^{-6\theta} \to \infty$ no es un estimador de $h(\theta)$: 
+  $$X \sim Poisson(\theta) \implies f_{\theta}(x) = \frac{e^{-\theta}\theta^x}{x!} \implies E[T] = E[(-2)^x] = \sum_{x = 0}^{+\infty} (-2)^x \frac{e^{-\theta}\theta^x}{x!} = \sum_{x = 0}^{+\infty} \frac{(-2\theta)^x}{x!}e^{-\theta} = $$
+  $$e^{-\theta} \sum_{x = 0}^{+\infty} \frac{(-2\theta)^x}{x!} = e^{-\theta}e^{-2\theta} = e^{-3\theta} = h(\theta)$$
+  $$Var_{\theta}(T) = E[T^2] - E[T]^2 = E[(-2)^{2x}] - e^{-6\theta} = \sum_{x = 0}^{n} (-2)^{2x} \frac{e^{-\theta}\theta^x}{x!} - e^{-6\theta} = \sum_{x = 0}^{n} \frac{(4\theta)^x}{x!}e^{-\theta} - e^{-6\theta} = $$
+  $$e^{-\theta}\sum_{x = 0}^{n} \frac{(4\theta)^x}{x!} - e^{-6\theta} = e^{-\theta}e^{4\theta} - e^{-6\theta} = e^{3\theta} - e^{-6\theta} \to \infty$$
+  Este procedimiento ha demostrador que $T(X)$ es centrado para $h(\theta)$, pero su varianza es demasiado grande (infinita) por lo que no es adecuado para la estimación. 
 }
 
+\ejemplo{
+  Sea $(T_j)_{j \in \mathbb{N}}$ sucesión de estimadores centrados para $\theta$, entonces $\bar{T_k} = \frac{1}{k}\sum_{j = 1}^{k}T_j$ es un estimador centrado para $\theta$:
+  $$E[\bar{T_k}] = E[\frac{1}{k}\sum_{j = 1}^{k}T_j] = \frac{1}{k}\sum_{j = 1}^{k}E[T_j] = \frac{1}{k}\sum_{j = 1}^{k}\theta = \theta$$
+}
 
-Ejercicio $\mathrm{Si} T_{j}, j=1,2, \ldots$ es una sucesión de estimadores centrados para $\theta$, entonces $\bar{T}_{k}=\frac{1}{k} \sum_{j=1}^{k} T_{j}$ es un estimador centrado para $\theta$\\
-Si además, los estimadores $T_{j}$ son independientes y $V_{\theta}\left(T_{j}\right)<\sigma^{2}<\infty, j=1,2, \ldots$, entonces $V_{\theta}\left(\bar{T}_{k}\right) \leq \frac{\sigma^{2}}{k} \underset{k \rightarrow \infty}{\longrightarrow} 0 \Rightarrow$ $\bar{T}_{k} \xrightarrow[k \rightarrow \infty]{P} \theta$ (Teorema de Markov)
+\begin{definición}[Estimadores consistentes]
+  Una sucesión de estimadores $T_{n} = T(X_1, \ldots, X_n)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, E_{\theta}[T_n] \underset{n \to \infty}{\longrightarrow} \theta$ y $V_{\theta}(T_n) \underset{n \to \infty}{\longrightarrow} 0$, entonces $T_n$ es consistente para $\theta$
+\end{definición}
 
-\section*{Propiedades de los estimadores (continuación)}
-\section*{Estimadores consistentes}
-Una sucesión de estimadores $T_{n}=T\left(X_{1}, \ldots, X_{n}\right)$ es consistente para el parámetro $\theta$, si $T_{n} \xrightarrow[n \rightarrow \infty]{P} \theta, \forall \theta \in \Theta$, es decir si $\forall \varepsilon>0$ se tiene que $\lim _{n \rightarrow \infty} P_{\theta}\left(\left|T_{n}-\theta\right| \leq \varepsilon\right)=1, \forall \theta \in \Theta$
+\begin{proposición}
+  Si $T_{n} = T(X_1, \ldots, X_n)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, E_{\theta}[T_n] \underset{n \to \infty}{\longrightarrow} \theta$, $V_{\theta}(T_n) \underset{n \to \infty}{\longrightarrow} 0$, entonces $T_n$ es consistente para $\theta$
+\end{proposición}
+\begin{proof}
+  $E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]=V_{\theta}\left(T_{n}\right)+b\left(T_{n}, \theta\right)^{2} \underset{n \rightarrow \infty}{\longrightarrow} 0, \forall \theta \in \Theta$ entonces $T_{n} \xrightarrow[n \rightarrow \infty]{\text { m.c. }} \theta, \forall \theta \in \Theta$ 
+\end{proof}
 
-Proposición 1 (condición suficiente) Si $T_{n}=T\left(X_{1}, \ldots, X_{n}\right)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, E_{\theta}\left[T_{n}\right] \underset{n \rightarrow \infty}{\longrightarrow} \theta$, $V_{\theta}\left(T_{n}\right) \underset{n \rightarrow \infty}{\longrightarrow} 0$, entonces $T_{n}$ es consistente para $\theta$
+\ejemplo{
+  El estimador $a_k = \frac{1}{n}\sum_{i = 1}^{n}X_i^k$ es un estimdor consistente pra el mometo poblacional con respecto al origen de orden $k$, es decir, es estimador del parámetro $\theta = \alpha_k$. 
+}
 
-Demostración $E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]=V_{\theta}\left(T_{n}\right)+b\left(T_{n}, \theta\right)^{2} \underset{n \rightarrow \infty}{\longrightarrow} 0, \forall \theta \in \Theta$ entonces $T_{n} \xrightarrow[n \rightarrow \infty]{\text { m.c. }} \theta, \forall \theta \in \Theta$
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población de $Bernouilli(\theta)$ comprobemos que el estimador $T_n = \frac{1}{n+2}\left(\sum_{i = 1}^{n}X_i + 1\right)$ es un estimador consistente para $\theta$: 
+  $$\lim_{n \to \infty} E[T_n] = \lim_{n \to \infty} E\left[\frac{1}{n+2}\sum_{i = 1}^{n}X_i + 1\right] = \lim_{n \to \infty} \frac{1}{n+2}\sum_{i = 1}^{n}(E[X_i] + 1) = \lim_{n \to \infty}\frac{n\theta + 1}{n+2} = \theta$$
+  $$\lim_{n \to \infty} V[T_n] = \lim_{n \to \infty} V\left[\frac{1}{n+2}\sum_{i = 1}^{n}X_i + 1\right] = \lim_{n \to \infty} \frac{1}{(n+2)^2}\sum_{i = 1}^{n}V[X_i] = \lim_{n \to \infty} \frac{n\theta(1-\theta)}{(n+2)^2} = 0$$
+}
 
-\section*{Propiedades de los estimadores (continuación)}
-\section*{Estimadores bayesianos}
-En la aproximación bayesiana $\theta$ es una v.a. con distribución inicial o a priori dada por una función de masa o de densidad $\pi(\theta)$. Cuando se observa una muestra se calcula la distribución final o a posteriori,
+\subsection{Estimadores Bayesianos}
 
-$$
-  \begin{gathered}
-    \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{m\left(x_{1}, \ldots, x_{n}\right)} \\
-    m\left(x_{1}, \ldots, x_{n}\right)=\int_{\Theta} \pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right) d \theta
-  \end{gathered}
-$$
 
-donde $m$ se llama distribución predictiva
+\begin{definición}[Estimadores Bayesianos]
+  El enfoque bayesiano trata a los parámetros de las distribuciones como variables aleatorias con su propia función de distribución, a diferencia de considerar que toma valores fijos desconocidos. Para desarrollar este punto de vista, se asigna una distribución a $\theta$ llamada \underline{distribución inicial o a priori} $\pi(\theta)$ y se actualiza esta distribución con la información de la muestra para obtener la \underline{distribución final o a posteriori} $\pi(\theta | x_1, \ldots, x_n)$
+  $$\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{m\left(x_{1}, \ldots, x_{n}\right)}$$  
+  donde m es la \underline{distribución predictiva}, dada por 
+  $$m(x_1, \ldots, x_n) = \int_{\Theta} \pi(\theta)f(x_1, \ldots, x_n | \theta)d\theta$$
+\end{definición}
 
-Observación La idea es que antes de tomar la muestra, la información sobre $\theta$ viene dada por $\pi(\theta)$ y tras la experimentación se debe utilizar $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)$. El estimador bayesiano de $\theta$ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución
+\begin{observación}
+  Antes de tomar la muestra, la información sobre $\theta$ viene dada por $\pi(\theta)$ y tras la experimentación se debe utilizar $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)$. El estimador bayesiano de $\theta$ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución
+\end{observación}
 
-\section*{Propiedades de los estimadores (continuación)}
-\section*{Ejercicio (Familias conjugadas)}
-Si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim \operatorname{Bin}(1, \theta)$ y $\theta \sim U(0,1)$, entonces $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) \sim \operatorname{Beta}\left(\sum_{i=1}^{n} x_{i}+1, n-\sum_{i=1}^{n} x_{i}+1\right)$
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población $Bin(1, \theta)$ y con $\theta \sim U(0, 1)$ entonces $\pi(\theta | x_1, \ldots, x_n) \sim Beta\left(\sum_{i = 1}^{n}x_i + 1, n - \sum_{i = 1}^{n}x_i + 1\right)$
+  $$ \theta \sim U(0, 1) \implies \pi(\theta) \frac{1}{1-0} = 1$$
+  $$ X \sim Bin(1, \theta) \equiv Bernouilli(\theta) \implies f(x | \theta) = \theta^x(1-\theta)^{1-x} \implies $$ $$ \implies f(x_1, \ldots, x_n | \theta) = \prod_{i = 1}^{n}\theta^{x_i}(1-\theta)^{1-x_i} = \theta^{\sum_{i = 1}^{n}x_i}(1-\theta)^{n - \sum_{i = 1}^{n}x_i}$$
+  $$ m(x_1, \ldots, x_n) = \int_{0}^{1} \pi(\theta)f(x_1, \ldots, x_n | \theta)d\theta = \int_{0}^{1} \theta^S(1-\theta)^{n-S}d\theta =  B(S + 1 n - S + 1) \implies$$
+  $$ \pi(\theta | x_1, \ldots, x_n) = \frac{1 \cdot \theta^S (1-\theta)^{n-S}}{B(S + 1, n - S + 1)} \implies \pi(\theta | x_1, \ldots, x_n) \sim Beta(S + 1, n - S + 1)$$
+  \\
+  Ahora teniendo en cuenta que $U(0, 1) \equiv Beta(1, 1)$, podemos generalizar el resultado anterior para cualquier distribución inicial $\pi(\theta) \sim Beta(\alpha, \beta)$
+  $$\theta \sim Beta(\alpha, \beta) \implies \pi(\theta) = \frac{\theta^{\alpha - 1}(1-\theta)^{\beta - 1}}{B(\alpha, \beta)}$$
+  $$ m(x_1, \ldots, x_n) = \int_{0}^{1} \pi(\theta)f(x_1, \ldots, x_n | \theta)d\theta = \int_{0}^{1} \frac{\theta^{\alpha - 1}(1-\theta)^{\beta - 1}\theta^S(1-\theta)^{n-S}}{B(\alpha, \beta)}d\theta = $$
+  $$ = \frac{B(\alpha + S, \beta + n - S)}{B(\alpha, \beta)} = \frac{\Gamma(\alpha + S)\Gamma(\beta + n - S)}{\Gamma(\alpha + \beta + n)} \implies \pi(\theta | x_1, \ldots, x_n) \sim Beta(\alpha + S, \beta + n - S)$$
+  En este caso se dice que la familia de distribuciones iniciales $Beta(\alpha, \beta)$ es conjugada de la familia de distribuciones de probabilidad $X \sim Bin(1, \theta)$
+  \begin{observación}
+    Además, tenemos que $E[\theta | x_1, \ldots, x_n] = \frac{\sum_{i = 1}^{n}x_i + \alpha}{n + \alpha + \beta} = \frac{n}{n + \alpha + \beta}\bar{x} + \frac{\alpha + \beta}{n + \alpha + \beta}\frac{\alpha}{\alpha + \beta}$
+  \end{observación}  
+}
 
-En general, $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) \sim \operatorname{Beta}\left(\sum_{i=1}^{n} x_{i}+\alpha, n-\sum_{i=1}^{n} x_{i}+\beta\right)$ si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim \operatorname{Bin}(1, \theta)$ y $\theta \sim \operatorname{Beta}(\alpha, \beta)$
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$ y con $\mu \sim N(\mu_0, \sigma_0)$ y $\sigma$ conocida entonces $\pi(\mu | x_1, \ldots, x_n) \sim N(\mu_1, \sigma_1)$: 
+  $$\mu \sim N(\mu_0, \sigma_0) \implies \pi(\mu) = \frac{1}{\sqrt{2\pi}\sigma_0}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}}$$
+  $$X \sim N(\mu, \sigma) \implies f(x | \mu) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x - \mu)^2}{2\sigma^2}} \implies f(x_1, \ldots, x_n | \mu) = \prod_{i = 1}^{n}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x_i - \mu)^2}{2\sigma^2}} = $$
+  $$ = \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}$$
+  $$\pi(\theta | x_1, \ldots, x_n) = \frac{\frac{1}{\sqrt{2\pi}\sigma_0}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}}{\int_{\mathbb{R}}\frac{1}{\sqrt{2\pi}\sigma_0}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}d\mu} = $$
+  $$ = \frac{e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}}{\int_{\mathbb{R}}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}d\mu} = $$
 
-En este caso, se dice que la familia de distribuciones iniciales $\operatorname{Beta}(\alpha, \beta)$ es conjugada de la familia de distribuciones de probabilidad $X \sim \operatorname{Bin}(1, \theta)$
-
-Además, $E\left[\theta \mid x_{1}, \ldots, x_{n}\right]=\frac{\sum_{i=1}^{n} x_{i}+\alpha}{n+\alpha+\beta}=\frac{n}{n+\alpha+\beta} \bar{x}+\frac{\alpha+\beta}{n+\alpha+\beta} \frac{\alpha}{\alpha+\beta}$
+  
+  
+}
 
 \section*{Propiedades de los estimadores (continuación)}
 Ejercicio $\mathrm{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim N(\mu, \sigma)$ con $\sigma$ conocida y $\mu \sim N\left(\mu_{0}, \sigma_{0}\right)$, entonces $\pi\left(\mu \mid x_{1}, \ldots, x_{n}\right) \sim N\left(\mu_{1}, \sigma_{1}\right)$,
