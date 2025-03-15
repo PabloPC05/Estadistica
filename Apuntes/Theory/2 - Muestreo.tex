@@ -136,7 +136,52 @@ donde \( \chi_{(-\infty,x]}(X_i) \) es la función indicadora que toma el valor 
 \begin{teorema}[de Glivenko-Cantelli]
 	Sea $\left(X_{1}, \ldots, X_{n}\right)$ m.a.s.$(n) \sim X$ con función de distribucióm empírica $F_{n}(x)$ y sea $F(x)$ la función de distribución de $X$, es decir, de la población total. Entonces se cumple que:
 	\[\lim _{n \rightarrow \infty} P\left(w: \operatorname{Sup}_{x}\left|F_{n}(x)-F(x)\right|<\epsilon\right)=1, \ \forall \epsilon>0\]
+	Es decir, $\lVert F_{n}-F \rVert_{\infty} = \operatorname{Sup}_{x}\left|F_{n}(x)-F(x)\right| \xrightarrow[n \rightarrow \infty]{c.s.} 0$
 \end{teorema}
+
+\begin{proof}
+	Para simplicidad, consideremos el caso de una variable aleatoria continua \( X \). Fijemos \( -\infty = x_0 < x_1 < \cdots < x_{m-1} < x_m = \infty \) tal que 
+
+	\[
+	F(x_j) - F(x_{j-1}) = \frac{1}{m} \quad \text{para } j = 1, \dots, m.
+	\]
+	
+	Ahora, para todo \( x \in \mathbb{R} \), existe \( j \in \{1, \dots, m\} \) tal que \( x \in [x_{j-1}, x_j] \).
+	
+	\[
+	F_n(x) - F(x) \leq F_n(x_j) - F(x_j) + \frac{1}{m},
+	\]
+	
+	\[
+	F_n(x) - F(x) \geq F_n(x_{j-1}) - F(x_{j-1}) - \frac{1}{m}.
+	\]
+	
+	Por lo tanto,
+	
+	\[
+	\|F_n - F\|_{\infty} = \sup_{x \in \mathbb{R}} |F_n(x) - F(x)| \leq \max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| + \frac{1}{m}.
+	\]
+	
+	Dado que 
+	
+	\[
+	\max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| \to 0 \quad \text{c.s.}
+	\]
+	
+	por la ley fuerte de los grandes números, podemos garantizar que para cualquier \( \varepsilon > 0 \) y cualquier entero \( m \) tal que \( 1/m < \varepsilon \), podemos encontrar \( N \) tal que para todo \( n \geq N \),
+	
+	\[
+	\max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| \leq \varepsilon - 1/m \quad \text{c.s.}
+	\]
+	
+	Combinando con el resultado anterior, esto implica además que 
+	
+	\[
+	\|F_n - F\|_{\infty} \leq \varepsilon \quad \text{c.s.},
+	\]
+	
+	lo que es la definición de convergencia casi segura.
+\end{proof}
 
 \begin{corolario}
 	El Teorema de Glivenko-Cantelli permite realizar una técnica estadística denominda \textbf{método de sustitución (Plug-In)} la cual se basa en la sustitución de parámetros desconocidos por sus estimaciones sobre una muestra. Por ejemplo:
