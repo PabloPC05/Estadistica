@@ -648,6 +648,33 @@ Finalmente, bajo el límite
 	\end{enumerate}
 \end{proof}
 
+
+\begin{definición}[Distribución t de Student]
+    Dadas las v.a. independientes $X, X_1, \ldots, X_n$ con distribución $N(0,1)$ la v.a.
+    \[
+    T_n = X \left/ \sqrt{\frac{1}{n} \sum_{i=1}^n X_i^2} \right.
+    \]
+    tiene una distribución $T_n$ de Student con $n$ grados de libertad. De forma equivalente, una v.a. $T_n$ tiene esta distribución, cuando su función de densidad es
+    \begin{equation}
+    \label{1.5.3.3}
+    f_{T_n}(t) = \frac{\Gamma\left( \frac{n+1}{2} \right)}{\sqrt{n} \, \Gamma\left( \frac{1}{2} \right) \Gamma\left( \frac{n}{2} \right)} \left( 1 + \frac{t^2}{n} \right)^{-\frac{n+1}{2}} \quad t \in \mathbb{R}.
+    \end{equation}
+    
+    Es fácil establecer que la media de la distribución $T_n$ es $0$ y que la varianza es $V[T_n] = \frac{n}{n-2}$ si $n > 2$.
+\end{definición}
+
+\begin{corolario}
+        Para m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$, la distribución de la variable
+        \[
+        T_{n-1} = \frac{\overline{X} - \mu}{S} \sqrt{n}
+        \]
+        con $S^2$ la cuasivarianza muestral, es una distribución de Student con $n - 1$ grados de libertad.       
+\end{corolario}
+
+\begin{proof}
+    La variable $\dfrac{\overline{X} - \mu}{\sigma} \sqrt{n}$ tiene distribución $N(0,1)$ y la variable $(n - 1) \dfrac{S^2}{\sigma^2}$ tiene distribución $\chi^2_{n-1}$ como por el teorema de Fisher, ambas son independientes, se sigue el resultado.
+\end{proof}
+
 \subsection{Estadísticos ordenados}
 \begin{definición}[Estadísticos ordenados]
 Sea $\left(X_{1}, \ldots, X_{n}\right)$ una m.a.s. $(n)$ de $X$. Podemos ordenar los valore de menor a mayor. A éstos se les llama estadísticos ordenados y se denotan por $X_{(1)} \leq X_{(2)} \leq \ldots \leq X_{(n)}$.
