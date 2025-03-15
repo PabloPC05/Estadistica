@@ -132,48 +132,76 @@
   $$X \sim N(\mu, \sigma) \implies f(x | \mu) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x - \mu)^2}{2\sigma^2}} \implies f(x_1, \ldots, x_n | \mu) = \prod_{i = 1}^{n}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x_i - \mu)^2}{2\sigma^2}} = $$
   $$ = \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}$$
   $$\pi(\theta | x_1, \ldots, x_n) = \frac{\frac{1}{\sqrt{2\pi}\sigma_0}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}}{\int_{\mathbb{R}}\frac{1}{\sqrt{2\pi}\sigma_0}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}d\mu} = $$
-  $$ = \frac{e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}}{\int_{\mathbb{R}}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}d\mu} = $$
+  $$ = \frac{e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}}{\int_{\mathbb{R}}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}d\mu} = \frac{e^{\frac{-\mu^2 - \mu_0^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-\sum_{i = 1}^{n}x_i^2 - n\mu^2 + 2\mu\sum_{i = 1}^{n}x_i}{2\sigma^2}}}{\int_{\mathbb{R}}e^{\frac{-\mu^2 - \mu_0^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-\sum_{i = 1}^{n}x_i^2 - n\mu^2 + 2\mu\sum_{i = 1}^{n}x_i}{2\sigma^2}}d\mu} = $$
+  $$ = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\int_{\mathbb{R}} e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}d\mu} = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\int_{\mathbb{R}} e^{-\frac{1}{2}\left(\frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}}\right)\mu^2 + \left(\frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}\right)\mu}d} \implies$$
+  Sabiendo que, dada una normal $N(E, \sqrt{V})$ se da que: $\int_{-\infty}^{+\infty}e^{-\frac{1}{2V}\theta^2 + \frac{E}{V}\theta}d\theta = \sqrt{2\pi V} \cdot e^{\frac{1}{2}\frac{E^2}{V}}$, entonces:
+  $$\begin{cases}
+  \frac{1}{V} = \frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}} \\
+  \frac{E}{V} = \frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}
+  \end{cases}$$
+  $$ = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\sqrt{2\pi\left(\frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}}\right)} \cdot e^{\frac{1}{2}\left(\frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}\right)^2}} = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\sqrt{2\pi\left(\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}\right)} \cdot e^{\frac{1}{2}\left(\frac{\mu_0^2}{\sigma_0^2} + \frac{\bar{X}^2}{\frac{\sigma^2}{n}}\right)}} = $$
+
+  NO ESTÁ TERMINADO
 }
 
-\section*{Propiedades de los estimadores (continuación)}
-Ejercicio $\mathrm{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim N(\mu, \sigma)$ con $\sigma$ conocida y $\mu \sim N\left(\mu_{0}, \sigma_{0}\right)$, entonces $\pi\left(\mu \mid x_{1}, \ldots, x_{n}\right) \sim N\left(\mu_{1}, \sigma_{1}\right)$,
+\begin{definición}[Estadístico suficiente bayesiano]
+  $T = T(X_1, \ldots, X_n)$ es un estadístico suficiente bayesiano para $\theta$ para la familia $\mathcal{P} = \{f(\vec{x}|\theta) : \theta \in \Theta\}$ si cualquiera que sea la distribución inicial $\pi(\theta)$, se tiene que la distribución final dada por la muestra y por el valor del estadístico son la misma. Es decir: 
+  $$\pi(\theta | x_1, \ldots, x_n) = \pi(\theta | t) : t = T(x_1, \ldots, x_n)$$
+\end{definición}
 
-$$
-  \begin{gathered}
-    \mu_{1}=\frac{\frac{\mu_{0}}{\sigma_{0}^{2}}+\frac{\bar{x}}{\sigma^{2}}}{\frac{1}{\sigma_{0}^{2}}+\frac{\frac{1}{\sigma^{2}}}{\frac{\sigma^{n}}{n}}}=\frac{\sigma^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \mu_{0}+\frac{n \sigma_{0}^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \bar{x} \\
-    \sigma_{1}=\sqrt{\frac{1}{\frac{1}{\sigma_{0}^{2}}+\frac{1}{\frac{\sigma^{2}}{n}}}}
-  \end{gathered}
-$$
+\begin{teorema}[Versión bayesiana del Teorema de Factorización de Fisher]
+    $T = T(X_1, \ldots, X_n)$ es un estadístico suficiente para $\theta$ si y sólo si $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
+\end{teorema}
 
-\section*{Propiedades de los estimadores (continuación)}
-\section*{Estadístico suficiente bayesiano}
-$T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente bayesiano para $\theta$ (para la familia de funciones de distribución $\left.\left\{F_{\theta}\right\}_{\theta \in \Theta \subset \mathbb{R}^{\ell}}\right)$, respecto a la distribución inicial $\pi(\theta)$ sí $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\pi(\theta \mid t)$, con $T\left(x_{1}, \ldots, x_{n}\right)=t$Teorema $3 T=T\left(X_{1}, \cdots X_{n}\right): \mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}$ es un estadístico suficiente para $\theta$ sí y sólo sí $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
+\begin{proof}
+  $$\begin{aligned}
+    &\Rightarrow \pi(\theta | x_1, \ldots, x_n) = \frac{\pi(\theta)f(x_1, \ldots, x_n | \theta)}{m(x_1, \ldots, x_n)} = \frac{\pi(\theta)g(t | \theta)f(x_1, \ldots, x_n | t, \theta)}{m(x_1, \ldots, x_n)} = \frac{\pi(\theta)g(t | \theta)}{\int_{\Theta}\pi(\theta)g(t | \theta)d\theta} = \pi(\theta | t)\\
+    &\Rightarrow f(x_1, \ldots, x_n | \theta) = \frac{\pi(\theta | x_1, \ldots, x_n)m(x_1, \ldots, x_n)}{\pi(\theta)} = \frac{\pi(\theta | t)}{\pi(\theta)}m(x_1, \ldots, x_n)
+  \end{aligned}$$
+\end{proof}
 
-\section*{Demostración}
-$$
-  \begin{aligned}
-     & \Rightarrow \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{\int_{\Theta} \pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right) d \theta}=\frac{\pi(\theta) g(t \mid \theta) f\left(x_{1}, \ldots, x_{n} \mid t, \theta\right)}{\int_{\Theta} \pi(\theta) g(t \mid \theta) f\left(x_{1}, \ldots, x_{n} t t, \theta\right) d \theta}= \\
-     & \frac{\pi(\theta) g(t \mid \theta)}{\int_{\Theta} \pi(\theta) g(t \mid \theta) d \theta}=\pi(\theta \mid t)                                                                                                                                                                                                                                                                                                  \\
-     & \Leftrightarrow) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)=\frac{\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) m\left(x_{1}, \ldots, x_{n}\right)}{\pi(\theta)}=\frac{\pi(\theta \mid t)}{\pi(\theta)} m\left(x_{1}, \ldots, x_{n}\right)
-  \end{aligned}
-$$
+\begin{definición}[Error cuadrático medio]
+  Dado un estimador $T(X_1, \ldots, X_n)$ de $\theta$, se denomina error cuadrático medio $ECM$ a la expresión en función de $\theta$:	
+  $$ECM_T(\theta) = E_{\theta}[(T - \theta)^2]$$
+  Conceptualmente, el error cuadrático medio es una medida que indica qué tn cerca está un estadístico del parámetro verdadero que se intenta estimar. 
+\end{definición}
 
-\section*{Criterios de comparación de estimadores}
-\section*{Error cuadrático medio}
-Dado un estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$ de $\theta$, se denomina error cuadrático medio $\operatorname{ECM}(T, \theta)=E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]$
+\begin{proposición}
+  Dado un estimador $T(X_1, \ldots, X_n)$ de $\theta$, se tiene que:
+  $$ECM_T(\theta) = V_{\theta}(T) + b(T, \theta)^2$$
+\end{proposición}
+\begin{proof}
+  $$ECM_T(\theta) = E_{\theta}[(T - \theta)^2] = E_{\theta}[T^2 - 2T\theta + \theta^2] = E_{\theta}[T^2] - 2\theta E_{\theta}[T] + \theta^2 = V_{\theta}(T) + b(T, \theta)^2$$
+\end{proof}
 
-Ejercicio $\operatorname{Si}\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s.( $n$ ) de $X \sim N(\mu, \sigma)$, entonces
+\begin{observación}
+  El sesgo mide qué tanto se desvía, en promedio, el estimador del valor verdadero del parámetro. \\
+  La varianza del estimador mide cómo varían las estimaciones (del estimador) si tomamos diferentes muestras. \\
+  Es decir, responden a las preguntas de ¿Apunta al lugar correcto? y ¿Qué tan dispersas están las estimaciones? respectivamente. 
+\end{observación}
 
-$$
-  \begin{gathered}
-    E C M(\bar{X}, \mu)=\frac{\sigma^{2}}{n} \\
-    E C M\left(S^{2}, \sigma^{2}\right)=V_{\theta}\left(S^{2}\right)=\frac{2 \sigma^{4}}{n-1} \\
-    E C M\left(\sigma_{n}^{2}, \sigma^{2}\right)=V_{\theta}\left(\sigma_{n}^{2}\right)+b\left(\sigma_{n}^{2}, \sigma\right)=\frac{2 n-1}{n^{2}} \sigma^{4}<\frac{2 \sigma^{4}}{n-1}
-  \end{gathered}
-$$
+\ejemplo{
+  Dada una m.a.s. de tamaño $n$ de una población $X \sim Bernouilli(\theta)$ el error cuadrático medio del estimador bayesiano $\bar{X}$: 
+  $$E_{\theta}[(T - \theta)^2] = E_{\theta}[(\bar{X} - \theta)^2] = E_{\theta}[\bar{X}^2 - 2\bar{X}\theta + \theta^2] = E_{\theta}[\bar{X}^2] - 2\theta E_{\theta}[\bar{X}] + \theta^2 = $$ $$ = \frac{1}{n^2}\sum_{i = 1}^{n}E_{\theta}[X_i^2] - 2\theta \frac{1}{n} \sum_{i = 1}^{n}E_{\theta}[X_i] + \theta^2 = \frac{1}{n^2}n(\theta^2 + \theta(1-\theta)) - 2\theta^2 + \theta^2 = \frac{\theta(1-\theta)}{n} = \frac{\theta}{n} - \frac{\theta^2}{n} = \frac{\theta(1-\theta)}{n}$$
+}
 
-\section*{Criterios de comparación de estimadores}
-\section*{Pérdida final esperada}
+\ejemplo{
+  Dada una m.a.s. de tamaño $n$ de una población $X \sim N(\mu, \sigma)$, se sab quelos estimadores centrados de ambos paráetros son $\bar{X}$ para $\mu$ y $S^2$ para $\sigma^2$, respectivamente. Y sus errores cuadráticos medios son: 
+  $$ECM_{\bar{X}}(\mu) = Var[\bar{X}] = \frac{\sigma^2}{n} \quad ECM_{S^2}(\sigma^2) = Var[S^2] = \frac{2\sigma^4}{n-1}$$
+  Sea $b_2 = \sigma_n^2 = \frac{1}{n} \sum_{i = 1}^{n}(X_i - \bar{X})^2$ otro estimador centrado para $\sigma^2$, calculemos su varianza y sesgo: 
+  Gracias al cálculo realizado en un ejemplo anterior tenemos que $b(\sigma_n^2, \sigma) = -\frac{\sigma^2}{n}$, por lo que sólo queda calcular la varianza, la cual es de la forma
+  $$V_{\theta}(\sigma_n^2) = \frac{2\sigma^4}{n} \implies ECM_{\sigma_n^2}(\sigma^2) = V_{\theta}(\sigma_n^2) + b(\sigma_n^2, \sigma)^2 = \frac{2\sigma^4}{n} - \frac{\sigma^4}{n^2} = \frac{2n - 1}{n^2}\sigma^4 < \frac{2\sigma^4}{n-1} = ECM_{S^2}(\sigma^2)$$
+  Por lo que se puede concluir que $S^2$ es un estimador más eficiente que $\sigma_n^2$ para $\sigma^2$
+  A pesar de que matemáticamente se parezcan mas, la corrección para mejorar la eficiencia se la conoce como \underline{corrección de Bessel}.
+}
+
+\subsection{Criterios de comparación de estimadores}
+
+\begin{definición}[Pérdida final esperada]
+  Dado un estimador $T(X_1, \ldots, X_n)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ donde $t$ son los valores que toma el estimador, se define la Pérdida Final Esperada o $PFE$ o el riesgo a posteriori como: 
+  $$PFE_T = E[\mathcal{L}(t, \theta) | X_1 = x_1, \ldots, X_n = x_n]$$
+\end{definición}
+
 Dado el estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ en la que se incurre por estimar $\theta$ mediante $T\left(x_{1}, \ldots, x_{n}\right)=t$, se define la pérdida final esperada $\circ$ riesgo a posteriori,
 
 $$
