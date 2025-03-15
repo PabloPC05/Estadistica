@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1742039243.67846 "c:/Users/paufr/OneDrive/Escritorio/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742039248.72368 0
+["pdflatex"] 1742040364.23764 "c:/Users/paufr/OneDrive/Escritorio/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742040369.66105 0
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1742021746 85269 91ab854c05f02ecfc449dd78c7dd787d ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1737830965 12668 44c2b6835b068e2daf954ff2dc327054 ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740209314 10576 812161b7ddd5b677e374451c45e3e26a ""
@@ -334,15 +334,15 @@
   "Graficos/geogebra-export.png" 1741860255 591085 be281bd5b496880487ab7c388224041d ""
   "Preamble/Preamble.tex" 1741860255 12039 d4179fd1b41fcfa14fda833bd7edc16f ""
   "Theory/1- Estadistica Descriptiva.tex" 1741860255 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
-  "Theory/2 - Muestreo.tex" 1742039237 40417 5deee6e70e8eea0ebafc59f9e8c8e227 ""
+  "Theory/2 - Muestreo.tex" 1742040363 42728 7bd03f80e7095c8c33ec18f800b03dd0 ""
   "Theory/3 - Reduccion de Datos.tex" 1741980893 68149 cfda9827708a63d9501c5e86a3490ab5 ""
   "Theory/4 - Estimacion Puntual Parametrica.tex" 1741980893 33265 724456268baa61323490a78bf832509b ""
   "Theory/Theory.tex" 1742038937 452 1d0f3ae3a9973c1d665585c931604ff5 ""
   "c:/Users/paufr/OneDrive/Escritorio/Estadistica-1/Apuntes/main.tex" 1741860255 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1742039248 18156 3454af8c38da6a04d32ddcbe90c83f1f "pdflatex"
-  "main.out" 1742039248 3560 cc98c129ac33f437c21b666ee57ab12d "pdflatex"
+  "main.aux" 1742040369 18398 2f61fbd70a657a4aee6b2192bef8266e "pdflatex"
+  "main.out" 1742040369 3560 cc98c129ac33f437c21b666ee57ab12d "pdflatex"
   "main.tex" 1741860255 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1742039248 1748 67783f179eebccac14bdf5c18f228d4f "pdflatex"
+  "main.toc" 1742040369 1748 f1aaf2a212dd5aed61bb9f6517066210 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

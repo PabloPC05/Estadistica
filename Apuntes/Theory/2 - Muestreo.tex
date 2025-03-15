@@ -29,8 +29,15 @@ Además se tienen dos enfoques según cómo se tome el comportamiento de $\theta
 
 \ejemplo{
 	\begin{enumerate}
-		\item Sea $X$ una variable aleatoria con distribución $N(\theta, 1)$, donde $\theta$ es un parámetro desconocido. Entonces, el modelo estadístico asociado a este experimento es $(\mathbb{R}, \mathcal{B}, F_{\theta}, \theta)$, donde $F_{\theta}(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}(x-\theta)^2}$. En este caso $\Theta = \mathbb{R}$.
-		\item Sea $X$-variable aleatoria con distribución $Bernouilli$, de parámetro $\theta$. Entonces en este caso, el modelo estadístico asociado es $(\{0,1\}, \mathcal{B}, F_{\theta}, \theta)$, donde $F_{\theta}(x) = \theta^x (1-\theta)^{1-x}$. En este caso $\Theta = [0,1]$.
+		\item Sea $X$ una variable aleatoria con distribución $N(\theta, 1)$, donde $\theta$
+		      es un parámetro desconocido. Entonces, el modelo estadístico asociado a este
+		      experimento es $(\mathbb{R}, \mathcal{B}, F_{\theta}, \theta)$, donde
+		      $F_{\theta}(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}(x-\theta)^2}$. En este
+		      caso $\Theta = \mathbb{R}$.
+		\item Sea $X$-variable aleatoria con distribución $Bernouilli$, de parámetro
+		      $\theta$. Entonces en este caso, el modelo estadístico asociado es $(\{0,1\},
+			      \mathcal{B}, F_{\theta}, \theta)$, donde $F_{\theta}(x) = \theta^x
+			      (1-\theta)^{1-x}$. En este caso $\Theta = [0,1]$.
 	\end{enumerate}
 }
 
@@ -75,8 +82,8 @@ función de masa $\left(\frac{1}{n}, \ldots, \frac{1}{n}\right)$
 			1           & \text{si } x \geq 9
 		\end{cases}
 	\]
-	De manera que cada vez que $x$ alcanza un valor de la muestra, la función de distribución empírica aumenta en $\frac{1}{n} =0,2$.
-}
+	De manera que cada vez que $x$ alcanza un valor de la muestra, la función de
+	distribución empírica aumenta en $\frac{1}{n} =0,2$. }
 
 \begin{proposición}[Propiedades de la Función de Distribución Empírica]
 Sea una muestra aleatoria \( X_1, X_2, \dots, X_n \) de una variable aleatoria \( X \) con función de distribución \( F(x) \). Definimos la función de distribución empírica como:
@@ -85,7 +92,8 @@ $$
 	F_n(x) = \frac{1}{n} \sum_{i=1}^{n} \chi_{(-\infty,x]}(X_i)
 $$
 
-donde \( \chi_{(-\infty,x]}(X_i) \) es la función indicadora que toma el valor \( 1 \) si \( X_i \leq x \) y \( 0 \) en caso contrario.
+donde \( \chi_{(-\infty,x]}(X_i) \) es la función indicadora que toma el valor
+\( 1 \) si \( X_i \leq x \) y \( 0 \) en caso contrario.
 
 \begin{enumerate}
 	\item \textbf{Interpretación probabilística:}
@@ -95,7 +103,8 @@ donde \( \chi_{(-\infty,x]}(X_i) \) es la función indicadora que toma el valor 
 		      \chi_{(-\infty,x]}(X_i) \sim \text{Bernoulli}(F(x))
 	      $$
 
-	      Por tanto también podemos afirmar que: $$\chi_{(-\infty,x]}(X_i) \sim \text{Bin}(1, F(x))$$
+	      Por tanto también podemos afirmar que: $$\chi_{(-\infty,x]}(X_i) \sim
+		      \text{Bin}(1, F(x))$$
 
 	      Además, la suma de estas variables sigue una distribución binomial:
 
@@ -105,8 +114,8 @@ donde \( \chi_{(-\infty,x]}(X_i) \) es la función indicadora que toma el valor 
 
 	      $$ E[F_n(x)] = F(x) $$
 
-	      lo que indica que \( F_n(x) \) es un estimador insesgado de \( F(x) \).
-	      La varianza está dada por:
+	      lo que indica que \( F_n(x) \) es un estimador insesgado de \( F(x) \). La
+	      varianza está dada por:
 
 	      $$ V[F_n(x)] = \frac{F(x)(1 - F(x))}{n} \underset{n \to \infty}{\longrightarrow} 0 $$
 
@@ -136,58 +145,66 @@ donde \( \chi_{(-\infty,x]}(X_i) \) es la función indicadora que toma el valor 
 \begin{teorema}[de Glivenko-Cantelli]
 	Sea $\left(X_{1}, \ldots, X_{n}\right)$ m.a.s.$(n) \sim X$ con función de distribucióm empírica $F_{n}(x)$ y sea $F(x)$ la función de distribución de $X$, es decir, de la población total. Entonces se cumple que:
 	\[\lim _{n \rightarrow \infty} P\left(w: \operatorname{Sup}_{x}\left|F_{n}(x)-F(x)\right|<\epsilon\right)=1, \ \forall \epsilon>0\]
-	Es decir, $\lVert F_{n}-F \rVert_{\infty} = \operatorname{Sup}_{x}\left|F_{n}(x)-F(x)\right| \xrightarrow[n \rightarrow \infty]{c.s.} 0$
+	Es decir, $\lVert F_{n}-F \rVert_{\infty} =
+		\operatorname{Sup}_{x}\left|F_{n}(x)-F(x)\right| \xrightarrow[n \rightarrow
+			\infty]{c.s.} 0$
 \end{teorema}
 
 \begin{proof}
-	Para simplicidad, consideremos el caso de una variable aleatoria continua \( X \). Fijemos \( -\infty = x_0 < x_1 < \cdots < x_{m-1} < x_m = \infty \) tal que 
+	Para simplicidad, consideremos el caso de una variable aleatoria continua \( X \). Fijemos \( -\infty = x_0 < x_1 < \cdots < x_{m-1} < x_m = \infty \) tal que
 
 	\[
-	F(x_j) - F(x_{j-1}) = \frac{1}{m} \quad \text{para } j = 1, \dots, m.
+		F(x_j) - F(x_{j-1}) = \frac{1}{m} \quad \text{para } j = 1, \dots, m.
 	\]
-	
-	Ahora, para todo \( x \in \mathbb{R} \), existe \( j \in \{1, \dots, m\} \) tal que \( x \in [x_{j-1}, x_j] \).
-	
+
+	Ahora, para todo \( x \in \mathbb{R} \), existe \( j \in \{1, \dots, m\} \) tal
+	que \( x \in [x_{j-1}, x_j] \).
+
 	\[
-	F_n(x) - F(x) \leq F_n(x_j) - F(x_j) + \frac{1}{m},
+		F_n(x) - F(x) \leq F_n(x_j) - F(x_j) + \frac{1}{m},
 	\]
-	
+
 	\[
-	F_n(x) - F(x) \geq F_n(x_{j-1}) - F(x_{j-1}) - \frac{1}{m}.
+		F_n(x) - F(x) \geq F_n(x_{j-1}) - F(x_{j-1}) - \frac{1}{m}.
 	\]
-	
+
 	Por lo tanto,
-	
+
 	\[
-	\|F_n - F\|_{\infty} = \sup_{x \in \mathbb{R}} |F_n(x) - F(x)| \leq \max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| + \frac{1}{m}.
+		\|F_n - F\|_{\infty} = \sup_{x \in \mathbb{R}} |F_n(x) - F(x)| \leq \max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| + \frac{1}{m}.
 	\]
-	
-	Dado que 
-	
+
+	Dado que
+
 	\[
-	\max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| \to 0 \quad \text{c.s.}
+		\max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| \to 0 \quad \text{c.s.}
 	\]
-	
-	por la ley fuerte de los grandes números, podemos garantizar que para cualquier \( \varepsilon > 0 \) y cualquier entero \( m \) tal que \( 1/m < \varepsilon \), podemos encontrar \( N \) tal que para todo \( n \geq N \),
-	
+
+	por la ley fuerte de los grandes números, podemos garantizar que para cualquier
+	\( \varepsilon > 0 \) y cualquier entero \( m \) tal que \( 1/m < \varepsilon
+	\), podemos encontrar \( N \) tal que para todo \( n \geq N \),
+
 	\[
-	\max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| \leq \varepsilon - 1/m \quad \text{c.s.}
+		\max_{j \in \{1, \dots, m\}} |F_n(x_j) - F(x_j)| \leq \varepsilon - 1/m \quad \text{c.s.}
 	\]
-	
-	Combinando con el resultado anterior, esto implica además que 
-	
+
+	Combinando con el resultado anterior, esto implica además que
+
 	\[
-	\|F_n - F\|_{\infty} \leq \varepsilon \quad \text{c.s.},
+		\|F_n - F\|_{\infty} \leq \varepsilon \quad \text{c.s.},
 	\]
-	
+
 	lo que es la definición de convergencia casi segura.
 \end{proof}
 
 \begin{corolario}
 	El Teorema de Glivenko-Cantelli permite realizar una técnica estadística denominda \textbf{método de sustitución (Plug-In)} la cual se basa en la sustitución de parámetros desconocidos por sus estimaciones sobre una muestra. Por ejemplo:
 	\begin{enumerate}
-		\item Se puede estimar la media poblacional $\mu$ por la media muestral $\bar{X} = \int x\partial{F_n(x)} = \frac{1}{n}\sum_{i = 1}^{n}x_i $.
-		\item Se puede estimar la varianza poblacional $\sigma^2$ por la varianza muestral $S^2 = \int (x - \bar{x})dF_n(x) = \frac{1}{n}\sum_{i = 1}^{n}(x_i - \bar{x})^2 = \sigma_n^2$.
+		\item Se puede estimar la media poblacional $\mu$ por la media muestral $\bar{X} =
+			      \int x\partial{F_n(x)} = \frac{1}{n}\sum_{i = 1}^{n}x_i $.
+		\item Se puede estimar la varianza poblacional $\sigma^2$ por la varianza muestral
+		      $S^2 = \int (x - \bar{x})dF_n(x) = \frac{1}{n}\sum_{i = 1}^{n}(x_i - \bar{x})^2
+			      = \sigma_n^2$.
 	\end{enumerate}
 \end{corolario}
 
@@ -266,7 +283,6 @@ Sea $\left(X_{1}, \ldots, X_{n}\right)$ m.a.s.$(n)$ de $X \sim N(\mu, \sigma)$, 
 \end{enumerate}
 \end{proposición}
 
-
 \textbf{Propiedades asintóticas de los momentos muestrales}\\
 
 \[
@@ -340,15 +356,15 @@ $E\left[e^{\bar{X}}\right] = \varphi_{\bar{X}}(t)=E\left[e^{it \frac{1}{n} \sum_
 		\sum_{i=1}^{n} Z_i^2 \sim \chi_n^2.
 	\]
 
-	La distribución chi-cuadrado con \( n \) grados de libertad es un caso particular de la distribución Gamma:
+	La distribución chi-cuadrado con \( n \) grados de libertad es un caso
+	particular de la distribución Gamma:
 
 	\[
 		\chi_n^2 \sim \text{Gamma} \left( a = \frac{1}{2}, p = \frac{n}{2} \right).
 	\]
 
-	Donde:
-	- \( a = \frac{1}{2} \) es el **parámetro de forma**.
-	- \( p = \frac{n}{2} \) es el **parámetro de escala**.
+	Donde: - \( a = \frac{1}{2} \) es el **parámetro de forma**. - \( p =
+	\frac{n}{2} \) es el **parámetro de escala**.
 
 	La función de densidad de la suma de cuadrados es:
 
@@ -368,7 +384,8 @@ $E\left[e^{\bar{X}}\right] = \varphi_{\bar{X}}(t)=E\left[e^{it \frac{1}{n} \sum_
 		a_2 \sim \text{Gamma} \left( a = \frac{n}{2\sigma^2}, p = \frac{n}{2} \right).
 	\]
 
-	Para muestras grandes, usando el **Teorema Central del Límite**, la variable estandarizada:
+	Para muestras grandes, usando el **Teorema Central del Límite**, la variable
+	estandarizada:
 
 	\[
 		\sigma^2 \sqrt{\frac{n}{2\sigma^2}} (a_2 - \sigma^2)
@@ -380,7 +397,8 @@ $E\left[e^{\bar{X}}\right] = \varphi_{\bar{X}}(t)=E\left[e^{it \frac{1}{n} \sum_
 		N(0,1).
 	\]
 
-	Este resultado es fundamental en inferencia estadística, ya que muestra que la varianza muestral puede aproximarse por una normal para muestras grandes.
+	Este resultado es fundamental en inferencia estadística, ya que muestra que la
+	varianza muestral puede aproximarse por una normal para muestras grandes.
 
 }
 
@@ -531,149 +549,184 @@ Finalmente, bajo el límite
 		      $$ Cov(X_i - \bar{X}, \bar{X}) = E[(X_i - \bar{X})\bar{X}] - E[X_i- \bar{X}]E[\bar{X}] = E[(X_i - \bar{X}\bar{X})] - (E[X_i] - E[\bar{X}])E[\bar{X}] = $$ $$ = E[(X_i - \bar{X})\bar{X}] - (\mu - \mu)\mu = E[X_i \cdot \bar{X}] - E[\bar{X}^2] = E[X_i\cdot \bar{X}] - (V[X]+ E[\bar{X}]^2) = E[X_i \cdot \bar{X}] - (\frac{\sigma^2}{n} + \mu^2) = $$ $$ = E[\frac{1}{n}X_1\cdot X_i + \ldots + \frac{1}{n}X_i^2 + \ldots + \frac{1}{n}X_n\cdot X_i] - (\frac{\sigma^2}{n} - \mu^2) = $$ $$ = \frac{1}{n}(E[X_1X_i] + \ldots + E[X_nX_i]) +\frac{1}{n}E[X_i^2] - (\frac{\sigma^2}{n} + \mu^2) = $$ $$ = \frac{n-1}{n}(\mu^2) + \frac{1}{n}(\sigma^2 + \mu^2) - (\frac{\sigma^2}{n} + \mu^2) = $$ $$ = \frac{n-1}{n}\mu^2 + \frac{\mu^2}{n} - \mu^2 + \frac{\sigma^2}{n} - \frac{\sigma^2}{n} = 0 \implies$$ $$ Cov(X_i - \bar{X}, \bar{X}) = 0 \implies \text{son independientes}$$.\\
 
 		      %Demostracion del segundo punto%
-			  \item Denotemos por  
-			  $$ S_{n+1}^{2} = \frac{1}{n} \sum_{i=1}^{n+1} \left(X_{i} - \bar{X}_{n+1} \right)^{2}. $$  
-			  Demostremos que:
-			  $$
-			  n S_{n+1}^{2} = (n-1) S_{n}^{2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n}{n+1}.
-			  $$
-		  
-			  Desarrollando la expresión:
-		  
-			  \begin{align*}
-				  n S_{n+1}^{2} &= \sum_{i=1}^{n+1} \left(X_{i} - \bar{X}_{n+1} \right)^{2} \\
-								&= \sum_{i=1}^{n} \left(\left(X_{i} - \bar{X}_{n} \right) + \left(\bar{X}_{n} - \bar{X}_{n+1} \right)\right)^{2} + \left(X_{n+1} - \bar{X}_{n+1} \right)^{2} \\
-								&= (n-1) S_{n}^{2} + n \left(\bar{X}_{n} - \bar{X}_{n+1} \right)^{2} + \left(X_{n+1} - \bar{X}_{n+1} \right)^{2} \\
-								&\quad + \sum_{i=1}^{n} 2 \left(X_{i} - \bar{X}_{n} \right) \left(\bar{X}_{n} - \bar{X}_{n+1} \right).
-			  \end{align*}
-		  
-			  Como $\sum_{i=1}^{n} \left(X_{i} - \bar{X}_{n} \right) = 0$, el término cruzado se anula y obtenemos:
-		  
-			  \begin{align*}
-				  n S_{n+1}^{2} &= (n-1) S_{n}^{2} + n \left(\bar{X}_{n} - \bar{X}_{n+1} \right)^{2} + \left(X_{n+1} - \bar{X}_{n+1} \right)^{2}.
-			  \end{align*}
-		  
-			  En este último paso, se desarrollan los cuadrados y se aplica la definición de la media muestral:
-		  
-			  $$
-			  \bar{X}_{n} = \frac{1}{n} \sum_{i=1}^{n} X_{i} \quad \Longrightarrow \quad n \bar{X}_{n} = \sum_{i=1}^{n} X_{i}.
-			  $$
-		  
-			  Ahora, utilizando la relación:
-		  
-			  $$
-			  \bar{X}_{n+1} = \frac{n \bar{X}_{n} + X_{n+1}}{n+1} \quad \Longrightarrow \quad X_{n+1} - \bar{X}_{n+1} = \frac{(n+1)X_{n+1} - n\bar{X}_{n} - X_{n+1}}{n+1},
-			  $$
-		  
-			  obtenemos:
-		  
-			  \begin{align*}
-				  n S_{n+1}^{2} &= (n-1) S_{n}^{2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n}{(n+1)^2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n^2}{(n+1)^2} \\
-								&= (n-1) S_{n}^{2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n}{n+1}.
-			  \end{align*}
-		  
-			  Así, hemos obtenido el resultado deseado.
-		  
-			  **Distribución de la razón estandarizada:**  
-			  Ahora veamos que:
-			  $$
-			  \left(\frac{X_{n+1} - \bar{X}_{n}}{\sigma \sqrt{\frac{n+1}{n}}} \right)^2 \sim \chi_1^2.
-			  $$
-		  
-			  Usamos las siguientes propiedades:
-		  
-			  \begin{align*}
-				  X_{n+1} &\sim N(\mu, \sigma), \\
-				  \bar{X}_n &\sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right), \\
-				  X_{n+1} - \bar{X}_n &\sim N\left(0, \sigma \sqrt{\frac{n+1}{n}} \right).
-			  \end{align*}
-		  
-			  En este desarrollo se ha usado que en las distribuciones normales, se restan las medias y se suman las varianzas.
-			  Por lo tanto, la variable estandarizada es:
-		  
-			  $$
-			  \left(\frac{X_{n+1} - \bar{X}_n}{\sigma \sqrt{\frac{n+1}{n}}} \right) \sim N(0,1) \sim \chi_1^2.
-			  $$
-		  
-			  **Prueba por inducción:**  
-			  Consideremos el caso base, con n = 2:
-		  
-			  \begin{align*}
-				  \frac{S_{2}^{2}}{\sigma^{2}} &= \frac{1}{\sigma^{2}} \left( (X_{1} - \bar{X}_{2})^{2} + (X_{2} - \bar{X}_{2})^{2} \right) \\
-											   &= \frac{1}{\sigma^{2}} \left( \left( X_{1} - \frac{X_1 + X_2}{2} \right)^{2} + \left( X_{2} - \frac{X_1 + X_2}{2} \right)^{2} \right) \\
-											   &= \frac{1}{\sigma^{2}} \left( \frac{1}{4} (X_{1} - X_{2})^{2} + \frac{1}{4} (X_{2} - X_{1})^{2} \right) \\
-											   &= \frac{1}{\sigma^{2}} \frac{1}{2} (X_{2} - \bar{X_{1}})^{2}.
-			  \end{align*}
-		  
-			  Como hemos demostrado antes,
-		  
-			  $$
-			  \left(\frac{X_{2} - \bar{X_{1}}}{\sigma\sqrt{2}} \right)^{2} \sim \chi_{1}^{2}.
-			  $$
-		  
-			  **Hipótesis de inducción:**  
-			  Para n - 1 supongamos que
-		  
-			  $$
-			  \frac{(n-1) S_{n}^{2}}{\sigma^{2}} \sim \chi_{n-1}^{2}.
-			  $$
-		  
-			  Aplicando la fórmula demostrada:
-		  
-			  $$
-			  \frac{n S_{n+1}^{2}}{\sigma^{2}} = \frac{(n-1) S_{n}^{2}}{\sigma^{2}} + \left(\frac{X_{n+1} - \bar{X}_{n}}{\sigma \sqrt{\frac{n+1}{n}}} \right)^{2}.
-			  $$
-		  
-			  Como los dos términos a la derecha son independientes, y
-		  
-			  $$
-			  \frac{X_{n+1} - \bar{X}_{n}}{\sigma \sqrt{\frac{n+1}{n}}} \sim \chi_1^2,
-			  $$
-		  
-			  obtenemos la suma de dos variables chi-cuadrado:
-		  
-			  $$
-			  \chi_{n-1}^{2} + \chi_1^2 \sim \chi_n^2.
-			  $$
-		  
-			  **Conclusión:**  
-			  Por inducción, se ha demostrado que
-		  
-			  $$
-			  \frac{n S_{n+1}^{2}}{\sigma^{2}} \sim \chi_n^2.
-			  $$
-		  
+		\item Denotemos por $$ S_{n+1}^{2} = \frac{1}{n} \sum_{i=1}^{n+1} \left(X_{i} -
+			      \bar{X}_{n+1} \right)^{2}. $$ Demostremos que: $$ n S_{n+1}^{2} = (n-1)
+			      S_{n}^{2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n}{n+1}. $$
+
+		      Desarrollando la expresión:
+
+		      \begin{align*}
+			      n S_{n+1}^{2} & = \sum_{i=1}^{n+1} \left(X_{i} - \bar{X}_{n+1} \right)^{2}                                                                                                  \\
+			                    & = \sum_{i=1}^{n} \left(\left(X_{i} - \bar{X}_{n} \right) + \left(\bar{X}_{n} - \bar{X}_{n+1} \right)\right)^{2} + \left(X_{n+1} - \bar{X}_{n+1} \right)^{2} \\
+			                    & = (n-1) S_{n}^{2} + n \left(\bar{X}_{n} - \bar{X}_{n+1} \right)^{2} + \left(X_{n+1} - \bar{X}_{n+1} \right)^{2}                                             \\
+			                    & \quad + \sum_{i=1}^{n} 2 \left(X_{i} - \bar{X}_{n} \right) \left(\bar{X}_{n} - \bar{X}_{n+1} \right).
+		      \end{align*}
+
+		      Como $\sum_{i=1}^{n} \left(X_{i} - \bar{X}_{n} \right) = 0$, el término cruzado
+		      se anula y obtenemos:
+
+		      \begin{align*}
+			      n S_{n+1}^{2} & = (n-1) S_{n}^{2} + n \left(\bar{X}_{n} - \bar{X}_{n+1} \right)^{2} + \left(X_{n+1} - \bar{X}_{n+1} \right)^{2}.
+		      \end{align*}
+
+		      En este último paso, se desarrollan los cuadrados y se aplica la definición de
+		      la media muestral:
+
+		      $$
+			      \bar{X}_{n} = \frac{1}{n} \sum_{i=1}^{n} X_{i} \quad \Longrightarrow \quad n \bar{X}_{n} = \sum_{i=1}^{n} X_{i}.
+		      $$
+
+		      Ahora, utilizando la relación:
+
+		      $$
+			      \bar{X}_{n+1} = \frac{n \bar{X}_{n} + X_{n+1}}{n+1} \quad \Longrightarrow \quad X_{n+1} - \bar{X}_{n+1} = \frac{(n+1)X_{n+1} - n\bar{X}_{n} - X_{n+1}}{n+1},
+		      $$
+
+		      obtenemos:
+
+		      \begin{align*}
+			      n S_{n+1}^{2} & = (n-1) S_{n}^{2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n}{(n+1)^2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n^2}{(n+1)^2} \\
+			                    & = (n-1) S_{n}^{2} + \left(X_{n+1} - \bar{X}_{n} \right)^{2} \frac{n}{n+1}.
+		      \end{align*}
+
+		      Así, hemos obtenido el resultado deseado.
+
+		      **Distribución de la razón estandarizada:**
+		      Ahora veamos que:
+		      $$
+			      \left(\frac{X_{n+1} - \bar{X}_{n}}{\sigma \sqrt{\frac{n+1}{n}}} \right)^2 \sim \chi_1^2.
+		      $$
+
+		      Usamos las siguientes propiedades:
+
+		      \begin{align*}
+			      X_{n+1}             & \sim N(\mu, \sigma),                                \\
+			      \bar{X}_n           & \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right),    \\
+			      X_{n+1} - \bar{X}_n & \sim N\left(0, \sigma \sqrt{\frac{n+1}{n}} \right).
+		      \end{align*}
+
+		      En este desarrollo se ha usado que en las distribuciones normales, se restan
+		      las medias y se suman las varianzas. Por lo tanto, la variable estandarizada
+		      es:
+
+		      $$
+			      \left(\frac{X_{n+1} - \bar{X}_n}{\sigma \sqrt{\frac{n+1}{n}}} \right) \sim N(0,1) \sim \chi_1^2.
+		      $$
+
+		      **Prueba por inducción:**
+		      Consideremos el caso base, con n = 2:
+
+		      \begin{align*}
+			      \frac{S_{2}^{2}}{\sigma^{2}} & = \frac{1}{\sigma^{2}} \left( (X_{1} - \bar{X}_{2})^{2} + (X_{2} - \bar{X}_{2})^{2} \right)                                           \\
+			                                   & = \frac{1}{\sigma^{2}} \left( \left( X_{1} - \frac{X_1 + X_2}{2} \right)^{2} + \left( X_{2} - \frac{X_1 + X_2}{2} \right)^{2} \right) \\
+			                                   & = \frac{1}{\sigma^{2}} \left( \frac{1}{4} (X_{1} - X_{2})^{2} + \frac{1}{4} (X_{2} - X_{1})^{2} \right)                               \\
+			                                   & = \frac{1}{\sigma^{2}} \frac{1}{2} (X_{2} - \bar{X_{1}})^{2}.
+		      \end{align*}
+
+		      Como hemos demostrado antes,
+
+		      $$
+			      \left(\frac{X_{2} - \bar{X_{1}}}{\sigma\sqrt{2}} \right)^{2} \sim \chi_{1}^{2}.
+		      $$
+
+		      **Hipótesis de inducción:**
+		      Para n - 1 supongamos que
+
+		      $$
+			      \frac{(n-1) S_{n}^{2}}{\sigma^{2}} \sim \chi_{n-1}^{2}.
+		      $$
+
+		      Aplicando la fórmula demostrada:
+
+		      $$
+			      \frac{n S_{n+1}^{2}}{\sigma^{2}} = \frac{(n-1) S_{n}^{2}}{\sigma^{2}} + \left(\frac{X_{n+1} - \bar{X}_{n}}{\sigma \sqrt{\frac{n+1}{n}}} \right)^{2}.
+		      $$
+
+		      Como los dos términos a la derecha son independientes, y
+
+		      $$
+			      \frac{X_{n+1} - \bar{X}_{n}}{\sigma \sqrt{\frac{n+1}{n}}} \sim \chi_1^2,
+		      $$
+
+		      obtenemos la suma de dos variables chi-cuadrado:
+
+		      $$
+			      \chi_{n-1}^{2} + \chi_1^2 \sim \chi_n^2.
+		      $$
+
+		      **Conclusión:**
+		      Por inducción, se ha demostrado que
+
+		      $$
+			      \frac{n S_{n+1}^{2}}{\sigma^{2}} \sim \chi_n^2.
+		      $$
+
 		      % Demostración del tercer punto%
 		\item Se deduce de los anteriores
 	\end{enumerate}
 \end{proof}
 
-
 \begin{definición}[Distribución t de Student]
-    Dadas las v.a. independientes $X, X_1, \ldots, X_n$ con distribución $N(0,1)$ la v.a.
-    \[
-    T_n = X \left/ \sqrt{\frac{1}{n} \sum_{i=1}^n X_i^2} \right.
-    \]
-    tiene una distribución $T_n$ de Student con $n$ grados de libertad. De forma equivalente, una v.a. $T_n$ tiene esta distribución, cuando su función de densidad es
-    \begin{equation}
-    \label{1.5.3.3}
-    f_{T_n}(t) = \frac{\Gamma\left( \frac{n+1}{2} \right)}{\sqrt{n} \, \Gamma\left( \frac{1}{2} \right) \Gamma\left( \frac{n}{2} \right)} \left( 1 + \frac{t^2}{n} \right)^{-\frac{n+1}{2}} \quad t \in \mathbb{R}.
-    \end{equation}
-    
-    Es fácil establecer que la media de la distribución $T_n$ es $0$ y que la varianza es $V[T_n] = \frac{n}{n-2}$ si $n > 2$.
+Dadas las v.a. independientes $X, X_1, \ldots, X_n$ con distribución $N(0,1)$ la v.a.
+\[
+	T_n = X \left/ \sqrt{\frac{1}{n} \sum_{i=1}^n X_i^2} \right.
+\]
+tiene una distribución $T_n$ de Student con $n$ grados de libertad. De forma
+equivalente, una v.a. $T_n$ tiene esta distribución, cuando su función de
+densidad es
+\begin{equation}
+	\label{1.5.3.3}
+	f_{T_n}(t) = \frac{\Gamma\left( \frac{n+1}{2} \right)}{\sqrt{n} \, \Gamma\left( \frac{1}{2} \right) \Gamma\left( \frac{n}{2} \right)} \left( 1 + \frac{t^2}{n} \right)^{-\frac{n+1}{2}} \quad t \in \mathbb{R}.
+\end{equation}
+
+Es fácil establecer que la media de la distribución $T_n$ es $0$ y que la
+varianza es $V[T_n] = \frac{n}{n-2}$ si $n > 2$.
 \end{definición}
 
 \begin{corolario}
-        Para m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$, la distribución de la variable
-        \[
-        T_{n-1} = \frac{\overline{X} - \mu}{S} \sqrt{n}
-        \]
-        con $S^2$ la cuasivarianza muestral, es una distribución de Student con $n - 1$ grados de libertad.       
+	Para m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$, la distribución de la variable
+	\[
+		T_{n-1} = \frac{\overline{X} - \mu}{S} \sqrt{n}
+	\]
+	con $S^2$ la cuasivarianza muestral, es una distribución de Student con $n - 1$
+	grados de libertad.
 \end{corolario}
 
 \begin{proof}
-    La variable $\dfrac{\overline{X} - \mu}{\sigma} \sqrt{n}$ tiene distribución $N(0,1)$ y la variable $(n - 1) \dfrac{S^2}{\sigma^2}$ tiene distribución $\chi^2_{n-1}$ como por el teorema de Fisher, ambas son independientes, se sigue el resultado.
+	La variable $\dfrac{\overline{X} - \mu}{\sigma} \sqrt{n}$ tiene distribución $N(0,1)$ y la variable $(n - 1) \dfrac{S^2}{\sigma^2}$ tiene distribución $\chi^2_{n-1}$ como por el teorema de Fisher, ambas son independientes, se sigue el resultado.
 \end{proof}
+
+\begin{definición} [Distribución F de Snedecor]
+Dadas las m.a.s. \( (X_1, ..., X_m) \) de una población \( N(0,1) \) e \( (Y_1, ..., Y_n) \) de una población \( N(0,1) \), si ambas muestras son independientes, la v.a.
+
+\[
+	F_{m,n} = \frac{\frac{1}{m} \sum\limits_{i=1}^{m} X_i^2}{\frac{1}{n} \sum\limits_{i=1}^{n} Y_i^2}
+\]
+
+tiene una distribución \( F \) de Snedecor con \( (m,n) \) grados de libertad,
+o de forma equivalente, una v.a. tiene esta distribución cuando su función de
+densidad es
+
+\[
+	f(x) = \frac{\left(\frac{m}{n}\right)^{\frac{m}{2}} \Gamma\left(\frac{m+n}{2}\right)}{\Gamma\left(\frac{m}{2}\right) \Gamma\left(\frac{n}{2}\right)} x^{\frac{m}{2}-1} \left( 1 + \frac{m}{n} x \right)^{-\frac{m+n}{2}}, \quad \text{para } x > 0.
+\]
+
+\end{definición}
+
+\textbf{Distribuciones relacionadas con la distribución F de Snedecor:}
+
+\begin{itemize}
+    \item Si \( X \sim F_{m,n} \) entonces \( Y = \lim\limits_{n \to \infty} mX \) tiene una distribución chi cuadrada \( \chi^2_m \).
+    \item Si \( X \sim \chi^2_m \) y \( Y \sim \chi^2_n \) son independientes entonces \( \frac{X/m}{Y/n} \sim F_{m,n} \).
+    \item Si \( X \sim \text{Beta} \left(\frac{\alpha}{2}, \frac{\beta}{2} \right) \) entonces \( \frac{\beta X}{\alpha (1 - X)} \sim F_{\alpha, \beta} \).
+    \item Si \( X \sim F_{m,n} \) entonces \( X^{-1} \sim F_{n,m} \).
+    \item Si \( X \sim t_{(n)} \) (Distribución t de Student) entonces \( X^2 \sim F_{1,n} \).
+    \item Si \( X \sim \Gamma(\alpha_1, \beta_1) \) y \( Y \sim \Gamma(\alpha_2, \beta_2) \) son independientes entonces 
+          \[
+          \frac{\alpha_2 \beta_1 X}{\alpha_1 \beta_2 Y} \sim F_{2\alpha_1, 2\alpha_2}.
+          \]
+\end{itemize}
+
 
 \subsection{Estadísticos ordenados}
 \begin{definición}[Estadísticos ordenados]
@@ -687,203 +740,206 @@ $$f_{\left(X_{(1)}, \ldots, X_{(n)}\right)}(y_1, \ldots, y_n) = n! \prod_{j=1}^{
 \end{definición}
 
 \ejemplo{
-	Sea $X_1, X_2, \dots, X_n$ una muestra aleatoria simple de una distribución uniforme en $(0,1)$, es decir:
+Sea $X_1, X_2, \dots, X_n$ una muestra aleatoria simple de una distribución uniforme en $(0,1)$, es decir:
 
-	$$ X_1, X_2, \dots, X_n \overset{i.i.d}{\sim} U(0,1) $$
+$$ X_1, X_2, \dots, X_n \overset{i.i.d}{\sim} U(0,1) $$
 
-	La función de distribución acumulada de una variable uniforme en $(0,1)$ es:
+La función de distribución acumulada de una variable uniforme en $(0,1)$ es:
 
-	$$ F(x) =
-		\begin{cases}
-			0, & x \leq 0  \\
-			x, & 0 < x < 1 \\
-			1, & x \geq 1
-		\end{cases} $$
+$$ F(x) =
+	\begin{cases}
+		0, & x \leq 0  \\
+		x, & 0 < x < 1 \\
+		1, & x \geq 1
+	\end{cases} $$
 
-	Ordenando la muestra de menor a mayor, los estadísticos ordenados se denotan como $X_{(1)} \leq X_{(2)} \leq \dots \leq X_{(n)}$. Se quiere encontrar la función de densidad de estos valores ordenados.
+Ordenando la muestra de menor a mayor, los estadísticos ordenados se denotan
+como $X_{(1)} \leq X_{(2)} \leq \dots \leq X_{(n)}$. Se quiere encontrar la
+función de densidad de estos valores ordenados.
 
-	Para el máximo, $X_{(n)}$, se tiene que su función de distribución es:
+Para el máximo, $X_{(n)}$, se tiene que su función de distribución es:
 
-	$$ P(X_{(n)} \leq x) = P(X_1 \leq x, X_2 \leq x, \dots, X_n \leq x) $$
+$$ P(X_{(n)} \leq x) = P(X_1 \leq x, X_2 \leq x, \dots, X_n \leq x) $$
 
-	Dado que los datos son independientes, esto se factoriza como:
+Dado que los datos son independientes, esto se factoriza como:
 
-	$$ P(X_{(n)} \leq x) = F(x)^n = x^n, \quad 0 < x < 1 $$
+$$ P(X_{(n)} \leq x) = F(x)^n = x^n, \quad 0 < x < 1 $$
 
-	Derivando se obtiene la función de densidad:
+Derivando se obtiene la función de densidad:
 
-	$$ f_{X_{(n)}}(x) = \frac{d}{dx} x^n = n x^{n-1}, \quad 0 < x < 1 $$
+$$ f_{X_{(n)}}(x) = \frac{d}{dx} x^n = n x^{n-1}, \quad 0 < x < 1 $$
 
-	Es decir, $X_{(n)} \sim Beta(n,1)$.
+Es decir, $X_{(n)} \sim Beta(n,1)$.
 
-	Para el mínimo, $X_{(1)}$, la función de distribución se obtiene como:
+Para el mínimo, $X_{(1)}$, la función de distribución se obtiene como:
 
-	$$ P(X_{(1)} \leq x) = 1 - P(X_{(1)} > x) = 1 - P(X_1 > x, X_2 > x, \dots, X_n > x) $$
+$$ P(X_{(1)} \leq x) = 1 - P(X_{(1)} > x) = 1 - P(X_1 > x, X_2 > x, \dots, X_n > x) $$
 
-	Por independencia,
+Por independencia,
 
-	$$ P(X_1 > x, X_2 > x, \dots, X_n > x) = (1 - F(x))^n = (1-x)^n $$
+$$ P(X_1 > x, X_2 > x, \dots, X_n > x) = (1 - F(x))^n = (1-x)^n $$
 
-	Por lo que,
+Por lo que,
 
-	$$ P(X_{(1)} \leq x) = 1 - (1-x)^n, \quad 0 < x < 1 $$
+$$ P(X_{(1)} \leq x) = 1 - (1-x)^n, \quad 0 < x < 1 $$
 
-	Derivando se obtiene la densidad:
+Derivando se obtiene la densidad:
 
-	$$ f_{X_{(1)}}(x) = n (1-x)^{n-1}, \quad 0 < x < 1 $$
+$$ f_{X_{(1)}}(x) = n (1-x)^{n-1}, \quad 0 < x < 1 $$
 
-	De manera general, para el $r$-ésimo estadístico ordenado, su densidad es:
+De manera general, para el $r$-ésimo estadístico ordenado, su densidad es:
 
-	$$ f_{X_{(r)}}(x) = \frac{n!}{(r-1)! (n-r)!} x^{r-1} (1-x)^{n-r}, \quad 0 < x < 1 $$
+$$ f_{X_{(r)}}(x) = \frac{n!}{(r-1)! (n-r)!} x^{r-1} (1-x)^{n-r}, \quad 0 < x < 1 $$
 
-	lo que implica que $X_{(r)} \sim Beta(r, n-r+1)$.
+lo que implica que $X_{(r)} \sim Beta(r, n-r+1)$.
 
-	La densidad conjunta del mínimo y el máximo de la muestra es:
+La densidad conjunta del mínimo y el máximo de la muestra es:
 
-	$$ f_{X_{(1)}, X_{(n)}}(x,y) = n(n-1)(y-x)^{n-2}, \quad 0 < x < y < 1 $$
+$$ f_{X_{(1)}, X_{(n)}}(x,y) = n(n-1)(y-x)^{n-2}, \quad 0 < x < y < 1 $$
 
-	Esto muestra cómo la distribución de los estadísticos ordenados sigue distribuciones beta en función de la posición del orden estadístico dentro de la muestra.
-	\\\\
-	Con lo obtenido, calculemos la ditribución del rango muestral: $R = X_{(n)} - X_{(1)}$: \\
-	Sea el cambio de variable $$	\left.\left.\begin{array}{l}
+Esto muestra cómo la distribución de los estadísticos ordenados sigue
+distribuciones beta en función de la posición del orden estadístico dentro de
+la muestra. \\\\ Con lo obtenido, calculemos la ditribución del rango muestral:
+$R = X_{(n)} - X_{(1)}$: \\ Sea el cambio de variable $$    \left.\left.\begin{array}{l}
 		R=X_{(n)}-X_{(1)} \\
 		H=\frac{X_{(n)}+X_{(1)}}{2}
 	\end{array}\right\} \begin{array}{c}
 		X_{(n)}=H+\frac{R}{2} \\
 		X_{(1)}=H-\frac{R}{2}
-	\end{array}\right\}$$ 
-	Dado que estamos intentando calcular un cambio de variable aleatoria, necesitamos calcular el jacobiano de la transformación. En este caso, el jacobiano es:
+	\end{array}\right\}$$
+Dado que estamos intentando calcular un cambio de variable aleatoria, necesitamos calcular el jacobiano de la transformación. En este caso, el jacobiano es:
 \[
-J=
-\begin{vmatrix}
-\frac{\partial{X_{(1)}}}{\partial{H}} & \frac{\partial{X_{(1)}}}{\partial{R}} \\ 
-\frac{\partial{X_{(n)}}}{\partial{H}} & \frac{\partial{X_{(n)}}}{\partial{R}} 
-\end{vmatrix}
-=
-\begin{vmatrix}
-1 & -\frac{1}{2} \\ 
-1 & \frac{1}{2}
-\end{vmatrix}
-= 1.
+	J=
+	\begin{vmatrix}
+		\frac{\partial{X_{(1)}}}{\partial{H}} & \frac{\partial{X_{(1)}}}{\partial{R}} \\
+		\frac{\partial{X_{(n)}}}{\partial{H}} & \frac{\partial{X_{(n)}}}{\partial{R}}
+	\end{vmatrix}
+	=
+	\begin{vmatrix}
+		1 & -\frac{1}{2} \\
+		1 & \frac{1}{2}
+	\end{vmatrix}
+	= 1.
 \]
 
-	Además, dado que $X_{(i)}$ son variables aleatorias uniformes en $(0,1)$, tenemos que: \\
-	$$ 0 < X_{(1)} = H - \frac{R}{2} < 1 \quad 0 < X_{(n)} = H + \frac{R}{2} < 1 \implies \\ \frac{R}{2} < H < 1 - \frac{R}{2}$$
-	Entonces por el Teorema de la Transformación de Variables, la densidad conjunta de $R$ y $H$ es:
-	$$ g_{(R,H)}(r,h)=f_{(X_{(1)},X_{(n)})}\left(h-\frac{r}{2},h+\frac{r}{2}\right)=1-n(n-1)r^{n-2} $$
-	Para obtener la densidad de $R$, se integra la densidad conjunta respecto a $H$:
-	$$ f_{R}(r)=\int_{0}^{1}g_{(R,H)}(r,h)dh=\int_{0}^{1}1-n(n-1)r^{n-2}dh=h-n(n-1)r^{n-2}h\Big|_{0}^{1}=1-n(n-1)r^{n-2} $$
-	Entonces, la densidad de $R$ es:
-	$$ f_{R}(r)=1-n(n-1)r^{n-2} \sim Beta(n-1,2) $$
-}
-
+Además, dado que $X_{(i)}$ son variables aleatorias uniformes en $(0,1)$,
+tenemos que: \\ $$ 0 < X_{(1)} = H - \frac{R}{2} < 1 \quad 0 < X_{(n)} = H +
+	\frac{R}{2} < 1 \implies \\ \frac{R}{2} < H < 1 - \frac{R}{2}$$ Entonces por el
+Teorema de la Transformación de Variables, la densidad conjunta de $R$ y $H$
+es: $$
+	g_{(R,H)}(r,h)=f_{(X_{(1)},X_{(n)})}\left(h-\frac{r}{2},h+\frac{r}{2}\right)=1-n(n-1)r^{n-2}
+$$ Para obtener la densidad de $R$, se integra la densidad conjunta respecto a
+$H$: $$
+	f_{R}(r)=\int_{0}^{1}g_{(R,H)}(r,h)dh=\int_{0}^{1}1-n(n-1)r^{n-2}dh=h-n(n-1)r^{n-2}h\Big|_{0}^{1}=1-n(n-1)r^{n-2}
+$$ Entonces, la densidad de $R$ es: $$ f_{R}(r)=1-n(n-1)r^{n-2} \sim
+	Beta(n-1,2) $$ }
 
 \vspace{1em} % Adds vertical space of 1em
 
 \ejemplo{
-	Sea $\left(X_{1}, \dots, X_{n}\right)$ una muestra aleatoria simple (m.a.s.) de tamaño $n$ de una variable aleatoria $X$, cuya función de distribución es  
+	Sea $\left(X_{1}, \dots, X_{n}\right)$ una muestra aleatoria simple (m.a.s.) de tamaño $n$ de una variable aleatoria $X$, cuya función de distribución es
 	\[
-	F(x) = P(X \leq x).
-	\]
-	
-	Se desea calcular la distribución de las variables  
-	\[
-	U = F(X) \quad \text{y} \quad U_{R} = F\left(X_{(r)}\right).
-	\]
-	
-	Para la variable $U$, tenemos:  
-	\[
-	G_{U}(u) = P(U \leq u) = P(F(X) \leq u) = P\left(X \leq F^{-1}(u)\right).
-	\]
-	Utilizando la propiedad de la función de distribución inversa, se obtiene:  
-	\[
-	F\left(F^{-1}(u)\right) = u, \quad 0 < u < 1.
-	\]
-	Por lo tanto,  
-	\[
-	U = F(X) \sim U(0,1).
+		F(x) = P(X \leq x).
 	\]
 
-	Ahora, para la distribución de $U_R$:  
+	Se desea calcular la distribución de las variables
 	\[
-	G_{U_{R}}(u) = P\left(U_{R} \leq u\right) = P\left(F\left(X_{(r)}\right) \leq u\right) = P\left(X_{(r)} \leq F^{-1}(u)\right).
+		U = F(X) \quad \text{y} \quad U_{R} = F\left(X_{(r)}\right).
 	\]
-	Esto es equivalente a la función de distribución del estadístico ordenado:  
-	\[
-	F_{X_{(r)}}\left(F^{-1}(u)\right) = \sum_{j=r}^{n} \binom{n}{j} F\left(F^{-1}(u)\right)^{j} \left(1 - F\left(F^{-1}(u)\right)\right)^{n-j}.
-	\]
-	Reescribiendo en términos de $u$:  
-	\[
-	G_{U_{R}}(u) = \sum_{j=r}^{n} \binom{n}{j} u^{j} (1-u)^{n-j}.
-	\]
-	
-	Por lo tanto, el estadístico ordenado de orden $r$ asociado a la muestra aleatoria sigue la distribución  
-	\[
-	U_{R} = F\left(X_{(r)}\right),
-	\]
-	donde la población original $U = F(X)$ sigue una distribución uniforme en el intervalo $(0,1)$.
-}
 
+	Para la variable $U$, tenemos:
+	\[
+		G_{U}(u) = P(U \leq u) = P(F(X) \leq u) = P\left(X \leq F^{-1}(u)\right).
+	\]
+	Utilizando la propiedad de la función de distribución inversa, se obtiene:
+	\[
+		F\left(F^{-1}(u)\right) = u, \quad 0 < u < 1.
+	\]
+	Por lo tanto,
+	\[
+		U = F(X) \sim U(0,1).
+	\]
+
+	Ahora, para la distribución de $U_R$:
+	\[
+		G_{U_{R}}(u) = P\left(U_{R} \leq u\right) = P\left(F\left(X_{(r)}\right) \leq u\right) = P\left(X_{(r)} \leq F^{-1}(u)\right).
+	\]
+	Esto es equivalente a la función de distribución del estadístico ordenado:
+	\[
+		F_{X_{(r)}}\left(F^{-1}(u)\right) = \sum_{j=r}^{n} \binom{n}{j} F\left(F^{-1}(u)\right)^{j} \left(1 - F\left(F^{-1}(u)\right)\right)^{n-j}.
+	\]
+	Reescribiendo en términos de $u$:
+	\[
+		G_{U_{R}}(u) = \sum_{j=r}^{n} \binom{n}{j} u^{j} (1-u)^{n-j}.
+	\]
+
+	Por lo tanto, el estadístico ordenado de orden $r$ asociado a la muestra
+	aleatoria sigue la distribución
+	\[
+		U_{R} = F\left(X_{(r)}\right),
+	\]
+	donde la población original $U = F(X)$ sigue una distribución uniforme en el
+	intervalo $(0,1)$. }
 
 \subsection{Ejercicios}
 \begin{problem}{2.1}
-	Sea $X$ una población de $Bernouilli(p = \frac{1}{2})$ y se consideran todas las m.a.s. posibles de tamaño 3. Para cada muestra calcúlese $\bar{X}, s^2, \mu y S^2$ y determínese sus distribuciones en el muestreo. 
+Sea $X$ una población de $Bernouilli(p = \frac{1}{2})$ y se consideran todas las m.a.s. posibles de tamaño 3. Para cada muestra calcúlese $\bar{X}, s^2, \mu y S^2$ y determínese sus distribuciones en el muestreo.
 \end{problem}
 \begin{sol}
 	\begin{center}
 		\begin{tabular}{c c c c}
 			\toprule
-			\textbf{Muestras} & $\bar{X}$ & $s^2$ & P \\
+			\textbf{Muestras} & $\bar{X}$ & $s^2$ & P   \\
 			\midrule
-			(0,0,0)   & 0     & 0     & 1/8 \\
-			(0,0,1)   & 1/3   & 1/3   & 1/8 \\
-			(0,1,0)   & 1/3   & 1/3   & 1/8 \\
-			(0,1,1)   & 2/3   & 1/3   & 1/8 \\
-			(1,0,0)   & 1/3   & 1/3   & 1/8 \\
-			(1,0,1)   & 2/3   & 1/3   & 1/8 \\
-			(1,1,0)   & 2/3   & 1/3   & 1/8 \\
-			(1,1,1)   & 1     & 0     & 1/8 \\
+			(0,0,0)           & 0         & 0     & 1/8 \\
+			(0,0,1)           & 1/3       & 1/3   & 1/8 \\
+			(0,1,0)           & 1/3       & 1/3   & 1/8 \\
+			(0,1,1)           & 2/3       & 1/3   & 1/8 \\
+			(1,0,0)           & 1/3       & 1/3   & 1/8 \\
+			(1,0,1)           & 2/3       & 1/3   & 1/8 \\
+			(1,1,0)           & 2/3       & 1/3   & 1/8 \\
+			(1,1,1)           & 1         & 0     & 1/8 \\
 			\bottomrule
 		\end{tabular}
 	\end{center}
-	
+
 	\vspace{0.1cm} % Espacio entre la tabla grande y el texto
-	
+
 	\textbf{Distribución de} $\bar{X}$ \textbf{y} $s^2$:
-	
+
 	\vspace{0cm} % Espacio para separar más el texto de las tablas pequeñas
-	
+
 	\begin{center}
-		\begin{tabular}{c|cccc} 
-			$\bar{x}$ & 0 & $1/3$ & $2/3$ & 1 \\
+		\begin{tabular}{c|cccc}
+			$\bar{x}$ & 0     & $1/3$ & $2/3$ & 1     \\
 			\hline
-			$P$ & $1/8$ & $3/8$ & $3/8$ & $1/8$ \\
+			$P$       & $1/8$ & $3/8$ & $3/8$ & $1/8$ \\
 		\end{tabular}
 		\hspace{1cm} % Espacio entre tablas pequeñas
-		\begin{tabular}{c|cc} 
-			$s^2$ & 0 & $1/3$  \\
+		\begin{tabular}{c|cc}
+			$s^2$ & 0     & $1/3$ \\
 			\hline
-			$P$ & $1/4$ & $3/4$ \\
+			$P$   & $1/4$ & $3/4$ \\
 		\end{tabular}
 	\end{center}
 \end{sol}
 \begin{problem}{2.2}
-	De una población con media $\mu$ desconocida y varianza 1, se toma una m.a.s. de tamaño n. ¿Cuál debe ser éste para que la media muestral diste en valor absoluto de la media de la población menos que 0,5, con una probabilidad mayor o igual que 0,95?
+De una población con media $\mu$ desconocida y varianza 1, se toma una m.a.s. de tamaño n. ¿Cuál debe ser éste para que la media muestral diste en valor absoluto de la media de la población menos que 0,5, con una probabilidad mayor o igual que 0,95?
 \end{problem}
 \begin{sol}
 	\\El enunciado nos pide es averiguar la n suficiente para que se cumpla que $P(|\bar{X}-\mu|<0.5)\geq 0.95 \iff P( -0.5 < \bar{X} - \mu < 0.5) \geq 0.95$.\\
-	Sabemos que $\bar{X} \sim N(\mu, \frac{1}{n})$. Por lo que 
+	Sabemos que $\bar{X} \sim N(\mu, \frac{1}{n})$. Por lo que
 	para solucionarlo, haremos uso de la Desigualdad de Chebushev, la cual afirma que: $$ P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2} \quad \forall k > 0$$
 	Aplicando la desigualdad a nuestro caso, obtenemos que $k = 0.5$ y $\sigma = \frac{1}{\sqrt{n}}$. Por lo que:
 	$$P(|\bar{X} - \mu| \leq 0'5) \geq 0'95 \iff P(|\bar{X} - \mu| > 0'5) \leq 0'05 \implies \begin{cases} \frac{1}{k^2} = 0'05 \\ \frac{k}{\sqrt{n}} = 0,5 \end{cases} \implies n \geq 80$$
 \end{sol}
 \begin{problem}{2.3}
-	Dada una m.a.s. de tamaño n, calcúlese la distribución de la media muestral $\bar{X}$ cuando la población es: 
-	\begin{enumerate}
-		\item Bernouilli
-		\item Gamma
-		\item Exponencial
-	\end{enumerate}	
+Dada una m.a.s. de tamaño n, calcúlese la distribución de la media muestral $\bar{X}$ cuando la población es:
+\begin{enumerate}
+	\item Bernouilli
+	\item Gamma
+	\item Exponencial
+\end{enumerate}
 \end{problem}
 \begin{sol}
 	\begin{enumerate}
@@ -893,29 +949,29 @@ J=
 	\end{enumerate}
 \end{sol}
 \begin{problem}{2.4}
-	Dada una sucesion $\{X_n\}$ de variables aleatorias independientes con distribución $N(0,1)$ y un entero positivo $k$ se define: 
-	$$F_{k,m} = \left(\frac{1}{k}\sum_{i = 1}^k X_i^2 \right) / \left(\frac{1}{m}\sum_{i = k+1}^{k+m}X_i^2\right)$$
-	Pruébese que
-	\[
+Dada una sucesion $\{X_n\}$ de variables aleatorias independientes con distribución $N(0,1)$ y un entero positivo $k$ se define:
+$$F_{k,m} = \left(\frac{1}{k}\sum_{i = 1}^k X_i^2 \right) / \left(\frac{1}{m}\sum_{i = k+1}^{k+m}X_i^2\right)$$
+Pruébese que
+\[
 	F_{k,m} \xrightarrow[m \to \infty]{\mathcal{L}} \frac{1}{k} X
-	\]
-	donde \( X \sim \chi^2_k \). 
+\]
+donde \( X \sim \chi^2_k \).
 \end{problem}
 \begin{sol}
 	Por las propiedades de las distribuciones normales, tenemos que: $$X_i \sim N(0,1) \implies X_i^2 \sim \chi^2_1 \implies \sum_{i = 1}^{n} X_i^2 \sim \chi_n^2$$
-	De esta manera podemos ver los sumandos como el calculo de la media muestral: $$\bar{X} = \frac{1}{m} \sum_{i = k+1}^{k+m} \chi^2_1 \implies $$ Por la Ley Fuerte de los Grandes Números tenemos que $$\bar{X} \xrightarrow[m \to \infty]{\mathcal{L}} E[\chi^2_1] = 1$$ 
+	De esta manera podemos ver los sumandos como el calculo de la media muestral: $$\bar{X} = \frac{1}{m} \sum_{i = k+1}^{k+m} \chi^2_1 \implies $$ Por la Ley Fuerte de los Grandes Números tenemos que $$\bar{X} \xrightarrow[m \to \infty]{\mathcal{L}} E[\chi^2_1] = 1$$
 	Finalmente como el segundo sumatorio $\sum_{i = 1}^{k} X_i^2$ se mantiene constante(pues sólo se está modificando $k$) tenemos que, por el Teorema de Slutsky, $$F_{k,m} \xrightarrow[m \to \infty]{\mathcal{L}} \frac{1}{k} \chi_k^2$$
 \end{sol}
 \begin{problem}{2.5}
-	Demuéstrese que para una m.a.s. de tamaño $n$ tales que $$P(X = x_i) = p_i \forall i \in \N$$ se cumple que la distribución del estadístico ordenado $X_{(k)}$ es discreta y viene dada por: 
-	$$P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j} (F(x_j))^j(1-F(x_j))^{n-j}$$ 
-	\\
-	$$P(X_{(k)} = x_i) = \sum_{j = k}^{n} \binom{n}{j}[(F(x_j))^j(1 - F(x_i))^{n-j} - F(x_{i-1})^j(1 - F(x_{i-1}))^{n-j}]$$	
+Demuéstrese que para una m.a.s. de tamaño $n$ tales que $$P(X = x_i) = p_i \forall i \in \N$$ se cumple que la distribución del estadístico ordenado $X_{(k)}$ es discreta y viene dada por:
+$$P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j} (F(x_j))^j(1-F(x_j))^{n-j}$$
+\\
+$$P(X_{(k)} = x_i) = \sum_{j = k}^{n} \binom{n}{j}[(F(x_j))^j(1 - F(x_i))^{n-j} - F(x_{i-1})^j(1 - F(x_{i-1}))^{n-j}]$$
 \end{problem}
 \begin{sol}
 	Sea una m.a.s. $\left(X_1, X_2, \ldots, X_n\right)$. \\Sea entonces el conjunto de variables aleatorias $$I_j = \begin{cases} 1, \quad \text{si } X_j \leq x \\ 0, \quad \text{si } X_j > x \end{cases} \implies I_j \sim Bernouilli$$ con una probabilidad $P(I_j = 1) = P(X_j \leq x) = F_j(x)$\\ Al ser variables aleatorias independientes con distirbución Bernouilli, se cumple que $$\sum_{j = 1}^{n} I_j = S \sim Bin(n, F(x))$$\\
-	Nos piden calcular que $P(X_{(k)} \leq x_i)$, lo cual es equivalente a que nos pregunten la probabilidad de que haya al menos $k$ valores menores o iguales a $x_i$: $P(S \geq k)$. Por lo que podemos escribir: 
+	Nos piden calcular que $P(X_{(k)} \leq x_i)$, lo cual es equivalente a que nos pregunten la probabilidad de que haya al menos $k$ valores menores o iguales a $x_i$: $P(S \geq k)$. Por lo que podemos escribir:
 	$$P(S \geq k) = P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j}(F(X_i))^j(1 - F(X_i))^{n-j}$$
-	Finalmente, nos queda sólo calcular la probabilidad de que $P(X_{(k)} = x_i)$ pero esto es igual a hacer: 
+	Finalmente, nos queda sólo calcular la probabilidad de que $P(X_{(k)} = x_i)$ pero esto es igual a hacer:
 	$$P(X_{(k)} = x_i) = P(X_{(k)} \leq x_i) - P(X_{(k)} \leq x_{i-1})$$
 \end{sol}
