@@ -224,53 +224,130 @@
     $$E[(\theta - E[\theta | x_1, \ldots x_n] | x_1, \ldots, x_n)] = 0 \text{ por propiedades de la esperanza condicional}$$
     $$E[(E[\theta | x_1, \ldots, x_n] - t)^2 | x_1, \ldots, x_n] = (E[\theta | x_1, \ldots, x_n] - t)^2 \text{ dada una muestra, se vuelve una constante}$$
     Por lo que se puede concluir que $PFE_T = V(\theta | x_1, \ldots, x_n) + (E[\theta | x_1, \ldots, x_n] - t)^2$ y se minimiza en $t^* = E[\theta | x_1, \ldots, x_n]$
-    \item Si $\mathcal{L}(\theta, t) = |\theta - t| \implies$ $$PFE_T = E[|\theta - t| | x_1, \ldots, x_n]$$
+    \item Si $\mathcal{L}(\theta, t) = |\theta - t| \implies$ $$PFE_T = E[|\theta - t| | x_1, \ldots, x_n] = \int_{\Theta} |\theta - t|F(\theta | x)d\theta \implies$$ Dividiendo la integral entre los valores positivos y los negativos de $\theta$, nos queda que la integral es la suma de: 
+    $$\int_{-\infty}^{t} (t - \theta)f(\theta | x)d\theta + \int_{t}^{+\infty} (\theta - t)f(\theta | x)d\theta$$
+    Si derivamos con respecto a $t$ y obtenemos $0$ podemos ver un posible punto máximo o mínimo de la función: 
+    $$\frac{d}{dt}PFE_T = \frac{d}{dt} \int_{-\infty}^{t} (t - \theta)f(\theta | x)d\theta + \frac{d}{dt} \int_{t}^{+\infty} (\theta - t)f(\theta | x)d\theta = $$ $$ = \int_{-\infty}^{t} f(\theta | x)d\theta - \int_{t}^{+\infty} f(\theta | x)d\theta = 0 \iff$$
+    $$F_X(t) = 1 - F_X(t) \iff F_X(t) = \frac{1}{2} \implies t^* = \text{mediana de la distribución final}$$
   \end{enumerate}
 \end{proof}
 
-\section*{Estimadores centrados de mínima varianza}
-$T^{*}=T^{*}\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado uniformemente de mínima varianza (ECUMV) para $\theta$ sí y sólo sí $E_{\theta}\left[T^{*}\right]=\theta$ y para cualquier otro estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}[T]=\theta$, se tiene que $V_{\theta}\left(T^{*}\right) \leq V_{\theta}(T), \forall \theta \in \Theta$
+\ejemplo{
+  EJEMPLO DE LA PÉRDIDA FINAL ESPERADA
+}
 
-Proposición 1 Si existe un ECUMV para $\theta$, entonces es único c.s.
+\begin{definición}[Estimador centrado uniformemente de mínima varianza]
+  $T^{*} = T^{*}(X_1, \ldots, X_n)$ es un estimador centrado uniformemente de mínima varianza para $\theta$ si y sólo si $E_{\theta}[T^{*}] = \theta$ y para cualquier otro estimador $T = T(X_1, \ldots, X_n)$ con $E_{\theta}[T] = \theta$, se tiene que $V_{\theta}(T^{*}) \leq V_{\theta}(T)$, $\forall \theta \in \Theta$
+\end{definición}
 
-\section*{Demostración}
-Sean $T_{1}$ y $T_{2}$ ECUMV para $\theta$ y demostremos que entonces $T_{1} \stackrel{\text { c.s. }}{=} T_{2}$ Sea $T=\frac{T_{1}+T_{2}}{2}$. Entonces, $E_{\theta}[T]=\theta$ y $V_{\theta}(T) \leq V_{\theta}\left(T_{1}\right)$\\
-En efecto, $V_{\theta}(T)=\frac{1}{4}\left(V_{\theta}\left(T_{1}\right)+V_{\theta}\left(T_{2}\right)+2 \operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)\right)=\frac{V_{\theta}\left(T_{1}\right)}{2}+\frac{\operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)}{2} \leq V_{\theta}\left(T_{1}\right)$\\
-$1 \geq \rho_{\theta}\left(T_{1}, T_{2}\right)=\frac{\operatorname{Cov}\left(T_{1}, T_{2}\right)}{\sqrt{V_{\theta}\left(T_{1}\right) V_{\theta}\left(T_{2}\right)}}=\frac{\operatorname{Cov}\left(T_{1}, T_{2}\right)}{V_{\theta}\left(T_{1}\right)} \Rightarrow \operatorname{Cov}\left(T_{1}, T_{2}\right) \leq V_{\theta}\left(T_{1}\right)$\\
-Por lo tanto, $V_{\theta}(T)=V_{\theta}\left(T_{1}\right)=\operatorname{Cov}_{\theta}\left(T_{1}, T_{2}\right)=$ y $\rho_{\theta}\left(T_{1}, T_{2}\right)=1 \Rightarrow$ $T_{1} \stackrel{\text { c.s. }}{=} a+b T_{2} \Rightarrow \theta=a+b \theta \Rightarrow a=0$ y $b=1$
+\begin{proposición}
+  Si existe un estimador centrado uniformemente de mínima varianza para $\theta$, entonces es único c.s.
+\end{proposición}
 
-\section*{Estimadores centrados de mínima varianza (continuación)}
-Teorema 4 El ECUMV es función simétrica de las observaciones\\
-Ejercicio Para muestras de tamaño $n=2, T_{1}=\frac{X_{1}}{X_{2}}$ no puede puede ser ECUMV para $\theta$\\
-Si lo fuera, llamando $T_{2}=\frac{X_{2}}{X_{1}}$, se tendría $E_{\theta}\left[T_{2}\right]=E_{\theta}\left[T_{1}\right]$ y\\
-$V_{\theta}\left(T_{2}\right)=V_{\theta}\left(T_{1}\right)$ y el estimador $T=\frac{T_{1}+T_{2}}{2}=\frac{x_{1}^{2}+X_{2}^{2}}{X_{1} X_{2}}$ sería tal que $V_{\theta}(T)<V_{\theta}\left(T_{1}\right)$ (contradicción)\\
-En efecto, si \( V_{\theta}(T) = V_{\theta}(T_1) \), entonces \( T \overset{c.s.}{\equiv} T_1 \) \textbf{(contradicción)}\\
-En general si $T$ es centrado y consideramos las $n$ ! permutaciones posibles de la muestra, podemos definir los estimadores centrados $T_{j}$ al evaluar $T$ en la permutación j-ésima. Entonces, el estimador $\bar{T}=\frac{1}{n!} \sum_{j=1}^{n!} T_{j}$ es tal que $V_{\theta}(\bar{T}) \leq V_{\theta}\left(T_{j}\right), j=1, \ldots, n!$, siendo la desigualdad estricta si $T$ no es simétrico
+\begin{proof}
+  Sean $T_1$ y $T_2$ dos estimadores centrados uniformemente de mínima varianza para $\theta$, demostremos que entones $T_1 \overset{c.s.}{\equiv} T_2$. \\
+  Sea $T = \frac{T_1 + T_2}{2} \implies E_{\theta}[T] = \theta$
+  $$V_{\theta}(T) = V_{\theta}(\frac{T_1 + T_2}{2}) = \frac{1}{4}(V_{\theta}(T_1) + V_{\theta}(T_2) + 2Cov_{\theta}(T_1, T_2)) = \frac{V_{\theta}(T_1)}{2} + \frac{Cov(T_1, T_2)}{2}$$
+  Sabemos que la correlación de dos variables aleatorias está acotada por 1, entonces: 
+  $$\rho_{\theta}(T_1, T_2) = \frac{Cov(T_1, T_2)}{\sqrt{V_{\theta}(T_1)V_{\theta}(T_2)}} \leq 1 \iff Cov(T_1, T_2) \leq V_{\theta}(T_1) \implies$$
+  $$\implies V_{\theta}(T) \leq V_{\theta}(T_1) $$
+  Pero además como $T_1$ es un estimador centrado uniformemente de mínima varianza, ningún otro estimador centrado puede tener un avarianza más pequeña: $V_{\theta}(T) \leq V_{\theta}(T_1)$
+  Por lo tanto $V_{\theta}(T) = V_{\theta}(T_1) = Cov_{\theta}(T_1, T_2) = V_{\theta}(T_2) \implies \rho_{\theta}(T_1, T_2) = 1 \implies \exists a, b : T_1 = aT_2 + b \iff E[T_1] = aE[T_2] + b \iff \theta = a\theta + b \iff a = 1, b = 0 \implies T_1 \overset{c.s.}{\equiv} T_2$
+\end{proof}
 
-\section*{Estimadores centrados de mínima varianza}
- (continuación)Teorema (caracterización del ECUMV)\\
-$T_{1}=T_{1}\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}\left[T_{1}\right]=\theta$ y $V_{\theta}\left(T_{1}\right)<\infty$ es el ECUMV para $\theta$ si y solo sí, cualquiera que sea $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}\left[T_{2}\right]=0$ y $V_{\theta}\left(T_{2}\right)<\infty, \forall \theta \in \Theta$, se tiene que $E_{\theta}\left[T_{1} T_{2}\right]=0$, $\forall \theta \in \Theta$
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población $X \sim N(\mu, \sigma^2)$ vamos a trabajar con la familia de estimadores $T_k = \{k \cdot S_n^2\}$. Calculemos cuál es el menor error cuadrático medio. Y tomemos como función del estimador $d(\theta) = \theta^2$
+  $$ECM_{T_k}(\theta) = V_{\theta}(T_k) + b(T_k, \theta)^2 \implies$$ $$ \begin{cases} b(T_k, \theta) = E_{\theta}[T_k] - d(\theta)  = \frac{k\theta^2}{n} \cdot E_{\theta}[\frac{n}{\theta^2}S_n^2] =  \frac{k\theta^2}{n} \cdot E_{\theta}[\chi_{n}] - \theta^2 = \frac{k\theta^2}{n}\cdot n - \theta^2  = k\theta^2 - \theta = (k-1)\theta^2\\ V_{\theta}(T_k) = V_{\theta}[k \cdot S_n^2] = \frac{k^2\theta^4}{n^2}V_{\theta}[\frac{n}{\theta^2}S_n^2] = \frac{k^2\theta^4}{n^2}V_{\theta}[\chi_n^2] = \theta^4 \cdot \frac{k^2}{n^2} \cdot 2n = \frac{2\theta^4k^2}{n}\end{cases} \implies $$ $$ \implies ECM_{T_k}(\theta) = \frac{2\theta^4k^2}{n} + (k-1)^2\theta^4 = \theta^4 \left(\frac{2k^2}{n} + (k-1)^2\right)$$
+  Para encontrar el valor de $k$ que minimiza el error cuadrático medio, derivamos con respecto a $k$ e igualamos a 0:
+  $$\frac{d}{dk}ECM_{T_k}(\theta) = 0 \iff \frac{d}{dk}\left(\theta^4 \left(\frac{2k^2}{n} + (k-1)^2\right)\right) = 0 \iff \theta^4 \left(\frac{4k}{n} + 2(k-1)\right) = 0 \iff$$
+  $$\iff \frac{4k}{n} + 2(k-1) = 0 \iff 4k + 2n(k-1) = 0 \iff 4k + 2nk - 2n = 0 \iff 4k + 2nk = 2n \iff$$  $$\iff k(4 + 2n) = 2n \iff k = \frac{2n}{4 + 2n} = \frac{n}{2 + n}$$
+  Por lo que el estimador que minimiza el error cuadrático medio es $T_{\frac{n}{2 + n}} = \frac{n}{2 + n}S_n^2$
+}
 
-\section*{Corolario 1}
-Si $T_{1}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ y $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right)$ son ECUMV para $h_{1}(\theta)$ y $h_{2}(\theta)$ respectivamente, entonces $b_{1} T_{1}+b_{2} T_{2}$ es el ECUMV para $b_{1} h_{1}(\theta)+b_{2} h_{2}(\theta)$
+\begin{teorema}
+  El estimador centrado uniformemente de mínima varianza es función simétrica de las observaciones
+\end{teorema}
 
-\section*{Estimadores centrados de mínima varianza (continuación)}
-Teorema de Rao-Blackwell $\mathrm{Si} T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado para $\theta$ con varianza finita y $S=S\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente, entonces $g(S)=E[T \mid S]$ es un estimador centrado para $\theta$ con varianza finita tal que $V_{\theta}(g(S)) \leq V_{\theta}(T)$
+\ejemplo{
+  Sea una m.a.s. de tamaño $n = 2$, entonces el estimador $T_1 = \frac{X_1}{X_2}$ no puede ser un estimador centrado uniformemente de mínima varianza, ya que si lo fuera, entonces para el nuevo estimador $T_2 = \frac{X_2}{X_1}$ se tendría que $E_{\theta}[T_2] = E_{\theta}[T_1]$ y $V_{\theta}(T_2) = V_{\theta}(T_1)$ con lo que el estimador $T = \frac{T_1 + T_2}{2} = \frac{X_1^2 + X_2^2}{X_1X_2}$ sería tal que $V_{\theta} < V_{\theta}(T_1)$, lo cual es una contradicción
+}
 
-\section*{Demostración}
-Como $S$ es suficiente, $g(S)=E[T \mid S]$ no depende de $\theta$ y es un estadístico. Además, $E_{\theta}[g(S)]=E_{\theta}[E[T \mid S]]=E_{\theta}[T]=\theta$ y\\
-$V_{\theta}(T)=E_{\theta}\left[(T-\theta)^{2}\right]=E_{\theta}\left[(T-g(S)+g(S)-\theta)^{2}\right]=$ $E_{\theta}\left[(T-g(S))^{2}\right]+E_{\theta}\left[(g(S)-\theta)^{2}\right]+2 E_{\theta}[(T-g(S))(g(S)-\theta)] \geq$ $V_{\theta}(g(S))$
+\begin{observación}
+  En general si tienes un estimador $T$ que no es simétrico, puedes promediar sobre todas las permutaciones posibles para crear un nuevo estimador $\bar{T}$: 
+  $$\bar{T} = \frac{1}{n!}\sum_{i = 1}^{n!} T_j$$
+  Este nuevo estimador es simétrico respecto a las observaciones y $V_{\theta}(\bar{T}) \leq V_{\theta}(T_j) \forall j$ donde se cumple que $V_{\theta}(\bar{T}) < V_{\theta}(T_j)$ si $T_j$ no es un estimador simétrico. Además, se cumple que $E_{\theta}[\bar{T}] = E_{\theta}[T]$	
+\end{observación}
 
-En efecto, $E_{\theta}[(T-g(S))(g(S)-\theta)]=\iint(t-g(s))(g(s)-\theta) d F_{\theta}(t, s)=\int(g(s)-\theta) \int(t-g(s)) d F(t \mid s) d F_{\theta}(s)=0$
+\begin{teorema}[Teorema de caracterización del ECUMV]
+  Sea $T_1 = T_1(X_1, \ldots, X_n)$ un estimador centrado para $\theta$ ($E_{\theta}[T_1] = \theta$) y $V_{\theta}(T_1) < \infty$ entonces $T_1$ es el ECUMV para $\theta$ si y sólo si para cualquier otro estimador $T_2 = T_2(X_1, \ldots, X_n)$ con $E_{\theta}[T_2] = 0$ y $V_{\theta}(T_2) < \infty$ se tiene que $E_{\theta}[T_1T_2] = 0$
+\end{teorema}
 
-\section*{Estimadores centrados de mínima varianza (continuación)}
-Teorema de Lehmann-Schefeé Si $S=S\left(X_{1}, \ldots, X_{n}\right)$ es un estadístico suficiente y completo para $\theta$ y $T=T\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado para $\theta$ tal que $T=h(S)$, entonces $T$ es ECUMV para $\theta$
+\begin{corolario}
+  Si $T_1 = T_2(X_1, \ldots X_n)$ y $T_2 = T_2(X_1, \ldots, X_n)$ son ECUMV para $h_1(\theta)$ y $h_2(\theta)$ respectivamente, entonces $b_1T_1 + b_2T_2$ es el ECUMV para $b_1h_1(\theta) + b_2h_2(\theta)$
+\end{corolario}
 
-\section*{Demostración}
-Como $S$ es suficiente y $T$ es centrado para $\theta, g(S)=E[T \mid S]$ es centrado para $\theta$ y $V_{\theta}(g(S)) \leq V_{\theta}(T)$. Además, para cualquier otro estimador $T_{1}$ centrado para $\theta, g_{1}(S)=E\left[T_{1} \mid S\right]$ es centrado para $\theta$ y $V_{\theta}\left(g_{1}(S)\right) \leq V_{\theta}\left(T_{1}\right)$. Por lo tanto, al ser $T$ completo y $E_{\theta}\left[g(S)-g_{1}(S)\right]=\theta-\theta=0, \forall \theta \in \Theta$, se tiene que $g(S) \stackrel{\text { c.s. }}{=} g_{1}(S)$. En particular, para $T_{1}=T=h(S), g_{1}(S)=E[h(S) \mid S]=h(S)=T$, y $V_{\theta}(T) \leq V_{\theta}\left(T_{1}\right)$, cualquiera que sea $T_{1}$ centrado para $\theta$
+\begin{teorema}[Teorema de Rao-Blackwell]
+  Si $T = T(X_1, \ldots, X_n)$ es un estimador centrado para $\theta$ con $V_{\theta}(T) < \infty$ y $S(X_1, \ldots, X_n)$ es un estadístico suficiente, entonces $g(S) = E[T | S]$ es un estimador centrado para $\theta$ con $V_{\theta}(g(S)) \leq V_{\theta}(T)$
+\end{teorema}
 
-\section*{Estimadores centrados de mínima varianza}
- (continuación)Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\sum_{i=1}^{n} X_{i}$ es suficiente y completo, y $\bar{X}=h(T)$ es el ECUMV para $\theta$
+\begin{proof}
+  Si $S$ es una estadística suficiente para el parámetro $\theta$, entonces $E[T \mid S]$ no depende de $\theta$. Por las propiedades de la esperanza condicionada, se tiene que:
+
+  \[
+  E_{\theta}[g(S)] = E_{\theta}[E[T \mid S]] = E_{\theta}[T] = \theta
+  \]
+
+  Ahora, considerando la varianza de $T$:
+
+  \[
+  V_{\theta}(T) = E_{\theta}[(T - \theta)^2] = E_{\theta}[(T - g(S) + g(S) - \theta)^2]
+  \]
+
+  Expandiendo el cuadrado y usando la linealidad de la esperanza:
+
+  \[
+  V_{\theta}(T) = E_{\theta}[(T - g(S))^2] + E_{\theta}[(g(S) - \theta)^2] + 2E_{\theta}[(T - g(S))(g(S) - \theta)]
+  \]
+
+  El último término se anula debido a la siguiente propiedad de la esperanza condicionada:
+
+  \[
+  E_{\theta}[(T - g(S))(g(S) - \theta)] = \iint (t - g(s))(g(s) - \theta) dF_{\theta}(t, s)
+  \]
+
+  Descomponiendo en términos de la distribución condicional:
+
+  \[
+  = \int (g(s) - \theta) \left( \int (t - g(s)) dF(t \mid s) \right) dF_{\theta}(s) = 0
+  \]
+
+  Ya que $E[T \mid S] = g(S)$, la esperanza condicional centrada es cero.
+
+  Por lo tanto,
+
+  \[
+  V_{\theta}(T) = V_{\theta}(g(S)) + E_{\theta}[(T - g(S))^2] \geq V_{\theta}(g(S))
+  \]
+
+  donde se alcanza la igualdad si y solo si $T = g(S)$ casi seguramente.
+\end{proof}
+
+
+\begin{teorema}[Teorema de Lehmann-Schefeé]
+  Si $S(X_1, \ldots, S_n)$ es un estadístico suficiente y completo para $\theta$ y $T = T(X_1, \ldots, X_n)$ es un estimador centrado para $\theta$ tal que $T = h(S)$, entonces $T$ es ECUMV para $\theta$
+\end{teorema}
+
+\begin{proof}
+  $\begin{cases} S \text{ suficiente } \\ T \text{ centrado } \end{cases} \implies g(S) = E[T|S] \text{ es centrado para } \theta \text{ y } V_{\theta}(g(S)) \leq V_{\theta}(T)$ \\
+  Además, se tiene que para cualquier otro estimador $T_1$ centrado para $\theta$, $g_1(S) = E[T_1 | S]$ es centrado para $\theta$ y $V_{\theta}(g_1(S)) \leq V_{\theta}(T_1)$ \\
+  Por lo tanto al ser $T$ completo y $E_{\theta}[g(S) - g_1(S)] = \theta - \theta = 0$ se tiene que $g(S) \stackrel{c.s.}{=} g_1(S)$. En particular, para $T_1 = T = h(S)$, $g_1(S) = E[h(S) | S] = h(S) = T$ y $V_{\theta}(T) \leq V_{\theta}(T_1)$, cualquiera que sea $T_1$ centrado para $\theta$
+\end{proof}
+
+\ejemplo{
+
+}
+
+Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\sum_{i=1}^{n} X_{i}$ es suficiente y completo, y $\bar{X}=h(T)$ es el ECUMV para $\theta$
 
 Ejercicio Si $X \sim$ Poisson $(\theta)$, encontrar el ECUMV para $d(\theta)=e^{-2 \theta}$ basado en una m.a.s.( $n$ )\\
 Indicación: $T=T\left(X_{1}, \ldots, X_{n}\right)=\left\{\begin{array}{ll}1 & \text { si } X_{1}+X_{2}=0 \\ 0 & \text { resto }\end{array}\right.$ es centrado para $d(\theta)=e^{-2 \theta}$ y $S=\sum_{i=1}^{n} X_{i}$ es suficiente y completo

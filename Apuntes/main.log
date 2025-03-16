@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  16 MAR 2025 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  16 MAR 2025 19:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2186,23 +2186,100 @@ Overfull \hbox (3.523pt too wide) detected at line 225
 
 
 [53]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 239.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.239 ...ntrado uniformemente de mínima varianza]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 244.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.244   S
+         i existe un estimador centrado uniformemente de mínima varianza pa...
+Overfull \hbox (30.394pt too wide) detected at line 265
+[]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 ) 
+ []
+
+
 
 [54]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 268.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.268   E
+         l estimador centrado uniformemente de mínima varianza es función ...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 276.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.276   E
+         n general si tienes un estimador $T$ que no es simétrico, puedes p...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 281.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.281 ...a}[Teorema de caracterización del ECUMV]
+                                                  
 
 [55]
+Package mdframed Info: Not enough space on this page on input line 283.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 286.
+
+pdfTeX warning (ext4): destination with the same identifier (name{corolario.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.286   S
+         i $T_1 = T_2(X_1, \ldots X_n)$ y $T_2 = T_2(X_1, \ldots, X_n)$ son ...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 289.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.289 \begin{teorema}[Teorema de Rao-Blackwell]
+                                               
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 336.
+
 
 [56]
 
 [57]
 
 [58]
-Overfull \hbox (60.05666pt too wide) in paragraph at lines 418--419
+
+[59]
+
+[60]
+Overfull \hbox (60.05666pt too wide) in paragraph at lines 495--496
 \OT1/cmr/m/n/10.95 spon-di-entes a un m^^Saximo de $\OML/cmm/m/it/10.95 f[]$\OT1/cmr/m/n/10.95 , es de-cir aque-l-las en las que la ma-triz hes-siana $\OML/cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 = [][]$
  []
 
 ))
 
-[59] (main.aux)
+[61] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2211,17 +2288,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: AB86F024185C75D665AC1C035966E951;3999.
  ) 
 Here is how much of TeX's memory you used:
- 46787 strings out of 473530
- 1087379 string characters out of 5714794
- 1735237 words of memory out of 5000000
- 68906 multiletter control sequences out of 15000+600000
+ 46812 strings out of 473530
+ 1088092 string characters out of 5714794
+ 1735611 words of memory out of 5000000
+ 68930 multiletter control sequences out of 15000+600000
  575653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,15n,112p,1034b,2241s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (60 pages, 889496 bytes).
+Output written on main.pdf (62 pages, 900109 bytes).
 PDF statistics:
- 768 PDF objects out of 1000 (max. 8388607)
- 264 named destinations out of 1000 (max. 500000)
+ 777 PDF objects out of 1000 (max. 8388607)
+ 265 named destinations out of 1000 (max. 500000)
  330 words of extra memory for PDF output out of 10000 (max. 10000000)
 
