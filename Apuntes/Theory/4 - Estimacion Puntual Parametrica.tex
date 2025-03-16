@@ -6,7 +6,8 @@
 \end{definición}
 
 \begin{definición}[Estimador centrado o insesgado]
-  Dado un estimador $T = T(X_1, \ldots X_n): \chi^{n} \to \Theta$ se dice que es centrado para $\theta$ cuando $E_{\theta}[T] = \theta$. 
+  Dado un estimador $T = T(X_1, \ldots X_n): \chi^{n} \to \Theta$ se dice que es centrado para $\theta$ cuando $E_{\theta}[T] = \theta$. \\
+  Se dice asintóticamente insesgado o centrado cuando $\lim_{n \to \infty}E_{\theta}[T] = \theta$
 \end{definición}
 
 \begin{definición}[Sesgo]
@@ -195,22 +196,37 @@
   A pesar de que matemáticamente se parezcan mas, la corrección para mejorar la eficiencia se la conoce como \underline{corrección de Bessel}.
 }
 
+\begin{observación}
+  En general, si $T_1$ y $T_2$ son dos estimadores de $\theta$ y $ECM_{T_1}(\theta) < ECM_{T_2}(\theta)$, entonces $T_1$ es un estimador más eficiente que $T_2$ para $\theta$
+\end{observación}
+
 \subsection{Criterios de comparación de estimadores}
 
 \begin{definición}[Pérdida final esperada]
   Dado un estimador $T(X_1, \ldots, X_n)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ donde $t$ son los valores que toma el estimador, se define la Pérdida Final Esperada o $PFE$ o el riesgo a posteriori como: 
-  $$PFE_T = E[\mathcal{L}(t, \theta) | X_1 = x_1, \ldots, X_n = x_n]$$
+  $$PFE_T = E[\mathcal{L}(t, \theta) | X_1 = x_1, \ldots, X_n = x_n] = \int_{\Theta} \mathcal{L}(\theta, t)\pi(\theta | x_1, \ldots, x_n)d\theta$$
 \end{definición}
 
-Dado el estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ en la que se incurre por estimar $\theta$ mediante $T\left(x_{1}, \ldots, x_{n}\right)=t$, se define la pérdida final esperada $\circ$ riesgo a posteriori,
+\begin{proposición}
+  Puede darse que existan varias funciones de pérdida, veamos las más comunes: 
+  \begin{enumerate}
+    \item Si $\mathcal{L}(\theta, t) = (\theta - t)^2$ entonces $PFE(t) = V(\theta | x_1, \ldots, x_n) + b(T, \theta)^2$ y la pérdida final esperada se minimimia en $t^* = E[\theta | x_1, \ldots, x_n]$
+    \item Si $\mathcal{L}(\theta, t) = |\theta - t|$ entonces $PFE(t) = E[|\theta - t| | x_1, \ldots, x_n]$ y la pérdida final esperada se minimiza en la mediana de la distribución final (estimador bayesiano)
+  \end{enumerate}
+\end{proposición}
 
-$$
-  \operatorname{PFE}(t)=E\left[\mathcal{L}(t, \theta) \mid x_{1}, \ldots, x_{n}\right]=\int_{\Theta} \mathcal{L}(\theta, t) \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) d \theta
-$$
-
-Si $\mathcal{L}(\theta, t)=(\theta-t)^{2}$, entonces la pérdida final esperada se minimiza en $t^{*}=E\left[\theta \mid x_{1}, \ldots, x_{n}\right]$ (estimador bayesiano) y $\operatorname{PFE}(t)=V\left(\theta \mid x_{1}, \ldots, x_{n}\right)$
-
-Si $\mathcal{L}(\theta, t)=|\theta-t|$, entonces la pérdida final esperada se minimiza en la mediana de la distribución final (estimador bayesiano)
+\begin{proof}
+  \begin{enumerate}
+    \item Si $\mathcal{L}(\theta, t) = (\theta - t)^2 \implies$ $$PFE_T = E[(\theta - t)^2 | x_1, \ldots, x_n] = E[((\theta - E[\theta | x_1, \ldots, x_n]) + (E[\theta | x_1, \ldots, x_n] - t))^2 | x_1, \ldots, x_n] $$ Si expandimos el cuadrado: 
+    $$ (\theta - E[\theta | x_1, \ldots, x_n])^2 + 2(\theta - E[\theta | x_1, \ldots, x_n])(E[\theta | x_1, \ldots, x_n] - t) + (E[\theta | x_1, \ldots, x_n] - t)^2 \implies$$
+    Calculemos cada una de las esperanzas por separado: 
+    $$E[(\theta - E[\theta | x_1, \ldots, x_n])^2 | x_1, \ldots, x_n] = V(\theta | x_1, \ldots, x_n)$$
+    $$E[(\theta - E[\theta | x_1, \ldots x_n] | x_1, \ldots, x_n)] = 0 \text{ por propiedades de la esperanza condicional}$$
+    $$E[(E[\theta | x_1, \ldots, x_n] - t)^2 | x_1, \ldots, x_n] = (E[\theta | x_1, \ldots, x_n] - t)^2 \text{ dada una muestra, se vuelve una constante}$$
+    Por lo que se puede concluir que $PFE_T = V(\theta | x_1, \ldots, x_n) + (E[\theta | x_1, \ldots, x_n] - t)^2$ y se minimiza en $t^* = E[\theta | x_1, \ldots, x_n]$
+    \item Si $\mathcal{L}(\theta, t) = |\theta - t| \implies$ $$PFE_T = E[|\theta - t| | x_1, \ldots, x_n]$$
+  \end{enumerate}
+\end{proof}
 
 \section*{Estimadores centrados de mínima varianza}
 $T^{*}=T^{*}\left(X_{1}, \ldots, X_{n}\right)$ es un estimador centrado uniformemente de mínima varianza (ECUMV) para $\theta$ sí y sólo sí $E_{\theta}\left[T^{*}\right]=\theta$ y para cualquier otro estimador $T=T\left(X_{1}, \ldots, X_{n}\right)$ con $E_{\theta}[T]=\theta$, se tiene que $V_{\theta}\left(T^{*}\right) \leq V_{\theta}(T), \forall \theta \in \Theta$
