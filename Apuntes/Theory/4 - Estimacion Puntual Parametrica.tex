@@ -344,12 +344,25 @@
 \end{proof}
 
 \ejemplo{
-
+  Sean  una m.a.s. de tamaño $n$ de una población con $X \sim Bin(1, \theta)$ y un estadístico $T = \sum_{i = 1}^{n} X_i$, comprueba que es suficiente y completo y además, si $h(T) = \bar{X}$, comprueba entonces que $h(T)$ es el ECUMV para $\theta$: \\
+  Veamos primero que $T = \sum_{i = 1}^{n} X_i$ es suficiente y completo para $\theta$:	
+  $$X \sim Bin(1, \theta) \equiv Bernouilli(\theta) \implies f_{\theta}(x) = \theta^x(1 - \theta)^{1-x} \implies f_{\theta}(x_1, \ldots, x_n) = \theta^{\sum_{i = 1}^{n} x_i}(1 - \theta)^{n - \sum_{i = 1}^{n} x_i}$$
+  Entones por el Teorema de Factorización de Fisher, tenemos que $T$ es suficiente para $\theta$. Veamos ahora su completitud: \\
+  $$ X \sim Bin(1, \theta) \implies T \sim Bin(n, \theta) \implies$$
+  Sea $g$ función real tal que: $E_{\theta}[g(T)] = 0, \forall \theta \in [0, 1]$, entonces:
+  $$E_{\theta}[g(T)] = \sum_{t = 0}^{n} g(t) \binom{n}{t} \theta^t(1 - \theta)^{n-t} = 0, \forall \theta \in [0, 1] \iff$$
+  $$\iff (1 - \theta)^n \cdot \sum_{i = 1}^{n} g(t) \binom{n}{t} \left(\frac{\theta}{1 - \theta}\right)^t = 0 \iff$$
+  $$\iff \sum_{t = 0}^{n} g(t) \binom{n}{t} x^t = 0, \forall x \in \mathbb{R} \iff g(t) = 0, \forall t \in \{0, \ldots, n\} $$  ya que los coeficientes binomiales son no nulos. \\
+  Por último queda ver que $S$ es un estadístico centrado para $\theta$, i.e. $E_{\theta}[h(S)] = \theta$ y $V_{\theta}(h(S)) < \infty$:
+  $$E_{\theta}[h(T)] = E_{\theta}[\bar{X}] = \frac{1}{n} \cdot \sum_{i = 1}^{n} E_{\theta}[X_i] = \frac{1}{n} \cdot n\theta = \theta$$
+  $$V_{\theta}(h(T)) = V_{\theta}(\bar{X}) = \frac{1}{n^2} \cdot \sum_{i = 1}^{n} V_{\theta}(X_i) = \frac{1}{n^2} \cdot n\theta(1 - \theta) = \frac{\theta(1 - \theta)}{n} < \infty$$
+  Por lo tanto, $T = n\bar{X}$ es el ECUMV para $\theta$
 }
 
-Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\sum_{i=1}^{n} X_{i}$ es suficiente y completo, y $\bar{X}=h(T)$ es el ECUMV para $\theta$
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población con distribución $Poisson(\theta)$ y dado un estadistico $d(\theta) = e^{-2\theta}$. Encuentra el ECUMV para $d(\theta)$:\\ 
+}
 
-Ejercicio Si $X \sim$ Poisson $(\theta)$, encontrar el ECUMV para $d(\theta)=e^{-2 \theta}$ basado en una m.a.s.( $n$ )\\
 Indicación: $T=T\left(X_{1}, \ldots, X_{n}\right)=\left\{\begin{array}{ll}1 & \text { si } X_{1}+X_{2}=0 \\ 0 & \text { resto }\end{array}\right.$ es centrado para $d(\theta)=e^{-2 \theta}$ y $S=\sum_{i=1}^{n} X_{i}$ es suficiente y completo
 
 \section*{Cota para la varianza de un estimador}

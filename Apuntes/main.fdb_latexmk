@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1742151066.19389 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742151090.72014 0
+["pdflatex"] 1742216291.1394 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742216303.29494 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741696821 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1739788850 12668 dc06899bf14948622113887d9b2f36fb ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740519544 10576 1e4a7696076481c0e8f238784591097f ""
@@ -337,13 +337,13 @@
   "Theory/1- Estadistica Descriptiva.tex" 1741185089 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
   "Theory/2 - Muestreo.tex" 1742041610 42728 7bd03f80e7095c8c33ec18f800b03dd0 ""
   "Theory/3 - Reduccion de Datos.tex" 1741953256 68149 cfda9827708a63d9501c5e86a3490ab5 ""
-  "Theory/4 - Estimacion Puntual Parametrica.tex" 1742151063 44510 1db4cb5c00fae4d45c79c9115a5c344a ""
+  "Theory/4 - Estimacion Puntual Parametrica.tex" 1742216289 46231 d511809ca8875e591433ba2d5230f226 ""
   "Theory/Theory.tex" 1741970634 452 1d0f3ae3a9973c1d665585c931604ff5 ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1742151088 24241 bbaa01afae2e6aadc842082c41e9c0e6 "pdflatex"
-  "main.out" 1742151088 3999 ab86f024185c75d665ac1c035966e951 "pdflatex"
+  "main.aux" 1742216302 24241 bbaa01afae2e6aadc842082c41e9c0e6 "pdflatex"
+  "main.out" 1742216302 3999 ab86f024185c75d665ac1c035966e951 "pdflatex"
   "main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1742151088 1944 22bd0ab07e11173fc5d415c956959db1 "pdflatex"
+  "main.toc" 1742216302 1944 22bd0ab07e11173fc5d415c956959db1 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
