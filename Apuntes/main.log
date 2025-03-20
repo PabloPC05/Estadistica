@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  20 MAR 2025 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  20 MAR 2025 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1077,19 +1077,19 @@ Package tocloft Info: The document has section divisions on input line 51.
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=EjercicioStyle' on input line 351.
+(thmtools)             that uses `style=EjercicioStyle' on input line 353.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=LightPurple, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=EjercicioStyle' on input line 351.
+(thmtools)             that uses `style=EjercicioStyle' on input line 353.
 Package thmtools Info: Key `postheadhook' (with value `\textcolor {black}{\rule [.6ex]{\linewidth }{0.4pt}}\\')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=SolucionStyle' on input line 370.
+(thmtools)             that uses `style=SolucionStyle' on input line 372.
 Package thmtools Info: Key `mdframed' (with value ` backgroundcolor=White, innertopmargin=6pt, roundcorner=5pt, innerbottommargin=6pt, skipabove=\parsep , skipbelow=\parsep ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=SolucionStyle' on input line 370.
+(thmtools)             that uses `style=SolucionStyle' on input line 372.
 \c@ejercicio=\count408
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
@@ -1495,9 +1495,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 835--835
 
 [17]
 
-[18
-
-]
+[18]
 
 [19]
 Underfull \hbox (badness 10000) in paragraph at lines 967--969
@@ -1782,6 +1780,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\
                    \relax 
 l.479 	S
         i $T_1$ y $T_2$ son estadísticos completos, entonces $(T_1, T_2)$ t...
+
+[33]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 496.
@@ -1791,10 +1791,6 @@ pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\
                    \relax 
 l.496 	R
         ecordemos que:
-Package mdframed Info: Not enough space on this page on input line 503.
-
-
-[33]
 Package mdframed Info: Not enough space on this page on input line 503.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1836,7 +1832,7 @@ l.552 	E
         l estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = ...
 
 [35]
-<Graficos/geogebra-export.png, id=415, 341.43307pt x 267.00066pt>
+<Graficos/geogebra-export.png, id=420, 341.43307pt x 267.00066pt>
 File: Graficos/geogebra-export.png Graphic file (type png)
 <use Graficos/geogebra-export.png>
 Package pdftex.def Info: Graficos/geogebra-export.png  used on input line 602.
@@ -1928,8 +1924,11 @@ pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\
                    \relax 
 l.685 ...n{proposición}[Principio de suficiencia]
                                                   
+Package mdframed Info: Not enough space on this page on input line 687.
+
 
 [39]
+Package mdframed Info: Not enough space on this page on input line 687.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 693.
@@ -2179,13 +2178,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\
                    \relax 
 l.211   P
          uede darse que existan varias funciones de pérdida, veamos las má...
+
+[53]
 Overfull \hbox (3.523pt too wide) detected at line 225
 \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [(\OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ^^R\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ] = (\OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ^^R\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )[][]
  []
 
-
-
-[53]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 239.
@@ -2204,13 +2202,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\
                    \relax 
 l.244   S
          i existe un estimador centrado uniformemente de mínima varianza pa...
+
+[54]
 Overfull \hbox (30.394pt too wide) detected at line 265
 []  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 ) 
  []
 
-
-
-[54]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 268.
@@ -2229,6 +2226,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\
                    \relax 
 l.276   E
          n general si tienes un estimador $T$ que no es simétrico, puedes p...
+
+[55]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 281.
@@ -2238,9 +2237,6 @@ pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) ha
                    \relax 
 l.281 ...a}[Teorema de caracterización del ECUMV]
                                                   
-
-[55]
-Package mdframed Info: Not enough space on this page on input line 283.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 286.
@@ -2265,6 +2261,8 @@ Package mdframed Info: mdframed detected package amsthm
 
 
 [56]
+Package mdframed Info: Not enough space on this page on input line 338.
+
 Overfull \hbox (11.33437pt too wide) detected at line 360
 \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Bin\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 Bernouilli\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )[]  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )[]
  []
@@ -2280,23 +2278,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--364
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
-
- []
-
-
 
 [57]
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 407--407
 
  []
@@ -2304,13 +2302,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 407--407
 
 
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 424--424
+Underfull \hbox (badness 10000) in paragraph at lines 425--425
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--424
+Underfull \hbox (badness 10000) in paragraph at lines 425--425
 
+ []
+
+
+Overfull \hbox (22.68881pt too wide) detected at line 448
+\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Normal\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[[]\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[]
  []
 
 
@@ -2318,36 +2321,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 424--424
 [59]
 
 [60]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 453.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.453 ...[Condiciones de regularidad de Wolfowitz]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 464.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.464 ...in{teorema}[Cota de Fréchet-Cramér-Rao]
+                                                  
 
 [61]
 
 [62]
-Overfull \hbox (60.05666pt too wide) in paragraph at lines 566--567
+
+[63]
+Overfull \hbox (60.05666pt too wide) in paragraph at lines 597--598
 \OT1/cmr/m/n/10.95 spon-di-entes a un m^^Saximo de $\OML/cmm/m/it/10.95 f[]$\OT1/cmr/m/n/10.95 , es de-cir aque-l-las en las que la ma-triz hes-siana $\OML/cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 = [][]$
  []
 
-))
+)
 
-[63] (main.aux)
+[64])
+
+[65] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AB86F024185C75D665AC1C035966E951;3999.
+(rerunfilecheck)             Checksum: 0C306B5A685016D9D8EC1817ABEF40C1;4260.
  ) 
 Here is how much of TeX's memory you used:
- 46820 strings out of 473530
- 1088193 string characters out of 5714794
- 1735611 words of memory out of 5000000
- 68935 multiletter control sequences out of 15000+600000
+ 46842 strings out of 473530
+ 1088570 string characters out of 5714794
+ 1735775 words of memory out of 5000000
+ 68945 multiletter control sequences out of 15000+600000
  575653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,15n,112p,1034b,2241s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,15n,112p,1034b,2239s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (64 pages, 911361 bytes).
+Output written on main.pdf (66 pages, 921545 bytes).
 PDF statistics:
- 786 PDF objects out of 1000 (max. 8388607)
- 268 named destinations out of 1000 (max. 500000)
- 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 810 PDF objects out of 1000 (max. 8388607)
+ 280 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

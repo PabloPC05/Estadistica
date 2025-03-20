@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1742477054.37952 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742477066.33342 0
+["pdflatex"] 1742510415.92424 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742510423.75693 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1742300647 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1739788850 12668 dc06899bf14948622113887d9b2f36fb ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740519544 10576 1e4a7696076481c0e8f238784591097f ""
@@ -333,17 +333,17 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Graficos/geogebra-export.png" 1741693432 591085 be281bd5b496880487ab7c388224041d ""
-  "Preamble/Preamble.tex" 1741693104 12039 d4179fd1b41fcfa14fda833bd7edc16f ""
+  "Preamble/Preamble.tex" 1742497760 12077 347fca6412e1229fc5796f7b6f021530 ""
   "Theory/1- Estadistica Descriptiva.tex" 1741185089 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
-  "Theory/2 - Muestreo.tex" 1742041610 42728 7bd03f80e7095c8c33ec18f800b03dd0 ""
-  "Theory/3 - Reduccion de Datos.tex" 1741953256 68149 cfda9827708a63d9501c5e86a3490ab5 ""
-  "Theory/4 - Estimacion Puntual Parametrica.tex" 1742477053 50937 df477b8ab20015b5f38f3cef1ebe1da4 ""
+  "Theory/2 - Muestreo.tex" 1742497760 42741 a1c1d1da7f6ca6d87d8ddbaf61853ece ""
+  "Theory/3 - Reduccion de Datos.tex" 1742497760 68146 ff6c402e24abde4c7284b4ca4915cb1e ""
+  "Theory/4 - Estimacion Puntual Parametrica.tex" 1742510407 55956 5ceffaf7a8e967d972536d54ce65718e ""
   "Theory/Theory.tex" 1741970634 452 1d0f3ae3a9973c1d665585c931604ff5 ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica-1/Apuntes/main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1742477065 24241 34023615549654dd6f7344a762bbc0cd "pdflatex"
-  "main.out" 1742477065 3999 ab86f024185c75d665ac1c035966e951 "pdflatex"
+  "main.aux" 1742510423 25002 e5d7da53a044c06ef718c1a1c4a5e384 "pdflatex"
+  "main.out" 1742510423 4260 0c306b5a685016d9d8ec1817abef40c1 "pdflatex"
   "main.tex" 1741210804 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1742477065 1944 22bd0ab07e11173fc5d415c956959db1 "pdflatex"
+  "main.toc" 1742510423 2048 f6ff5eea808e3387fdd656f4c6bcd85b "pdflatex"
   (generated)
   "main.aux"
   "main.log"

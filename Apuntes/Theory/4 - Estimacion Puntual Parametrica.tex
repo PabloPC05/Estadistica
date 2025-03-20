@@ -418,23 +418,54 @@
   \end{cases}$$
   Por lo que evidentemente en la imagen de la función $q_1(\theta) = ln(\frac{\theta}{1 - \theta})$ tiene un abierto en su imagen por lo que el estadístico $S = \sum_{i = 1}^{n} X_i$ es completo para $\theta$.
   \begin{enumerate}
-    \item Primero veamos el caso para $d_1(\theta) = \theta$: Sabemos que 
-    
+    \item Primero veamos el caso para $d_1(\theta) = \theta$: Sabemos que $E[S] = \sum_{i = 1}^{n}E[X_i] = n\theta \implies \bar{X} = \frac{S}{n} \implies E[\bar{X}] = \theta \implies \bar{X}$ es centrado para $\theta$. Por el Teorema de Lehmann-Scheffé, $\bar{X}$ es el ECUMV para $\theta$
+    \item Ahora veamos el caso para $d_2(\theta) = \theta(1 - \theta) = \theta - \theta^2$: A pesar de que pueda parecer lógico tomar la varianza muestral $S^2$ como estimador, no se cumplen las condiciones del Teorema de Lehmann-Scheffé para que sea un ECUMV, ya que tiene que depender únicamente de $S = \sum X_i$ y en $S^2$ aparecen términos cuadráticos, por lo que no es un ECUMV. Podemos intentar buscar otro:\\
+    NO LO ENTIENDO
   \end{enumerate}
 }
 
-\section*{Cota para la varianza de un estimador}
-Consideremos $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}}$ modelo estadístico uniparamétrico contínuo (o discreto) y sea ( $X_{1}, \cdots X_{n}$ ) muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$ siendo $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$ su función de densidad (o de masa). Supongamos que se verifican las siguientes condiciones de regularidad:\\
-(1) $\Theta$ es un intervalo abierto de $\mathbb{R}$\\
-(2) $\operatorname{Sop}\left(f_{\theta}\right)=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: f_{\theta}\left(x_{1}, \cdots, x_{n}\right)>0\right\}$ no depende de $\theta$
+\ejemplo{
+  Sea una m.a.s. de tamao $n$ de una población que sigue una distribución $Normal(\mu, \sigma^2)$, veamos distintas casuísticas: 
+  \begin{enumerate}
+    \item Tomemos uque $\mu$ es conocida y $\sigma^2$ no, por lo que queremos buscar el ECUMV para $\sigma^2$:
+    $$X \sim Normal(\mu, \sigma^2) \implies f(x|\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x - \mu)^2}{2\sigma^2}} \implies f(x_1, \ldots, x_n | \sigma^2) = \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}$$
+    Por el Teorema de Factorización de Fisher, $S = \sum_{i = 1}^{n} (X_i - \mu)^2$ es suficiente para $\sigma^2$. Veamos ahora su completitud: \\
+    Sabemos que la distribución normal, en este caso, pertenece a la familia exponencial uniparamétrica. Entonces sabemos que los estadísticos naturales asociados a las funciónes paramétricas $q_i(\theta)$ son completos, si éstas ultimas contienen un abierto en su imagen. En este caso, $q_1(\sigma^2) = \frac{1}{2\sigma^2}$ contiene un abierto en su imagen, por lo que $S$ es completo para $\sigma^2$. \\
+    Veamos la esperanza de $S$: 
+    $$E[S] = E[\sum_{i = 1}^{n} (X_i - \mu)^2] = \sum_{i = 1}^{n} E[(X_i^2 + \mu^2 - 2X_i\mu)] = \sum_{i = 1}^{n} E[X_i^2] + \sum_{i = 1}^{n} \mu^2 - \sum_{i = 1}^{n} 2\mu E[X_i] = $$ $$ = n(\sigma^2 + \mu^2) + n\mu^2 - 2n\mu^2 = n\sigma^2 \implies \frac{S}{n} \text{ es el ECUMV para } \sigma^2 \text{ por el T. de Lehmann-Schefeé}$$
+    \item Ahora supongamos que $\mu$ y $\sigma^2$ son desconocidos, por lo que queremos encontrar el ECUMV para $\mu$ y $\sigma^2$:
+    $$f(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x - \mu)^2}{2\sigma^2}} \implies f(x_1, \ldots, x_n | \mu, \sigma^2) = \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}} = $$
+    $$ = f(x_1, \ldots, x_n | \mu, \sigma^2) = \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum x_i^2 + n\mu^2 - \mu\sum x_i}{2\sigma^2}}$$
+    Por el Teorema de Factorización de Fisher, $T(\vec{x}) = (\sum x_i, \sum x_i^2)$ es suficiente para $(\mu, \sigma^2)$. Veamos ahora su completitud: \\
+    Sabemos que la distribución normal, en este caso, pertenece a la familia exponencial uniparamétrica. Entonces sabemos que los estadísticos naturales asociados a las funciónes paramétricas $q_i(\theta)$ son completos, si éstas ultimas contienen un abierto en su imagen. En este caso, $q_1(\mu, \sigma^2) = \mu$ y $q_2(\mu, \sigma^2) = \frac{1}{2\sigma^2}$ contienen un abierto en su imagen, por lo que $T$ es completo para $(\mu, \sigma^2)$. \\
+    Veamos la esperanza de $T$:
+    $$E[T] = E[(\sum X_i, \sum X_i^2)] = (\sum E[X_i], \sum E[X_i^2]) = (n\mu, n\sigma^2 + n\mu^2)$$ $$\implies \frac{\sum X_i}{n} = \bar{X} \text{ es el ECUMV para } \mu \text{ y } S^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(X_i - \bar{X})^2 \text{ es el ECUMV para } \sigma^2$$
+    \item Ahora suponamos que $\mu$ es desconocido y $\sigma^2$ es conocido, por lo que queremos encontrar el ECUMV para $\mu$:
+    Por lo visto en el apartado anterior, podemos que por el Teorema de Fisher, podemos ver que el estadítico $T = \sum_{i = 1}^{n} X_i$ es suficiente para $\mu$. \\También podríamos preguntarnos porqué no sería el estadístico $\vec{T} = (\sum X_i, \sum X_i^2)$, la respuesta está en que esta distribución normal pertenece a la familia exponencial uniparamétrica y por tanto tomamos la función dependiente del parámetro $q_1(\mu) = \mu$ y su estadístico natural asociado $T_1(\vec{x}) = \sum X_i$, el cual por las propiedades que vimos de las familias exponenciales es suficiente, y además completo. 
+    Veamos ahora si es insesgado: 
+    $$E[T] = E[\sum X_i] = \sum E[X_i] = n\mu \implies \bar{X} = \frac{T}{n} \text{ es el ECUMV para } \mu$$
+   \end{enumerate}
+}
 
-\begin{itemize}
-  \item $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$ y $\forall \theta \in \Theta, \exists \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$\\
-        (-) $\int_{\chi^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=0$\\
-        (0) $I_{n}(\theta)=E\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]<\infty($ cantidad de información de Fisher)
-\end{itemize}
+\subsection{Cota para la varianza de un estimador}
+Hemos visto hasta ahora el \underline{estimador centrado uniformemente de mínima varianza}, que cómo su nombre indica, es el que tiene varianza más pequeña.  \\
+Si definieramos una varianza mínima para los estimadores de un parámetro, es decir, si encontrásemos una cota para los estimadores, podríamos encontrar más fácilmente un estimador que tenga dicha varianza y por tanto seria el centrado uniformemente de mínima varianza. 
+\begin{definición}[Condiciones de regularidad de Wolfowitz]
+  Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}}$ modelo estadístico uniparamétrico contínuo (o discreto) y sea ( $X_{1}, \cdots X_{n}$ ) muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$ siendo $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$ su función de densidad (o de masa). Supongamos que se verifican las siguientes condiciones de regularidad:
+  \begin{enumerate}
+    \item $\Theta$ es un intervalo abierto de $\mathbb{R}$
+    \item $\operatorname{Sop}\left(f_{\theta}\right)=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: f_{\theta}\left(x_{1}, \cdots, x_{n}\right)>0\right\}$ no depende de $\theta$
+    \item $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$ y $\forall \theta \in \Theta, \exists \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$
+    \item $\int_{\chi^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=0$
+    \item $I_{n}(\theta)=E\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]<\infty($ cantidad de información de Fisher)
+  \end{enumerate}
+\end{definición}
 
-\section*{Cota para la varianza de un estimador}
+\begin{teorema}[Cota de Fréchet-Cramér-Rao]
+  
+\end{teorema}
+
+
  (continuación)Teorema (Cota de Fréchet-Cramér-Rao) Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, E_{\theta}[T]=d(\theta)$ y $d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$, entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
 
 $$
