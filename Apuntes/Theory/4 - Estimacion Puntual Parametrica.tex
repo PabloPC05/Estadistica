@@ -35,6 +35,7 @@
   $$ = \frac{1}{n}\sum_{j = 1 \\ j \neq i}^{n}E[X_i]E[X_j] + \frac{1}{n}E[X_i^2] = \frac{1}{n}(n-1)\mu^2 + \frac{1}{n}(\sigma^2 + \mu^2) = \mu^2 + \frac{\sigma^2}{n}$$
   $$ \implies = 2\mu^2 + \sigma^2(1 + \frac{1}{n}) - \frac{2}{n}\left(\sum_{i = 1}^{n}\mu^2 + \frac{\sigma^2}{n}\right) = 2\mu^2 + \sigma^2(1 + \frac{1}{n}) - 2(\mu^2 + \frac{\sigma^2}{n}) = \sigma^2(1 - \frac{1}{n}) \implies$$
   $$ \implies E[\sigma_n^2] = \sigma^2(1 - \frac{1}{n}) = h(\theta) \text{ y } b(\sigma_n^2, \sigma^2) =  E[\sigma_n^2] - \sigma^2 = -\frac{\sigma^2}{n}$$
+  $$ \implies E[\sigma_n^2] = \sigma^2\left(1 - \frac{1}{n}\right) = h(\theta) \text{ y } b(\sigma_n^2, \sigma^2) =  E[\sigma_n^2] - \sigma^2 = -\frac{\sigma^2}{n}$$
 }
 
 \begin{observación}
@@ -45,7 +46,6 @@
     \item Puede ocurrir que no exista un estimador centrado de $\theta$
     \item Si $T$ es un estimador centrado para $\theta$, en general $h(T)$ no tiene por qué ser centrado para $h(\theta)$
     \item A pesar de que exista un estimador centrado para $\theta$, puede ser que no tenga sentido
-    \item A pesar de que exista un estimador centrado para $\theta$, puede ser que su varianza sea muy grande y no sea adecuado para la estimación
   \end{itemize}
 \end{observación}
 
@@ -363,7 +363,65 @@
   Sea una m.a.s. de tamaño $n$ de una población con distribución $Poisson(\theta)$ y dado un estadistico $d(\theta) = e^{-2\theta}$. Encuentra el ECUMV para $d(\theta)$:\\ 
 }
 
-Indicación: $T=T\left(X_{1}, \ldots, X_{n}\right)=\left\{\begin{array}{ll}1 & \text { si } X_{1}+X_{2}=0 \\ 0 & \text { resto }\end{array}\right.$ es centrado para $d(\theta)=e^{-2 \theta}$ y $S=\sum_{i=1}^{n} X_{i}$ es suficiente y completo
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población que sigue una distribución $Poisson(\theta)$, tenemos que encontrar el ECUMV para $\theta$: \\
+  Si tomamos el estadístico $S = \sum_{i = 1}^{n} X_i$, para poder aplicar el Teorema de Lehmann-Scheffé necesitamos ver que el estadístico sea completo y suficiente: \\
+
+  Veamos primero que $S$ es suficiente para $\theta$: \\
+  $$
+  X \sim Poisson(\theta) \implies f_{\theta}(x) = \frac{e^{-\theta}\theta^x}{x!} \implies f_{\theta}(x_1, \ldots, x_n) = \frac{e^{-n\theta}\theta^{\sum_{i = 1}^{n} x_i}}{\prod_{i = 1}^{n} x_i!}
+  $$
+
+  Entonces, por el Teorema de Factorización de Fisher, tenemos que $S$ es suficiente para $\theta$. Veamos ahora su completitud: \\
+
+  Siguiendo con lo anterior:
+  $$
+  f_{\theta}(x_1, \ldots, x_n) = \frac{e^{-n\theta}\theta^{\sum_{i = 1}^{n} x_i}}{\prod_{i = 1}^{n} x_i!} = \frac{e^{-n\theta} e^{\ln(\theta) \sum x_i}}{\prod_{i = 1}^{n} x_i!} \implies
+  \begin{cases}
+    c(\theta)^n = e^{-n\theta} \\
+    \prod_{i = 1}^{n} h(x_i) = \prod_{i = 1}^{n} x_i! \\
+    q_1(\theta) = \ln(\theta) \\
+    T_1(\vec{x}) = \sum_{i = 1}^{n} x_i
+  \end{cases}
+  $$
+  Entonces, debemos ver que $ln(\theta)$ contiene un abierto  $(0, +\infty) \subset \mathbb{R}$, por lo tanto $s$ es completo para $\theta$.
+  Además, tomando el estadístico $T = \frac{1}{n} \sum_{i = 1}^{n}x_i$ tenemos que: 
+  $$E[T] = \frac{1}{n} \sum_{i = 1}^{n} E[X_i] = \frac{1}{n} \cdot n\theta = \theta \implies \text{ T es centrado para } \theta \implies $$
+  Tomando la función $h(x) = \frac{1}{n}\cdot x$ tenemos que: $$h(S) = \frac{1}{n} \sum_{i = 1}^{n} X_i = \frac{S}{n} \implies$$
+  Por el Teorema de Lehmann-Scheffé, $T = h(S)$ es el ECUMV para $\theta$.
+  \\
+  Si en lugar de haber tomado $d(\theta) = \theta$ hubieramos querido el estimador centrado uniformemente de mínima varianza para $d(\theta) = e^{-\theta}$ HAY QUE INSERTAR LO DE DIEGO
+}
+
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población que sigue una distribución exponencial con parámetro $\theta$, queremos encontrar el estimador centrado uniformemente de mínima varianza para $d(\theta) = \theta$. \\
+  $$X \sim Exponencial(\theta) \implies f(x|\theta) = \theta e^{-\theta x} \implies f(x_1, \ldots, x_n | \theta) = \theta^n e^{-\theta \sum_{i = 1}^{n} x_i}$$
+  Por el Teorema de Factorización de Fisher, $S = \sum_{i = 1}^{n} X_i$ es suficiente para $\theta$. Veamos ahora su completitud: \\
+  Como se sigue una distribución exponencial, podemos ver que pertenece a una familia exponencial uniparamétrica: 
+  $$f(x_1, \ldots, x_n | \theta) = \theta^n e^{-\theta \sum_{i = 1}^{n} x_i} \implies \begin{cases} c(\theta)^n = \theta^n \\ h(\vec{x}) = 1 \\ q_1(\theta) = -\theta \\ T_1(\vec{x}) = \sum_{i = 1}^{n} x_i \end{cases}$$
+  Por lo que evidentemente en la imagen de la función $q_1(\theta) = -\theta$ tiene un abierto en su imagen por lo que el estadístico $S$ es completo para $\theta$. \\
+  Por último, sabemos que $\bar{X} = \frac{S}{n} \implies E[\bar{X}] = \frac{1}{\theta} \implies \bar{X}$ es centrado para $\frac{1}{\theta}$ y por el Teorema de Lehmann-Scheffé, $\bar{X}$ es el ECUMV para $\frac{1}{\theta}$.\\
+  Pero nosotros lo que queríamos es un estimador centrado para $\theta$. Por lo que puede parecer intuitivo pensar que el estadístico que podría estar centrado para $\theta$ es $\frac{1}{\bar{X}}$: 
+  $$E[\frac{1}{\bar{X}}] = n \cdot E[\frac{1}{S}] = n \cdot E[\frac{1}{\sum_{i = 1}^{n}X_i}] = n \cdot \frac{n-1}{\theta} \implies S' = \frac{n(n-1)}{\sum_{i = 1}^{n}X_i}$$
+  Por lo que $S'$ es el ECUMV para $\theta$
+}
+
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población que sigue una distribución $Bernouilli(\theta)$, busquemos cual es el estimador centrado uniformemente de mínima varianza para $d_1(\theta) = \theta$ y para $d_2(\theta) = \theta(1 - \theta)$: \\
+  $$X \sim Bernouilli(\theta) \implies f(x|\theta) = \theta^x(1 - \theta)^{1-x} \implies f(x_1, \ldots, x_n | \theta) = \theta^{\sum_{i = 1}^{n} x_i}(1 - \theta)^{n - \sum_{i = 1}^{n} x_i}$$
+  Por el Teorema de Factorización de Fisher, $S = \sum_{i = 1}^{n} X_i$ es suficiente para $\theta$. Veamos ahora su completitud: \\
+  $$f(x_1, \ldots, x_n | \theta) = \theta^{\sum_{i = 1}^{n} x_i}(1 - \theta)^{n - \sum_{i = 1}^{n} x_i} = (1 - \theta)^n \cdot e^{\sum x_i \cdot ln(\frac{\theta}{1 - \theta})} \implies \begin{cases}
+    c(\theta)^n = (1 - \theta)^n \\
+    h(\vec{x}) = 1 \\
+    q_1(\theta) = ln(\frac{\theta}{1 - \theta}) \\
+    T_1(\vec{x}) = \sum_{i = 1}^{n} x_i
+  \end{cases}$$
+  Por lo que evidentemente en la imagen de la función $q_1(\theta) = ln(\frac{\theta}{1 - \theta})$ tiene un abierto en su imagen por lo que el estadístico $S = \sum_{i = 1}^{n} X_i$ es completo para $\theta$.
+  \begin{enumerate}
+    \item Primero veamos el caso para $d_1(\theta) = \theta$: Sabemos que 
+    
+  \end{enumerate}
+}
 
 \section*{Cota para la varianza de un estimador}
 Consideremos $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}}$ modelo estadístico uniparamétrico contínuo (o discreto) y sea ( $X_{1}, \cdots X_{n}$ ) muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$ siendo $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)$ su función de densidad (o de masa). Supongamos que se verifican las siguientes condiciones de regularidad:\\

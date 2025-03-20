@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  17 MAR 2025 13:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.17)  20 MAR 2025 14:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2027,12 +2027,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--21
 [47]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 41.
+(mdframed)              on input line 42.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41   \vspace
+l.42   \vspace
               {-\topsep} % Removes the default vertical spacing
 Underfull \hbox (badness 10000) in paragraph at lines 55--55
 
@@ -2280,21 +2280,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--364
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+
+ []
+
+
 
 [57]
+Underfull \hbox (badness 10000) in paragraph at lines 407--407
+
+ []
+
+
 
 [58]
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
+
+ []
+
+
 
 [59]
 
 [60]
-Overfull \hbox (60.05666pt too wide) in paragraph at lines 508--509
+
+[61]
+
+[62]
+Overfull \hbox (60.05666pt too wide) in paragraph at lines 566--567
 \OT1/cmr/m/n/10.95 spon-di-entes a un m^^Saximo de $\OML/cmm/m/it/10.95 f[]$\OT1/cmr/m/n/10.95 , es de-cir aque-l-las en las que la ma-triz hes-siana $\OML/cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 = [][]$
  []
 
 ))
 
-[61] (main.aux)
+[63] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2303,17 +2337,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: AB86F024185C75D665AC1C035966E951;3999.
  ) 
 Here is how much of TeX's memory you used:
- 46813 strings out of 473530
- 1088108 string characters out of 5714794
+ 46820 strings out of 473530
+ 1088193 string characters out of 5714794
  1735611 words of memory out of 5000000
- 68931 multiletter control sequences out of 15000+600000
+ 68935 multiletter control sequences out of 15000+600000
  575653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,15n,112p,1034b,2241s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (62 pages, 902056 bytes).
+Output written on main.pdf (64 pages, 911361 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
- 265 named destinations out of 1000 (max. 500000)
+ 786 PDF objects out of 1000 (max. 8388607)
+ 268 named destinations out of 1000 (max. 500000)
  330 words of extra memory for PDF output out of 10000 (max. 10000000)
 
