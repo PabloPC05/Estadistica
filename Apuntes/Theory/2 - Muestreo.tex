@@ -966,12 +966,12 @@ donde \( X \sim \chi^2_k \).
 Demuéstrese que para una m.a.s. de tamaño $n$ tales que $$P(X = x_i) = p_i \forall i \in \N$$ se cumple que la distribución del estadístico ordenado $X_{(k)}$ es discreta y viene dada por:
 $$P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j} (F(x_j))^j(1-F(x_j))^{n-j}$$
 \\
-$$P(X_{(k)} = x_i) = \sum_{j = k}^{n} \binom{n}{j}[(F(x_j))^j(1 - F(x_i))^{n-j} - F(x_{i-1})^j(1 - F(x_{i-1}))^{n-j}]$$
+$$P(X_{(k)} = x_i) = \sum_{j = k}^{n} \binom{n}{j} \left[(F(x_j))^j(1 - F(x_i))^{n-j} - F(x_{i-1})^j(1 - F(x_{i-1}))^{n-j}\right] $$
 \end{problem}
 \begin{sol}
 	Sea una m.a.s. $\left(X_1, X_2, \ldots, X_n\right)$. \\Sea entonces el conjunto de variables aleatorias $$I_j = \begin{cases} 1, \quad \text{si } X_j \leq x \\ 0, \quad \text{si } X_j > x \end{cases} \implies I_j \sim Bernouilli$$ con una probabilidad $P(I_j = 1) = P(X_j \leq x) = F_j(x)$\\ Al ser variables aleatorias independientes con distirbución Bernouilli, se cumple que $$\sum_{j = 1}^{n} I_j = S \sim Bin(n, F(x))$$\\
 	Nos piden calcular que $P(X_{(k)} \leq x_i)$, lo cual es equivalente a que nos pregunten la probabilidad de que haya al menos $k$ valores menores o iguales a $x_i$: $P(S \geq k)$. Por lo que podemos escribir:
-	$$P(S \geq k) = P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j}(F(X_i))^j(1 - F(X_i))^{n-j}$$
+	$$P(S \geq k) = P(X_{(k)} \leq x_i) = \sum_{j = k}^{n} \binom{n}{j}(F(x_i))^j(1 - F(x_i))^{n-j}$$
 	Finalmente, nos queda sólo calcular la probabilidad de que $P(X_{(k)} = x_i)$ pero esto es igual a hacer:
 	$$P(X_{(k)} = x_i) = P(X_{(k)} \leq x_i) - P(X_{(k)} \leq x_{i-1})$$
 \end{sol}
