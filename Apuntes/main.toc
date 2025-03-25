@@ -14,10 +14,10 @@
 \contentsline {subsection}{\numberline {3.3}Estadístico minimal suficiente}{25}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Teorema de caracterización de estadísticos minimales suficientes}{26}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Familia exponencial $k$-paramétrica}{28}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Estadísticos Ancilarios y Completos}{30}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Principios de reducción de datos}{39}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Ejercicios}{40}{subsection.3.8}%
-\contentsline {section}{\numberline {4}Estimación Puntual Paramétrica}{47}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Estimadores Bayesianos}{49}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Criterios de comparación de estimadores}{53}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Cota para la varianza de un estimador}{61}{subsection.4.3}%
+\contentsline {subsection}{\numberline {3.6}Estadísticos Ancilarios y Completos}{31}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Principios de reducción de datos}{40}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Ejercicios}{41}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Estimación Puntual Paramétrica}{48}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Estimadores Bayesianos}{50}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Criterios de comparación de estimadores}{54}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Cota para la varianza de un estimador}{62}{subsection.4.3}%

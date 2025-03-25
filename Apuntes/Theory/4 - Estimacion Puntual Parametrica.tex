@@ -536,11 +536,7 @@ $$
     d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right] \\
     \left|d^{\prime}(\theta)\right| \leq E_{\theta}\left[\left|T \frac{\partial}{\partial \theta} \log f_{\theta}\right|\right] \leq \sqrt{E_{\theta}\left[T^{2}\right] E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]}<\infty \text { (desigualdad de Cauchy-Swartz) }
   \end{gathered}
-$$ 
-\end{proof}
-
-
-\section*{Cota para la varianza de un estimador (continuación)}
+$$
 Además, $E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=0$ y por lo tanto,\\
 $V_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]=I_{n}(\theta)$\\
 En efecto, $0=\int_{x^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=\int_{x^{n}} \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$
@@ -562,38 +558,47 @@ con igualdad si y sólo si $\rho_{\theta}^{2}\left(T, \frac{\partial}{\partial
 y sólo si existe una función $k(\theta)$ tal que
 $P_{\theta}\left(T=d(\theta)+k(\theta) \frac{\partial}{\partial \theta}
   f_{\theta}\right)=1$
-
-\section*{Cota para la varianza de un estimador (continuación)}
 En efecto, si $T \stackrel{\text { c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, entonces $d(\theta)=E_{\theta}[T]=a y$
 
 $$
   d^{\prime}(\theta)=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right]=E_{\theta}\left[a \frac{\partial}{\partial \theta} \log f_{\theta}+b\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]=b I_{n}(\theta),
 $$
 
-y $b=\frac{d^{\prime}(\theta)}{l_{n}(\theta)}=k(\theta)$\\ Proposición 2 Bajo
-las suposiciones anteriores, si T es un estadístico tal que
-$E_{\theta}[T]=d(\theta)$ y
-$V_{\theta}(T)=\frac{d^{\prime}(\theta)^{2}}{l_{n}(\theta)}$, entonces $T$ es
-ECUMV para d $(\theta)$
+y $b=\frac{d^{\prime}(\theta)}{l_{n}(\theta)}=k(\theta)$\\
+\end{proof}
 
-Proposición 3 Bajo las suposiciones anteriores, si ( $X_{1}, \cdots X_{n}$ ) es
+
+\begin{proposición}
+Bajo las suposiciones anteriores, si T es un estadístico tal que
+$E_{\theta}[T]=d(\theta)$ y $V_{\theta}(T)=\frac{d^{\prime}(\theta)^{2}}{l_{n} \theta)}$, entonces $T$ es ECUMV para d $(\theta)$
+\end{proposición}
+
+\begin{proposición}
+Bajo las suposiciones anteriores, si ( $X_{1}, \cdots X_{n}$ ) es
 m.a.s. (n) de $\left\{F_{\theta}, \theta \in \Theta\right\}$, entonces
 $I_{n}(\theta)=n I_{1}(\theta)$ Indicación: $f_{\theta}\left(x_{1}, \cdots
-  x_{n}\right)=\prod_{i=1}^{n} f_{\theta}\left(x_{i}\right)$
+  x_{n}\right)=\prod_{i=1}^{n} f_{\theta}\left(x_{i}\right)$ 
+\end{proposición}
 
-\section*{Cota para la varianza de un estimador (continuación)}
-Proposición 4 Bajo las suposiciones anteriores, si la distribución de $X$ pertenece a la familia exponencial uniparamétrica, es decir, $f_{\theta}(x)=c(\theta) h(x) e^{q_{1}(\theta) T_{1}(x)}$, con $q_{1}^{\prime}(\theta)$ no nula, entonces el estadístico $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(X_{i}\right)$ alcanza la cota de FCR para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$
+\begin{proposición}
+Bajo las suposiciones anteriores, si la distribución de $X$ pertenece a la familia exponencial uniparamétrica, es decir, $f_{\theta}(x)=c(\theta) h(x) e^{q_{1}(\theta) T_{1}(x)}$, con $q_{1}^{\prime}(\theta)$ no nula, entonces el estadístico $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(X_{i}\right)$ alcanza la cota de FCR para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$
+\end{proposición}
 
-\section*{Demostración}
+\begin{proof}
 $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) e^{q_{1}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)}$\\
 $\frac{\partial}{\partial \theta} \log f_{\theta}=n \frac{c^{\prime}(\theta)}{c(\theta)}+q_{1}^{\prime}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$\\
 $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)=a(\theta)+b(\theta) \frac{\partial}{\partial \theta} \log f_{\theta}, a(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}, b(\theta)=\frac{1}{n q_{1}^{\prime}(\theta)}$\\
 $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$ es centrado para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$ y alcanza la cota
 
-\section*{Cota para la varianza de un estimador (continuación)}
-Ejercicio Si $X \sim \operatorname{Bin}(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$
+\end{proof}
 
-Ejercicio Si se cumplen las condiciones de regularidad y además\\ (1)
+
+\ejemplo{
+Si $X \sim \operatorname{Bin}(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$\\
+}
+
+\ejemplo{
+Si se cumplen las condiciones de regularidad y además\\ (1)
 $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n} y \forall \theta \in
   \Theta, \exists \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1},
   \cdots, x_{n}\right)$\\ (2) $\int_{\chi^{n}} \frac{\partial^{2}}{\partial
@@ -605,15 +610,18 @@ Entonces, $I_{n}(\theta)=-E\left[\frac{\partial^{2}}{\partial \theta^{2}} \log
 $\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots,
   x_{n}\right)=\frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots,
   x_{n}\right) \frac{1}{f_{\theta}\left(x_{1}, \cdots, x_{n}\right)}$
+}
 
-\section*{Cota para la varianza de un estimador}
- (continuación)\section*{Estimadores eficientes}
+
+\begin{definición} [Estimador Eficiente]
 Diremos que un estimador es eficiente para $d(\theta)$ si es centrado para $d(\theta)$ y su varianza alcanza la cota de FCR\\
 En general, se llama eficiencia de un estimador centrado de $d(\theta)$ a
 
 $$
   e f(T, d(\theta))=\frac{d^{\prime}(\theta)^{2}}{I_{n}(\theta) V_{\theta}(T)} \leq 1
 $$
+\end{definición}
+
 
 \section*{Métodos de construcción de estimadores}
 Método de los momentos\\
