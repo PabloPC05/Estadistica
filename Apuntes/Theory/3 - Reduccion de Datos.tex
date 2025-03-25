@@ -186,7 +186,7 @@
 \end{definición}
 
 \begin{teorema}[Teorema de caracterización de estadísticos minimales (Lehmann-Scheffé)]
-  A cada clase de equivalencia anterior le asignamos un valor $t$ y definimos un estadístico $T = T(X_1, \ldots, X_n)$ tal que $\frac{f_{\theta}(x_1, \ldots, x_n)}{f_{\theta}(y_1, \ldots, y_n)}$ es independiete de $\theta$ cuando $T(x_1, \ldots, x_n) = T(y_1, \ldots, y_n) = t$. Entonces, $T$ es minimal suficiente para $\theta$.
+  A cada clase de equivalencia anterior le asignamos un valor $t$ y definimos un estadístico $T = T(X_1, \ldots, X_n)$ tal que $\frac{f_{\theta}(x_1, \ldots, x_n)}{f_{\theta}(y_1, \ldots, y_n)}$ es independiente de $\theta$ cuando $T(x_1, \ldots, x_n) = T(y_1, \ldots, y_n) = t$. Entonces, $T$ es minimal suficiente para $\theta$.
 \end{teorema}
 
 
@@ -230,15 +230,73 @@
   donde: 
   \begin{itemize}
     \item $c(\theta)$ es una función sólo de $\theta$
-    \item $h(x)$ es una función sólo de $x$
+    \item $h(x)$ es una función no negativa sólo de $x$
     \item $q_j(\theta)$ son funciones de $\theta$, conocidas como \underline{parámetros naturales}
     \item $T_j(x)$ son funciones de $x$ llamadas \underline{estadísticos naturales}
     \item $k$ es el número de parámetros de la familia
     \item $\theta$ es el parámetro de la familia
   \end{itemize}
   Esto implica a su vez, que si tenemos una m.a.s., la función de densidad conjunta se puede expresar como: 
-  $$f_{\theta}(x_1, \ldots, x_n) = \prod_{i = 1}^{n}f_{\theta(x_i)} = (c(\theta))^n \prod_{i = 1}^{n}h(x_i)e^{\sum_{j = 1}^{k}q_j(\theta)T_j(x_i)} = (c(\theta))^n \cdot h(x_1, \ldots, x_n) \cdot e^{\sum_{j = 1}^{k}q_j(\theta)(\sum_{i = 1}^{n}T_j(x_i))}$$
+  $$f_{\theta}(x_1, \ldots, x_n) = \prod_{i = 1}^{n}f_{\theta(x_i)} = (c(\theta))^n \prod_{i = 1}^{n}h(x_i)e^{\sum_{j = 1}^{k}q_j(\theta)T_j(x_i)}$$
+  $$ = (c(\theta))^n \cdot h(x_1, \ldots, x_n) \cdot e^{\sum_{j = 1}^{k}q_j(\theta)(\sum_{i = 1}^{n}T_j(x_i))}$$
 \end{definición}
+
+\textbf{Ejemplos de familias exponenciales:}\\
+Entre otras, podemos encontrar las siguientes familias exponenciales:
+\begin{multicols}{2}
+	\begin{enumerate}
+		\item Normal
+		\item Poisson
+		\item Bernoulli
+		\item Exponencial
+		\item Geométrica
+		\item Chi-cuadrado
+	\end{enumerate}
+	\end{multicols}
+Cabe notar que existen distribuciones que son familias exponenciales, pero solamente cuando ciertos parámetros son fijos y se conocen. Por ejemplo:
+\begin{enumerate}
+	\item Binomial (cuando el numero de ensayos $n$ es fijo)
+	\item Multinomial (cuando el número de ensayos $n$ es fijo)
+	\item Binomial negativa (cuando el número de fallos $r$ es fijo)
+	\item Laplace (cuando la media es conocida)
+\end{enumerate}
+Ejemplos de distribuciones comunes que no son familias exponenciales son la t de Student, la mayoría de las distribuciones de mezcla e incluso la familia de distribuciones uniformes cuando los límites no son fijos.
+
+Es importante destacar que el soporte de $f_{\theta}(x)$ no puede depender de $\theta$ en una familia exponencial $k$-paramétrica. Esto se debe a que los indicadores no se pueden particionar en una parte que dependa de $\theta$ y otra que no, como por ejemplo ocurre con la distribución binomial con $n$ desconocido, pues el soporte de la distribución depende de $n$.\\
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increases row height for readability
+    \NiceMatrixOptions{cell-space-limits = 1pt} % Adjusts cell padding for equations
+    \begin{NiceTabular}{lcccc}[
+        hvlines, % Draws horizontal and vertical lines
+        code-before = {\rowcolor{gray!30} 1}, % Applies light gray to the first row
+    ]
+        \textbf{Distribución} & \textbf{Parámetros} & \textbf{Parámetros naturales} & \textbf{Estadísticos naturales} \\ 
+        
+        Normal    & \( (\mu, \sigma^2) \) & \( {\displaystyle {\begin{bmatrix}{\dfrac {\mu }{\sigma ^{2}}}\\[1ex]-{\dfrac {1}{2\sigma ^{2}}}\end{bmatrix}}} \) & \( {\displaystyle {\begin{bmatrix}\sum_{i = 1}^{n}X_i\\\sum_{i = 1}^{n}X_i^{2}\end{bmatrix}}} \) \\ 
+
+		Normal &  \(\mu\) & \({\displaystyle {\frac {\mu }{\sigma }}}\) & \(\frac{1}{\sigma} \sum_{i = 1}^{n}X_i\) \\
+
+		Poisson & \(\lambda\) & \({\displaystyle \log \lambda }\) & \({\displaystyle \sum_{i = 1}^{n}X_i}\) \\
+
+		Bernoulli & \(p\) & \({\displaystyle \log \left({\frac {p}{1-p}}\right)}\) & \({\displaystyle \sum_{i = 1}^{n}X_i}\) \\
+
+		Exponencial & \(\lambda\) & \({\displaystyle -\lambda }\) & \({\displaystyle \sum_{i = 1}^{n}X_i}\) \\
+
+		Binomial & \(p\) & \({\displaystyle \log \left({\frac {p}{1-p}}\right)}\) & \({\displaystyle \sum_{i = 1}^{n}X_i}\) \\
+
+		Binomial negativa & \(p\) & \(\log(1-p)\) & \({\displaystyle \sum_{i = 1}^{n}X_i}\) \\
+
+		Chi-cuadrado & \(k\) & \(\frac {k}{2}-1\) & \(\log \left(\sum_{i = 1}^{n}X_i\right)\) \\
+        
+		Gamma & \((\alpha, \beta)\) & \({\displaystyle {\begin{bmatrix}\alpha -1\\-\beta \end{bmatrix}}}\) & \({\displaystyle {\begin{bmatrix}\log \left(\sum_{i = 1}^{n}X_i\right) \\ \sum_{i = 1}^{n}X_i \end{bmatrix}}}\) \\
+
+		Beta & \((\alpha, \beta)\) & \({\displaystyle {\begin{bmatrix}\alpha -1\\\beta -1\end{bmatrix}}}\) & \({\displaystyle {\begin{bmatrix}\log \left(\sum_{i = 1}^{n}X_i\right) \\\log \left(1-\sum_{i = 1}^{n}X_i\right) \end{bmatrix}}}\) \\
+
+    \end{NiceTabular}
+    \label{tabla:distribuciones}
+\end{table}
 
 \begin{teorema}
   Sean $\theta_1, \ldots, \theta_k \in \Theta \subset \mathbb{R}^{\ell}$ tales que los vectores $c_r = (q_1(\theta_r), \ldots, q_k(\theta_r))$, $r = 1, \ldots, k$ son linealmente independientes, entonces el estadístico natural suficiente de la familia exponencial $k$-paramétrica es minimal
@@ -251,6 +309,10 @@
   $$\iff \sum_{j = 1}^{k}q_j(\theta)\left(\sum_{i = 1}^{n}[T_j(x_i) - T_j(y_i)]\right) = 0 \iff \sum_{i = 1}^{n}[T_j(x_i) - T_j(y_i)] = 0, \ \forall j = 1, \ldots, k$$
   Lo cual implica que el sistema homogéneo $\sum_{i = 1}^{n}[T_j(x_i) - T_j(y_i)] = 0, \ \forall j = 1, \ldots, k$ sólo admite la solución $T_j(x_i) - T_j(y_i) = 0, \ \forall j = 1, \ldots, k$ $\implies (T_1(x_1), \ldots, T_k(x_n))$ es minimal
 \end{proof}
+
+\begin{observación}
+	El estadístico natural de una distribución $X$ perteneciente a una familia exponencial $k$-paramétrica con $k=1$ nunca es minimal.
+\end{observación}
 
 \ejemplo{
   Veamos si el estadístico $T = \left(\sum_{i = 1}^{n}X_i, \sum_{i = 1}^{n}X_i^2\right)$ es minimal suficiente para $\theta = (\mu, \sigma)$ si $X \sim N(\mu, \sigma)$ con $\mu$ y $\sigma$ desconocidas.\\
@@ -290,16 +352,16 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 
   
 \subsection{Estadísticos Ancilarios y Completos}
-\begin{definición}
+\begin{definición} [Estadístico Ancilario]
 	Un estadístico $U(X_1, \ldots, X_n)$ es ancilario para $\theta$ si su distribución en la muestra es independiente de $\theta$
 \end{definición}
 
 \ejemplo{
-	Sea una población que sigue una distribucion normal $N(\theta. \sigma_0)$ con $\sigma_0$ conocida, tomemos una m.a.s. de tamaño $n$ tal que $U(X_1, \ldots, X_n) = X_1 - X-2 \sim  N(0, \sqrt{2\sigma_0})$ que no depende de $\theta$ por lo que $U$ es un estadístico ancilario para $\theta$.
+	Sea una población que sigue una distribucion normal $N(\theta, \sigma_0)$ con $\sigma_0$ conocida, tomemos una m.a.s. de tamaño $n$ tal que $U(X_1, \ldots, X_n) = X_1 - X-2 \sim  N(0, \sqrt{2\sigma_0})$ que no depende de $\theta$ por lo que $U$ es un estadístico ancilario para $\theta$.
 }
 
-\begin{definición}
-	La familia $\mathcal{P} = \{f_{\theta}(x_1, \ldots, x_n) : \theta \in \Theta \subset \mathbb{R}^{\mathcal{l}}\}$ es completa si para cualquier función real $g(X_1, \ldots, x_n$) tal que $E_{\theta}[g(X_1, \ldots, X_n)] = 0, \ \forall \theta \in \Theta \implies g(X_1, \ldots, X_n) \stackrel{c.s.}{=} 0$
+\begin{definición} [Familia Completa]
+	La familia $\mathcal{P} = \{f_{\theta}(x_1, \ldots, x_n) : \theta \in \Theta \subset \mathbb{R}^{\ell}\}$ es completa si para cualquier función real $g(X_1, \ldots, X_n$) tal que $E_{\theta}[g(X_1, \ldots, X_n)] = 0, \ \forall \theta \in \Theta \implies g(X_1, \ldots, X_n) \stackrel{c.s.}{=} 0$
 \end{definición}
 
 \ejemplo{
@@ -327,9 +389,9 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 		P_{\theta}(X = 3) = 3 - 3\theta
 	\end{cases}$
 	Tomemos el estadístico $T_1(x_1, \ldots, x_n) = x_1$ y comprobemos si es completo: \\
-	Saea $\varphi$ función real que actúa sobre el soporte $D_x$, entonces:
-	$$E_{\theta}[\varphi(T_1)] = \varphi(1) \cdot P(X = 1) + \varphi(2) \cdot P(X = 2) + \varphi(3) \cdot P(X = 3) = $$
-	$$ = \varphi(1)(\theta - 3) + \varphi(2)(2\theta - 1) + \varphi(3)(3 - 3\theta) = \theta(\varphi(1) + 2\varphi(2) - 3\varphi(3)) - 3\varphi(1) + \varphi(2) + 3\varphi(3) = $$
+	Sea $\varphi$ función real que actúa sobre el soporte $D_x$, entonces:
+	$$E_{\theta}[\varphi(T_1)] = \varphi(1) \cdot P(X = 1) + \varphi(2) \cdot P(X = 2) + \varphi(3) \cdot P(X = 3)$$
+	$$ = \varphi(1)(\theta - 3) + \varphi(2)(2\theta - 1) + \varphi(3)(3 - 3\theta) = \theta(\varphi(1) + 2\varphi(2) - 3\varphi(3)) - 3\varphi(1) - \varphi(2) + 3\varphi(3) = 0$$
 	Pero este sistema de ecuaciones es un sistema compatible indeterminado, por lo que no tiene una única solución y por tanto no tiene porqué cumplirse que $\varphi(T_1) = 0$ c.s. $\implies T_1$ no es completo.
 }
 
@@ -354,10 +416,10 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 }
 
 \ejemplo{
-	ea $X$ una variable aleatoria discreta con dominio \( D_X = \{0\} \cup \mathbb{N} \). Queremos comprobar si $X$ es completa. Los valores de probabilidad vienen dados por:
+	Sea $X$ una variable aleatoria discreta con dominio \( D_X = \{-1\} \cup \{0\} \cup \mathbb{N} \). Queremos comprobar si $X$ es completa. Los valores de probabilidad vienen dados por:
 
 	\[
-	P(X = -1) = \theta, \quad P(X = x) = \theta^x(1-\theta)^2, \quad \forall x \in \mathbb{N}
+	P(X = -1) = \theta, \quad P(X = x) = \theta^x(1-\theta)^2, \quad \forall x \in \{0\} \cup \mathbb{N}
 	\]
 	
 	Por definición, verificamos si \(E[\varphi(X)] = 0\) implica \(\varphi(X) = 0\) para toda función medible. Calculamos la esperanza:
@@ -382,14 +444,15 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 	\varphi(-1)\theta + (1-\theta)^2 \sum_{k = 0}^{+\infty} \varphi(k) \theta^k = 0, \quad \forall \theta
 	\]
 	
-	Esta ecuación es un **polinomio en \(\theta\)**. Para que se cumpla para todo \(\theta\), cada coeficiente debe anularse individualmente. Analizando los coeficientes del desarrollo en serie de potencias:
+	Esta ecuación es un polinomio en \(\theta\). Para que se cumpla para todo \(\theta\), cada coeficiente debe anularse individualmente. Analizando los coeficientes del desarrollo en serie de potencias:
 	
-	1. **Coeficiente de \(\theta^{-1}\)**: No hay términos de este tipo, por lo que no impone restricciones.
-	2. **Coeficiente de \(\theta^0\)**:
+	1. Coeficiente de \(\theta^{-1}\): No hay términos de este tipo, por lo que no impone restricciones.
+
+	2. Coeficiente de \(\theta^0\):
 	   \[
 	   (1 - \theta)^2 \varphi(0) = 0 \implies \varphi(0) = 0
 	   \]
-	3. **Coeficiente de \(\theta^1\)**:
+	3. Coeficiente de \(\theta^1\):
 	   \[
 	   \varphi(-1) + (1-\theta)^2 \varphi(1) = 0
 	   \]
@@ -399,26 +462,25 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 	   \varphi(-1) + 0 = 0 \implies \varphi(-1) = 0
 	   \]
 	
-	4. **Para \( k \geq 1 \), los coeficientes del polinomio también deben anularse:**
+	4. Para \( k \geq 1 \), los coeficientes del polinomio también deben anularse:
 	   \[
 	   \varphi(k) = 0, \quad \forall k \in \mathbb{N}
 	   \]
 	
-	Por lo tanto, se concluye que **la única solución posible es la trivial**:
+	Por lo tanto, se concluye que la única solución posible es la trivial:
 	
 	\[
 	\varphi(k) = 0, \quad \forall k \in D_X
 	\]
 	
-	**Conclusión:** La variable aleatoria \( X \) es **completa**.
+	Conclusión: La variable aleatoria \( X \) es completa.
 	
 }
 
-\begin{definición}
+\begin{definición} [Estadístico Completo]
 	Un estadístico $T$ (no necesariamente suficiente) se dice completo, cuando: 
-	$$\forall g \text{-medible(integrable) tal que } E_{\theta}[\varphi(t)] = 0 \implies g(t) \stackrel{c.s.}{=} 0$$
-	Es decir, 
-	Se dice que un estadístico es completo si no existe función $g(x_1, \ldots, x_n)$ tal que $E_{\theta}[g(T)] = 0$ a menos rque $g(X) \stackrel{c.s.}{=} 0$
+	$$\forall g \text{-medible(integrable) tal que } E_{\theta}[g(T)] = 0 \implies g(T) \stackrel{c.s.}{=} 0$$
+	Es decir, se dice que un estadístico es completo si no existe función $g(x_1, \ldots, x_n)$ tal que $E_{\theta}[g(T)] = 0$ a menos rque $g(X) \stackrel{c.s.}{=} 0$
 	\\ Alternativamente, también se puede decir, que el estadístico es completo si y solo sí su distribución en el muestreo es una familia de distribuciones de probabilidad completa
 \end{definición}
 
@@ -482,12 +544,12 @@ Por lo tanto, \( g(T) = 0 \) casi seguramente, lo que implica que \( T \) es un 
 \ejemplo{
 	Veamos si dado $X \sim N(\theta, \theta)$ el estadístico $T = \left(\sum_{i = 1}^{n}X_i, \sum_{i = 1}^{n}X_i^2\right)$ es completo:\\
 	Por las propiedades de las esperanzas tenemos que:
-	$$\sum_{i = 1}^{n}E[X_i] = n\theta, \sum_{i = 1}^{n}E[X_i^2] = n(E[X_i^2]) = n(\theta + \theta^2)$$
+	$$\sum_{i = 1}^{n}E[X_i] = n\theta, \quad \sum_{i = 1}^{n}E[X_i^2] = n(E[X_i^2]) = n(\theta + \theta^2)$$
 	Sea $h(t) = (2(\sum_{i = 1}^{n}X_i)^2 - (n + 1)\sum_{i = 1}^{n}X_i^2)$, entonces:
-	$$E_{\theta}[h(T)] = 2E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] - (n+1)E[\sum_{i = 1}^{n}X_i^2] = 2E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] - (n+1)\sum_{i = 1}^{n}E[X_i^2] $$
+	$$E_{\theta}[h(T)] = 2E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] - (n+1)E\left[\sum_{i = 1}^{n}X_i^2\right] = 2E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] - (n+1)\sum_{i = 1}^{n}E[X_i^2] $$
 	Recordemos que $Var(Y) = E[Y^2] - (E[Y])^2$, entonces:
-	$$E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] = Var\left(\sum_{i = 1}^{n}X_i\right) + (E\left[\sum_{i = 1}^{n}X_i\right])^2 = n\theta^2 + n^2\theta^2 = n\theta^2(n+1)$$	
-	$$E[X_i^2] = Var(X_i) + (E[X_i])^2 = \theta^2 + \theta^2 = 2\theta^2 \implies E_{\theta}[\sum_{i = 1}^{n}X_i^2] = 2n\theta^2$$
+	$$E\left[\left(\sum_{i = 1}^{n}X_i \right)^2\right] = Var\left(\sum_{i = 1}^{n}X_i\right) + \left(E\left[\sum_{i = 1}^{n}X_i\right]\right)^2 = n\theta^2 + n^2\theta^2 = n\theta^2(n+1)$$	
+	$$E[X_i^2] = Var(X_i) + (E[X_i])^2 = \theta^2 + \theta^2 = 2\theta^2 \implies E_{\theta} \left[\sum_{i = 1}^{n}X_i^2\right] = 2n\theta^2$$
 	$$\implies E_{\theta}[h(T)] = 2n\theta^2(n+1) - (n+1)2n\theta^2 \implies E_{\theta}[h(T)] = 0, \ \forall \theta \in \Theta$$
 	Pero $h(T) = 2(\sum_{i = 1}^{n}X_i)^2 - (n + 1)\sum_{i = 1}^{n}X_i^2 \neq 0$ por lo que $T$ no es completo
 }
@@ -549,7 +611,7 @@ Por lo tanto, \( g(T) = 0 \) casi seguramente, lo que implica que \( T \) es un 
   
 
 \begin{teorema}	
-	El estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = 1}^{n}T_k(X_i))$ de la familia exponencial $k$-paramétrica, $\{f_{\theta}(x) = c(\theta)h(x)e^{\sum_{j = 1}^{k}q_j(\theta)T_j(x)}\}_{\theta \in \Theta \subset \mathbb{R}^{\mathcal{e}}}$, es completo si la imagen de la aplicación $q = (q_1(\theta), \ldots, q_k(\theta)): \Theta \to \mathbb{R}^k$ contiene un rectángulo abierto de $\mathbb{R}^k $ no trivial. 
+	El estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = 1}^{n}T_k(X_i))$ de la familia exponencial $k$-paramétrica $$\left\{f_{\theta}(x) = c(\theta)h(x)e^{\sum_{j = 1}^{k}q_j(\theta)T_j(x)}\right\}_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$$ es \textbf{completo} si la imagen de la aplicación $q = (q_1(\theta), \ldots, q_k(\theta)): \Theta \to \mathbb{R}^k$ contiene un rectángulo abierto de $\mathbb{R}^k $ no trivial. 
 \end{teorema}
 
 \ejemplo{
