@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1742903101.84022 "c:/Users/paufr/OneDrive/Escritorio/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742903107.98252 0
+["pdflatex"] 1742903926.71337 "c:/Users/paufr/OneDrive/Escritorio/Estadistica-1/Apuntes/main.tex" "main.pdf" "main" 1742903933.17075 0
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1742724407 85269 91ab854c05f02ecfc449dd78c7dd787d ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1737830965 12668 44c2b6835b068e2daf954ff2dc327054 ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740209314 10576 812161b7ddd5b677e374451c45e3e26a ""
@@ -338,13 +338,13 @@
   "Theory/1- Estadistica Descriptiva.tex" 1741860255 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
   "Theory/2 - Muestreo.tex" 1742049596 42741 a1c1d1da7f6ca6d87d8ddbaf61853ece ""
   "Theory/3 - Reduccion de Datos.tex" 1742902592 71862 595d3dec64af137074269e90f96bdcb8 ""
-  "Theory/4 - Estimacion Puntual Parametrica.tex" 1742903097 56702 275034f7278d394c1c73148277714e9f ""
+  "Theory/4 - Estimacion Puntual Parametrica.tex" 1742903918 56724 465160504e985c368ccbfbfa0d129391 ""
   "Theory/Theory.tex" 1742038937 452 1d0f3ae3a9973c1d665585c931604ff5 ""
   "c:/Users/paufr/OneDrive/Escritorio/Estadistica-1/Apuntes/main.tex" 1741860255 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1742903107 31803 77d0487105664ebcfa261ad39e93e6b7 "pdflatex"
-  "main.out" 1742903107 4260 0c306b5a685016d9d8ec1817abef40c1 "pdflatex"
+  "main.aux" 1742903932 32195 066f39b1608888973907a90ec625596b "pdflatex"
+  "main.out" 1742903932 4526 614722d20fd29a99ee71780545783c57 "pdflatex"
   "main.tex" 1741860255 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1742903107 2048 2159498c055f59fb748096ac4ca213ad "pdflatex"
+  "main.toc" 1742903932 2155 445eed75e82ff204620adeba7d5b7f45 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

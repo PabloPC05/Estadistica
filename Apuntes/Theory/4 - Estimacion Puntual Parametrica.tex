@@ -530,43 +530,43 @@ Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \su
 \end{teorema}
 
 \begin{proof}
-$\exists d^{\prime}(\theta)$ puesto que
-$$
-  \begin{gathered}
-    d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right] \\
-    \left|d^{\prime}(\theta)\right| \leq E_{\theta}\left[\left|T \frac{\partial}{\partial \theta} \log f_{\theta}\right|\right] \leq \sqrt{E_{\theta}\left[T^{2}\right] E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]}<\infty \text { (desigualdad de Cauchy-Swartz) }
-  \end{gathered}
-$$
-Además, $E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=0$ y por lo tanto,\\
-$V_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]=I_{n}(\theta)$\\
-En efecto, $0=\int_{x^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=\int_{x^{n}} \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$
+  $\exists d^{\prime}(\theta)$ puesto que
+  $$
+    \begin{gathered}
+      d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right] \\
+      \left|d^{\prime}(\theta)\right| \leq E_{\theta}\left[\left|T \frac{\partial}{\partial \theta} \log f_{\theta}\right|\right] \leq \sqrt{E_{\theta}\left[T^{2}\right] E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]}<\infty \text { (desigualdad de Cauchy-Swartz) }
+    \end{gathered}
+  $$
+  Además, $E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=0$ y por lo tanto,\\
+  $V_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]=E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)^{2}\right]=I_{n}(\theta)$\\
+  En efecto, $0=\int_{x^{n}} \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}=\int_{x^{n}} \frac{\partial}{\partial \theta} \log \left(f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right) f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$
 
-$$
-  =E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]
-$$
+  $$
+    =E_{\theta}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]
+  $$
 
-Entonces, $\operatorname{Cov}_{\theta}\left[T, \frac{\partial}{\partial \theta}
-    \log f_{\theta}\right]=E\left[T \frac{\partial}{\partial \theta} \log
-    f_{\theta}\right]=d^{\prime}(\theta)$, y como $\rho_{\theta}^{2}\left(T,
-  \frac{\partial}{\partial \theta} \log
-  f_{\theta}\right)=\frac{d^{\prime}(\theta)^{2}}{V_{\theta}(T)
-    V_{\theta}\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)} \leq
-  1$, se tiene que\\ $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta)$,
-con igualdad si y sólo si $\rho_{\theta}^{2}\left(T, \frac{\partial}{\partial
-    \theta} \log f_{\theta}\right)=1$, es decir, si y sólo si $T \stackrel{\text {
-      c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, es decir, si
-y sólo si existe una función $k(\theta)$ tal que
-$P_{\theta}\left(T=d(\theta)+k(\theta) \frac{\partial}{\partial \theta}
-  f_{\theta}\right)=1$
-En efecto, si $T \stackrel{\text { c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, entonces $d(\theta)=E_{\theta}[T]=a y$
+  Entonces, $\operatorname{Cov}_{\theta}\left[T, \frac{\partial}{\partial \theta}
+      \log f_{\theta}\right]=E\left[T \frac{\partial}{\partial \theta} \log
+      f_{\theta}\right]=d^{\prime}(\theta)$, y como $\rho_{\theta}^{2}\left(T,
+    \frac{\partial}{\partial \theta} \log
+    f_{\theta}\right)=\frac{d^{\prime}(\theta)^{2}}{V_{\theta}(T)
+      V_{\theta}\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)} \leq
+    1$, se tiene que\\ $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta)$,
+  con igualdad si y sólo si $\rho_{\theta}^{2}\left(T, \frac{\partial}{\partial
+      \theta} \log f_{\theta}\right)=1$, es decir, si y sólo si $T \stackrel{\text {
+        c.s. }}{=} a+b \frac{\partial}{\partial \theta} \log f_{\theta}$, es decir, si
+  y sólo si existe una función $k(\theta)$ tal que
+  $P_{\theta}\left(T=d(\theta)+k(\theta) \frac{\partial}{\partial \theta}
+    f_{\theta}\right)=1$ En efecto, si $T \stackrel{\text { c.s. }}{=} a+b
+    \frac{\partial}{\partial \theta} \log f_{\theta}$, entonces
+  $d(\theta)=E_{\theta}[T]=a y$
 
-$$
-  d^{\prime}(\theta)=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right]=E_{\theta}\left[a \frac{\partial}{\partial \theta} \log f_{\theta}+b\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]=b I_{n}(\theta),
-$$
+  $$
+    d^{\prime}(\theta)=E_{\theta}\left[T \frac{\partial}{\partial \theta} \log f_{\theta}\right]=E_{\theta}\left[a \frac{\partial}{\partial \theta} \log f_{\theta}+b\left(\frac{\partial}{\partial \theta} \log f_{\theta}\right)^{2}\right]=b I_{n}(\theta),
+  $$
 
-y $b=\frac{d^{\prime}(\theta)}{l_{n}(\theta)}=k(\theta)$\\
+  y $b=\frac{d^{\prime}(\theta)}{l_{n}(\theta)}=k(\theta)$\\
 \end{proof}
-
 
 \begin{proposición}
 Bajo las suposiciones anteriores, si T es un estadístico tal que
@@ -577,7 +577,7 @@ $E_{\theta}[T]=d(\theta)$ y $V_{\theta}(T)=\frac{d^{\prime}(\theta)^{2}}{l_{n} \
 Bajo las suposiciones anteriores, si ( $X_{1}, \cdots X_{n}$ ) es
 m.a.s. (n) de $\left\{F_{\theta}, \theta \in \Theta\right\}$, entonces
 $I_{n}(\theta)=n I_{1}(\theta)$ Indicación: $f_{\theta}\left(x_{1}, \cdots
-  x_{n}\right)=\prod_{i=1}^{n} f_{\theta}\left(x_{i}\right)$ 
+  x_{n}\right)=\prod_{i=1}^{n} f_{\theta}\left(x_{i}\right)$
 \end{proposición}
 
 \begin{proposición}
@@ -585,33 +585,30 @@ Bajo las suposiciones anteriores, si la distribución de $X$ pertenece a la fami
 \end{proposición}
 
 \begin{proof}
-$f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) e^{q_{1}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)}$\\
-$\frac{\partial}{\partial \theta} \log f_{\theta}=n \frac{c^{\prime}(\theta)}{c(\theta)}+q_{1}^{\prime}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$\\
-$\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)=a(\theta)+b(\theta) \frac{\partial}{\partial \theta} \log f_{\theta}, a(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}, b(\theta)=\frac{1}{n q_{1}^{\prime}(\theta)}$\\
-$\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$ es centrado para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$ y alcanza la cota
+  $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) e^{q_{1}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)}$\\
+  $\frac{\partial}{\partial \theta} \log f_{\theta}=n \frac{c^{\prime}(\theta)}{c(\theta)}+q_{1}^{\prime}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$\\
+  $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)=a(\theta)+b(\theta) \frac{\partial}{\partial \theta} \log f_{\theta}, a(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}, b(\theta)=\frac{1}{n q_{1}^{\prime}(\theta)}$\\
+  $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$ es centrado para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$ y alcanza la cota
 
 \end{proof}
 
-
 \ejemplo{
-Si $X \sim \operatorname{Bin}(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$\\
+  Si $X \sim \operatorname{Bin}(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$\\
 }
 
 \ejemplo{
-Si se cumplen las condiciones de regularidad y además\\ (1)
-$\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n} y \forall \theta \in
-  \Theta, \exists \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1},
-  \cdots, x_{n}\right)$\\ (2) $\int_{\chi^{n}} \frac{\partial^{2}}{\partial
-    \theta^{2}} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d
-  x_{n}=0$
+  Si se cumplen las condiciones de regularidad y además\\ (1)
+  $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n} y \forall \theta \in
+    \Theta, \exists \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1},
+    \cdots, x_{n}\right)$\\ (2) $\int_{\chi^{n}} \frac{\partial^{2}}{\partial
+      \theta^{2}} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d
+    x_{n}=0$
 
-Entonces, $I_{n}(\theta)=-E\left[\frac{\partial^{2}}{\partial \theta^{2}} \log
-    f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]$\\ Indicación:
-$\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots,
-  x_{n}\right)=\frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots,
-  x_{n}\right) \frac{1}{f_{\theta}\left(x_{1}, \cdots, x_{n}\right)}$
-}
-
+  Entonces, $I_{n}(\theta)=-E\left[\frac{\partial^{2}}{\partial \theta^{2}} \log
+      f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]$\\ Indicación:
+  $\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots,
+    x_{n}\right)=\frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots,
+    x_{n}\right) \frac{1}{f_{\theta}\left(x_{1}, \cdots, x_{n}\right)}$ }
 
 \begin{definición} [Estimador Eficiente]
 Diremos que un estimador es eficiente para $d(\theta)$ si es centrado para $d(\theta)$ y su varianza alcanza la cota de FCR\\
@@ -622,9 +619,8 @@ $$
 $$
 \end{definición}
 
-
-\section*{Métodos de construcción de estimadores}
-Método de los momentos\\
+\subsection{Métodos de construcción de estimadores}
+\textbf{Método de los momentos}\\
 Este método consiste en elegir como estimador de un momento poblacional su momento muestral asociado, es decir\\
 (1) El estimador por el método de los momentos del momento poblacional respecto al origen de orden $\mathrm{k}, \alpha_{k}=E\left[X^{k}\right]$, es $a_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k}$\\
 (2) El estimador por el método de los momentos del momento poblacional respecto a la media de orden k ,
@@ -633,12 +629,12 @@ $$
   \beta_{k}=E\left[\left(X-\alpha_{1}\right)^{k}\right], \text { es } b_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k}
 $$
 
-Ejercicio Si $X \sim \operatorname{Gamma}(a, p)$, calcular un estimador por el
-método de los momentos de $\theta=(a, p)$ basado en una m.a.s. ( $n$ )
+\ejemplo{
+  Si $X \sim \operatorname{Gamma}(a, p)$, calcular un estimador por el
+  método de los momentos de $\theta=(a, p)$ basado en una m.a.s. ( $n$ )
+}
 
-\section*{Métodos de construcción de estimadores}
-\section*{(continuación)}
-\section*{Método de máxima verosimilitud}
+\textbf{Método de máxima verosimilitud}\\
 Supongamos que una urna contiene 6 bolas entre blancas y negras, no todas del mismo color, pero se ignora cuantas hay de cada uno. Para tratar de adivinar la composición de la urna se permiten dos extracciones con reemplazamiento de la misma y resultó que ninguna de ellas fue blanca. Dar una estimación de la probabilidad $\theta$ de que una bola extraída aleatoriamente de dicha urna sea blanca
 
 $$
@@ -647,8 +643,7 @@ $$
 
 $T=X_{1}+X_{2} \equiv \mathrm{n}^{\circ}$ de blancas en las dos extracciones C.R. de la urna $\sim \operatorname{Bin}(2, \theta)$ y $f_{\theta}(t)=\binom{2}{t} \theta^{t}(1-\theta)^{2-t}, t=0,1,2$
 
-\section*{Métodos de construcción de estimadores}
- (continuación)\begin{center}
+\begin{center}
   \begin{tabular}{|l|l|l|l|l|l|}
     \hline
     $\theta$                       & $1 / 6$ & $2 / 6$ & $3 / 6$ & $4 / 6$ & $5 / 6$ \\
@@ -670,30 +665,52 @@ $$
 
 es el estimador de máxima verosimilitud (EMV)
 
-\section*{Métodos de construcción de estimadores}
- (continuación)Sea $\left(X_{1}, \cdots X_{n}\right)$ una muestra con $f_{\theta}\left(x_{1}, \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n} \mid \theta\right)$ función de densidad (o de masa), $\theta \in \Theta \subset \mathbb{R}^{\ell}$ Denotemos por $L\left(\theta \mid x_{1}, \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n} \mid \theta\right)$ a la función de verosimilitud de la muestra Un estimador $\hat{\theta}=\hat{\theta}\left(X_{1}, \cdots, X_{n}\right)$ se denomina estimador de máxima verosimilitud (EMV) de $\theta$, sí y sólo sí\\
-(1) $\hat{\theta}\left(x_{1}, \cdots, x_{n}\right) \in \Theta, \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
-(2) $L\left(\hat{\theta} \mid x_{1}, \cdots, x_{n}\right)=\sup _{\theta \in \Theta} L\left(\theta \mid x_{1}, \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
-o equivalentemente, sí y sólo sí\\
-(1) $\hat{\theta}\left(x_{1}, \cdots, x_{n}\right) \in \Theta, \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
-(2) $\log L\left(\hat{\theta} \mid x_{1}, \cdots, x_{n}\right)=\sup _{\theta \in \Theta} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$
+Sea $\left(X_{1}, \cdots X_{n}\right)$ una muestra con $f_{\theta}\left(x_{1},
+  \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n} \mid \theta\right)$ función de
+densidad (o de masa), $\theta \in \Theta \subset \mathbb{R}^{\ell}$ Denotemos
+por $L\left(\theta \mid x_{1}, \cdots, x_{n}\right)=f\left(x_{1}, \cdots, x_{n}
+  \mid \theta\right)$ a la función de verosimilitud de la muestra Un estimador
+$\hat{\theta}=\hat{\theta}\left(X_{1}, \cdots, X_{n}\right)$ se denomina
+estimador de máxima verosimilitud (EMV) de $\theta$, sí y sólo sí\\ (1)
+$\hat{\theta}\left(x_{1}, \cdots, x_{n}\right) \in \Theta, \forall\left(x_{1},
+  \cdots, x_{n}\right) \in \chi^{n}$\\ (2) $L\left(\hat{\theta} \mid x_{1},
+  \cdots, x_{n}\right)=\sup _{\theta \in \Theta} L\left(\theta \mid x_{1},
+  \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$\\
+o equivalentemente, sí y sólo sí\\ (1) $\hat{\theta}\left(x_{1}, \cdots,
+  x_{n}\right) \in \Theta, \forall\left(x_{1}, \cdots, x_{n}\right) \in
+  \chi^{n}$\\ (2) $\log L\left(\hat{\theta} \mid x_{1}, \cdots, x_{n}\right)=\sup
+  _{\theta \in \Theta} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right),
+  \forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$
 
-\section*{Métodos de construcción de estimadores (continuación)}
-Si $f_{\theta}$ es una función derivable respecto a $\theta$ en el interior del espacio paramétrico $\Theta$, la forma usual de determinar el estimador de máxima verosimilitud es examinar primero los máximos relativos de $f_{\theta}$, para compararlos después, con los valores sobre la frontera de $\Theta$. Ello conduce a resolver las ecuaciones de verosimilitud:
+Si $f_{\theta}$ es una función derivable respecto a $\theta$ en el interior del
+espacio paramétrico $\Theta$, la forma usual de determinar el estimador de
+máxima verosimilitud es examinar primero los máximos relativos de $f_{\theta}$,
+para compararlos después, con los valores sobre la frontera de $\Theta$. Ello
+conduce a resolver las ecuaciones de verosimilitud:
 
 $$
   \frac{\partial}{\partial \theta_{j}} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right)=0, j=1, \cdots, \ell
 $$
 
-(en el supuesto de que $\theta=\left(\theta_{1}, \cdots, \theta_{\ell}\right)$ sea un parámetro $\ell$-dimensional), seleccionando las soluciones correspondientes a un máximo de $f_{\theta}$, es decir aquellas en las que la matriz hessiana $H=\left(\frac{\partial}{\partial \theta_{i}} \frac{\partial}{\partial \theta_{j}} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right)\right)_{i, j=1, \cdots, \ell}$ sea definida negativa
+(en el supuesto de que $\theta=\left(\theta_{1}, \cdots, \theta_{\ell}\right)$ sea un parámetro $\ell$-dimensional), seleccionando las soluciones correspondientes a un máximo de $f_{\theta}$, es decir aquellas en las que la matriz hessiana $H=\left(\frac{\partial}{\partial \theta_{i}} \frac{\partial}{\partial \theta_{j}} \log L\left(\theta \mid x_{1}, \cdots, x_{n}\right)\right)_{i, j=1, \cdots, \ell}$ sea definida negativa.\\
 
-\section*{Métodos de construcción de estimadores}
- (continuación)
-
-\section*{Observaciones}
- (1) EI EMV $\hat{\theta}$ no tiene por qué existir\\
-(2) El EMV $\hat{\theta}$ no tiene por qué ser único\\
-(3) El EMV $\hat{\theta}$ no tiene por qué ser centrado\\
-(4) El EMV $\hat{\theta}$ no tiene por qué ser suficiente, pero si $S=S\left(X_{1}, \cdots, X_{n}\right)$ es suficiente para $\theta$, entonces $\hat{\theta}=\hat{\theta}(S)$\\
-(5) Invariancia: Si $\hat{\theta}$ es el EMV de $\theta$, entonces $h(\hat{\theta})$ es el EMV de $h(\theta)$\\
-(6) Bajo ciertas condiciones de regularidad, si $\left(X_{1}, \cdots X_{n}\right)$ es m.a.s. $(\mathrm{n})$ y $\theta \in \mathbb{R}$, entonces $\sqrt{n}(\hat{\theta}-\theta) \underset{n \rightarrow \infty}{d} N\left(0, \frac{1}{\sqrt{l_{1}(\theta)}}\right)$ y por lo tanto, $\hat{\theta}$ es asintóticamente insesgado para $\theta$ y asintóticamente eficiente
+\begin{observación}
+\vspace{-\topsep} % Removes the default vertical spacing
+\vspace{-\topsep} % Removes the default vertical spacing
+\vspace{-\topsep} % Removes the default vertical spacing
+\begin{enumerate}
+\item  EI EMV $\hat{\theta}$ no tiene por qué existir
+\item El EMV $\hat{\theta}$ no tiene por qué ser único
+\item El EMV $\hat{\theta}$ no tiene por qué ser centrado
+\item El EMV $\hat{\theta}$ no tiene por qué ser suficiente, pero si $S=S\left(X_{1},
+  \cdots, X_{n}\right)$ es suficiente para $\theta$, entonces
+$\hat{\theta}=\hat{\theta}(S)$
+\item Invariancia: Si $\hat{\theta}$ es el EMV de $\theta$, entonces
+$h(\hat{\theta}s)$ es el EMV de $h(\theta)$
+\item Bajo ciertas condiciones de regularidad, si $\left(X_{1}, \cdots X_{n}\right)$
+es m.a.s. $(\mathrm{n})$ y $\theta \in \mathbb{R}$, entonces
+$\sqrt{n}(\hat{\theta}-\theta) \underset{n \rightarrow \infty}{d} N\left(0,
+  \frac{1}{\sqrt{l_{1}(\theta)}}\right)$ y por lo tanto, $\hat{\theta}$ es
+asintóticamente insesgado para $\theta$ y asintóticamente eficiente
+\end{enumerate}
+\end{observación}

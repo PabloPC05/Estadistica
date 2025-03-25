@@ -21,3 +21,4 @@
 \contentsline {subsection}{\numberline {4.1}Estimadores Bayesianos}{50}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Criterios de comparación de estimadores}{54}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Cota para la varianza de un estimador}{62}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Métodos de construcción de estimadores}{64}{subsection.4.4}%
