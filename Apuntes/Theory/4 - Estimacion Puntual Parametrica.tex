@@ -699,18 +699,169 @@ $$
 \vspace{-\topsep} % Removes the default vertical spacing
 \vspace{-\topsep} % Removes the default vertical spacing
 \begin{enumerate}
-\item  EI EMV $\hat{\theta}$ no tiene por qué existir
-\item El EMV $\hat{\theta}$ no tiene por qué ser único
-\item El EMV $\hat{\theta}$ no tiene por qué ser centrado
-\item El EMV $\hat{\theta}$ no tiene por qué ser suficiente, pero si $S=S\left(X_{1},
-  \cdots, X_{n}\right)$ es suficiente para $\theta$, entonces
-$\hat{\theta}=\hat{\theta}(S)$
-\item Invariancia: Si $\hat{\theta}$ es el EMV de $\theta$, entonces
-$h(\hat{\theta}s)$ es el EMV de $h(\theta)$
-\item Bajo ciertas condiciones de regularidad, si $\left(X_{1}, \cdots X_{n}\right)$
-es m.a.s. $(\mathrm{n})$ y $\theta \in \mathbb{R}$, entonces
-$\sqrt{n}(\hat{\theta}-\theta) \underset{n \rightarrow \infty}{d} N\left(0,
-  \frac{1}{\sqrt{l_{1}(\theta)}}\right)$ y por lo tanto, $\hat{\theta}$ es
-asintóticamente insesgado para $\theta$ y asintóticamente eficiente
+  \item  EI EMV $\hat{\theta}$ no tiene por qué existir
+  \item El EMV $\hat{\theta}$ no tiene por qué ser único
+  \item El EMV $\hat{\theta}$ no tiene por qué ser centrado
+  \item El EMV $\hat{\theta}$ no tiene por qué ser suficiente, pero si $S=S\left(X_{1},
+          \cdots, X_{n}\right)$ es suficiente para $\theta$, entonces
+        $\hat{\theta}=\hat{\theta}(S)$
+  \item Invariancia: Si $\hat{\theta}$ es el EMV de $\theta$, entonces
+        $h(\hat{\theta}s)$ es el EMV de $h(\theta)$
+  \item Bajo ciertas condiciones de regularidad, si $\left(X_{1}, \cdots X_{n}\right)$
+        es m.a.s. $(\mathrm{n})$ y $\theta \in \mathbb{R}$, entonces
+        $\sqrt{n}(\hat{\theta}-\theta) \underset{n \rightarrow \infty}{d} N\left(0,
+          \frac{1}{\sqrt{l_{1}(\theta)}}\right)$ y por lo tanto, $\hat{\theta}$ es
+        asintóticamente insesgado para $\theta$ y asintóticamente eficiente
 \end{enumerate}
 \end{observación}
+
+\ejemplo{
+  Si $X \sim \operatorname{Bin}(1, \theta), \hat{\theta}=\bar{X}$ es el EMV para $\theta \in[0,1]$ basado en una m.a.s.(n)
+}
+
+\ejemplo{
+  Si $X \sim N(\mu, \sigma), \hat{\theta}=\left(\bar{X}, \sigma_{n}\right)=\left(\frac{1}{n} \sum_{i=1}^{n} X_{i}, \sqrt{\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}}\right)$ es el EMV para $\theta=(\mu, \sigma) \in \mathbb{R} \times \mathbb{R}^{+}$basado en una m.a.s. $(\mathrm{n})$. Además, si $n=1$, no existe el EMV para $\sigma$
+}
+
+\ejemplo{
+Si $X \sim U(0, \theta), \hat{\theta}=X_{(n)}$ es el EMV para $\theta>0$ basado en una m.a.s. $(\mathrm{n})$ y $E_{\theta}\left[X_{(n)}\right]=\frac{n}{n+1} \theta$
+}
+
+\ejemplo{
+Si $X \sim U\left(\theta-\frac{1}{2}, \theta+\theta-\frac{1}{2}\right)$, entonces cualquier valor en el intervalo $\left(X_{(n)}-\frac{1}{2}, X_{(1)}+\frac{1}{2}\right)$ es un EMV para $\theta$. En particular, $\frac{X_{(1)}+X_{(n)}}{2}$ no es suficiente y es EMV para $\theta$
+}
+
+\textbf{Propiedades del EMV}
+
+\begin{proposición}
+Si $S=S\left(X_{1}, \cdots, X_{n}\right)$ es suficiente para $\theta$, entonces el EMV $\hat{\theta}=\hat{\theta}(S)$ es función de $S$
+\end{proposición}
+
+\begin{proof}
+  $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=h\left(x_{1}, \ldots, x_{n}\right) g_{\theta}\left(S\left(x_{1}, \ldots, x_{n}\right)\right)$ (teorema de factorización)
+\end{proof}
+
+\begin{proposición}
+Si $\hat{\theta}$ es el EMV de $\theta$ y $h: \Theta \longrightarrow \Lambda$, entonces $\hat{\lambda}=h(\hat{\theta})$ es el EMV de $\lambda=h(\theta)$ respecto de la función de verosimilitud inducida,
+
+$$
+  \begin{gathered}
+    M\left(\lambda \mid x_{1}, \ldots, x_{n}\right)=\operatorname{Sup}_{\theta \in \Theta_{\lambda}} L\left(\theta \mid x_{1}, \ldots, x_{n}\right) \\
+    \Theta_{\lambda}=\{\theta \in \Theta: h(\theta)=\lambda\}
+  \end{gathered}
+$$
+\end{proposición}
+
+\begin{proof}
+  $$
+    \begin{aligned}
+       & \operatorname{Sup}_{\lambda \in \Lambda} M\left(\lambda \mid x_{1}, \ldots, x_{n}\right)=\operatorname{Sup}_{\lambda \in \Lambda} \operatorname{Sup}_{\theta \in \Theta_{\lambda}} L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\operatorname{Sup}_{\theta \in \Theta} L\left(\theta \mid x_{1}, \ldots, x_{n}\right) \\
+       & =L\left(\hat{\theta} \mid x_{1}, \ldots, x_{n}\right)
+    \end{aligned}
+  $$
+
+  Finalmente, como $\hat{\theta} \in \Theta_{\hat{\lambda}}$, se tiene que\\
+  $M\left(\hat{\lambda} \mid x_{1}, \ldots,
+    x_{n}\right)=\operatorname{Sup}_{\theta \in \Theta_{\hat{\lambda}}}
+    L\left(\theta \mid x_{1}, \ldots, x_{n}\right) \geq L\left(\hat{\theta} \mid
+    x_{1}, \ldots, x_{n}\right)$, y por lo\\ tanto $\operatorname{Sup}_{\lambda \in
+      \Lambda} M\left(\lambda \mid x_{1}, \ldots, x_{n}\right)=M\left(\hat{\lambda}
+    \mid x_{1}, \ldots, x_{n}\right)$
+
+\end{proof}
+
+\subsection{Propiedades asintóticas de los estimadores de máxima verosimilitud}
+
+\begin{proposición} [Desigualdad de Yelsin]
+Sea $X$ una v.a. integrable y $g$ una función convexa tal que $g(X)$ es integrable. Entonces $g(E[X]) \leq E[g(X)]$ Además, si $g$ es estrictamente convexa entonces $g(E[X])<E[g(X)]$
+\end{proposición}
+
+Consideremos $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in
+  \Theta \subset \mathbb{R}}$ modelo estadístico uniparamétrico contínuo (o
+discreto) y sea $\left(X_{1}, \cdots X_{n}\right)$ muestra de
+$\left\{F_{\theta}, \theta \in \Theta\right\}$ siendo $f_{\theta}\left(x_{1},
+  \cdots, x_{n}\right)$ su función de densidad (o de masa). Supongamos que se
+verifican las condiciones de regularidad
+
+Denotemos por $\theta_{0}$ el verdadero valor del parámetro (desconocido).
+
+\begin{lema}
+  (1) $E_{\theta_{0}}\left[\log f_{\theta}\left(x_{1}, \ldots, x_{n}\right)\right]<E_{\theta_{0}}\left[\log f_{\theta_{0}}\left(x_{1}, \ldots, x_{n}\right)\right], \forall \theta \neq \theta_{0}$\\
+  (2) Existe un entorno de $\theta_{0}, E\left(\theta_{0}\right)$, donde la función de $\theta$ $E_{\theta_{0}}\left[\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \ldots, x_{n}\right)\right]=J\left(\theta_{0}, \theta\right)$ es estrictamente decreciente
+\end{lema}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Como el logaritmo es una función estrictamente cóncava y el soporte de la
+          distribución es independiente del parámetro, si $\theta \neq \theta_{0},
+            E_{\theta_{0}}\left[\log \frac{f_{\theta}\left(x_{1}, \ldots,
+                x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \ldots, x_{n}\right)}\right]<\log
+            E_{\theta_{0}}\left[\frac{f_{\theta}\left(x_{1}, \ldots,
+                x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \ldots, x_{n}\right]}\right]=0$. Por
+          lo tanto,\\ $E_{\theta_{0}}\left[\log f_{\theta}\left(x_{1}, \ldots,
+              x_{n}\right)\right]-E_{\theta_{0}}\left[\log f_{\theta_{0}}\left(x_{1}, \ldots,
+              x_{n}\right)\right]<0, y$\\ $E_{\theta_{0}}\left[\log f_{\theta}\left(x_{1},
+              \ldots, x_{n}\right)\right]$ presenta un máximo extricto en $\theta_{0}$
+    \item Como $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)$ es derivable respecto a
+          $\theta$, $\frac{\partial}{\partial \theta} E_{\theta_{0}}\left[\log
+              f_{\theta}\left(x_{1}, \ldots, x_{n}\right)\right]=0$ en $\theta=\theta_{0}
+            \Rightarrow J\left(\theta_{0}, \theta_{0}\right)=0$
+          $\frac{\partial^{2}}{\partial \theta^{2}} E_{\theta_{0}}\left[\log
+              f_{\theta}\left(x_{1}, \ldots, x_{n}\right)\right]<0$ en $\theta=\theta_{0}
+            \Rightarrow \frac{\partial}{\partial \theta} J\left(\theta_{0},
+            \theta\right)<0$ en $\theta=\theta_{0}$ Por lo tanto, existe un entorno de
+          $\theta_{0}, E\left(\theta_{0}\right)$, donde la función $J\left(\theta_{0},
+            \theta\right)$ es estrictamente decreciente
+  \end{enumerate}
+\end{proof}
+
+
+\begin{teorema} [Primer teorema de convergencia del EMV (consistencia)]
+  Para una m.a.s. $(n)$, existe una sucesión de v.a. $\hat{\theta}_{n}$, para cada $n$ solución de la ecuación de verosimilitud, $\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=0$, que converge c.s. al verdadero valor del parámetro $\theta_{0}$.
+\end{teorema}
+
+\begin{proof}
+Para una m.a.s. $(n), f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod_{i=i}^{n} f_{\theta}\left(x_{i}\right)$\\
+Entonces, $\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{i}\right)=n z_{n}(\theta)$\\
+Además, $z_{n}(\theta) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} E_{\theta_{0}}\left[\frac{\partial}{\partial \theta} \log f_{\theta}(x)\right]=J\left(\theta_{0}, \theta\right)$ que es estrictamente decreciente en el entorno $E\left(\theta_{0}\right)$ y $J\left(\theta_{0}, \theta_{0}\right)=0$\\
+Por lo tanto, podemos elegir $\varepsilon>0$ tal que $\left[\theta_{0}-\varepsilon, \theta_{0}+\varepsilon\right] \subset E\left(\theta_{0}\right)$ y $J\left(\theta_{0}-\varepsilon, \theta_{0}\right)>0, J\left(\theta_{0}+\varepsilon, \theta_{0}\right)<0$\\
+Entonces,\\
+$z_{n}\left(\theta_{0}-\varepsilon\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} J\left(\theta_{0}, \theta_{0}-\varepsilon\right)>0$ y $z_{n}\left(\theta_{0}+\varepsilon\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} J\left(\theta_{0}, \theta_{0}+\varepsilon\right)<0$\\
+Como $\frac{\partial}{\partial \theta} f_{\theta}$ es continua, $\exists \hat{\theta}_{n} \in\left(\theta_{0}-\varepsilon, \theta_{0}+\varepsilon\right)$ tal que $z_{n}\left(\hat{\theta}_{n}\right)=0$. Por lo tanto, $\hat{\theta}_{n}$ es una solución de la ecuación de verosimilitud tal que $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$
+\end{proof}
+
+
+\begin{observación}
+El teorema anterior es útil, sólo cuando existe una única raíz de la ecuación de verosimilitud, ya que entonces esa raíz ha de ser el estimador consistente. En caso contrario, no se sabrá, cual de las raíces al variar n, va a dar lugar a la sucesión consistente\\
+Además, bajo ciertas condiciones de regularidad,\\
+$Y_{n}(\theta)=\frac{1}{n} \sum_{i=1}^{n} \frac{\partial^{2}}{\partial \theta^{2}} \log f_{\theta}\left(x_{i}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} E_{\theta_{0}}\left[\frac{\partial^{2}}{\partial \theta^{2}} \log f_{\theta}(x)\right]=I\left(\theta_{0}, \theta\right)$, con $I\left(\theta_{0}, \theta_{0}\right)=-I_{1}\left(\theta_{0}\right)<0$\\
+Como $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$, si $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es continua en $\theta$ uniformemente $\forall x$, entonces $Y_{n}\left(\hat{\theta}_{n}\right)-Y_{n}\left(\theta_{0}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$, y por lo tanto $Y_{n}\left(\hat{\theta}_{n}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }}-I_{1}\left(\theta_{0}\right)<0$ y a partir de un $n$ en adelante la sucesión de v.a. solución de la ecuación de verosimilitud son una sucesión de máximos  
+\end{observación}
+
+
+
+\begin{teorema} [Segundo teorema de convergencia del EMV (convergencia en ley)]
+  Si se cumplen las condiciones de regularidad y $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es continua en $\theta$ uniformemente $\forall x$, entonces
+
+  $$
+    \sqrt{n}\left(\hat{\theta}_{n}-\theta\right) \underset{n \rightarrow \infty}{\stackrel{d}{\longrightarrow}} N\left(0, \frac{1}{\sqrt{I_{1}(\theta)}}\right)
+  $$
+
+\end{teorema}
+
+\begin{proof}
+Si denotamos por $\varphi(x, \theta)=\frac{\partial}{\partial \theta} \log f_{\theta}(x)$, entonces la ecuación de verosimilitud\\
+$\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{i}\right)=\sum_{i=1}^{n} \varphi\left(x_{i}, \theta\right)=n z_{n}(\theta)=$ 0 en $\hat{\theta}_{n}$, con $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$, y por lo tanto $\sum_{i=1}^{n} \varphi\left(x_{i}, \hat{\theta}_{n}\right)=0$
+
+$\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)=\sum_{i=1}^{n} \varphi\left(x_{i}, \hat{\theta}_{n}\right)+\left(\theta_{0}-\hat{\theta}_{n}\right) \sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)$ $\operatorname{con} \theta^{*} \in\left(\theta_{0}, \hat{\theta}_{n}\right)$\\
+Entonces, $\hat{\theta}_{n}-\theta_{0}=\frac{\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)}{-\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)}$\\
+$\sqrt{n}\left(\hat{\theta}_{n}-\theta_{0}\right)=\frac{\frac{1}{\sqrt{n}} \sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)}{-\frac{1}{n} \sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)}=\frac{A_{n}}{B_{n}}$\\
+$E_{\theta_{0}}\left[A_{n}\right]=\frac{1}{\sqrt{n}} E_{\theta_{0}}\left[\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)\right]=\frac{1}{\sqrt{n}} n E_{\theta_{0}}\left[\varphi\left(x, \theta_{0}\right)\right]=0$\\
+$V_{\theta_{0}}\left(A_{n}\right)=\frac{1}{n} V_{\theta_{0}}\left(\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)\right)=\frac{1}{n} n V_{\theta_{0}}\left(\varphi\left(x, \theta_{0}\right)\right)$\\
+$=E_{\theta_{0}}\left[\varphi\left(x, \theta_{0}\right)^{2}\right]=I_{1}\left(\theta_{0}\right)$. Por lo tanto, $A_{n} \xrightarrow[n \rightarrow \infty]{d} N\left(0, \sqrt{I_{1}\left(\theta_{0}\right)}\right)$\\
+Además, $-B_{n}-E_{\theta_{0}}\left[\frac{\partial}{\partial \theta} \varphi\left(x, \theta^{*}\right)\right] \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$ y como $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$ y $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es\\
+continua en $\theta$ uniformemente $\forall x$, se tiene que $-B_{n}+I_{1}\left(\theta_{0}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$ Por lo tanto, $\frac{A_{n}}{B_{n}} \xrightarrow[n \rightarrow \infty]{d} \frac{1}{I_{1}\left(\theta_{0}\right)} N\left(0, \sqrt{I_{1}\left(\theta_{0}\right)}\right) \sim N\left(0, \sqrt{\frac{1}{I_{1}\left(\theta_{0}\right)}}\right)$
+
+\end{proof}
+
+
