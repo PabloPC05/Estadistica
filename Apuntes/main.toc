@@ -1,0 +1,6 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Estimacion por Regiones de Confianza}{2}{section.1}%
+\contentsline {section}{\numberline {2}Integrales de línea: campos escalares y vectoriales}{3}{section.2}%
+\contentsline {section}{\numberline {3}Appendix}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Momentos Notables}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Función Característica}{7}{subsection.3.2}%

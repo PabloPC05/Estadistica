@@ -1,1 +1,12 @@
-\section{Funciones definidas por integrales}
+\section{Estimacion por Regiones de Confianza}
+
+Para este tema denotemos lo siguiente:\\
+Sea $X \sim (\chi, \beta_\chi, F_\theta)_{\theta \in \Theta \subset \mathbb{R}^k}$ un modelo estadistico k-parametrico.\\
+Sea $(X_1, \ldots, X_n)$ una muestra aleatoria de $\left\{ F_\theta, \theta \in \Theta \right\}$.\\
+Sea finalmente $P_\theta$ la ley de probabilidad de nuestra muestra.\\
+
+\begin{definición}[Region de confianza]
+    Sea $C(X_1, \ldots, X_n) \subset \Theta$ una region aleatoria de nuestro espacio parametrico que cumple lo siguiente:\\
+    $$ P_\theta \left\{ \theta \in C(X_1, \ldots, X_n) \right\} \geq 1 - \alpha, \quad \forall \theta \in \Theta $$
+    Entonces denominamos $C(X_1, \ldots, X_n)$ una region de confianza de nivel $1 - \alpha$ de nuestar muestra $(x_1 \cdots x_n) \in \chi^n$ para el parametro $\theta$.\\
+\end{definición}
