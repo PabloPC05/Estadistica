@@ -537,11 +537,11 @@ INPUT .\Theory\1- Estadistica Descriptiva.tex
 INPUT Theory\1- Estadistica Descriptiva.tex
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
-INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
-INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
-INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
-INPUT Theory\4 - Estimacion Puntual Parametrica.tex
+INPUT .\Theory\2 - Muestreo.tex
+INPUT .\Theory\2 - Muestreo.tex
+INPUT .\Theory\2 - Muestreo.tex
+INPUT .\Theory\2 - Muestreo.tex
+INPUT Theory\2 - Muestreo.tex
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\bbold\ubbold.fd
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\bbold\ubbold.fd
@@ -549,24 +549,73 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\bbold\ubbold.fd
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold10.tfm
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold8.tfm
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold6.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT .\Theory\3 - Reduccion de Datos.tex
+INPUT .\Theory\3 - Reduccion de Datos.tex
+INPUT .\Theory\3 - Reduccion de Datos.tex
+INPUT .\Theory\3 - Reduccion de Datos.tex
+INPUT Theory\3 - Reduccion de Datos.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold12.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha12.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary5.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold5.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha5.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary7.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold7.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha7.tfm
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Graficos\geogebra-export.png
+INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
+INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
+INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
+INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
+INPUT Theory\4 - Estimacion Puntual Parametrica.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\public\esint\dpi657\esint10.pk
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\public\esint\dpi657\esint10.pk
-INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
-INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\public\bbold\dpi600\bbold8.pk
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\public\bbold\dpi600\bbold8.pk
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\public\bbold\dpi657\bbold10.pk
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\public\bbold\dpi657\bbold10.pk
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex7.pfb
@@ -575,6 +624,8 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
@@ -585,6 +636,8 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
