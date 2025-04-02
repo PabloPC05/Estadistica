@@ -864,4 +864,13 @@ continua en $\theta$ uniformemente $\forall x$, se tiene que $-B_{n}+I_{1}\left(
 
 \end{proof}
 
-
+\begin{observación}[Simplificación de las condiciones de regularidad]
+  Las condiciones de regularidad del teorema anterior pueden simplificarse a las siguientes:\\
+  \begin{enumerate}
+    \item $\phi (x, \theta) = \frac{\partial}{\partial \theta} \log f_{\theta}(x)$ tiene dos derivadas continuas respecto de $\theta$.
+    \item $\hat{\theta}_n \xrightarrow[n \to \infty]{P} \theta_0$
+    \item $E_{\theta_0}[\varphi^2(x, \theta_0)] = I_1(\theta_0) < \infty$
+    \item $E_{\theta_0} \left[ \frac{\partial}{\partial \theta} \varphi(x, \theta_0) \right] = - I_1(\theta_0) \neq 0$
+    \item $\exists \, \varepsilon > 0 \text{ y } M(x) \text{ tales que } \sup_{|\theta - \theta_0| \leq \varepsilon} \left| \frac{\partial^2}{\partial \theta^2} \varphi(x, \theta) \right| \leq M(x)$ con $M(x) < \infty$
+  \end{enumerate}
+\end{observación}
