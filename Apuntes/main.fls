@@ -599,6 +599,21 @@ INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
 INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
 INPUT .\Theory\4 - Estimacion Puntual Parametrica.tex
 INPUT Theory\4 - Estimacion Puntual Parametrica.tex
+INPUT .\Theory\5 - Estimacion por Regiones de Confianza.tex
+INPUT .\Theory\5 - Estimacion por Regiones de Confianza.tex
+INPUT .\Theory\5 - Estimacion por Regiones de Confianza.tex
+INPUT .\Theory\5 - Estimacion por Regiones de Confianza.tex
+INPUT Theory\5 - Estimacion por Regiones de Confianza.tex
+INPUT .\Theory\6 - Contraste de Hipotesis.tex
+INPUT .\Theory\6 - Contraste de Hipotesis.tex
+INPUT .\Theory\6 - Contraste de Hipotesis.tex
+INPUT .\Theory\6 - Contraste de Hipotesis.tex
+INPUT Theory\6 - Contraste de Hipotesis.tex
+INPUT .\Theory\Appendix.tex
+INPUT .\Theory\Appendix.tex
+INPUT Theory\Appendix.tex
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -614,6 +629,8 @@ INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
@@ -650,3 +667,5 @@ INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti8.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti8.pfb
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb

@@ -1,26 +1,49 @@
-\section{Integrales de línea: campos escalares y vectoriales}
+\section{Contraste de Hipótesis}
 
-\begin{ejercicio}[Ejercicio 2.7.1]
-    Sea $X$ una observación de una población $N(0, \sigma)$. ¿Es $|X|$ un estadístico suficiente?
-\end{ejercicio}
+\subsection{Principios básicos de un contraste de hipótesis}
+Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$ modelo estadístico $\ell$-paramétrico y $\left(X_{1}, \cdots X_{n}\right)$ muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$
 
-\begin{solucion}
-    Para una variable aleatoria $X$ con distribución normal $N(0, \sigma)$, la función de densidad de probabilidad es:
-    \begin{equation}
-        f(x|\sigma) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{|x|^2}{2\sigma^2}}
-    \end{equation}
-    Podemos entonces aplicar el teorema de factorización (2.2.1) para obtener una factorización de la siguiente forma:
-    \begin{equation}
-        f(x|\sigma) = h(x)g(|x|, \sigma)
-    \end{equation}
-    Donde nuestro estadístico es $T(X) = |X|$. Podemos tomar:
-    \begin{align}
-        h(x) &= \frac{1}{\sqrt{2\pi}} \\
-        g(|x|, \sigma) &= \frac{1}{\sigma} e^{-\frac{|x|^2}{2\sigma^2}}
-    \end{align}
-    Finalmente, podemos ver que:
-    \begin{equation}
-        f(x|\sigma) = h(x)g(|x|, \sigma)
-    \end{equation}
-    Por lo que $|X|$ es un estadístico suficiente para $\sigma$.
-\end{solucion}
+Idea: estudiar si una determinada afirmación sobre $\left\{F_{\theta}, \theta \in \Theta\right\}$ es confirmada o invalidada a partir de los datos muestrales
+
+\ejemplo{
+    Supongamos que en un laboratorio se está estudiando cierta reacción química sobre una determinada sustancia y que el resultado de dicha reacción es una variable observable que se puede modelizar mediante una v.a. $X$ con distribución normal. Por experiencias anteriores se sabe que, si en la sustancia está presente cierto mineral, $X \sim N(\mu=10, \sigma=4)$ y si no lo está $X \sim N(\mu=11, \sigma=4)$. Se puede comprobar por medio de unos análisis si el mineral está o no presente en la sustancia en estudio, pero dichos análisis son muy costosos, por lo que se procede a realizar la reacción química $n=25$ veces para decidir, a la luz de los resultados, si $\mu=10$ o $\mu=11$
+}
+
+\begin{definición} [Hiptótesis Estadística]
+Una hipótesis estadística es cualquier afirmación acerca de un modelo estadístico.
+\end{definición}
+
+
+\begin{definición} [Hipótesis Estadística Simple y Compuesta]
+    Una hipótesis estadística es simple si especifica totalmente el modelo estadístico, en otro caso, se dice que es compuesta
+\end{definición}
+
+\begin{definición} [Hipótesis Estadística Nula y Alternativa]
+Se llama hipótesis nula $H_{0}$ a la hipótesis de trabajo y es la hipótesis estadística que vamos a aceptar si no hay suficiente evidencia a partir de los datos para rechazarla, consecuentemente se llama hipótesis alternativa $H_{1}$ a la hipótesis estadística que se acepta si hay suficiente evidencia a partir de los datos para rechazar $H_{0}$
+\end{definición}
+
+\begin{definición} [Contraste de Hipótesis Paramétrico]
+Un contraste de hipótesis paramétrico es una partición del espacio paramétrico $\Theta$ en dos subconjuntos $\Theta_{0}$ y $\Theta_{1}$ tales que $\Theta=\Theta_{0} \bigcup \Theta_{1}$ y $\Theta_{0} \bigcap \Theta_{1}=\phi$
+\end{definición}
+
+En el ejemplo anterior $\Theta=\left\{\mu_{0}, \mu_{1}\right\}, \Theta_{0}=\left\{\mu_{0}\right\}, \Theta_{1}=\left\{\mu_{1}\right\}$
+
+En un problema de contraste de hipótesis paramétrico se pretende contrastar $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$. Por supuesto, la decisión debe basarse en la evidencia aportada por la observación de una muestra $\left(X_{1}, \cdots X_{n}\right)$, o equivalentemente por la observación de un cierto estadístico $T=T\left(X_{1}, \cdots, X_{n}\right)$, que se denomina estadístico del contraste, y que será usualmente un estimador suficiente del parámetro $\theta$
+
+El contraste entre dos hipótesis basado en un estadístico, exige conocer la distribución en el muestreo de dicho estadístico, para los diversos valores del parámetro. De hecho, la idea del contraste consiste en localizar un suceso que sea muy improbable cuando la hipótesis nula es cierta. Si, una vez observada la muestra, acontece dicho suceso, o bien es que el azar ha jugado la mala pasada de elegir una muestra "muy rara" o, como parece más razonable, la hipótesis nula era falsa
+
+\begin{definición} [Región Crítica]
+Sea una partición del espacio muestral $\chi^{n}$ en dos subconjuntos $C$ y $C^{*}$ tales que $\chi^{n}=C \bigcup C^{*}$ y $C \bigcap C^{*}=\phi . C$ es una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$ sí y sólo sí, se rechaza $H_{0}$ cuando se observa un valor muestral $\left(x_{1}, \cdots, x_{n}\right) \in C$, en cuyo caso se acepta $H_{1}$. Consecuentemente, $C^{*}$ se denomina región de aceptación y si $\left(x_{1}, \cdots, x_{n}\right) \in C^{*}$, se dice que no hay suficiente evidencia estadística para rechazar $H_{0}$, en este sentido se acepta $H_{0}$
+\end{definición}
+
+
+Si $T=T\left(X_{1}, \cdots, X_{n}\right): \chi^{n} \rightarrow \tau$ es el estadístico del contraste, sea una partición de $\tau$ en dos subconjuntos $C_{\tau}$ y $C_{\tau}^{*}$ tales que $\tau=C_{\tau} \bigcup C_{\tau}^{*}$ y $C_{\tau} \bigcap C_{\tau}^{*}=\phi . C_{\tau}$ es una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$ sí y sólo sí, se rechaza $H_{0}$ cuando se observa un valor muestral $\left(x_{1}, \cdots, x_{n}\right)$ tal que $T\left(x_{1}, \cdots, x_{n}\right) \in C_{\tau}$, en cuyo caso acepto $H_{1}$. Consecuentemente, $C_{\tau}^{*}$ se denomina región de aceptación\\
+Así, $C=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: T\left(x_{1}, \cdots, x_{n}\right) \in C_{\tau}\right\}$\\
+En el ejemplo anterior, podemos considerar como región crítica $C=\left\{\left(x_{1}, \cdots, x_{n}\right): \bar{x} \geq k\right\}$
+
+En un problema de contraste no sólo es importante conocer las probabilidades de cada resultado posible, sino también valorar el riesgo que estamos dispuestos a correr al tomar una decisión equivocada. En el ejemplo anterior, al rechazar que en la sustancia está presente el mineral cuando en realidad si lo está, o bien al aceptar que en la sustancia está presente el mineral cuando en realidad no lo está. Ambos errores tienen consecuencias prácticas distintas
+
+\subsection{Errores de tipo I y de tipo II}
+Error de tipo I es el error que se comete cuando se rechaza $H_{0}$ siendo cierta. Error de tipo II es el error que se comete cuando se acepta $H_{1}$ siendo falsa
+
+En el ejemplo anterior, las probabilidades de cometer error de tipo I y error de tipo II son $P(\mathrm{I})=P(\bar{x} \geq k \mid \mu=10)$ y $P(\mathrm{II})=P(\bar{x}<k \mid \mu=11)$

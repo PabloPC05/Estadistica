@@ -118,7 +118,7 @@
 \subsection{Estadístico minimal suficiente}
 
 \begin{definición}[Órbita]
-	Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $A_{t}=\left\{\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n}: T\left(x_{1}, \ldots, x_{n}\right)=t\right\}$ cómo la órbita de $ t = 5$\\
+	Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $A_{t}=\left\{\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n}: T\left(x_{1}, \ldots, x_{n}\right)=t\right\}$ cómo la órbita de $t$.
 \end{definición}
 
 \ejemplo{
@@ -132,7 +132,7 @@
 }
   
 \begin{definición}[Partición Inducida]
-	Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $K_{T}=\left\{A_{t}: t \in \mathbb{R}^{m}\right\}$ cómo la partición inducida por $T$\\
+	Dado un estadístico $T=T\left(X_{1}, \cdots X_{n}\right)$, se define $K_{T}=\left\{A_{t}: t \in \mathbb{R}^{m}\right\}$ cómo la partición de $\chi^{n}$ inducida por $T$.
 \end{definición}
 
 \ejemplo{
@@ -166,12 +166,16 @@
 			\text{Más gruesa} \implies \text{Menos clases} \implies \text{Agrupa más elementos} 
 		\end{cases}
 	\]
-	    
-	Alternativamente, lo podemos definir como que dado un estadístico suficiente $T$, se dice minimal suficiente cuando $\forall T'$ suficiente, $\exists \varphi: \mathbb{R}^n \to \mathbb{R}^n$ medible (integrable) tal que $T' = \varphi(T)$
 \end{definición}
+
+Un estadístico es minimalmente suficiente si es el más "pequeño" o "compacto" posible entre todos los estadísticos suficientes. No hay ningún otro estadístico suficiente que sea más eficiente (en el sentido de que no puede ser simplificado más sin perder información relevante sobre el parámetro). En otras palabras, es el estadístico suficiente más simple y directo que captura toda la información relevante sobre el parámetro.\\
+
+\begin{proposición}
+	Un estadístico $T$ es minimal suficiente si y sólo si para todo estadístico $S$ suficiente, $\exists \varphi : \mathbb{R}^n \to \mathbb{R}^n$ medible (integrable) tal que $S = \varphi(T)$.
+\end{proposición}
   
 \begin{proof}
-	Demostración de la equivalencia de las definiciones:
+	\leavevmode
 	\begin{itemize}
 		\item ($\Rightarrow$): Sea $S$ suficiente, si $S(x_1, \ldots, x_n) = S(y_1, \ldots, y_n) = s \implies (x_1, \ldots, x_n), (y_1, \ldots, y_n) \in B_s (\text{Órbita de } S) \implies \exists A_t \in K_T : B_s \subset A_t \implies T(x_1, \ldots, x_n) = T(y_1, \ldots, y_n) = t \implies \exists \psi : \psi(S) = T$ y $T$ es suficiente.
 		\item ($\Leftarrow$): Sea $S$ suficiente y $\psi : \psi(S) = T \implies T$ es suficiente y si $S(x_1, \ldots, x_n) = S(y_1, \ldots, y_n) = s \implies T(x_1,\ldots, x_n) = \psi(S(x_1, \ldots, x_n)) = \psi(S) = \psi(S(y_1, \ldots, y_n)) = T(y_1, \ldots, y_n) \implies B_s \subset A_{\psi(S)} \implies K_S$ es una subpartición de $K_T$.
@@ -357,12 +361,45 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 \end{definición}
 
 \ejemplo{
-	Sea una población que sigue una distribucion normal $N(\theta, \sigma_0)$ con $\sigma_0$ conocida, tomemos una m.a.s. de tamaño $n$ tal que $U(X_1, \ldots, X_n) = X_1 - X-2 \sim  N(0, \sqrt{2\sigma_0})$ que no depende de $\theta$ por lo que $U$ es un estadístico ancilario para $\theta$.
+Sea una población que sigue una distribución normal:
+
+\[X_i \sim N(\theta, \sigma_0),\]
+
+donde \(\theta\) es la media desconocida y \(\sigma_0\) es la desviación estándar conocida. Supongamos que tomamos una muestra aleatoria simple (m.a.s.) de tamaño \(n\):
+
+\[X_1, X_2, \dots, X_n \sim N(\theta, \sigma_0),\]
+
+de manera independiente.
+
+Definimos el siguiente estadístico basado en los primeros dos valores de la muestra:
+
+\[U(X_1, \ldots, X_n) = X_1 - X_2\]
+
+Dado que \(X_1\) y \(X_2\) son variables aleatorias normales independientes con la misma distribución, podemos calcular la distribución de \(U\):
+
+\[X_1 - X_2 \sim N(\theta - \theta, \sqrt{\sigma_0^2 + \sigma_0^2}) = N(0, \sqrt{2\sigma_0^2})\]
+
+Por lo tanto, la desviación estándar de \(U\) es \(\sqrt{2\sigma_0^2} = \sqrt{2} \sigma_0\), lo que implica que:
+
+\[U \sim N(0, \sqrt{2} \sigma_0).\]
+
+Dado que la distribución de \(U\) no depende del parámetro \(\theta\), concluimos que \(U\) es un \textbf{estadístico ancilar} para \(\theta\). 
+
+Este tipo de estadísticos son útiles en inferencia estadística, por ejemplo, en la construcción de estimadores insesgados y en el desarrollo de métodos basados en pivotes.
 }
 
 \begin{definición} [Familia Completa]
 	La familia $\mathcal{P} = \{f_{\theta}(x_1, \ldots, x_n) : \theta \in \Theta \subset \mathbb{R}^{\ell}\}$ es completa si para cualquier función real $g(X_1, \ldots, X_n$) tal que $E_{\theta}[g(X_1, \ldots, X_n)] = 0, \ \forall \theta \in \Theta \implies g(X_1, \ldots, X_n) \stackrel{c.s.}{=} 0$
 \end{definición}
+
+Intuitivamente, una familia completa de estadísticos es un conjunto de funciones de la muestra que, aunque no necesariamente contienen toda la información sobre el parámetro de interés, cumplen una propiedad clave: no permiten la existencia de funciones insesgadas que se anulen para todos los valores del parámetro sin ser trivialmente nulas.
+
+Para visualizarlo, imagina que tienes varias estadísticas distintas calculadas a partir de una muestra. Si dentro de este conjunto hay una combinación de estas estadísticas cuya esperanza matemática es siempre cero para cualquier valor del parámetro, salvo cuando la función es trivialmente cero, entonces la familia es completa. En caso contrario, la familia no sería completa, ya que existiría una función insesgada que no aporta información útil.
+
+Formalmente, una familia de estadísticas es completa si la única función de ellas cuya esperanza es idénticamente cero para todos los valores posibles del parámetro es la función nula. Esto implica que no hay "información redundante" en la familia, en el sentido de que ninguna combinación no trivial de estas estadísticas se anula en promedio para todos los valores del parámetro.
+
+Este concepto es fundamental en inferencia estadística, ya que garantiza que los estimadores insesgados basados en una familia completa son únicos y óptimos, como se establece en el Teorema de Lehmann-Scheffé que veremos más adelante.\\
+
 
 \ejemplo{
 	Veamos si la familia de distribuciones $Bin(n, \theta)$ es completa: \\
@@ -480,7 +517,7 @@ $$\text{ tomando } \begin{cases} c(\theta) = \left(\frac{1}{\sigma\sqrt{2\pi}}\r
 \begin{definición} [Estadístico Completo]
 	Un estadístico $T$ (no necesariamente suficiente) se dice completo, cuando: 
 	$$\forall g \text{-medible(integrable) tal que } E_{\theta}[g(T)] = 0 \implies g(T) \stackrel{c.s.}{=} 0$$
-	Es decir, se dice que un estadístico es completo si no existe función $g(x_1, \ldots, x_n)$ tal que $E_{\theta}[g(T)] = 0$ a menos rque $g(X) \stackrel{c.s.}{=} 0$
+	Es decir, se dice que un estadístico es completo si para toda función $g(x_1, \ldots, x_n)$ tal que $E_{\theta}[g(T)] = 0$ se tiene que $g(X) \stackrel{c.s.}{=} 0$
 	\\ Alternativamente, también se puede decir, que el estadístico es completo si y solo sí su distribución en el muestreo es una familia de distribuciones de probabilidad completa
 \end{definición}
 
@@ -728,13 +765,21 @@ Ahora veamos otro ejemplo en el que no se puede provocar la perteniencia a la fa
     
 \subsection{Principios de reducción de datos}
 
-\begin{teorema}[Principio de verosimilitud]
-	Dada una m.a.s. consideramos que la distribución de la muestra es una función de $\theta$ y no de la muestra en sí, es decir, $L(\theta | x_1, \ldots, x_n) = f(x_1, \ldots, x_n | \theta)$
-\end{teorema}
+La idea es considerar la distribución de la probabilidad de la muestra, no como una función de $x = (x_1, \ldots, x_n)$, sino como una función del parámetro $\theta$ desconocido.
+\begin{definición} [Función de verosimilitud]
+	Dada la familia $\mathcal{P} = \{ f(\vec{x}|\theta) | \theta \in \Theta \}$ de distribuciones de probabilidad donde $f(\cdot|\theta)$ es una función de densidad o de masa y supuesto que se ha observado el valor muestral $\vec{x} = (x_1, ..., x_n)$ la función de $\theta$ definida mediante
+	\[
+	L(\theta|\vec{x}) = f(\vec{x}|\theta)
+	\]
+	se llama función de verosimilitud.
+\end{definición}
 
-\begin{proposición}
-	Sean dos muestras $X = (x_1, \ldots, x_n)$ e $Y = (y_1, \ldots, y_m)$, si $\exists c(x, y)$ tal que $L_1(\theta | x) = c(x, y)L_2(\theta | y)$, entonces la evidencia estadística que suministran ambas muestras es idéntica. Es decir, $Ev(E_1, \vec{x}) = Ev(E_2, \vec{y})$
-\end{proposición}
+\begin{definición} [Principio de verosimilitud]
+	Sea $E = (\chi, \theta, \mathcal{P} = \{f(\vec{x}|\theta) : \theta \in \Theta\})$ un experimento aleatorio y $L_1(\theta | x)$ y $L_2(\theta | y)$ las funciones de verosimilitud de dos muestras $X = (x_1, \ldots, x_n)$ e $Y = (y_1, \ldots, y_m)$ respectivamente.\\
+	Si existe una función $c(x, y)$ que no depende de $\theta$ tal que:
+	$$L_1(\theta | x) = c(x, y)L_2(\theta | y) \ \forall \theta \in \Theta$$
+	entonces se dice que ambas muestras suministran la misma evidencia estadística sobre el parámetro $\theta$, es decir, $Ev(E_1, \vec{x}) = Ev(E_2, \vec{y})$.
+\end{definición}
 
 \ejemplo{
 	Sea un modelo $Binomial(n, \theta)$ la evidencia que se obtiene del mismo, sobre $\theta$, cuando se observan $t$ éxitos en $n$ repeticiones, es la misma que la obtenida por un modelo $Binomial negativo(t, \theta)$, siempre que se suponga que se han realizado $n$ repeticiones hasta obtener $t$ éxitos.\\
@@ -744,17 +789,17 @@ Ahora veamos otro ejemplo en el que no se puede provocar la perteniencia a la fa
 }
  
 
-\begin{proposición}[Principio de suficiencia]
+\begin{definición}[Principio de suficiencia]
 	En un experimento $E = \left(\chi, \theta, \mathcal{P} = \{f(\vec{x}|\theta) : \theta \in \Theta\} \right)$, si $T = T(\vec{X})$ es un estadístico suficiente para $\theta$ y se tiene que $T(\vec{x}) = T(\vec{y})$, entonces las dos muetras $\vec{x}$ e $\vec{y}$ suministran la misma evidencia estadística, es decir, $Ev(E, \vec{x}) = Ev(E, \vec{y})$
-\end{proposición}
+\end{definición}
 
 \ejemplo{
 	En un experimento consistente en la repetición de $n$ pruebas de Bernoulli, la evidencia estadística que se obtiene de dos puntos muestrales con el mismo número de éxitos es la misma.
 }
 
-\begin{proposición}[Principio de condicionalidad]
+\begin{definición}[Principio de condicionalidad]
 	El principio de condicionalidad dice que si un mecanismo aleatorio no depende del valor a determinar $\theta$, no proporciona evidencia sobre él. Es decir, si $T = T(\vec{X})$ es un estadístico suficiente para $\theta$ y $T(\vec{x}) = T(\vec{y})$, entonces las dos muestras $\vec{x}$ e $\vec{y}$ suministran la misma evidencia estadística, es decir, $Ev(E, \vec{x}) = Ev(E, \vec{y})$
-\end{proposición}
+\end{definición}
 
 \ejemplo{
 	Dados dos experimentos $E_1 = (\chi^n, f_1(\vec{x}|\theta))_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$ y $E_2 = (\chi^m, f_2(\vec{y}|\theta))_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$ y el lanzamiento de una moneda al aire representado por la v.a. $J$ tal que $P(J = 1) = P(J = 2) = \frac{1}{2}$, si $E = (\chi^n \cup \chi^m \times \{1, 2\}, f(\vec{x}, j|\theta))_{\theta \in \Theta \subset \mathbb{R}^{\ell}}$ es el experimento mixto representado por la v.a. $(Z, J)$ tal que $Z = \begin{cases} X & \text{ si } J = 1 \\ Y & \text{ si } J = 2 \end{cases}$, entonces $Ev(E, (\vec{x}, 1)) = Ev(E_1, \vec{x})$ y $Ev(E, (\vec{y}, 1)) = Ev(E_2, \vec{y})$

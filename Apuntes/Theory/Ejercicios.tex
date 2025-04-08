@@ -1,0 +1,24 @@
+\begin{ejercicio}[Ejercicio 2.7.1]
+    Sea $X$ una observación de una población $N(0, \sigma)$. ¿Es $|X|$ un estadístico suficiente?
+\end{ejercicio}
+
+\begin{solucion}
+    Para una variable aleatoria $X$ con distribución normal $N(0, \sigma)$, la función de densidad de probabilidad es:
+    \begin{equation}
+        f(x|\sigma) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{|x|^2}{2\sigma^2}}
+    \end{equation}
+    Podemos entonces aplicar el teorema de factorización (2.2.1) para obtener una factorización de la siguiente forma:
+    \begin{equation}
+        f(x|\sigma) = h(x)g(|x|, \sigma)
+    \end{equation}
+    Donde nuestro estadístico es $T(X) = |X|$. Podemos tomar:
+    \begin{align}
+        h(x) &= \frac{1}{\sqrt{2\pi}} \\
+        g(|x|, \sigma) &= \frac{1}{\sigma} e^{-\frac{|x|^2}{2\sigma^2}}
+    \end{align}
+    Finalmente, podemos ver que:
+    \begin{equation}
+        f(x|\sigma) = h(x)g(|x|, \sigma)
+    \end{equation}
+    Por lo que $|X|$ es un estadístico suficiente para $\sigma$.
+\end{solucion}
