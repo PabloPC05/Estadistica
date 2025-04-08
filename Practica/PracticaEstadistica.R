@@ -34,7 +34,7 @@
           #Al igual que en la artimética tradicional, R respeta el orden de los factores según el uso de paréntesis y de las operaciones
           # Es decir, si introducimos en la consola: 7-5 * 4 + 3, la consola nos devolverá: [1] -10
           # Sin embargo, si introducimos por la consola la instruccion: (7-5) * 4 + 3, la consola nos devolverá: [1] 11
-        # SUBAPARTADO 1.5.2 - Asignacion
+      # SUBAPARTADO 1.5.2 - Asignacion
           #Ejemplo 1.5.2.1
             # Para asignar valores o resultados a una variable, se utiliza el operador de asignacion "<-"
             # Por ejemplo, si asignamos a la variable x, una variable aleatoria con distribucion normal de media 2 y desviacion estandar 3
@@ -247,7 +247,85 @@
       # [1,]    6    2
       # [2,]    8    3
     # Ejemplo 3.4
-      #
+      # Si quisieramos convertir un vector en un array. 
+      # Por ejemplo si usasemos la variable x usada anteriormente (x <- rnorm(50, 2, 3))
+      (arx <- array(x, c(5, 5, 2)))
+      # Nos devuelve una matriz de 5 filas y 5 columnas con 2 matrices:
+      # , , 1
+      #      [,1]       [,2]       [,3]       [,4]       [,5]
+      # [1,] -0.5829241 5.961617  4.192442  3.16216421 -1.2383731
+      # [2,]  5.2072172 4.323786 -4.333243 -0.14757428  0.3978957
+      # [3,]  1.8819372 1.000386  2.943140  0.40559601  3.9480257
+      # [4,]  0.1276772 2.964644  4.588800 -0.07660702  3.8741060
+      # [5,]  0.2409745 1.101261 -4.763738  0.59300124  6.0552038
+      # , , 2
+      # [,1]       [,2]       [,3]       [,4]        [,5]
+      # [1,] -1.7321892 -1.0387543 -3.9605715 -0.8803346  7.13124620
+      # [2,]  2.1730573  5.8896707  3.0072891 -0.6454183  1.68262475
+      # [3,] -2.9226690 -2.1794132 -3.6729064  6.5901754 -0.04386894
+      # [4,]  5.0902755  0.7797282  8.7165320 -1.3971799 -4.85323479
+      # [5,] -0.8362684 -2.3303037 -0.0300616 -2.1877358  4.48238556
+  # APARTADO 3.1 - Operaciones con matrices
+    # Ejemplo 3.1.1
+      # Si tomamos una matriz, mat1, obtenida del primer bloque del array anterior: 
+      mat1 <- arx[,,1]
+      # El comando anterior nos devuelve: 
+      #            [,1]     [,2]      [,3]        [,4]       [,5]
+      # [1,] -0.5829241 5.961617  4.192442  3.16216421 -1.2383731
+      # [2,]  5.2072172 4.323786 -4.333243 -0.14757428  0.3978957
+      # [3,]  1.8819372 1.000386  2.943140  0.40559601  3.9480257
+      # [4,]  0.1276772 2.964644  4.588800 -0.07660702  3.8741060
+      # [5,]  0.2409745 1.101261 -4.763738  0.59300124  6.0552038
+      # Si quisieramos conocer datos de la matriz podemos usar los comandos: 
+      ncol(mat1)
+      # Nos devuelve el número de columnas de la matriz: [1] 5
+      nrow(mat1)
+      # Nos devuelve el número de filas de la matriz: [1] 5
+      # Asimismo, podemos también realizarle operaciones independientes, por ejemplo: 
+      tmat1 <- t(mat1)
+      # Con la que obtenemos la matriz transpuesta de mat1:
+      #            [,1]       [,2]       [,3]       [,4]        [,5]
+      # [,1]       [,2]     [,3]        [,4]       [,5]
+      # [1,] -0.5829241  5.2072172 1.881937  0.12767716  0.2409745
+      # [2,]  5.9616169  4.3237861 1.000386  2.96464382  1.1012611
+      # [3,]  4.1924422 -4.3332432 2.943140  4.58879967 -4.7637380
+      # [4,]  3.1621642 -0.1475743 0.405596 -0.07660702  0.5930012
+      # [5,] -1.2383731  0.3978957 3.948026  3.87410602  6.0552038
+      dmat1 <- diag(mat1)
+      # Con la que obtenemos la diagonal de la matriz:
+      # [1] -0.5829241  4.3237861  2.943140 -0.07660702  6.0552038
+      diag(dmat1)
+      # Ahora obtenemos una matriz con la diagonal dada
+      # Con la que obtenemos la matriz diagonal de la matriz:
+      #            [,1]       [,2]       [,3]       [,4]        [,5]
+      # [1,] -0.5829241  0.0000000 0.0000000 0.00000000  0.0000000
+      # [2,]  0.0000000  4.3237861 0.0000000 0.00000000  0.0000000
+      # [3,]  0.0000000  0.0000000 2.9431400 0.00000000  0.0000000
+      # [4,]  0.0000000  0.0000000 0.0000000 -0.07660702  0.0000000
+      # [5,]  0.0000000  0.0000000 0.0000000 0.00000000  6.0552038
+      # Con este último comando, podemos obtener la matriz identidad de la dimensión que prefiramos
+      diag(5)
+      # Nos devuelve la matriz identidad de 5x5:
+      #      [,1] [,2] [,3] [,4] [,5]
+      # [1,]    1    0    0    0    0
+      # [2,]    0    1    0    0    0
+      # [3,]    0    0    1    0    0
+      # [4,]    0    0    0    1    0
+      # [5,]    0    0    0    0    1
+    # SUBAPARTADO 3.1.1 Operaciones con matrices
+      # Ejemplo 3.1.1.1
+        # Si quisieramos se calcular la inversa de la matriz mat1 del ejemplo anterior, lo hacemos de la siguiente manera:
+        x1 <- rep(1, 5) 
+      
+      
+      
+      
+
+      
+
+
+
+
       
       
 
