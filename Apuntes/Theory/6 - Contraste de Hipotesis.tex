@@ -47,3 +47,143 @@ En un problema de contraste no sólo es importante conocer las probabilidades de
 Error de tipo I es el error que se comete cuando se rechaza $H_{0}$ siendo cierta. Error de tipo II es el error que se comete cuando se acepta $H_{1}$ siendo falsa
 
 En el ejemplo anterior, las probabilidades de cometer error de tipo I y error de tipo II son $P(\mathrm{I})=P(\bar{x} \geq k \mid \mu=10)$ y $P(\mathrm{II})=P(\bar{x}<k \mid \mu=11)$
+
+Lo idóneo sería conseguir un test para el que ambas probabilidades de error fuesen pequeñas. Sin embargo (salvo en casos excepcionales y triviales), la reducción de la probabilidad de error de tipo II se hace a costa del aumento de la probabilidad de error de tipo l y viceversa, con lo que el único procedimiento para disminuir ambas probabilidades de error simultáneamente es aumentar el tamaño muestral, lo que conlleva un incremento del coste del procedimiento que en la práctica puede ser prohibitivo
+
+\begin{definición} [Función de Potencia]
+Si $C$ es una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, se define la función de potencia del test como la función $\beta_{C}: \Theta \rightarrow[0,1]$ que a cada valor $\theta$ del parámetro le asigna el valor $\beta_{C}(\theta)=P_{\theta}(C)$, es decir, la probabilidad de rechazar $H_{0}$ cuando el valor del parámetro es $\theta$
+\end{definición}
+
+\begin{definición} [Nivel de significación y tamaño del test ]
+Un test $C$ tiene nivel de significación $\alpha \in[0,1]$ sí y sólo sí $\sup \beta_{C}(\theta) \leq \alpha$ y se denomina tamaño del test al valor $\sup \beta_{C}(\theta)$ $\theta \in \Theta_{0}$
+\end{definición}
+
+\ejemplo{
+En el ejemplo anterior, con $n=25, C=\{10<\bar{x}<10,006\}$, $P(I)=\beta_{C}(\mu=10)=P(10<\bar{x}<10.006 \mid \mu=10)=0.05$ $P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(10<\bar{x}<10.006 \mid \mu=11)=0.976$
+
+En el ejemplo anterior, con $n=25, C=\{\bar{x} \geq k\}$ y $\alpha=0.05$, $P(\mathrm{I})=\beta_{C}(\mu=10)=P(\bar{x} \geq 11.316 \mid \mu=10)=0.05$ $P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(\bar{x}<11.316 \mid \mu=11)=0.6554$
+
+En el ejemplo anterior, con $n=100, C=\{\bar{x} \geq k\}$ y $\alpha=0.05$,\\
+$P(\mathrm{I})=\beta_{C}(\mu=10)=P(\bar{x} \geq 10.658 \mid \mu=10)=0.05$\\
+$P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(\bar{x}<10.658 \mid \mu=11)=0.196$
+    
+}
+
+\begin{definición} [p-valor]
+ Si para contrastar $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, el test tiene región crítica 
+ $$C=\left\{\left(x_{1}, \ldots, x_{n}\right): T\left(x_{1}, \ldots, x_{n}\right) \geq k\right\}$$
+ para $T$ un estadístico conveniente, y se observa la muestra $\left(x_{1}, \ldots, x_{n}\right)$, se denomina p -valor correspondiente a $\left(x_{1}, \ldots, x_{n}\right)$ al valor
+
+$$
+p\left(x_{1}, \ldots, x_{n}\right)=\sup _{\theta \in \Theta_{0}} P\left\{T\left(X_{1}, \ldots, X_{n}\right) \geq T\left(x_{1}, \ldots, x_{n}\right) \mid \theta\right\}
+$$
+
+Si el tamaño del test es $\alpha$ y observada la muestra $\left(x_{1}, \ldots, x_{n}\right)$ el p-valor correspondiente $p\left(x_{1}, \ldots, x_{n}\right) \leq \alpha$, entonces $\left(x_{1}, \ldots, x_{n}\right)$ pertenece a la región crítica y por lo tanto se rechaza $H_{0}$. Si el p -valor $p\left(x_{1}, \ldots, x_{n}\right)>\alpha$, entonces $\left(x_{1}, \ldots, x_{n}\right)$ pertenece a la región de aceptación y por lo tanto no hay suficiente evidencia estadística para rechazar $H_{0}$
+\end{definición}
+
+\ejemplo{
+En el ejemplo anterior, con $n=100, C=\{\bar{x} \geq k\}$ y $\alpha=0.05$,\\
+$P(I)=\beta_{c}(\mu=10)=P(\bar{x} \geq 10.658 \mid \mu=10)=0.05$\\
+$P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(\bar{x}<10.658 \mid \mu=11)=0.196$\\
+Entonces, observada $\bar{x}=11$
+
+$$
+p(11)=P(\bar{X} \geq 11 \mid \mu=10)=P(Z \geq 2.5)=0.00621
+$$
+
+Por lo tanto, se rechaza $H_{0}: \mu=10$ a favor de $H_{1}: \mu=11$    
+}
+
+
+\begin{observación}
+\vspace{-2.5em}
+\begin{enumerate}
+\item n y $\alpha$ son valores fijados de antemano
+\item Las hipótesis nula y alternativa no son intercambiables puesto que el tratamiento que reciben es asimétrico, la asimetría queda matizada por el valor $\alpha$ que se elija como nivel de significación y por la probabilidad de error de tipo II que resulte una vez diseñado el test, pues podría ocurrir que para $\theta \in \Theta_{1}, P_{\theta}\left(C^{*}\right)=1-\beta_{C}(\theta) \leq \alpha$
+\item  En el contraste de hipótesis planteado se considera $H_{0}$ como la hipótesis de interés, en el sentido que para poder invalidarla es necesario esgrimir una gran evidencia. Por consiguiente, los test de hipótesis se emplean con un carácter conservador, a favor de la hipótesis nula, ya que el nivel de significación que se fija, intenta garantizar que sea muy infrecuente rechazar una hipótesis nula correcta, y la preocupación por dejar vigente una hipótesis nula falsa es menor, pudiéndose aceptar en este último caso riesgos más altos. En este sentido, si el resultado de un contraste de hipótesis es aceptar $H_{0}$, debe interpretarse que las observaciones no han aportado suficiente evidencia para descartarla; mientras que, si se rechaza, es porque se está razonablemente seguro de que $H_{0}$ es falsa y, por consiguiente, aceptamos $H_{1}$
+\end{enumerate}
+\end{observación}
+
+\begin{proposición} [Criterio de comparación de contrastes]
+Si $C$ y $C^{\prime}$ son dos test con nivel de significación $\alpha$ basados en una muestra $\left(X_{1}, \cdots X_{n}\right)$ de $\left\{F_{\theta}, \theta \in \Theta\right\}$, para contrastar $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, tales que $\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta), \forall \theta \in \Theta_{1}$, entonces $C$ es uniformemente más potente que $C^{\prime}$    
+\end{proposición}
+
+
+
+\subsection{Test uniformemente más potente de tamaño $\alpha$}
+
+
+\begin{proposición}
+Sea $C$ una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, basada en una muestra ( $X_{1}, \cdots X_{n}$ ) de $\left\{F_{\theta}, \theta \in \Theta\right\}$ $C$ es un test uniformemente de máxima potencia de tamaño $\alpha$ (TUMP) sí y sólo sí
+\begin{enumerate}
+\item $\sup \beta_{C}(\theta)=\alpha$ $\theta \in \Theta_{0}$
+\item Para cualquier otro test basado en $\left(X_{1}, \cdots X_{n}\right)$ con región crítica $C^{\prime}$ tal que $\sup _{\theta \in \Theta_{0}} \beta_{C^{\prime}}(\theta) \leq \alpha$, es $\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta), \forall \theta \in \Theta_{1}$
+\end{enumerate}
+\end{proposición}
+
+\subsection{Hipótesis nula simple frente a alternativa simple}
+
+\begin{teorema} [Teorema de Neyman-Pearson (Parte I)] 
+Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k \geq 0$ existe un test con región crítica $c=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots, x_{n}\right)} \geq k\right\}$ y región de aceptación $c^{*}=\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}<k\right\}$ tal que $\alpha=P_{\theta_{0}}(C)$, entonces $C$ es uniformemente de máxima potencia de tamaño $\alpha$
+\end{teorema}
+
+\begin{proof}
+Observemos que $C$ es un test de tamaño $\alpha$ ya que $\Theta_{0}=\left\{\theta_{0}\right\}$ y por lo tanto $\sup _{\theta \in \Theta_{0}} \beta_{C}(\theta)=P_{\theta_{0}}(C)=\alpha$\\
+Sea $C^{\prime}$ otro test de nivel $\alpha$, es decir tal que $\alpha \geq \sup _{\theta \in \Theta_{0}} \beta_{C^{\prime}}(\theta)=P_{\theta_{0}}\left(C^{\prime}\right)$ y consideremos la siguiente partición del espacio muestral.
+$$
+\begin{gathered}
+S^{+}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)>\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\}, \\
+S^{-}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)<\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\}, \\
+\chi^{n}-S^{+} \bigcup S^{-}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)=\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\} \\
+\int_{\chi^{n}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}= \\
+\int_{S^{+}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}+ \\
+\int_{S^{-}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}+ \\
+\int_{\chi^{n}-S^{+} \cup S^{-}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n} \geq 0 \\
+\int_{\chi^{n}} I_{C}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-\int_{\chi^{n}} I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n} \geq \\
+k\left(\int_{\chi^{n}} I_{C}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)-\int_{\chi^{n}} I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}\right) \\
+P_{\theta_{1}}(C)-P_{\theta_{1}}\left(C^{\prime}\right) \geq k\left(P_{\theta_{0}}(C)-P_{\theta_{0}}\left(C^{\prime}\right)\right) \geq k(\alpha-\alpha)=0 \Rightarrow \beta_{C}(\theta) \geq \beta C^{\prime}(\theta), \forall \theta \in \Theta_{1}=\left\{\theta_{1}\right\}
+\end{gathered}
+$$
+\end{proof}
+
+\begin{observación}
+De la demostración del teorema se deduce que los puntos para los que $f\left(x_{1}, \ldots, x_{n} \mid \theta_{1}\right)=k f\left(x_{1}, \ldots, x_{n} \mid \theta_{0}\right)$ pueden ser colocados tanto en la región crítica como en la región de aceptación.\\
+Es importante señalar que el teorema de Neyman-Pearson no dice que el test de la forma dada en su enunciado deba existir cualquiera que sea $\alpha \in[0,1]$
+\end{observación}
+
+
+\ejemplo{
+
+Para una muestra de tamaño $n=12$, extraída de una distribución de Poisson con parámetro $\theta$, donde $\theta \in [0, 0.5]$, se plantea el siguiente contraste de hipótesis:
+
+\[
+\begin{cases}
+H_{0}: \theta = 0 \\
+H_{1}: \theta = 0.5
+\end{cases}
+\]
+
+La región crítica para este contraste viene dada por:
+\[
+C = \{(x_1, \ldots, x_{12}) : \sum_{i=1}^{12} x_i \geq 2 \}
+\]
+
+En este caso particular, como $\sum_{i=1}^{12} x_i < 2$, se tiene que $\overline{X} < \frac{1}{6}$.
+
+La probabilidad de error de tipo I ($\alpha$) y la función de potencia ($\beta(\theta)$) se calculan como sigue:
+
+\begin{align*}
+\alpha &= \beta(0) = P\left(C \mid \theta=0\right) = P\left(\sum_{i=1}^{12} x_i \geq 2 \mid \theta=0\right) = 0 \\
+\beta(0.5) &= P\left(C \mid \theta=0.5\right) = P\left(\sum_{i=1}^{12} x_i \geq 2 \mid \theta=0.5\right) \\
+&= P\left(\text{Poisson}(6) \geq 2\right) \\
+&= 1 - P\left(\text{Poisson}(6) = 0\right) - P\left(\text{Poisson}(6) = 1\right) \\
+&= 1 - e^{-6}\left(\frac{6^0}{0!} + \frac{6^1}{1!}\right) \\
+&= 1 - e^{-6}(1 + 6) \approx 0.9826 \\
+\beta(0.25) &= P\left(C \mid \theta=0.25\right) = P\left(\sum_{i=1}^{12} x_i \geq 2 \mid \theta=0.25\right) \\
+&= P\left(\text{Poisson}(3) \geq 2\right) \\
+&= 1 - P\left(\text{Poisson}(3) = 0\right) - P\left(\text{Poisson}(3) = 1\right) \\
+&= 1 - e^{-3}\left(\frac{3^0}{0!} + \frac{3^1}{1!}\right) \\
+&= 1 - e^{-3}(1 + 3) \approx 0.8009
+\end{align*}
+
+}
