@@ -3,26 +3,26 @@
 \subsection{Región de confianza}
 Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta
     \subset \mathbb{R}^{k}}$ modelo estadístico k-paramétrico y $\left(X_{1},
-    \cdots X_{n}\right)$ muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$.
+    \ldots X_{n}\right)$ muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$.
 Denotemos por $P_{\theta}$ a la ley de probabilidad de la muestra
 
-Región de confianza\\ Sea $C\left(X_{1}, \cdots, X_{n}\right) \subset \Theta$
+Región de confianza\\ Sea $C\left(X_{1}, \ldots, X_{n}\right) \subset \Theta$
 una región aleatoria del espacio paramétrico tal que
 
 $$
-    P_{\theta}\left\{\theta \in C\left(X_{1}, \cdots, X_{n}\right)\right\} \geq 1-\alpha, \forall \theta \in \Theta
+    P_{\theta}\left\{\theta \in C\left(X_{1}, \ldots, X_{n}\right)\right\} \geq 1-\alpha, \forall \theta \in \Theta
 $$
 
-Entonces, para cada $\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n},
-    C\left(x_{1}, \cdots, x_{n}\right)$ se denomina región de confianza para
+Entonces, para cada $\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n},
+    C\left(x_{1}, \ldots, x_{n}\right)$ se denomina región de confianza para
 $\theta$ de nivel $1-\alpha$
 
 \subsection{Intervalos de confianza}
 
 \begin{definición}
-Sea $h: \Theta \rightarrow \mathbb{R}, \alpha \in(0,1)$ y $T_{1}=T_{1}\left(X_{1}, \cdots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ y $T_{2}=T_{2}\left(X_{1}, \cdots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}, T_{1} \leq T_{2}$, dos estadísticos unidimensionales tales que
-$$P_{\theta}\left\{T_{1}\left(X_{1}, \cdots, X_{n}\right) \leq h(\theta) \leq T_{2}\left(X_{1}, \cdots, X_{n}\right)\right\} \geq 1-\alpha, \forall \theta \in \Theta$$
-Entonces, para cada $\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n},\left(T_{1}\left(x_{1}, \cdots, x_{n}\right), T_{2}\left(x_{1}, \cdots, x_{n}\right)\right)$ se denomina intervalo de confianza para $h(\theta)$ de nivel $1-\alpha$
+Sea $h: \Theta \rightarrow \mathbb{R}, \alpha \in(0,1)$ y $T_{1}=T_{1}\left(X_{1}, \ldots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ y $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}, T_{1} \leq T_{2}$, dos estadísticos unidimensionales tales que
+$$P_{\theta}\left\{T_{1}\left(X_{1}, \ldots, X_{n}\right) \leq h(\theta) \leq T_{2}\left(X_{1}, \ldots, X_{n}\right)\right\} \geq 1-\alpha, \forall \theta \in \Theta$$
+Entonces, para cada $\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n},\left(T_{1}\left(x_{1}, \ldots, x_{n}\right), T_{2}\left(x_{1}, \ldots, x_{n}\right)\right)$ se denomina intervalo de confianza para $h(\theta)$ de nivel $1-\alpha$
 \end{definición}
 
 \begin{observación}
@@ -31,25 +31,28 @@ Siempre es deseable hacer que la medida de la región de confianza sea mínima, 
 
 \subsection{Métodos de obtención de intervalos de confianza}
 \underline{\textbf{Método de la cantidad pivotal}}\\
-Una v.a. $T=T\left(X_{1}, \cdots, X_{n}, \theta\right): \chi^{n} \times \Theta
+\begin{definición}[Cantidad pivotal]
+    Una v.a. $T=T\left(X_{1}, \ldots, X_{n}, \theta\right): \chi^{n} \times \Theta
     \rightarrow \mathbb{R}$ es una cantidad pivotal sí y sólo sí su distribución en
-el muestreo no depende de $\theta$
+    el muestreo no depende de $\theta$
+\end{definición}
 
-Si $T=T\left(X_{1}, \cdots, X_{n}, \theta\right)$ es una cantidad pivotal,
+
+Si $T=T\left(X_{1}, \ldots, X_{n}, \theta\right)$ es una cantidad pivotal,
 fijado cualquier nivel de confianza $1-\alpha, \alpha \in(0,1)$, se pueden
 determinar dos constantes, $c_{1}(\alpha)$ y $c_{2}(\alpha) \in \mathbb{R}$
 (que no son únicas), tales que
 
 $$
-    P_{\theta}\left\{c_{1}(\alpha) \leq T\left(X_{1}, \cdots, X_{n}, \theta\right) \leq c_{2}(\alpha)\right\} \geq 1-\alpha, \forall \theta \in \Theta
+    P_{\theta}\left\{c_{1}(\alpha) \leq T\left(X_{1}, \ldots, X_{n}, \theta\right) \leq c_{2}(\alpha)\right\} \geq 1-\alpha, \forall \theta \in \Theta
 $$
 
-Si para cada $\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}, c_{1}(\alpha)
-    \leq T\left(x_{1}, \cdots, x_{n}, \theta\right) \leq c_{2}(\alpha)$
-$\Leftrightarrow T_{1}\left(x_{1}, \cdots, x_{n}, \alpha\right) \leq h(\theta)
-    \leq T_{2}\left(x_{1}, \cdots, x_{n}, \alpha\right)$, entonces
-$\left(T_{1}\left(x_{1}, \cdots, x_{n}, \alpha\right), T_{2}\left(x_{1},
-    \cdots, x_{n}, \alpha\right)\right)$ es un intervalo de confianza para
+Si para cada $\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n}, c_{1}(\alpha)
+    \leq T\left(x_{1}, \ldots, x_{n}, \theta\right) \leq c_{2}(\alpha)$
+$\Leftrightarrow T_{1}\left(x_{1}, \ldots, x_{n}, \alpha\right) \leq h(\theta)
+    \leq T_{2}\left(x_{1}, \ldots, x_{n}, \alpha\right)$, entonces
+$\left(T_{1}\left(x_{1}, \ldots, x_{n}, \alpha\right), T_{2}\left(x_{1},
+    \ldots, x_{n}, \alpha\right)\right)$ es un intervalo de confianza para
 $h(\theta)$ de nivel $1-\alpha$
 
 Intervalos de confianza asociados a la distribución normal\\
@@ -57,19 +60,58 @@ Intervalos de confianza asociados a la distribución normal\\
 \ejemplo{
     Para una m.a.s.(n) de $X \sim N(\mu, \sigma), \sigma$ conocida,
     $$I C_{1-\alpha}(\mu)=\left(\bar{x}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}, \bar{x}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}\right)$$
+    es un intervalo de confianza para $\mu$ de nivel $1-\alpha, \alpha \in(0,1)$\\
+    Para demostrar esto, utilizaremos el teorema de fisher, segun el cual $\overline{X} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$, entonces:
+    $$ \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)$$
+    $$ P(z_{\frac{\alpha}{2}} \leq \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \leq z_{\frac{\alpha}{2}}) \geq 1-\alpha \implies P(\bar{X}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}) \geq 1-\alpha$$
+    Y asi finalmente se deduce el intervalo dado.
 }
 
 \ejemplo{
-    Para una m.a.s. ( $n$ ) de de $X$, si $\theta \in \mathbb{R}$ y la función de distribución de la población $F_{\theta}(x)$, como función en $x$ es continua y estrictamente monótona $\forall \theta$, y como función de $\theta$ es continua y estrictamente monótona $\forall x$, entonces $T=-2 \sum_{i=1}^{n} \ln F_{\theta}\left(X_{i}\right) \sim \chi_{2 n}^{2}$ constituye una cantidad pivotal y permite obtener un intervalo de confianza para $\theta$
+    Para una m.a.s. ( $n$ ) de de $X$, si $\theta \in \mathbb{R}$ y la función de distribución de la población $F_{\theta}(x)$, como función en $x$ es continua y estrictamente monótona $\forall \theta$, y como función de $\theta$ es continua y estrictamente monótona $\forall x$, entonces $T=-2 \sum_{i=1}^{n} \ln F_{\theta}\left(X_{i}\right) \sim \chi_{2 n}^{2}$ constituye una cantidad pivotal y permite obtener un intervalo de confianza para $\theta$\\
+    Para ver este primero fijemonos en que como $F_\theta (x)$ es continua y estrictamente monótona, entonces:
+    $Y = F(X|\theta) \sim U(0,1)$. Ahora hagamos el cambio:
+    $$z=-2\ln(F(X | \theta)) \implies y=e^{-z/2}, \quad \left| \frac{dy}{dz} \right| = \frac{1}{2} e^{-z/2} \implies g(z) = \frac{1}{2} e^{-z/2}$$
+    Que coincide con la densidad de una variable aleatoria $\chi^2$ con 2 grados de libertad.\\
+    Asi, sumandolas:
+    $$ T = -2 \sum_{i=1}^{n} \ln F\left(X|\theta\right) \sim \chi_{2 n}^{2}$$
+    Ahora podemos utilizar los cuantiles para obtener el intervalo de confianza:
+    $$ P(\chi_{2 n; 1- \frac{\alpha}{2}} \leq T \leq \chi_{2 n;\frac{\alpha}{2}}) \geq 1-\alpha$$
+    Por tanto utilizando la monotonia estricta en $\theta$ de $F_\theta(x)$, y la invertibilidad de las ecuaciones, podemos obtener:
+    $$\chi_{2 n; 1- \frac{\alpha}{2}} = T(x_1, \ldots ,x_n; \underline{\theta}(x_1, \ldots ,x_n))$$
+    $$\chi_{2 n;\frac{\alpha}{2}} = T(x_1, \ldots ,x_n; \overline{\theta}(x_1, \ldots ,x_n))$$
+    Finalmente obtenemos el intervalo de confianza:
+    $$\left(\underline{\theta}(x_1, \ldots ,x_n), \overline{\theta}(x_1, \ldots ,x_n)\right)$$
 }
 
 \ejemplo{
     Construir un intervalo de confianza para $\theta$ por el método de la
-    cantidad pivotal basado en una m.a.s. $(n)$ de $f_{\theta}(x)=\theta x^{\theta-1} I_{(0,1)}(x)$, con $\theta>0$
+    cantidad pivotal basado en una m.a.s. $(n)$ de $f_{\theta}(x)=\theta x^{\theta-1} I_{(0,1)}(x)$, con $\theta>0$\\
+    Utilizando el ejemplo anterior, y como:
+    $$F_{\theta}(x)=
+    \begin{cases}
+        0 & x \leq 0 \\
+        x^{\theta} & 0<x<1 \\
+        1 & x \geq 1
+    \end{cases}
+    $$
+    Es una función continua y estrictamente monótona, entonces:
+    $$P\left(\chi^2_{2n;1-\frac{\alpha}{2}} < -2\theta \sum_{i=1}^{n} \ln X_i < \chi^2_{2n;\frac{\alpha}{2}} \middle| \theta \right) = 1 - \alpha \quad \forall \theta \in \Theta$$
+    Y por tanto:
+    $$
+        P\left\{
+        \frac{\chi^2_{2n;1-\frac{\alpha}{2}}}{-2 \sum_{i=1}^{n} \ln X_i}
+        < \theta <
+        \frac{\chi^2_{2n;\frac{\alpha}{2}}}{-2 \sum_{i=1}^{n} \ln X_i}
+        |
+        \theta
+        \right\}
+        = 1 - \alpha \quad \forall \theta \in \Theta
+        $$
 }
 
 \underline{\textbf{Método de Neyman}}\\
-Sea $T=T\left(X_{1}, \cdots X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ un
+Sea $T=T\left(X_{1}, \ldots X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ un
 estimador de $h(\theta)$ y denotemos por $g_{\theta}(t)$ a su función de
 densidad (o de masa)
 
@@ -93,10 +135,10 @@ Si para cada $t \in \mathbb{R}, c_{1}\left(\theta, \alpha_{1}\right) \leq T(t)
 intervalo de confianza para $h(\theta)$ de nivel $1-\alpha, \alpha \in(0,1)$
 
 \ejemplo{
-Construir por el método de Neyman un intervalo de confianza de longitud esperada mínima para $\theta$ basado en una m.a.s. $(n)$ de $X \sim U(0, \theta)$, con $\theta>0$. Indicación: utilizar $T=T\left(X_{1}, \cdots, X_{n}\right)=X_{(n)}$
+Construir por el método de Neyman un intervalo de confianza de longitud esperada mínima para $\theta$ basado en una m.a.s. $(n)$ de $X \sim U(0, \theta)$, con $\theta>0$. Indicación: utilizar $T=T\left(X_{1}, \ldots, X_{n}\right)=X_{(n)}$
 }
 
-Intervalos de confianza para muestras grandes\\ Si $T_{n}=T\left(X_{1}, \cdots,
+Intervalos de confianza para muestras grandes\\ Si $T_{n}=T\left(X_{1}, \ldots,
     X_{n}\right)$ es un estimador de $h(\theta)$ tal que
 
 $$
@@ -211,7 +253,7 @@ $$
 }
 
 \begin{observación}
-Recordemos que el intervalo de confianza obtenido desde el punto de vista frecuentista es $/ C_{1-\alpha}(\theta)=\bar{x} \mp z_{\alpha / 2} \frac{1}{\sqrt{n}}$, que tiene mayor amplitud, aparte de su diferente interpretación
+Recordemos que el intervalo de confianza obtenido desde el punto de vista frecuentista es $IC_{1-\alpha}(\theta)=\bar{x} \mp z_{\alpha / 2} \frac{1}{\sqrt{n}}$, que tiene mayor amplitud, aparte de su diferente interpretación
 \end{observación}
 
 
