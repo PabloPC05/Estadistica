@@ -543,10 +543,11 @@ INPUT C:\Users\paufr\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold10.tfm
 INPUT C:\Users\paufr\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold8.tfm
 INPUT C:\Users\paufr\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold6.tfm
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
-INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\Theory\5 - Estimacion por Regiones de Confianza.tex
 INPUT .\Theory\5 - Estimacion por Regiones de Confianza.tex
 INPUT .\Theory\5 - Estimacion por Regiones de Confianza.tex
@@ -560,7 +561,6 @@ INPUT Theory\6 - Contraste de Hipotesis.tex
 INPUT .\Theory\Appendix.tex
 INPUT .\Theory\Appendix.tex
 INPUT Theory\Appendix.tex
-INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT main.aux

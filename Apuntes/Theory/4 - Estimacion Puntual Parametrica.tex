@@ -6,9 +6,20 @@ Sea $(\Omega, \mathcal{A}, \mathcal{P})$ el espacio probabilístico asociado a u
 \end{definición}
 
 \begin{definición}[Estimador centrado o insesgado]
-Dado un estimador $T = T(X_1, \ldots X_n): \chi^{n} \to \Theta$ se dice que es centrado para $\theta$ cuando $E_{\theta}[T] = \theta$. \\
-Se dice asintóticamente insesgado o centrado cuando $\lim_{n \to \infty}E_{\theta}[T] = \theta$
+Dado un estimador $T = T(X_1, \ldots X_n): \chi^{n} \to \Theta$ se dice que es centrado para $h(\theta)$ cuando $E_{\theta}[T] = h(\theta)$. \\
+Se dice asintóticamente insesgado o centrado cuando $\lim_{n \to \infty}E_{\theta}[T] = h(\theta)$
 \end{definición}
+
+\ejemplo{
+  Para cualquier población que tenga media, la media muestral \(\overline{X}\) es un estimador centrado de \(h(\theta) = E[X]\), puesto que se cumple:
+  \[
+    E_\theta \left[ \overline{X} \right] = E[X]
+  \]
+
+  Además, se tiene que \(E[a_k] = \alpha_k\), lo que implica que el momento
+  muestral de orden \(k\) respecto al origen es un estimador centrado del momento
+  poblacional de orden \(k\) respecto al origen de la población. En general, no
+  es cierto un resultado análogo para momentos centrales. }
 
 \begin{definición}[Sesgo]
 Se llama sesgo de un estimador a la diferencia $b(T, \theta) = E_{\theta}[T] - \theta$
@@ -58,8 +69,41 @@ $$ \implies E[\sigma_n^2] = \sigma^2\left(1 - \frac{1}{n}\right) = h(\theta) \te
 
 \ejemplo{
   Sea una m.a.s. de tamaño $n = 1$ de una población que sigue una distribución $Bin(1, \theta)$ demostrar que no existe un estimador centrado de $\theta^2$:\\
-  Sea $g$ estadístico tal que $E[g(X)] = \theta^2 \implies$
-  NO LO SÉ HACER
+  Sea $X \sim Bin(1, \theta)$ y $T(X)$ un posible estimador de $\theta^2$. Para que $T(X)$ sea centrado (insesgado), debe satisfacer:
+  \[
+    E[T(X)] = \theta^2 \quad \forall \theta \in (0,1)
+  \]
+  Como $n=1$, el estimador $T(X)$ solo puede tomar dos valores:
+  \begin{itemize}
+    \item $T(1)$ cuando $X=1$ (éxito)
+    \item $T(0)$ cuando $X=0$ (fracaso)
+  \end{itemize}
+  Calculamos la esperanza:
+  \[
+    E[T(X)] = T(1) \cdot P(X=1) + T(0) \cdot P(X=0) = T(1) \theta + T(0) (1 - \theta)
+  \]
+  Para que sea insesgado:
+  \[
+    T(1) \theta + T(0) (1 - \theta) = \theta^2 \quad \forall \theta \in (0,1)
+  \]
+  Reordenando términos:
+  \[
+    \theta^2 - (T(1) - T(0)) \theta - T(0) = 0 \quad \forall \theta \in (0,1)
+  \]
+  Esta es una ecuación cuadrática en $\theta$. Sin embargo, un polinomio de grado
+  2 no nulo tiene como máximo 2 raíces reales distintas, mientras que la ecuación
+  debe cumplirse para infinitos $\theta \in (0,1)$. La única posibilidad sería
+  que los coeficientes fueran idénticamente cero:
+  \[
+    \begin{cases}
+      1 = 0           \\
+      T(1) - T(0) = 0 \\
+      T(0) = 0
+    \end{cases}
+  \]
+  Lo cual es un sistema incompatible (la primera ecuación $1=0$ es falsa). Por
+  tanto, \textbf{no existe} ninguna elección de $T(0)$ y $T(1)$ que satisfaga la
+  condición de insesgadez para todo $\theta \in (0,1)$. 
 }
 
 \ejemplo{
@@ -77,11 +121,18 @@ $$E[\bar{T_k}] = E[\frac{1}{k}\sum_{j = 1}^{k}T_j] = \frac{1}{k}\sum_{j = 1}^{k}
 }
 
 \begin{definición}[Estimadores consistentes]
-Una sucesión de estimadores $T_{n} = T(X_1, \ldots, X_n)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, E_{\theta}[T_n] \underset{n \to \infty}{\longrightarrow} \theta$ y $V_{\theta}(T_n) \underset{n \to \infty}{\longrightarrow} 0$, entonces $T_n$ es consistente para $\theta$
+Una sucesión de estimadores \( T_n = T(X_1, \ldots, X_n) \) se dice \textbf{consistente} para el parámetro \( \theta \) si, para todo \( \theta \in \Theta \), se cumple que
+\[
+  E_{\theta}[T_n] \underset{n \to \infty}{\longrightarrow} \theta \quad \text{y} \quad  V_{\theta}(T_n) \underset{n \to \infty}{\longrightarrow} 0.
+\]
+Es decir, \( T_n \) es un estimador insesgado asintóticamente y su varianza
+tiende a cero conforme aumenta el tamaño de la muestra, lo que garantiza que \(
+T_n \) converge en probabilidad a \( \theta \).
+
 \end{definición}
 
 \begin{proposición}
-Si $T_{n} = T(X_1, \ldots, X_n)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, E_{\theta}[T_n] \underset{n \to \infty}{\longrightarrow} \theta$, $V_{\theta}(T_n) \underset{n \to \infty}{\longrightarrow} 0$, entonces $T_n$ es consistente para $\theta$
+Si $T_{n} = T(X_1, \ldots, X_n)$ es una sucesión de estimadores tales que $\forall \theta \in \Theta, \ E_{\theta}[T_n] \underset{n \to \infty}{\longrightarrow} \theta$, $V_{\theta}(T_n) \underset{n \to \infty}{\longrightarrow} 0$, entonces $T_n$ es consistente para $\theta$
 \end{proposición}
 \begin{proof}
   $E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right]=V_{\theta}\left(T_{n}\right)+b\left(T_{n}, \theta\right)^{2} \underset{n \rightarrow \infty}{\longrightarrow} 0, \forall \theta \in \Theta$ entonces $T_{n} \xrightarrow[n \rightarrow \infty]{\text { m.c. }} \theta, \forall \theta \in \Theta$
@@ -99,33 +150,118 @@ $$\lim_{n \to \infty} V[T_n] = \lim_{n \to \infty} V\left[\frac{1}{n+2}\sum_{i =
 
 \subsection{Estimadores Bayesianos}
 
-\begin{definición}[Estimadores Bayesianos]
-El enfoque bayesiano trata a los parámetros de las distribuciones como variables aleatorias con su propia función de distribución, a diferencia de considerar que toma valores fijos desconocidos. Para desarrollar este punto de vista, se asigna una distribución a $\theta$ llamada \underline{distribución inicial o a priori} $\pi(\theta)$ y se actualiza esta distribución con la información de la muestra para obtener la \underline{distribución final o a posteriori} $\pi(\theta | x_1, \ldots, x_n)$
-$$\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid \theta\right)}{m\left(x_{1}, \ldots, x_{n}\right)}$$
-donde m es la \underline{distribución predictiva}, dada por
-$$m(x_1, \ldots, x_n) = \int_{\Theta} \pi(\theta)f(x_1, \ldots, x_n | \theta)d\theta$$
-\end{definición}
+El enfoque bayesiano trata a los parámetros de las distribuciones como
+variables aleatorias con su propia función de distribución, a diferencia de
+considerar que toma valores fijos desconocidos. Para desarrollar este punto de
+vista, se asigna una distribución a $\theta$ llamada \underline{distribución
+  inicial o a priori} $\pi(\theta)$ y se actualiza esta distribución con la
+información de la muestra para obtener la \underline{distribución final o a
+  posteriori} $\pi(\theta | x_1, \ldots, x_n)$ $$\pi\left(\theta \mid x_{1},
+  \ldots, x_{n}\right)=\frac{\pi(\theta) f\left(x_{1}, \ldots, x_{n} \mid
+    \theta\right)}{m\left(x_{1}, \ldots, x_{n}\right)}$$ donde m es la
+\underline{distribución predictiva}, dada por $$m(x_1, \ldots, x_n) =
+  \int_{\Theta} \pi(\theta)f(x_1, \ldots, x_n | \theta)d\theta$$
+
+A la función $f(x_1, \ldots, x_n | \theta)$ se le llama \underline{función de
+  verosimilitud} y es la función de densidad de la muestra condicionada al
+parámetro $\theta$.\\
 
 \begin{observación}
 Antes de tomar la muestra, la información sobre $\theta$ viene dada por $\pi(\theta)$ y tras la experimentación se debe utilizar $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)$. El estimador bayesiano de $\theta$ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución
 \end{observación}
 
 \ejemplo{
-  Sea una m.a.s. de tamaño $n$ de una población $Bin(1, \theta)$ y con $\theta \sim U(0, 1)$ entonces $\pi(\theta | x_1, \ldots, x_n) \sim Beta\left(\sum_{i = 1}^{n}x_i + 1, n - \sum_{i = 1}^{n}x_i + 1\right)$
-  $$ \theta \sim U(0, 1) \implies \pi(\theta) \frac{1}{1-0} = 1$$
-  $$ X \sim Bin(1, \theta) \equiv Bernouilli(\theta) \implies f(x | \theta) = \theta^x(1-\theta)^{1-x} \implies $$ $$ \implies f(x_1, \ldots, x_n | \theta) = \prod_{i = 1}^{n}\theta^{x_i}(1-\theta)^{1-x_i} = \theta^{\sum_{i = 1}^{n}x_i}(1-\theta)^{n - \sum_{i = 1}^{n}x_i}$$
-  $$ m(x_1, \ldots, x_n) = \int_{0}^{1} \pi(\theta)f(x_1, \ldots, x_n | \theta)d\theta = \int_{0}^{1} \theta^S(1-\theta)^{n-S}d\theta =  B(S + 1 n - S + 1) \implies$$
-  $$ \pi(\theta | x_1, \ldots, x_n) = \frac{1 \cdot \theta^S (1-\theta)^{n-S}}{B(S + 1, n - S + 1)} \implies \pi(\theta | x_1, \ldots, x_n) \sim Beta(S + 1, n - S + 1)$$
-  \\
-  Ahora teniendo en cuenta que $U(0, 1) \equiv Beta(1, 1)$, podemos generalizar el resultado anterior para cualquier distribución inicial $\pi(\theta) \sim Beta(\alpha, \beta)$
-  $$\theta \sim Beta(\alpha, \beta) \implies \pi(\theta) = \frac{\theta^{\alpha - 1}(1-\theta)^{\beta - 1}}{B(\alpha, \beta)}$$
-  $$ m(x_1, \ldots, x_n) = \int_{0}^{1} \pi(\theta)f(x_1, \ldots, x_n | \theta)d\theta = \int_{0}^{1} \frac{\theta^{\alpha - 1}(1-\theta)^{\beta - 1}\theta^S(1-\theta)^{n-S}}{B(\alpha, \beta)}d\theta = $$
-  $$ = \frac{B(\alpha + S, \beta + n - S)}{B(\alpha, \beta)} = \frac{\Gamma(\alpha + S)\Gamma(\beta + n - S)}{\Gamma(\alpha + \beta + n)} \implies \pi(\theta | x_1, \ldots, x_n) \sim Beta(\alpha + S, \beta + n - S)$$
-  En este caso se dice que la familia de distribuciones iniciales $Beta(\alpha, \beta)$ es conjugada de la familia de distribuciones de probabilidad $X \sim Bin(1, \theta)$
-  \begin{observación}
-  Además, tenemos que $E[\theta | x_1, \ldots, x_n] = \frac{\sum_{i = 1}^{n}x_i + \alpha}{n + \alpha + \beta} = \frac{n}{n + \alpha + \beta}\bar{x} + \frac{\alpha + \beta}{n + \alpha + \beta}\frac{\alpha}{\alpha + \beta}$
-  \end{observación}
-}
+  Sea una muestra aleatoria simple (m.a.s.) de tamaño \( n \) proveniente de una población que sigue una distribución \( Bin(1, \theta) \)
+  \[
+    X_i \sim Bernoulli(\theta), \quad i = 1, \dots, n.
+  \]
+  Esto significa que cada \( X_i \) puede tomar valores 0 o 1 con probabilidades: \[
+    P(X_i = 1 | \theta) = \theta, \quad P(X_i = 0 | \theta) = 1 - \theta.
+  \]
+  Buscamos encontrar la distribución a posteriori de \( \theta \) usando
+  inferencia Bayesiana.
+
+  Antes de observar los datos, suponemos que \( \theta \) sigue una distribución
+  uniforme en el intervalo \( (0,1) \):
+  \[
+    \theta \sim U(0,1).
+  \]
+  Dado que la densidad de la distribución uniforme en \( (0,1) \) es:
+  \[
+    \pi(\theta) = \frac{1}{1-0} = 1, \quad 0 \leq \theta \leq 1,
+  \]
+  esto implica que cualquier valor de \( \theta \) dentro del intervalo \([0,1]\)
+  es igualmente probable antes de ver los datos.
+
+  Dado que la muestra es independiente, la función de verosimilitud se obtiene
+  como el producto de las probabilidades individuales:
+  \[
+    f(x_1, \dots, x_n | \theta) = \prod_{i=1}^{n} P(X_i = x_i | \theta).
+  \]
+  Usando la función de masa de probabilidad de la distribución Bernoulli:
+  \[
+    P(X_i = x_i | \theta) = \theta^{x_i} (1-\theta)^{1-x_i},
+  \]
+  tenemos:
+  \[
+    f(x_1, \dots, x_n | \theta) = \prod_{i=1}^{n} \theta^{x_i} (1-\theta)^{1-x_i}.
+  \]
+  Factorizando los exponentes:
+  \[
+    f(x_1, \dots, x_n | \theta) = \theta^{\sum_{i=1}^{n} x_i} (1-\theta)^{n - \sum_{i=1}^{n} x_i}.
+  \]
+  Definiendo \( S = \sum_{i=1}^{n} x_i \), que es la cantidad de éxitos en la
+  muestra, la función de verosimilitud se expresa como:
+  \[
+    f(x_1, \dots, x_n | \theta) = \theta^S (1-\theta)^{n-S}.
+  \]
+  Aplicando el Teorema de Bayes, la distribución a posteriori es proporcional a:
+  \[
+    \pi(\theta | x_1, \dots, x_n) \propto \pi(\theta) f(x_1, \dots, x_n | \theta).
+  \]
+  Sustituyendo \( \pi(\theta) = 1 \) y la función de verosimilitud:
+  \[
+    \pi(\theta | x_1, \dots, x_n) \propto \theta^S (1-\theta)^{n-S}.
+  \]
+  Reconociendo que esta es la forma de la función de densidad de una distribución
+  Beta:
+  \[
+    Beta(a, b) \propto \theta^{a-1} (1-\theta)^{b-1},
+  \]
+  identificamos que la posteriori es una distribución Beta con parámetros:
+  \[
+    \pi(\theta | x_1, \dots, x_n) \sim Beta(S+1, n-S+1).
+  \]
+  En general, si en lugar de una uniforme usamos una distribución a priori Beta
+  con parámetros \( \alpha \) y \( \beta \):
+  \[
+    \theta \sim Beta(\alpha, \beta),
+  \]
+
+  cuya función de densidad es:
+  \[
+    \pi(\theta) = \frac{\theta^{\alpha - 1} (1-\theta)^{\beta - 1}}{B(\alpha, \beta)},
+  \]
+  siguiendo el mismo procedimiento, obtenemos que la distribución a posteriori
+  también sigue una Beta con parámetros actualizados:
+  \[
+    \pi(\theta | x_1, \dots, x_n) \sim Beta(\alpha + S, \beta + n - S).
+  \]
+  Esto muestra que \textbf{la familia de distribuciones Beta es conjugada para la
+    distribución Bernoulli-Binomial}.
+
+  El valor esperado de \( \theta \) dado los datos es:
+  \[
+    E[\theta | x_1, \dots, x_n] = \frac{S + \alpha}{n + \alpha + \beta}.
+  \]
+  Si tomamos la esperanza como una combinación convexa:
+  \[
+    E[\theta | x_1, \dots, x_n] = \frac{n}{n + \alpha + \beta} \bar{x} + \frac{\alpha + \beta}{n + \alpha + \beta} \frac{\alpha}{\alpha + \beta}.
+  \]
+  Esto indica que la esperanza de la distribución a posteriori es una mezcla
+  entre la media muestral \( \bar{x} \) y la esperanza a priori \(
+  \frac{\alpha}{\alpha + \beta} \), ponderada por los tamaños relativos de la
+  muestra y la información previa. }
 
 \ejemplo{
 Sea una m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$ y con $\mu \sim N(\mu_0, \sigma_0)$ y $\sigma$ conocida entonces $\pi(\mu | x_1, \ldots, x_n) \sim N(\mu_1, \sigma_1)$:
@@ -134,19 +270,20 @@ $$X \sim N(\mu, \sigma) \implies f(x | \mu) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\fr
 $$ = \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}$$
 $$\pi(\theta | x_1, \ldots, x_n) = \frac{\frac{1}{\sqrt{2\pi}\sigma_0}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}}{\int_{\mathbb{R}}\frac{1}{\sqrt{2\pi}\sigma_0}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}d\mu} = $$
 $$ = \frac{e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}}{\int_{\mathbb{R}}e^{-\frac{(\mu - \mu_0)^2}{2\sigma_0^2}} \cdot e^{-\frac{\sum_{i = 1}^{n}(x_i - \mu)^2}{2\sigma^2}}d\mu} = \frac{e^{\frac{-\mu^2 - \mu_0^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-\sum_{i = 1}^{n}x_i^2 - n\mu^2 + 2\mu\sum_{i = 1}^{n}x_i}{2\sigma^2}}}{\int_{\mathbb{R}}e^{\frac{-\mu^2 - \mu_0^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-\sum_{i = 1}^{n}x_i^2 - n\mu^2 + 2\mu\sum_{i = 1}^{n}x_i}{2\sigma^2}}d\mu} = $$
-$$ = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\int_{\mathbb{R}} e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}d\mu} = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\int_{\mathbb{R}} e^{-\frac{1}{2}\left(\frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}}\right)\mu^2 + \left(\frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}\right)\mu}d} \implies$$
-Sabiendo que, dada una normal $N(E, \sqrt{V})$ se da que: $\int_{-\infty}^{+\infty}e^{-\frac{1}{2V}\theta^2 + \frac{E}{V}\theta}d\theta = \sqrt{2\pi V} \cdot e^{\frac{1}{2}\frac{E^2}{V}}$, entonces:
-$$\begin{cases}
-    \frac{1}{V} = \frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}} \\
-    \frac{E}{V} = \frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}
-  \end{cases}$$
-$$ = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\sqrt{2\pi\left(\frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}}\right)} \cdot e^{\frac{1}{2}\left(\frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}\right)^2}} = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\sqrt{2\pi\left(\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}\right)} \cdot e^{\frac{1}{2}\left(\frac{\mu_0^2}{\sigma_0^2} + \frac{\bar{X}^2}{\frac{\sigma^2}{n}}\right)}} = $$
-
-NO ESTÁ TERMINADO }
+$$ = \frac{e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}}{\int_{\mathbb{R}} e^{\frac{-\mu^2 + 2\mu\mu_0}{2\sigma_0^2}} \cdot e^{\frac{-n\mu^2 + 2\mu\bar{X}n}{2\sigma^2}}d\mu} = \frac{e^{-\frac{1}{2}\left(\frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}}\right)\mu^2 + \left(\frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}\right)\mu}}{\int_{\mathbb{R}} e^{-\frac{1}{2}\left(\frac{1}{\sigma_0^2} + \frac{1}{\frac{\sigma^2}{n}}\right)\mu^2 + \left(\frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}\right)\mu}d} = \frac{e^{-\frac{1}{2V}\mu^2 + \frac{E}{V}\mu}}{\int_{\mathbb{R}} e^{-\frac{1}{2V}\mu^2 + \frac{E}{V}\mu}d\mu}$$
+donde $V = \frac{1}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}}$ y $E = \frac{\mu_0}{\sigma_0^2} + \frac{\bar{X}}{\frac{\sigma^2}{n}}$.\\
+Considerando la normal $N(E, \sqrt{V})$ y la integral de su función de densidad que es igual a 1:
+$$\int_{\mathbb{R}} \frac{1}{\sqrt{2\pi V}}e^{-\frac{1}{2V}(\mu - E)^2}d\mu = 1$$
+entonce factorizando el exponente obtenemos:
+$$1 = \int_{\mathbb{R}} \frac{1}{\sqrt{2\pi V}}e^{-\frac{1}{2V}(\mu^2 - 2E\mu + E^2)}d\mu = \frac{1}{\sqrt{2\pi V}}e^{-\frac{E^2}{2V}}\int_{\mathbb{R}} e^{-\frac{1}{2V}\mu^2 + \frac{E}{V}\mu}d\mu$$
+$$ \implies \int_{\mathbb{R}} e^{-\frac{1}{2V}\mu^2 + \frac{E}{V}\mu}d\mu = \sqrt{2\pi V}e^{\frac{E^2}{2V}}$$
+Luego entonces tenemos que
+$$\pi(\mu | x_1, \ldots, x_n) = \frac{e^{-\frac{1}{2V}\mu^2 + \frac{E}{V}\mu}}{\sqrt{2\pi V}e^{\frac{E^2}{2V}}} = \frac{1}{\sqrt{2\pi V}}e^{-\frac{1}{2V}\left(\mu - E\right)^2}$$
+}
 
 \begin{definición}[Estadístico suficiente bayesiano]
 $T = T(X_1, \ldots, X_n)$ es un estadístico suficiente bayesiano para $\theta$ para la familia $\mathcal{P} = \{f(\vec{x}|\theta) : \theta \in \Theta\}$ si cualquiera que sea la distribución inicial $\pi(\theta)$, se tiene que la distribución final dada por la muestra y por el valor del estadístico son la misma. Es decir:
-$$\pi(\theta | x_1, \ldots, x_n) = \pi(\theta | t) : t = T(x_1, \ldots, x_n)$$
+$$\pi(\theta | x_1, \ldots, x_n) = \pi(\theta | t) \ \text{ tal que } \ t = T(x_1, \ldots, x_n)$$
 \end{definición}
 
 \begin{teorema}[Versión bayesiana del Teorema de Factorización de Fisher]
@@ -163,7 +300,7 @@ $$\pi(\theta | x_1, \ldots, x_n) = \pi(\theta | t) : t = T(x_1, \ldots, x_n)$$
 \begin{definición}[Error cuadrático medio]
 Dado un estimador $T(X_1, \ldots, X_n)$ de $\theta$, se denomina error cuadrático medio $ECM$ a la expresión en función de $\theta$:
 $$ECM_T(\theta) = E_{\theta}[(T - \theta)^2]$$
-Conceptualmente, el error cuadrático medio es una medida que indica qué tn cerca está un estadístico del parámetro verdadero que se intenta estimar.
+Conceptualmente, el error cuadrático medio es una medida que indica qué tan cerca está un estadístico del parámetro verdadero que se intenta estimar.
 \end{definición}
 
 \begin{proposición}
@@ -815,30 +952,26 @@ Denotemos por $\theta_{0}$ el verdadero valor del parámetro (desconocido).
   \end{enumerate}
 \end{proof}
 
-
 \begin{teorema} [Primer teorema de convergencia del EMV (consistencia)]
   Para una m.a.s. $(n)$, existe una sucesión de v.a. $\hat{\theta}_{n}$, para cada $n$ solución de la ecuación de verosimilitud, $\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=0$, que converge c.s. al verdadero valor del parámetro $\theta_{0}$.
 \end{teorema}
 
 \begin{proof}
-Para una m.a.s. $(n), f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod_{i=i}^{n} f_{\theta}\left(x_{i}\right)$\\
-Entonces, $\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{i}\right)=n z_{n}(\theta)$\\
-Además, $z_{n}(\theta) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} E_{\theta_{0}}\left[\frac{\partial}{\partial \theta} \log f_{\theta}(x)\right]=J\left(\theta_{0}, \theta\right)$ que es estrictamente decreciente en el entorno $E\left(\theta_{0}\right)$ y $J\left(\theta_{0}, \theta_{0}\right)=0$\\
-Por lo tanto, podemos elegir $\varepsilon>0$ tal que $\left[\theta_{0}-\varepsilon, \theta_{0}+\varepsilon\right] \subset E\left(\theta_{0}\right)$ y $J\left(\theta_{0}-\varepsilon, \theta_{0}\right)>0, J\left(\theta_{0}+\varepsilon, \theta_{0}\right)<0$\\
-Entonces,\\
-$z_{n}\left(\theta_{0}-\varepsilon\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} J\left(\theta_{0}, \theta_{0}-\varepsilon\right)>0$ y $z_{n}\left(\theta_{0}+\varepsilon\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} J\left(\theta_{0}, \theta_{0}+\varepsilon\right)<0$\\
-Como $\frac{\partial}{\partial \theta} f_{\theta}$ es continua, $\exists \hat{\theta}_{n} \in\left(\theta_{0}-\varepsilon, \theta_{0}+\varepsilon\right)$ tal que $z_{n}\left(\hat{\theta}_{n}\right)=0$. Por lo tanto, $\hat{\theta}_{n}$ es una solución de la ecuación de verosimilitud tal que $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$
+  Para una m.a.s. $(n), f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod_{i=i}^{n} f_{\theta}\left(x_{i}\right)$\\
+  Entonces, $\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{i}\right)=n z_{n}(\theta)$\\
+  Además, $z_{n}(\theta) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} E_{\theta_{0}}\left[\frac{\partial}{\partial \theta} \log f_{\theta}(x)\right]=J\left(\theta_{0}, \theta\right)$ que es estrictamente decreciente en el entorno $E\left(\theta_{0}\right)$ y $J\left(\theta_{0}, \theta_{0}\right)=0$\\
+  Por lo tanto, podemos elegir $\varepsilon>0$ tal que $\left[\theta_{0}-\varepsilon, \theta_{0}+\varepsilon\right] \subset E\left(\theta_{0}\right)$ y $J\left(\theta_{0}-\varepsilon, \theta_{0}\right)>0, J\left(\theta_{0}+\varepsilon, \theta_{0}\right)<0$\\
+  Entonces,\\
+  $z_{n}\left(\theta_{0}-\varepsilon\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} J\left(\theta_{0}, \theta_{0}-\varepsilon\right)>0$ y $z_{n}\left(\theta_{0}+\varepsilon\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} J\left(\theta_{0}, \theta_{0}+\varepsilon\right)<0$\\
+  Como $\frac{\partial}{\partial \theta} f_{\theta}$ es continua, $\exists \hat{\theta}_{n} \in\left(\theta_{0}-\varepsilon, \theta_{0}+\varepsilon\right)$ tal que $z_{n}\left(\hat{\theta}_{n}\right)=0$. Por lo tanto, $\hat{\theta}_{n}$ es una solución de la ecuación de verosimilitud tal que $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$
 \end{proof}
-
 
 \begin{observación}
 El teorema anterior es útil, sólo cuando existe una única raíz de la ecuación de verosimilitud, ya que entonces esa raíz ha de ser el estimador consistente. En caso contrario, no se sabrá, cual de las raíces al variar n, va a dar lugar a la sucesión consistente\\
 Además, bajo ciertas condiciones de regularidad,\\
 $Y_{n}(\theta)=\frac{1}{n} \sum_{i=1}^{n} \frac{\partial^{2}}{\partial \theta^{2}} \log f_{\theta}\left(x_{i}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} E_{\theta_{0}}\left[\frac{\partial^{2}}{\partial \theta^{2}} \log f_{\theta}(x)\right]=I\left(\theta_{0}, \theta\right)$, con $I\left(\theta_{0}, \theta_{0}\right)=-I_{1}\left(\theta_{0}\right)<0$\\
-Como $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$, si $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es continua en $\theta$ uniformemente $\forall x$, entonces $Y_{n}\left(\hat{\theta}_{n}\right)-Y_{n}\left(\theta_{0}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$, y por lo tanto $Y_{n}\left(\hat{\theta}_{n}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }}-I_{1}\left(\theta_{0}\right)<0$ y a partir de un $n$ en adelante la sucesión de v.a. solución de la ecuación de verosimilitud son una sucesión de máximos  
+Como $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$, si $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es continua en $\theta$ uniformemente $\forall x$, entonces $Y_{n}\left(\hat{\theta}_{n}\right)-Y_{n}\left(\theta_{0}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$, y por lo tanto $Y_{n}\left(\hat{\theta}_{n}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }}-I_{1}\left(\theta_{0}\right)<0$ y a partir de un $n$ en adelante la sucesión de v.a. solución de la ecuación de verosimilitud son una sucesión de máximos
 \end{observación}
-
-
 
 \begin{teorema} [Segundo teorema de convergencia del EMV (convergencia en ley)]
   Si se cumplen las condiciones de regularidad y $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es continua en $\theta$ uniformemente $\forall x$, entonces
@@ -850,27 +983,27 @@ Como $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta
 \end{teorema}
 
 \begin{proof}
-Si denotamos por $\varphi(x, \theta)=\frac{\partial}{\partial \theta} \log f_{\theta}(x)$, entonces la ecuación de verosimilitud\\
-$\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{i}\right)=\sum_{i=1}^{n} \varphi\left(x_{i}, \theta\right)=n z_{n}(\theta)=$ 0 en $\hat{\theta}_{n}$, con $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$, y por lo tanto $\sum_{i=1}^{n} \varphi\left(x_{i}, \hat{\theta}_{n}\right)=0$
+  Si denotamos por $\varphi(x, \theta)=\frac{\partial}{\partial \theta} \log f_{\theta}(x)$, entonces la ecuación de verosimilitud\\
+  $\frac{\partial}{\partial \theta} \log L\left(\theta \mid x_{1}, \ldots, x_{n}\right)=\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{i}\right)=\sum_{i=1}^{n} \varphi\left(x_{i}, \theta\right)=n z_{n}(\theta)=$ 0 en $\hat{\theta}_{n}$, con $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$, y por lo tanto $\sum_{i=1}^{n} \varphi\left(x_{i}, \hat{\theta}_{n}\right)=0$
 
-$\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)=\sum_{i=1}^{n} \varphi\left(x_{i}, \hat{\theta}_{n}\right)+\left(\theta_{0}-\hat{\theta}_{n}\right) \sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)$ $\operatorname{con} \theta^{*} \in\left(\theta_{0}, \hat{\theta}_{n}\right)$\\
-Entonces, $\hat{\theta}_{n}-\theta_{0}=\frac{\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)}{-\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)}$\\
-$\sqrt{n}\left(\hat{\theta}_{n}-\theta_{0}\right)=\frac{\frac{1}{\sqrt{n}} \sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)}{-\frac{1}{n} \sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)}=\frac{A_{n}}{B_{n}}$\\
-$E_{\theta_{0}}\left[A_{n}\right]=\frac{1}{\sqrt{n}} E_{\theta_{0}}\left[\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)\right]=\frac{1}{\sqrt{n}} n E_{\theta_{0}}\left[\varphi\left(x, \theta_{0}\right)\right]=0$\\
-$V_{\theta_{0}}\left(A_{n}\right)=\frac{1}{n} V_{\theta_{0}}\left(\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)\right)=\frac{1}{n} n V_{\theta_{0}}\left(\varphi\left(x, \theta_{0}\right)\right)$\\
-$=E_{\theta_{0}}\left[\varphi\left(x, \theta_{0}\right)^{2}\right]=I_{1}\left(\theta_{0}\right)$. Por lo tanto, $A_{n} \xrightarrow[n \rightarrow \infty]{d} N\left(0, \sqrt{I_{1}\left(\theta_{0}\right)}\right)$\\
-Además, $-B_{n}-E_{\theta_{0}}\left[\frac{\partial}{\partial \theta} \varphi\left(x, \theta^{*}\right)\right] \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$ y como $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$ y $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es\\
-continua en $\theta$ uniformemente $\forall x$, se tiene que $-B_{n}+I_{1}\left(\theta_{0}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$ Por lo tanto, $\frac{A_{n}}{B_{n}} \xrightarrow[n \rightarrow \infty]{d} \frac{1}{I_{1}\left(\theta_{0}\right)} N\left(0, \sqrt{I_{1}\left(\theta_{0}\right)}\right) \sim N\left(0, \sqrt{\frac{1}{I_{1}\left(\theta_{0}\right)}}\right)$
+  $\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)=\sum_{i=1}^{n} \varphi\left(x_{i}, \hat{\theta}_{n}\right)+\left(\theta_{0}-\hat{\theta}_{n}\right) \sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)$ $\operatorname{con} \theta^{*} \in\left(\theta_{0}, \hat{\theta}_{n}\right)$\\
+  Entonces, $\hat{\theta}_{n}-\theta_{0}=\frac{\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)}{-\sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)}$\\
+  $\sqrt{n}\left(\hat{\theta}_{n}-\theta_{0}\right)=\frac{\frac{1}{\sqrt{n}} \sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)}{-\frac{1}{n} \sum_{i=1}^{n} \frac{\partial}{\partial \theta} \varphi\left(x_{i}, \theta^{*}\right)}=\frac{A_{n}}{B_{n}}$\\
+  $E_{\theta_{0}}\left[A_{n}\right]=\frac{1}{\sqrt{n}} E_{\theta_{0}}\left[\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)\right]=\frac{1}{\sqrt{n}} n E_{\theta_{0}}\left[\varphi\left(x, \theta_{0}\right)\right]=0$\\
+  $V_{\theta_{0}}\left(A_{n}\right)=\frac{1}{n} V_{\theta_{0}}\left(\sum_{i=1}^{n} \varphi\left(x_{i}, \theta_{0}\right)\right)=\frac{1}{n} n V_{\theta_{0}}\left(\varphi\left(x, \theta_{0}\right)\right)$\\
+  $=E_{\theta_{0}}\left[\varphi\left(x, \theta_{0}\right)^{2}\right]=I_{1}\left(\theta_{0}\right)$. Por lo tanto, $A_{n} \xrightarrow[n \rightarrow \infty]{d} N\left(0, \sqrt{I_{1}\left(\theta_{0}\right)}\right)$\\
+  Además, $-B_{n}-E_{\theta_{0}}\left[\frac{\partial}{\partial \theta} \varphi\left(x, \theta^{*}\right)\right] \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$ y como $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta_{0}$ y $\frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}(x)$ es\\
+  continua en $\theta$ uniformemente $\forall x$, se tiene que $-B_{n}+I_{1}\left(\theta_{0}\right) \xrightarrow[n \rightarrow \infty]{\text { c.s. }} 0$ Por lo tanto, $\frac{A_{n}}{B_{n}} \xrightarrow[n \rightarrow \infty]{d} \frac{1}{I_{1}\left(\theta_{0}\right)} N\left(0, \sqrt{I_{1}\left(\theta_{0}\right)}\right) \sim N\left(0, \sqrt{\frac{1}{I_{1}\left(\theta_{0}\right)}}\right)$
 
 \end{proof}
 
 \begin{observación}[Simplificación de las condiciones de regularidad]
-  Las condiciones de regularidad del teorema anterior pueden simplificarse a las siguientes:\\
-  \begin{enumerate}
-    \item $\phi (x, \theta) = \frac{\partial}{\partial \theta} \log f_{\theta}(x)$ tiene dos derivadas continuas respecto de $\theta$.
-    \item $\hat{\theta}_n \xrightarrow[n \to \infty]{P} \theta_0$
-    \item $E_{\theta_0}[\varphi^2(x, \theta_0)] = I_1(\theta_0) < \infty$
-    \item $E_{\theta_0} \left[ \frac{\partial}{\partial \theta} \varphi(x, \theta_0) \right] = - I_1(\theta_0) \neq 0$
-    \item $\exists \, \varepsilon > 0 \text{ y } M(x) \text{ tales que } \sup_{|\theta - \theta_0| \leq \varepsilon} \left| \frac{\partial^2}{\partial \theta^2} \varphi(x, \theta) \right| \leq M(x)$ con $M(x) < \infty$
-  \end{enumerate}
+Las condiciones de regularidad del teorema anterior pueden simplificarse a las siguientes:\\
+\begin{enumerate}
+  \item $\phi (x, \theta) = \frac{\partial}{\partial \theta} \log f_{\theta}(x)$ tiene dos derivadas continuas respecto de $\theta$.
+  \item $\hat{\theta}_n \xrightarrow[n \to \infty]{P} \theta_0$
+  \item $E_{\theta_0}[\varphi^2(x, \theta_0)] = I_1(\theta_0) < \infty$
+  \item $E_{\theta_0} \left[ \frac{\partial}{\partial \theta} \varphi(x, \theta_0) \right] = - I_1(\theta_0) \neq 0$
+  \item $\exists \, \varepsilon > 0 \text{ y } M(x) \text{ tales que } \sup_{|\theta - \theta_0| \leq \varepsilon} \left| \frac{\partial^2}{\partial \theta^2} \varphi(x, \theta) \right| \leq M(x)$ con $M(x) < \infty$
+\end{enumerate}
 \end{observación}
