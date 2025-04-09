@@ -558,6 +558,15 @@ INPUT .\Theory\6 - Contraste de Hipotesis.tex
 INPUT .\Theory\6 - Contraste de Hipotesis.tex
 INPUT .\Theory\6 - Contraste de Hipotesis.tex
 INPUT Theory\6 - Contraste de Hipotesis.tex
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\paufr\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
+INPUT C:\Users\paufr\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold12.tfm
+INPUT C:\Users\paufr\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha12.tfm
 INPUT .\Theory\Appendix.tex
 INPUT .\Theory\Appendix.tex
 INPUT Theory\Appendix.tex
@@ -590,6 +599,8 @@ INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex8.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\paufr\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb

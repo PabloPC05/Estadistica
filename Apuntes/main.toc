@@ -12,6 +12,8 @@
 \contentsline {section}{\numberline {3}Contraste de Hipótesis}{29}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Principios básicos de un contraste de hipótesis}{29}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Errores de tipo I y de tipo II}{30}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Appendix}{31}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Momentos Notables}{31}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Función Característica}{34}{subsection.4.2}%
+\contentsline {subsection}{\numberline {3.3}Test uniformemente más potente de tamaño $\alpha $}{32}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Hipótesis nula simple frente a alternativa simple}{32}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Appendix}{34}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Momentos Notables}{34}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Función Característica}{37}{subsection.4.2}%
