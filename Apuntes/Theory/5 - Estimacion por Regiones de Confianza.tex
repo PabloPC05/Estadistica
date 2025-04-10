@@ -103,7 +103,7 @@ Intervalos de confianza asociados a la distribución normal\\
         \frac{\chi^2_{2n;1-\frac{\alpha}{2}}}{-2 \sum_{i=1}^{n} \ln X_i}
         < \theta <
         \frac{\chi^2_{2n;\frac{\alpha}{2}}}{-2 \sum_{i=1}^{n} \ln X_i}
-        |
+        \middle|
         \theta
         \right\}
         = 1 - \alpha \quad \forall \theta \in \Theta
@@ -135,7 +135,30 @@ Si para cada $t \in \mathbb{R}, c_{1}\left(\theta, \alpha_{1}\right) \leq T(t)
 intervalo de confianza para $h(\theta)$ de nivel $1-\alpha, \alpha \in(0,1)$
 
 \ejemplo{
-Construir por el método de Neyman un intervalo de confianza de longitud esperada mínima para $\theta$ basado en una m.a.s. $(n)$ de $X \sim U(0, \theta)$, con $\theta>0$. Indicación: utilizar $T=T\left(X_{1}, \ldots, X_{n}\right)=X_{(n)}$
+    Construir por el método de Neyman un intervalo de confianza de longitud esperada mínima para $\theta$ basado en una m.a.s. $(n)$ de $X \sim U(0, \theta)$, con $\theta>0$. Indicación: utilizar $T=T\left(X_{1}, \ldots, X_{n}\right)=X_{(n)}$\\
+    Para ello utilizaremos la función de distribución del estadistico suficiente $T = X_{(n)}$:
+    $$F(t | \theta) = \begin{cases}
+        0 & t \leq 0 \\
+        \left(\frac{t}{\theta}\right)^{n} & 0<t<\theta \\
+        1 & t \geq \theta
+        \end{cases}
+    $$
+    El metodo de Neyman nos dice que tenemos que dos funciones $\gamma_1(\theta \text{;} \alpha)$ y $\gamma_2(\theta \text{;} \alpha)$ tales que:
+    $$P(\gamma_1(\theta \text{;} \alpha) < T < \gamma_2(\theta \text{;} \alpha) | \theta) \geq 1 - \alpha, \quad \alpha \in [0,1]$$
+    Asi deducimos que:
+    $$F(\gamma_1(\theta \text{;} \alpha) | \theta) = \alpha_1$$
+    $$F(\gamma_2(\theta \text{;} \alpha) | \theta) = \alpha - \alpha_1$$
+    Donde $\alpha_1 \in [0,\alpha]$
+    Despejando obtenemos que ambas funciones deben ser:
+    $$\gamma_1(\theta \text{;} \alpha) = \theta \left(\alpha_1\right)^{\frac{1}{n}}$$
+    $$\gamma_2(\theta \text{;} \alpha) = \theta \left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}}$$
+    Finalmente, volviendo a la probabilidad y teniendo ya nuestras funciones y nuestro estadistico:
+    $$P\left(\theta \left(\alpha_1\right)^{\frac{1}{n}} < X_{(n)} < \theta \left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}} | \theta\right) \geq 1 - \alpha \quad \implies$$
+    $$P\left(\frac{X_{(n)}}{\left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}}} < \theta < \frac{X_{(n)}}{\left(\alpha_1\right)^{\frac{1}{n}}} | \theta\right) \geq 1 - \alpha$$
+    Obteniendo asi el intervalo de confianza:
+    $$\left(\frac{X_{(n)}}{\left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}}}, \frac{X_{(n)}}{\left(\alpha_1\right)^{\frac{1}{n}}}\right)$$
+    El cual claramente se minimiza en $\alpha_1 = \alpha$, obteniendo finalmente el intervalo de confianza:
+    $$IC_{1-\alpha}(\theta) = \left(X_{(n)}, X_{(n)} \alpha^{-\frac{1}{n}}\right)$$
 }
 
 Intervalos de confianza para muestras grandes\\ Si $T_{n}=T\left(X_{1}, \ldots,
@@ -187,6 +210,21 @@ Desigualdad de Tchebychev
 $$
     P(|Y-E[Y]|>k \sqrt{V(Y)}) \leq \frac{1}{k^{2}}
 $$
+
+Teniendo en cuenta que $X \sim Bin(1, \theta)$, entonces $E[X]=\theta$ y $V(X)=\theta(1-\theta)$, y por tanto:
+$$ 
+    P(|\bar{X}-\theta|>k \sqrt{\frac{\bar{x}(1-\bar{x})}{n}}) \leq \frac{1}{k^{2}} \quad \implies
+$$
+$$ 
+    P\left(\bar{X}-k \sqrt{\frac{\bar{x}(1-\bar{x})}{n}}<\theta<\bar{X}+k \sqrt{\frac{\bar{x}(1-\bar{x})}{n}}\right) \geq 1-\frac{1}{k^{2}} \quad \forall k>0
+$$
+Ahora fijamos $k=\sqrt{\frac{1}{\alpha}}$, y obtenemos el intervalo de confianza:
+$$
+    I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \sqrt{\frac{\bar{x}(1-\bar{x})}{n}} \quad \forall k>0
+$$
+
+    Si $\bar{x}=\frac{1}{2}$, lo cual ocurre cuando $n$ es muy grande, entonces:
+    $$I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \frac{1}{2 \sqrt{n}}$$
 }
 
 \ejemplo{
