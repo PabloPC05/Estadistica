@@ -148,6 +148,12 @@ $$\lim_{n \to \infty} E[T_n] = \lim_{n \to \infty} E\left[\frac{1}{n+2}\sum_{i =
 $$\lim_{n \to \infty} V[T_n] = \lim_{n \to \infty} V\left[\frac{1}{n+2}\sum_{i = 1}^{n}X_i + 1\right] = \lim_{n \to \infty} \frac{1}{(n+2)^2}\sum_{i = 1}^{n}V[X_i] = \lim_{n \to \infty} \frac{n\theta(1-\theta)}{(n+2)^2} = 0$$
 }
 
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población con distribución $N(\mu; \sigma^2)$ siendo $\theta = (\mu, \sigma)$, el estimador $T_1(\vec{X}) = \bar{X}$ es consistente para estimar $h(\theta) = \mu$, ya que: 
+  $$ \lim_{n \to \infty} E[T_1] = \lim_{n \to \infty} E[\bar{X}] = \lim_{n \to \infty} E\left[\frac{1}{n}\sum_{i = 1}^{n}X_i\right] = \lim_{n \to \infty} \frac{1}{n}\sum_{i = 1}^{n}E[X_i] = \lim_{n \to \infty} \frac{1}{n}\sum_{i = 1}^{n}\mu = \mu$$
+  $$ \lim_{n \to \infty} V[T_1] = \lim_{n \to \infty} V\left[\frac{1}{n}\sum_{i = 1}^{n}X_i\right] = \lim_{n \to \infty} \frac{1}{n^2}\sum_{i = 1}^{n}V[X_i] = \lim_{n \to \infty} \frac{1}{n^2}\sum_{i = 1}^{n}\sigma^2 = 0$$
+}
+
 \subsection{Estimadores Bayesianos}
 
 El enfoque bayesiano trata a los parámetros de las distribuciones como
@@ -297,6 +303,8 @@ $$\pi(\theta | x_1, \ldots, x_n) = \pi(\theta | t) \ \text{ tal que } \ t = T(x_
     \end{aligned}$$
 \end{proof}
 
+\subsection{Criterios de comparación de estimadores}
+
 \begin{definición}[Error cuadrático medio]
 Dado un estimador $T(X_1, \ldots, X_n)$ de $\theta$, se denomina error cuadrático medio $ECM$ a la expresión en función de $\theta$:
 $$ECM_T(\theta) = E_{\theta}[(T - \theta)^2]$$
@@ -336,7 +344,7 @@ $$E_{\theta}[(T - \theta)^2] = E_{\theta}[(\bar{X} - \theta)^2] = E_{\theta}[\ba
 En general, si $T_1$ y $T_2$ son dos estimadores de $\theta$ y $ECM_{T_1}(\theta) < ECM_{T_2}(\theta)$, entonces $T_1$ es un estimador más eficiente que $T_2$ para $\theta$
 \end{observación}
 
-\subsection{Criterios de comparación de estimadores}
+
 
 \begin{definición}[Pérdida final esperada]
 Dado un estimador $T(X_1, \ldots, X_n)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ donde $t$ son los valores que toma el estimador, se define la Pérdida Final Esperada o $PFE$ o el riesgo a posteriori como:
@@ -346,18 +354,19 @@ $$PFE_T = E[\mathcal{L}(t, \theta) | X_1 = x_1, \ldots, X_n = x_n] = \int_{\Thet
 \begin{proposición}
 Puede darse que existan varias funciones de pérdida, veamos las más comunes:
 \begin{enumerate}
-  \item Si $\mathcal{L}(\theta, t) = (\theta - t)^2$ entonces $PFE(t) = V(\theta | x_1,
+  \item \textbf{Pérdida cuadrática}: Si $\mathcal{L}(\theta, t) = (\theta - t)^2$ entonces $PFE(t) = V(\theta | x_1,
           \ldots, x_n) + b(T, \theta)^2$ y la pérdida final esperada se minimimia en $t^*
           = E[\theta | x_1, \ldots, x_n]$
-  \item Si $\mathcal{L}(\theta, t) = |\theta - t|$ entonces $PFE(t) = E[|\theta - t| |
+  \item \textbf{Pérdida absoluta}:Si $\mathcal{L}(\theta, t) = |\theta - t|$ entonces $PFE(t) = E[|\theta - t| |
               x_1, \ldots, x_n]$ y la pérdida final esperada se minimiza en la mediana de la
         distribución final (estimador bayesiano)
+    \item \textbf{Pérdida 0-1}: Si $\mathcal{L}(\theta, t) = \begin{cases} 0 & \text{si } t = \theta \\ 1 & \text{si } t \neq \theta \end{cases}$ entonces $PFE_T = P(\theta \neq t | x_1, \ldots, x_n) = 1 - P(\theta = t | x_1, \ldots, x_n)$. Se usa en problemas de decisioón o clasificación donde sólo importa acertar o errar, no cuán lejos se está del valor correcto, es por ello que es mas difícil saber dónde se encuentra el valor que la minimiza.
 \end{enumerate}
 \end{proposición}
 
 \begin{proof}
   \begin{enumerate}
-    \item Si $\mathcal{L}(\theta, t) = (\theta - t)^2 \implies$ $$PFE_T = E[(\theta -
+    \item Si  $\mathcal{L}(\theta, t) = (\theta - t)^2 \implies$ $$PFE_T = E[(\theta -
                 t)^2 | x_1, \ldots, x_n] = E[((\theta - E[\theta | x_1, \ldots, x_n]) +
                 (E[\theta | x_1, \ldots, x_n] - t))^2 | x_1, \ldots, x_n] $$ Si expandimos el
           cuadrado: $$ (\theta - E[\theta | x_1, \ldots, x_n])^2 + 2(\theta - E[\theta |
@@ -370,7 +379,7 @@ Puede darse que existan varias funciones de pérdida, veamos las más comunes:
             t)^2 \text{ dada una muestra, se vuelve una constante}$$ Por lo que se puede
           concluir que $PFE_T = V(\theta | x_1, \ldots, x_n) + (E[\theta | x_1, \ldots,
                 x_n] - t)^2$ y se minimiza en $t^* = E[\theta | x_1, \ldots, x_n]$
-    \item Si $\mathcal{L}(\theta, t) = |\theta - t| \implies$ $$PFE_T = E[|\theta - t| |
+    \item  Si $\mathcal{L}(\theta, t) = |\theta - t| \implies$ $$PFE_T = E[|\theta - t| |
                 x_1, \ldots, x_n] = \int_{\Theta} |\theta - t|F(\theta | x)d\theta \implies$$
           Dividiendo la integral entre los valores positivos y los negativos de $\theta$,
           nos queda que la integral es la suma de: $$\int_{-\infty}^{t} (t -
@@ -381,12 +390,25 @@ Puede darse que existan varias funciones de pérdida, veamos las más comunes:
             \int_{t}^{+\infty} (\theta - t)f(\theta | x)d\theta = $$ $$ =
             \int_{-\infty}^{t} f(\theta | x)d\theta - \int_{t}^{+\infty} f(\theta |
             x)d\theta = 0 \iff$$ $$F_X(t) = 1 - F_X(t) \iff F_X(t) = \frac{1}{2} \implies
-            t^* = \text{mediana de la distribución final}$$
+            t^* = \text{mediana de la distribución final}$$\
+
   \end{enumerate}
 \end{proof}
 
+
+\begin{observación}
+  $$PFE(t) = \int_{\Theta} \underbrace{\mathcal{L}(\theta, t)}_{\text{pérdida si fuera } \theta}
+  \cdot 
+  \underbrace{\pi(\theta \mid x)}_{\text{qué tan probable es } \theta}
+  \, d\theta$$
+\end{observación}
+
 \ejemplo{
-  EJEMPLO DE LA PÉRDIDA FINAL ESPERADA
+  Sea una m.a.s. de tamaño $n$ de una población $X \sim Bernoulli(\theta)$ y pérdida cruadrática e informaci`´on inicial dadas por na distribución $Beta(\alpha_0, \beta_0)$. Por un ejemplo anterior en el apartado de \textbf{Estimadores bayesianos}, que la distribución final o a posteriori es $Beta(\alpha_0 + \sum_{i = 1}^{n}X_i, \beta_0 + n - \sum_{i = 1}^{n}X_i)$ 
+  $$\implies PFE_T = E[(t - \theta)^2 | \vec{x}] = \int_{0}^{1} (t - \theta)^2 \cdot \frac{\theta^{\alpha_0 + \sum_{i = 1}^{n}X_i - 1}(1 - \theta)^{\beta_0 + n - \sum_{i = 1}^{n}X_i - 1}}{\beta(\alpha_0 + \sum_{i = 1}^{n}X_i, \beta_0 + n - \sum_{i = 1}^{n}X_i)}d\theta$$
+  $$ = \int_{0}^{1} (t^2 - 2t\theta + \theta^2) \cdot Beta(\theta; \alpha_1, \beta_1) \, d\theta = t^2\int_{0}^{1} Beta(\theta)d\theta - 2t\int_{0}^{1} \theta\cdot Beta(\theta) d\theta + \int_{0}^{1} \theta^2 \cdot Beta(\theta)$$
+  $$ = t^2 - 2t\frac{\alpha_1}{\alpha_1 + \beta_1} + \frac{\alpha_1(\alpha_1 + 1)}{(\alpha_1 + \beta_1)(\alpha_1 + \beta_1 + 1)} = t^2 - 2t \cdot \mu + E[\theta^2]$$
+  Expresión que se minimiza cuando $t = E[\theta | \vec{x}] = \frac{\alpha_0 + \sum X_i}{\alpha_0 + \beta_0 + n} = \frac{\alpha_1}{\alpha_1 + \beta_1}$
 }
 
 \begin{definición}[Estimador centrado uniformemente de mínima varianza]
