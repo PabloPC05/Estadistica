@@ -1227,3 +1227,108 @@ Las condiciones de regularidad del teorema anterior pueden simplificarse a las s
   \item $\exists \, \varepsilon > 0 \text{ y } M(x) \text{ tales que } \sup_{|\theta - \theta_0| \leq \varepsilon} \left| \frac{\partial^2}{\partial \theta^2} \varphi(x, \theta) \right| \leq M(x)$ con $M(x) < \infty$
 \end{enumerate}
 \end{observación}
+
+\subsection{Ejercicios}
+\begin{problem}{4.6.1}
+  Sea una m.a.s. de tamaño $n$ de una poblacion $Bernouilli(\theta)$, donde $h(\theta) = \frac{1}{\theta}$ es la función a estimar, demuéstrese que no existe estimador centrado para $h(\theta)$ basado en el estadístico $\sum_{i=1}^{n} X_i$
+\end{problem}
+\begin{sol}
+  Si existiese tal estimador, éste tendría que ser de la forma $T\left(\sum_{i = 1}^{n} X_i\right)$, tal que 
+  $$\sum_{x = 0}^{n} T(x) \binom{n}{x} \theta^x (1 - \theta)^{n - x} = \frac{1}{\theta}$$
+  Por ello cuando hacemos que $\theta \to 0$ tenemos que: 
+  \begin{enumerate}
+    \item Cuando $x > 0 \implies \theta^x \to 0$ 
+    \item Cuando $x = 0 \implies T(0) \cdot 1 \cdot 1 \cdot (1 - \theta)^n \to T(0)$
+  \end{enumerate}
+  No obstante, por la igualdad anterior se tiene que también: 
+  $$T(0) = \lim_{\theta \to 0} \frac{1}{\theta} = \infty$$
+  Por lo tanto, $T(0) = \infty$ y no existe un estimador centrado para $h(\theta)$ basado en el estadístico $\sum_{i=1}^{n} X_i$
+\end{sol}
+
+\begin{problem}{4.6.2}
+  Sea $X = x$ una observación de una población $Poisson(\theta)$ ¿Existe un estimador centrado para $h(\theta) = \frac{1}{\theta}$
+\end{problem}
+\begin{sol}
+  Estamos en el plano unidimensional por lo que nuestra función de densidad es: 
+  $$f_{\theta}(x) = \frac{\theta^x e^{-\theta}}{x!} \implies E[X] = \sum_{x = 0}^{+\infty} x \cdot \frac{\theta^x \cdot e^{-\theta}}{x!}= \theta$$
+  Entonces hemos de suponer que existe un estaístico $T(x)$ tal que: 
+  $$E[T(x)] = \sum_{x = 0}^{+\infty} T(x) \cdot \frac{\theta^x e^{-\theta}}{x!} = \frac{1}{\theta}$$
+  Sabemos que: 
+  $$e^{\theta} = \sum_{x = 0}^{+\infty} \frac{\theta^x}{x!} = \frac{1}{\theta} \cdot \sum_{x = 0}^{+\infty} \frac{\theta^{x+1}}{x!}$$
+  Entonces hemos de tomar $T(x) = \frac{1}{X + 1}$, de forma que: 
+  $$E[T(X)] = \sum_{x = 0}^{+\infty} \frac{1}{x + 1} \cdot \frac{\theta^x e^{-\theta}}{x!} = \frac{e^{-\theta}}{\theta} \sum_{x = 0}^{+\infty} \frac{\theta^{x+1}}{(x+1)!} = \frac{e^{-\theta}}{\theta} \cdot e^{\theta} = \frac{1}{\theta}$$
+\end{sol}
+
+\begin{problem}{4.6.3}
+  Sea una m.a.s. de tamaño $n$ de una población $N(\theta, 1)$ y siendo $h(\theta) = \theta^2$ la función a estimr, demuéstrese que $T(X_1, \ldots, X_n) = \bar{X}^2 - \frac{1}{n}$ es el estimador de maxima verosimilitud para $h(\theta)$. ¿Es $T(X_1, \ldots, X_n)?$ un etimador consistente?
+\end{problem}
+\begin{sol}
+  NO SÉ QUE ES UN ESTIMADOR DE MÍNIMA VARIANZA
+\end{sol}
+
+
+\begin{problem}{4.6.4}
+  Sean $X_1, \ldots, X_n$ variables aleatorias i.i.d. con distribución de $Poisson(\theta)$ y supuesto que la información inicial sobre $\theta$ viene dada por una distribución $Gamma(a, p), a > 0, p > 0$
+  \begin{enumerate}
+    \item Pruébese que la familia $Gamma$ es conjugada respecto a la población $Poisson$
+    \item Calcúlese la media y la varianza de la distribución final
+  \end{enumerate}
+\end{problem}
+\begin{sol}
+  \begin{enumerate}
+    \item $$\pi(\theta | \vec{x}) = \frac{\pi(\theta) \cdot f(\vec{x} | \theta)}{m(\vec{x})} = \frac{\frac{p(p\theta)^{a-1} e^{-p\theta}}{\Gamma(a)} \cdot e^{-n\theta}\cdot \prod_{i=1}^{n} \frac{\theta^{x_i}}{x_i!}}{\int_{0}^{+\infty} \frac{p(p\theta)^{a-1} e^{-p\theta}}{\Gamma(a)} \cdot e^{-n\theta}\cdot \prod_{i=1}^{n} \frac{\theta^{x_i}}{x_i!} d\theta} = \frac{\theta^{a - 1}e^{-p\theta} \cdot e^{-n\theta}\cdot \theta^{\sum x_i}}{\int_{0}^{+\infty} \theta^{a-1}e^{-p\theta} \cdot e^{-n\theta}\cdot \theta^{\sum x_i} d\theta} = $$
+    $$ = \frac{\theta^{a - 1 + \sum x_i} e^{-(p + n)\theta}}{\int_{0}^{+\infty} \theta^{a + \sum x_i} e^{-(p + n)\theta} d\theta} \implies \text{tomando} \begin{cases}
+      a' = a - 1 + \sum x_i \\
+      p' = p + n
+    \end{cases} \implies \pi(\theta | \vec{x}) \sim Gamma(a', p')$$
+    \item $$E[\theta | \vec{x}] = \int_{0}^{+\infty} \theta \cdot \frac{p' \cdot (p'\theta)^{a' - 1} e^{-p'\theta}}{\Gamma(a')} d\theta = \frac{a'}{p'} = \frac{a + n\bar{x}}{p + n}$$
+    $$V[\theta | \vec{x}] = \int_{0}^{+\infty} (\theta - E[\theta | \vec{x}])^2 \cdot \frac{p' \cdot (p'\theta)^{a' - 1} e^{-p'\theta}}{\Gamma(a')} d\theta = \frac{a'}{(p')^2} = \frac{a + n\bar{x}}{(p + n)^2}$$
+    \end{enumerate}
+\end{sol}
+
+\begin{problem}{4.6.5}
+  Sea una m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$. Se definen los estimadores de $\sigma^2$ como:
+  $$ T(\vec{X}) = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2 \quad \quad S(\vec{X}) = \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \bar{X})^2 $$
+  \begin{enumerate}
+    \item Compárese el sesgo de ambos estimadores. 
+    \item Mediante el criterio del Error Cuadrático Medio compruébese que: 
+    $$ECM_T(\sigma^2) = \frac{(2n - 1)\sigma^4}{n^2} \quad \quad ECM_S(\sigma^2) = \frac{2\sigma^4}{n - 1}$$
+    \item Pruébese que entre todos los estimadores de la forma $\alpha T(\vec{X})$ con $\alpha \in \mathbb{R}$, el óptimo de cuerdo on el criterio del error cuadrático medio, se obtiene para $\alpha = \frac{n}{n+1}$
+  \end{enumerate}
+\end{problem}
+
+\begin{sol}
+  \begin{enumerate}
+    \item $$E[T(\vec{X})] = E[\frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2] = \frac{1}{n} \sum_{i=1}^{n} E[(X_i - \bar{X})^2] = \frac{1}{n} \sum_{i=1}^{n} E[X_i^2] + E[\bar{X}^2] - 2E[X_i \bar{X}] = $$
+    $$ = \sigma^2 + \mu^2 + \frac{\sigma^2}{n} +\mu^2 - \frac{2}{n} \sum_{i = 1}^{n} E[X_i\bar{X}] = \sigma^2 + \mu^2 + \frac{\sigma^2}{n} +\mu^2 - 2\left(\mu^2 + \frac{\sigma^2}{n}\right) = \frac{\sigma^2 (n - 1)}{n} \implies Bias(T) = -\frac{\sigma^2}{n}$$
+
+
+    $$E[S(\vec{X})] = E[\frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2] = \frac{1}{n-1} \sum_{i=1}^{n} E[(X_i - \bar{X})^2] = \frac{1}{n-1} \sum_{i=1}^{n} E[X_i^2] + E[\bar{X}^2] - 2E[X_i \bar{X}] = $$ 
+    $$ = \frac{1}{n-1}\left(n(\mu^2 + \sigma^2) + n\left(\frac{\sigma^2}{n} + \mu^2\right) -2n\left(\frac{\sigma^2}{n} + \mu^2\right)\right) = \sigma^2 \implies Bias(S) = 0$$
+    \item 
+      Dado que se cumple que $ECM_T(\theta) = V_{\theta}(T) + b(T, \theta)^2$, calculemos la varianza de ambos estadísticos: 
+      $$\text{Sabemos que } S = S^2 \text{ el conocido } \implies (n-1)\frac{S^2}{\sigma^2} \sim \chi^2_{n-1} \implies V[\chi^2_{n-1}] = 2(n - 1) = V[(n-1)\frac{S^2}{\sigma^2}]$$ 
+      $$ \iff V[S^2] = V[\frac{\sigma^2}{n-1}\cdot \chi_{n-1}^2] = \frac{2\sigma^4}{n - 1} \implies ECM_S(\sigma^2) = \frac{2\sigma^4}{n - 1} + 0^2 = \frac{2\sigma^4}{n - 1}$$
+
+      $$\text{Por otro lado, } T = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2 = \frac{1}{n} \cdot \frac{(n-1)\sigma^2}{n-1} \cdot \chi_{n-1}^2 = \frac{\sigma^2}{n(n-1)}\cdot \chi_{n-1}^2$$
+      $$\implies V[T] = \frac{\sigma^4}{n^2(n-1)^2} \cdot V[\chi_{n-1}^2] = \frac{2\sigma^4}{n^2(n-1)^2} \implies ECM_T(\sigma^2) = \frac{(2n - 1)\sigma^4}{n^2} + \left(-\frac{\sigma^2}{n}\right)^2 =$$ $$ = \frac{(2n - 1)\sigma^4}{n^2} + \frac{\sigma^4}{n^2} = \frac{(2n - 1)\sigma^4}{n^2}$$
+      \item NO SE COMO HACERLO
+  \end{enumerate}
+\end{sol}
+
+\begin{problem}{4.6.6}
+  Si la información inicial sobre $\theta$ viene dada por la funcion $\pi(\theta)$, bien de densidad o de masa, con momento de orden dos finito y se supone que la pérdida en que se incurre por estimar $\theta$ mediante $T(X_1, \ldots, X_n)$ es la cuadrática $L(\theta, T) = (\theta - T)^2$, demúestrese que la pérdida final esperada $PFE_T$ es mínima cuando $T(X_1, \ldots, X_n) = E[\theta | X_1, \ldots, X_n]$ y que el valor de la pérdida esperada coincide con la varianza de la distribución final. 
+\end{problem}
+\begin{sol}
+    NO SÉ CÓMO HACERLO
+\end{sol}
+
+\begin{problem}{4.6.7}
+  A una persona se le pasa un test de inteligencia, cuyo resultado $X$ se supoenq ue sigue una distribución $N(\theta, \sigma_0 = 10)$ donde $\theta$ es su nivel de inteligencia real. Supóngase que en el colectivo al que pertenece la persona, la inteligencia $\theta$ se distribuye con una $N(100, \sigma_0 = 15)$ ¿Cuál sería el estimador bayesiano de $\theta$ si se supoe pérdida cuadrática? ¿Cuánto valdría éste si la persona obtiene como resultado del test el valor 110? ¿Cuál es el valor de la PFE correspondiente?
+\end{problem}
+\begin{sol}
+  Dado que las distribuciones normales son conjugadas con si mismas, tenemos una fórmula para sacar los parámetros de la distribución final. En este caso, tenemos que:
+  $$\mu_1 = \frac{\frac{\mu_0}{\sigma_0^2} + \frac{n\bar{x}}{\sigma^2}}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}}$$
+  Tenemos que: 
+  $$PFE_T(\theta) = \int_{-\infty}^{+\infty} (\theta - T)^2 \cdot \pi(\theta | x) d\theta = \int_{-\infty}^{+\infty} (\theta - T)^2 \cdot \frac{1}{\sqrt{2\pi}\sigma_0} e^{-\frac{(\theta - 100)^2}{2\sigma_0^2}} d\theta$$
+\end{sol}

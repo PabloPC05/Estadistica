@@ -25,15 +25,16 @@
 \contentsline {subsubsection}{\numberline {4.4.1}Método de los momentos}{70}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}Método de máxima verosimilitud}{72}{subsubsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.5}Propiedades asintóticas de los estimadores de máxima verosimilitud}{74}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Estimación por Regiones de Confianza}{77}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Región de confianza}{77}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Intervalos de confianza}{77}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Métodos de obtención de intervalos de confianza}{77}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Contraste de Hipótesis}{83}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Principios básicos de un contraste de hipótesis}{83}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Errores de tipo I y de tipo II}{84}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{86}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{86}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Appendix}{88}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Momentos Notables}{88}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Función Característica}{91}{subsection.7.2}%
+\contentsline {subsection}{\numberline {4.6}Ejercicios}{77}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Estimación por Regiones de Confianza}{80}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Región de confianza}{80}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Intervalos de confianza}{80}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Métodos de obtención de intervalos de confianza}{80}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Contraste de Hipótesis}{86}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Principios básicos de un contraste de hipótesis}{86}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Errores de tipo I y de tipo II}{87}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{89}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{89}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Appendix}{91}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Momentos Notables}{91}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Función Característica}{94}{subsection.7.2}%
