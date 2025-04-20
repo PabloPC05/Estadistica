@@ -1,29 +1,51 @@
 \section{Estimación por Regiones de Confianza}
 
-\subsection{Región de confianza}
-Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta
-    \subset \mathbb{R}^{k}}$ modelo estadístico k-paramétrico y $\left(X_{1},
-    \ldots X_{n}\right)$ muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$.
-Denotemos por $P_{\theta}$ a la ley de probabilidad de la muestra
-
-Región de confianza\\ Sea $C\left(X_{1}, \ldots, X_{n}\right) \subset \Theta$
-una región aleatoria del espacio paramétrico tal que
-
-$$
-    P_{\theta}\left\{\theta \in C\left(X_{1}, \ldots, X_{n}\right)\right\} \geq 1-\alpha, \forall \theta \in \Theta
-$$
-
-Entonces, para cada $\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n},
-    C\left(x_{1}, \ldots, x_{n}\right)$ se denomina región de confianza para
-$\theta$ de nivel $1-\alpha$
+\ejemplo{
+    Tomemos como ejemplo de entrada a este tema un caso en el que un lanzador de jabalina quiere estimar la distancia real promedio, es decir, su media, $\mu$. Para ello realizamos varias mediciones (muestras) y medimos las distancias. Estos datos se supone que son una m.a.s. de tamaño $n$ de una distribución normal $X \sim N(\theta, \sigma^2)$ con $\sigma$ conocida. Parece normal suponer que cada $x_i$ distará de $\mu$ una cantidad aaleatoria con distribución $Normal(\theta, \sigma^2) - \theta \equiv N(0, \sigma^2)$. \\
+    Queremos estimar la media (poblacional) por lo que debemos saber que la media muestral se rige por la distribución $N(\theta, \frac{\sigma^2}{n})$. De manera que si queremos saber en qué intervalo está la media poblacional $\mu$ con una probbilidad del $95\%$. \\
+    Antes de ello, simplifiquemos un poco el trabajo y tomemos $Z = \frac{\bar{X} - \theta}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)$. Ahora tengamos en cuenta que lo que queremos es calcular un intervalo de manera que: 
+    $$P\{-x \leq Z \leq x\} = 0.95 \iff x \equiv 1.96 (\text{mirando la tabla de la normal})$$ $$\implies P\{-1.96 \leq Z \leq 1.96\} = 0.95 \iff P\{-1.96 \leq \frac{\bar{X} - \theta}{\frac{\sigma}{\sqrt{n}}} \leq 1.96\} = 0.95 \iff $$
+    $$ \iff P\{\bar{X} - \frac{\sigma}{\sqrt{n}} \cdot 1.96 < \theta < \bar{X} + \frac{\sigma}{\sqrt{n}\cdot 1.96}\} = 0.95 \implies$$
+    Cualquier valor de $\theta$ que esté dentro del intervalo aleatorio $(\bar{X} - \frac{\sigma}{\sqrt{n}} \cdot 1.96, \bar{X} + \frac{\sigma}{\sqrt{n}\cdot 1.96})$ tiene una probabilidad del $95\%$ de contener el valor real de la media poblacional $\mu$. \\ \\
+    Veamos su aplicación a un caso real: \\
+    Pongamos que el lanzados lanza la jabalina $6$ veces $\implies n = 6$ y que salen los siguientes valores: 
+    $$89.90 \quad 90.02 \quad 89.92 \quad 91.10 \quad 88.71 \quad 90.51 \implies \begin{cases}
+    \bar{X} = 90.03 \\
+    \sigma = 0.8
+    \end{cases}$$
+    Todos estos datos nos dan lugar a que el intervalo de confianza sea: 
+    $$(\bar{X} - \frac{\sigma}{\sqrt{n}} \cdot 1.96, \bar{X} + \frac{\sigma}{\sqrt{n}\cdot 1.96}) = \left(90.03 - \frac{0.8}{\sqrt{6}}\cdot 1.96, 90.03 + \frac{0.8}{\sqrt{6}\cdot 1.96}\right) = (89.39, 90.67)$$
+    Hay que tener en cuenta, que una vez calculado el intervalo, éste ya es fijo y no cambia, de manera que el parámetro $\theta$ también lo es y sólo hay dos posibilidades, que esté dentro o que esté fuera y es cómo una moneda ideal, la probabilidad es del $50\%$. La probabilidad del $95\%$ es que si tomamos varias muestras y sus intervalos correspondientes, el $95\%$ de ellos contendrán el valor real del parámetro $\theta$.
+}
 
 \subsection{Intervalos de confianza}
+\begin{definición}[Región de confianza]
+    Sea $C(X_{1}, \ldots, X_{n}) \subset \Theta$ una región aleatoria del espacio paramétrico tal que: 
+    $$P_{\theta}\left\{\theta \in C(X_{1}, \ldots, X_{n})\right\} \geq 1-\alpha, \forall \theta \in \Theta$$
+    Entones para cada $x_{1}, \ldots, x_{n} \in \chi^{n}$, $C(x_{1}, \ldots, x_{n})$ se denomina región de confianza para $\theta$ de nivel $1-\alpha$
+\end{definición}
 
-\begin{definición}
+\ejemplo{
+
+}
+
+\begin{definición}[Intervalos de confianza]
 Sea $h: \Theta \rightarrow \mathbb{R}, \alpha \in(0,1)$ y $T_{1}=T_{1}\left(X_{1}, \ldots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ y $T_{2}=T_{2}\left(X_{1}, \ldots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}, T_{1} \leq T_{2}$, dos estadísticos unidimensionales tales que
 $$P_{\theta}\left\{T_{1}\left(X_{1}, \ldots, X_{n}\right) \leq h(\theta) \leq T_{2}\left(X_{1}, \ldots, X_{n}\right)\right\} \geq 1-\alpha, \forall \theta \in \Theta$$
 Entonces, para cada $\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n},\left(T_{1}\left(x_{1}, \ldots, x_{n}\right), T_{2}\left(x_{1}, \ldots, x_{n}\right)\right)$ se denomina intervalo de confianza para $h(\theta)$ de nivel $1-\alpha$
 \end{definición}
+
+\begin{observación}[Explicación de la definición]
+    \vspace{-\topsep}
+    \vspace{-\topsep}
+    \begin{itemize}
+        \item $h(\theta)$ es una función del parámetro $\theta$ que se desea estimar, por ejemplo la media poblacional $\mu$
+        \item $T_{1}$ y $T_{2}$ son dos estadísticos dependientes de la muestra
+        \item El intervalo $(T_{1}(\vec{x}), T_{2}(\vec{x}))$ cambia cada vez que tomas una muestra diferente
+        \item La probabilidad que ese intervalo contenga el valor real de $h(\theta)$ debe ser al menos $1-\alpha$
+    \end{itemize}
+    Se construye un intervalo usando una muestra tomada, de modo que sin importar el valor real del parámetro $\theta$, hay algmenos una probabilidad de $1-\alpha$ de probabilidad de que el alor real esté dentro del intervalo.
+\end{observación}
 
 \begin{observación}
 Siempre es deseable hacer que la medida de la región de confianza sea mínima, entre todas las del mismo grado de confianza $1-\alpha$
