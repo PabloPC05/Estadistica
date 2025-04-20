@@ -700,7 +700,7 @@ Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \su
 \end{definición}
 
 \begin{teorema}[Cota de Fréchet-Cramér-Rao]
-  Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, \quad E_{\theta}[T]=d(\theta)$ y $$d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$$ entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \quad \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
+  Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, \quad E_{\theta}[T]=d(\theta)$ y $$d^{\prime}(\theta) = \frac{d}{d\theta} E[T] =\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$$ entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \quad \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
 
   $$
     P_{\theta}\left(\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: T\left(x_{1}, \cdots, x_{n}\right)=d(\theta)+k(\theta) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)=1, \forall \theta \in \theta
@@ -1324,11 +1324,101 @@ Las condiciones de regularidad del teorema anterior pueden simplificarse a las s
 \end{sol}
 
 \begin{problem}{4.6.7}
-  A una persona se le pasa un test de inteligencia, cuyo resultado $X$ se supoenq ue sigue una distribución $N(\theta, \sigma_0 = 10)$ donde $\theta$ es su nivel de inteligencia real. Supóngase que en el colectivo al que pertenece la persona, la inteligencia $\theta$ se distribuye con una $N(100, \sigma_0 = 15)$ ¿Cuál sería el estimador bayesiano de $\theta$ si se supoe pérdida cuadrática? ¿Cuánto valdría éste si la persona obtiene como resultado del test el valor 110? ¿Cuál es el valor de la PFE correspondiente?
+  A una persona se le pasa un test de inteligencia, cuyo resultado $X$ se supone que sigue una distribución $N(\theta, \sigma = 10)$ donde $\theta$ es su nivel de inteligencia real. Supóngase que en el colectivo al que pertenece la persona, la inteligencia $\theta$ se distribuye con una $N(100, \sigma_0 = 15)$ ¿Cuál sería el estimador bayesiano de $\theta$ si se supone pérdida cuadrática? ¿Cuánto valdría éste si la persona obtiene como resultado del test el valor 110? ¿Cuál es el valor de la PFE correspondiente?
 \end{problem}
 \begin{sol}
   Dado que las distribuciones normales son conjugadas con si mismas, tenemos una fórmula para sacar los parámetros de la distribución final. En este caso, tenemos que:
-  $$\mu_1 = \frac{\frac{\mu_0}{\sigma_0^2} + \frac{n\bar{x}}{\sigma^2}}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}}$$
-  Tenemos que: 
-  $$PFE_T(\theta) = \int_{-\infty}^{+\infty} (\theta - T)^2 \cdot \pi(\theta | x) d\theta = \int_{-\infty}^{+\infty} (\theta - T)^2 \cdot \frac{1}{\sqrt{2\pi}\sigma_0} e^{-\frac{(\theta - 100)^2}{2\sigma_0^2}} d\theta$$
+  $$\mu_1 = \frac{\frac{\mu_0}{\sigma_0^2} + \frac{n\bar{x}}{\sigma^2}}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}} = \frac{\frac{100}{225} + \frac{x}{100}}{\frac{1}{225} + \frac{1}{100}} = \frac{400 + 9x}{13}$$
+  $$\sigma_1^2 = \frac{1}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}} = \frac{1}{\frac{1}{225} + \frac{1}{100}} = \frac{900}{13} = 69,23$$
+  Por un ejercicio anterior sabemos que la pérdida final esperada se minimia cuando el estadístico toma el valor de $E[\theta | \vec{x}]$, en nuestro caso simplemente $E[\theta | x] = \mu_1 = \frac{400 + 9x}{13}$ y por lo tanto: 
+  $$PFE_T(\theta) = \int_{-\infty}^{+\infty} (\theta - T)^2 \cdot \pi(\theta | x) d\theta = V(\theta | vec{x}) + b(T, \theta)^2 = V(\theta | x) + (E[\theta | x] - T)^2 = V(\theta | x) = \sigma_1^2 = 69,23$$
+  Por lo tanto, el estimador bayesiano de $\theta$ es:
+  $$T(x) = \frac{400 + 9x}{13}$$
+  Si $x = 110$ entonces:
+  $$T(110) = \frac{400 + 9 \cdot 110}{13} = \frac{400 + 990}{13} = \frac{1390}{13} = 106,92$$
+\end{sol}
+
+\begin{problem}{4.6.8}
+  Se tiene la sospecha de que una moneda esta sesgada en el sentido de que su probabilidad de cara es menor que $0,5$. Si esta información se modeliza mediante una distribución $Beta(10, 8)$ como distribución inicial ¿Cuál es el estimador bayesiano cuando desupés de tirar la mneda 50 veces se obtienen 20 caras? Utilícese como función de pérdida el valor absoluto.
+\end{problem}
+
+\begin{sol}
+  Por los datos del enunciado tenemos que: 
+  $$X \sim Bernouilli(\theta) \quad \quad \pi(\theta) \sim Beta(10, 8) \implies$$
+  Por un ejercicion anteior sabemos que la familia de $Bernouilli$ es conjugada con la familia $Beta$, por lo que podemos calcular los parámetros de la distribución final:
+  $$\alpha_1 = \alpha_0 + S = 10 + 20 = 30 \quad \quad \beta_1 = \beta_0 + n - S = 8 + 50 - 20 = 38 \implies \pi(\theta | \vec{x}) \sim Beta(30, 38)$$
+  Por la teoria vista anteriormente, sabemos que la Perdida Final esperada tomando como función de pérdida el alor absoluto se minimiza cuando el estimdor toma el valor de la mediana de la distribución final, ya que ésta divide la distribución posterior en dos partes iguales en probabilidad, minimizando la expectativa del valor abosluto del error. Para calcular es necesario cálculo avanzado o herramientas de software, por ello usaremos una aproximación: 
+  $$m = \frac{\alpha_1 - 1/3}{\alpha_1 + \beta_1 - 2/3} = \frac{30 - 1/3}{30 + 38 - 2/3} = \frac{89}{202} \approx 0,4406$$
+  Por lo tanto, el estimador bayesiano de $\theta$ es la mediana de la distribución final.
+\end{sol}
+
+\begin{problem}{4.6.9}
+  Para una m.a.s. de tamaño $n$ de poblaciones con funciones de densidad o masa siguientes, encuéntrese la Cota de Fréchet-Cramér-Rao y el estimador eficiente, si existe: 
+  \begin{enumerate}
+    \item $f(x | \theta) = \frac{1}{\theta} e^{-\frac{x}{\theta}}\cdot I_{(0, +\infty)}(x)$
+    \item $p(x | \theta) = \theta(1 - \theta)^x$
+    \item $f(x | \theta) = \frac{1}{x\theta\sqrt{2\pi}} e^{-\frac{1}{2\theta^2}(ln(x))^2}\cdot I_{(0, +\infty)}(x)$
+  \end{enumerate}
+\end{problem}
+
+\begin{sol}
+  \begin{enumerate}
+    \item 
+      $$f(x | \theta) = \frac{1}{\theta}e^{-\frac{x}{\theta}} \cdot I_{(0, +\infty)}(x) \implies f(\vec{x} | \theta) = \frac{1}{\theta^n} e^{-\frac{\sum_{i=1}^{n} x_i}{\theta}} \cdot I_{x_{(1)} \geq 0}$$
+    Primero calculemos el score: 
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \log f(\vec{x} | \theta) = \frac{\partial}{\partial \theta} \left(-n \ln(\theta) - \frac{\sum_{i=1}^{n} x_i}{\theta}\right) = -\frac{n}{\theta} + \frac{\sum_{i=1}^{n} x_i}{\theta^2} = -\frac{n}{\theta} + \frac{n\bar{x}}{\theta^2}$$
+      Ahora calculemos la información de Fisher, usando la formula de la doble derivada: $I_n(\theta) = -E_{\theta}[\frac{\partial^2}{\partial\theta} log f_{\theta}(\vec{x} | \theta)]$
+      $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \log f(\vec{x} | \theta)\right] = -E_{\theta}\left[\frac{\partial}{\partial \theta} \left(-\frac{n}{\theta} + \frac{n\bar{x}}{\theta^2}\right)\right] = -E_{\theta}\left[\frac{n}{\theta^2} -\frac{2n\bar{x}}{\theta^3}\right] = $$
+      $$ = -\left(\frac{n}{\theta^2} - \frac{2nE[\bar{x}]}{\theta^3}\right) = -\left(\frac{n}{\theta^2} - \frac{2n}{\theta^2}\right) = -\left(-\frac{n}{\theta^2}\right) = \frac{n}{\theta^2}$$
+      Entonces, suponiendo que el posible estimador sea insesgado, tenemos que: 
+      $$Var(T) \geq \frac{1}{I_n(\theta)} = \frac{\theta^2}{n} \implies \text{Cota de Fréchet-Cramér-Rao: } Var(T) \geq \frac{\theta^2}{n}$$
+      Por la teoría vista en clase tenemos que, si logramos encontrar un estimador tal que $S_{\theta}(\vec{x}) = C(\theta) \cdot (\hat{\theta} - \theta)$, entonces el estimador $\hat{\theta}$ es eficiente. En este caso, tenemos que:
+      $$S_{\theta}(\vec{x}) = -\frac{n}{\theta} + \frac{n\bar{x}}{\theta^2} = \frac{n}{\theta^2}(\bar{x} - \theta) \implies \hat{\theta} = \bar{x} \implies \text{Estimador eficiente: } \hat{\theta} = \bar{x}$$
+    \item 
+      $$f(x \mid \theta) = \theta(1 - \theta)^x \implies f(\vec{x} \mid \theta) = \theta^n (1 - \theta)^{\sum_{x_i}} = \theta^n (1 - \theta)^{n\bar{x}}$$
+      Primero calculemos el score:
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \ln f(\vec{x} \mid \theta) = \frac{\partial}{\partial \theta} \left(\ln\left(\theta^n(1 - \theta)^{n\bar{x}}\right)\right) = \frac{\partial}{\partial \theta} \left(n \ln(\theta) + n\bar{x} \ln(1 - \theta)\right) = \frac{n}{\theta} - \frac{n\bar{x}}{1 - \theta}$$
+      Calculemos la información de Fisher usando la fórmula de que $I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \ln f(\vec{x} \mid \theta)\right]$:
+      $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial\theta^2}\left(\theta^n(1 - \theta)^{n\bar{x}}\right)\right] = -E_{\theta}\left[\frac{\partial}{\partial \theta}\left(\frac{n}{\theta} - \frac{n\bar{x}}{1 - \theta}\right)\right] = -E_{\theta}\left[-\frac{n}{\theta^2} - \frac{n\bar{x}}{(1 - \theta)^2}\right] = $$
+      $$ = -\left(-\frac{n}{\theta^2} - \frac{nE[\bar{x}]}{(1 - \theta)^2}\right) = \frac{n}{\theta^2} + \frac{n}{\theta(1 - \theta)} = \frac{n}{\theta^2(1 - \theta)}$$
+      
+      Para poder sacar la cota de Fréchet-Cramér-Rao, hemos de sacar la función $h(\theta)$ la cual se estaría estimando. \\
+      Dado que $f(\vec{x} | \theta)$ pertenece a la familia exponencial uniparamétrica, si existe tal estimador $\hat{\theta}$ debe poderse factorizar como: 
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \ln f(\vec{x} | \theta) = C(\theta) \cdot (\hat{\theta} - h(\theta)) = \frac{I_n(\theta)}{h'(\theta)}\cdot(\hat{\theta} - h(\theta))$$
+      $$\frac{n}{\theta} - \frac{n\bar{x}}{1 - \theta} = \frac{n(1 - \theta -\theta\bar{x})}{\theta(1 - \theta)} = \frac{n}{\theta(1 - \theta)}\left(1 - \theta - \theta\bar{x}\right) = \frac{n}{1 - \theta}\left(\frac{1}{\theta} - 1 - \bar{x}\right) = \frac{n}{1 - \theta}\left(\frac{1 - \theta}{\theta} - \bar{x}\right) \implies$$
+      $$\begin{cases}
+        C(\theta) = \frac{n}{1 - \theta} \\
+        h(\theta) = \frac{1 - \theta}{\theta} \\
+        \hat{\theta} = \bar{x}
+      \end{cases}$$
+      Entonces para calcular la cota de Fréchet-Cramér-Rao hemos de calcular la derivada de $h(\theta)$:
+      $$h'(\theta) = \frac{\partial}{\partial \theta}\left(\frac{1 - \theta}{\theta}\right) = -1\theta^{-1} + (1 - \theta)(-1)\theta^{-2} = -\frac{1}{\theta^2}$$
+      Entonces, la cota de Fréchet-Cramér-Rao es:
+      $$Var({\hat{\theta}}) \geq \frac{[h'(\theta)]^2}{I_n(\theta)} = \frac{\left(-\frac{1}{\theta^2}\right)^2}{\frac{n}{\theta^2(1 - \theta)}} = \frac{1 - \theta}{n\theta^2}$$
+    \item 
+      $$f(x | \theta) = \frac{1}{x\theta\sqrt{2\pi}} e^{-\frac{1}{2\theta^2}(\ln(x))^2} \cdot I_{(0, +\infty)}(x) \implies f(\vec{x} | \theta) = \left(\frac{1}{\theta\sqrt{2\pi}}\right)^n \cdot \prod \frac{1}{x_i} \cdot e^{-\frac{1}{2\theta^2}\sum ln(x_i)^2}$$
+      Primero calculamos el score: 
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \ln f(\vec{x} | \theta) = \frac{\partial}{\partial \theta} \left(-n\ln(\theta\sqrt{2\pi}) - \sum ln(x_i) -\frac{1}{2\theta^2}\sum \ln(x_i)^2\right) = $$
+      $$ = \frac{-n}{\theta} + \frac{4}{\theta^3} \sum \ln(x_i)^2 = \frac{n}{\theta^3}\left(\frac{1}{n}\sum ln(x_i)^2 - \theta^2\right)$$
+      Entonces dado que la función de densidad es de una familia exponencial uniparamétrica, podemos decir que: 
+      $$\begin{cases}
+        C(\theta) = \frac{n}{\theta^3} \\
+        h(\theta) = \theta^2 \\
+        \hat{\theta} = \frac{1}{n}\sum ln(x_i)^2
+      \end{cases}$$
+      Ahora calculemos la información de Fisher, usando la fórmula de la doble derivada: $I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial\theta} \ln f_{\theta}(\vec{x} | \theta)\right]$:
+      $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \ln f(\vec{x} | \theta)\right] = -E_{\theta}\left[\frac{\partial}{\partial \theta} \left(-\frac{n}{\theta} + \frac{4}{\theta^3} \sum ln(x_i)^2\right)\right] = $$ 
+      $$ = -E_{\theta}\left[\frac{n}{\theta^2} - \frac{12}{\theta^4} \sum ln(x_i)^2\right] = -\left(-\frac{n}{\theta^2} + \frac{12E[\sum ln(x_i)^2]}{\theta^4}\right) = \frac{n}{\theta^2} - \frac{12\sum E[ln(x_i)^2]}{\theta^4}$$
+      Como vemos, la forma es dificil y aunque converge, no es fácil de calcular, por lo que podemos tomar una vía más fácil. Por lo calculado anteriormente a partir del score, podemos deducir la información de Fisher a través de el cálculo $C(\theta)  \frac{I_n(\theta)}{h'(\theta)}$:
+      $$C(\theta) = \frac{n}{\theta^3} = \frac{I_n(\theta)}{2\theta} \implies I_n(\theta) = \frac{2n}{\theta^2}$$
+      Y finalmente para calcular la cota de Fréchet-Cramér-Rao: 
+      $$Var(\hat{\theta}) \geq \frac{[h'(\theta)]^2}{I_n(\theta)} = \frac{(2\theta)^2}{\frac{2n}{\theta^2}} = \frac{4\theta^4}{2n} = \frac{2\theta^4}{n}$$
+  \end{enumerate}
+\end{sol}
+
+\begin{problem}{4.6.10}
+  Encuéntrese la distribución final asintótica para m.a.s. de tamaño $50$ de una población de $Bernouilli(\theta)$. Paricularícese al caso en que en las 50 repeticiones se obtengan 12 éxitos. ¿Cuál sería la distribución final exacta si la densidad inicial es la distribución $Uniforme(0,1)$?
+\end{problem}
+\begin{sol}
+  NO SÉ HACERLO
 \end{sol}

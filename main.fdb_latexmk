@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1745092513.14038 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/main.tex" "main.pdf" "main" 1745092530.80675 0
+["pdflatex"] 1745185484.93885 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/main.tex" "main.pdf" "main" 1745185505.34213 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1744281801 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1744013569 12668 34cd0b7211141c24d914262480788b27 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1744013572 10576 a2235faf37de72466379ed4e3e679354 ""
@@ -341,16 +341,16 @@
   "Theory/1- Estadistica Descriptiva.tex" 1744962776 2439 da80371f4d459d2b36ab8e4acb82bd89 ""
   "Theory/2 - Muestreo.tex" 1744962776 42741 a1c1d1da7f6ca6d87d8ddbaf61853ece ""
   "Theory/3 - Reduccion de Datos.tex" 1744962776 75352 4ace95f3c574eea12287cde360c5cf05 ""
-  "Theory/4 - Estimacion Puntual Parametrica.tex" 1745092525 96220 537490932fbad22c322af230273c7c38 ""
+  "Theory/4 - Estimacion Puntual Parametrica.tex" 1745185483 106317 e20ca88b8a9ea5cd21bf460afd3ac542 ""
   "Theory/5 - Estimacion por Regiones de Confianza.tex" 1744962776 16946 6b8124dad10fa4b0dacd94a84825bdac ""
   "Theory/6 - Contraste de Hipotesis.tex" 1744962776 17784 a002c0fdd797b8587ac42c4523a51b6f ""
   "Theory/Appendix.tex" 1744962776 11283 ebf67c1d9efe3a4f9a904a0800cfd135 ""
   "Theory/Theory.tex" 1744962909 439 c46b55fb711cc07b0a02c8bf3e68c166 ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/main.tex" 1744962776 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1745092529 45087 c1ca0930e97d5a87bb9f5301c663c9d4 "pdflatex"
-  "main.out" 1745092529 8096 be942ab2c5686fa36ef6e8d1438962ab "pdflatex"
+  "main.aux" 1745185504 45087 2f09c52c134507297597b101fe97d7bb "pdflatex"
+  "main.out" 1745185504 8096 be942ab2c5686fa36ef6e8d1438962ab "pdflatex"
   "main.tex" 1744962776 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1745092529 3732 8cf76e82ef50872cfb0062b7c9e5b6c5 "pdflatex"
+  "main.toc" 1745185504 3732 ceef8a87be03e6d2289811016a115b08 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
