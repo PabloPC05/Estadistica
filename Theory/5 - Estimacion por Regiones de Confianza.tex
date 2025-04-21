@@ -26,7 +26,7 @@
 \end{definición}
 
 \ejemplo{
-
+    Sea por ejemplo $X \sim N(\theta, \sigma^2)$ con $\sigma_0$ conocida y $\left(\bar{X} - \frac{\sigma_0}{\sqrt{n}}\mathcal{z_{\frac{\alpha}{2}}}, \bar{X} + \frac{\sigma_0}{\sqrt{n}}\mathcal{z}_{\frac{\alpha}{2}}\right)$ es un intervalo de grado de confianza $1-\alpha$ para media $\theta$ y con $z_{\frac{\alpha}{2}}$ tal que $\Phi(z_{\frac{\alpha}{2}}) = 1 - \frac{\alpha}{2}$, donde $\Phi$ es la función de distribución de la normal estándar $N(0,1)$
 }
 
 \begin{definición}[Intervalos de confianza]
@@ -48,45 +48,81 @@ Entonces, para cada $\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n},\left(T_{1}\
 \end{observación}
 
 \begin{observación}
-Siempre es deseable hacer que la medida de la región de confianza sea mínima, entre todas las del mismo grado de confianza $1-\alpha$
+Siempre es deseable hacer que la medida de la región de confianza sea mínima (en términos de medida-longitud), entre todas las del mismo grado de confianza $1-\alpha$
 \end{observación}
 
+\ejemplo{
+    Veamos un ejemplo explicativo de la observación anterior: \\
+    En el primer ejemplo de este tema, vemos cómo calcular un intervalo que contiene el $95\%$ del área bajo la curva de la normal, no obstante el intervalo anterior se obtuvo de forma arbitraria, pero haciendo uso de la simetría de la normal. Si quisieramos, por ejemplo, podríamos tomar que un intervalo que deja fuera a la izquierda un $1\%$ y a la derecha un $4\%$, de manera que dan un intervalo de aproximadamente $(-2.33, 1.75)$. \\
+    No obsante podemos comparar la longitud de los intervalos para entender la observación: 
+    $$\begin{cases}
+    \text{Intervalo 1:} & (-1.96, 1.96) \implies \text{Longitud} = 3.92 \\
+    \text{Intervalo 2:} & (-2.33, 1.75) \implies \text{Longitud} = 4.08
+    \end{cases}$$
+}
+
 \subsection{Métodos de obtención de intervalos de confianza}
-\underline{\textbf{Método de la cantidad pivotal}}\\
+\subsubsection{Método de la cantidad pivotal}
 \begin{definición}[Cantidad pivotal]
-    Una v.a. $T=T\left(X_{1}, \ldots, X_{n}, \theta\right): \chi^{n} \times \Theta
-    \rightarrow \mathbb{R}$ es una cantidad pivotal sí y sólo sí su distribución en
-    el muestreo no depende de $\theta$
+    Una cantidad pivotal es una función de la muestra y del parámetro desconocido, que tiene una distribución conocida independiente del valor del parámwtro. Es decir, 
+    $$Q(X_1, \ldots, X_n; \theta)$$ 
+    Donde $Q$ es a cantidada pivotal, $X_1, \ldots, X_n$ son los datos de la muestra y $\theta$ es el parámetro desconocido que queremos estimar.
 \end{definición}
 
-
-Si $T=T\left(X_{1}, \ldots, X_{n}, \theta\right)$ es una cantidad pivotal,
-fijado cualquier nivel de confianza $1-\alpha, \alpha \in(0,1)$, se pueden
-determinar dos constantes, $c_{1}(\alpha)$ y $c_{2}(\alpha) \in \mathbb{R}$
-(que no son únicas), tales que
-
-$$
-    P_{\theta}\left\{c_{1}(\alpha) \leq T\left(X_{1}, \ldots, X_{n}, \theta\right) \leq c_{2}(\alpha)\right\} \geq 1-\alpha, \forall \theta \in \Theta
-$$
-
-Si para cada $\left(x_{1}, \ldots, x_{n}\right) \in \chi^{n}, c_{1}(\alpha)
-    \leq T\left(x_{1}, \ldots, x_{n}, \theta\right) \leq c_{2}(\alpha)$
-$\Leftrightarrow T_{1}\left(x_{1}, \ldots, x_{n}, \alpha\right) \leq h(\theta)
-    \leq T_{2}\left(x_{1}, \ldots, x_{n}, \alpha\right)$, entonces
-$\left(T_{1}\left(x_{1}, \ldots, x_{n}, \alpha\right), T_{2}\left(x_{1},
-    \ldots, x_{n}, \alpha\right)\right)$ es un intervalo de confianza para
-$h(\theta)$ de nivel $1-\alpha$
-
-Intervalos de confianza asociados a la distribución normal\\
+\begin{teorema}[Método de la cantidad pivotal]
+    Si $T = T(X_1, \ldots, X_n; \theta)$ es una cantidad pivotal monótonamente creciente $\forall \vec{x} \in \chi^n$, fijado cualquier nivel de confianza 1 - $\alpha$, $\alpha \in (0,1)$ se pueden determinar dos contantes $c_1(\alpha)$ y $c_2(\alpha) \in \mathbb{R}$ (que no son únicas), tales que:
+    $$P_\theta\{c_1(\alpha) \leq T(X_1, \ldots, X_n; \theta) \leq c_2(\alpha)\} \geq 1 - \alpha, \forall \theta \in \Theta$$
+    Si para cada $\left(x_1, \ldots, x_n\right) \in \chi^n$, $c_1(\alpha) \leq T(x_1, \ldots, x_n; \theta) \leq c_2(\alpha)$ $\Leftrightarrow T_1(x_1, \ldots, x_n; \alpha) \leq h(\theta) \leq T_2(x_1, \ldots, x_n; \alpha)$, entonces $\left(T_1(x_1, \ldots, x_n; \alpha), T_2(x_1, \ldots, x_n; \alpha)\right)$ es un intervalo de confianza para $h(\theta)$ de nivel $1 - \alpha$
+\end{teorema}
 
 \ejemplo{
-    Para una m.a.s.(n) de $X \sim N(\mu, \sigma), \sigma$ conocida,
+    Para una m.a.s.(n) de $X \sim N(\mu, \sigma), \sigma$ conocida y  $\mu$ desconocida
     $$I C_{1-\alpha}(\mu)=\left(\bar{x}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}, \bar{x}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}\right)$$
     es un intervalo de confianza para $\mu$ de nivel $1-\alpha, \alpha \in(0,1)$\\
     Para demostrar esto, utilizaremos el teorema de fisher, segun el cual $\overline{X} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$, entonces:
     $$ \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)$$
     $$ P(z_{\frac{\alpha}{2}} \leq \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \leq z_{\frac{\alpha}{2}}) \geq 1-\alpha \implies P(\bar{X}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}) \geq 1-\alpha$$
     Y asi finalmente se deduce el intervalo dado.
+}
+
+\ejemplo{
+    Para una m.a.s.(n) de $X \sim N(\mu, \sigma), \sigma$ desconocida y $\mu$ desconocida.
+    En este caso tenemos que el estadístico $\frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}}$ no puede usarse ya que tiene dos parámetros desconocidos, por lo que usaremos los estimadores insesgados de los parámetros $\bar{X}$ y $S^2$: 
+    $$ \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1) \quad \quad \frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1} \implies t_{n-1} = \frac{N(0,1)}{\sqrt{\chi^2_{n-1}}} \iff $$
+    $$\iff \frac{\frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}}{\sqrt{\chi^2_{n-1}}}{\sqrt{\frac{\frac{(n-1)S^2}{\sigma^2}}{n-1}}} = \frac{\bar{X} - \mu}{S/\sqrt{n}} \sim t_{n-1}$$
+    En este nuevo caso, el estadístico sólo tiene un parámetro, pero se distribuye con una distribución t de Student que es independiente del mismo. Los intervalos de confianza ahora se calculan de la forma: 
+    $$P\left\{-t_{\frac{\alpha}{2}} \leq \frac{\bar{X} - \mu}{\frac{S^2}{\sqrt{n}}} \leq t_{\frac{\alpha}{2}}\right\} = 1 - \alpha \iff$$
+    $$\iff P\left\{-t_{\frac{\alpha}{2}} \cdot \frac{S}{\sqrt{n}} \leq \bar{X} - \mu \leq t_{\frac{\alpha}{2}} \cdot \frac{S}{\sqrt{n}}\right\} \iff$$
+    $$ \iff P\left\{\bar{X} - t_{\frac{\alpha}{2}} \cdot \frac{S}{\sqrt{n}} \leq \mu \leq \bar{X} + t_{\frac{\alpha}{2}} \cdot \frac{S}{\sqrt{n}}\right\} = 1 - \alpha$$
+    \\
+    Dado que este es un caso especial en el que ambos parámetros son desconocidos, el intervalo de confianza anterior es el de $\mu$ pero podríamos calcular también el de $\sigma^2$, para ello y al contrario que antes, podemos usar el estimador $T \equiv \frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$ ya que sólo depende de un parámetro y es independiente del mismo, cosa que no ocurría en el caso de $\mu$. Por lo que el intervalo de confianza para $\sigma^2$ sería:
+    $$P\left\{\chi^2_{\frac{\alpha}{2}} \leq \frac{(n-1)S^2}{\sigma^2} \leq \chi^2_{1 - \frac{\alpha}{2}}\right\} = 1 - \alpha \iff$$
+    $$\iff P\left\{\frac{1}{\chi^2_{\frac{\alpha}{2}}} \leq \frac{\sigma^2}{(n-1)S^2} \leq \frac{1}{\chi^2_{1 - \frac{\alpha}{2}}}\right\}\iff$$
+    $$\iff P\left\{\frac{(n-1)S^2}{\chi^2_{1 - \frac{\alpha}{2}}} \leq \sigma^2 \leq \frac{(n-1)S^2}{\chi^2_{\frac{\alpha}{2}}}\right\} = 1 - \alpha$$
+
+    \begin{observación}
+        Dada la independencia del estimador $T \equiv \frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$ de otros parámetros, el caso en el que $\mu$ es conocida y $\sigma^2$ no lo es, se puede resolver de la misma manera.
+    \end{observación}
+} 
+
+\ejemplo{
+    Sean dos variables aleatorias: $\begin{cases}
+    X \sim N(\mu_x, \sigma_x^2) \\
+    Y \sim N(\mu_y, \sigma_y^2)
+    \end{cases} \implies \begin{cases}
+    \bar{X} \sim N(\mu_x, \frac{\sigma_x^2}{n}) \\
+    \bar{Y} \sim N(\mu_y, \frac{\sigma_y^2}{m})
+    \end{cases}$
+    Calculemos el intervalo de confianza para $\mu_x - \mu_y$: 
+    NO ENTIENDO CÓMO TERMINARLO
+}
+\ejemplo{
+    Pongámonos en el caso anterior, con dos variables aleatorias $X$ e $Y$ independientes con $\sigma_x^2$ y $\sigma_y^2$ desconocidas y queremos calcular el intervalo de confianza para $\frac{\sigma_x^2}{\sigma_y^2}$.
+    Para ello tenemos que:
+    $$\frac{\sigma_y^2}{\sigma_x^2} \cdot \frac{S_{n-1}^2}{S_{m-1}^2} = \frac{\frac{(n-1)S_{n-1}^2}{\frac{\sigma_x^2}{n-1}}}{\frac{(m-1)S_{m-1}^2}{\frac{\sigma_y^2}{m-1}}} \sim F_{n-1, m-1} \implies$$
+    $$P\{f_{n-1, m-1;\frac{\alpha}{2}} \leq \frac{\sigma_y^2}{\sigma_x^2} \cdot \frac{S_{n-1}^2}{S_{m-1}^2} \leq f_{n-1, m-1; 1 - \frac{\alpha}{2}}\} = 1- \alpha \implies$$
+    $$IC_{1 - \alpha}(\frac{\sigma_x^2}{\sigma_y^2}) = \left(\frac{S_{n-1}^2}{S_{m-1}^2} \cdot f_{n-1, m-1;\frac{\alpha}{2}}, \frac{S_{n-1}^2}{S_{m-1}^2} \cdot f_{n-1, m-1; 1 - \frac{\alpha}{2}}\right)$$
+
 }
 
 \ejemplo{
@@ -132,29 +168,18 @@ Intervalos de confianza asociados a la distribución normal\\
         $$
 }
 
-\underline{\textbf{Método de Neyman}}\\
-Sea $T=T\left(X_{1}, \ldots X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ un
-estimador de $h(\theta)$ y denotemos por $g_{\theta}(t)$ a su función de
-densidad (o de masa)
-
-Fijado un nivel de confianza $1-\alpha, \alpha \in(0,1)$ y $\alpha_{1},
-    \alpha_{2} \in(0,1)$ tales que $\alpha=\alpha_{1}+\alpha_{2}$, para cada
-$\theta \in \Theta$ se pueden determinar dos valores $c_{1}\left(\theta,
-    \alpha_{1}\right)$ y $c_{2}\left(\theta, \alpha_{2}\right) \in \mathbb{R}$,
-tales que $P_{\theta}\left\{T<c_{1}\left(\theta, \alpha_{1}\right)\right\} \leq
-    \alpha_{1}$ y $P_{\theta}\left\{T>c_{2}\left(\theta, \alpha_{2}\right)\right\}
-    \leq \alpha_{2}$. Entonces, para cada $\theta \in \Theta$
-
-$$
-    P_{\theta}\left\{c_{1}\left(\theta, \alpha_{1}\right) \leq T \leq c_{2}(\theta, \alpha)\right\} \geq 1-\alpha_{2}-\alpha_{1}=1-\alpha
-$$
-
-Si para cada $t \in \mathbb{R}, c_{1}\left(\theta, \alpha_{1}\right) \leq T(t)
-    \leq c_{2}(\theta, \alpha) \Leftrightarrow$\\ $T_{1}\left(t, \alpha_{1},
-    \alpha_{2}\right) \leq h(\theta) \leq T_{2}\left(t, \alpha_{1},
-    \alpha_{2}\right)$, entonces\\ $\left(T_{1}\left(t, \alpha_{1},
-    \alpha_{2}\right), T_{2}\left(t, \alpha_{1}, \alpha_{2}\right)\right)$ es un
-intervalo de confianza para $h(\theta)$ de nivel $1-\alpha, \alpha \in(0,1)$
+\subsubsection{Método de Neyman}
+\begin{teorema}[Método de Neyman]
+    Sea una m.a.s. de tamaño $n$. Si para cualquier $\alpha \in [0,1]$ se puedne encontrar dos funciones $\gamma_1(\theta, \alpha)$ y $\gamma_2(\theta, \alpha)$ y un estadístico $T(\vec{X})$ tales que: 
+    $$P\{\gamma_1(\theta, \alpha) < T(\vec{X}) < \gamma_2(\theta, \alpha) | \theta\} \geq 1 - \alpha$$
+    y si además las fuciones $\gamma_1$ y $\gamma_2$ son estrictamente monótonas en $\theta$ del mismo sentido y las ecuaciones: 
+    $$\begin{cases}
+        \gamma_1(\theta, \alpha) = T(\vec{X}) \\
+        \gamma_2(\theta, \alpha) = T(\vec{X})
+    \end{cases}$$
+    se pueden invertir para resolverlas en $\theta$ en función de $T(\vec{x}) = t$ entonces se puede construir un intervalo para $\theta$ de grado de confianza $1 - \alpha$, de la forma: 
+    $$\left(\gamma_1^{-1}(t, \alpha), \gamma_2^{-1}(t, \alpha)\right)$$
+\end{teorema}
 
 \ejemplo{
     Construir por el método de Neyman un intervalo de confianza de longitud esperada mínima para $\theta$ basado en una m.a.s. $(n)$ de $X \sim U(0, \theta)$, con $\theta>0$. Indicación: utilizar $T=T\left(X_{1}, \ldots, X_{n}\right)=X_{(n)}$\\
@@ -167,13 +192,11 @@ intervalo de confianza para $h(\theta)$ de nivel $1-\alpha, \alpha \in(0,1)$
     $$
     El metodo de Neyman nos dice que tenemos que dos funciones $\gamma_1(\theta \text{;} \alpha)$ y $\gamma_2(\theta \text{;} \alpha)$ tales que:
     $$P(\gamma_1(\theta \text{;} \alpha) < T < \gamma_2(\theta \text{;} \alpha) | \theta) \geq 1 - \alpha, \quad \alpha \in [0,1]$$
-    Asi deducimos que:
-    $$F(\gamma_1(\theta \text{;} \alpha) | \theta) = \alpha_1$$
-    $$F(\gamma_2(\theta \text{;} \alpha) | \theta) = \alpha - \alpha_1$$
+    Asi definimos las siguientes constantes: 
+        $$F(\gamma_1(\theta \text{;} \alpha) | \theta) = \alpha_1 \quad \quad 1 - F(\gamma_2(\theta \text{;} \alpha) | \theta) = \alpha - \alpha_1$$
     Donde $\alpha_1 \in [0,\alpha]$
     Despejando obtenemos que ambas funciones deben ser:
-    $$\gamma_1(\theta \text{;} \alpha) = \theta \left(\alpha_1\right)^{\frac{1}{n}}$$
-    $$\gamma_2(\theta \text{;} \alpha) = \theta \left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}}$$
+    $$\gamma_1(\theta \text{;} \alpha) = \theta \left(\alpha_1\right)^{\frac{1}{n}} \quad \quad \gamma_2(\theta \text{;} \alpha) = \theta \left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}}$$
     Finalmente, volviendo a la probabilidad y teniendo ya nuestras funciones y nuestro estadistico:
     $$P\left(\theta \left(\alpha_1\right)^{\frac{1}{n}} < X_{(n)} < \theta \left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}} | \theta\right) \geq 1 - \alpha \quad \implies$$
     $$P\left(\frac{X_{(n)}}{\left(1 - (\alpha - \alpha_1)\right)^{\frac{1}{n}}} < \theta < \frac{X_{(n)}}{\left(\alpha_1\right)^{\frac{1}{n}}} | \theta\right) \geq 1 - \alpha$$
@@ -183,102 +206,66 @@ intervalo de confianza para $h(\theta)$ de nivel $1-\alpha, \alpha \in(0,1)$
     $$IC_{1-\alpha}(\theta) = \left(X_{(n)}, X_{(n)} \alpha^{-\frac{1}{n}}\right)$$
 }
 
-Intervalos de confianza para muestras grandes\\ Si $T_{n}=T\left(X_{1}, \ldots,
-    X_{n}\right)$ es un estimador de $h(\theta)$ tal que
+\begin{definición}[Intervalos de confianza para muestras grandes]
+        Si $T_{n}=T\left(X_{1}, \ldots, X_{n}\right)$ es un estimador de $h(\theta)$ tal que
 
-$$
-    \begin{gathered}
-        \frac{T_{n}-h(\theta)}{\sigma_{n}(\theta)} \underset{n \rightarrow \infty}{d} N(0,1) \\
-        P_{\theta}\left(-z_{\alpha / 2} \leq \frac{T_{n}-h(\theta)}{\sigma_{n}(\theta)} \leq z_{\alpha / 2}\right) \underset{n \rightarrow \infty}{\longrightarrow} 1-\alpha
-    \end{gathered}
-$$
+    $$ \frac{T_{n}-h(\theta)}{\sigma_{n}(\theta)} \underset{n \rightarrow \infty}{d} N(0,1) \quad \quad
+            P_{\theta}\left(-z_{\alpha / 2} \leq \frac{T_{n}-h(\theta)}{\sigma_{n}(\theta)} \leq z_{\alpha / 2}\right) \underset{n \rightarrow \infty}{\longrightarrow} 1-\alpha
+    $$
+    Por lo tanto, si puede invertirse la desigualdad anterior, despejando $h(\theta)$, se puede obtener un intervalo de confianza para $h(\theta)$, de nivel aproximado $1-\alpha$, cuando el tamaño muestral es suficientemente grande 
+\end{definición}
 
-Por lo tanto, si puede invertirse la desigualdad anterior, despejando
-$h(\theta)$, se puede obtener un intervalo de confianza para $h(\theta)$, de
-nivel aproximado $1-\alpha$, cuando el tamaño muestral es suficientemente
-grande
+
 
 \begin{observación}
 Si se cumplen todas las condiciones de regularidad y la ecuación de verosimilitud tiene una única raíz, $\hat{\theta}_{n} \xrightarrow[n \rightarrow \infty]{\text { c.s. }} \theta$, puede tomarse $T_{n}=\hat{\theta}_{n}$ y $h(\theta)=\theta$, y como
 
-$$
-    \frac{\hat{\theta}_{n}-\theta}{\sqrt{\frac{1}{n l_{1}(\theta)}}} \xrightarrow[n \rightarrow \infty]{\stackrel{d}{\longrightarrow}} N(0,1)
-$$
+$$ \frac{\hat{\theta}_{n}-\theta}{\sqrt{\frac{1}{n l_{1}(\theta)}}} \xrightarrow[n \rightarrow \infty]{\stackrel{d}{\longrightarrow}} N(0,1) $$
 
 entonces $\sigma_{n}(\theta)=\sqrt{\frac{1}{n I_{1}(\theta)}}$, que si es una
 función continua puede ser aproximada por
 $\sigma_{n}\left(\hat{\theta}_{n}\right)$, lo que facilita la inversión
 
-$$
-    I C_{1-\alpha}(\theta)=\hat{\theta}_{n} \mp z_{\alpha / 2} \sqrt{\frac{1}{n I_{1}\left(\hat{\theta}_{n}\right)}}
-$$
+$$ I C_{1-\alpha}(\theta)=\hat{\theta}_{n} \mp z_{\alpha / 2} \sqrt{\frac{1}{n I_{1}\left(\hat{\theta}_{n}\right)}} $$
 \end{observación}
 
 \ejemplo{
-Comprobar que si $X \sim \operatorname{Bin}(1, \theta)$, entonces
-
-$$
-    \begin{gathered}
+    Comprobar que si $X \sim \operatorname{Bin}(1, \theta)$, entonces
+    $$\begin{gathered}
         I C_{1-\alpha}(\theta)=\bar{x} \mp z_{\alpha / 2} \sqrt{\frac{\bar{x}(1-\bar{x})}{n}} \\
         I C_{1-\alpha}(\theta)=\bar{x} \mp z_{\alpha / 2} \frac{1}{2 \sqrt{n}}
-    \end{gathered}
-$$
-
-son intervalos de confianza para $\theta$ basados en el EMV, para muestras
-grandes
-
-Desigualdad de Tchebychev
-
-$$
-    P(|Y-E[Y]|>k \sqrt{V(Y)}) \leq \frac{1}{k^{2}}
-$$
-
-Teniendo en cuenta que $X \sim Bin(1, \theta)$, entonces $E[X]=\theta$ y $V(X)=\theta(1-\theta)$, y por tanto:
-$$ 
-    P(|\bar{X}-\theta|>k \sqrt{\frac{\bar{x}(1-\bar{x})}{n}}) \leq \frac{1}{k^{2}} \quad \implies
-$$
-$$ 
-    P\left(\bar{X}-k \sqrt{\frac{\bar{x}(1-\bar{x})}{n}}<\theta<\bar{X}+k \sqrt{\frac{\bar{x}(1-\bar{x})}{n}}\right) \geq 1-\frac{1}{k^{2}} \quad \forall k>0
-$$
-Ahora fijamos $k=\sqrt{\frac{1}{\alpha}}$, y obtenemos el intervalo de confianza:
-$$
-    I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \sqrt{\frac{\bar{x}(1-\bar{x})}{n}} \quad \forall k>0
-$$
-
-    Si $\bar{x}=\frac{1}{2}$, lo cual ocurre cuando $n$ es muy grande, entonces:
-    $$I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \frac{1}{2 \sqrt{n}}$$
+    \end{gathered}$$
+    son intervalos de confianza para $\theta$ basados en el estimador de mínima varianza para muestras grandes.
+    
 }
 
-\ejemplo{
-Comprobar que si $X \sim \operatorname{Bin}(1, \theta)$, entonces
+\begin{teorema}[Desigualdad de Tchebychev]
+    $$P\left(|Y-E[Y]|>k \sqrt{V(Y)}\right) \leq \frac{1}{k^{2}}$$
+\end{teorema}
 
-$$
-    \begin{gathered}
+\ejemplo{
+    Comprobar que si $X \sim \operatorname{Bin}(1, \theta)$, entonces
+    $$\begin{gathered}
         I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \sqrt{\frac{\bar{x}(1-\bar{x})}{n}} \\
         I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \frac{1}{2 \sqrt{n}}
-    \end{gathered}
-$$
-
-son intervalos de confianza para $\theta$ basados en la desigualdad de
-Tchebychev    
+    \end{gathered}$$
+    son intervalos de confianza para $\theta$ basados en la desigualdad de Tchebychev
 }
 
 \begin{observación}
-Observación Los intervalos que se obtienen mediante el método de la desigualdad de Tchebychev son más amplios que los construídos mediante procedimientos específicos a cada modelo de probabilidad
+    Los intervalos que se obtienen mediante el método de la desigualdad de Tchebychev son más amplios que los construídos mediante procedimientos específicos a cada modelo de probabilidad
 \end{observación}
 
-\underline{\textbf{Región creíble}}\\
-Dada una familia de distribuciones de probabilidad $\left\{f\left(x_{1}, \ldots, x_{n} \mid \theta\right), \theta \in \Theta\right\}$, si la información inicial sobre $\theta$ viene dada por la función de densidad o de masa $\pi(\theta)$, la región $C\left(x_{1}, \ldots, x_{n}\right) \subset \Theta$ es una región creíble de probabilidad $1-\alpha$ si
+\subsection{Regiones de confianza bayesianas}
 
-$$
-P\left(\theta \in C\left(x_{1}, \ldots, x_{n}\right) \mid x_{1}, \ldots, x_{n}\right) \geq 1-\alpha
-$$
+\begin{definición}[Región creible]
+    Dada una familia de distribuciones de probabilidad $\left\{f\left(x_{1}, \ldots, x_{n} \mid \theta\right), \theta \in \Theta\right\}$, si la información inicial sobre $\theta$ viene dada por la función de densidad o de masa $\pi(\theta)$, la región $C\left(x_{1}, \ldots, x_{n}\right) \subset \Theta$ es una región creíble de probabilidad $1-\alpha$ si
+    $$ P\left(\theta \in C\left(x_{1}, \ldots, x_{n}\right) \mid x_{1}, \ldots, x_{n}\right) \geq 1-\alpha $$
+    donde esta probabilidad se calcula mediante la distribución final, es decir
+    $$ \int_{C\left(x_{1}, \ldots, x_{n}\right)} \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) d \theta \geq 1-\alpha $$
+\end{definición}
 
-donde esta probabilidad se calcula mediante la distribución final, es decir
 
-$$
-\int_{C\left(x_{1}, \ldots, x_{n}\right)} \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) d \theta \geq 1-\alpha
-$$
 
 \ejemplo{
 Para muestras de tamaño $n=1$ de $X \sim \operatorname{Bin}(1, \theta)$, si $\theta \sim U(0,1)$ y se observa $x=1$, entonces $C_{1-\alpha}(\theta)=\left(\sqrt{\frac{\alpha}{2}}, \sqrt{1-\frac{\alpha}{2}}\right)$
