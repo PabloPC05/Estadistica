@@ -230,13 +230,37 @@ $$ I C_{1-\alpha}(\theta)=\hat{\theta}_{n} \mp z_{\alpha / 2} \sqrt{\frac{1}{n I
 \end{observación}
 
 \ejemplo{
+    Veamos un ejemplo de la observación anterior: \\
+    Sea una población con función de densidad: 
+    $$f_{\theta}(x) = \theta e^{-x\theta} \implies f_{\theta}(\vec{x}) = \theta^n e^{\theta \sum x_i} \implies \ln f_{\theta}(\vec{x}) = n \ln \theta - \theta \sum x_i \implies$$
+    Entonces, calculemos la derivada de a función de verosimilitud para obtener el máximo: 
+    $$\frac{\partial}{\partial \theta} \ln f_{\theta}(\vec{x}) = \frac{n}{\theta} - \sum x_i = 0 \implies \hat{\theta}_{n} = \frac{n}{\theta} - \sum x_i = 0 \iff \hat{\theta}_{n} = \frac{n}{\sum x_i} = \bar{x}^{-1}$$
+    Por la observación sabemos que $V[\hat{\theta}_{n}] = \frac{1}{n I_{1}(\theta)}$, por lo que tenemos que calcular la segunda derivada de la función de verosimilitud:
+    $$\frac{\partial^{2}}{\partial \theta^{2}} \ln f_{\theta}(\vec{x}) = -\frac{n}{\theta^2} \implies I_{n}(\theta) = -E\left[\frac{\partial^{2}}{\partial \theta^{2}} \ln f_{\theta}(\vec{x})\right] = \frac{n}{\theta^2} \implies V[\hat{\theta}_{n}] = \frac{\theta}{\sqrt{n}} \implies$$
+    Por el Teorema Central del límite sabemos que: 
+    $$ \frac{\hat{\theta} - \theta}{\frac{\theta}{\sqrt{n}}} \xrightarrow[n \rightarrow \infty]{\stackrel{d}{\longrightarrow}} N(0,1) \implies P\left(-z_{\frac{\alpha}{2}} \leq \frac{\hat{\theta}_{n} - \theta}{\frac{\theta}{\sqrt{n}}} \leq z_{\frac{\alpha}{2}}\right) \xrightarrow[n \rightarrow \infty]{d} 1 - \alpha \iff$$
+    $$\iff P\left(\frac{1}{\bar{X}} - z_{\frac{\alpha}{2}}\frac{1}{\bar{X}\sqrt{n}} \leq \theta \leq \frac{1}{\bar{X}} + z_{\frac{\alpha}{2}}\frac{1}{\bar{X}\sqrt{n}} \right) \xrightarrow[n \rightarrow \infty]{d} 1 - \alpha$$
+}
+
+\ejemplo{
     Comprobar que si $X \sim \operatorname{Bin}(1, \theta)$, entonces
     $$\begin{gathered}
         I C_{1-\alpha}(\theta)=\bar{x} \mp z_{\alpha / 2} \sqrt{\frac{\bar{x}(1-\bar{x})}{n}} \\
         I C_{1-\alpha}(\theta)=\bar{x} \mp z_{\alpha / 2} \frac{1}{2 \sqrt{n}}
     \end{gathered}$$
     son intervalos de confianza para $\theta$ basados en el estimador de mínima varianza para muestras grandes.
-    
+    \\ \\
+    Dado que se trata de una $Bin(1, \theta) \equiv Bernoulli(\theta)$, por lo que tenemos que $E[X] = \theta$ y $V(X) = \theta(1-\theta)$, por lo que el estimador de mínima varianza es $\hat{\theta}_{n} = \bar{x}$. Del que sabemos que $E[\bar{X}] = \theta$ y $V(\bar{X}) = \frac{\theta(1-\theta)}{n}$. \\
+    Ahora, gracias al Teorema Central del límite, sabemos que para muestras grandes se cumple que:
+    $$\frac{\bar{X} - \theta}{\sqrt{\frac{\bar{X}(1-\bar{X})}{n}}} \xrightarrow[n \rightarrow \infty]{\stackrel{d}{\longrightarrow}} N(0,1) \implies P\left(-z_{\frac{\alpha}{2}} \leq \frac{\bar{X} - \theta}{\sqrt{\frac{\theta(1-\theta)}{n}}} \leq z_{\frac{\alpha}{2}}\right) \xrightarrow[n \rightarrow \infty]{d} 1 - \alpha $$
+    \[
+    \iff P\left(-z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\theta(1 - \theta)}{n}} \leq \bar{X} - \theta \leq z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\theta(1 - \theta)}{n}}\right) \rightarrow 1 - \alpha
+    \]
+    $$\iff P\left(\bar{X} - z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\bar{X}(1 - \bar{X})}{n}} \leq \theta \leq \bar{X} + z_{\frac{\alpha}{2}} \cdot \sqrt{\frac{\bar{X}(1 - \bar{X})}{n}}\right) \xrightarrow[n \rightarrow \infty]{d} 1 - \alpha$$
+    En esta última desigualdad hemos sustituido las apariciones del parámetro $\theta$ por su estimador, ya que no lo conocemos. \\
+    Ahora veamos el segundo apartado: La varianza del estimador también se podría haber acotado por su máximo y mínimo, es decir:
+    $$V[\bar{X}] = \frac{\theta(1 - \theta)}{n} \implies \frac{\partial}{\partial \theta} \left(\frac{\theta(1 - \theta)}{n}\right) = \frac{1}{n} \left(1 - 2\theta\right) = 0 \iff$$ $$\iff \theta = 0.5 \implies V_{\theta = 0.5}[\bar{X}] = \frac{0.25}{n} \implies V[\bar{X}] \leq \frac{1}{4n} \implies$$
+    $$\implies P\left(\bar{X} - z_{\frac{\alpha}{2}} \cdot \frac{1}{2\sqrt{n}} \leq \theta \leq \bar{X} + z_{\frac{\alpha}{2}} \cdot \frac{1}{2\sqrt{n}}\right) \xrightarrow[n \rightarrow \infty]{d} 1 - \alpha$$
 }
 
 \begin{teorema}[Desigualdad de Tchebychev]
@@ -249,7 +273,16 @@ $$ I C_{1-\alpha}(\theta)=\hat{\theta}_{n} \mp z_{\alpha / 2} \sqrt{\frac{1}{n I
         I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \sqrt{\frac{\bar{x}(1-\bar{x})}{n}} \\
         I C_{1-\alpha}(\theta)=\bar{x} \mp \frac{1}{\sqrt{\alpha}} \frac{1}{2 \sqrt{n}}
     \end{gathered}$$
-    son intervalos de confianza para $\theta$ basados en la desigualdad de Tchebychev
+    son intervalos de confianza para $\theta$ basados en la desigualdad de Tchebychev. \\ \\
+    La desigualdad de Tchebychev nos dice que:
+    $$P\left(|\bar{X} - E[Y]| > k \sqrt{V[Y]}\right) \leq \frac{1}{k^{2}} \iff$$
+    $$ \iff P\left( |Y - E[Y] | \leq k\sqrt{V[Y]} \right) \geq 1 - \frac{1}{k^2} \implies 1 - \alpha = 1 - \frac{1}{k^2} \implies k = \frac{1}{\sqrt{\alpha}}$$
+    Dado que queremos calcular un intervalo de confianza para $\theta$ es necesario buscar un estimador que tenga como esperanza $\theta$ y varianza conocida. En este caso, el estimador de mínima varianza es $\bar{X}$, por lo que tenemos que:
+    $$P\left(|\bar{X} - \theta| > \frac{1}{\sqrt{\alpha}}\sqrt{\frac{\theta(1 - \theta)}{n}}\right) \leq \alpha \iff P\left(-\frac{1}{\sqrt{\alpha}}\sqrt{\frac{\theta(1 - \theta)}{n}} < \bar{X} - \theta < \frac{1}{\sqrt{\alpha}}\sqrt{\frac{\theta(1 - \theta)}{n}}\right) \geq 1 - \alpha$$
+    $$ \iff P\left(\bar{X} - \frac{1}{\sqrt{\alpha}}\sqrt{\frac{\theta(1 - \theta)}{n}} < \theta < \bar{X} + \frac{1}{\sqrt{\alpha}}\sqrt{\frac{\theta(1 - \theta)}{n}}\right) \geq 1 - \alpha$$
+    $$\iff P\left(\bar{X} - \frac{1}{\sqrt{\alpha}}\sqrt{\frac{\bar{X}(1 - \bar{X})}{n}} < \theta < \bar{X} + \frac{1}{\sqrt{\alpha}}\sqrt{\frac{\bar{X}(1 - \bar{X})}{n}}\right) \geq 1 - \alpha$$
+    Y bajo la misma premisa que en el ejemplo anterior, podemos sustituir la varianza por su cota superior de manera que el intervalo anterior, nos sale de la forma: 
+    $$\left(\bar{X} - \frac{1}{\sqrt{\alpha}}\frac{1}{2\sqrt{n}} < \theta < \bar{X} + \frac{1}{\sqrt{\alpha}}\frac{1}{2\sqrt{n}}\right)$$ 
 }
 
 \begin{observación}
@@ -297,6 +330,7 @@ $$
 \sigma_{1}=\sqrt{\frac{1}{\frac{1}{\sigma_{0}^{2}}+\frac{1}{\frac{\sigma^{2}}{n}}}}=\frac{1}{\sqrt{n+1}}
 \end{gathered}
 $$
+
 }
 
 \begin{observación}
