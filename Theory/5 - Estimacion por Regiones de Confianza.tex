@@ -291,12 +291,45 @@ $$ I C_{1-\alpha}(\theta)=\hat{\theta}_{n} \mp z_{\alpha / 2} \sqrt{\frac{1}{n I
 
 \subsection{Regiones de confianza bayesianas}
 
-\begin{definición}[Región creible]
+\begin{definición}[Región creible (Intervalos de confianza bayesianos)]
     Dada una familia de distribuciones de probabilidad $\left\{f\left(x_{1}, \ldots, x_{n} \mid \theta\right), \theta \in \Theta\right\}$, si la información inicial sobre $\theta$ viene dada por la función de densidad o de masa $\pi(\theta)$, la región $C\left(x_{1}, \ldots, x_{n}\right) \subset \Theta$ es una región creíble de probabilidad $1-\alpha$ si
     $$ P\left(\theta \in C\left(x_{1}, \ldots, x_{n}\right) \mid x_{1}, \ldots, x_{n}\right) \geq 1-\alpha $$
     donde esta probabilidad se calcula mediante la distribución final, es decir
     $$ \int_{C\left(x_{1}, \ldots, x_{n}\right)} \pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) d \theta \geq 1-\alpha $$
 \end{definición}
+
+\ejemplo{
+    Sea $X \sim exp(\frac{1}{\theta})$ calculemos lo siguiente: 
+    \begin{enumerate}
+        \item Intervalo de confianza para $\theta$ basado en una m.a.s. $(n)$ de $X$: \\
+        $$X \sim exp(\frac{1}{\theta}) \equiv \gamma(a = 1, p = \theta) \implies \frac{2}{\theta} \cdot X \sim exp(\frac{1}{2}) \implies \frac{2\sum x_i}{\theta} \sim \gamma(a = n, p = \frac{1}{2}) \equiv \chi^2_{2n}$$
+        Entonces estamos ante las condiciones para aplicar el método de la cantidad pivotal: 
+        $$P\left(c_1 \leq \frac{2\sum x_i}{\theta} \leq c_2\right) = 1 - \alpha \iff IC_{1-\alpha}(\theta) = \left(\frac{2\sum x_i}{c_2}, \frac{2\sum x_i}{c_1}\right)$$
+        \item Intervalo de confianza para $\theta$ basado en una m.a.s. $(n)$ de $X$ y $\theta \sim \gamma(a_0, p_0)$ con $a_0, p_0$ conocidos: 
+        $$\pi(\theta; \vec{x}) = \frac{\pi(\theta)f_{\theta}(\vec{x})}{\int_{\Theta} \pi(\theta)f_{\theta}(\vec{x}) d \theta} \sim \gamma\left(a_1 = a_0 + n , p_1 = p_0 + n\bar{x}\right)$$
+        Y ahora sólo queda seguir el mismo razonamiento que antes, tomando: 
+        $$2(p_0 + n\bar{x})\cdot \theta \sim \gamma(a = a_0 + n, p = \frac{1}{2}) \equiv \chi^2_{2(a_0 + n)}$$
+        Entonces estamos nuevamente ante las condiciones necesarias para aplicar el método de la cantidad pivotal: 
+        $$P\left(d_1 \leq 2(p_0 + n\bar{x})\cdot\theta \leq d_2\right) = 1 - \alpha \iff IC_{1-\alpha}(\theta) = \left(\frac{d_1}{2(p_0 + n\bar{x})}, \frac{d_2}{2(p_0 + n\bar{x})}\right)$$
+    \end{enumerate}
+}
+
+
+\ejemplo{
+    Sea $(X_1, \ldots X_{10}$) una m.a.s. de $X \sim exp(\theta)$ de la que se conoce que $\sum x_i = 32.4$. Calcúlese el IC para $\frac{1}{\theta}$ y contrastarlo con la región creíble, sabiendo que $\pi(\theta) \sim \gamma( a_0 = 4, p_0 = 5)$. Tomando el intervalo de confianza con $\alpha > 0.05$
+    \begin{enumerate}
+        \item Primero calculemos el intervalo de confianza usual (frecuentista): 
+        $$X \sim exp(\theta) \equiv \gamma( a = 1, p = \theta) \implies \sum x_i = n\bar{x} \sim \gamma(a = n, p = \theta) \implies$$
+        $$ \implies 2\theta n\bar{x} \sim \gamma( a = n, p = \frac{1}{2}) \equiv \chi^2_{2n} \implies P\left(\frac{c_1}{2n\bar{x}} \leq \theta \leq \frac{c_2}{2n\bar{x}}\right) = 1 - \alpha \implies$$
+        Ahora sustituyendo los valores, sabiendo que $c_1 = \chi^2_{2n; \frac{\alpha}{2}}$ y $c_2 = \chi^2_{2n; 1 - \frac{\alpha}{2}}$:
+        $$c_1 = \chi^2_{20; 0.025} = 9.59 \quad \quad c_2 = \chi^2_{20; 0.975} = 34.17 \implies \left(\frac{9.59}{64.8}, \frac{34.17}{64.8}\right) = \left(0.15, 0.69\right)$$
+        \item Dado que la exponencial es una gamma, y ésta es autoconjugada, podemos decir (por la teoría vista) que $\pi(\theta; \vec{x}) \sim \gamma(a_1 = a_0 + n, p_1 = p_0 + n\bar{x})$, por lo que si sustuituimos valores llegamos a que: 
+        $$\pi(\theta; \vec{x}) \sim \gamma(a_1 = 4 + 10, p_1 = 5 +32.4) = \gamma(a_1 = 14, p_1 = 37.4) \implies$$
+        $$d_1 \leq 2\theta(p_0 + n\bar{x}) \leq d_2 \iff \frac{d_1}{2(p_0 + n\bar{x})} \leq \theta \leq \frac{d_2}{2(p_0 + n\bar{x})}$$
+        con $d_1 = \chi^2_{28; 0.025} = 15.30$ y $d_2 = \chi^2_{28; 0.975} = 44.46$, por lo que tenemos que:
+        $$ \left(\frac{15.30}{74.8}, \frac{44.46}{74.8}\right) = \left(0.20, 0.59\right)$$
+    \end{enumerate}
+}
 
 
 
