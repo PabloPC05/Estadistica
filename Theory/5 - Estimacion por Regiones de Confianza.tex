@@ -385,8 +385,9 @@ $$ I C_{1-\alpha}(\theta)=\hat{\theta}_{n} \mp z_{\alpha / 2} \sqrt{\frac{1}{n I
 
 
 \ejemplo{
-    Demuestra que para $X \sim Bin(1, \theta) \equiv Bernoulli(\theta)$ con $n = 1$ y $\theta \sim U(0,1)$, entonces el intervalo de confianza de $1-\alpha$ es $IC_{1-\alpha}(\theta) = \left(\sqrt{\frac{\alpha}{2}}, \sqrt{1 - \frac{\alpha}{2}}\right)$ \\
-    TODO
+    Demuestra que para $X \sim Bin(1, \theta) \equiv Bernoulli(\theta)$ con $n = 1$ y $\theta \sim U(0,1)$, entonces el intervalo de confianza de $1-\alpha$ es $IC_{1-\alpha}(\theta) = \left(\sqrt{\frac{\alpha}{2}}, \sqrt{1 - \frac{\alpha}{2}}\right)$
+    Para continuar con este ejercicio, es necesario obtener la distribución final o a priori del parámetro $\theta$: 
+    $$\pi(\theta; x) = \frac{\pi(\theta)f_{\theta}(x)}{\int_{\Theta} \pi(\theta)f_{\theta}(x) d \theta} = \frac{\theta^x(1 - \theta)^{1 - x}}{\int_{0}^{1} \theta^x(1 - \theta)^{1 - x} d \theta} \sim Beta(\alpha = x + 1, \beta = 2 - x)$$
 }
 
 \ejemplo{
@@ -400,5 +401,33 @@ Recordemos que el intervalo de confianza obtenido desde el punto de vista frecue
 \end{observación}
 
 \subsection{Ejercicios}
+\begin{problem}{5.4.1}    Sea una m.a.s. de tamaño $n$ de una población con función de densidad: 
+    $$f(x | \theta) = \frac{5x^4}{\theta^5} \cdot I_{(0, \theta)}(x)$$
+    \begin{enumerate}
+        \item Calcule el estimador de máxima verosimilitud de $\theta$
+        \item Determínese la región de confianza de grado 0.95 ara $\theta$ de la forma $(\lambda  T, +\infty)$ para $\lambda$ conveniente
+    \end{enumerate}
+\end{problem}
+\begin{sol}
+    NO SÉ CÓMO CALCULAR EL ESTIMADOR DE MÁXIMA VEROSIMILITUD
+\end{sol}
+\begin{problem}{5.4.2}
+    Para una m.a.s. de tamaño $n$, de una población con función de densidad: 
+    $$f(x | \theta) = (\theta + 1)x^{\theta} \cdot I_{(0, 1)}(x)$$
+    constrúyase la región de confianza de grado $\alpha -1$ basada en la variable pivotal $T= -\sum (\theta +1)\ln(X_i)$ tomando colas iguales
+\end{problem}
+\begin{sol}
+    $$f(x | \theta) = (1 + \theta)x^{\theta} \implies f(\vec{x} | \theta) = (1 + \theta)^n \cdot \prod x_i^{\theta}$$
+    Veamos si podemos calcular la distribución de $T$: \\
+    El cambio de variable aleatoria continua es $Y = ln(X_i)$, para ello aplicaremos la fórmula de cambio de variable:
+    $$f_Y(y) = f_X(g^{-1}(y)) \cdot \left| \frac{d}{dy} g^{-1}(y) \right|$$
+    Entonces: 
+    $$Y_i = -(1 + \theta)ln(X_i) \implies X_i = e^{y\frac{-1}{1 + \theta}} \quad \left| \frac{d}{dy} g^{-1}(y)\right| = \frac{1}{1 + \theta}e^{y\frac{-1}{1 + \theta}} \implies$$
+    $$f_Y(y) = (1 + \theta)(e^{y\frac{-1}{1 + \theta}})^\theta \cdot \frac{1}{1 + \theta}e^{y\frac{-1}{1 + \theta}} = e^{-y} \implies Y_i \equiv -(\theta + 1)\ln(X_i) \sim Exp(1)$$
+    $$\text{ya que } Exp(\lambda) \equiv Gamma(a = 1, p = \lambda) \implies Exp(1) \equiv Gamma(a = 1, p = 1) \implies \sum Y_i = Y \sim Gamma(a = n, p = 1)$$
+    $$\implies Z \equiv 2Y \sim Gamma(a = n, p = \frac{1}{2}) \equiv \chi^2_{2n} \implies$$
+    $$P\left(\chi^2_{2n; 1 - \frac{\alpha}{2}}\right) \leq \chi^2_{2n} \leq \chi^2_{2n; \frac{\alpha}{2}} = P\left(\chi^2_{2n; 1 - \frac{\alpha}{2}}  \leq -\sum (\theta + 1)\ln(X_i) \leq \chi^2_{2n; \frac{\alpha}{2}}\right) = 1 - \alpha$$
+    \[ \implies IC_{1 - \alpha}(\theta)\left(\frac{a}{b}\right) \]
+\end{sol}
 
 

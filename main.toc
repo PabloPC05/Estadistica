@@ -33,11 +33,11 @@
 \contentsline {subsubsection}{\numberline {5.2.2}Método de Neyman}{88}{subsubsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.3}Regiones de confianza bayesianas}{91}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Ejercicios}{94}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Contraste de Hipótesis}{95}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Principios básicos de un contraste de hipótesis}{95}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Errores de tipo I y de tipo II}{96}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{98}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{98}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Appendix}{100}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Momentos Notables}{100}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Función Característica}{103}{subsection.7.2}%
+\contentsline {section}{\numberline {6}Contraste de Hipótesis}{96}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Principios básicos de un contraste de hipótesis}{96}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Errores de tipo I y de tipo II}{97}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{99}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{99}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Appendix}{101}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Momentos Notables}{101}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Función Característica}{104}{subsection.7.2}%
