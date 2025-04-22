@@ -426,8 +426,120 @@ Recordemos que el intervalo de confianza obtenido desde el punto de vista frecue
     $$f_Y(y) = (1 + \theta)(e^{y\frac{-1}{1 + \theta}})^\theta \cdot \frac{1}{1 + \theta}e^{y\frac{-1}{1 + \theta}} = e^{-y} \implies Y_i \equiv -(\theta + 1)\ln(X_i) \sim Exp(1)$$
     $$\text{ya que } Exp(\lambda) \equiv Gamma(a = 1, p = \lambda) \implies Exp(1) \equiv Gamma(a = 1, p = 1) \implies \sum Y_i = Y \sim Gamma(a = n, p = 1)$$
     $$\implies Z \equiv 2Y \sim Gamma(a = n, p = \frac{1}{2}) \equiv \chi^2_{2n} \implies$$
-    $$P\left(\chi^2_{2n; 1 - \frac{\alpha}{2}}\right) \leq \chi^2_{2n} \leq \chi^2_{2n; \frac{\alpha}{2}} = P\left(\chi^2_{2n; 1 - \frac{\alpha}{2}}  \leq -\sum (\theta + 1)\ln(X_i) \leq \chi^2_{2n; \frac{\alpha}{2}}\right) = 1 - \alpha$$
-    \[ \implies IC_{1 - \alpha}(\theta)\left(\frac{a}{b}\right) \]
+    $$P\left(\chi^2_{2n; 1 - \frac{\alpha}{2}}\right) \leq \chi^2_{2n} \leq \chi^2_{2n; \frac{\alpha}{2}} = P\left(\chi^2_{2n; 1 - \frac{\alpha}{2}}  \leq -2\sum (\theta + 1)\ln(X_i) \leq \chi^2_{2n; \frac{\alpha}{2}}\right) = 1 - \alpha$$
+    $$ \implies IC_{1 - \alpha}(\theta)\left(\frac{\chi^2_{2n; 1 - \frac{\alpha}{2}}}{-2(\theta + 1)\sum \ln(X_i)} -1 \leq \theta \leq \frac{\chi^2_{2n; \frac{\alpha}{2}}}{-2(\theta + 1)\sum \ln(X_i)} -1\right)$$
 \end{sol}
 
+\begin{problem}{5.4.3}
+    Demuéstrese que apra una m.a.s. de tamao $n$ si la función de distribución de la población es $F(x | \theta)$, es continua en $\theta$ y como función de $\theta$ es estrictamente creciente, entonces
+    $$T = -\sum_{i=1}^{n} \ln(F(x_i | \theta)) \sim \chi^2_{2n}$$
+    y por tanto, constituye una variable pivotal.
+\end{problem}
+\begin{sol}
+    Por ser $F_X$ una función de distribución continua, se cumple que $F_X(x) \sim U(0,1)$, por lo que podemos aplicar el cambio de variable aleatoria continua:
+    $$Y = -\ln(F(X | \theta)) \implies F(X | \theta) = e^{-Y_i} \implies X = F^{-1}(e^{-Y} | \theta) \implies T = -2\sum \ln(F(X | \theta)) \sim \chi^2_{2n}$$
+    $$\implies P\left(\chi^2_{2n; 1 - \frac{\alpha}{2}} \leq T \leq \chi^2_{2n; \frac{\alpha}{2}}\right) = 1 - \alpha$$
+    Y por tanto $T$ es una variable pivotal. 
+\end{sol}
+\begin{problem}{5.4.4}
+    Para una población con función de densidad: 
+    $$f(x | \theta) = \frac{4}{\theta^2}x \cdot I_{(0, \frac{\theta}{2})}(x) - \frac{4}{\theta^2}x \cdot I_{(\frac{\theta}{2}, \theta)}(x)$$
+    \begin{enumerate}
+        \item Hállese el estimador máxima verosimilitud $T$ de $\theta$ 
+        \item Construyase una región de confiana de grado 1 - $\alpha$ de la forma $(\frac{T}{2}, \lambda T)$
+    \end{enumerate}
+\end{problem}
+\begin{sol}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{sol}
+\begin{problem}{5.4.5}
+    La cantidad de lluvia en litros, caída en dos regiones diferentes $A$ y $B$ arroja los siguientes resultados: 
+    \begin{center}
+        \begin{tabular}{|c|*{10}{c|}}
+            \hline
+            A & 81'7 & 77'5 & 121'4 & 76'4 & 79'8 & 105'1 & 86'2 & 72'2 & 103'2 & 130'8 \\
+            \hline
+            B & 90'3 & 50'7 & 77'1 & 96'4 & 95'7 & 107'4 & 60'8 & 106'9 & 64'7 & 102'4 \\
+            \hline
+        \end{tabular}
+    \end{center}
 
+    Se puede suponer que los datos constituyen una m.a.s. de poblaciones normales e independientes
+    \begin{enumerate}
+        \item Determínese un intervalo de confianza de grado 0.95 para la varianza de la primera población
+        \item Supuesto que las dos varianzas poblaciones son desconocidas pero iguales determínese un intervalo de confianza de grado 0.95 para la diferencia de medias poblacionales. 
+        \item Repítase la parte anterior si se supone que las dos varianzas son desconocidas y diferentes
+    \end{enumerate}
+\end{problem}
+\begin{sol}
+    Los datos dados por el enunciado son: 
+    $$n = 10 \quad \begin{cases}
+        \bar{x}_A = 93.43 \\
+        S^2_A = \frac{1}{9}\sum (x_i - \bar{x}_A)^2 = 420.069
+    \end{cases}
+    \begin{cases}
+        \bar{x}_B = 85.24 \\
+        S^2_B = \frac{1}{9}\sum (x_i - \bar{x}_B)^2 = 421.414
+    \end{cases}$$
+    \begin{enumerate}
+        \item En normales, independientemente de si tenemos o no la media, podemos calcular el intervalo de confianza para la varianza poblacional, que es:
+        $$\left(\frac{S^2(n-1)}{\chi_{n - 1 ;\frac{\alpha}{2}}^2}, \frac{S^2(n-1)}{\chi_{n - 1 ;1- \frac{\alpha}{2}}^2}\right) \implies \text{en nuestro caso } \left(198.98, 1400.23\right) $$
+        \item Supongamos que $\sigma_A^2 = \sigma_B^2 = \sigma^2$, entonces podemos calcular el intervalo de confianza para la diferencia de medias poblacionales, que es:
+        $$\frac{\bar{x}_A - \bar{x}_B - (\mu_A - \mu_B) \cdot \sqrt{\frac{n_A n_B}{n_A+n_B}}}{\sqrt{S_p^2}} \sim T_{n+m-2} \text{ con } S_p^2 = \frac{n_A S_A^2 + n_B S_B^2}{n+m-2} \implies$$
+        $$P\left(t_{n_A + n_B - 2; \frac{\alpha}{2}} \leq \frac{8.19 - (\mu_A - \mu_B) \cdot \sqrt{5}}{21.62} \leq t_{n_A + n_B - 2; \frac{\alpha}{2}}\right) = 0.95 \implies$$
+        $$\implies IC_{1 - \alpha}(\mu_A - \mu_B) = \left(8.19 - t_{18; 0.025} \cdot 9.67, 8.19 + t_{18; 0.975} \cdot 9.67\right) = (-12.1047, 28.4847)$$
+        \item Para resolver los casos en los que ambas varianzas son diferentes y desconocidas se usa la fórmula del intervalo de confianza de Welch: 
+        \item $$IC_{1 - \alpha}(\mu_A - \mu_B) = (\bar{X_A} - \bar{X}_B) \mp t_{min{(n_A, n_B)}-1; \frac{\alpha}{2}} \cdot \sqrt{\frac{S_A^2}{n_A} + \frac{S_B^2}{n_B}} \implies$$
+        tomando $min(n_A, n_B) - 1= 10 -1 = 9$ y$t_{9; 0.025} = 2.262$:
+        $$IC_{1 - \alpha}(\mu_A - \mu_B) = (8.19 - 2.262 \cdot 9.67, 8.19 + 2.262 \cdot 9.67) = (-12.5598, 28.9398)$$
+    \end{enumerate}
+\end{sol}
+\begin{problem}{5.4.6}
+    Para estudiar la conveniencia de aumentar sus instalaciones, una empresa desea estimar la demnada que va a tener durante el próximo año. Para ello, seleccionas en el último año se distribuye con arreglo a la siguiente tabla: 
+    \begin{center}
+        \begin{tabular}{|l|c|c|c|c|c|c|c|}
+        \hline
+        nº de unidades & 1000 & 1002 & 1004 & 1006 & 1008 & 1010 & 1012 \\
+        \hline
+        nº de clientes que las demandan & 1 & 2 & 1 & 2 & 1 & 2 & 1 \\
+        \hline
+        \end{tabular}
+    \end{center}
+    Si se supone que la demanda va a seguir comportándose igual y que la varianza poblacional es 16, determínese una región de grado de confianza $1 - \alpha$ para la media poblacional: 
+    \begin{enumerate}
+        \item Sin efectuar hipótesis sobre la distribución de la población
+        \item Suponeiendo que la población es $N(\mu, \sigma^2)$
+    \end{enumerate}
+\end{problem}
+\begin{sol}
+    Primero analicemos los datos por el enunciado: 
+    $$n = 10 \quad \bar{X} = 1006 \quad S^2_{n} = 14.4 \quad S^2_{n-1} = 16$$
+    \begin{enumerate}
+        \item Para calcular el intervalo de confianza sin suponer nada sobre la distribución de la población, podemos usar la desigualdad de Tchebychev:
+        $$P\left(|\bar{X} - \mu| < k \sqrt{\sigma^2}\right) \geq 1 - \frac{1}{k^2} \iff P\left(\bar{X} - k \sqrt{\frac{\sigma^2}{n}} < \mu < \bar{X} + k \sqrt{\frac{\sigma^2}{n}}\right) \geq 1 - \alpha \implies$$
+        $$ \implies P\left(1006 - \frac{1}{\sqrt{\alpha}}\frac{4}{\sqrt{10}} \leq \mu \leq 1006 + \frac{1}{\sqrt{\alpha}}\frac{4}{\sqrt{10}}\right)$$
+        \item Suponiendo que la población es $N(\mu, \sigma^2)$, podemos usar la fórmula del intervalo de confianza para la media poblacional:
+        $$IC_{1 - \alpha}(\mu) = \left(\bar{X} - z_{\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}, \bar{X} + z_{\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}\right) \implies \left(1006 \mp z_{\frac{\alpha}{2}}\frac{4}{\sqrt{10}}\right)$$
+    \end{enumerate}
+\end{sol}
+\begin{problem}{5.4.7}
+    Obténgase un intervalo asintótico de grado de confianza 1 - $\alpha$ para la probabilidad de éxito de una variable aleatoria de $Bernoulli(\theta)$. Aplíquese para una moneda con 1 - $\alpha$ = 0.95, si se sabe que en 100 lanzamientos se han obtenido 40 caras.    
+\end{problem}
+\begin{sol}
+    Para resolverlo, hemos de hacer uso del Teorema Central del Límite aplicado a los intervalos de confianza, de manera que, si $T$ es un estimador de $\theta$, entonces:
+    $$\frac{T_n - h(\theta)}{\sqrt{Var(T_n)}} \sim N(0,1) \implies P\left(-z_{\frac{\alpha}{2}} < \frac{T_n - h(\theta)}{\sqrt{Var(T_n)}} < z_{\frac{\alpha}{2}}\right) \rightarrow 1 - º\alpha$$
+    En nuestro caso, tenemos que $n = 100$ $n\bar{x} = 40$ y como $X \sim Bernoulli(\theta) \implies E[\bar{X}] = \theta$ y $Var(\bar{X}) = \frac{\theta(1 - \theta)}{n}$, por lo que podemos decir que:
+    $$\frac{\bar{X} - \theta}{\sqrt{\frac{\bar{X}(1 - \bar{X})}{n}}} \sim N(0,1) \implies P\left(-z_{\frac{\alpha}{2}} < \frac{\bar{X} - \theta}{\sqrt{\frac{\bar{X}(1 - \bar{X})}{n}}} < z_{\frac{\alpha}{2}}\right) \rightarrow 1 - \alpha \implies$$
+    $$
+    \implies IC_{1- \alpha}(\mu) = \left(\bar{X} \mp z_{\frac{\alpha}{2}}\sqrt{\frac{\bar{X}(1 - \bar{X})}{n}}\right) = 0.4 \mp z_{0.025}\sqrt{\frac{0.4 \cdot 0.6}{100}} = (0.4960, 0.3039)
+    $$
+\end{sol}
+\begin{problem}{5.4.8}
+    Determínese un intervalo creíble de probabilidad 1 - $\alpha$ para la probabilidad de éxito de $\theta$ en una distribución $Bernoulli$. Supóngase que la información inicial viene dada por una $Beta(1, 1)$ y que en 10 repeticiones se han observado 5 éxitos. 
+\end{problem}
+\begin{sol}
+    Primero recojamos los datos del enunciado: 
+    $$X \sim Bernoulli(\theta) \quad \theta \sim Beta(1, 1) \quad \sum x_i = 5 \quad n = 10$$
+\end{sol}
