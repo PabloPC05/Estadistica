@@ -331,43 +331,74 @@ $$ I C_{1-\alpha}(\theta)=\hat{\theta}_{n} \mp z_{\alpha / 2} \sqrt{\frac{1}{n I
     \end{enumerate}
 }
 
-
-
 \ejemplo{
-Para muestras de tamaño $n=1$ de $X \sim \operatorname{Bin}(1, \theta)$, si $\theta \sim U(0,1)$ y se observa $x=1$, entonces $C_{1-\alpha}(\theta)=\left(\sqrt{\frac{\alpha}{2}}, \sqrt{1-\frac{\alpha}{2}}\right)$
+    Haremos el siguiente ejercicio de examen: 
+    \begin{problem}[1]
+        Se quiere saber si una moneda, cuya probabilidad de cara es $\theta$ es o no sesgada, para ello se arroja 16 veces y se observan 10 caras. Si la información inicial sobre $\theta$ viene dada mediante una $Beta(p = 2, q = 2)$, se da la función de densidad y se pide: 
+        \begin{enumerate}
+            \item Determínese para $\theta$ un intervalo creíble con colas iguales de probabilidad 0.95
+            \item Contrástese $H_0: \theta \leq 0.5$ frente a $H_1 \theta > 0.5$. Quizá necesita para una distribución $Beta(p = 12, q = 8)$ se cumple que siendo $F$ su función de distribución: 
+            $$F(0.3447) = 0.01 \quad F(0.383) = 0.025 \quad F(0.5) = 1.18$$
+            $$F(0.738) = 0.9 \quad F(0.797) = 0.975 \quad F(0.8267) = 0.99$$
+        \end{enumerate}
+    \end{problem}
 
-En efecto, si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim \operatorname{Bin}(1, \theta)$ y $\theta \sim U(0,1)$, entonces\\
-$\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right) \sim \operatorname{Beta}\left(\sum_{i=1}^{n} x_{i}+1, n-\sum_{i=1}^{n} x_{i}+1\right)$\\
-Por lo tanto, para muestras de tamaño $n=1$\\
-$\pi(\theta \mid x=0) \sim \operatorname{Beta}(1,2), \int_{\ell_{1}}^{\ell_{2}} 2(1-\theta) d \theta=1-\alpha$\\
-$\pi(\theta \mid x=1) \sim \operatorname{Beta}(2,1), \int_{\ell_{1}}^{\ell_{2}} 2 \theta d \theta=1-\alpha$\\
-Por ejemplo, si $x=1, \ell_{1}^{2}=\frac{\alpha}{2}, \ell_{2}^{2}=1-\frac{\alpha}{2}$\\
-$C_{1-\alpha}(\theta)=(0.223,0.974)$, para $\alpha=0.1$\\
-Otra posibilidad es la región creíble de más alta probabilidad final o amplitud mínima, $C_{1-\alpha}(\theta)=(\sqrt{\alpha}, 1)=(0.316,1)$\\
+    \begin{sol}
+        $$\text{Como es el lanzamiento de una moneda } \implies X \sim Bernoulli(\theta) \equiv Bin(1, \theta)$$
+        Además, sabemos que $n = 16$, $\sum x_i = 10$ y $\theta \sim Beta(p = 2, q = 2)$, y nos piden calcular una región creíble con $\alpha = 0.05$, entonces: 
+        $$\pi(\theta; \vec{x}) = \frac{\pi(\theta)f_{\theta}(\vec{x})}{\int_{\Theta} \pi(\theta)f_{\theta}(\vec{x}) d \theta} \sim Beta(p_1= p_0 + n\bar{x}, q_1 = q_0 + n - n\bar{x}) \equiv Beta(p_1 = 12, q_1 = 8)$$
+        \begin{enumerate}
+            \item El enunciado nos dice que demos el intervalo que contenga al $95\%$ de la probabilidad con colas iguales, ésto es que demos el intervalo $(a,b)$ tal que: $P(a < \theta < b) = 0.95 = P(\theta < b) - P(\theta < a)$. Ahora con este planteamiento más claro podemos ver que gracias a los datos del enunciado tenemos que: 
+            $$\begin{cases}
+                F(0.797) = P(\theta < 0.797) = 0.975 \\
+                F(0.383) = P(\theta < 0.383) = 0.025
+            \end{cases} \implies P(0.383 \leq \theta \leq 0.797) = 0.95 \implies (a, b) = (0.383, 0.797)$$
+            \item Este apartado es un contraste de hipótesis del tema siguiente que ya veremos más adelante. 
+        \end{enumerate}
+    \end{sol}
 }
 
 \ejemplo{
-Para muestras de tamaño $n=10$ de $X \sim \operatorname{Bin}(1, \theta)$, si $\theta \sim U(0,1)$ y se observa $\sum_{i=1}^{n} x_{i}=3$, entonces la distribución final es $\operatorname{Beta}(4,8)$ y $C_{1-\alpha}(\theta)=(0.135,0.564)$, para $\alpha=0.1$
+    Sea $X \sim N(\theta, 1)$ con $\theta \sim N(0,1)$ con $\alpha = 0.05$
+    \begin{enumerate}
+        \item Calculemos primero un interalo de confianza según el enfoque frecuentista: \\
+        Para ello será necesario tipificar la variable: $N(0,1) \equiv \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}$ y tras ello obtenemos que: 
+        $$P(-z_{\frac{\alpha}{2}} \leq \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \leq z_{\frac{\alpha}{2}}) = 0.95 \iff P(\bar{X} -z_{\frac{\alpha}{2}}\frac{1}{\sqrt{n}} \leq \theta \leq \bar{X} +z_{\frac{\alpha}{2}}\frac{1}{\sqrt{n}} ) = 0.95$$
+        \item Ahora calculemos el intervalo de confianza según el enfoque bayesiano, es decir, calculemos la región creíble: Para ello, dado que la normal es una distribución autoconjugda es necesario sacar la distribución final, la cual es una normal dada por los siguientes parámetros:
+        $$\mu_1 = \frac{\frac{\mu_0}{\sigma_0^2} + \frac{n\bar{x}}{\sigma^2}}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}} \quad \quad \sigma_1 = \frac{1}{\sqrt{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}}}$$
+        Entonces en nuestro caso $\theta \sim N(\mu_1 = \frac{n\bar{x}}{1 + n}, \sigma_1 = \frac{1}{\sqrt{n +1}})$, la cual es una distribución que no depende de $\theta$ por lo que podríamos usarla para calcular la región creíble. Entonces teniendo en cuenta que para una normal $N(\mu', \sigma')$ se cumple que:
+        $$IC_\mu = \left(\mu' - z_{\frac{\alpha}{2}} \cdot \sigma', \mu' + z_{\frac{\alpha}{2}} \cdot \sigma'\right)$$
+        Entonces podemos decir que en este caso el intervalo es: 
+        $$\left(\frac{n\bar{x}}{1 + n} - z_{\frac{\alpha}{2}} \frac{1}{\sqrt{n+1}}, \frac{n\bar{x}}{1 + n} + z_{\frac{\alpha}{2}} \frac{1}{\sqrt{n+1}}\right)$$
 
-En este caso la región creíble de más alta probabilidad final o amplitud mínima es $C_{1-\alpha}(\theta)=(0.117,0.542)$, para $\alpha=0.1$
+        \begin{observación}
+            Comparemos la longitud de los intervalos: 
+            \begin{itemize}
+                \item $2\cdot z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}$
+                \item $2\cdot z_{\frac{\alpha}{2}} \cdot \frac{1}{\sqrt{n+1}}$ 
+            \end{itemize}
+            Podemos ver que la región creíble es más corta que el intervalo de confianza, lo que quiere decir que la probabilidad posterior está mas concetrada.
+        \end{observación}
+    \end{enumerate}
+}
+
+
+
+\ejemplo{
+    Demuestra que para $X \sim Bin(1, \theta) \equiv Bernoulli(\theta)$ con $n = 1$ y $\theta \sim U(0,1)$, entonces el intervalo de confianza de $1-\alpha$ es $IC_{1-\alpha}(\theta) = \left(\sqrt{\frac{\alpha}{2}}, \sqrt{1 - \frac{\alpha}{2}}\right)$ \\
+    TODO
 }
 
 \ejemplo{
-Para una m.a.s. ( $n$ ) de $X \sim N(\theta, 1)$, si $\theta \sim N(0,1)$ y se observa $\bar{x}$, entonces $C_{1-\alpha}(\theta)=\frac{n}{n+1} \bar{x} \mp z_{\alpha / 2} \frac{1}{\sqrt{n+1}}$
-
-En efecto, Si $\left(X_{1}, \ldots, X_{n}\right)$ es una m.a.s. $(n)$ de $X \sim N(\mu, \sigma)$ con $\sigma$ conocida y $\mu \sim N\left(\mu_{0}, \sigma_{0}\right)$, entonces $\pi\left(\mu \mid x_{1}, \ldots, x_{n}\right) \sim N\left(\mu_{1}, \sigma_{1}\right)$,
-
-$$
-\begin{gathered}
-\mu_{1}=\frac{\frac{\mu_{0}}{\sigma_{0}^{2}}+\frac{\bar{x}}{\frac{\sigma^{2}}{n}}}{\frac{1}{\sigma_{0}^{2}}+\frac{\frac{1}{\sigma^{2}}}{\frac{\sigma^{2}}{n}}}=\frac{\sigma^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \mu_{0}+\frac{n \sigma_{0}^{2}}{\sigma^{2}+n \sigma_{0}^{2}} \bar{x}=\frac{n}{n+1} \bar{x} \\
-\sigma_{1}=\sqrt{\frac{1}{\frac{1}{\sigma_{0}^{2}}+\frac{1}{\frac{\sigma^{2}}{n}}}}=\frac{1}{\sqrt{n+1}}
-\end{gathered}
-$$
-
+    Demuestra que para una m.a.s. de tamaño $n = 10$ con distribucion $Bin(1, \theta) \equiv Bernoulli(\theta)$, si $\theta \sim U(0,1)$ y se observa $\sum_{i=1}^{10} x_{i} = 3$, entonces la distribución final es $\operatorname{Beta}(4,8)$ y $C_{1-\alpha}(\theta)=(0.135,0.564)$, para $\alpha=0.1$ \\ 
+    TODO
 }
+
 
 \begin{observación}
 Recordemos que el intervalo de confianza obtenido desde el punto de vista frecuentista es $IC_{1-\alpha}(\theta)=\bar{x} \mp z_{\alpha / 2} \frac{1}{\sqrt{n}}$, que tiene mayor amplitud, aparte de su diferente interpretación
 \end{observación}
+
+\subsection{Ejercicios}
 
 
