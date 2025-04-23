@@ -546,4 +546,37 @@ Recordemos que el intervalo de confianza obtenido desde el punto de vista frecue
 \begin{sol}
     Primero recojamos los datos del enunciado: 
     $$X \sim Bernoulli(\theta) \quad \theta \sim Beta(1, 1) \quad \sum x_i = 5 \quad n = 10$$
+    Entonces, como la distribución de Bernoulli es una distribución conjugada de la distribución Beta, podemos decir que la distribución final es:
+    $$\theta \sim Beta(a_1 = a_0 + n\bar{x}, b_1 = b_0 + n - n\bar{x}) \implies \theta \sim Beta(6, 6)$$
+    Entonces dado que la distribución final es la dada por el parámetro, pero es independiente del mismo, ahora basta con tomar los cuantiles de esta distribución para obtener el intervalo creíble: $z_{0.95} = 0.271$ y $z_{0.05} = 0.729$ con lo qu $\theta$ estará en el intervalo $IC_{1 - \alpha}(\theta) = (0.271, 0.729)$
+\end{sol}
+
+\begin{problem}{5.4.9}
+    Determínese un intervalo creíble de probabilidad $1- \alpha$ para el parámetro $\theta$ de una distribución $Poisson(\theta)$, cuando la información inicial para $\theta$ viene dada por una $Gamma(a_0, p_0)$. \\ \\
+    A continuación, obtengase un intervalo creíble de probabilidad $90$ para el parámetro $\theta$ en el caso de que, se supone que el número de insectos en una fila sembrada de uncultivo determinao, se distribuye con $Poisson$. Se toman $10$ filas al azas y se obtienen los siguientes números de insectos: 
+    $$160 \quad 130 \quad 36 \quad 42 \quad 53 \quad 70 \quad 45 \quad 50 \quad 104 \quad 29$$
+    Determíense un intervalo asíntótico  además que la información inicial viene dada por una $Gamma(0.5, 3)$
+\end{problem}
+\begin{sol}
+    \begin{enumerate}
+        \item Dado que la distribución de Poisson es una distribución conjugada de la distribución Gamma, podemos decir que la distribución final es:
+        $$\theta \sim Gamma(a_1 = a_0 + n, p_1 = p_0 + \sum x_i) \implies 2(a_0 + n)\theta \sim Gamma(a = \frac{1}{2}, p = p_0 + \sum x_i) \equiv \chi^2_{2(p_0 + \sum x_i)}$$
+        $$ \implies P\left(\chi^2_{2(p_0 + \sum x_i); \frac{\alpha}{2}} \leq 2(a_0 + n)\theta \leq \chi^2_{2(p_0 + \sum x_i); 1- \frac{\alpha}{2}} \right) \implies IC_{1 - \alpha}(\theta) = \left(\frac{\chi^2_{2(p_0 + \sum x_i); \frac{\alpha}{2}}}{2(a_0 + n)},\frac{\chi^2_{2(p_0 + \sum x_i); 1-\frac{\alpha}{2}}}{2(a_0 + n)}\right)$$
+        \item En el caso real que nos incumbe, tenemos que: 
+        $$ n = 10 \quad \sum x_i = 719 \quad \bar{x} = 71.9 \quad a_0 = 0.5 \quad p_0 = 3 \implies$$
+        Para realizar un intervalo creíble sustituimos los datos en la fórmula anterior: 
+        $$\left(\frac{\chi_{722; 0.05}^2}{2(0.5 + 10)}, \frac{\chi_{722; 0.95}^2}{2(0.5 + 10)}\right) = (64.61, 73.02)$$
+    \end{enumerate}
+\end{sol}
+
+\begin{problem}{5.4.10}
+    Un individuo realiza un test de inteligencia cuyo resultado $X$ se supone que sigue una disribución $N(\theta, \sigma = 10)$ siendo $\theta$ su nivel de inteligencia real. La informción inicial viene recogida porque en el colectivo al que pertenece el individuo, la inteligencia $\theta$ tiene una distribución $N(100, \sigma_0 = 15)$. Determínese una región creíble de probabilidad 0.95 para su nivel de inteligencia cuando el resultado del test ha sido 110. Calcúlese un intervalo de grado de confianza 0.95 y compárense ambos intervalos. 
+\end{problem}
+\begin{sol}
+    Dado que estamos en estimación bayesiana, es necesario calcular los parámetros de la normal a posteriori
+    $$\mu_1 = \frac{\frac{\mu_0}{\sigma_0^2} + \frac{n\bar{x}}{\sigma^2}}{\frac{n}{\sigma^2} + \frac{1}{\sigma_0^2}} \quad \quad \sigma_1^2 = \frac{1}{\frac{1}{\sigma^2} + \frac{n}{\sigma_0^2}} \implies \mu_1 = 106.9230 \quad \quad \sigma_1^2 = 69.2307$$
+    Entonces, basta aplicar la fórmula del intervalo de confianza para la normal: 
+    $$IC_{1 - \alpha}(\theta) = \left(\bar{X} \mp z_{\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}\right) \implies IC_{1 - \alpha}(\theta) = \left(106.9230 \mp z_{0.025}\frac{10}{\sqrt{1}}\right) = (93.6918, 126.3081)$$
+    Ahora calculemos el intervalo de confianza, es decir, intentemos ver el intervalo de confianza frecuentista, hacemos uso de la misma fórmula que antes, pero ahora con los parámetros de la normal a priori:
+    $$IC_{0.05}(\theta) = (110 \mp z_{0.025}\frac{10}{\sqrt{1}}) = (90.4, 129.6)$$
 \end{sol}

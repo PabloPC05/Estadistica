@@ -75,35 +75,35 @@ $$ \implies E[\sigma_n^2] = \sigma^2\left(1 - \frac{1}{n}\right) = h(\theta) \te
   \]
   Como $n=1$, el estimador $T(X)$ solo puede tomar dos valores:
   \begin{itemize}
-    \item $T(1)$ cuando $X=1$ (éxito)
-    \item $T(0)$ cuando $X=0$ (fracaso)
-  \end{itemize}
-  Calculamos la esperanza:
-  \[
-    E[T(X)] = T(1) \cdot P(X=1) + T(0) \cdot P(X=0) = T(1) \theta + T(0) (1 - \theta)
-  \]
-  Para que sea insesgado:
-  \[
-    T(1) \theta + T(0) (1 - \theta) = \theta^2 \quad \forall \theta \in (0,1)
-  \]
-  Reordenando términos:
-  \[
-    \theta^2 - (T(1) - T(0)) \theta - T(0) = 0 \quad \forall \theta \in (0,1)
-  \]
-  Esta es una ecuación cuadrática en $\theta$. Sin embargo, un polinomio de grado
-  2 no nulo tiene como máximo 2 raíces reales distintas, mientras que la ecuación
-  debe cumplirse para infinitos $\theta \in (0,1)$. La única posibilidad sería
-  que los coeficientes fueran idénticamente cero:
-  \[
-    \begin{cases}
-      1 = 0           \\
-      T(1) - T(0) = 0 \\
-      T(0) = 0
-    \end{cases}
-  \]
-  Lo cual es un sistema incompatible (la primera ecuación $1=0$ es falsa). Por
-  tanto, \textbf{no existe} ninguna elección de $T(0)$ y $T(1)$ que satisfaga la
-  condición de insesgadez para todo $\theta \in (0,1)$. 
+      \item $T(1)$ cuando $X=1$ (éxito)
+      \item $T(0)$ cuando $X=0$ (fracaso)
+    \end{itemize}
+    Calculamos la esperanza:
+    \[
+      E[T(X)] = T(1) \cdot P(X=1) + T(0) \cdot P(X=0) = T(1) \theta + T(0) (1 - \theta)
+    \]
+    Para que sea insesgado:
+    \[
+      T(1) \theta + T(0) (1 - \theta) = \theta^2 \quad \forall \theta \in (0,1)
+    \]
+    Reordenando términos:
+    \[
+      \theta^2 - (T(1) - T(0)) \theta - T(0) = 0 \quad \forall \theta \in (0,1)
+    \]
+    Esta es una ecuación cuadrática en $\theta$. Sin embargo, un polinomio de grado
+    2 no nulo tiene como máximo 2 raíces reales distintas, mientras que la ecuación
+    debe cumplirse para infinitos $\theta \in (0,1)$. La única posibilidad sería
+    que los coeficientes fueran idénticamente cero:
+    \[
+      \begin{cases}
+        1 = 0           \\
+        T(1) - T(0) = 0 \\
+        T(0) = 0
+      \end{cases}
+    \]
+    Lo cual es un sistema incompatible (la primera ecuación $1=0$ es falsa). Por
+    tanto, \textbf{no existe} ninguna elección de $T(0)$ y $T(1)$ que satisfaga la
+    condición de insesgadez para todo $\theta \in (0,1)$. 
 }
 
 \ejemplo{
