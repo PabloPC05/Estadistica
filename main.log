@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.7)  23 APR 2025 01:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.7)  23 APR 2025 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2928,156 +2928,227 @@ LaTeX Warning: Command \textordmasculine invalid in math mode on input line 532.
 Missing character: There is no � in font cmr10!
 
 
-[97])
+[97]
+Underfull \hbox (badness 10000) in paragraph at lines 551--553
 
-[98] (Theory/6 - Contraste de Hipotesis.tex
+ []
+
+
+Overfull \hbox (18.94885pt too wide) detected at line 559
+\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Gamma\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n; p[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 p[] \OT1/cmr/m/n/10.95 + [] \OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OT1/cmr/m/n/10.95 2(\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 n\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Gamma\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 ; p \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 p[] \OT1/cmr/m/n/10.95 + [] \OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 ^^_[]
+ []
+
+
+Overfull \hbox (33.07156pt too wide) detected at line 560
+ \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 P []  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 IC[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) = []
+ []
+
+
+
+[98])
+
+[99] (Theory/6 - Contraste de Hipotesis.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 7--7
+\OT1/cmr/m/n/10.95 Por ex-pe-ri-en-cias an-te-ri-ores se sabe que, si en la sus-tan-cia est^^Sa pre-sente cierto min-eral,
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 12.
+(mdframed)              on input line 9.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.12 ...in{definición} [Hiptótesis Estadística]
+l.9 \begin{definición} [Hiptótesis Estadística]
                                                   
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 17.
+(mdframed)              on input line 14.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.17 ...ipótesis Estadística Simple y Compuesta]
+l.14 ...ipótesis Estadística Simple y Compuesta]
                                                   
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 21.
+(mdframed)              on input line 28.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.21 ...ipótesis Estadística Nula y Alternativa]
-                                                  
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 25.
-
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.25 ...�n} [Contraste de Hipótesis Paramétrico]
-                                                  
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 35.
-
-
-[99]
-Package mdframed Info: Not enough space on this page on input line 37.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 53.
-
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.53 \begin{definición} [Función de Potencia]
-                                               
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 57.
-
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.57 ...vel de significación y tamaño del test ]
+l.28 ...ipótesis Estadística Nula y Alternativa]
                                                   
 
 [100]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 72.
+(mdframed)              on input line 42.
 
-pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.72 \begin{definición} [p-valor]
-                                  
+l.42 ...�n} [Contraste de Hipótesis Paramétrico]
+                                                  
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 99.
+(mdframed)              on input line 51.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 69.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.99 \vspace
-            {-2.5em}
+l.69     E
+          l contraste de hipótesis basado en un estadístico, exige conocer...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 107.
+(mdframed)              on input line 72.
 
-pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.107 ... [Criterio de comparación de contrastes]
-                                                  
 
 [101]
-Package mdframed Info: Not enough space on this page on input line 109.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 113.
-
+Package mdframed Info: Not enough space on this page on input line 74.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 117.
+(mdframed)              on input line 77.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.77 \begin{definición}[Error de tipo I]
+                                         
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 81.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.81 \begin{definición}[Error de tipo II]
+                                          
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 90.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.90     L
+          o idóneo sería contar con un test de baja probabilidad de comete...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 94.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.94 \begin{definición} [Función de Potencia]
+                                               
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 98.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.98 ...vel de significación y tamaño del test ]
+                                                  
+
+[102]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 113.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.113 \begin{definición} [p-valor]
+                                   
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 140.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.140 \vspace
+             {-2.5em}
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 146.
+
+
+[103]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 148.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.117 S
+l.148 ... [Criterio de comparación de contrastes]
+                                                  
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 154.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\alpha' on input line 154.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 154.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 158.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 S
        ea $C$ una región crítica para el contraste $H_{0}: \theta \in \The...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 126.
+(mdframed)              on input line 167.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.126 ...ma} [Teorema de Neyman-Pearson (Parte I)]
+l.167 ...ma} [Teorema de Neyman-Pearson (Parte I)]
                                                   
-Overfull \hbox (9.60094pt too wide) in paragraph at lines 126--128
+Overfull \hbox (9.60094pt too wide) in paragraph at lines 167--169
 []$ \OT1/cmr/m/it/10.95 y regi^^Son de aceptaci^^Son $\OML/cmm/m/it/10.95 c[] \OT1/cmr/m/n/10.95 = []$
  []
 
 
 
-[102]
+[104]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 150.
+(mdframed)              on input line 191.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.150 D
+l.191 D
        e la demostración del teorema se deduce que los puntos para los que ...
-Overfull \hbox (23.681pt too wide) in paragraph at lines 150--152
+Overfull \hbox (23.681pt too wide) in paragraph at lines 191--193
 []\OT1/cmr/m/it/10.95 De la de-mostraci^^Son del teo-rema se de-duce que los pun-tos para los que $\OML/cmm/m/it/10.95 f [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 kf []$
  []
 
-)
 
-[103] (Theory/Appendix.tex
+
+[105])
+
+[106] (Theory/Appendix.tex
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 6.
@@ -3097,7 +3168,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) ha
 l.45 \begin{teorema}[Linealidad de la Esperanza]
                                                 
 
-[104]
+[107]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 81.
@@ -3119,7 +3190,7 @@ l.114 \begin{definición}[Varianza]
 Package mdframed Info: Not enough space on this page on input line 128.
 
 
-[105]
+[108]
 Package mdframed Info: Not enough space on this page on input line 128.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -3131,7 +3202,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{teorema.3}) ha
 l.164 \begin{teorema}[Identidad de Bienaymé]
                                              
 
-[106]
+[109]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 218.
@@ -3142,9 +3213,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{definici\303\2
 l.218 ...in{definición}[Función Característica]
                                                   
 
-[107]))
+[110]))
 
-[108] (main.aux)
+[111] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -3153,17 +3224,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4A172723C62937C88365B292AF311082;8654.
  ) 
 Here is how much of TeX's memory you used:
- 50344 strings out of 473523
- 1191068 string characters out of 5714631
- 1849628 words of memory out of 5000000
- 72223 multiletter control sequences out of 15000+600000
+ 50380 strings out of 473523
+ 1191747 string characters out of 5714631
+ 1849907 words of memory out of 5000000
+ 72244 multiletter control sequences out of 15000+600000
  576274 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,24n,112p,1073b,2239s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (109 pages, 1193917 bytes).
+Output written on main.pdf (112 pages, 1205769 bytes).
 PDF statistics:
- 1291 PDF objects out of 1440 (max. 8388607)
- 491 named destinations out of 1000 (max. 500000)
+ 1319 PDF objects out of 1440 (max. 8388607)
+ 506 named destinations out of 1000 (max. 500000)
  498 words of extra memory for PDF output out of 10000 (max. 10000000)
 
