@@ -409,7 +409,11 @@ Recordemos que el intervalo de confianza obtenido desde el punto de vista frecue
     \end{enumerate}
 \end{problem}
 \begin{sol}
-    NO SÉ CÓMO CALCULAR EL ESTIMADOR DE MÁXIMA VEROSIMILITUD
+    Para calcular el EMV obtengamos la función de verosimilitud:
+    $$ f(\vec{x} | \theta) = 5^n \cdot \frac{\prod_{i=1}^{n}x_i^4}{\theta^5n} \cdot I_{(x_{(n)}, \infty)}(\theta)$$ 
+    Esta funcion es claramente decreciente en $\theta$, por lo que para maximizar la función de verosimilitud, $\theta$ debe ser lo más pequeño posible, es decir, $\hat{\theta}_{n} = x_{(n)}$, siendo este nuestro estimador de máxima verosimilitud. \\
+    Ahora encontremos nuestra region de confianza, que sera de la forma $(\lambda X_{(n)}, +\infty)$.
+    NO SE COMO SEGUIR
 \end{sol}
 \begin{problem}{5.4.2}
     Para una m.a.s. de tamaño $n$, de una población con función de densidad: 
