@@ -103,8 +103,7 @@ $$ \implies E[\sigma_n^2] = \sigma^2\left(1 - \frac{1}{n}\right) = h(\theta) \te
   \]
   Lo cual es un sistema incompatible (la primera ecuación $1=0$ es falsa). Por
   tanto, \textbf{no existe} ninguna elección de $T(0)$ y $T(1)$ que satisfaga la
-  condición de insesgadez para todo $\theta \in (0,1)$. 
-}
+  condición de insesgadez para todo $\theta \in (0,1)$. }
 
 \ejemplo{
 Sea una m.a.s. de tamaño $n = 1$ que sigue una distribución $X \sim Poisson(\theta)$ demuestra que $T(X) = (-2)^x$ es un estimador centrado para $h(\theta) = e^{-3\theta}$, pero $Var_{\theta}(T) = e^{4\theta} - e^{-6\theta} \to \infty$ no es un estimador de $h(\theta)$:
@@ -169,6 +168,42 @@ parámetro $\theta$.\\
 \begin{observación}
 Antes de tomar la muestra, la información sobre $\theta$ viene dada por $\pi(\theta)$ y tras la experimentación se debe utilizar $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)$. El estimador bayesiano de $\theta$ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución
 \end{observación}
+
+\begin{definición} [Distribuciones Conjugadas]
+Sea \( \pi(\theta) \) una distribución a priori y \( f(x_1, \ldots, x_n | \theta) \)
+la función de verosimilitud. Si la distribución a posteriori \( \pi(\theta | x_1,
+\ldots, x_n) \) pertenece a la misma familia de distribuciones que la
+distribución a priori \( \pi(\theta) \), se dice que la distribución a priori
+es \textbf{conjugada} con respecto a la función de verosimilitud.
+\end{definición}
+
+\begin{table}[h]
+  \centering
+  \small % or \footnotesize or \scriptsize
+  \renewcommand{\arraystretch}{1.5}
+  \NiceMatrixOptions{cell-space-limits = 1pt}
+  \begin{NiceTabular}{lllp{6cm}}[
+      hvlines,
+      code-before = {\rowcolor{gray!30} 1},
+    ]
+    \textbf{Verosimilitud (datos)}                                    & \textbf{A priori}                                      & \textbf{A posteriori}                                                      \\
+
+    \( \text{Bernoulli}(\theta) \) o \( \text{Binomial}(n, \theta) \) & \( \theta \sim \text{Beta}(\alpha, \beta) \)           & \( \theta | X \sim \text{Beta}(\alpha + \sum x_i, \beta + n - \sum x_i) \) \\
+
+    \( \text{Poisson}(\lambda) \)                                     & \( \lambda \sim \text{Gamma}(a, p) \)                  & \( \lambda | X \sim \text{Gamma}(a+n, p + \sum x_i) \)                     \\
+
+    \( \text{Exponencial}(\lambda) \)                                 & \( \lambda \sim \text{Gamma}(a, p) \)                  & \( \lambda | X \sim \text{Gamma}(a + \sum x_i, p + n) \)                   \\
+
+    \( N(\mu, \sigma^2) \), \( \sigma^2 \) conocida                   & \( \mu \sim N(\mu_0, \tau^2) \)                        & \( \mu | X \sim N(\mu_n, \tau_n^2) \)                                      \\
+
+    \( N(\mu, \sigma^2) \), \( \mu \) conocida                        & \( \sigma^2 \sim \text{Inv-Gamma}(\alpha, \beta) \)    & \( \sigma^2 | X \sim \text{Inv-Gamma}(\alpha', \beta') \)                  \\
+
+    \( N(\mu, \sigma^2) \), ambos desconocidos                        & \( (\mu, \sigma^2) \sim \text{Normal-Inverse-Gamma} \) & \( (\mu, \sigma^2) | X \sim \text{Normal-Inverse-Gamma} \)                 \\
+
+  \end{NiceTabular}
+  \caption{Ejemplos clásicos de distribuciones conjugadas en inferencia bayesiana.}
+  \label{tabla:conjugadas}
+\end{table}
 
 \ejemplo{
   Sea una muestra aleatoria simple (m.a.s.) de tamaño \( n \) proveniente de una población que sigue una distribución \( Bin(1, \theta) \)
@@ -287,14 +322,67 @@ $$\pi(\theta | x_1, \ldots, x_n) = \pi(\theta | t) \ \text{ tal que } \ t = T(x_
 \end{definición}
 
 \begin{teorema}[Versión bayesiana del Teorema de Factorización de Fisher]
-  $T = T(X_1, \ldots, X_n)$ es un estadístico suficiente para $\theta$ si y sólo si $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
+  $T = T(X_1, \ldots, X_n)$ es un estadístico suficiente para $\theta$ (en el sentido clásico) si y sólo si $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
 \end{teorema}
 
 \begin{proof}
-  $$\begin{aligned}
-       & \Rightarrow \pi(\theta | x_1, \ldots, x_n) = \frac{\pi(\theta)f(x_1, \ldots, x_n | \theta)}{m(x_1, \ldots, x_n)} = \frac{\pi(\theta)g(t | \theta)f(x_1, \ldots, x_n | t, \theta)}{m(x_1, \ldots, x_n)} = \frac{\pi(\theta)g(t | \theta)}{\int_{\Theta}\pi(\theta)g(t | \theta)d\theta} = \pi(\theta | t) \\
-       & \Rightarrow f(x_1, \ldots, x_n | \theta) = \frac{\pi(\theta | x_1, \ldots, x_n)m(x_1, \ldots, x_n)}{\pi(\theta)} = \frac{\pi(\theta | t)}{\pi(\theta)}m(x_1, \ldots, x_n)
-    \end{aligned}$$
+  \textbf{($\Rightarrow$)} Supongamos que \( T \) es suficiente para \( \theta \) en el sentido clásico.
+  Entonces, por el \emph{teorema de factorización de Fisher}, existe una factorización de la verosimilitud:
+
+  \[
+    f(x_1, \dots, x_n \mid \theta) = h(x_1, \dots, x_n) \cdot g(T(x) \mid \theta)
+  \]
+
+  Dada una distribución a priori arbitraria \( \pi(\theta) \), la distribución a
+  posteriori viene dada por la fórmula de Bayes:
+
+  \[
+    \pi(\theta \mid x) = \frac{\pi(\theta) f(x \mid \theta)}{m(x)} = \frac{\pi(\theta) g(T(x) \mid \theta) h(x)}{m(x)}
+  \]
+
+  Pero el término \( h(x) \) no depende de \( \theta \), así que:
+
+  \[
+    \pi(\theta \mid x) \propto \pi(\theta) g(T(x) \mid \theta)
+  \]
+
+  Y por tanto:
+
+  \[
+    \pi(\theta \mid x) = \pi(\theta \mid T(x))
+  \]
+
+  Es decir, la distribución posterior depende solo de \( T(x) \). Por lo tanto,
+  \( T \) es suficiente bayesiano.
+
+  \vspace{1em}
+
+  \textbf{($\Leftarrow$)} Ahora supongamos que \( \pi(\theta \mid x) = \pi(\theta \mid T(x)) \) para toda distribución a priori \( \pi(\theta) \).
+
+  Queremos probar que \( T \) es suficiente en el sentido clásico.
+
+  Usamos la identidad de Bayes:
+
+  \[
+    f(x \mid \theta) = \frac{\pi(\theta \mid x) m(x)}{\pi(\theta)}
+  \]
+
+  Pero como por hipótesis \( \pi(\theta \mid x) = \pi(\theta \mid T(x)) \),
+  tenemos:
+
+  \[
+    f(x \mid \theta) = \frac{\pi(\theta \mid T(x)) m(x)}{\pi(\theta)}
+  \]
+
+  Esto implica que la verosimilitud \( f(x \mid \theta) \) depende de \( x \)
+  solo a través de \( T(x) \), y por tanto se puede factorizar como:
+
+  \[
+    f(x \mid \theta) = h(x) \cdot g(T(x), \theta)
+  \]
+
+  Esto es precisamente la condición del teorema de factorización de Fisher, por
+  lo tanto \( T \) es suficiente.
 \end{proof}
 
 \begin{definición}[Error cuadrático medio]
@@ -323,32 +411,71 @@ $$E_{\theta}[(T - \theta)^2] = E_{\theta}[(\bar{X} - \theta)^2] = E_{\theta}[\ba
 }
 
 \ejemplo{
-  Dada una m.a.s. de tamaño $n$ de una población $X \sim N(\mu, \sigma)$, se sab quelos estimadores centrados de ambos paráetros son $\bar{X}$ para $\mu$ y $S^2$ para $\sigma^2$, respectivamente. Y sus errores cuadráticos medios son:
-  $$ECM_{\bar{X}}(\mu) = Var[\bar{X}] = \frac{\sigma^2}{n} \quad ECM_{S^2}(\sigma^2) = Var[S^2] = \frac{2\sigma^4}{n-1}$$
-  Sea $b_2 = \sigma_n^2 = \frac{1}{n} \sum_{i = 1}^{n}(X_i - \bar{X})^2$ otro estimador centrado para $\sigma^2$, calculemos su varianza y sesgo:
-  Gracias al cálculo realizado en un ejemplo anterior tenemos que $b(\sigma_n^2, \sigma) = -\frac{\sigma^2}{n}$, por lo que sólo queda calcular la varianza, la cual es de la forma
-  $$V_{\theta}(\sigma_n^2) = \frac{2\sigma^4}{n} \implies ECM_{\sigma_n^2}(\sigma^2) = V_{\theta}(\sigma_n^2) + b(\sigma_n^2, \sigma)^2 = \frac{2\sigma^4}{n} - \frac{\sigma^4}{n^2} = \frac{2n - 1}{n^2}\sigma^4 < \frac{2\sigma^4}{n-1} = ECM_{S^2}(\sigma^2)$$
-  Por lo que se puede concluir que $S^2$ es un estimador más eficiente que $\sigma_n^2$ para $\sigma^2$
-  A pesar de que matemáticamente se parezcan mas, la corrección para mejorar la eficiencia se la conoce como \underline{corrección de Bessel}.
-}
+Dada una m.a.s. de tamaño $n$ de una población $X \sim N(\mu, \sigma)$, se sabe que los estimadores centrados de ambos parámetros son $\bar{X}$ para $\mu$ y $S^2$ para $\sigma^2$, respectivamente. Y sus errores cuadráticos medios son:
+$$ECM_{\bar{X}}(\mu) = Var[\bar{X}] = \frac{\sigma^2}{n} \quad ECM_{S^2}(\sigma^2) = Var[S^2] = \frac{2\sigma^4}{n-1}$$
+En efecto, por el teorema de Fisher sabemos que $\overline{X} \sim N(\mu, \frac{\sigma^2}{n})$ y $S^2 \sim \frac{1}{n-1}\chi^2_{n-1}(\sigma^2)$, luego $Var(\bar{X}) = \frac{\sigma^2}{n}$ y $Var(S^2) = \frac{2\sigma^4}{n-1}$.\\
+Sea $b_2 = \sigma_n^2 = \frac{1}{n} \sum_{i = 1}^{n}(X_i - \bar{X})^2$ otro estimador centrado para $\sigma^2$, calculemos su varianza y sesgo:
+Gracias al cálculo realizado en un ejemplo anterior tenemos que $b(\sigma_n^2, \sigma) = -\frac{\sigma^2}{n}$, por lo que sólo queda calcular la varianza, la cual es de la forma
+$$V_{\theta}(\sigma_n^2) = \frac{2\sigma^4(n-1)}{n^2}$$
+Por tanto tenemos que:
+$$ECM_{\sigma_n^2}(\sigma^2) = V_{\theta}(\sigma_n^2) + b(\sigma_n^2, \sigma)^2 = \frac{2\sigma^4(n-1)}{n^2} + \left(-\frac{\sigma^2}{n}\right)^2 = \frac{2\sigma^4(n-1)}{n^2} + \frac{\sigma^4}{n^2} = \frac{(2n-1)\sigma^4}{n^2}$$
+
+Por lo que se puede concluir que $\sigma_n^2$, a pesar de ser un estimador
+sesgado, tiene menor error cuadrático medio que el estimador centrado $S^2$. }
 
 \begin{observación}
 En general, si $T_1$ y $T_2$ son dos estimadores de $\theta$ y $ECM_{T_1}(\theta) < ECM_{T_2}(\theta)$, entonces $T_1$ es un estimador más eficiente que $T_2$ para $\theta$
 \end{observación}
 
+\begin{table}[h]
+  \centering
+  \small % or \footnotesize or \scriptsize
+  \renewcommand{\arraystretch}{1.5}
+  \NiceMatrixOptions{cell-space-limits = 1pt}
+  \begin{NiceTabular}{lllp{3.5cm}p{3.5cm}}[hvlines,
+    code-before = {\rowcolor{gray!30} 1},
+    ]
+    \textbf{Estimador} & \textbf{Media}                     & \textbf{Varianza} & \textbf{Sesgo} & \textbf{ECM} \\
+
+    \( \bar{X} = \frac{1}{n} \sum X_i \)
+                       & \( \mu \)
+                       & \( \frac{\sigma^2}{n} \)
+                       & \( 0 \)
+                       & \( \frac{\sigma^2}{n} \)                                                               \\
+
+    \( \sigma_n^2 = \frac{1}{n} \sum (X_i - \bar{X})^2 \)
+                       & \( \frac{n - 1}{n} \sigma^2 \)
+                       & \( \frac{2\sigma^4(n - 1)}{n^2} \)
+                       & \( -\frac{\sigma^2}{n} \)
+                       & \( \frac{2n - 1}{n^2} \sigma^4 \)                                                      \\
+
+    \( S^2 = \frac{1}{n - 1} \sum (X_i - \bar{X})^2 \)
+                       & \( \sigma^2 \)
+                       & \( \frac{2\sigma^4}{n - 1} \)
+                       & \( 0 \)
+                       & \( \frac{2\sigma^4}{n - 1} \)                                                          \\
+
+  \end{NiceTabular}
+  \caption{Comparación de estimadores clásicos para \( \mu \) y \( \sigma^2 \) bajo \( X \sim N(\mu, \sigma^2) \).}
+  \label{tabla:estimadores}
+\end{table}
+
 \subsection{Criterios de comparación de estimadores}
 
 \begin{definición}[Pérdida final esperada]
-Dado un estimador $T(X_1, \ldots, X_n)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ donde $t$ son los valores que toma el estimador, se define la Pérdida Final Esperada o $PFE$ o el riesgo a posteriori como:
-$$PFE_T = E[\mathcal{L}(t, \theta) | X_1 = x_1, \ldots, X_n = x_n] = \int_{\Theta} \mathcal{L}(\theta, t)\pi(\theta | x_1, \ldots, x_n)d\theta$$
+Dado el estimador \( T = T(X_1, \ldots, X_n) \), la distribución inicial \( \pi(\theta) \) y la función de pérdida \( \mathcal{L}(\theta, t) \) en la que se incurre por estimar \( \theta \) mediante \( T(x_1, \ldots, x_n) = t \), se define la pérdida final esperada o riesgo a posteriori,
+\[
+  \text{PFE}(t) = E[\mathcal{L}(t, \theta) \mid x_1, \ldots, x_n] = \int_{\Theta} \mathcal{L}(\theta, t)\, \pi(\theta \mid x_1, \ldots, x_n)\, d\theta
+\]
 \end{definición}
 
 \begin{proposición}
 Puede darse que existan varias funciones de pérdida, veamos las más comunes:
 \begin{enumerate}
   \item Si $\mathcal{L}(\theta, t) = (\theta - t)^2$ entonces $PFE(t) = V(\theta | x_1,
-          \ldots, x_n) + b(T, \theta)^2$ y la pérdida final esperada se minimimia en $t^*
-          = E[\theta | x_1, \ldots, x_n]$
+          \ldots, x_n) + (E[\theta | x_1, \ldots, x_n] - t)^2$ y la pérdida final
+        esperada se minimimia en $t^* = E[\theta | x_1, \ldots, x_n]$, de forma que
+        $PFE(t^*) = V(\theta | x_1, \ldots, x_n)$
   \item Si $\mathcal{L}(\theta, t) = |\theta - t|$ entonces $PFE(t) = E[|\theta - t| |
               x_1, \ldots, x_n]$ y la pérdida final esperada se minimiza en la mediana de la
         distribución final (estimador bayesiano)
@@ -390,7 +517,8 @@ Puede darse que existan varias funciones de pérdida, veamos las más comunes:
 }
 
 \begin{definición}[Estimador centrado uniformemente de mínima varianza]
-$T^{*} = T^{*}(X_1, \ldots, X_n)$ es un estimador centrado uniformemente de mínima varianza para $\theta$ si y sólo si $E_{\theta}[T^{*}] = \theta$ y para cualquier otro estimador $T = T(X_1, \ldots, X_n)$ con $E_{\theta}[T] = \theta$, se tiene que $V_{\theta}(T^{*}) \leq V_{\theta}(T)$, $\forall \theta \in \Theta$
+$T^{*} = T^{*}(X_1, \ldots, X_n)$ es un estimador centrado uniformemente de mínima varianza para $\theta$ si y sólo si $E_{\theta}[T^{*}] = \theta$ y para cualquier otro estimador $T = T(X_1, \ldots, X_n)$ con $E_{\theta}[T] = \theta$, se tiene que $V_{\theta}(T^{*}) \leq V_{\theta}(T)$, $\forall \theta \in \Theta$.\\
+En otras palabras, un estimador insesgado $T^{*}$ para $\theta$ es un estimador centrado uniformemente de mínima varianza si y sólo si $T^{*}$ tiene la menor varianza entre todos los estimadores insesgados de $\theta$.
 \end{definición}
 
 \begin{proposición}
@@ -418,17 +546,86 @@ Por lo que el estimador que minimiza el error cuadrático medio es $T_{\frac{n}{
 }
 
 \begin{teorema}
-  El estimador centrado uniformemente de mínima varianza es función simétrica de las observaciones
+  El estimador centrado uniformemente de mínima varianza es función simétrica de las observaciones.
 \end{teorema}
 
+\begin{proof}
+  Sea $X = (X_1, X_2, \dots, X_n)$ una muestra aleatoria simple (m.a.s.) de una población con parámetro $\theta$. Supongamos que $T(X)$ es un estimador centrado uniformemente de mínima varianza (ECUMV) de una función $g(\theta)$, es decir:
+  \[
+    E_\theta[T(X)] = g(\theta) \quad \text{para todo } \theta, \quad \text{y} \quad \operatorname{Var}_\theta(T(X)) \leq \operatorname{Var}_\theta(\tilde{T}(X)) \quad \text{para todo estimador insesgado } \tilde{T}.
+  \]
+
+  Sea $\pi$ una permutación de los índices $\{1, 2, \dots, n\}$. Como $X$ es una
+  m.a.s., la distribución conjunta de $(X_1, \dots, X_n)$ es invariante ante
+  permutaciones, es decir, $(X_1, \dots, X_n) \overset{d}{=} (X_{\pi(1)}, \dots,
+    X_{\pi(n)})$.
+
+  Definamos un nuevo estimador permutado:
+  \[
+    T^{\pi}(X) = T(X_{\pi(1)}, X_{\pi(2)}, \dots, X_{\pi(n)}).
+  \]
+
+  Por la invarianza en distribución, se sigue que $T^{\pi}(X)$ también es un
+  estimador insesgado de $g(\theta)$, con la misma varianza que $T(X)$:
+  \[
+    E_\theta[T^\pi(X)] = g(\theta), \quad \operatorname{Var}_\theta(T^\pi(X)) = \operatorname{Var}_\theta(T(X)).
+  \]
+
+  Consideremos ahora el promedio sobre todas las permutaciones posibles del
+  estimador $T(X)$:
+  \[
+    T_s(X) = \frac{1}{n!} \sum_{\pi} T^{\pi}(X).
+  \]
+  Este nuevo estimador $T_s(X)$ es una función \textbf{simétrica} de las
+  observaciones, ya que promedia todas las permutaciones. Además:
+
+  \begin{itemize}
+    \item $T_s(X)$ es insesgado: \\[1ex]
+          \(
+          E_\theta[T_s(X)] = \frac{1}{n!} \sum_{\pi} E_\theta[T^{\pi}(X)] = \frac{1}{n!} \cdot n! \cdot g(\theta) = g(\theta).
+          \)
+
+    \item $T_s(X)$ tiene varianza menor o igual que $T(X)$ (por la desigualdad de Jensen y porque el promedio de estimadores insesgados con la misma varianza no aumenta la varianza).
+  \end{itemize}
+
+  Por la unicidad del estimador ECUMV, se sigue que $T(X) = T_s(X)$ casi
+  seguramente. Es decir, el ECUMV coincide con su versión simetrizada, por lo que
+  debe ser simétrico.
+\end{proof}
+
 \ejemplo{
-  Sea una m.a.s. de tamaño $n = 2$, entonces el estimador $T_1 = \frac{X_1}{X_2}$ no puede ser un estimador centrado uniformemente de mínima varianza, ya que si lo fuera, entonces para el nuevo estimador $T_2 = \frac{X_2}{X_1}$ se tendría que $E_{\theta}[T_2] = E_{\theta}[T_1]$ y $V_{\theta}(T_2) = V_{\theta}(T_1)$ con lo que el estimador $T = \frac{T_1 + T_2}{2} = \frac{X_1^2 + X_2^2}{X_1X_2}$ sería tal que $V_{\theta} < V_{\theta}(T_1)$, lo cual es una contradicción
-}
+  Supongamos que tenemos una m.a.s. de tamaño $n = 2$ con observaciones $X_1$ y $X_2$. Consideremos el estimador $T_1 = \frac{X_1}{X_2}$. Este estimador no es simétrico, ya que depende del orden de las observaciones. Supongamos, por contradicción, que $T_1$ es un estimador centrado uniformemente de mínima varianza (ECUMV).
+
+  Definamos ahora $T_2 = \frac{X_2}{X_1}$, que se obtiene intercambiando el orden
+  de las observaciones. Como la muestra es aleatoria y ambas observaciones tienen
+  la misma distribución, se cumple que $E_\theta[T_2] = E_\theta[T_1]$ y
+  $V_\theta(T_2) = V_\theta(T_1)$.
+
+  Construyamos un nuevo estimador como el promedio:
+  \[
+    T = \frac{T_1 + T_2}{2} = \frac{1}{2} \left( \frac{X_1}{X_2} + \frac{X_2}{X_1} \right) = \frac{X_1^2 + X_2^2}{2X_1 X_2}
+  \]
+
+  Este nuevo estimador $T$ es simétrico con respecto a $X_1$ y $X_2$, además de
+  ser insesgado (por ser la media de dos estimadores insesgados). Además, tiene
+  varianza estrictamente menor que la de $T_1$, salvo que $T_1$ y $T_2$ estén
+  perfectamente correlacionados, lo cual no es el caso. Esto contradice la
+  hipótesis de que $T_1$ era el ECUMV. Por lo tanto, concluimos que un esti mador
+  que no sea simétrico no puede ser ECUMV. }
 
 \begin{observación}
-En general si tienes un estimador $T$ que no es simétrico, puedes promediar sobre todas las permutaciones posibles para crear un nuevo estimador $\bar{T}$:
-$$\bar{T} = \frac{1}{n!}\sum_{i = 1}^{n!} T_j$$
-Este nuevo estimador es simétrico respecto a las observaciones y $V_{\theta}(\bar{T}) \leq V_{\theta}(T_j) \forall j$ donde se cumple que $V_{\theta}(\bar{T}) < V_{\theta}(T_j)$ si $T_j$ no es un estimador simétrico. Además, se cumple que $E_{\theta}[\bar{T}] = E_{\theta}[T]$
+En general, si tienes un estimador $T$ que no es simétrico, puedes construir un nuevo estimador $\bar{T}$ promediando sobre todas las permutaciones posibles de las observaciones:
+\[
+  \bar{T}(X_1, \dots, X_n) = \frac{1}{n!} \sum_{\pi} T(X_{\pi(1)}, \dots, X_{\pi(n)}),
+\]
+donde la suma se toma sobre todas las permutaciones $\pi$ del conjunto $\{1,
+  \dots, n\}$. Este nuevo estimador $\bar{T}$ es simétrico respecto a las
+observaciones y cumple:
+\[
+  E_\theta[\bar{T}] = E_\theta[T], \quad \text{y} \quad \operatorname{Var}_\theta(\bar{T}) \leq \operatorname{Var}_\theta(T),
+\]
+con desigualdad estricta si $T$ no es simétrico. Es decir, la simetrización no
+cambia la esperanza, pero puede reducir la varianza.
 \end{observación}
 
 \begin{teorema}[Teorema de caracterización del ECUMV]
@@ -491,9 +688,52 @@ Este nuevo estimador es simétrico respecto a las observaciones y $V_{\theta}(\b
 \end{teorema}
 
 \begin{proof}
-  $\begin{cases} S \text{ suficiente } \\ T \text{ centrado } \end{cases} \implies g(S) = E[T|S] \text{ es centrado para } \theta \text{ y } V_{\theta}(g(S)) \leq V_{\theta}(T)$ \\
-  Además, se tiene que para cualquier otro estimador $T_1$ centrado para $\theta$, $g_1(S) = E[T_1 | S]$ es centrado para $\theta$ y $V_{\theta}(g_1(S)) \leq V_{\theta}(T_1)$ \\
-  Por lo tanto al ser $S$ completo y $E_{\theta}[g(S) - g_1(S)] = \theta - \theta = 0$ se tiene que $g(S) \stackrel{c.s.}{=} g_1(S)$. En particular, para $T = h(S)$, $g_1(S) = E[h(S) | S] = h(S) = T$ y $V_{\theta}(T) \leq V_{\theta}(T_1)$, cualquiera que sea $T_1$ centrado para $\theta$
+  Sea \( S = S(X_1, \ldots, X_n) \) un estadístico suficiente y completo para el parámetro \( \theta \), y sea \( T = T(X_1, \ldots, X_n) \) un estimador insesgado (centrado) de \( \theta \).
+
+  Por el teorema de Rao-Blackwell, si definimos
+  \[
+    g(S) = E[T \mid S],
+  \]
+  entonces \( g(S) \) es un estimador insesgado de \( \theta \), basado en \( S
+  \), y satisface
+  \[
+    V_\theta(g(S)) \leq V_\theta(T).
+  \]
+
+  Ahora, consideremos cualquier otro estimador insesgado \( T_1 \) de \( \theta
+  \). Aplicando nuevamente Rao-Blackwell, el estimador
+  \[
+    g_1(S) = E[T_1 \mid S]
+  \]
+  también es insesgado para \( \theta \), está basado en \( S \), y cumple
+  \[
+    V_\theta(g_1(S)) \leq V_\theta(T_1).
+  \]
+
+  Observemos que \( g(S) \) y \( g_1(S) \) son ambos funciones de \( S \) e
+  insesgados para \( \theta \). Entonces, su diferencia \( g(S) - g_1(S) \)
+  también es una función de \( S \), y tiene esperanza nula:
+  \[
+    E_\theta[g(S) - g_1(S)] = E_\theta[g(S)] - E_\theta[g_1(S)] = \theta - \theta = 0.
+  \]
+
+  Dado que \( S \) es completo, esto implica que
+  \[
+    g(S) = g_1(S) \quad \text{casi seguramente}.
+  \]
+
+  En particular, si \( T = h(S) \) es ya una función de \( S \), entonces
+  \[
+    g(S) = E[T \mid S] = E[h(S) \mid S] = h(S) = T.
+  \]
+
+  Por lo tanto, para cualquier estimador insesgado \( T_1 \), se tiene
+  \[
+    V_\theta(T) = V_\theta(g(S)) = V_\theta(g_1(S)) \leq V_\theta(T_1).
+  \]
+
+  Esto demuestra que \( T \) es el estimador insesgado de varianza mínima (ECUMV)
+  para \( \theta \).
 \end{proof}
 
 \ejemplo{
@@ -506,10 +746,10 @@ Este nuevo estimador es simétrico respecto a las observaciones y $V_{\theta}(\b
   $$E_{\theta}[g(T)] = \sum_{t = 0}^{n} g(t) \binom{n}{t} \theta^t(1 - \theta)^{n-t} = 0, \forall \theta \in [0, 1] \iff$$
   $$\iff (1 - \theta)^n \cdot \sum_{i = 1}^{n} g(t) \binom{n}{t} \left(\frac{\theta}{1 - \theta}\right)^t = 0 \iff$$
   $$\iff \sum_{t = 0}^{n} g(t) \binom{n}{t} x^t = 0, \forall x \in \mathbb{R} \iff g(t) = 0, \forall t \in \{0, \ldots, n\} $$  ya que los coeficientes binomiales son no nulos. \\
-  Por último queda ver que $S$ es un estadístico centrado para $\theta$, i.e. $E_{\theta}[h(S)] = \theta$ y $V_{\theta}(h(S)) < \infty$:
+  Por último queda ver que $h(T)$ es un estadístico centrado para $\theta$, i.e. $E_{\theta}[h(T)] = \theta$ y $V_{\theta}(h(T)) < \infty$:
   $$E_{\theta}[h(T)] = E_{\theta}[\bar{X}] = \frac{1}{n} \cdot \sum_{i = 1}^{n} E_{\theta}[X_i] = \frac{1}{n} \cdot n\theta = \theta$$
   $$V_{\theta}(h(T)) = V_{\theta}(\bar{X}) = \frac{1}{n^2} \cdot \sum_{i = 1}^{n} V_{\theta}(X_i) = \frac{1}{n^2} \cdot n\theta(1 - \theta) = \frac{\theta(1 - \theta)}{n} < \infty$$
-  Por lo tanto, $T = n\bar{X}$ es el ECUMV para $\theta$
+  Por lo tanto, $h(T) = \bar{X}$ es el ECUMV para $\theta$
 }
 
 \ejemplo{
