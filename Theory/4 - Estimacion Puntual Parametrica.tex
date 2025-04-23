@@ -42,7 +42,7 @@ Sabemos que: $
   \end{cases} $
 $$ = \frac{1}{n} n(\sigma^2 + \mu ^2) + \frac{1}{n}n(\frac{\sigma^2}{n} + \mu^2) - \frac{2}{n}\sum_{i = 1}^{n}E[X_i \bar{X}] = $$
 Ahora desarrollemos el término que falta:
-$$E[X_i \bar{X}] = E[X_i \frac{1}{n}\sum_{j = 1}^{n}X_j] = \frac{1}{n}\sum_{j = 1}^{n}E[X_iX_j] = \frac{1}{n}\sum_{j = 1\\ j \neq i}^{n}E[X_iX_j] + \frac{1}{n}E[X_i^2] = $$
+$$E[X_i \bar{X}] = E\left[X_i \frac{1}{n}\sum_{j = 1}^{n}X_j\right] = \frac{1}{n}\sum_{j = 1}^{n}E[X_iX_j] = \frac{1}{n}\sum_{j = 1, j \neq i}^{n}E[X_iX_j] + \frac{1}{n}E[X_i^2] = $$
 $$ = \frac{1}{n}\sum_{j = 1 \\ j \neq i}^{n}E[X_i]E[X_j] + \frac{1}{n}E[X_i^2] = \frac{1}{n}(n-1)\mu^2 + \frac{1}{n}(\sigma^2 + \mu^2) = \mu^2 + \frac{\sigma^2}{n}$$
 $$ \implies = 2\mu^2 + \sigma^2(1 + \frac{1}{n}) - \frac{2}{n}\left(\sum_{i = 1}^{n}\mu^2 + \frac{\sigma^2}{n}\right) = 2\mu^2 + \sigma^2(1 + \frac{1}{n}) - 2(\mu^2 + \frac{\sigma^2}{n}) = \sigma^2(1 - \frac{1}{n}) \implies$$
 $$ \implies E[\sigma_n^2] = \sigma^2(1 - \frac{1}{n}) = h(\theta) \text{ y } b(\sigma_n^2, \sigma^2) =  E[\sigma_n^2] - \sigma^2 = -\frac{\sigma^2}{n}$$
@@ -103,7 +103,8 @@ $$ \implies E[\sigma_n^2] = \sigma^2\left(1 - \frac{1}{n}\right) = h(\theta) \te
   \]
   Lo cual es un sistema incompatible (la primera ecuación $1=0$ es falsa). Por
   tanto, \textbf{no existe} ninguna elección de $T(0)$ y $T(1)$ que satisfaga la
-  condición de insesgadez para todo $\theta \in (0,1)$. }
+  condición de insesgadez para todo $\theta \in (0,1)$. 
+}
 
 \ejemplo{
 Sea una m.a.s. de tamaño $n = 1$ que sigue una distribución $X \sim Poisson(\theta)$ demuestra que $T(X) = (-2)^x$ es un estimador centrado para $h(\theta) = e^{-3\theta}$, pero $Var_{\theta}(T) = e^{4\theta} - e^{-6\theta} \to \infty$ no es un estimador de $h(\theta)$:
@@ -147,6 +148,12 @@ $$\lim_{n \to \infty} E[T_n] = \lim_{n \to \infty} E\left[\frac{1}{n+2}\sum_{i =
 $$\lim_{n \to \infty} V[T_n] = \lim_{n \to \infty} V\left[\frac{1}{n+2}\sum_{i = 1}^{n}X_i + 1\right] = \lim_{n \to \infty} \frac{1}{(n+2)^2}\sum_{i = 1}^{n}V[X_i] = \lim_{n \to \infty} \frac{n\theta(1-\theta)}{(n+2)^2} = 0$$
 }
 
+\ejemplo{
+  Sea una m.a.s. de tamaño $n$ de una población con distribución $N(\mu; \sigma^2)$ siendo $\theta = (\mu, \sigma)$, el estimador $T_1(\vec{X}) = \bar{X}$ es consistente para estimar $h(\theta) = \mu$, ya que: 
+  $$ \lim_{n \to \infty} E[T_1] = \lim_{n \to \infty} E[\bar{X}] = \lim_{n \to \infty} E\left[\frac{1}{n}\sum_{i = 1}^{n}X_i\right] = \lim_{n \to \infty} \frac{1}{n}\sum_{i = 1}^{n}E[X_i] = \lim_{n \to \infty} \frac{1}{n}\sum_{i = 1}^{n}\mu = \mu$$
+  $$ \lim_{n \to \infty} V[T_1] = \lim_{n \to \infty} V\left[\frac{1}{n}\sum_{i = 1}^{n}X_i\right] = \lim_{n \to \infty} \frac{1}{n^2}\sum_{i = 1}^{n}V[X_i] = \lim_{n \to \infty} \frac{1}{n^2}\sum_{i = 1}^{n}\sigma^2 = 0$$
+}
+
 \subsection{Estimadores Bayesianos}
 
 El enfoque bayesiano trata a los parámetros de las distribuciones como
@@ -168,42 +175,6 @@ parámetro $\theta$.\\
 \begin{observación}
 Antes de tomar la muestra, la información sobre $\theta$ viene dada por $\pi(\theta)$ y tras la experimentación se debe utilizar $\pi\left(\theta \mid x_{1}, \ldots, x_{n}\right)$. El estimador bayesiano de $\theta$ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución
 \end{observación}
-
-\begin{definición} [Distribuciones Conjugadas]
-Sea \( \pi(\theta) \) una distribución a priori y \( f(x_1, \ldots, x_n | \theta) \)
-la función de verosimilitud. Si la distribución a posteriori \( \pi(\theta | x_1,
-\ldots, x_n) \) pertenece a la misma familia de distribuciones que la
-distribución a priori \( \pi(\theta) \), se dice que la distribución a priori
-es \textbf{conjugada} con respecto a la función de verosimilitud.
-\end{definición}
-
-\begin{table}[h]
-  \centering
-  \small % or \footnotesize or \scriptsize
-  \renewcommand{\arraystretch}{1.5}
-  \NiceMatrixOptions{cell-space-limits = 1pt}
-  \begin{NiceTabular}{lllp{6cm}}[
-      hvlines,
-      code-before = {\rowcolor{gray!30} 1},
-    ]
-    \textbf{Verosimilitud (datos)}                                    & \textbf{A priori}                                      & \textbf{A posteriori}                                                      \\
-
-    \( \text{Bernoulli}(\theta) \) o \( \text{Binomial}(n, \theta) \) & \( \theta \sim \text{Beta}(\alpha, \beta) \)           & \( \theta | X \sim \text{Beta}(\alpha + \sum x_i, \beta + n - \sum x_i) \) \\
-
-    \( \text{Poisson}(\lambda) \)                                     & \( \lambda \sim \text{Gamma}(a, p) \)                  & \( \lambda | X \sim \text{Gamma}(a+n, p + \sum x_i) \)                     \\
-
-    \( \text{Exponencial}(\lambda) \)                                 & \( \lambda \sim \text{Gamma}(a, p) \)                  & \( \lambda | X \sim \text{Gamma}(a + \sum x_i, p + n) \)                   \\
-
-    \( N(\mu, \sigma^2) \), \( \sigma^2 \) conocida                   & \( \mu \sim N(\mu_0, \tau^2) \)                        & \( \mu | X \sim N(\mu_n, \tau_n^2) \)                                      \\
-
-    \( N(\mu, \sigma^2) \), \( \mu \) conocida                        & \( \sigma^2 \sim \text{Inv-Gamma}(\alpha, \beta) \)    & \( \sigma^2 | X \sim \text{Inv-Gamma}(\alpha', \beta') \)                  \\
-
-    \( N(\mu, \sigma^2) \), ambos desconocidos                        & \( (\mu, \sigma^2) \sim \text{Normal-Inverse-Gamma} \) & \( (\mu, \sigma^2) | X \sim \text{Normal-Inverse-Gamma} \)                 \\
-
-  \end{NiceTabular}
-  \caption{Ejemplos clásicos de distribuciones conjugadas en inferencia bayesiana.}
-  \label{tabla:conjugadas}
-\end{table}
 
 \ejemplo{
   Sea una muestra aleatoria simple (m.a.s.) de tamaño \( n \) proveniente de una población que sigue una distribución \( Bin(1, \theta) \)
@@ -322,68 +293,17 @@ $$\pi(\theta | x_1, \ldots, x_n) = \pi(\theta | t) \ \text{ tal que } \ t = T(x_
 \end{definición}
 
 \begin{teorema}[Versión bayesiana del Teorema de Factorización de Fisher]
-  $T = T(X_1, \ldots, X_n)$ es un estadístico suficiente para $\theta$ (en el sentido clásico) si y sólo si $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
+  $T = T(X_1, \ldots, X_n)$ es un estadístico suficiente para $\theta$ si y sólo si $T$ es un estadístico suficiente bayesiano para $\theta$ respecto a $\pi(\theta)$, cualquiera que sea la distribución inicial $\pi(\theta)$
 \end{teorema}
 
 \begin{proof}
-  \textbf{($\Rightarrow$)} Supongamos que \( T \) es suficiente para \( \theta \) en el sentido clásico.
-  Entonces, por el \emph{teorema de factorización de Fisher}, existe una factorización de la verosimilitud:
-
-  \[
-    f(x_1, \dots, x_n \mid \theta) = h(x_1, \dots, x_n) \cdot g(T(x) \mid \theta)
-  \]
-
-  Dada una distribución a priori arbitraria \( \pi(\theta) \), la distribución a
-  posteriori viene dada por la fórmula de Bayes:
-
-  \[
-    \pi(\theta \mid x) = \frac{\pi(\theta) f(x \mid \theta)}{m(x)} = \frac{\pi(\theta) g(T(x) \mid \theta) h(x)}{m(x)}
-  \]
-
-  Pero el término \( h(x) \) no depende de \( \theta \), así que:
-
-  \[
-    \pi(\theta \mid x) \propto \pi(\theta) g(T(x) \mid \theta)
-  \]
-
-  Y por tanto:
-
-  \[
-    \pi(\theta \mid x) = \pi(\theta \mid T(x))
-  \]
-
-  Es decir, la distribución posterior depende solo de \( T(x) \). Por lo tanto,
-  \( T \) es suficiente bayesiano.
-
-  \vspace{1em}
-
-  \textbf{($\Leftarrow$)} Ahora supongamos que \( \pi(\theta \mid x) = \pi(\theta \mid T(x)) \) para toda distribución a priori \( \pi(\theta) \).
-
-  Queremos probar que \( T \) es suficiente en el sentido clásico.
-
-  Usamos la identidad de Bayes:
-
-  \[
-    f(x \mid \theta) = \frac{\pi(\theta \mid x) m(x)}{\pi(\theta)}
-  \]
-
-  Pero como por hipótesis \( \pi(\theta \mid x) = \pi(\theta \mid T(x)) \),
-  tenemos:
-
-  \[
-    f(x \mid \theta) = \frac{\pi(\theta \mid T(x)) m(x)}{\pi(\theta)}
-  \]
-
-  Esto implica que la verosimilitud \( f(x \mid \theta) \) depende de \( x \)
-  solo a través de \( T(x) \), y por tanto se puede factorizar como:
-
-  \[
-    f(x \mid \theta) = h(x) \cdot g(T(x), \theta)
-  \]
-
-  Esto es precisamente la condición del teorema de factorización de Fisher, por
-  lo tanto \( T \) es suficiente.
+  $$\begin{aligned}
+       & \Rightarrow \pi(\theta | x_1, \ldots, x_n) = \frac{\pi(\theta)f(x_1, \ldots, x_n | \theta)}{m(x_1, \ldots, x_n)} = \frac{\pi(\theta)g(t | \theta)f(x_1, \ldots, x_n | t, \theta)}{m(x_1, \ldots, x_n)} = \frac{\pi(\theta)g(t | \theta)}{\int_{\Theta}\pi(\theta)g(t | \theta)d\theta} = \pi(\theta | t) \\
+       & \Rightarrow f(x_1, \ldots, x_n | \theta) = \frac{\pi(\theta | x_1, \ldots, x_n)m(x_1, \ldots, x_n)}{\pi(\theta)} = \frac{\pi(\theta | t)}{\pi(\theta)}m(x_1, \ldots, x_n)
+    \end{aligned}$$
 \end{proof}
+
+\subsection{Criterios de comparación de estimadores}
 
 \begin{definición}[Error cuadrático medio]
 Dado un estimador $T(X_1, \ldots, X_n)$ de $\theta$, se denomina error cuadrático medio $ECM$ a la expresión en función de $\theta$:
@@ -407,84 +327,51 @@ Es decir, responden a las preguntas de ¿Apunta al lugar correcto? y ¿Qué tan 
 
 \ejemplo{
 Dada una m.a.s. de tamaño $n$ de una población $X \sim Bernouilli(\theta)$ el error cuadrático medio del estimador bayesiano $\bar{X}$:
-$$E_{\theta}[(T - \theta)^2] = E_{\theta}[(\bar{X} - \theta)^2] = E_{\theta}[\bar{X}^2 - 2\bar{X}\theta + \theta^2] = E_{\theta}[\bar{X}^2] - 2\theta E_{\theta}[\bar{X}] + \theta^2 = $$ $$ = \frac{1}{n^2}\sum_{i = 1}^{n}E_{\theta}[X_i^2] - 2\theta \frac{1}{n} \sum_{i = 1}^{n}E_{\theta}[X_i] + \theta^2 = \frac{1}{n^2}n(\theta^2 + \theta(1-\theta)) - 2\theta^2 + \theta^2 = \frac{\theta(1-\theta)}{n} = \frac{\theta}{n} - \frac{\theta^2}{n} = \frac{\theta(1-\theta)}{n}$$
+\[
+E_{\theta}[(T - \theta)^2] = E_{\theta}[(\bar{X} - \theta)^2] = E_{\theta}[\bar{X}^2 - 2\bar{X}\theta + \theta^2] = E_{\theta}[\bar{X}^2] - 2\theta E_{\theta}[\bar{X}] + \theta^2 =
+\]
+\[
+= \frac{1}{n^2}\sum_{i = 1}^{n}E_{\theta}[X_i^2] - 2\theta \frac{1}{n} \sum_{i = 1}^{n}E_{\theta}[X_i] + \theta^2 = \frac{1}{n^2}n(\theta^2 + \theta(1-\theta)) - 2\theta^2 + \theta^2 = \frac{\theta(1-\theta)}{n} = \frac{\theta}{n} - \frac{\theta^2}{n} = \frac{\theta(1-\theta)}{n}
+\]
 }
 
 \ejemplo{
-Dada una m.a.s. de tamaño $n$ de una población $X \sim N(\mu, \sigma)$, se sabe que los estimadores centrados de ambos parámetros son $\bar{X}$ para $\mu$ y $S^2$ para $\sigma^2$, respectivamente. Y sus errores cuadráticos medios son:
-$$ECM_{\bar{X}}(\mu) = Var[\bar{X}] = \frac{\sigma^2}{n} \quad ECM_{S^2}(\sigma^2) = Var[S^2] = \frac{2\sigma^4}{n-1}$$
-En efecto, por el teorema de Fisher sabemos que $\overline{X} \sim N(\mu, \frac{\sigma^2}{n})$ y $S^2 \sim \frac{1}{n-1}\chi^2_{n-1}(\sigma^2)$, luego $Var(\bar{X}) = \frac{\sigma^2}{n}$ y $Var(S^2) = \frac{2\sigma^4}{n-1}$.\\
-Sea $b_2 = \sigma_n^2 = \frac{1}{n} \sum_{i = 1}^{n}(X_i - \bar{X})^2$ otro estimador centrado para $\sigma^2$, calculemos su varianza y sesgo:
-Gracias al cálculo realizado en un ejemplo anterior tenemos que $b(\sigma_n^2, \sigma) = -\frac{\sigma^2}{n}$, por lo que sólo queda calcular la varianza, la cual es de la forma
-$$V_{\theta}(\sigma_n^2) = \frac{2\sigma^4(n-1)}{n^2}$$
-Por tanto tenemos que:
-$$ECM_{\sigma_n^2}(\sigma^2) = V_{\theta}(\sigma_n^2) + b(\sigma_n^2, \sigma)^2 = \frac{2\sigma^4(n-1)}{n^2} + \left(-\frac{\sigma^2}{n}\right)^2 = \frac{2\sigma^4(n-1)}{n^2} + \frac{\sigma^4}{n^2} = \frac{(2n-1)\sigma^4}{n^2}$$
-
-Por lo que se puede concluir que $\sigma_n^2$, a pesar de ser un estimador
-sesgado, tiene menor error cuadrático medio que el estimador centrado $S^2$. }
+  Dada una m.a.s. de tamaño $n$ de una población $X \sim N(\mu, \sigma)$, se sab quelos estimadores centrados de ambos paráetros son $\bar{X}$ para $\mu$ y $S^2$ para $\sigma^2$, respectivamente. Y sus errores cuadráticos medios son:
+  $$ECM_{\bar{X}}(\mu) = Var[\bar{X}] = \frac{\sigma^2}{n} \quad ECM_{S^2}(\sigma^2) = Var[S^2] = \frac{2\sigma^4}{n-1}$$
+  Sea $b_2 = \sigma_n^2 = \frac{1}{n} \sum_{i = 1}^{n}(X_i - \bar{X})^2$ otro estimador centrado para $\sigma^2$, calculemos su varianza y sesgo:
+  Gracias al cálculo realizado en un ejemplo anterior tenemos que $b(\sigma_n^2, \sigma) = -\frac{\sigma^2}{n}$, por lo que sólo queda calcular la varianza, la cual es de la forma
+  $$V_{\theta}(\sigma_n^2) = \frac{2\sigma^4}{n} \implies ECM_{\sigma_n^2}(\sigma^2) = V_{\theta}(\sigma_n^2) + b(\sigma_n^2, \sigma)^2 = \frac{2\sigma^4}{n} - \frac{\sigma^4}{n^2} = \frac{2n - 1}{n^2}\sigma^4 < \frac{2\sigma^4}{n-1} = ECM_{S^2}(\sigma^2)$$
+  Por lo que se puede concluir que $S^2$ es un estimador más eficiente que $\sigma_n^2$ para $\sigma^2$
+  A pesar de que matemáticamente se parezcan mas, la corrección para mejorar la eficiencia se la conoce como \underline{corrección de Bessel}.
+}
 
 \begin{observación}
 En general, si $T_1$ y $T_2$ son dos estimadores de $\theta$ y $ECM_{T_1}(\theta) < ECM_{T_2}(\theta)$, entonces $T_1$ es un estimador más eficiente que $T_2$ para $\theta$
 \end{observación}
 
-\begin{table}[h]
-  \centering
-  \small % or \footnotesize or \scriptsize
-  \renewcommand{\arraystretch}{1.5}
-  \NiceMatrixOptions{cell-space-limits = 1pt}
-  \begin{NiceTabular}{lllp{3.5cm}p{3.5cm}}[hvlines,
-    code-before = {\rowcolor{gray!30} 1},
-    ]
-    \textbf{Estimador} & \textbf{Media}                     & \textbf{Varianza} & \textbf{Sesgo} & \textbf{ECM} \\
 
-    \( \bar{X} = \frac{1}{n} \sum X_i \)
-                       & \( \mu \)
-                       & \( \frac{\sigma^2}{n} \)
-                       & \( 0 \)
-                       & \( \frac{\sigma^2}{n} \)                                                               \\
-
-    \( \sigma_n^2 = \frac{1}{n} \sum (X_i - \bar{X})^2 \)
-                       & \( \frac{n - 1}{n} \sigma^2 \)
-                       & \( \frac{2\sigma^4(n - 1)}{n^2} \)
-                       & \( -\frac{\sigma^2}{n} \)
-                       & \( \frac{2n - 1}{n^2} \sigma^4 \)                                                      \\
-
-    \( S^2 = \frac{1}{n - 1} \sum (X_i - \bar{X})^2 \)
-                       & \( \sigma^2 \)
-                       & \( \frac{2\sigma^4}{n - 1} \)
-                       & \( 0 \)
-                       & \( \frac{2\sigma^4}{n - 1} \)                                                          \\
-
-  \end{NiceTabular}
-  \caption{Comparación de estimadores clásicos para \( \mu \) y \( \sigma^2 \) bajo \( X \sim N(\mu, \sigma^2) \).}
-  \label{tabla:estimadores}
-\end{table}
-
-\subsection{Criterios de comparación de estimadores}
 
 \begin{definición}[Pérdida final esperada]
-Dado el estimador \( T = T(X_1, \ldots, X_n) \), la distribución inicial \( \pi(\theta) \) y la función de pérdida \( \mathcal{L}(\theta, t) \) en la que se incurre por estimar \( \theta \) mediante \( T(x_1, \ldots, x_n) = t \), se define la pérdida final esperada o riesgo a posteriori,
-\[
-  \text{PFE}(t) = E[\mathcal{L}(t, \theta) \mid x_1, \ldots, x_n] = \int_{\Theta} \mathcal{L}(\theta, t)\, \pi(\theta \mid x_1, \ldots, x_n)\, d\theta
-\]
+Dado un estimador $T(X_1, \ldots, X_n)$, la distribución inicial $\pi(\theta)$ y la función de pérdida $\mathcal{L}(\theta, t)$ donde $t$ son los valores que toma el estimador, se define la Pérdida Final Esperada o $PFE$ o el riesgo a posteriori como:
+$$PFE_T = E[\mathcal{L}(t, \theta) | X_1 = x_1, \ldots, X_n = x_n] = \int_{\Theta} \mathcal{L}(\theta, t)\pi(\theta | x_1, \ldots, x_n)d\theta$$
 \end{definición}
 
 \begin{proposición}
 Puede darse que existan varias funciones de pérdida, veamos las más comunes:
 \begin{enumerate}
-  \item Si $\mathcal{L}(\theta, t) = (\theta - t)^2$ entonces $PFE(t) = V(\theta | x_1,
-          \ldots, x_n) + (E[\theta | x_1, \ldots, x_n] - t)^2$ y la pérdida final
-        esperada se minimimia en $t^* = E[\theta | x_1, \ldots, x_n]$, de forma que
-        $PFE(t^*) = V(\theta | x_1, \ldots, x_n)$
-  \item Si $\mathcal{L}(\theta, t) = |\theta - t|$ entonces $PFE(t) = E[|\theta - t| |
+  \item \textbf{Pérdida cuadrática}: Si $\mathcal{L}(\theta, t) = (\theta - t)^2$ entonces $PFE(t) = V(\theta | x_1,
+          \ldots, x_n) + b(T, \theta)^2$ y la pérdida final esperada se minimimia en $t^*
+          = E[\theta | x_1, \ldots, x_n]$
+  \item \textbf{Pérdida absoluta}:Si $\mathcal{L}(\theta, t) = |\theta - t|$ entonces $PFE(t) = E[|\theta - t| |
               x_1, \ldots, x_n]$ y la pérdida final esperada se minimiza en la mediana de la
         distribución final (estimador bayesiano)
+    \item \textbf{Pérdida 0-1}: Si $\mathcal{L}(\theta, t) = \begin{cases} 0 & \text{si } t = \theta \\ 1 & \text{si } t \neq \theta \end{cases}$ entonces $PFE_T = P(\theta \neq t | x_1, \ldots, x_n) = 1 - P(\theta = t | x_1, \ldots, x_n)$. Se usa en problemas de decisioón o clasificación donde sólo importa acertar o errar, no cuán lejos se está del valor correcto, es por ello que es mas difícil saber dónde se encuentra el valor que la minimiza.
 \end{enumerate}
 \end{proposición}
 
 \begin{proof}
   \begin{enumerate}
-    \item Si $\mathcal{L}(\theta, t) = (\theta - t)^2 \implies$ $$PFE_T = E[(\theta -
+    \item Si  $\mathcal{L}(\theta, t) = (\theta - t)^2 \implies$ $$PFE_T = E[(\theta -
                 t)^2 | x_1, \ldots, x_n] = E[((\theta - E[\theta | x_1, \ldots, x_n]) +
                 (E[\theta | x_1, \ldots, x_n] - t))^2 | x_1, \ldots, x_n] $$ Si expandimos el
           cuadrado: $$ (\theta - E[\theta | x_1, \ldots, x_n])^2 + 2(\theta - E[\theta |
@@ -497,7 +384,7 @@ Puede darse que existan varias funciones de pérdida, veamos las más comunes:
             t)^2 \text{ dada una muestra, se vuelve una constante}$$ Por lo que se puede
           concluir que $PFE_T = V(\theta | x_1, \ldots, x_n) + (E[\theta | x_1, \ldots,
                 x_n] - t)^2$ y se minimiza en $t^* = E[\theta | x_1, \ldots, x_n]$
-    \item Si $\mathcal{L}(\theta, t) = |\theta - t| \implies$ $$PFE_T = E[|\theta - t| |
+    \item  Si $\mathcal{L}(\theta, t) = |\theta - t| \implies$ $$PFE_T = E[|\theta - t| |
                 x_1, \ldots, x_n] = \int_{\Theta} |\theta - t|F(\theta | x)d\theta \implies$$
           Dividiendo la integral entre los valores positivos y los negativos de $\theta$,
           nos queda que la integral es la suma de: $$\int_{-\infty}^{t} (t -
@@ -508,20 +395,32 @@ Puede darse que existan varias funciones de pérdida, veamos las más comunes:
             \int_{t}^{+\infty} (\theta - t)f(\theta | x)d\theta = $$ $$ =
             \int_{-\infty}^{t} f(\theta | x)d\theta - \int_{t}^{+\infty} f(\theta |
             x)d\theta = 0 \iff$$ $$F_X(t) = 1 - F_X(t) \iff F_X(t) = \frac{1}{2} \implies
-            t^* = \text{mediana de la distribución final}$$
+            t^* = \text{mediana de la distribución final}$$\
+
   \end{enumerate}
 \end{proof}
 
+
+\begin{observación}
+  $$PFE(t) = \int_{\Theta} \underbrace{\mathcal{L}(\theta, t)}_{\text{pérdida si fuera } \theta}
+  \cdot 
+  \underbrace{\pi(\theta \mid x)}_{\text{qué tan probable es } \theta}
+  \, d\theta$$
+\end{observación}
+
 \ejemplo{
-  EJEMPLO DE LA PÉRDIDA FINAL ESPERADA
+  Sea una m.a.s. de tamaño $n$ de una población $X \sim Bernoulli(\theta)$ y pérdida cruadrática e informaci`´on inicial dadas por na distribución $Beta(\alpha_0, \beta_0)$. Por un ejemplo anterior en el apartado de \textbf{Estimadores bayesianos}, que la distribución final o a posteriori es $Beta(\alpha_0 + \sum_{i = 1}^{n}X_i, \beta_0 + n - \sum_{i = 1}^{n}X_i)$ 
+  $$\implies PFE_T = E[(t - \theta)^2 | \vec{x}] = \int_{0}^{1} (t - \theta)^2 \cdot \frac{\theta^{\alpha_0 + \sum_{i = 1}^{n}X_i - 1}(1 - \theta)^{\beta_0 + n - \sum_{i = 1}^{n}X_i - 1}}{\beta(\alpha_0 + \sum_{i = 1}^{n}X_i, \beta_0 + n - \sum_{i = 1}^{n}X_i)}d\theta$$
+  $$ = \int_{0}^{1} (t^2 - 2t\theta + \theta^2) \cdot Beta(\theta; \alpha_1, \beta_1) \, d\theta = t^2\int_{0}^{1} Beta(\theta)d\theta - 2t\int_{0}^{1} \theta\cdot Beta(\theta) d\theta + \int_{0}^{1} \theta^2 \cdot Beta(\theta)$$
+  $$ = t^2 - 2t\frac{\alpha_1}{\alpha_1 + \beta_1} + \frac{\alpha_1(\alpha_1 + 1)}{(\alpha_1 + \beta_1)(\alpha_1 + \beta_1 + 1)} = t^2 - 2t \cdot \mu + E[\theta^2]$$
+  Expresión que se minimiza cuando $t = E[\theta | \vec{x}] = \frac{\alpha_0 + \sum X_i}{\alpha_0 + \beta_0 + n} = \frac{\alpha_1}{\alpha_1 + \beta_1}$
 }
 
 \begin{definición}[Estimador centrado uniformemente de mínima varianza]
-$T^{*} = T^{*}(X_1, \ldots, X_n)$ es un estimador centrado uniformemente de mínima varianza para $\theta$ si y sólo si $E_{\theta}[T^{*}] = \theta$ y para cualquier otro estimador $T = T(X_1, \ldots, X_n)$ con $E_{\theta}[T] = \theta$, se tiene que $V_{\theta}(T^{*}) \leq V_{\theta}(T)$, $\forall \theta \in \Theta$.\\
-En otras palabras, un estimador insesgado $T^{*}$ para $\theta$ es un estimador centrado uniformemente de mínima varianza si y sólo si $T^{*}$ tiene la menor varianza entre todos los estimadores insesgados de $\theta$.
+$T^{*} = T^{*}(X_1, \ldots, X_n)$ es un estimador centrado uniformemente de mínima varianza para $\theta$ si y sólo si $E_{\theta}[T^{*}] = \theta$ y para cualquier otro estimador $T = T(X_1, \ldots, X_n)$ con $E_{\theta}[T] = \theta$, se tiene que $V_{\theta}(T^{*}) \leq V_{\theta}(T)$, $\forall \theta \in \Theta$
 \end{definición}
 
-\begin{proposición}
+\begin{proposición}[Unicidad de los estimadores centrados uniformemente de mínima varianza]
 Si existe un estimador centrado uniformemente de mínima varianza para $\theta$, entonces es único c.s.
 \end{proposición}
 
@@ -546,86 +445,17 @@ Por lo que el estimador que minimiza el error cuadrático medio es $T_{\frac{n}{
 }
 
 \begin{teorema}
-  El estimador centrado uniformemente de mínima varianza es función simétrica de las observaciones.
+  El estimador centrado uniformemente de mínima varianza es función simétrica de las observaciones
 \end{teorema}
 
-\begin{proof}
-  Sea $X = (X_1, X_2, \dots, X_n)$ una muestra aleatoria simple (m.a.s.) de una población con parámetro $\theta$. Supongamos que $T(X)$ es un estimador centrado uniformemente de mínima varianza (ECUMV) de una función $g(\theta)$, es decir:
-  \[
-    E_\theta[T(X)] = g(\theta) \quad \text{para todo } \theta, \quad \text{y} \quad \operatorname{Var}_\theta(T(X)) \leq \operatorname{Var}_\theta(\tilde{T}(X)) \quad \text{para todo estimador insesgado } \tilde{T}.
-  \]
-
-  Sea $\pi$ una permutación de los índices $\{1, 2, \dots, n\}$. Como $X$ es una
-  m.a.s., la distribución conjunta de $(X_1, \dots, X_n)$ es invariante ante
-  permutaciones, es decir, $(X_1, \dots, X_n) \overset{d}{=} (X_{\pi(1)}, \dots,
-    X_{\pi(n)})$.
-
-  Definamos un nuevo estimador permutado:
-  \[
-    T^{\pi}(X) = T(X_{\pi(1)}, X_{\pi(2)}, \dots, X_{\pi(n)}).
-  \]
-
-  Por la invarianza en distribución, se sigue que $T^{\pi}(X)$ también es un
-  estimador insesgado de $g(\theta)$, con la misma varianza que $T(X)$:
-  \[
-    E_\theta[T^\pi(X)] = g(\theta), \quad \operatorname{Var}_\theta(T^\pi(X)) = \operatorname{Var}_\theta(T(X)).
-  \]
-
-  Consideremos ahora el promedio sobre todas las permutaciones posibles del
-  estimador $T(X)$:
-  \[
-    T_s(X) = \frac{1}{n!} \sum_{\pi} T^{\pi}(X).
-  \]
-  Este nuevo estimador $T_s(X)$ es una función \textbf{simétrica} de las
-  observaciones, ya que promedia todas las permutaciones. Además:
-
-  \begin{itemize}
-    \item $T_s(X)$ es insesgado: \\[1ex]
-          \(
-          E_\theta[T_s(X)] = \frac{1}{n!} \sum_{\pi} E_\theta[T^{\pi}(X)] = \frac{1}{n!} \cdot n! \cdot g(\theta) = g(\theta).
-          \)
-
-    \item $T_s(X)$ tiene varianza menor o igual que $T(X)$ (por la desigualdad de Jensen y porque el promedio de estimadores insesgados con la misma varianza no aumenta la varianza).
-  \end{itemize}
-
-  Por la unicidad del estimador ECUMV, se sigue que $T(X) = T_s(X)$ casi
-  seguramente. Es decir, el ECUMV coincide con su versión simetrizada, por lo que
-  debe ser simétrico.
-\end{proof}
-
 \ejemplo{
-  Supongamos que tenemos una m.a.s. de tamaño $n = 2$ con observaciones $X_1$ y $X_2$. Consideremos el estimador $T_1 = \frac{X_1}{X_2}$. Este estimador no es simétrico, ya que depende del orden de las observaciones. Supongamos, por contradicción, que $T_1$ es un estimador centrado uniformemente de mínima varianza (ECUMV).
-
-  Definamos ahora $T_2 = \frac{X_2}{X_1}$, que se obtiene intercambiando el orden
-  de las observaciones. Como la muestra es aleatoria y ambas observaciones tienen
-  la misma distribución, se cumple que $E_\theta[T_2] = E_\theta[T_1]$ y
-  $V_\theta(T_2) = V_\theta(T_1)$.
-
-  Construyamos un nuevo estimador como el promedio:
-  \[
-    T = \frac{T_1 + T_2}{2} = \frac{1}{2} \left( \frac{X_1}{X_2} + \frac{X_2}{X_1} \right) = \frac{X_1^2 + X_2^2}{2X_1 X_2}
-  \]
-
-  Este nuevo estimador $T$ es simétrico con respecto a $X_1$ y $X_2$, además de
-  ser insesgado (por ser la media de dos estimadores insesgados). Además, tiene
-  varianza estrictamente menor que la de $T_1$, salvo que $T_1$ y $T_2$ estén
-  perfectamente correlacionados, lo cual no es el caso. Esto contradice la
-  hipótesis de que $T_1$ era el ECUMV. Por lo tanto, concluimos que un esti mador
-  que no sea simétrico no puede ser ECUMV. }
+  Sea una m.a.s. de tamaño $n = 2$, entonces el estimador $T_1 = \frac{X_1}{X_2}$ no puede ser un estimador centrado uniformemente de mínima varianza, ya que si lo fuera, entonces para el nuevo estimador $T_2 = \frac{X_2}{X_1}$ se tendría que $E_{\theta}[T_2] = E_{\theta}[T_1]$ y $V_{\theta}(T_2) = V_{\theta}(T_1)$ con lo que el estimador $T = \frac{T_1 + T_2}{2} = \frac{X_1^2 + X_2^2}{X_1X_2}$ sería tal que $V_{\theta} < V_{\theta}(T_1)$, lo cual es una contradicción
+}
 
 \begin{observación}
-En general, si tienes un estimador $T$ que no es simétrico, puedes construir un nuevo estimador $\bar{T}$ promediando sobre todas las permutaciones posibles de las observaciones:
-\[
-  \bar{T}(X_1, \dots, X_n) = \frac{1}{n!} \sum_{\pi} T(X_{\pi(1)}, \dots, X_{\pi(n)}),
-\]
-donde la suma se toma sobre todas las permutaciones $\pi$ del conjunto $\{1,
-  \dots, n\}$. Este nuevo estimador $\bar{T}$ es simétrico respecto a las
-observaciones y cumple:
-\[
-  E_\theta[\bar{T}] = E_\theta[T], \quad \text{y} \quad \operatorname{Var}_\theta(\bar{T}) \leq \operatorname{Var}_\theta(T),
-\]
-con desigualdad estricta si $T$ no es simétrico. Es decir, la simetrización no
-cambia la esperanza, pero puede reducir la varianza.
+En general si tienes un estimador $T$ que no es simétrico, puedes promediar sobre todas las permutaciones posibles para crear un nuevo estimador $\bar{T}$:
+$$\bar{T} = \frac{1}{n!}\sum_{i = 1}^{n!} T_j$$
+Este nuevo estimador es simétrico respecto a las observaciones y $V_{\theta}(\bar{T}) \leq V_{\theta}(T_j) \forall j$ donde se cumple que $V_{\theta}(\bar{T}) < V_{\theta}(T_j)$ si $T_j$ no es un estimador simétrico. Además, se cumple que $E_{\theta}[\bar{T}] = E_{\theta}[T]$
 \end{observación}
 
 \begin{teorema}[Teorema de caracterización del ECUMV]
@@ -688,52 +518,9 @@ cambia la esperanza, pero puede reducir la varianza.
 \end{teorema}
 
 \begin{proof}
-  Sea \( S = S(X_1, \ldots, X_n) \) un estadístico suficiente y completo para el parámetro \( \theta \), y sea \( T = T(X_1, \ldots, X_n) \) un estimador insesgado (centrado) de \( \theta \).
-
-  Por el teorema de Rao-Blackwell, si definimos
-  \[
-    g(S) = E[T \mid S],
-  \]
-  entonces \( g(S) \) es un estimador insesgado de \( \theta \), basado en \( S
-  \), y satisface
-  \[
-    V_\theta(g(S)) \leq V_\theta(T).
-  \]
-
-  Ahora, consideremos cualquier otro estimador insesgado \( T_1 \) de \( \theta
-  \). Aplicando nuevamente Rao-Blackwell, el estimador
-  \[
-    g_1(S) = E[T_1 \mid S]
-  \]
-  también es insesgado para \( \theta \), está basado en \( S \), y cumple
-  \[
-    V_\theta(g_1(S)) \leq V_\theta(T_1).
-  \]
-
-  Observemos que \( g(S) \) y \( g_1(S) \) son ambos funciones de \( S \) e
-  insesgados para \( \theta \). Entonces, su diferencia \( g(S) - g_1(S) \)
-  también es una función de \( S \), y tiene esperanza nula:
-  \[
-    E_\theta[g(S) - g_1(S)] = E_\theta[g(S)] - E_\theta[g_1(S)] = \theta - \theta = 0.
-  \]
-
-  Dado que \( S \) es completo, esto implica que
-  \[
-    g(S) = g_1(S) \quad \text{casi seguramente}.
-  \]
-
-  En particular, si \( T = h(S) \) es ya una función de \( S \), entonces
-  \[
-    g(S) = E[T \mid S] = E[h(S) \mid S] = h(S) = T.
-  \]
-
-  Por lo tanto, para cualquier estimador insesgado \( T_1 \), se tiene
-  \[
-    V_\theta(T) = V_\theta(g(S)) = V_\theta(g_1(S)) \leq V_\theta(T_1).
-  \]
-
-  Esto demuestra que \( T \) es el estimador insesgado de varianza mínima (ECUMV)
-  para \( \theta \).
+  $\begin{cases} S \text{ suficiente } \\ T \text{ centrado } \end{cases} \implies g(S) = E[T|S] \text{ es centrado para } \theta \text{ y } V_{\theta}(g(S)) \leq V_{\theta}(T)$ \\
+  Además, se tiene que para cualquier otro estimador $T_1$ centrado para $\theta$, $g_1(S) = E[T_1 | S]$ es centrado para $\theta$ y $V_{\theta}(g_1(S)) \leq V_{\theta}(T_1)$ \\
+  Por lo tanto al ser $S$ completo y $E_{\theta}[g(S) - g_1(S)] = \theta - \theta = 0$ se tiene que $g(S) \stackrel{c.s.}{=} g_1(S)$. En particular, para $T = h(S)$, $g_1(S) = E[h(S) | S] = h(S) = T$ y $V_{\theta}(T) \leq V_{\theta}(T_1)$, cualquiera que sea $T_1$ centrado para $\theta$
 \end{proof}
 
 \ejemplo{
@@ -746,10 +533,10 @@ cambia la esperanza, pero puede reducir la varianza.
   $$E_{\theta}[g(T)] = \sum_{t = 0}^{n} g(t) \binom{n}{t} \theta^t(1 - \theta)^{n-t} = 0, \forall \theta \in [0, 1] \iff$$
   $$\iff (1 - \theta)^n \cdot \sum_{i = 1}^{n} g(t) \binom{n}{t} \left(\frac{\theta}{1 - \theta}\right)^t = 0 \iff$$
   $$\iff \sum_{t = 0}^{n} g(t) \binom{n}{t} x^t = 0, \forall x \in \mathbb{R} \iff g(t) = 0, \forall t \in \{0, \ldots, n\} $$  ya que los coeficientes binomiales son no nulos. \\
-  Por último queda ver que $h(T)$ es un estadístico centrado para $\theta$, i.e. $E_{\theta}[h(T)] = \theta$ y $V_{\theta}(h(T)) < \infty$:
+  Por último queda ver que $S$ es un estadístico centrado para $\theta$, i.e. $E_{\theta}[h(S)] = \theta$ y $V_{\theta}(h(S)) < \infty$:
   $$E_{\theta}[h(T)] = E_{\theta}[\bar{X}] = \frac{1}{n} \cdot \sum_{i = 1}^{n} E_{\theta}[X_i] = \frac{1}{n} \cdot n\theta = \theta$$
   $$V_{\theta}(h(T)) = V_{\theta}(\bar{X}) = \frac{1}{n^2} \cdot \sum_{i = 1}^{n} V_{\theta}(X_i) = \frac{1}{n^2} \cdot n\theta(1 - \theta) = \frac{\theta(1 - \theta)}{n} < \infty$$
-  Por lo tanto, $h(T) = \bar{X}$ es el ECUMV para $\theta$
+  Por lo tanto, $T = n\bar{X}$ es el ECUMV para $\theta$
 }
 
 \ejemplo{
@@ -881,6 +668,20 @@ cambia la esperanza, pero puede reducir la varianza.
 }
 
 \subsection{Cota para la varianza de un estimador}
+\begin{definición}[Score]
+  Sea $X$ variable aleatoria que sigue una distribución uniparamétrica continua o discreta y sea una m.a.s. de tamaño $n$ tales que $f_{\theta}(x_1, \ldots, x_n)$ es su función de densidad o masa. Entonces se define el \underline{score} como: 
+  $$S_{\theta}(x_1, \ldots, x_n) = \frac{\partial}{\partial \theta} \log f_{\theta}(x_1, \ldots, x_n) = \frac{1}{f_{\theta}(x_1, \ldots, x_n)}\frac{\partial}{\partial \theta} f_{\theta}(x_1, \ldots, x_n) $$
+\end{definición}
+
+\begin{observación}
+  El score mide cuánta información hay en una observación sobre $\theta$. Si el score es muy sensible a cambios sobre $\theta$ entonces hay una poco variación en $\theta$ hace que la verosimilitud cambie mucho y por tanto hay mucha información para estimar $\theta$. 
+\end{observación}
+
+\begin{definición}[Información de Fisher]
+  Sea $X$ variable aleatoria que sigue una distribución uniparamétrica continua o discreta y sea una m.a.s. de tamaño $n$ tales que $f_{\theta}(x_1, \ldots, x_n)$ es su función de densidad o masa. Entonces se define la \underline{información de Fisher} como:
+  $$I_n(\theta) = E_{\theta}\left[S_{\theta}(X_1, \ldots, X_n)^2\right] = E_{\theta}\left[\left(\frac{\partial}{\partial \theta} \log f_{\theta}(X_1, \ldots, X_n)\right)^2\right]$$
+\end{definición}
+
 Hemos visto hasta ahora el \underline{estimador centrado uniformemente de
   mínima varianza}, que cómo su nombre indica, es el que tiene varianza más
 pequeña. \\ Si definieramos una varianza mínima para los estimadores de un
@@ -899,7 +700,7 @@ Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \su
 \end{definición}
 
 \begin{teorema}[Cota de Fréchet-Cramér-Rao]
-  Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, \quad E_{\theta}[T]=d(\theta)$ y $$d^{\prime}(\theta)=\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$$ entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \quad \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
+  Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, \quad E_{\theta}[T]=d(\theta)$ y $$d^{\prime}(\theta) = \frac{d}{d\theta} E[T] =\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$$ entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \quad \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
 
   $$
     P_{\theta}\left(\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: T\left(x_{1}, \cdots, x_{n}\right)=d(\theta)+k(\theta) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)=1, \forall \theta \in \theta
@@ -945,47 +746,128 @@ Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \su
   y $b=\frac{d^{\prime}(\theta)}{l_{n}(\theta)}=k(\theta)$\\
 \end{proof}
 
-\begin{proposición}
+
+\ejemplo{
+  Supongamos que tenemos un termómetro que mide la temperatura siguiendo una distribución normal con media $\mu$ y varianza $\sigma^2$. Tomemos que $\sigma^2 = 0.01$, de manera que tenemos que: 
+  \begin{center}
+    \begin{tabular}{ c c c }
+     Medición & Valor \\ 
+     1 & 21.0  \\  
+     2 & 21.1  \\
+     3 & 20.9
+    \end{tabular}
+    \end{center}
+  Se puede ver que las mediciones están mu cerca entre ellas, por lo que podríamos confiar en la media de las observaciones. \\
+  Veamos la información de Fisher: 
+  $$S_{\mu}(x_1, \ldots, x_n) = \frac{\partial}{\partial \mu} \log f_{\mu}(x_1, \ldots, x_n) = \frac{\partial}{\partial\mu}\left( -\frac{1}{2}\log(2\pi\sigma^2) - \frac{(x - \mu)^2}{2\sigma^2}\right) = \frac{x - \mu}{\sigma^2} \implies$$
+  \begin{observación}
+    Dado que se da que: 
+    $$E_{\mu} \left[ \frac{x - \mu}{\sigma^2}\right] = \frac{1}{\sigma^2}E_{\mu}\left[x - \mu\right] = \frac{1}{\sigma^2}(\mu - \mu) = 0 \implies I_n(\mu) = Var(S_{\theta}(\vec{x})) = E_{\mu}\left[S_{\mu}(\vec{x})\right]$$
+  \end{observación}
+  $$I_n(\mu) = E_{\mu}\left[S_{\mu}(X_1, \ldots, X_n)^2\right] = E_{\mu}\left[\left(\frac{{X - \mu}}{{\sigma^2}}\right)^2\right] = Var(\frac{X - \mu}{\sigma^2}) =$$ $$= \frac{1}{\sigma^2} \cdot Var(X - \mu) = \frac{1}{\sigma^4} \cdot Var(X) = \frac{1}{\sigma^4} \cdot \sigma^2 = \frac{1}{\sigma^2} $$
+  Entonces, la información de Fisher es:
+  $$I_n(\mu) = \frac{1}{\sigma^2} = \frac{1}{0.01} = 100$$
+  La cual es bastante alta lo que conlleva que podremos realiar una estimación mucho más precisa de $\mu$. Asimismo, también podemos deducir por la cota de Fréchet-Cramér-Rao que ningun estimador centrado o insesgado puede tener varianza menor que: 
+  $$Var(T) \geq \frac{1}{I_n(\mu)} = \frac{1}{100} = 0.01$$
+  Para poder estimar $\theta = \mu$ con precisión.
+}
+
+\begin{corolario}
 Bajo las suposiciones anteriores, si T es un estadístico tal que
 $E_{\theta}[T]=d(\theta)$ y $V_{\theta}(T)=\frac{d^{\prime}(\theta)^{2}}{l_{n} \theta)}$, entonces $T$ es ECUMV para d $(\theta)$
-\end{proposición}
+\end{corolario}
 
-\begin{proposición}
+\begin{corolario}
 Bajo las suposiciones anteriores, si ( $X_{1}, \cdots X_{n}$ ) es
 m.a.s. (n) de $\left\{F_{\theta}, \theta \in \Theta\right\}$, entonces
 $I_{n}(\theta)=n I_{1}(\theta)$ Indicación: $f_{\theta}\left(x_{1}, \cdots
   x_{n}\right)=\prod_{i=1}^{n} f_{\theta}\left(x_{i}\right)$
-\end{proposición}
+\end{corolario}
 
 \begin{proposición}
 Bajo las suposiciones anteriores, si la distribución de $X$ pertenece a la familia exponencial uniparamétrica, es decir, $f_{\theta}(x)=c(\theta) h(x) e^{q_{1}(\theta) T_{1}(x)}$, con $q_{1}^{\prime}(\theta)$ no nula, entonces el estadístico $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(X_{i}\right)$ alcanza la cota de FCR para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$
 \end{proposición}
 
 \begin{proof}
-  $f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c(\theta)^{n} \prod_{i=1}^{n} h\left(x_{i}\right) e^{q_{1}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)}$\\
-  $\frac{\partial}{\partial \theta} \log f_{\theta}=n \frac{c^{\prime}(\theta)}{c(\theta)}+q_{1}^{\prime}(\theta) \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$\\
-  $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)=a(\theta)+b(\theta) \frac{\partial}{\partial \theta} \log f_{\theta}, a(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}, b(\theta)=\frac{1}{n q_{1}^{\prime}(\theta)}$\\
-  $\frac{1}{n} \sum_{i=1}^{n} T_{1}\left(x_{i}\right)$ es centrado para $d(\theta)=-\frac{c^{\prime}(\theta)}{c(\theta) q_{1}^{\prime}(\theta)}$ y alcanza la cota
-
-\end{proof}
+  Sea una función de verosimilitud de la forma:
+  \[
+  f_{\theta}\left(x_{1}, \ldots, x_{n}\right)
+  = c(\theta)^n \prod_{i=1}^{n} h(x_i) \cdot \exp\left( q_1(\theta) \sum_{i=1}^{n} T_1(x_i) \right)
+  \]
+  
+  Entonces, la derivada del logaritmo de la verosimilitud respecto de \(\theta\) (el **score**) es:
+  \[
+  \frac{\partial}{\partial \theta} \log f_{\theta}
+  = n \cdot \frac{c'(\theta)}{c(\theta)} + q_1'(\theta) \sum_{i=1}^{n} T_1(x_i)
+  \]
+  
+  Dividiendo ambos lados entre \(n\), se obtiene:
+  \[
+  \frac{1}{n} \sum_{i=1}^{n} T_1(x_i)
+  = -\frac{c'(\theta)}{c(\theta) q_1'(\theta)} + \frac{1}{n q_1'(\theta)} \cdot \frac{\partial}{\partial \theta} \log f_{\theta}
+  \]
+  
+  Es decir:
+  \[
+  \frac{1}{n} \sum_{i=1}^{n} T_1(x_i)
+  = a(\theta) + b(\theta) \cdot \frac{\partial}{\partial \theta} \log f_{\theta}
+  \]
+  donde:
+  \[
+  a(\theta) = -\frac{c'(\theta)}{c(\theta) q_1'(\theta)}, \quad
+  b(\theta) = \frac{1}{n q_1'(\theta)}
+  \]
+  
+  Como la esperanza del score es cero bajo condiciones regulares, se tiene:
+  \[
+  \mathbb{E}_\theta\left[ \frac{1}{n} \sum_{i=1}^{n} T_1(x_i) \right] = a(\theta)
+  \]
+  por lo que el estadístico \(\frac{1}{n} \sum_{i=1}^{n} T_1(x_i)\) es **centrado** para el parámetro:
+  \[
+  d(\theta) = -\frac{c'(\theta)}{c(\theta) q_1'(\theta)}
+  \]
+  
+  Además, como está escrito como combinación lineal del score, alcanza la **cota de Cramér-Rao** bajo condiciones regulares.
+  \end{proof}
+  
 
 \ejemplo{
-  Si $X \sim \operatorname{Bin}(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$\\
+  Si $X \sim Bin(1, \theta), T=\bar{X}$ alcanza la cota de FCR para $d(\theta)=\theta$
+  Primero calculemos el score: 
+  $$S_{\theta}(x_1, \ldots, x_n) = \frac{\partial}{\partial \theta} \log f_{\theta}(x_1, \ldots, x_n) = \frac{\partial}{\partial\theta}\left(ln\left(\theta^{\sum x_i} \cdot (1 - \theta)^{n - \sum x_i}\right)\right) = $$ $$ = \frac{\partial}{\partial\theta}\left((\sum x_i)\cdot ln(\theta) + (n - \sum x_i)\cdot ln(1 - \theta)\right) = \frac{\sum x_i}{\theta} + \frac{\sum x_i - n}{1 - \theta} $$
+
+  $$ = \frac{\sum x_i - n\theta}{\theta(1 - \theta)} = \frac{n\bar{X} - n\theta}{\theta(1 - \theta)}$$
+  Ahora calculemos la información de Fisher: 
+  $$I_n(\theta) = E_{\theta}\left[S_{\theta}(X_1, \ldots, X_n)^2\right] = E_{\theta}\left[\left(\frac{n\bar{X} - n\theta}{\theta(1 - \theta)}\right)^2\right] = \frac{n^2}{\theta^2(1 - \theta)^2}E_{\theta}\left[(\bar{X} - \theta)^2\right] = $$
+
+  $$ = \frac{n^2}{\theta^2(1 - \theta)^2} \cdot E_{\theta}\left[\bar{X}^2 + \theta^2 - 2\theta\bar{X}\right] = \frac{n^2}{\theta^2(1 - \theta)^2}\cdot\left(E_{\theta}[\bar{X}^2] + \theta^2 -2\theta E_{\theta}[\bar{X}]\right)= $$ $$= \frac{n^2}{\theta^2(1 - \theta)^2}\cdot(\frac{\sigma^2}{n} + \mu^2 + \theta^2 -2\theta\mu)$$
+  
+  Ahora sustituimos $\mu = \theta$ y $\sigma^2 = \theta(1 - \theta)$:
+  $$ = \frac{n^2}{\theta^2(1 - \theta)^2}\cdot(\frac{\theta(1 - \theta)}{n} + \theta^2 + \theta^2 - 2\theta^2) = \frac{n^2}{\theta^2(1 - \theta)^2} \cdot \frac{\theta(1 - \theta)}{n} = \frac{n}{\theta(1 - \theta)}$$
+  Entonces tenemos que la cota de FCR es:
+  $$Var(T) \geq \frac{1}{I_n(\theta)} = \frac{\theta(1 - \theta)}{n}$$
+  Por lo que el estimador $\bar{X}$ es el ECUMV para $d(\theta)=\theta$.
 }
 
 \ejemplo{
-  Si se cumplen las condiciones de regularidad y además\\ (1)
-  $\forall\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n} y \forall \theta \in
-    \Theta, \exists \frac{\partial^{2}}{\partial \theta^{2}} f_{\theta}\left(x_{1},
-    \cdots, x_{n}\right)$\\ (2) $\int_{\chi^{n}} \frac{\partial^{2}}{\partial
-      \theta^{2}} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d
-    x_{n}=0$
+  Sea una población que sigue una distribución $Poisson(\theta)$ y una m.a.s. de tamaño $n$ de esa población. Se quiere estimar $\theta$ veamos cual debería ser la varianza del supuesto estimador: 
+  Primero calculemos el score:
+  $$S_{\theta}(x_1, \ldots, x_n) = \frac{\partial}{\partial\theta}ln(f_{\theta}(x_1, \ldots, x_n)) = \frac{\partial}{\partial\theta}\left(ln\left(\frac{e^{-n\theta} \cdot \theta^{\sum x_i}}{\prod x_i!}\right)\right) = $$ $$ = \frac{\partial}{\partial\theta}\left(-n\theta + (\sum x_i)ln(\theta) - \sum ln(x_i!)\right) = \frac{\sum x_i}{\theta} - n = \frac{n\bar{X}}{\theta} - n$$
+  Ahora veamos la información de Fisher:
+  $$I_{n}(\theta) = E_{\theta}\left[S_{\theta}(X_1, \ldots, X_n)^2\right] = E_{\theta}\left[\left(\frac{n\bar{X}}{\theta} - n\right)^2\right] = $$
+  $$ = E_{\theta}\left[n^2\left(\frac{\bar{X}^2}{\theta^2} + 1 - \frac{2\bar{X}}{\theta}\right)\right] = n^2\left(\frac{E_{\theta}[\bar{X}^2]}{\theta^2} + 1 - \frac{2E_{\theta}[\bar{X}]}{\theta}\right) = n^2\left(\frac{\mu^2 + \frac{\sigma^2}{n}}{\theta^2} + 1 - \frac{2\mu}{\theta}\right) = $$
+  Sustituyendo $\mu = \theta$ y $\sigma^2 = \theta$:
+  $$ = n^2\left(\frac{\theta^2}{\theta^2} + \frac{1}{n\theta} + 1 \frac{\theta}{\theta}\right) = n^2\left(\frac{1}{n\theta}\right) = \frac{n}{\theta}$$
 
-  Entonces, $I_{n}(\theta)=-E\left[\frac{\partial^{2}}{\partial \theta^{2}} \log
-      f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right]$\\ Indicación:
-  $\frac{\partial}{\partial \theta} \log f_{\theta}\left(x_{1}, \cdots,
-    x_{n}\right)=\frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots,
-    x_{n}\right) \frac{1}{f_{\theta}\left(x_{1}, \cdots, x_{n}\right)}$ }
+  Por tanto la cota de FCR es: $$Var(T) \geq \frac{\theta}{n}$$ Luego el estimador $\bar{X}$ coincide con la varianza y por tanto es el ECUMV para $d(\theta)=\theta$.
+
+  Asimismo, existe una forma alternativa de calcular la información de Fisher, y es a través de la fórmula: 
+  $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \log f_{\theta}(X_1, \ldots, X_n)\right]$$
+  En nuestro caso sería: 
+  $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \log f_{\theta}(X_1, \ldots, X_n)\right] = -E_{\theta}\left[\frac{\partial}{\partial\theta}\left(\frac{n\bar{X}}{\theta} - n\right)\right] = -E_{\theta}\left[\frac{- n\bar{X}}{\theta^2}\right]  = $$
+  $$ = \frac{n}{\theta^2}E_{\theta}\left[\bar{X}\right] = \frac{n}{\theta^2}\cdot\theta = \frac{n}{\theta}$$
+  Por lo que la información de Fisher coincide con la que hemos calculado anteriormente.
+}
 
 \begin{definición} [Estimador Eficiente]
 Diremos que un estimador es eficiente para $d(\theta)$ si es centrado para $d(\theta)$ y su varianza alcanza la cota de FCR\\
@@ -996,20 +878,118 @@ $$
 $$
 \end{definición}
 
-\subsection{Métodos de construcción de estimadores}
-\textbf{Método de los momentos}\\
-Este método consiste en elegir como estimador de un momento poblacional su momento muestral asociado, es decir\\
-(1) El estimador por el método de los momentos del momento poblacional respecto al origen de orden $\mathrm{k}, \alpha_{k}=E\left[X^{k}\right]$, es $a_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k}$\\
-(2) El estimador por el método de los momentos del momento poblacional respecto a la media de orden k ,
+\ejemplo{
+  Sea $X \sim Poisson(\theta)$ y $T=\bar{X}$, entonces $T$ es un estimador eficiente para $\theta$\\
+  Primero calculemos la varianza de $T$: 
+  $$V_{\theta}(T) = E_{\theta}\left[\bar{X}^2\right] - E_{\theta}\left[\bar{X}\right]^2 = \frac{\sigma^2}{n} + \mu^2 - \mu^2 = \frac{\sigma^2}{n} = \frac{\theta}{n}$$
+  Por lo que la eficiencia de $T$ es: 
+  $$ef(T, d(\theta)) = \frac{d^{\prime}(\theta)^{2}}{I_{n}(\theta) V_{\theta}(T)} = \frac{\theta^2}{\frac{n}{\theta} \cdot \frac{\theta}{n}} = 1$$
+  Por lo que el estimador $\bar{X}$ es eficiente para $\theta$. 
+}
 
-$$
-  \beta_{k}=E\left[\left(X-\alpha_{1}\right)^{k}\right], \text { es } b_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k}
-$$
+\subsection{Métodos de construcción de estimadores}
+\subsubsection{Método de los momentos}
+\begin{definición}[Método de los momentos]
+  Sea $X$ una variable aleatoria que sigue una distribución uniparamétrica continua o discreta y sea una m.a.s. de tamaño $n$ tales que $f_{\theta}(x_1, \ldots, x_n)$ es su función de densidad o masa. Entonces se define el \underline{método de los momentos} como el método que consiste en igualar los momentos muestrales a los momentos poblacionales.
+  \begin{enumerate}
+    \item Si $E\left[X^{k}\right]$ es el momento poblacional respecto al origen de orden $k$, entonces el estimador por el método de los momentos del momento poblacional respecto al origen de orden $k$ es:
+    $$\hat{\theta}_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k}$$
+    \item Si $E\left[\left(X-\alpha_{1}\right)^{k}\right]$ es el momento poblacional respecto a la media de orden $k$, entonces el estimador por el método de los momentos del momento poblacional respecto a la media de orden $k$ es:
+    $$\hat{\theta}_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k}$$
+  \end{enumerate}
+\end{definición}
 
 \ejemplo{
-  Si $X \sim \operatorname{Gamma}(a, p)$, calcular un estimador por el
-  método de los momentos de $\theta=(a, p)$ basado en una m.a.s. ( $n$ )
+  Supongamos que \(X \sim \text{Gamma}(a, p)\), donde \(a > 0\) es el parámetro de forma y \(p > 0\) es el parámetro de escala. La función de densidad es:
+
+  \[
+  f(x) = \frac{1}{\Gamma(a)p^a} x^{a-1} e^{-x/p}, \quad x > 0
+  \]
+  
+  Sean \(X_1, X_2, \dots, X_n\) una muestra aleatoria simple de esta distribución. Aplicamos el método de los momentos, que consiste en igualar los momentos teóricos con los empíricos.
+  
+  \subsection*{Momentos teóricos}
+  
+  Sabemos que:
+  
+  \[
+  \mathbb{E}[X] = a p, \qquad \text{Var}(X) = a p^2
+  \]
+  
+  \subsection*{Momentos muestrales}
+  
+  Calculamos los momentos muestrales:
+  
+  \[
+  \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i, \qquad S^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})^2
+  \]
+  
+  \subsection*{Igualación de momentos}
+  
+  Igualamos los momentos teóricos y muestrales:
+  
+  \[
+  \begin{cases}
+  \bar{X} = a p \\
+  S^2 = a p^2
+  \end{cases}
+  \]
+  
+  Despejamos \(a\) y \(p\):
+  
+  De la primera ecuación:
+  
+  \[
+  a = \frac{\bar{X}}{p}
+  \]
+  
+  Sustituimos en la segunda:
+  
+  \[
+  S^2 = \left( \frac{\bar{X}}{p} \right) p^2 = \bar{X} p \Rightarrow p = \frac{S^2}{\bar{X}}
+  \]
+  
+  Luego, sustituimos en la expresión de \(a\):
+  
+  \[
+  a = \frac{\bar{X}}{p} = \frac{\bar{X}^2}{S^2}
+  \]
+  
+  \subsection*{Conclusión}
+  
+  El estimador de \(\theta = (a, p)\) por el método de los momentos es:
+  
+  \[
+  \boxed{
+  \hat{a} = \frac{\bar{X}^2}{S^2}, \quad \hat{p} = \frac{S^2}{\bar{X}}
+  }
+  \]
+
 }
+
+\ejemplo{
+  Para una m.a.s. de tamaño $n$ de una poblacion de $Bernouilli(\theta)$ en este caso $r = 1$, $\alpha_1(\theta) = \theta$ y $a_1 = \bar{X}$ por lo tanto el estimador $\bar{X}$ es el estimador de los momentos para $\theta$.
+}
+
+\ejemplo{
+  Para una población con distribución de $Poisson(\theta)$ se necesita una sola ecuación, $\alpha_1(\theta) = \theta$ y $a_1 = \bar{X}$ por lo tanto el estimador $\bar{X}$ es el estimador de los momentos para $\theta$.
+
+}
+
+\ejemplo{
+  Para una población $X$ con distribución $N(\mu, \sigma)$ con ambos parámetros desconocidos $\vec{\theta} = (\mu, \sigma)$ es $r = 2$ y se debe resolver el sistema:
+  $$\begin{cases}
+    \mu = \bar{X} \\
+    \sigma^2 + \mu^2 = \frac{1}{n} \sum_{i=1}^{n} X_i^2
+  \end{cases}$$
+  Lo que lleva a que los estimadores por el método de los momentos son: $\bar{X}$ y $\sqrt{b_2}$
+}
+
+\subsubsection{Método de máxima verosimilitud}
+
+\begin{definición}[Estimador de máxima verosimilitud]
+  Dada $C(X_1, \ldots, X_n) \subset \Theta$ región aleatoria del espacio paramétrico tal que $P_{\theta}\{\theta \in C(X_1, \ldots, X_n)\} \geq 1 - \alpha \forall \theta \in \Theta$, entonces para cada posible valor $(x_1, \ldots, x_n) \in \chi^n$, $C(x_1, \ldots, x_n)$ se denomina región de confianza para $\theta$ de nivel $1 - \alpha$
+\end{definición}
 
 \textbf{Método de máxima verosimilitud}\\
 Supongamos que una urna contiene 6 bolas entre blancas y negras, no todas del mismo color, pero se ignora cuantas hay de cada uno. Para tratar de adivinar la composición de la urna se permiten dos extracciones con reemplazamiento de la misma y resultó que ninguna de ellas fue blanca. Dar una estimación de la probabilidad $\theta$ de que una bola extraída aleatoriamente de dicha urna sea blanca
@@ -1247,3 +1227,198 @@ Las condiciones de regularidad del teorema anterior pueden simplificarse a las s
   \item $\exists \, \varepsilon > 0 \text{ y } M(x) \text{ tales que } \sup_{|\theta - \theta_0| \leq \varepsilon} \left| \frac{\partial^2}{\partial \theta^2} \varphi(x, \theta) \right| \leq M(x)$ con $M(x) < \infty$
 \end{enumerate}
 \end{observación}
+
+\subsection{Ejercicios}
+\begin{problem}{4.6.1}
+  Sea una m.a.s. de tamaño $n$ de una poblacion $Bernouilli(\theta)$, donde $h(\theta) = \frac{1}{\theta}$ es la función a estimar, demuéstrese que no existe estimador centrado para $h(\theta)$ basado en el estadístico $\sum_{i=1}^{n} X_i$
+\end{problem}
+\begin{sol}
+  Si existiese tal estimador, éste tendría que ser de la forma $T\left(\sum_{i = 1}^{n} X_i\right)$, tal que 
+  $$\sum_{x = 0}^{n} T(x) \binom{n}{x} \theta^x (1 - \theta)^{n - x} = \frac{1}{\theta}$$
+  Por ello cuando hacemos que $\theta \to 0$ tenemos que: 
+  \begin{enumerate}
+    \item Cuando $x > 0 \implies \theta^x \to 0$ 
+    \item Cuando $x = 0 \implies T(0) \cdot 1 \cdot 1 \cdot (1 - \theta)^n \to T(0)$
+  \end{enumerate}
+  No obstante, por la igualdad anterior se tiene que también: 
+  $$T(0) = \lim_{\theta \to 0} \frac{1}{\theta} = \infty$$
+  Por lo tanto, $T(0) = \infty$ y no existe un estimador centrado para $h(\theta)$ basado en el estadístico $\sum_{i=1}^{n} X_i$
+\end{sol}
+
+\begin{problem}{4.6.2}
+  Sea $X = x$ una observación de una población $Poisson(\theta)$ ¿Existe un estimador centrado para $h(\theta) = \frac{1}{\theta}$
+\end{problem}
+\begin{sol}
+  Estamos en el plano unidimensional por lo que nuestra función de densidad es: 
+  $$f_{\theta}(x) = \frac{\theta^x e^{-\theta}}{x!} \implies E[X] = \sum_{x = 0}^{+\infty} x \cdot \frac{\theta^x \cdot e^{-\theta}}{x!}= \theta$$
+  Entonces hemos de suponer que existe un estaístico $T(x)$ tal que: 
+  $$E[T(x)] = \sum_{x = 0}^{+\infty} T(x) \cdot \frac{\theta^x e^{-\theta}}{x!} = \frac{1}{\theta}$$
+  Sabemos que: 
+  $$e^{\theta} = \sum_{x = 0}^{+\infty} \frac{\theta^x}{x!} = \frac{1}{\theta} \cdot \sum_{x = 0}^{+\infty} \frac{\theta^{x+1}}{x!}$$
+  Entonces hemos de tomar $T(x) = \frac{1}{X + 1}$, de forma que: 
+  $$E[T(X)] = \sum_{x = 0}^{+\infty} \frac{1}{x + 1} \cdot \frac{\theta^x e^{-\theta}}{x!} = \frac{e^{-\theta}}{\theta} \sum_{x = 0}^{+\infty} \frac{\theta^{x+1}}{(x+1)!} = \frac{e^{-\theta}}{\theta} \cdot e^{\theta} = \frac{1}{\theta}$$
+\end{sol}
+
+\begin{problem}{4.6.3}
+  Sea una m.a.s. de tamaño $n$ de una población $N(\theta, 1)$ y siendo $h(\theta) = \theta^2$ la función a estimr, demuéstrese que $T(X_1, \ldots, X_n) = \bar{X}^2 - \frac{1}{n}$ es el estimador de maxima verosimilitud para $h(\theta)$. ¿Es $T(X_1, \ldots, X_n)?$ un etimador consistente?
+\end{problem}
+\begin{sol}
+  NO SÉ QUE ES UN ESTIMADOR DE MÍNIMA VARIANZA
+\end{sol}
+
+
+\begin{problem}{4.6.4}
+  Sean $X_1, \ldots, X_n$ variables aleatorias i.i.d. con distribución de $Poisson(\theta)$ y supuesto que la información inicial sobre $\theta$ viene dada por una distribución $Gamma(a, p), a > 0, p > 0$
+  \begin{enumerate}
+    \item Pruébese que la familia $Gamma$ es conjugada respecto a la población $Poisson$
+    \item Calcúlese la media y la varianza de la distribución final
+  \end{enumerate}
+\end{problem}
+\begin{sol}
+  \begin{enumerate}
+    \item $$\pi(\theta | \vec{x}) = \frac{\pi(\theta) \cdot f(\vec{x} | \theta)}{m(\vec{x})} = \frac{\frac{p(p\theta)^{a-1} e^{-p\theta}}{\Gamma(a)} \cdot e^{-n\theta}\cdot \prod_{i=1}^{n} \frac{\theta^{x_i}}{x_i!}}{\int_{0}^{+\infty} \frac{p(p\theta)^{a-1} e^{-p\theta}}{\Gamma(a)} \cdot e^{-n\theta}\cdot \prod_{i=1}^{n} \frac{\theta^{x_i}}{x_i!} d\theta} = \frac{\theta^{a - 1}e^{-p\theta} \cdot e^{-n\theta}\cdot \theta^{\sum x_i}}{\int_{0}^{+\infty} \theta^{a-1}e^{-p\theta} \cdot e^{-n\theta}\cdot \theta^{\sum x_i} d\theta} = $$
+    $$ = \frac{\theta^{a - 1 + \sum x_i} e^{-(p + n)\theta}}{\int_{0}^{+\infty} \theta^{a + \sum x_i} e^{-(p + n)\theta} d\theta} \implies \text{tomando} \begin{cases}
+      a' = a - 1 + \sum x_i \\
+      p' = p + n
+    \end{cases} \implies \pi(\theta | \vec{x}) \sim Gamma(a', p')$$
+    \item $$E[\theta | \vec{x}] = \int_{0}^{+\infty} \theta \cdot \frac{p' \cdot (p'\theta)^{a' - 1} e^{-p'\theta}}{\Gamma(a')} d\theta = \frac{a'}{p'} = \frac{a + n\bar{x}}{p + n}$$
+    $$V[\theta | \vec{x}] = \int_{0}^{+\infty} (\theta - E[\theta | \vec{x}])^2 \cdot \frac{p' \cdot (p'\theta)^{a' - 1} e^{-p'\theta}}{\Gamma(a')} d\theta = \frac{a'}{(p')^2} = \frac{a + n\bar{x}}{(p + n)^2}$$
+    \end{enumerate}
+\end{sol}
+
+\begin{problem}{4.6.5}
+  Sea una m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$. Se definen los estimadores de $\sigma^2$ como:
+  $$ T(\vec{X}) = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2 \quad \quad S(\vec{X}) = \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \bar{X})^2 $$
+  \begin{enumerate}
+    \item Compárese el sesgo de ambos estimadores. 
+    \item Mediante el criterio del Error Cuadrático Medio compruébese que: 
+    $$ECM_T(\sigma^2) = \frac{(2n - 1)\sigma^4}{n^2} \quad \quad ECM_S(\sigma^2) = \frac{2\sigma^4}{n - 1}$$
+    \item Pruébese que entre todos los estimadores de la forma $\alpha T(\vec{X})$ con $\alpha \in \mathbb{R}$, el óptimo de cuerdo on el criterio del error cuadrático medio, se obtiene para $\alpha = \frac{n}{n+1}$
+  \end{enumerate}
+\end{problem}
+
+\begin{sol}
+  \begin{enumerate}
+    \item $$E[T(\vec{X})] = E[\frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2] = \frac{1}{n} \sum_{i=1}^{n} E[(X_i - \bar{X})^2] = \frac{1}{n} \sum_{i=1}^{n} E[X_i^2] + E[\bar{X}^2] - 2E[X_i \bar{X}] = $$
+    $$ = \sigma^2 + \mu^2 + \frac{\sigma^2}{n} +\mu^2 - \frac{2}{n} \sum_{i = 1}^{n} E[X_i\bar{X}] = \sigma^2 + \mu^2 + \frac{\sigma^2}{n} +\mu^2 - 2\left(\mu^2 + \frac{\sigma^2}{n}\right) = \frac{\sigma^2 (n - 1)}{n} \implies Bias(T) = -\frac{\sigma^2}{n}$$
+
+
+    $$E[S(\vec{X})] = E[\frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2] = \frac{1}{n-1} \sum_{i=1}^{n} E[(X_i - \bar{X})^2] = \frac{1}{n-1} \sum_{i=1}^{n} E[X_i^2] + E[\bar{X}^2] - 2E[X_i \bar{X}] = $$ 
+    $$ = \frac{1}{n-1}\left(n(\mu^2 + \sigma^2) + n\left(\frac{\sigma^2}{n} + \mu^2\right) -2n\left(\frac{\sigma^2}{n} + \mu^2\right)\right) = \sigma^2 \implies Bias(S) = 0$$
+    \item 
+      Dado que se cumple que $ECM_T(\theta) = V_{\theta}(T) + b(T, \theta)^2$, calculemos la varianza de ambos estadísticos: 
+      $$\text{Sabemos que } S = S^2 \text{ el conocido } \implies (n-1)\frac{S^2}{\sigma^2} \sim \chi^2_{n-1} \implies V[\chi^2_{n-1}] = 2(n - 1) = V[(n-1)\frac{S^2}{\sigma^2}]$$ 
+      $$ \iff V[S^2] = V[\frac{\sigma^2}{n-1}\cdot \chi_{n-1}^2] = \frac{2\sigma^4}{n - 1} \implies ECM_S(\sigma^2) = \frac{2\sigma^4}{n - 1} + 0^2 = \frac{2\sigma^4}{n - 1}$$
+
+      $$\text{Por otro lado, } T = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2 = \frac{1}{n} \cdot \frac{(n-1)\sigma^2}{n-1} \cdot \chi_{n-1}^2 = \frac{\sigma^2}{n(n-1)}\cdot \chi_{n-1}^2$$
+      $$\implies V[T] = \frac{\sigma^4}{n^2(n-1)^2} \cdot V[\chi_{n-1}^2] = \frac{2\sigma^4}{n^2(n-1)^2} \implies ECM_T(\sigma^2) = \frac{(2n - 1)\sigma^4}{n^2} + \left(-\frac{\sigma^2}{n}\right)^2 =$$ $$ = \frac{(2n - 1)\sigma^4}{n^2} + \frac{\sigma^4}{n^2} = \frac{(2n - 1)\sigma^4}{n^2}$$
+      \item NO SE COMO HACERLO
+  \end{enumerate}
+\end{sol}
+
+\begin{problem}{4.6.6}
+  Si la información inicial sobre $\theta$ viene dada por la funcion $\pi(\theta)$, bien de densidad o de masa, con momento de orden dos finito y se supone que la pérdida en que se incurre por estimar $\theta$ mediante $T(X_1, \ldots, X_n)$ es la cuadrática $L(\theta, T) = (\theta - T)^2$, demúestrese que la pérdida final esperada $PFE_T$ es mínima cuando $T(X_1, \ldots, X_n) = E[\theta | X_1, \ldots, X_n]$ y que el valor de la pérdida esperada coincide con la varianza de la distribución final. 
+\end{problem}
+\begin{sol}
+    NO SÉ CÓMO HACERLO
+\end{sol}
+
+\begin{problem}{4.6.7}
+  A una persona se le pasa un test de inteligencia, cuyo resultado $X$ se supone que sigue una distribución $N(\theta, \sigma = 10)$ donde $\theta$ es su nivel de inteligencia real. Supóngase que en el colectivo al que pertenece la persona, la inteligencia $\theta$ se distribuye con una $N(100, \sigma_0 = 15)$ ¿Cuál sería el estimador bayesiano de $\theta$ si se supone pérdida cuadrática? ¿Cuánto valdría éste si la persona obtiene como resultado del test el valor 110? ¿Cuál es el valor de la PFE correspondiente?
+\end{problem}
+\begin{sol}
+  Dado que las distribuciones normales son conjugadas con si mismas, tenemos una fórmula para sacar los parámetros de la distribución final. En este caso, tenemos que:
+  $$\mu_1 = \frac{\frac{\mu_0}{\sigma_0^2} + \frac{n\bar{x}}{\sigma^2}}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}} = \frac{\frac{100}{225} + \frac{x}{100}}{\frac{1}{225} + \frac{1}{100}} = \frac{400 + 9x}{13}$$
+  $$\sigma_1^2 = \frac{1}{\frac{1}{\sigma_0^2} + \frac{n}{\sigma^2}} = \frac{1}{\frac{1}{225} + \frac{1}{100}} = \frac{900}{13} = 69,23$$
+  Por un ejercicio anterior sabemos que la pérdida final esperada se minimia cuando el estadístico toma el valor de $E[\theta | \vec{x}]$, en nuestro caso simplemente $E[\theta | x] = \mu_1 = \frac{400 + 9x}{13}$ y por lo tanto: 
+  $$PFE_T(\theta) = \int_{-\infty}^{+\infty} (\theta - T)^2 \cdot \pi(\theta | x) d\theta = V(\theta | vec{x}) + b(T, \theta)^2 = V(\theta | x) + (E[\theta | x] - T)^2 = V(\theta | x) = \sigma_1^2 = 69,23$$
+  Por lo tanto, el estimador bayesiano de $\theta$ es:
+  $$T(x) = \frac{400 + 9x}{13}$$
+  Si $x = 110$ entonces:
+  $$T(110) = \frac{400 + 9 \cdot 110}{13} = \frac{400 + 990}{13} = \frac{1390}{13} = 106,92$$
+\end{sol}
+
+\begin{problem}{4.6.8}
+  Se tiene la sospecha de que una moneda esta sesgada en el sentido de que su probabilidad de cara es menor que $0,5$. Si esta información se modeliza mediante una distribución $Beta(10, 8)$ como distribución inicial ¿Cuál es el estimador bayesiano cuando desupés de tirar la mneda 50 veces se obtienen 20 caras? Utilícese como función de pérdida el valor absoluto.
+\end{problem}
+
+\begin{sol}
+  Por los datos del enunciado tenemos que: 
+  $$X \sim Bernouilli(\theta) \quad \quad \pi(\theta) \sim Beta(10, 8) \implies$$
+  Por un ejercicion anteior sabemos que la familia de $Bernouilli$ es conjugada con la familia $Beta$, por lo que podemos calcular los parámetros de la distribución final:
+  $$\alpha_1 = \alpha_0 + S = 10 + 20 = 30 \quad \quad \beta_1 = \beta_0 + n - S = 8 + 50 - 20 = 38 \implies \pi(\theta | \vec{x}) \sim Beta(30, 38)$$
+  Por la teoria vista anteriormente, sabemos que la Perdida Final esperada tomando como función de pérdida el alor absoluto se minimiza cuando el estimdor toma el valor de la mediana de la distribución final, ya que ésta divide la distribución posterior en dos partes iguales en probabilidad, minimizando la expectativa del valor abosluto del error. Para calcular es necesario cálculo avanzado o herramientas de software, por ello usaremos una aproximación: 
+  $$m = \frac{\alpha_1 - 1/3}{\alpha_1 + \beta_1 - 2/3} = \frac{30 - 1/3}{30 + 38 - 2/3} = \frac{89}{202} \approx 0,4406$$
+  Por lo tanto, el estimador bayesiano de $\theta$ es la mediana de la distribución final.
+\end{sol}
+
+\begin{problem}{4.6.9}
+  Para una m.a.s. de tamaño $n$ de poblaciones con funciones de densidad o masa siguientes, encuéntrese la Cota de Fréchet-Cramér-Rao y el estimador eficiente, si existe: 
+  \begin{enumerate}
+    \item $f(x | \theta) = \frac{1}{\theta} e^{-\frac{x}{\theta}}\cdot I_{(0, +\infty)}(x)$
+    \item $p(x | \theta) = \theta(1 - \theta)^x$
+    \item $f(x | \theta) = \frac{1}{x\theta\sqrt{2\pi}} e^{-\frac{1}{2\theta^2}(ln(x))^2}\cdot I_{(0, +\infty)}(x)$
+  \end{enumerate}
+\end{problem}
+
+\begin{sol}
+  \begin{enumerate}
+    \item 
+      $$f(x | \theta) = \frac{1}{\theta}e^{-\frac{x}{\theta}} \cdot I_{(0, +\infty)}(x) \implies f(\vec{x} | \theta) = \frac{1}{\theta^n} e^{-\frac{\sum_{i=1}^{n} x_i}{\theta}} \cdot I_{x_{(1)} \geq 0}$$
+    Primero calculemos el score: 
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \log f(\vec{x} | \theta) = \frac{\partial}{\partial \theta} \left(-n \ln(\theta) - \frac{\sum_{i=1}^{n} x_i}{\theta}\right) = -\frac{n}{\theta} + \frac{\sum_{i=1}^{n} x_i}{\theta^2} = -\frac{n}{\theta} + \frac{n\bar{x}}{\theta^2}$$
+      Ahora calculemos la información de Fisher, usando la formula de la doble derivada: $I_n(\theta) = -E_{\theta}[\frac{\partial^2}{\partial\theta} log f_{\theta}(\vec{x} | \theta)]$
+      $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \log f(\vec{x} | \theta)\right] = -E_{\theta}\left[\frac{\partial}{\partial \theta} \left(-\frac{n}{\theta} + \frac{n\bar{x}}{\theta^2}\right)\right] = -E_{\theta}\left[\frac{n}{\theta^2} -\frac{2n\bar{x}}{\theta^3}\right] = $$
+      $$ = -\left(\frac{n}{\theta^2} - \frac{2nE[\bar{x}]}{\theta^3}\right) = -\left(\frac{n}{\theta^2} - \frac{2n}{\theta^2}\right) = -\left(-\frac{n}{\theta^2}\right) = \frac{n}{\theta^2}$$
+      Entonces, suponiendo que el posible estimador sea insesgado, tenemos que: 
+      $$Var(T) \geq \frac{1}{I_n(\theta)} = \frac{\theta^2}{n} \implies \text{Cota de Fréchet-Cramér-Rao: } Var(T) \geq \frac{\theta^2}{n}$$
+      Por la teoría vista en clase tenemos que, si logramos encontrar un estimador tal que $S_{\theta}(\vec{x}) = C(\theta) \cdot (\hat{\theta} - \theta)$, entonces el estimador $\hat{\theta}$ es eficiente. En este caso, tenemos que:
+      $$S_{\theta}(\vec{x}) = -\frac{n}{\theta} + \frac{n\bar{x}}{\theta^2} = \frac{n}{\theta^2}(\bar{x} - \theta) \implies \hat{\theta} = \bar{x} \implies \text{Estimador eficiente: } \hat{\theta} = \bar{x}$$
+    \item 
+      $$f(x \mid \theta) = \theta(1 - \theta)^x \implies f(\vec{x} \mid \theta) = \theta^n (1 - \theta)^{\sum_{x_i}} = \theta^n (1 - \theta)^{n\bar{x}}$$
+      Primero calculemos el score:
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \ln f(\vec{x} \mid \theta) = \frac{\partial}{\partial \theta} \left(\ln\left(\theta^n(1 - \theta)^{n\bar{x}}\right)\right) = \frac{\partial}{\partial \theta} \left(n \ln(\theta) + n\bar{x} \ln(1 - \theta)\right) = \frac{n}{\theta} - \frac{n\bar{x}}{1 - \theta}$$
+      Calculemos la información de Fisher usando la fórmula de que $I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \ln f(\vec{x} \mid \theta)\right]$:
+      $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial\theta^2}\left(\theta^n(1 - \theta)^{n\bar{x}}\right)\right] = -E_{\theta}\left[\frac{\partial}{\partial \theta}\left(\frac{n}{\theta} - \frac{n\bar{x}}{1 - \theta}\right)\right] = -E_{\theta}\left[-\frac{n}{\theta^2} - \frac{n\bar{x}}{(1 - \theta)^2}\right] = $$
+      $$ = -\left(-\frac{n}{\theta^2} - \frac{nE[\bar{x}]}{(1 - \theta)^2}\right) = \frac{n}{\theta^2} + \frac{n}{\theta(1 - \theta)} = \frac{n}{\theta^2(1 - \theta)}$$
+      
+      Para poder sacar la cota de Fréchet-Cramér-Rao, hemos de sacar la función $h(\theta)$ la cual se estaría estimando. \\
+      Dado que $f(\vec{x} | \theta)$ pertenece a la familia exponencial uniparamétrica, si existe tal estimador $\hat{\theta}$ debe poderse factorizar como: 
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \ln f(\vec{x} | \theta) = C(\theta) \cdot (\hat{\theta} - h(\theta)) = \frac{I_n(\theta)}{h'(\theta)}\cdot(\hat{\theta} - h(\theta))$$
+      $$\frac{n}{\theta} - \frac{n\bar{x}}{1 - \theta} = \frac{n(1 - \theta -\theta\bar{x})}{\theta(1 - \theta)} = \frac{n}{\theta(1 - \theta)}\left(1 - \theta - \theta\bar{x}\right) = \frac{n}{1 - \theta}\left(\frac{1}{\theta} - 1 - \bar{x}\right) = \frac{n}{1 - \theta}\left(\frac{1 - \theta}{\theta} - \bar{x}\right) \implies$$
+      $$\begin{cases}
+        C(\theta) = \frac{n}{1 - \theta} \\
+        h(\theta) = \frac{1 - \theta}{\theta} \\
+        \hat{\theta} = \bar{x}
+      \end{cases}$$
+      Entonces para calcular la cota de Fréchet-Cramér-Rao hemos de calcular la derivada de $h(\theta)$:
+      $$h'(\theta) = \frac{\partial}{\partial \theta}\left(\frac{1 - \theta}{\theta}\right) = -1\theta^{-1} + (1 - \theta)(-1)\theta^{-2} = -\frac{1}{\theta^2}$$
+      Entonces, la cota de Fréchet-Cramér-Rao es:
+      $$Var({\hat{\theta}}) \geq \frac{[h'(\theta)]^2}{I_n(\theta)} = \frac{\left(-\frac{1}{\theta^2}\right)^2}{\frac{n}{\theta^2(1 - \theta)}} = \frac{1 - \theta}{n\theta^2}$$
+    \item 
+      $$f(x | \theta) = \frac{1}{x\theta\sqrt{2\pi}} e^{-\frac{1}{2\theta^2}(\ln(x))^2} \cdot I_{(0, +\infty)}(x) \implies f(\vec{x} | \theta) = \left(\frac{1}{\theta\sqrt{2\pi}}\right)^n \cdot \prod \frac{1}{x_i} \cdot e^{-\frac{1}{2\theta^2}\sum ln(x_i)^2}$$
+      Primero calculamos el score: 
+      $$S_{\theta}(\vec{x}) = \frac{\partial}{\partial \theta} \ln f(\vec{x} | \theta) = \frac{\partial}{\partial \theta} \left(-n\ln(\theta\sqrt{2\pi}) - \sum ln(x_i) -\frac{1}{2\theta^2}\sum \ln(x_i)^2\right) = $$
+      $$ = \frac{-n}{\theta} + \frac{4}{\theta^3} \sum \ln(x_i)^2 = \frac{n}{\theta^3}\left(\frac{1}{n}\sum ln(x_i)^2 - \theta^2\right)$$
+      Entonces dado que la función de densidad es de una familia exponencial uniparamétrica, podemos decir que: 
+      $$\begin{cases}
+        C(\theta) = \frac{n}{\theta^3} \\
+        h(\theta) = \theta^2 \\
+        \hat{\theta} = \frac{1}{n}\sum ln(x_i)^2
+      \end{cases}$$
+      Ahora calculemos la información de Fisher, usando la fórmula de la doble derivada: $I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial\theta} \ln f_{\theta}(\vec{x} | \theta)\right]$:
+      $$I_n(\theta) = -E_{\theta}\left[\frac{\partial^2}{\partial \theta^2} \ln f(\vec{x} | \theta)\right] = -E_{\theta}\left[\frac{\partial}{\partial \theta} \left(-\frac{n}{\theta} + \frac{4}{\theta^3} \sum ln(x_i)^2\right)\right] = $$ 
+      $$ = -E_{\theta}\left[\frac{n}{\theta^2} - \frac{12}{\theta^4} \sum ln(x_i)^2\right] = -\left(-\frac{n}{\theta^2} + \frac{12E[\sum ln(x_i)^2]}{\theta^4}\right) = \frac{n}{\theta^2} - \frac{12\sum E[ln(x_i)^2]}{\theta^4}$$
+      Como vemos, la forma es dificil y aunque converge, no es fácil de calcular, por lo que podemos tomar una vía más fácil. Por lo calculado anteriormente a partir del score, podemos deducir la información de Fisher a través de el cálculo $C(\theta)  \frac{I_n(\theta)}{h'(\theta)}$:
+      $$C(\theta) = \frac{n}{\theta^3} = \frac{I_n(\theta)}{2\theta} \implies I_n(\theta) = \frac{2n}{\theta^2}$$
+      Y finalmente para calcular la cota de Fréchet-Cramér-Rao: 
+      $$Var(\hat{\theta}) \geq \frac{[h'(\theta)]^2}{I_n(\theta)} = \frac{(2\theta)^2}{\frac{2n}{\theta^2}} = \frac{4\theta^4}{2n} = \frac{2\theta^4}{n}$$
+  \end{enumerate}
+\end{sol}
+
+\begin{problem}{4.6.10}
+  Encuéntrese la distribución final asintótica para m.a.s. de tamaño $50$ de una población de $Bernouilli(\theta)$. Paricularícese al caso en que en las 50 repeticiones se obtengan 12 éxitos. ¿Cuál sería la distribución final exacta si la densidad inicial es la distribución $Uniforme(0,1)$?
+\end{problem}
+\begin{sol}
+  NO SÉ HACERLO
+\end{sol}
