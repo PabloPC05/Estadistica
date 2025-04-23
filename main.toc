@@ -38,6 +38,3 @@
 \contentsline {subsection}{\numberline {6.2}Errores de tipo I y de tipo II}{102}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{104}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{104}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Appendix}{107}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Momentos Notables}{107}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Función Característica}{110}{subsection.7.2}%

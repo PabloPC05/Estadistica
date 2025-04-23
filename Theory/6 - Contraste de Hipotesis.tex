@@ -140,7 +140,7 @@ Por lo tanto, se rechaza $H_{0}: \mu=10$ a favor de $H_{1}: \mu=11$
 \vspace{-2.5em}
 \begin{enumerate}
 \item n y $\alpha$ son valores fijados de antemano
-\item Las hipótesis nula y alternativa no son intercambiables puesto que el tratamiento que reciben es asimétrico, la asimetría queda matizada por el valor $\alpha$ que se elija como nivel de significación y por la probabilidad de error de tipo II que resulte una vez diseñado el test, pues podría ocurrir que para $\theta \in \Theta_{1}, P_{\theta}\left(C^{*}\right)=1-\beta_{C}(\theta) \leq \alpha$
+\item Las hipótesis nula y alternativa no son intercambiables puesto que el tratamiento que reciben es asimétrico, la asimetría queda matizada por el valor $\alpha$ que se elija como nivel de significación y por la probabilidad de error de tipo II que resulte una vez diseñado el test, pues podría ocurrir que para $\theta \in \Theta_{1}, P_{\theta}\left(C^{c}\right)=1-\beta_{C}(\theta) \leq \alpha$
 \item  En el contraste de hipótesis planteado se considera $H_{0}$ como la hipótesis de interés, en el sentido que para poder invalidarla es necesario esgrimir una gran evidencia. Por consiguiente, los test de hipótesis se emplean con un carácter conservador, a favor de la hipótesis nula, ya que el nivel de significación que se fija, intenta garantizar que sea muy infrecuente rechazar una hipótesis nula correcta, y la preocupación por dejar vigente una hipótesis nula falsa es menor, pudiéndose aceptar en este último caso riesgos más altos. En este sentido, si el resultado de un contraste de hipótesis es aceptar $H_{0}$, debe interpretarse que las observaciones no han aportado suficiente evidencia para descartarla; mientras que, si se rechaza, es porque se está razonablemente seguro de que $H_{0}$ es falsa y, por consiguiente, aceptamos $H_{1}$
 \end{enumerate}
 \end{observación}
@@ -164,8 +164,8 @@ Sea $C$ una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ fr
 
 \subsection{Hipótesis nula simple frente a alternativa simple}
 
-\begin{teorema} [Teorema de Neyman-Pearson (Parte I)] 
-Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k \geq 0$ existe un test con región crítica $c=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots, x_{n}\right)} \geq k\right\}$ y región de aceptación $c^{*}=\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}<k\right\}$ tal que $\alpha=P_{\theta_{0}}(C)$, entonces $C$ es uniformemente de máxima potencia de tamaño $\alpha$
+\begin{teorema} [Teorema de Neyman-Pearson - Parte I] 
+Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k \geq 0$ existe un test con región crítica $c=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots, x_{n}\right)} \geq k\right\}$ y región de aceptación $C^{c}=\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}<k\right\}$ tal que $\alpha=P_{\theta_{0}}(C)$, entonces $C$ es uniformemente de máxima potencia de tamaño $\alpha$
 \end{teorema}
 
 \begin{proof}
@@ -228,3 +228,129 @@ La probabilidad de error de tipo I ($\alpha$) y la función de potencia ($\beta(
 \end{align*}
 
 }
+
+\ejemplo{
+Para una m.a.s.(n) de $X \sim N(\theta, \sigma)$, con $\sigma$ conocida, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
+$\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots x_{n}\right)}=e^{\frac{1}{\sigma^{2}} n\left(\theta_{0}^{2}-\theta_{1}^{2}\right)} e^{\frac{1}{\sigma^{n} n} n\left(\theta_{1}-\theta_{0}\right)} \geq k \Leftrightarrow \bar{x} \geq c$\\
+donde $c$ es tal que $P_{\theta_{0}}\{\bar{x} \geq c\}=\alpha$, es decir $c=\theta_{0}+z_{\alpha} \frac{\sigma}{\sqrt{n}}$
+}
+
+\ejemplo{
+Para una m.a.s.(n) de $X \sim \operatorname{Exp}(\theta)$, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
+$\frac{f_{9}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{\theta_{1}}{\theta_{0}}\right)^{n} e^{\left(\theta_{0}-\theta_{1}\right) \sum_{i=1}^{n} x_{i}} \geq k \Leftrightarrow 2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c$\\
+donde $c$ es tal que $P_{\theta_{0}}\left\{2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c\right\}=\alpha$, es decir $c=\chi_{2 n, \alpha}^{2}$
+}
+
+\ejemplo{
+Para una m.a.s.(n) de $X \sim N(\mu, \theta)$, con $\mu$ conocida, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
+$\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{\theta_{0}}{\theta_{1}}\right)^{n} e^{\frac{1}{2}\left(\frac{1}{\theta_{0}^{2}}-\frac{1}{\theta_{1}^{2}}\right) \sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}} \geq k \Leftrightarrow \frac{\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}}{\theta_{0}^{2}} \geq c$ donde $c$ es tal que $P_{\theta_{0}}\left\{\frac{\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}}{\theta_{0}^{2}} \geq c\right\}=\alpha$, es decir $c=\chi_{n, \alpha}^{2}$
+}
+
+\ejemplo{
+Para una m.a.s.(n) de $X \sim \operatorname{Bin}(1, \theta)$, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
+$\frac{f_{0}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{1-\theta_{1}}{1-\theta_{0}}\right)^{n}\left(\frac{\theta_{1}}{\theta_{0}} \frac{1-\theta_{0}}{1-\theta_{1}}\right)^{\sum_{i=1}^{n} x_{i}} \Leftrightarrow \sum_{i=1}^{n} x_{i} \geq c$\\
+donde $c$ es tal que $P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i} \geq c\right\}=\sum_{j=c}^{n}\binom{n}{j} \theta_{0}^{j}\left(1-\theta_{0}\right)^{n-j}=\alpha_{c}, c=0,1,2, \ldots, n$
+}
+
+
+\begin{teorema} [Teorema de Neyman-Pearson - Parte II]
+Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k>0$ existe un test con región crítica $C$ tal que $P_{\theta_{0}}(C)=\alpha$ con $\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{9}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots x_{n}\right)}>k\right\} \subset c c\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{9}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots x_{n}\right)} \geq k\right\}$ entonces cualquier test $C^{\prime}$ uniformemente de máxima potencia de nivel $\alpha$, es de tamaño $\alpha$ y verifica\\
+$\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{f_{0}}\left(x_{1}, \cdots x_{n}\right)}>k\right\} \subset c^{\prime} \subset\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)} \geq k\right\}$ salvo quizás en un conjunto $A \subset \chi^{n}$ tal que $P_{\theta_{0}}(A)=P_{\theta_{1}}(A)$
+\end{teorema}
+
+\begin{proof}
+Si $C^{\prime}$ es un test uniformemente de máxima potencia de nivel $\alpha$ y existe $C$ de la forma del enunciado con $k>0$, entonces por el apartado anterior $C$ es también uniformemente de máxima potencia de nivel $\alpha$. Por lo tanto, $\beta_{C}\left(\theta_{1}\right)=\beta_{C^{\prime}}\left(\theta_{1}\right)$. Entonces, $0=P_{\theta_{1}}(C)-P_{\theta_{1}}\left(C^{\prime}\right) \geq k\left(\alpha-P_{\theta_{0}}\left(C^{\prime}\right)\right) \geq 0$ y como $k>0 \Rightarrow P_{\theta_{0}}\left(C^{\prime}\right)=\alpha$ y se sigue que
+
+$$
+\int_{\chi^{n}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}=0
+$$
+Por lo tanto, o bien $I_{C}\left(x_{1}, \cdots, x_{n}\right)=I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right), \forall\left(x_{1}, \cdots, x_{n}\right)$, o
+
+$$
+\begin{gathered}
+\int_{S^{+}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}=0 \\
+\int_{S^{-}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}=0 \\
+\int_{S^{+}}\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}=0 \Rightarrow S^{+} \subset\left\{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)=0\right\} \\
+-\int_{S^{-}}\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}=0 \Rightarrow S^{-} \subset\left\{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)=0\right\} \\
+\text { o bien } P_{\theta_{1}}\left(S^{+}\right)=\int_{S^{+}} f\left(x_{1}, \ldots, x_{n} \mid \theta_{1}\right) d x_{1} \cdots d x_{n}=0, P_{\theta_{0}}\left(S^{+}\right)=\int_{S^{+}} f\left(x_{1}, \ldots, x_{n} \mid \theta_{0}\right) d x_{1} \cdots d x_{n}=0 \\
+P_{\theta_{1}}\left(S^{-}\right)=\int_{S^{-}} f\left(x_{1}, \ldots, x_{n} \mid \theta_{1}\right) d x_{1} \cdots d x_{n}=0 \text { y } P_{\theta_{1}}\left(S^{-}\right)=\int_{S^{-}} f\left(x_{1}, \ldots, x_{n} \mid \theta_{0}\right) d x_{1} \cdots d x_{n}=0
+\end{gathered}
+$$
+\end{proof}
+
+\begin{definición} [Test aleatorizado]
+Un test aleatorizado es cualquier función medible tal que $\varphi\left(x_{1}, \cdots, x_{n}\right)$ expresa la probabilidad de rechazar la hipótesis nula cuando se observa $\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$
+\end{definición}
+
+\begin{observación}
+Como su propio nombre indica, en un test aleatorizado, observado un valor muestral $\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}$, se efecua un sorteo con probabilidad $\varphi\left(x_{1}, \cdots, x_{n}\right)$ de rechazar $H_{0}$ y $1-\varphi\left(x_{1}, \cdots, x_{n}\right)$ de aceptarla. En este sentido, una región crítica es un test no aleatorizado, pues observada una muestra nuestra decisión es tajante: rechazamos o aceptamos $H_{0}$.
+
+En cambio, en los test aleatorizados la decisión final depede total o parcialmente del azar. Aunque esta es una regla de conducta no determinística, los tests no aleatorizados son un caso particular de ella para $\varphi\left(x_{1}, \cdots, x_{n}\right)=I_{C}\left(x_{1}, \cdots, x_{n}\right)$    
+\end{observación}
+
+\begin{definición} [Función de potencia de un test aleatorizado]
+Si $\varphi$ es un test aleatorizado para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, se define función de potencia del test a la función $\beta_{\varphi}: \Theta \rightarrow[0,1]$ que a cada valor $\theta$ del parámetro le asigna el valor $\beta_{\varphi}(\theta)=E_{\theta}(\varphi)$.
+\end{definición} 
+
+\begin{definición} [Nivel de significación y tamaño de un test aleatorizado]
+Un test aleatorizado $\varphi$ tiene nivel de significación $\alpha \in[0,1]$ sí y sólo sí $\sup \beta_{\varphi}(\theta) \leq \alpha$ y se denomina tamaño del test al valor $\sup_{\theta \in \Theta_{0}}\beta_{\varphi}(\theta)$ $\theta \in \Theta_{0}$
+\end{definición}
+
+\begin{teorema}
+En las mismas condiciones del teorema de Neyman-Pearson, $\forall \alpha \in(0,1)$ existe un test aleatorizado $\varphi$ de tamaño $\alpha$ de la forma
+
+$$
+\varphi\left(x_{1}, \cdots x_{n}\right)=\left\{\begin{array}{ccc}
+1 & \text { si } & f_{\theta_{1}}\left(x_{1}, \cdots x_{n}\right)>k f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right) \\
+\gamma & \text { si } & f_{\theta_{1}}\left(x_{1}, \cdots x_{n}\right)=k f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right) \\
+0 & \text { si } & f_{\theta_{1}}\left(x_{1}, \cdots x_{n}\right)<k f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)
+\end{array}\right.
+$$
+con $k \geq 0$ y $\gamma \in[0,1]$ tales que
+$$
+\alpha=E_{\theta_{0}}[\varphi]=P_{\theta_{0}}\left\{f_{\theta_{1}}\left(x_{1}, \cdots x_{n}\right)>k f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)\right\}+\gamma P_{\theta_{0}}\left\{f_{\theta_{1}}\left(x_{1}, \cdots x_{n}\right)=k f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)\right\}
+$$
+
+Además,\\
+I) $\varphi$ es uniformemente de máxima potencia de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$
+
+Para cualquier otro test $\varphi^{\prime}$ basado en $\left(X_{1}, \cdots X_{n}\right)$ tal que $\sup _{\theta \in \Theta_{0}} \beta_{\varphi^{\prime}}(\theta) \leq \alpha$, es $\beta_{\varphi}(\theta) \geq \beta_{\varphi^{\prime}}(\theta), \forall \theta \in \Theta_{1}$\\
+II) existe $\varphi$ de la forma del enunciado verificando $\alpha=E_{\theta_{0}}[\varphi]$ para $k>0$ y $\varphi^{\prime}$ es uniformemente de máxima potencia de nivel $\alpha$, entonces $\varphi^{\prime}$ es de tamaño $\alpha$ y $\varphi^{\prime}\left(x_{1}, \cdots, x_{n}\right)=\varphi\left(x_{1}, \cdots, x_{n}\right)$ salvo quizá en un conjunto $A \subset \chi^{n}$ tal que $P_{\theta_{0}}(A)=P_{\theta_{1}}(A)=0$    
+\end{teorema}
+
+
+\begin{definición} [Test insesgado]
+Un test $\varphi$ de tamaño $\alpha$ es insesgado para el contraste $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$ sí y sólo sí $E_{\theta_{1}}(\varphi) \geq \alpha$
+\end{definición}
+
+\begin{corolario}
+
+El test uniformemente de máxima potencia de tamaño $\alpha$ construido en el lema de Neyman Pearson es insesgado.
+\end{corolario}
+
+\begin{proof}
+Sea $\varphi^{\prime}\left(x_{1}, \cdots, x_{n}\right)=\alpha$, salvo quizá en un conjunto $A \subset \chi^{n}$ tal que $P_{\theta_{0}}(A)=P_{\theta_{1}}(A)=0$. Como $E_{\theta_{0}}\left[\varphi^{\prime}\right]=\alpha$ y $\varphi^{\prime}$ no es de la forma del enunciado del Teorema 5, $\alpha=E_{\theta_{1}}\left[\varphi^{\prime}\right] \leq E_{\theta_{1}}[\varphi]$.
+\end{proof}
+
+\ejemplo{
+Para una m.a.s.(n) de $X \sim \operatorname{Bin}(1, \theta)$, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}>\theta_{1}$. Particularizarlo para $n=10, \alpha=0.05, \theta_{0}=0.5$ y $\theta_{1}=0.4$\\
+$\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{1-\theta_{1}}{1-\theta_{0}}\right)^{n}\left(\frac{\theta_{1}}{\theta_{0}} \frac{1-\theta_{0}}{1-\theta_{1}}\right)^{\sum_{i=1}^{n} x_{i}} \Leftrightarrow \sum_{i=1}^{n} x_{i} \leq c$\\
+donde $c$ es tal que $P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i} \leq c\right\}=\sum_{j=0}^{c}\binom{n}{j} \theta_{0}^{j}\left(1-\theta_{0}\right)^{n-j}=\alpha_{c}, c=0,1,2, \ldots, n$\\
+$P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i}<2\right\}=0.0108$\\
+$P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i}<3\right\}=0.0547$
+
+$$
+\varphi\left(x_{1}, \cdots x_{n}\right)=\left\{\begin{array}{lll}
+1 & \text { si } & \sum_{i=1}^{n} x_{i}<2 \\
+\gamma & \text { si } & \sum_{i=1}^{n=1} x_{i}=2 \\
+0 & \text { si } & \sum_{i=1} x_{i}>2
+\end{array}\right.
+$$
+
+$0.05=E_{\theta_{0}}[\varphi]=1 \times P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i}<2\right\}+\gamma \times P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i}=2\right\}=0.0108+\gamma \times 0.0547 \Rightarrow \gamma=0.892$
+}
+
+
+
+\section*{Contrastes de hipótesis unilaterales}
+Familia de distribuciones de razón de verosimilitud monótona Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}}$ un modelo estadístico continuo (o discreto) uniparamétrico y $\left(X_{1}, \cdots, X_{n}\right)$ una muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$, siendo $f_{\theta}\left(x_{1}, \cdots x_{n}\right)$ su función de densidad (o de masa) $\left\{F_{\theta}, \theta \in \Theta\right\}$ es una familia de distribuciones de razón de verosimilitud monótona creciente (o decreciente) sí y sólo sí existe un estadístico $T=T\left(X_{1}, \cdots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ tal que, si $\theta_{0}, \theta_{1} \in \Theta$ y $\theta_{0}<\theta_{1}$, entonces la razón de verosimilitudes $\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)}$ es una función monótona creciente (o decreciente) en $T\left(x_{1}, \cdots, x_{n}\right)$
