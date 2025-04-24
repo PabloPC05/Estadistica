@@ -100,14 +100,25 @@ Un test $C$ tiene nivel de significación $\alpha \in[0,1]$ sí y sólo sí $\su
 \end{definición}
 
 \ejemplo{
-En el ejemplo anterior, con $n=25, C=\{10<\bar{x}<10,006\}$, $P(I)=\beta_{C}(\mu=10)=P(10<\bar{x}<10.006 \mid \mu=10)=0.05$ $P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(10<\bar{x}<10.006 \mid \mu=11)=0.976$
-
-En el ejemplo anterior, con $n=25, C=\{\bar{x} \geq k\}$ y $\alpha=0.05$, $P(\mathrm{I})=\beta_{C}(\mu=10)=P(\bar{x} \geq 11.316 \mid \mu=10)=0.05$ $P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(\bar{x}<11.316 \mid \mu=11)=0.6554$
-
-En el ejemplo anterior, con $n=100, C=\{\bar{x} \geq k\}$ y $\alpha=0.05$,\\
-$P(\mathrm{I})=\beta_{C}(\mu=10)=P(\bar{x} \geq 10.658 \mid \mu=10)=0.05$\\
-$P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(\bar{x}<10.658 \mid \mu=11)=0.196$
+    \begin{itemize}
+        \item En el ejemplo anterior, con $n=25$, $C=\{10<\bar{x}<10.006\}$:
+        \begin{align*}
+            P(\mathrm{I}) &= \beta_{C}(\mu=10) = P(10<\bar{x}<10.006 \mid \mu=10) = 0.05 \\
+            P(\mathrm{II}) &= 1-\beta_{C}(\mu=11) = P(10<\bar{x}<10.006 \mid \mu=11) = 0.976
+        \end{align*}
     
+        \item En el ejemplo anterior, con $n=25$, $C=\{\bar{x} \geq k\}$ y $\alpha=0.05$:
+        \begin{align*}
+            P(\mathrm{I}) &= \beta_{C}(\mu=10) = P(\bar{x} \geq 11.316 \mid \mu=10) = 0.05 \\
+            P(\mathrm{II}) &= 1-\beta_{C}(\mu=11) = P(\bar{x}<11.316 \mid \mu=11) = 0.6554
+        \end{align*}
+    
+        \item En el ejemplo anterior, con $n=100$, $C=\{\bar{x} \geq k\}$ y $\alpha=0.05$:
+        \begin{align*}
+            P(\mathrm{I}) &= \beta_{C}(\mu=10) = P(\bar{x} \geq 10.658 \mid \mu=10) = 0.05 \\
+            P(\mathrm{II}) &= 1-\beta_{C}(\mu=11) = P(\bar{x}<10.658 \mid \mu=11) = 0.196
+        \end{align*}
+    \end{itemize} 
 }
 
 \begin{definición} [p-valor]

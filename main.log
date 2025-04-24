@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.3.10)  24 APR 2025 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.3.10)  24 APR 2025 13:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3070,68 +3070,68 @@ l.98 ...vel de significación y tamaño del test ]
 [103]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 113.
+(mdframed)              on input line 124.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.113 \begin{definición} [p-valor]
+l.124 \begin{definición} [p-valor]
                                    
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 140.
+(mdframed)              on input line 151.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.140 \vspace
+l.151 \vspace
              {-2.5em}
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 146.
+(mdframed)              on input line 157.
 
 
 [104]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 148.
+(mdframed)              on input line 159.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.148 ... [Criterio de comparación de contrastes]
+l.159 ... [Criterio de comparación de contrastes]
                                                   
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 154.
+(hyperref)                removing `math shift' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 154.
+(hyperref)                removing `\alpha' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 154.
+(hyperref)                removing `math shift' on input line 165.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 158.
+(mdframed)              on input line 169.
 
 pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.158 S
+l.169 S
        ea $C$ una región crítica para el contraste $H_{0}: \theta \in \The...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 167.
+(mdframed)              on input line 178.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.167 ...ma} [Teorema de Neyman-Pearson - Parte I]
+l.178 ...ma} [Teorema de Neyman-Pearson - Parte I]
                                                   
-Overfull \hbox (12.90314pt too wide) in paragraph at lines 167--169
+Overfull \hbox (12.90314pt too wide) in paragraph at lines 178--180
 []$ \OT1/cmr/m/it/10.95 y regi^^Son de aceptaci^^Son $\OML/cmm/m/it/10.95 C[] \OT1/cmr/m/n/10.95 = []$
  []
 
@@ -3140,21 +3140,21 @@ Overfull \hbox (12.90314pt too wide) in paragraph at lines 167--169
 [105]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 191.
+(mdframed)              on input line 202.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.191 D
+l.202 D
        e la demostración del teorema se deduce que los puntos para los que ...
-Overfull \hbox (23.681pt too wide) in paragraph at lines 191--193
+Overfull \hbox (23.681pt too wide) in paragraph at lines 202--204
 []\OT1/cmr/m/it/10.95 De la de-mostraci^^Son del teo-rema se de-duce que los pun-tos para los que $\OML/cmm/m/it/10.95 f [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 kf []$
  []
 
 
 
 [106]
-Underfull \hbox (badness 1072) in paragraph at lines 247--247
+Underfull \hbox (badness 1072) in paragraph at lines 258--258
 [] \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 e[] \OMS/cmsy/m/n/10.95 ^^U \OML/cmm/m/it/10.95 k \OMS/cmsy/m/n/10.95 , [] ^^U \OML/cmm/m/it/10.95 c$ \OT1/cmr/m/n/10.95 donde $\OML/cmm/m/it/10.95 c$ \OT1/cmr/m/n/10.95 es tal que
  []
 
@@ -3163,90 +3163,90 @@ Underfull \hbox (badness 1072) in paragraph at lines 247--247
 [107]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 256.
+(mdframed)              on input line 267.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.256 ...a} [Teorema de Neyman-Pearson - Parte II]
+l.267 ...a} [Teorema de Neyman-Pearson - Parte II]
                                                   
-Overfull \hbox (4.45656pt too wide) in paragraph at lines 256--259
+Overfull \hbox (4.45656pt too wide) in paragraph at lines 267--270
 \OT1/cmr/m/it/10.95 tal que $\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 $ \OT1/cmr/m/it/10.95 con $[] \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 cc []$
  []
 
 
-Overfull \hbox (15.55736pt too wide) detected at line 278
+Overfull \hbox (15.55736pt too wide) detected at line 289
 [][]
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 281.
+(mdframed)              on input line 292.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.281 \begin{definición} [Test aleatorizado]
+l.292 \begin{definición} [Test aleatorizado]
                                              
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 286.
+(mdframed)              on input line 297.
 
 pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.286 C
+l.297 C
        omo su propio nombre indica, en un test aleatorizado, observado un va...
 
 [108]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 291.
+(mdframed)              on input line 302.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.291 ...ión de potencia de un test aleatorizado]
+l.302 ...ión de potencia de un test aleatorizado]
                                                   
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 295.
+(mdframed)              on input line 306.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.295 ...ación y tamaño de un test aleatorizado]
+l.306 ...ación y tamaño de un test aleatorizado]
                                                   
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 300.
+(mdframed)              on input line 311.
 
 pdfTeX warning (ext4): destination with the same identifier (name{teorema.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.300 E
+l.311 E
        n las mismas condiciones del teorema de Neyman-Pearson, $\forall \alp...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 322.
+(mdframed)              on input line 333.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.322 \begin{definición} [Test insesgado]
+l.333 \begin{definición} [Test insesgado]
                                           
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 327.
+(mdframed)              on input line 338.
 
 pdfTeX warning (ext4): destination with the same identifier (name{corolario.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.327 
+l.338 
       
 
 [109])
-Overfull \hbox (15.09334pt too wide) in paragraph at lines 356--14
+Overfull \hbox (15.09334pt too wide) in paragraph at lines 367--14
 \OT1/cmr/m/n/10.95 tad^^S^^Pstico con-tinuo (o dis-creto) uni-param^^Setrico y $[]$ una mues-tra de $[]$, siendo $\OML/cmm/m/it/10.95 f[] []$
  []
 
@@ -3269,7 +3269,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  109i,24n,112p,1185b,2239s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (111 pages, 1196454 bytes).
+Output written on main.pdf (111 pages, 1196359 bytes).
 PDF statistics:
  1265 PDF objects out of 1440 (max. 8388607)
  479 named destinations out of 1000 (max. 500000)
