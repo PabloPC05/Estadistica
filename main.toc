@@ -1,13 +1,40 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Estimación por Regiones de Confianza}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Intervalos de confianza}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Métodos de obtención de intervalos de confianza}{4}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Método de la cantidad pivotal}{4}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Método de Neyman}{7}{subsubsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.3}Regiones de confianza bayesianas}{10}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Ejercicios}{13}{subsection.1.4}%
-\contentsline {section}{\numberline {2}Contraste de Hipótesis}{20}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Principios básicos de un contraste de hipótesis}{20}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Errores de tipo I y de tipo II}{22}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Test uniformemente más potente de tamaño $\alpha $}{24}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Hipótesis nula simple frente a alternativa simple}{24}{subsection.2.4}%
+\contentsline {section}{\numberline {1}Estadística Descriptiva}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introducción}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Muestreo}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Modelos estadísticos}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Estadísticos muestrales}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Momentos}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Resultados de convergencias}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Estadísticos ordenados}{16}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Ejercicios}{18}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Reducción de Datos}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Teorema de Factorización de Fisher}{22}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Ejemplos de Factorización de Fisher}{23}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Estadístico minimal suficiente}{25}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Teorema de caracterización de estadísticos minimales suficientes}{27}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Familia exponencial $k$-paramétrica}{28}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Estadísticos Ancilarios y Completos}{31}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Principios de reducción de datos}{41}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Ejercicios}{42}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Estimación Puntual Paramétrica}{49}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Estimadores Bayesianos}{52}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Criterios de comparación de estimadores}{56}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Cota para la varianza de un estimador}{65}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Métodos de construcción de estimadores}{70}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Método de los momentos}{70}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Método de máxima verosimilitud}{72}{subsubsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.5}Propiedades asintóticas de los estimadores de máxima verosimilitud}{74}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Ejercicios}{77}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Estimación por Regiones de Confianza}{83}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Intervalos de confianza}{83}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Métodos de obtención de intervalos de confianza}{85}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Método de la cantidad pivotal}{85}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Método de Neyman}{88}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Regiones de confianza bayesianas}{91}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Ejercicios}{94}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Contraste de Hipótesis}{101}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Principios básicos de un contraste de hipótesis}{101}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Errores de tipo I y de tipo II}{103}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{105}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{105}{subsection.6.4}%

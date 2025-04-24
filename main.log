@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.3.10)  24 APR 2025 13:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.3.10)  24 APR 2025 13:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1376,7 +1376,1350 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.30 \newpage
-              [1] (Theory/Theory.tex (Theory/5 - Estimacion por Regiones de Confianza.tex
+              [1] (Theory/Theory.tex (Theory/1- Estadistica Descriptiva.tex)
+
+[2] (Theory/2 - Muestreo.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 7.
+Package hyperref Info: bookmark level for unknown definición defaults to 0 on input line 7.
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 8.
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/bbold\ubbold.fd)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 18.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 44.
+
+Overfull \hbox (1.23479pt too wide) in paragraph at lines 44--49
+[]\OT1/cmr/m/it/10.95 Sea $[]$ un con-junto de vari-ables aleato-rias in-de-pen-di-entes e id^^Senticamente dis-tribuidas (i.i.d.)
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 56.
+
+
+[3]
+Package mdframed Info: Not enough space on this page on input line 69.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 88.
+Package hyperref Info: bookmark level for unknown proposición defaults to 0 on input line 88.
+
+Overfull \hbox (18.98589pt too wide) in paragraph at lines 99--101
+[]\OT1/cmr/bx/it/10.95 Interpretaci^^Son prob-a-bil^^S^^Pstica: \OT1/cmr/m/it/10.95 La funci^^Son in-di-cadora $\OML/cmm/m/it/10.95 ^^_[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 sigue una dis-tribuci^^Son Bernoulli
+ []
+
+
+
+[4]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 145.
+Package hyperref Info: bookmark level for unknown teorema defaults to 0 on input line 145.
+
+
+[5]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 201.
+Package hyperref Info: bookmark level for unknown corolario defaults to 0 on input line 201.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 213.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.213 \begin{definición}[Estadístico muestral]
+                                                
+
+[6]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 231.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.231 \begin{definición}[Momento Muestral]
+                                           
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 239.
+Package hyperref Info: bookmark level for unknown observación defaults to 0 on input line 239.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 250.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.250 \begin{definición}[Momento Poblacional]
+                                              
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 258.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 269.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.269 ... asintóticas de los momentos muestrales]
+                                                  
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 309.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.309 \begin{teorema}[de Slutsky]
+                                 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 319.
+Package hyperref Info: bookmark level for unknown lema defaults to 0 on input line 319.
+
+
+[8]
+Package mdframed Info: Not enough space on this page on input line 325.
+
+
+[9]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 406.
+
+
+[10]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 511.
+
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 547--549
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
+
+ []
+
+
+
+[12]
+
+[13]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 669.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.669 ...{definición}[Distribución t de Student]
+                                                  
+
+[14]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 687.
+
+pdfTeX warning (ext4): destination with the same identifier (name{corolario.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.687 	P
+        ara m.a.s. de tamaño $n$ de una población $N(\mu, \sigma)$, la dis...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 699.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.699 ...efinición} [Distribución F de Snedecor]
+                                                  
+
+[15]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 732.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.732 \begin{definición}[Estadísticos ordenados]
+                                                  
+Underfull \hbox (badness 10000) in paragraph at lines 835--835
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--835
+
+ []
+
+
+
+[16]
+
+[17]
+
+[18]
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 967--969
+
+ []
+
+
+
+[20])
+
+[21] (Theory/3 - Reduccion de Datos.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4 \begin{definición}[Estadístico suficiente]
+                                                
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 23.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.23 ...terización de estadísticos suficientes)]
+                                                  
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+
+
+[22]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 41.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41 	S
+       i $T$ es suficiente para $\theta$ y $S$ es una biyección, entonces $...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 45.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 49.
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+
+ []
+
+
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+
+ []
+
+
+Overfull \hbox (12.32956pt too wide) detected at line 104
+\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = [] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) = [] [] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) = [] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+
+ []
+
+
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 120.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120 \begin{definición}[Órbita]
+                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 134.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134 \begin{definición}[Partición Inducida]
+                                              
+
+[25]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 152.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.152 	S
+        e dice que $\mathcal{K}_{T}$ es suficiente sí y sólo si $T$ es suf...
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 156.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.156 	D
+        ado dos estadísticos $T = T(X_1, \dots, X_n)$ y $S = S(X_1, \dots, ...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 161.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.161 ...nición}[Estadístico Minimal Suficiente]
+                                                  
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 174.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.174 	U
+        n estadístico $T$ es minimal suficiente si y sólo si para todo est...
+
+[26]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 186.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.186 ...ción de equivalencia minimal suficiente]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 192.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.192 ...tadísticos minimales (Lehmann-Scheffé)]
+                                                  
+Overfull \hbox (16.3433pt too wide) in paragraph at lines 192--194
+[]\OT1/cmr/m/it/10.95 A cada clase de equiv-a-len-cia an-te-rior le asig-namos un valor $\OML/cmm/m/it/10.95 t$ \OT1/cmr/m/it/10.95 y defin-i-mos un es-tad^^S^^Pstico $\OML/cmm/m/it/10.95 T \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; [] ; X[]\OT1/cmr/m/n/10.95 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--212
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 215.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.215   R
+         ecordemos que $\forall T' \text{ suficiente } \exists \varphi : \va...
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 216.
+
+
+
+[27]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 228.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 228.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 231.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.231 ...ión}[Familia exponencial k-paramétrica]
+                                                  
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+\g__nicematrix_max_cell_width_dim=\dimen402
+\c@iRow=\count461
+\c@jCol=\count462
+\l__nicematrix_cell_box=\box151
+\l__nicematrix_the_array_box=\box152
+\l__nicematrix_left_delim_dim=\dimen403
+\l__nicematrix_right_delim_dim=\dimen404
+
+Package nicematrix Warning: Columns not used.
+(nicematrix)                The preamble of your environment {NiceTabular} is
+(nicematrix)                'lcccc'. It announces 5 columns but you only used
+(nicematrix)                4.
+(nicematrix)                The columns you did not used won't be created.
+(nicematrix)                You won't have similar warning till the end of the
+(nicematrix)                document.
+
+\g__nicematrix_ddots_int=\count463
+\g__nicematrix_iddots_int=\count464
+\g__nicematrix_delta_x_one_dim=\dimen405
+\g__nicematrix_delta_y_one_dim=\dimen406
+\g__nicematrix_delta_x_two_dim=\dimen407
+\g__nicematrix_delta_y_two_dim=\dimen408
+\l__nicematrix_initial_i_int=\count465
+\l__nicematrix_initial_j_int=\count466
+\l__nicematrix_final_i_int=\count467
+\l__nicematrix_final_j_int=\count468
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 306.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.306   S
+         ean $\theta_1, \ldots, \theta_k \in \Theta \subset \mathbb{R}^{\ell...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 318.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.318 	E
+        l estadístico natural de una distribución $X$ perteneciente a una ...
+Overfull \hbox (6.88681pt too wide) detected at line 349
+ \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) = [][] \OML/cmm/m/it/10.95 e[]
+ []
+
+
+
+[29]
+
+[30]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 352.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.352   E
+         n las familias k-paramétricas exponenciales, es decir, aquellas de...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 359.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.359 \begin{definición} [Estadístico Ancilario]
+                                                  
+
+[31]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 391.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.391 \begin{definición} [Familia Completa]
+                                            
+Underfull \hbox (badness 10000) in paragraph at lines 401--402
+
+ []
+
+
+
+[32]
+
+[33]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 517.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.517 \begin{definición} [Estadístico Completo]
+                                                 
+
+[34]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 578.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.578 	S
+        i $T_1$ y $T_2$ son estadísticos completos, entonces $(T_1, T_2)$ t...
+
+[35]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 595.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.595 	R
+        ecordemos que:
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 604.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.604 \begin{teorema}[Teorema de Bahadur]
+                                         
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 611.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.611 		R
+         ecordemos la propiedad de las esperanzas, \underline{propiedad de l...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 632.
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--639
+
+ []
+
+
+
+[36]
+Package mdframed Info: Not enough space on this page on input line 647.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 651.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.651 	E
+        l estadístico natural $(\sum_{i = 1}^{n}T_1(X_i), \ldots \sum_{i = ...
+
+[37]
+<Graficos/geogebra-export.png, id=526, 341.43307pt x 267.00066pt>
+File: Graficos/geogebra-export.png Graphic file (type png)
+<use Graficos/geogebra-export.png>
+Package pdftex.def Info: Graficos/geogebra-export.png  used on input line 701.
+(pdftex.def)             Requested size: 239.59973pt x 187.37177pt.
+
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 726--726
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 726.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 726.
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--726
+\OT1/cmr/m/n/10.95 Recordemos adem^^Sas cu^^Sales son las fun-ciones de den-si-dad de los m^^Saximos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--726
+\OT1/cmr/m/n/10.95 y lo m^^S^^Pnimos ($[]$):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--726
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--726
+
+ []
+
+
+Overfull \hbox (16.2945pt too wide) detected at line 726
+\OT1/cmr/m/n/10.95 = [][] \OMS/cmsy/m/n/10.95 ^^@ [][] [][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ [][] \OML/cmm/m/it/10.95 y[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dy \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ^^R [][] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ^^R[]
+ []
+
+
+
+[39 <./Graficos/geogebra-export.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 729.
+
+Underfull \hbox (badness 10000) in paragraph at lines 752--752
+
+ []
+
+
+Overfull \hbox (43.58176pt too wide) detected at line 752
+\OT1/cmr/m/n/10.95 = 1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] > x\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A [] ^^A \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] > x\OT1/cmr/m/n/10.95 ) = 1 \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ))[] = 1 \OMS/cmsy/m/n/10.95 ^^@ [][]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 n [][] \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )[]
+ []
+
+
+
+[40]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 769.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.769 ...{definición} [Función de verosimilitud]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 777.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.777 ...definición} [Principio de verosimilitud]
+                                                  
+Underfull \hbox (badness 10000) in paragraph at lines 789--789
+
+ []
+
+
+
+[41]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 792.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.792 ...in{definición}[Principio de suficiencia]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 800.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.800 ...efinición}[Principio de condicionalidad]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 808.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.808 \begin{teorema}[Teorema de Birnbaum]
+                                          
+
+[42]
+
+[43]
+Overfull \hbox (28.14803pt too wide) detected at line 859
+\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 e[]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 ([]) = \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[\OT1/cmr/m/n/10.95 )[] \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 ([]) \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 e[]
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 862.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.862 			E
+          sta distribución en particular se la conoce como log-normal o dis...
+Overfull \hbox (20.03802pt too wide) in paragraph at lines 872--873
+[]\OT1/cmr/m/n/10.95 Sea una m.a.s. de tama~no $\OML/cmm/m/it/10.95 n$ \OT1/cmr/m/n/10.95 de una poblaci^^Son con funci^^Son de dis-tribuci^^Son $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Uniforme\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )$
+ []
+
+
+
+[44]
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 926--929
+
+ []
+
+
+
+[46]
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 976--978
+
+ []
+
+)
+
+[48] (Theory/4 - Estimacion Puntual Parametrica.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3 \begin{definición}[Estimador]
+                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 8.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 ...efinición}[Estimador centrado o insesgado]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 24.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.24 \begin{definición}[Sesgo]
+                               
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
+
+ []
+
+
+
+[49]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 53.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 \vspace
+            {-\topsep} % Removes the default vertical spacing
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+
+ []
+
+
+
+[50]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 123.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.123 ...in{definición}[Estimadores consistentes]
+                                                  
+
+[51]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 135.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.135 S
+       i $T_{n} = T(X_1, \ldots, X_n)$ es una sucesión de estimadores tales...
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 176.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.176 A
+       ntes de tomar la muestra, la información sobre $\theta$ viene dada p...
+
+[53]
+
+[54]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 290.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.290 ...ción}[Estadístico suficiente bayesiano]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 295.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.295 ... del Teorema de Factorización de Fisher]
+                                                  
+
+[55]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 308.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.308 \begin{definición}[Error cuadrático medio]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 315.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.315 D
+       ado un estimador $T(X_1, \ldots, X_n)$ de $\theta$, se tiene que:
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 323.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.323 E
+       l sesgo mide qué tanto se desvía, en promedio, el estimador del val...
+Overfull \hbox (1.05072pt too wide) detected at line 346
+\OML/cmm/m/it/10.95 V[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 ) = []  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 ECM[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 V[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[[]; ^^[\OT1/cmr/m/n/10.95 )[] = [] \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 ^^[[] < [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ECM[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 )
+ []
+
+
+
+[56]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 349.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.349 E
+       n general, si $T_1$ y $T_2$ son dos estimadores de $\theta$ y $ECM_{T...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 354.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.354 \begin{definición}[Pérdida final esperada]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 360.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.360 P
+       uede darse que existan varias funciones de pérdida, veamos las más ...
+
+[57]
+Overfull \hbox (3.523pt too wide) detected at line 384
+\OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [(\OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ^^R\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ] = (\OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ^^R\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )[][]
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 405.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.405   $
+         $PFE(t) = \int_{\Theta} \underbrace{\mathcal{L}(\theta, t)}_{\text{...
+
+[58]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 419.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.419 ...ntrado uniformemente de mínima varianza]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 423.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.423 ...trados uniformemente de mínima varianza]
+                                                  
+Overfull \hbox (30.394pt too wide) detected at line 445
+[]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 ) 
+ []
+
+
+
+[59]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 448.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.448   E
+         l estimador centrado uniformemente de mínima varianza es función ...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 456.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.456 E
+       n general si tienes un estimador $T$ que no es simétrico, puedes pro...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 461.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.461 ...a}[Teorema de caracterización del ECUMV]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 466.
+
+pdfTeX warning (ext4): destination with the same identifier (name{corolario.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.466   S
+         i $T_1 = T_2(X_1, \ldots X_n)$ y $T_2 = T_2(X_1, \ldots, X_n)$ son ...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 469.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.469 \begin{teorema}[Teorema de Rao-Blackwell]
+                                               
+
+[60]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 516.
+
+Overfull \hbox (11.33437pt too wide) detected at line 540
+\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Bin\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 Bernouilli\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )[]  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--540
+
+ []
+
+
+
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 544--544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--575
+
+ []
+
+
+
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 588--588
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 613--613
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 613--613
+
+ []
+
+
+
+[63]
+Overfull \hbox (22.68881pt too wide) detected at line 668
+\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Normal\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V; ^^[[]\OT1/cmr/m/n/10.95 )  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[]  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; [] ; x[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 e[]
+ []
+
+
+
+[64]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 671.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.671 \begin{definición}[Score]
+                                
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 677.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.677   E
+         l score mide cuánta información hay en una observación sobre $\t...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 680.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.680 \begin{definición}[Información de Fisher]
+                                                 
+
+[65]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 691.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.691 ...[Condiciones de regularidad de Wolfowitz]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 702.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.702 ...in{teorema}[Cota de Fréchet-Cramér-Rao]
+                                                  
+
+[66]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 773.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.773 }
+       
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 773.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 776.
+
+pdfTeX warning (ext4): destination with the same identifier (name{corolario.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.776 B
+       ajo las suposiciones anteriores, si T es un estadístico tal que
+
+[67]
+Package mdframed Info: Not enough space on this page on input line 778.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 781.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 788.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.788 B
+       ajo las suposiciones anteriores, si la distribución de $X$ pertenece...
+Overfull \hbox (13.33932pt too wide) in paragraph at lines 788--789
+\OT1/cmr/m/it/10.95 param^^Setrica, es de-cir, $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 e[]$\OT1/cmr/m/it/10.95 , con $\OML/cmm/m/it/10.95 q[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 no nula, en-tonces el es-tad^^S^^Pstico $[] [][] \OML/cmm/m/it/10.95 T[] []$
+ []
+
+
+
+[68]
+
+[69]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 872.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.872 \begin{definición} [Estimador Eficiente]
+                                               
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 892.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.892 \begin{definición}[Método de los momentos]
+                                                  
+
+[70]
+
+[71]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 990.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.990 ...ión}[Estimador de máxima verosimilitud]
+                                                  
+
+[72]
+Overfull \hbox (60.05666pt too wide) in paragraph at lines 1052--1053
+\OT1/cmr/m/n/10.95 spon-di-entes a un m^^Saximo de $\OML/cmm/m/it/10.95 f[]$\OT1/cmr/m/n/10.95 , es de-cir aque-l-las en las que la ma-triz hes-siana $\OML/cmm/m/it/10.95 H \OT1/cmr/m/n/10.95 = [][]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1053
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1055.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1055 \vspace
+              {-\topsep} % Removes the default vertical spacing
+
+[73]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1094.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1094 S
+        i $S=S\left(X_{1}, \cdots, X_{n}\right)$ es suficiente para $\theta$...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1102.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1102 S
+        i $\hat{\theta}$ es el EMV de $\theta$ y $h: \Theta \longrightarrow ...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1132.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1132 ...in{proposición} [Desigualdad de Yelsin]
+                                                  
+
+[74]
+Overfull \hbox (12.4159pt too wide) in paragraph at lines 1136--1142
+[]\OT1/cmr/m/n/10.95 Consideremos $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^Y [][]$ \OT1/cmr/m/n/10.95 mod-elo es-tad^^S^^Pstico uni-param^^Setrico cont^^S^^Pnuo (o dis-creto) y sea $[]$
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1146.
+
+pdfTeX warning (ext4): destination with the same identifier (name{lema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1146   (
+          1) $E_{\theta_{0}}\left[\log f_{\theta}\left(x_{1}, \ldots, x_{n}\...
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1175.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1175 ... de convergencia del EMV (consistencia)]
+                                                  
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1190.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1190 E
+        l teorema anterior es útil, sólo cuando existe una única raíz de...
+
+[75]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1196.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1196 ...vergencia del EMV (convergencia en ley)]
+                                                  
+Overfull \hbox (32.72346pt too wide) in paragraph at lines 1209--1217
+\OT1/cmr/m/n/10.95 continua en $\OML/cmm/m/it/10.95 ^^R$ \OT1/cmr/m/n/10.95 uni-forme-mente $\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 x$\OT1/cmr/m/n/10.95 , se tiene que $\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 B[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 I[] [] [] \OT1/cmr/m/n/10.95 0$ Por lo tanto, $[] [] []\OML/cmm/m/it/10.95 N [] \OMS/cmsy/m/n/10.95 ^^X
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1220.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1220 ...ción de las condiciones de regularidad]
+                                                  
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1223
+
+ []
+
+
+
+[76]
+
+[77]
+Overfull \hbox (8.2108pt too wide) detected at line 1303
+\OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^[[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^V[] \OT1/cmr/m/n/10.95 + [] + \OML/cmm/m/it/10.95 ^^V[] \OMS/cmsy/m/n/10.95 ^^@ [] [] \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 X[][]\OT1/cmr/m/n/10.95 ] = \OML/cmm/m/it/10.95 ^^[[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^V[] \OT1/cmr/m/n/10.95 + [] + \OML/cmm/m/it/10.95 ^^V[] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 2 [] = []  =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 Bias\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@[]
+ []
+
+
+
+[78]
+
+[79]
+Overfull \hbox (37.24683pt too wide) in paragraph at lines 1369--1371
+\OT1/cmr/m/n/10.95 Ahora cal-cule-mos la in-for-maci^^Son de Fisher, us-ando la for-mula de la doble derivada: $\OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 E[]\OT1/cmr/m/n/10.95 [[]\OML/cmm/m/it/10.95 logf[]\OT1/cmr/m/n/10.95 ([]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )]$ 
+ []
+
+
+
+[80]
+Overfull \hbox (0.13283pt too wide) detected at line 1388
+[] \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmr/m/n/10.95 = [] = [] [] = [] [] = [] []  =[]\OMS/cmsy/m/n/10.95 ) 
+ []
+
+
+Overfull \hbox (44.74068pt too wide) in paragraph at lines 1408--1410
+\OT1/cmr/m/n/10.95 Ahora cal-cule-mos la in-for-maci^^Son de Fisher, us-ando la f^^Sormula de la doble derivada: $\OML/cmm/m/it/10.95 I[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 E[] []$\OT1/cmr/m/n/10.95 : 
+ []
+
+
+
+[81])
+
+[82] (Theory/5 - Estimacion por Regiones de Confianza.tex
 Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
@@ -1384,25 +2727,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 22.
-Package hyperref Info: bookmark level for unknown definición defaults to 0 on input line 22.
 
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 \begin{definición}[Región de confianza]
+                                              
 
-[2]
+[83]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 32.
-LaTeX Font Info:    Trying to load font information for U+bbold on input line 33.
- (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/bbold\ubbold.fd)
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.32 \begin{definición}[Intervalos de confianza]
+                                                 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 38.
-Package hyperref Info: bookmark level for unknown observación defaults to 0 on input line 38.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 ...ervación}[Explicación de la definición]
+                                                  
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 51.
 
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.51 S
+      iempre es deseable hacer que la medida de la región de confianza sea ...
 
-[3]
+[84]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 66.
@@ -1415,7 +2776,12 @@ l.66 \begin{definición}[Cantidad pivotal]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 72.
-Package hyperref Info: bookmark level for unknown teorema defaults to 0 on input line 72.
+
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72 ...n{teorema}[Método de la cantidad pivotal]
+                                                  
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 106.
@@ -1429,17 +2795,22 @@ Package mdframed Info: mdframed inside a box
  mdframed uses option nobreak mdframed on input line 106.
 
 
-[4]
+[85]
 
-[5]
+[86]
 
-[6]
+[87]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 172.
 
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.172 \begin{teorema}[Método de Neyman]
+                                        
 
-[7]
+[88]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 209.
@@ -1465,21 +2836,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--264
 
 
 
-[8]
+[89]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 266.
 
+pdfTeX warning (ext4): destination with the same identifier (name{teorema.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.266 \begin{teorema}[Desigualdad de Tchebychev]
+                                                
 Underfull \hbox (badness 10000) in paragraph at lines 286--286
 
  []
 
 
 
-[9]
+[90]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 289.
+
+pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.289     L
+           os intervalos que se obtienen mediante el método de la desiguald...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 294.
@@ -1495,14 +2877,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--315
 
 
 
-[10]
+[91]
 Overfull \hbox (24.37825pt too wide) detected at line 359
 []  \OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 )  \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 383 \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 ^^R \OMS/cmsy/m/n/10.95 ^^T \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 797) = 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 95  =[]\OMS/cmsy/m/n/10.95 )  \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a; b\OT1/cmr/m/n/10.95 ) = (0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 383\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 797)
  []
 
 
 
-[11]
+[92]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 383.
@@ -1516,7 +2898,7 @@ Package mdframed Info: mdframed inside a box
  mdframed uses option nobreak mdframed on input line 383.
 
 
-[12]
+[93]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 400.
@@ -1527,7 +2909,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\
 l.400 R
        ecordemos que el intervalo de confianza obtenido desde el punto de vi...
 
-[13]
+[94]
 Underfull \hbox (badness 10000) in paragraph at lines 414--416
 
  []
@@ -1539,11 +2921,11 @@ Overfull \hbox (67.89133pt too wide) detected at line 439
 
 
 
-[14]
+[95]
 
-[15]
+[96]
 
-[16]
+[97]
 
 LaTeX Warning: Command \textordmasculine invalid in math mode on input line 555.
 
@@ -1553,7 +2935,7 @@ LaTeX Warning: Command \textordmasculine invalid in math mode on input line 555.
 Missing character: There is no � in font cmr10!
 
 
-[17]
+[98]
 Underfull \hbox (badness 10000) in paragraph at lines 574--576
 
  []
@@ -1570,9 +2952,9 @@ Overfull \hbox (33.07156pt too wide) detected at line 583
 
 
 
-[18])
+[99])
 
-[19] (Theory/6 - Contraste de Hipotesis.tex
+[100] (Theory/6 - Contraste de Hipotesis.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
 
  []
@@ -1604,11 +2986,22 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 28.
 
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28 ...ipótesis Estadística Nula y Alternativa]
+                                                  
 
-[20]
+[101]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 42.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definici\303\263n.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 ...�n} [Contraste de Hipótesis Paramétrico]
+                                                  
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 51.
@@ -1626,7 +3019,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 72.
 
 
-[21]
+[102]
 Package mdframed Info: Not enough space on this page on input line 74.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1674,7 +3067,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{definici\303\2
 l.98 ...vel de significación y tamaño del test ]
                                                   
 
-[22]
+[103]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 113.
@@ -1698,12 +3091,16 @@ Package mdframed Info: Box was splittet wrong
 (mdframed)              on input line 146.
 
 
-[23]
+[104]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 148.
-Package hyperref Info: bookmark level for unknown proposición defaults to 0 on input line 148.
 
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.148 ... [Criterio de comparación de contrastes]
+                                                  
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 154.
@@ -1719,6 +3116,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 158.
+
+pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 S
+       ea $C$ una región crítica para el contraste $H_{0}: \theta \in \The...
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 167.
@@ -1734,12 +3137,7 @@ Overfull \hbox (12.90314pt too wide) in paragraph at lines 167--169
 
 
 
-[24
-pdfTeX warning (ext4): destination with the same identifier (name{proposici\303\263n.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.187 $$
-        ]
+[105]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 191.
@@ -1755,14 +3153,14 @@ Overfull \hbox (23.681pt too wide) in paragraph at lines 191--193
 
 
 
-[25]
+[106]
 Underfull \hbox (badness 1072) in paragraph at lines 247--247
 [] \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 e[] \OMS/cmsy/m/n/10.95 ^^U \OML/cmm/m/it/10.95 k \OMS/cmsy/m/n/10.95 , [] ^^U \OML/cmm/m/it/10.95 c$ \OT1/cmr/m/n/10.95 donde $\OML/cmm/m/it/10.95 c$ \OT1/cmr/m/n/10.95 es tal que
  []
 
 
 
-[26]
+[107]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 256.
@@ -1800,7 +3198,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{observaci\303\
 l.286 C
        omo su propio nombre indica, en un test aleatorizado, observado un va...
 
-[27]
+[108]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 291.
@@ -1840,36 +3238,40 @@ l.322 \begin{definición} [Test insesgado]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 327.
-Package hyperref Info: bookmark level for unknown corolario defaults to 0 on input line 327.
 
+pdfTeX warning (ext4): destination with the same identifier (name{corolario.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.327 
+      
 
-[28])
+[109])
 Overfull \hbox (15.09334pt too wide) in paragraph at lines 356--14
 \OT1/cmr/m/n/10.95 tad^^S^^Pstico con-tinuo (o dis-creto) uni-param^^Setrico y $[]$ una mues-tra de $[]$, siendo $\OML/cmm/m/it/10.95 f[] []$
  []
 
 
 
-[29]) (main.aux)
+[110]) (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 11A928AB491AE631604E35AD225E9B8A;2766.
+(rerunfilecheck)             Checksum: 40DDF9AF739C36FF9AD147863CCF5483;8247.
  ) 
 Here is how much of TeX's memory you used:
- 48252 strings out of 473523
- 1145737 string characters out of 5714630
- 1781709 words of memory out of 5000000
- 70509 multiletter control sequences out of 15000+600000
- 571572 words of font info for 87 fonts, out of 8000000 for 9000
+ 50323 strings out of 473523
+ 1191854 string characters out of 5714630
+ 1848176 words of memory out of 5000000
+ 72219 multiletter control sequences out of 15000+600000
+ 575653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,14n,112p,1185b,1489s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (30 pages, 424194 bytes).
+ 109i,24n,112p,1185b,2239s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi657\esint10.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi600\bbold8.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbold/dpi657\bbold10.pk><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on main.pdf (111 pages, 1196454 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 138 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1265 PDF objects out of 1440 (max. 8388607)
+ 479 named destinations out of 1000 (max. 500000)
+ 474 words of extra memory for PDF output out of 10000 (max. 10000000)
 
