@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1745493291.03216 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/ESTADISTICA/APUNTES LATEX/Estadistica/main.tex" "main.pdf" "main" 1745493312.30231 0
+["pdflatex"] 1745493789.2218 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/ESTADISTICA/APUNTES LATEX/Estadistica/main.tex" "main.pdf" "main" 1745493806.35288 0
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1744110255 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1740147393 12668 a3ed22f2cef16b37e8699fac08a7818a ""
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1740565963 10576 75648f62b7a46e740096c5aeab74a4e7 ""
@@ -340,13 +340,13 @@
   "Theory/3 - Reduccion de Datos.tex" 1745310911 75352 4ace95f3c574eea12287cde360c5cf05 ""
   "Theory/4 - Estimacion Puntual Parametrica.tex" 1745421918 106375 9d9a332338d4474f3880cf81b60e8498 ""
   "Theory/5 - Estimacion por Regiones de Confianza.tex" 1745492834 53027 a8aebe87c47d868010a1aff37724cec6 ""
-  "Theory/6 - Contraste de Hipotesis.tex" 1745493273 32479 2a567aef376ae220d806268fcc2c4858 ""
+  "Theory/6 - Contraste de Hipotesis.tex" 1745493787 32479 5de343629f6872a51282e25e11a14624 ""
   "Theory/Theory.tex" 1745492969 425 19b2edf4cdd8b54c9f82c316f2d0480b ""
   "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/ESTADISTICA/APUNTES LATEX/Estadistica/main.tex" 1745399563 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1745493311 49538 2db0972d8e429fe7aa4d4519ccef39af "pdflatex"
-  "main.out" 1745493311 8247 40ddf9af739c36ff9ad147863ccf5483 "pdflatex"
+  "main.aux" 1745493805 49538 2db0972d8e429fe7aa4d4519ccef39af "pdflatex"
+  "main.out" 1745493805 8247 40ddf9af739c36ff9ad147863ccf5483 "pdflatex"
   "main.tex" 1745399563 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1745493311 3787 ce510b9de20e0ccddcb111f9ce586fd3 "pdflatex"
+  "main.toc" 1745493805 3787 ce510b9de20e0ccddcb111f9ce586fd3 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
