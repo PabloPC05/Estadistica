@@ -409,11 +409,19 @@ Recordemos que el intervalo de confianza obtenido desde el punto de vista frecue
     \end{enumerate}
 \end{problem}
 \begin{sol}
-    Para calcular el EMV obtengamos la función de verosimilitud:
-    $$ f(\vec{x} | \theta) = 5^n \cdot \frac{\prod_{i=1}^{n}x_i^4}{\theta^5n} \cdot I_{(x_{(n)}, \infty)}(\theta)$$ 
-    Esta funcion es claramente decreciente en $\theta$, por lo que para maximizar la función de verosimilitud, $\theta$ debe ser lo más pequeño posible, es decir, $\hat{\theta}_{n} = x_{(n)}$, siendo este nuestro estimador de máxima verosimilitud. \\
-    Ahora encontremos nuestra region de confianza, que sera de la forma $(\lambda X_{(n)}, +\infty)$.
-    NO SE COMO SEGUIR
+    \begin{enumerate}
+        \item Para calcular el EMV obtengamos la función de verosimilitud:
+        $$ f(\vec{x} | \theta) = 5^n \cdot \frac{\prod_{i=1}^{n}x_i^4}{\theta^5n} \cdot I_{(x_{(n)}, \infty)}(\theta)$$ 
+        Esta funcion es claramente decreciente en $\theta$, por lo que para maximizar la función de verosimilitud, $\theta$ debe ser lo más pequeño posible, es decir, $\hat{\theta}_{n} = x_{(n)}$, siendo este nuestro estimador de máxima verosimilitud. \\
+    
+        \item Ahora encontremos nuestra region de confianza, que sera de la forma $(\lambda X_{(n)}, +\infty)$.\\
+        Tras esto comprobemos que:
+        $$P(X_{(n)} < y | \theta) = P(X < y | \theta)^n = \left(\frac{y}{\theta}\right)^{5n}$$
+        De lo que sacamos, igualando:
+        $$ \lambda^{5n} = 1 - \alpha \implies \lambda = (1 - \alpha)^{\frac{1}{5n}}$$
+        Obteniendo asi la region de confianza:
+        $$ RC_{1-\alpha}(\theta) = \left((1 - \alpha)^{\frac{1}{5n}}X_{(n)}, +\infty\right)$$
+    \end{enumerate}   
 \end{sol}
 \begin{problem}{5.4.2}
     Para una m.a.s. de tamaño $n$, de una población con función de densidad: 
@@ -447,7 +455,7 @@ Recordemos que el intervalo de confianza obtenido desde el punto de vista frecue
 \end{sol}
 \begin{problem}{5.4.4}
     Para una población con función de densidad: 
-    $$f(x | \theta) = \frac{4}{\theta^2}x \cdot I_{(0, \frac{\theta}{2})}(x) - \frac{4}{\theta^2}x \cdot I_{(\frac{\theta}{2}, \theta)}(x)$$
+    $$f(x | \theta) = \frac{4}{\theta^2}x \cdot I_{(0, \frac{\theta}{2})}(x) - \frac{4}{\theta^2}(x - \theta) \cdot I_{(\frac{\theta}{2}, \theta)}(x)$$
     \begin{enumerate}
         \item Hállese el estimador máxima verosimilitud $T$ de $\theta$ 
         \item Construyase una región de confiana de grado 1 - $\alpha$ de la forma $(\frac{T}{2}, \lambda T)$
@@ -455,7 +463,18 @@ Recordemos que el intervalo de confianza obtenido desde el punto de vista frecue
 \end{problem}
 \begin{sol}
     \begin{enumerate}
-        \item 
+        \item Si observamos la funcion de densidad, esta se maximiza en $\theta = 2x_{(n)}$, por lo que el estimador de máxima verosimilitud es:
+        $$\hat{\theta} = 2x_{(n)}$$
+        \item Usando el EMV de antes, estamos buscando, y suponiendo $\lambda \geq \frac{1}{2}$:
+        $$ P\left( X \leq \theta \leq \lambda 2X | \theta \right) = 1 - \alpha \implies P\left( \frac{X}{2} \leq \theta \leq \lambda 2X | \theta \right) = 1 - \alpha$$
+        Integrando la función de densidad, tenemos que:
+        $$ P\left( \frac{X}{2} \leq \theta \leq \lambda 2X | \theta \right) = \int_{\frac{\theta}{2\lambda}}^{\frac{\theta}{2}} \frac{4}{\theta^2}x \cdot dx + \int_{\frac{\theta}{2}}^{\theta} \frac{4}{\theta^2}(\theta - x) \cdot dx =$$
+        $$ = \frac{4}{\theta^2} \left[ \frac{x^2}{2} \right]_{\frac{\theta}{2\lambda}}^{\frac{\theta}{2}} + \frac{4}{\theta^2} \left[ \theta x - \frac{x^2}{2} \right]_{\frac{\theta}{2}}^{\theta} = 1 - \frac{1}{2\lambda^2}$$
+        Ahora igualemos a nuestro $1 - \alpha$:
+        $$1 - \frac{1}{2\lambda^2} = 1 - \alpha \implies \lambda = \frac{1}{\sqrt{2\alpha}}$$
+        Si hubieramos supuesto que $\lambda < \frac{1}{2}$, el intervalo hubiera sido $(2\lambda x, x)$ lo cual es absurdo ya que $x<\lambda$.
+        Finalmente obtenemos el intervvalo:
+        $$ IC_{1 - \alpha}(\theta) = \left(X,\sqrt{\frac{2}{\alpha}}X\right)$$
     \end{enumerate}
 \end{sol}
 \begin{problem}{5.4.5}
