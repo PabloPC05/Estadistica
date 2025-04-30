@@ -3,7 +3,7 @@
 \subsection{Principios básicos de un contraste de hipótesis}
 
 \ejemplo{
-    Supongamos que en un laboratorio se está estudiando cierta reacción química sobre una determinada sustancia y que el resultado de dicha reacción es una variable observable que se puede modelizar mediante una v.a. $X$ con distribución normal. \\ \\ Por experiencias anteriores se sabe que, si en la sustancia está presente cierto mineral, $X \sim N(\mu=10, \sigma=4)$ y si no lo está $X \sim N(\mu=11, \sigma=4)$. Se puede comprobar por medio de unos análisis si el mineral está o no presente en la sustancia en estudio, pero dichos análisis son muy costosos, por lo que se procede a realizar la reacción química $n=25$ veces para decidir, a la luz de los resultados, si $\mu=10$ o $\mu=11$
+    Supongamos que en un laboratorio se está estudiando cierta reacción química sobre una determinada sustancia y que el resultado de dicha reacción es una variable observable que se puede modelizar mediante una v.a. $X$ con distribución normal. \\ \\ Por experiencias anteriores se sabe que, si en la sustancia está presente cierto mineral, $X \sim N(\mu=10, \sigma=4)$ y si no lo está $X \sim N(\mu=11, \sigma=4)$. Se puede comprobar por medio de unos análisis si el mineral está o no presente en la sustancia en estudio, pero dichos análisis son muy costosos, por lo que se procede a realizar la reacción química $n=25$ veces para decidir, a la luz de los resultados, si $\mu=10$ o $\mu=11$.
 }
 
 \begin{definición} [Hiptótesis Estadística]
@@ -31,7 +31,7 @@ Una hipótesis estadística es cualquier afirmación acerca de un modelo estadí
 \end{definición}
 
 \ejemplo{
-    Imagina una fábrica que proue botellas de agua de $1000ml$ de capacidad. Para asegurar la calidad, se toma una muestra aleatoria de las botellas y se mide su contenido. Por tanto nuestro objetivo es verificar si la máquina está llenando correctamente las botellas o si hay un problema. 
+    Imagina una fábrica que produce botellas de agua de $1000ml$ de capacidad. Para asegurar la calidad, se toma una muestra aleatoria de las botellas y se mide su contenido. Por tanto nuestro objetivo es verificar si la máquina está llenando correctamente las botellas o si hay un problema. 
     \begin{itemize}
         \item Hipótesis nula: $H_0: \mu = 1000ml$ (la máquina está funcionando correctamente)
         \item Hipótesis alternativa: $H_1: \mu \neq 1000ml$ (la máquina no está funcionando correctamente)
@@ -40,7 +40,7 @@ Una hipótesis estadística es cualquier afirmación acerca de un modelo estadí
 }
 
 \begin{definición} [Contraste de Hipótesis Paramétrico]
-    Un contraste estadístico es cualquier particiión del espacio muestral $\chi^{n}$ en dos subconjutnos $RA$ y $RC$ de tal manera que si el punto muestral $\vec{x} = (x_1, \ldots, x_n)$ pertenece a $RA$ se dice que se acepta la hipótesis nula, es decir, se admite $H_0: \theta \in \Theta_0$ y si $\vec{x} \in RC$ se dice que se rechaza la hipótesis nula o equivalentemente que se acepta la hipótesis alternativa, es decir, se admite $H_1: \theta \in \Theta_1$. \\ 
+    Un contraste estadístico es cualquier partición del espacio muestral $\chi^{n}$ en dos subconjutnos $RA$ y $RC$ de tal manera que si el punto muestral $\vec{x} = (x_1, \ldots, x_n)$ pertenece a $RA$ se dice que se acepta la hipótesis nula, es decir, se admite $H_0: \theta \in \Theta_0$ y si $\vec{x} \in RC$ se dice que se rechaza la hipótesis nula o equivalentemente que se acepta la hipótesis alternativa, es decir, se admite $H_1: \theta \in \Theta_1$. \\ 
     A $RA$ se le denomina \textbf{región de aceptación} y a $RC$ se le denomina \textbf{región crítica}. 
 \end{definición}
 
@@ -70,17 +70,57 @@ Una hipótesis estadística es cualquier afirmación acerca de un modelo estadí
 \end{observación}
 
 \begin{definición} [Región Crítica]
-    Sea una partición del espacio muestral $\chi^{n}$ en dos subconjuntos $C$ y $C^{*}$ tales que $\chi^{n}=C \bigcup C^{*}$ y $C \bigcap C^{*}=\phi$. $C$ es una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$ sí y sólo sí, se rechaza $H_{0}$ cuando se observa un valor muestral $\left(x_{1}, \cdots, x_{n}\right) \in C$, en cuyo caso se acepta $H_{1}$. Consecuentemente, $C^{*}$ se denomina región de aceptación y si $\left(x_{1}, \cdots, x_{n}\right) \in C^{*}$, se dice que no hay suficiente evidencia estadística para rechazar $H_{0}$, en este sentido se acepta $H_{0}$
+    Sea una partición del espacio muestral $\chi^{n}$ en dos subconjuntos $C$ y $C^{*}$ tales que $\chi^{n}=C \bigcup C^{*}$ y $C \bigcap C^{*}=\phi$. $C$ es una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$ sí y sólo sí, se rechaza $H_{0}$ cuando se observa un valor muestral $\left(x_{1}, \cdots, x_{n}\right) \in C$, en cuyo caso se acepta $H_{1}$. 
 \end{definición}
+
+\begin{definición} [Región de aceptación]
+    Sea una partición del espacio muestral $\chi^{n}$ en dos subconjuntos $C$ y $C^{*}$ tales que $\chi^{n}=C \bigcup C^{*}$ y $C \bigcap C^{*}=\phi$. $C^{*}$ es una región de aceptación para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$ sí y sólo sí, se acepta $H_{0}$ cuando se observa un valor muestral $\left(x_{1}, \cdots, x_{n}\right) \in C^{*}$, en cuyo caso se rechaza $H_{1}$. 
+\end{definición}
+
+\begin{observación}
+    La región crítica es el equivalente a una \textbf{zona de alarma}. Si nuestros resulatados caen ahí, se activará la alarma y se actúa en consecuencia. La región de aceptación es el equivalente a una \textbf{zona de seguridad}. Si nuestros resultados caen ahí, no se activará la alarma y no se actúa. 
+\end{observación}
+
+\ejemplo{
+    En el ejemplo anterior de las botellas, si al estimar la media muestral $\bar{x}$, se obtiene un valor de $1003$ o mayor será suficiente para rechazar la hipótesis nula $H_0$ y aceptar la alternativa $H_1$. En este caso, la región crítica sería $\bar{x} \geq 1003$ y la región de aceptación sería $\bar{x} < 1003$.
+}
 
 \subsection{Errores de tipo I y de tipo II}
 \begin{definición}[Error de tipo I]
-    El error de tipo I es el error que se comete cuando se rechaza $H_{0}$ siendo cierta. La probabilidad de cometer este error se denomina \textbf{nivel de significación del test} y se denota por $\alpha=P_{\theta_{0}}(C)$, donde $\theta_{0} \in \Theta_{0}$
+    El error de tipo I es el que se comete cuando se rechaza $H_0$ siendo cierta. La probabilidad de cometer un Error de Tipo I se denota por $\alpha$ 
+    y se llama nivel de significación del test.
+    $$\alpha = \sup_{\theta \in \Theta_0} P_{\theta}(C)$$
 \end{definición}
 
 \begin{definición}[Error de tipo II]
-    El error de tipo II es el error que se comete cuando se acepta $H_{1}$ siendo falsa. La probabilidad de cometer este error se denomina \textbf{potencia del test} y se denota por $\beta=P_{\theta_{1}}(C)$, donde $\theta_{1} \in \Theta_{1}$
+    El error de tipo II es el que se comete cuando no se recheza (se acepta) $H_1$ siendo falsa. La probabilidad de cometer un Error de Tipo II se denota por $\beta$.
+    $$\beta = \sup_{\theta \in \Theta_1} P_{\theta}(C^c)$$
 \end{definición}
+
+\begin{center}
+    \begin{tabular}{|l|c|c|}
+        \hline
+         & \textbf{$H_0$ Verdadera} & \textbf{$H_0$ Falsa} \\
+        \hline
+        \textbf{Aceptar $H_0$} & No Error & Error Tipo II \\
+        \hline
+        \textbf{Rechazar $H_0$} & Error Tipo I & No Error \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\ejemplo{
+    Imagina que instalas un nuevo sistema de deteccion de incendios en un edificio. El ssistema tiene que decidir constantemente si hay fuego o no.
+    \begin{itemize}
+        \item Hipótesis Nula ($H_0$): No hay fuego
+        \item Hipótesis Alternativa ($H_1$): Hay fuego
+    \end{itemize}
+    El sistema usa sensores de humo y calor y toma una decisión: Rechazar la hipótesis nula (hay fuego) o no rechazar $H_0$ (no hay fuego). Veamos los dos posibles errores: 
+    \begin{enumerate}
+        \item Error de tipo I (Falsa alarma): La realidad es que no hay fuego, pero la decisión del sistema es que si lo hay y la alarma suena. Esto puede causar una evacuación innecesaria y gastos en la empresa.
+        \item Error de tipo II (Fallo en la detección): Sí hay fuego pero la alarma no suena. Esto puede causar daños graves y poner en peligro la vida de las personas en el edificio.
+    \end{enumerate}
+}
 
 \ejemplo{
     En el primer ejemplo de todos, las probabilidades de cometer error de tipo I y error de tipo II son $P(\mathrm{I})=P(\bar{x} \geq k \mid \mu=10)$ y $P(\mathrm{II})=P(\bar{x}<k \mid \mu=11)$
@@ -91,12 +131,13 @@ Una hipótesis estadística es cualquier afirmación acerca de un modelo estadí
     La única forma realista de reducir ambos errores simultáneamente sería tomar una muestra más grande, pero ésto conllevaría mas costes, tiempo y recursos. 
 \end{observación}
 
-\begin{definición} [Función de Potencia]
-Si $C$ es una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, se define la función de potencia del test como la función $\beta_{C}: \Theta \rightarrow[0,1]$ que a cada valor $\theta$ del parámetro le asigna el valor $\beta_{C}(\theta)=P_{\theta}(C)$, es decir, la probabilidad de rechazar $H_{0}$ cuando el valor del parámetro es $\theta$
+\begin{definición} [Potencia]
+    La Potencia de un test es la probabilidad de rechazar correctamente la hipótesis nula ($H_0$) cuando ésta es realmente falsa. Mide la capacidad del test para detectar un efecto o diferencia cuando realmente existe. Se define como $1-\beta$, donde $\beta$ es la probabilidad de cometer un error de tipo II.
 \end{definición}
 
-\begin{definición} [Nivel de significación y tamaño del test ]
-Un test $C$ tiene nivel de significación $\alpha \in[0,1]$ sí y sólo sí $\sup \beta_{C}(\theta) \leq \alpha$ y se denomina tamaño del test al valor $\sup \beta_{C}(\theta)$ $\theta \in \Theta_{0}$
+\begin{definición} [Función de Potencia]
+    Se define la función potencia del test cómo: 
+    $$\beta_{C}(\theta)=P_{\theta}(C)$$
 \end{definición}
 
 \ejemplo{
@@ -121,88 +162,130 @@ Un test $C$ tiene nivel de significación $\alpha \in[0,1]$ sí y sólo sí $\su
     \end{itemize} 
 }
 
+\ejemplo{
+    Si para una población $N(\mu, \sigma = 1)$ se quiere contrastar la hipótesis nula $H_0: \mu = 0$ frente a la hipótesis alternativa $H_1: \mu = 3$ con m.a.s. de tamaño $n = 25$ tomando como región crítica $C = \{\bar{X} \geq 0.392\}$, entonces, ésto quiere decir que si calculamos la media de nuestra muestra de 25 observaciones y resulta ser 0.392  más rechazaremos $H_0$ y aceptaremos $H_1$. \\
+    Ahora calculemos el nivel de significación $\alpha$, que es la probabilidad de rechazar $H_0$ cuando es cierta, por lo que calcularemos: 
+    $$P(\bar{x} \geq 0.392 \mid \mu = 0) = P(N(0, \frac{1}{\sqrt{25}}) \geq 0.392) = P(\frac{\bar{x} - 0}{\frac{1}{5}} \sim Z \geq \frac{0.392 - 0}{\frac{1}{5}}) = P(Z \geq 1.96) = 0.025$$
+    La funncion potencia es: 
+    $$\beta(\mu) = P(\bar{x} \geq 0.392 \mid \mu) = P(Z \geq \frac{0.392 - \mu}{\frac{1}{5}}) = 1 - \phi(1.96 - 5\mu)$$
+    con $Z \sim N(0,1)$ y $\phi$ la función de distribución de la normal estándar.
+}
+
+
+
 \begin{definición} [p-valor]
- Si para contrastar $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, el test tiene región crítica 
- $$C=\left\{\left(x_{1}, \ldots, x_{n}\right): T\left(x_{1}, \ldots, x_{n}\right) \geq k\right\}$$
- para $T$ un estadístico conveniente, y se observa la muestra $\left(x_{1}, \ldots, x_{n}\right)$, se denomina p -valor correspondiente a $\left(x_{1}, \ldots, x_{n}\right)$ al valor
-
-$$
-p\left(x_{1}, \ldots, x_{n}\right)=\sup _{\theta \in \Theta_{0}} P\left\{T\left(X_{1}, \ldots, X_{n}\right) \geq T\left(x_{1}, \ldots, x_{n}\right) \mid \theta\right\}
-$$
-
-Si el tamaño del test es $\alpha$ y observada la muestra $\left(x_{1}, \ldots, x_{n}\right)$ el p-valor correspondiente $p\left(x_{1}, \ldots, x_{n}\right) \leq \alpha$, entonces $\left(x_{1}, \ldots, x_{n}\right)$ pertenece a la región crítica y por lo tanto se rechaza $H_{0}$. Si el p -valor $p\left(x_{1}, \ldots, x_{n}\right)>\alpha$, entonces $\left(x_{1}, \ldots, x_{n}\right)$ pertenece a la región de aceptación y por lo tanto no hay suficiente evidencia estadística para rechazar $H_{0}$
+    El p-valor es la probabilidad, bajo la hipótesis nula $H_0$ de observar un valor del estadístico de prueba igual o más extremo que el valor observado, es decir,
+    $$p(\vec{x}) = P_{\theta_0}(T(\vec{X}) \geq T(\vec{x}))$$
+    donde $T(\vec{X})$ es el estadístico de contraste, $\vec{x}$ es la muestra observada y la desigualdad se ajusta dependiendo del tipo de prueba (unilateral a izquierda, deecha o bilateral).
 \end{definición}
 
+\begin{observación}
+    Los tipos de prueba son:
+    \begin{enumerate}
+        \item Prueba unilateral a derecha: $\begin{cases} H_0: \mu = \mu_0 \\ H_1: \mu > \mu_0 \end{cases}$
+        \item Prueba unilateral a izquierda: $\begin{cases} H_0: \mu = \mu_0 \\ H_1: \mu < \mu_0 \end{cases}$
+        \item Prueba bilateral: $\begin{cases} H_0: \mu = \mu_0 \\ H_1: \mu \neq \mu_0 \end{cases}$
+    \end{enumerate}
+\end{observación}
+
 \ejemplo{
-En el ejemplo anterior, con $n=100, C=\{\bar{x} \geq k\}$ y $\alpha=0.05$,\\
-$P(I)=\beta_{c}(\mu=10)=P(\bar{x} \geq 10.658 \mid \mu=10)=0.05$\\
-$P(\mathrm{II})=1-\beta_{C}(\mu=11)=P(\bar{x}<10.658 \mid \mu=11)=0.196$\\
-Entonces, observada $\bar{x}=11$
-
-$$
-p(11)=P(\bar{X} \geq 11 \mid \mu=10)=P(Z \geq 2.5)=0.00621
-$$
-
-Por lo tanto, se rechaza $H_{0}: \mu=10$ a favor de $H_{1}: \mu=11$    
+    Sea el contraste de $H_0: \mu = 0$ frente a $H_1: \mu \neq 0$ con una muestra de tamaño $n=25$ y un estadístico de contraste $\bar{X}$. Si se obtiene un valor de $\bar{x} = 0.1$ tal que $X \sim N(\mu, 1)$, el p-valor sería:
+    $$p(x_1, \ldots, x_{25}) = P_{\theta_0}(\bar{X} \geq 0.1) = P(N(0, \frac{1}{5}) \geq 0.1) = P(Z \geq 0.5) = 0.69416$$
 }
 
 
 \begin{observación}
-\vspace{-2.5em}
-\begin{enumerate}
-\item n y $\alpha$ son valores fijados de antemano
-\item Las hipótesis nula y alternativa no son intercambiables puesto que el tratamiento que reciben es asimétrico, la asimetría queda matizada por el valor $\alpha$ que se elija como nivel de significación y por la probabilidad de error de tipo II que resulte una vez diseñado el test, pues podría ocurrir que para $\theta \in \Theta_{1}, P_{\theta}\left(C^{c}\right)=1-\beta_{C}(\theta) \leq \alpha$
-\item  En el contraste de hipótesis planteado se considera $H_{0}$ como la hipótesis de interés, en el sentido que para poder invalidarla es necesario esgrimir una gran evidencia. Por consiguiente, los test de hipótesis se emplean con un carácter conservador, a favor de la hipótesis nula, ya que el nivel de significación que se fija, intenta garantizar que sea muy infrecuente rechazar una hipótesis nula correcta, y la preocupación por dejar vigente una hipótesis nula falsa es menor, pudiéndose aceptar en este último caso riesgos más altos. En este sentido, si el resultado de un contraste de hipótesis es aceptar $H_{0}$, debe interpretarse que las observaciones no han aportado suficiente evidencia para descartarla; mientras que, si se rechaza, es porque se está razonablemente seguro de que $H_{0}$ es falsa y, por consiguiente, aceptamos $H_{1}$
-\end{enumerate}
+    $$\begin{cases}
+        \text{Si p-valor}  \leq \alpha \text{ se rechaza } H_0 \\
+        \text{Si p-valor}  > \alpha \text{ no se rechaza } H_0
+    \end{cases}$$
 \end{observación}
-
-\begin{proposición} [Criterio de comparación de contrastes]
-Si $C$ y $C^{\prime}$ son dos test con nivel de significación $\alpha$ basados en una muestra $\left(X_{1}, \cdots X_{n}\right)$ de $\left\{F_{\theta}, \theta \in \Theta\right\}$, para contrastar $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, tales que $\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta), \forall \theta \in \Theta_{1}$, entonces $C$ es uniformemente más potente que $C^{\prime}$    
-\end{proposición}
-
-
-
-\subsection{Test uniformemente más potente de tamaño $\alpha$}
-
-
-\begin{proposición}
-Sea $C$ una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, basada en una muestra ( $X_{1}, \cdots X_{n}$ ) de $\left\{F_{\theta}, \theta \in \Theta\right\}$ $C$ es un test uniformemente de máxima potencia de tamaño $\alpha$ (TUMP) sí y sólo sí
-\begin{enumerate}
-\item $\sup \beta_{C}(\theta)=\alpha$ $\theta \in \Theta_{0}$
-\item Para cualquier otro test basado en $\left(X_{1}, \cdots X_{n}\right)$ con región crítica $C^{\prime}$ tal que $\sup _{\theta \in \Theta_{0}} \beta_{C^{\prime}}(\theta) \leq \alpha$, es $\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta), \forall \theta \in \Theta_{1}$
-\end{enumerate}
-\end{proposición}
-
-\subsection{Hipótesis nula simple frente a alternativa simple}
-
-\begin{teorema} [Teorema de Neyman-Pearson - Parte I] 
-Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k \geq 0$ existe un test con región crítica $c=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots, x_{n}\right)} \geq k\right\}$ y región de aceptación $C^{c}=\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}<k\right\}$ tal que $\alpha=P_{\theta_{0}}(C)$, entonces $C$ es uniformemente de máxima potencia de tamaño $\alpha$
-\end{teorema}
-
-\begin{proof}
-Observemos que $C$ es un test de tamaño $\alpha$ ya que $\Theta_{0}=\left\{\theta_{0}\right\}$ y por lo tanto $\sup _{\theta \in \Theta_{0}} \beta_{C}(\theta)=P_{\theta_{0}}(C)=\alpha$\\
-Sea $C^{\prime}$ otro test de nivel $\alpha$, es decir tal que $\alpha \geq \sup _{\theta \in \Theta_{0}} \beta_{C^{\prime}}(\theta)=P_{\theta_{0}}\left(C^{\prime}\right)$ y consideremos la siguiente partición del espacio muestral.
-$$
-\begin{gathered}
-S^{+}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)>\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\}, \\
-S^{-}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)<\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\}, \\
-\chi^{n}-S^{+} \bigcup S^{-}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)=\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\} \\
-\int_{\chi^{n}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}= \\
-\int_{S^{+}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}+ \\
-\int_{S^{-}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}+ \\
-\int_{\chi^{n}-S^{+} \cup S^{-}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n} \geq 0 \\
-\int_{\chi^{n}} I_{C}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-\int_{\chi^{n}} I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n} \geq \\
-k\left(\int_{\chi^{n}} I_{C}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)-\int_{\chi^{n}} I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}\right) \\
-P_{\theta_{1}}(C)-P_{\theta_{1}}\left(C^{\prime}\right) \geq k\left(P_{\theta_{0}}(C)-P_{\theta_{0}}\left(C^{\prime}\right)\right) \geq k(\alpha-\alpha)=0 \Rightarrow \beta_{C}(\theta) \geq \beta C^{\prime}(\theta), \forall \theta \in \Theta_{1}=\left\{\theta_{1}\right\}
-\end{gathered}
-$$
-\end{proof}
 
 \begin{observación}
-De la demostración del teorema se deduce que los puntos para los que $f\left(x_{1}, \ldots, x_{n} \mid \theta_{1}\right)=k f\left(x_{1}, \ldots, x_{n} \mid \theta_{0}\right)$ pueden ser colocados tanto en la región crítica como en la región de aceptación.\\
-Es importante señalar que el teorema de Neyman-Pearson no dice que el test de la forma dada en su enunciado deba existir cualquiera que sea $\alpha \in[0,1]$
+    En un test, el tamaño de la muestra $n$ y el nivel de significación $\alpha$ se escogen antes de realizar el experimento.
 \end{observación}
 
+\begin{observación}
+    En la práctica, se da prioridad a no rechazar $H_0$ a la ligera. Solo se rechaza si hay suficiente evidencia en contra. Por eso si no se rechaza $H_0$ no se está diciendo que es verdadera, sino que no hay evidencia suficiente para descartarla. En cambio, si sse rechaza ,se interpreta que hay buena evidencia para aceptar $H_1$. 
+\end{observación}
+
+\begin{observación}
+    A la hora de diseñar un contraste estadítico se fija de antemano el nivel de significación $\alpha$, a partir de la cual se define la región crítica $C$ (conjunto de dats que te harían rechazar $H_0$). Mientras que el error tipo II emerge después. \\
+    Además se pueden dar situaciones excepcionales en las que aunque $\theta$ esté en el espacio paramétrico alternativo $\Theta_1$, el test sea tan poco sensible que su poencia sea baja. En el extremo podría ocurrir que
+    $$1 - \beta_C(\theta) \leq \alpha$$
+    lo cual significa que la capacidad para rechazar $H_0$ cuando $H_1$ es cierta sería tan mala como el riesgo que te permites de rechazar $H_0$ estando $\theta \in \Theta_0$, es decir, cuando verdaderamente se cumple $H_0$.
+\end{observación}
+
+\begin{definición}  [Test más uniformemente potente]
+    Dados dos tests con regiones críticas $C$ y $C^{\prime}$ respectivamente, con el mismo nivel de significación para
+    $$H_{0}: \theta \in \Theta_{0} \text{ frente a } H_{1}: \theta \in \Theta_{1}$$
+    si para todo valor $\theta$ que satisface $H_1$ la potencia del test $C$ es al menos tan grande como la de $C^{\prime}$, es decir:
+    $$\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta) \forall \quad \theta \in \Theta_1$$  
+    entonces decimos que $C$ es uniformemente más potente que $C^{\prime}$, es decir, cuando la probabilidad de que ocurra un error de tipo II es menor para el test $C$ que para el test $C^{\prime}$.
+\end{definición}
+
+\begin{definición} [Test Uniformemente de Máxima Potencia]
+    Sea $C$ una región crítica para el contraste $H_0: \theta \in \Theta_0$ frente a $H_1: \theta \in \Theta_1$ basada en una muestra $\left(X_{1}, \cdots, X_{n}\right)$ de $\left\{F_{\theta}, \theta \in \Theta\right\}$. $C$ es un test uniformemente de máxima potencia (TUMP) de tamaño $\alpha$ si y sólo si: 
+    \begin{enumerate}
+        \item $\sup_{\theta \in \Theta_{0}} \beta_{C}(\theta)=\alpha$
+        \item Para cualquier otro test basado en $\left(X_{1}, \cdots, X_{n}\right)$ con región crítica $C^{\prime}$ tal que $\sup_{\theta \in \Theta_{0}} \beta_{C^{\prime}}(\theta) \leq \alpha$, es $\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta), \forall \theta \in \Theta_{1}$
+    \end{enumerate}
+\end{definición}
+
+
+\subsection{Métodos de construcción de hipótesis}
+
+\begin{definición}[Método de construcción de contrastes de hipótesis]
+    Es un procedimiento sistemático que te indica cómo elegir o calcular un estadístico de prueba basada en los datos de la muestra y defini una región de rechazo (región crítica) o una regla de decisión (por ejemplo. comparar el p-valor con un nivel de significación $\alpha$). \\
+    El objetivo es poder tomar una decisión sobre si rechazar o no la hiótesis nula ($H_0$) basándose en la evidencia de la muestra y hacerlo de forma que se controlen las probabilidades de cometer errores.
+\end{definición}
+
+\begin{teorema}[Teorema de Neyman-Pearson Parte I]
+    Para contrastar $H_0: \theta \in \Theta_0$ frente a $H_1: \theta \in \Theta_1$ si para algún $k \geq 0$ existe un test con región crítica
+    $$C = \left\{ (x_1, \ldots x_n) \in \chi^n : \frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots. x_n)} \geq k\right\}$$ y región de aceptaión:
+    $$C^c = \left\{ (x_1, \ldots x_n) \in \chi^n : \frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots. x_n)} < k\right\}$$ 
+    tales que $\alpha = P_{\theta_0}(C)$, entonces el test relacionado con $C$ es uniformemente de máxima potencia (TUMP).
+\end{teorema}
+
+\ejemplo{
+
+}
+
+\begin{definición}[Contraste de la razón de verosimilitudes]
+    Para contrastar $H_0: \theta \in \Theta_0$ frente a $H_1: \theta \in \Theta_1$ con una m.a.s. de tamaño $n$ el test de la razón de verosimilitudes (RV) es el que tiene por región crítica $C = \{\vec{x} : \lambda(\vec{x}) \leq k\}$, donde
+    $$\lambda(\vec{x}) = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \vec{x})}{\sup_{\theta \in \Theta} L(\theta \mid \vec{x})}$$
+    con $k \in (0,1)$ determinada para que $\sup_{\theta \in \Theta_0} P_{\theta}(C) \leq \alpha$. 
+\end{definición}
+
+\ejemplo{
+    Sea una población que sigue una distribución $X \sim exp(\theta)$ y se quiere contrastar la hipótesis nula $H_0: \theta = 1$ frente a la alternativa $H_1: \theta \neq 1$. Calculemos el denominador de $\lambda(\vec{x})$, es decir, el Estimador de Máxima Verosimilitud (EMV) de $\theta$:
+    $$ f_{\theta}(x) = \theta \cdot e^{-x\theta} \implies L(\vec{x}; \theta) = \theta^n \cdot e^{-\theta \sum x_i} \cdot I_{(0, +\infty)}(X_{(1)}) \implies$$
+    $$\implies \log L(\vec{x}; \theta) = n \cdot log(\theta) - \theta \sum x_i \implies \frac{\partial}{\partial \theta} \log L(\vec{x}; \theta) = \frac{n}{\theta} - \sum x_i = 0 \implies$$
+    $$\implies \text{ el EMV de } \theta \text{ es } \hat{\theta} = \frac{n}{\sum x_i} = \frac{1}{\bar{X}}$$
+    Ahora veamos cómo se describe la región crítica $C$ en este caso: 
+    $$C = \left\{ \vec{x} : \frac{L(\theta_0|\vec{x})}{L(\hat{\theta}|\vec{x})} \leq k \right\} 
+    = \left\{ \vec{x} : \frac{\theta_0^n e^{-\theta_0 \sum x_i} I_{(0, +\infty)}(X_{(1)})}{\hat{\theta}^n e^{-\hat{\theta} \sum x_i} I_{(0, +\infty)}(X_{(1)})} \leq k \right\} 
+    = \left\{ \vec{x} : \frac{\theta_0^n e^{-\theta_0 \sum x_i}}{\left(\frac{n}{\sum x_i}\right)^n e^{-n}} \leq k \right\} = $$
+    $$ = \left\{\vec{x} : \left(\frac{\theta_0 e}{n}\right)^n \cdot e^{-\theta_0 \sum x_i} \cdot \left(\sum x_i\right)^n \leq k \right\} = \{\vec{x} : c\left(\sum x_i\right) \leq k\}$$
+    Dado que tenemos qe el cociente de verosimilitud depende de $\sum x_i$, podemos redefinir la región crítica para hacerla dependiente de dicho estadístico, pero para ello debemos saber el comportamiento del conjunto, para ello derivaremos: 
+    $$\ln\left(c\left(\sum x_i\right)\right) = n\ln(\frac{\theta_0 e}{n}) - \theta_0 \sum x_i + n\ln(\sum x_i) \implies \frac{\partial}{\partial \sum x_i} = -\theta_0 + \frac{n}{\sum x_i} \implies $$
+    $$ \implies \frac{\partial^2}{\partial (\sum x_i)^2} = -\frac{n}{(\sum x_i)^2} < 0 \implies \text{ el punto crítico es un máximo } \implies$$ 
+    $$ \implies \begin{cases} \text{ si } \sum x_i \leq \frac{n}{\theta_0} \implies c\left(\sum x_i\right) \text{ crece } \\ \text{ si } \sum x_i > \frac{n}{\theta_0} \implies c\left(\sum x_i\right) \text{ decrece } \end{cases}$$
+    Por lo tanto, debemos tomar un entorno o umbral del máximo, $A = (c_1, c_2) : c_1 < \frac{n}{\theta_0} < c_2$ y por lo tanto la región crítica $C$ se puede definir como:
+    $$C = \left\{ \sum x_i \leq c_1\right\} \cup \left\{\sum x_i \geq c_2 \right\}$$ 
+    donde $c$ es una constante que se determina para que el test tenga un nivel de significación $\alpha$. 
+}
+
+\ejemplo{
+    Para contrastar $H_0: \theta \leq \theta_0$ frente a $H_1: \theta > \theta_0$ con una m.a.s. de tamaño $n$ y $X \sim Bernoulli(\theta)$, mediante el test de la razón de verosimilitudes, se tiene que:
+    $$\lambda(\vec{x}) = \frac{\sup_{\theta \in \Theta_0} \theta^{\sum x_i}(1 - \theta)^{n - \sum x_i}}{\sup_{\theta \in \Theta} \theta^{\sum x_i}(1 - \theta)^{n - \sum x_i}} = \frac{\sup_{\theta \leq \theta_0} \theta^{\sum x_i}(1 - \theta)^{n - \sum x_i}}{\sup_{\theta \in [0.1]} \theta^{\sum x_i}(1 - \theta)^{n - \sum x_i}}$$
+    Dado que el denominador busca maximizar en todo el espacio paramétrico, estamos tratando con el Estimador de Máxima Verosimilitud (EMV) de $\theta$ que en el caso de las Bernoullis es $\hat{\theta} = \bar{X}$. Entonces hemos de tratar dos situaciones en relación a $\theta_0$:
+    \begin{enumerate}
+        \item Caso 1: $$\bar{x} \leq \theta_0 \implies \bar{x} \in \Theta_0 \implies \lambda(\vec{x}) = \frac{L(\bar{x}) \mid \vec{x}}{L(\bar{x}) \mid \vec{x}} = 1$$
+        \item Caso 2: $$\bar{x} > \theta_0 \implies \bar{x} \not\in \Theta_0 \implies \lambda(\vec{x}) = \frac{L(\theta_0) \mid \vec{x}}{L(\bar{x}) \mid \vec{x}} = \frac{\theta_0^{\sum x_i}(1 - \theta_0)^{n - \sum x_i}}{\bar{x}^{\sum x_i}(1 - \bar{x})^{n - \sum x_i}}$$
+    \end{enumerate}
+    Dado que $\theta_0$ es un valor fijo, podemos fijarnos en el segundo caso, que a medida que aumente $\bar{x}$, la razón de verosimilitud $\lambda(\vec{x})$ decrece. Ésto es equivalente a decir que a medida que aumenta $\bar{x}$, los datos se hacen menos verosímiles o equivalentemente a medida que aumente $\bar{x}$ la evidencia en contra de $H_0$ (y a favor de $H_1$) se hace más fuerte. Por lo tanto, la región crítica $C$ se puede definir como $C = \{\vec{x} : \bar{x} \geq c\}$ para una constante $c$ y tal que $P(\bar{x} \geq c \mid H_0) \leq \alpha$. 
+}
 
 \ejemplo{
 
@@ -365,3 +448,17 @@ $0.05=E_{\theta_{0}}[\varphi]=1 \times P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i}
 
 \section*{Contrastes de hipótesis unilaterales}
 Familia de distribuciones de razón de verosimilitud monótona Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \subset \mathbb{R}}$ un modelo estadístico continuo (o discreto) uniparamétrico y $\left(X_{1}, \cdots, X_{n}\right)$ una muestra de $\left\{F_{\theta}, \theta \in \Theta\right\}$, siendo $f_{\theta}\left(x_{1}, \cdots x_{n}\right)$ su función de densidad (o de masa) $\left\{F_{\theta}, \theta \in \Theta\right\}$ es una familia de distribuciones de razón de verosimilitud monótona creciente (o decreciente) sí y sólo sí existe un estadístico $T=T\left(X_{1}, \cdots, X_{n}\right): \chi^{n} \rightarrow \mathbb{R}$ tal que, si $\theta_{0}, \theta_{1} \in \Theta$ y $\theta_{0}<\theta_{1}$, entonces la razón de verosimilitudes $\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)}$ es una función monótona creciente (o decreciente) en $T\left(x_{1}, \cdots, x_{n}\right)$
+
+
+\ejemplo{
+    Sea $X \sim exp(\theta)$ vamos a comparar la hipótesis nula $H_0: \theta = \theta_0$ frente a la alternativa $H_1: \theta = \theta_1$, tales que $\theta_0 < \theta_1$. Sea el test $\varphi$: 
+    $$\varphi(\vec{x}) = \begin{cases}
+        1 & \text{si } \vec{x} \in C^\circ, \\
+        a & \text{si } \vec{x} \in \partial C, \\
+        0 & \text{si } \vec{x} \in C^c
+    \end{cases}$$
+    Recordemos además la definición matemática de región crítica: 
+    $$C = \left\{(x_1, \ldots, x_n) = \vec{x} \in \chi^n : \frac{\sup_{\theta \in H_1} f_{\theta}(\vec{x})}{\sup_{\theta \in H_0} f_{\theta}(\vec{x})} \geq k\right\}$$
+    equivalentemente podríamos haber escrito que el valor de $\theta \in \Theta_0$ tal que $f_{\theta}(\vec{x})$ alcance el supremo en $\theta_0$ es el valor crítico $k$ y también podríamos haber escrito que el valor de $\theta \in \Theta_1$ tal que $f_{\theta}(\vec{x})$ alcance el supremo en $\theta_1$ es el valor crítico $k$. Por lo tanto, la región crítica se puede escribir como:
+    $$C = \left\{\vec{x} : \frac{f_{\theta_1}(\vec{x})}{f_{\theta_0}(\vec{x})} \geq k \right\} = \left\{\vec{x} : \frac{(\theta_1)^n \cdot e^{-\theta_1 \sum_{i=1}^n x_i} \cdot I_{(0, +\infty)}(X_{(1)})}{(\theta_0)^n \cdot e^{-\theta_0 \sum_{i=1}^n x_i} \cdot I_{(0, +\infty)}(X_{(1)})} \geq k \right\}.$$
+}
