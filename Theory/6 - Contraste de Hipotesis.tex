@@ -201,6 +201,51 @@ Una hipótesis estadística es cualquier afirmación acerca de un modelo estadí
     \end{cases}$$
 \end{observación}
 
+<<<<<<< HEAD
+=======
+\begin{proposición} [Criterio de comparación de contrastes]
+Si $C$ y $C^{\prime}$ son dos test con nivel de significación $\alpha$ basados en una muestra $\left(X_{1}, \cdots X_{n}\right)$ de $\left\{F_{\theta}, \theta \in \Theta\right\}$, para contrastar $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, tales que $\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta), \forall \theta \in \Theta_{1}$, entonces $C$ es uniformemente más potente que $C^{\prime}$    
+\end{proposición}
+
+
+
+\subsection{Test uniformemente más potente de tamaño $\alpha$}
+
+
+\begin{proposición}
+Sea $C$ una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ frente a $H_{1}: \theta \in \Theta_{1}$, basada en una muestra ( $X_{1}, \cdots X_{n}$ ) de $\left\{F_{\theta}, \theta \in \Theta\right\}$ $C$ es un test uniformemente de máxima potencia de tamaño $\alpha$ (TUMP) sí y sólo sí
+\begin{enumerate}
+\item $\sup \beta_{C}(\theta)=\alpha$ $\theta \in \Theta_{0}$
+\item Para cualquier otro test basado en $\left(X_{1}, \cdots X_{n}\right)$ con región crítica $C^{\prime}$ tal que $\sup _{\theta \in \Theta_{0}} \beta_{C^{\prime}}(\theta) \leq \alpha$, es $\beta_{C}(\theta) \geq \beta_{C^{\prime}}(\theta), \forall \theta \in \Theta_{1}$
+\end{enumerate}
+\end{proposición}
+
+\subsection{Hipótesis nula simple frente a alternativa simple}
+
+\begin{teorema} [Teorema de Neyman-Pearson - Parte I] 
+Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k \geq 0$ existe un test con región crítica $c=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_0}\left(x_{1}, \cdots, x_{n}\right)} \geq k\right\}$ y región de aceptación $C^{c}=\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}<k\right\}$ tal que $\alpha=P_{\theta_{0}}(C)$, entonces $C$ es uniformemente de máxima potencia de tamaño $\alpha$
+\end{teorema}
+
+\begin{proof}
+Observemos que $C$ es un test de tamaño $\alpha$ ya que $\Theta_{0}=\left\{\theta_{0}\right\}$ y por lo tanto $\sup _{\theta \in \Theta_{0}} \beta_{C}(\theta)=P_{\theta_{0}}(C)=\alpha$\\
+Sea $C^{\prime}$ otro test de nivel $\alpha$, es decir tal que $\alpha \geq \sup _{\theta \in \Theta_{0}} \beta_{C^{\prime}}(\theta)=P_{\theta_{0}}\left(C^{\prime}\right)$ y consideremos la siguiente partición del espacio muestral.
+$$
+\begin{gathered}
+S^{+}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)>\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\}, \\
+S^{-}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)<\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\}, \\
+\chi^{n}-S^{+} \bigcup S^{-}=\left\{\left(x_{1}, \cdots x_{n}\right) \in \chi^{n}: \mathrm{I}_{C}\left(x_{1}, \cdots x_{n}\right)=\mathrm{I}_{C^{\prime}}\left(x_{1}, \cdots x_{n}\right)\right\} \\
+\int_{\chi^{n}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}= \\
+\int_{S^{+}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}+ \\
+\int_{S^{-}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n}+ \\
+\int_{\chi^{n}-S^{+} \cup S^{-}}\left(I_{C}\left(x_{1}, \cdots, x_{n}\right)-I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right)\right)\left(f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-k f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)\right) d x_{1} \cdots d x_{n} \geq 0 \\
+\int_{\chi^{n}} I_{C}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)-\int_{\chi^{n}} I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n} \geq \\
+k\left(\int_{\chi^{n}} I_{C}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right)-\int_{\chi^{n}} I_{C^{\prime}}\left(x_{1}, \cdots, x_{n}\right) f_{\theta_{0}}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}\right) \\
+P_{\theta_{1}}(C)-P_{\theta_{1}}\left(C^{\prime}\right) \geq k\left(P_{\theta_{0}}(C)-P_{\theta_{0}}\left(C^{\prime}\right)\right) \geq k(\alpha-\alpha)=0 \Rightarrow \beta_{C}(\theta) \geq \beta C^{\prime}(\theta), \forall \theta \in \Theta_{1}=\left\{\theta_{1}\right\}
+\end{gathered}
+$$
+\end{proof}
+
+>>>>>>> cf64b1dbf1a223678e7843b7f55b17f4d1d8f673
 \begin{observación}
     En un test, el tamaño de la muestra $n$ y el nivel de significación $\alpha$ se escogen antes de realizar el experimento.
 \end{observación}
@@ -325,13 +370,13 @@ La probabilidad de error de tipo I ($\alpha$) y la función de potencia ($\beta(
 
 \ejemplo{
 Para una m.a.s.(n) de $X \sim N(\theta, \sigma)$, con $\sigma$ conocida, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
-$\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots x_{n}\right)}=e^{\frac{1}{\sigma^{2}} n\left(\theta_{0}^{2}-\theta_{1}^{2}\right)} e^{\frac{1}{\sigma^{n} n} n\left(\theta_{1}-\theta_{0}\right)} \geq k \Leftrightarrow \bar{x} \geq c$\\
+$\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_0}\left(x_{1}, \cdots x_{n}\right)}=e^{\frac{1}{\sigma^{2}} n\left(\theta_{0}^{2}-\theta_{1}^{2}\right)} e^{\frac{1}{\sigma^{n} n} n\left(\theta_{1}-\theta_{0}\right)} \geq k \Leftrightarrow \bar{x} \geq c$\\
 donde $c$ es tal que $P_{\theta_{0}}\{\bar{x} \geq c\}=\alpha$, es decir $c=\theta_{0}+z_{\alpha} \frac{\sigma}{\sqrt{n}}$
 }
 
 \ejemplo{
 Para una m.a.s.(n) de $X \sim \operatorname{Exp}(\theta)$, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
-$\frac{f_{9}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{\theta_{1}}{\theta_{0}}\right)^{n} e^{\left(\theta_{0}-\theta_{1}\right) \sum_{i=1}^{n} x_{i}} \geq k \Leftrightarrow 2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c$\\
+$\frac{f_{\theta_1}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{\theta_{1}}{\theta_{0}}\right)^{n} e^{\left(\theta_{0}-\theta_{1}\right) \sum_{i=1}^{n} x_{i}} \geq k \Leftrightarrow 2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c$\\
 donde $c$ es tal que $P_{\theta_{0}}\left\{2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c\right\}=\alpha$, es decir $c=\chi_{2 n, \alpha}^{2}$
 }
 
@@ -342,7 +387,7 @@ $\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1
 
 \ejemplo{
 Para una m.a.s.(n) de $X \sim \operatorname{Bin}(1, \theta)$, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
-$\frac{f_{0}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{1-\theta_{1}}{1-\theta_{0}}\right)^{n}\left(\frac{\theta_{1}}{\theta_{0}} \frac{1-\theta_{0}}{1-\theta_{1}}\right)^{\sum_{i=1}^{n} x_{i}} \Leftrightarrow \sum_{i=1}^{n} x_{i} \geq c$\\
+$\frac{f_{\theta_1}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{1-\theta_{1}}{1-\theta_{0}}\right)^{n}\left(\frac{\theta_{1}}{\theta_{0}} \frac{1-\theta_{0}}{1-\theta_{1}}\right)^{\sum_{i=1}^{n} x_{i}} \Leftrightarrow \sum_{i=1}^{n} x_{i} \geq c$\\
 donde $c$ es tal que $P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i} \geq c\right\}=\sum_{j=c}^{n}\binom{n}{j} \theta_{0}^{j}\left(1-\theta_{0}\right)^{n-j}=\alpha_{c}, c=0,1,2, \ldots, n$
 }
 
