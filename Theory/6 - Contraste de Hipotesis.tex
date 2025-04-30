@@ -6,7 +6,7 @@
     Supongamos que en un laboratorio se está estudiando cierta reacción química sobre una determinada sustancia y que el resultado de dicha reacción es una variable observable que se puede modelizar mediante una v.a. $X$ con distribución normal. \\ \\ Por experiencias anteriores se sabe que, si en la sustancia está presente cierto mineral, $X \sim N(\mu=10, \sigma=4)$ y si no lo está $X \sim N(\mu=11, \sigma=4)$. Se puede comprobar por medio de unos análisis si el mineral está o no presente en la sustancia en estudio, pero dichos análisis son muy costosos, por lo que se procede a realizar la reacción química $n=25$ veces para decidir, a la luz de los resultados, si $\mu=10$ o $\mu=11$.
 }
 
-\begin{definición} [Hiptótesis Estadística]
+\begin{definición} [Hipótesis Estadística]
 Una hipótesis estadística es cualquier afirmación acerca de un modelo estadístico.
 \end{definición}
 
@@ -293,8 +293,50 @@ $$
 \end{teorema}
 
 \ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población que sigue una distribución normal $N(\theta, \sigma^2)$ con $\sigma^2$ conocido. Se quiere encontrar el test uniformemente de máxima potencia (TUMP) para contrastar la hipótesis nula $H_0: \theta = \theta_0$ frente a la alternativa $H_1: \theta = \theta_1$, con $\theta_0 < \theta_1$.
+    $$\frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} = \frac{\prod_{i=1}^n \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x_i - \theta_1)^2}{2\sigma^2}}}{\prod_{i=1}^n \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x_i - \theta_0)^2}{2\sigma^2}}} = \frac{\left(\frac{1}{\sqrt{2\pi\sigma^2}}\right)^n e^{-\frac{1}{2\sigma^2}\sum (x_i - \theta_1)^2}}{\left(\frac{1}{\sqrt{2\pi\sigma^2}}\right)^n e^{-\frac{1}{2\sigma^2}\sum (x_i - \theta_0)^2}} = e^{\frac{1}{2\sigma^2}\sum (x_i - \theta_0)^2 - (x_i - \theta_1)^2} = $$
+    $$ = e^{\frac{1}{2\sigma^2}\left(n(\theta_0^2 - \theta_1^2) + 2(\theta_1 - \theta_0)\sum x_i\right)} \implies C = \left\{\vec{x} : e^{\frac{1}{2\sigma^2}\left(n(\theta_0^2 - \theta_1^2) + 2(\theta_1 - \theta_0)\sum x_i\right)} \geq k\right\} \iff$$
+    $$ \iff \frac{1}{2\sigma^2}\left(n(\theta_0^2 - \theta_1^2) + 2(\theta_1 - \theta_0)\sum x_i\right) \geq \ln(k) \iff n\bar{x} = \sum x_i \geq c$$ 
+    para alguna constante $c$ que depende de $k$, $\theta_0$ y $\theta_1$. 
+    $$P_{\theta_0}(C) = P_{\theta_0}\left(\sum x_i \geq c\right) = \alpha \iff P\left(Z \geq \frac{c - n\theta_0}{\sigma\sqrt{n}}\right) = \alpha \iff c = n\theta_0 + \sigma\sqrt{n}z_{1 - \alpha}$$
+}
+
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población que sigue una distribución $X \sim Exp(\theta)$ encontrar el TUMP de tamaño $\alpha$ para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta = \theta_1$, con $\theta_0 < \theta_1$.
+    $$\frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} = \frac{\prod_{i=1}^n \theta_1 e^{-x_i\theta_1}}{\prod_{i=1}^n \theta_0 e^{-x_i\theta_0}} = \frac{\theta_1^n e^{-\sum x_i\theta_1}}{\theta_0^n e^{-\sum x_i\theta_0}} = \left(\frac{\theta_1}{\theta_0}\right)^n e^{(\theta_0 - \theta_1)\sum x_i} \implies $$
+    $$ C = \left\{ \vec{x} \mid \left(\frac{\theta_1}{\theta_0}\right)^n e^{(\theta_0 - \theta_1)\sum x_i} \geq k \right\} = \left\{ \vec{x} \mid n\ln\left(\frac{\theta_1}{\theta_0}\right) + (\theta_0 - \theta_1)\sum x_i \geq \ln(k) \right\} = \left\{ \vec{x} \mid 2\theta_0\sum x_i \leq c \right\} $$
+    con $c$ una constante que depende de $k$, $\theta_0$ y $\theta_1$.
+    $$P_{\theta_0}(C) = P_{\theta_0}\left(\sum  2\theta_0\sum x_i = \chi_{2n}^2 \leq c\right) = \alpha \iff c = \chi_{2n, \alpha}^2$$
+}
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población que sigue una distribución $X \sim N(\theta, \sigma^2)$ con $\mu$ conocida. Se quiere encontrar el TUMP de tamaño $\alpha$ para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta = \theta_1$, con $\theta_0 < \theta_1$.
+    $$\frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} = \frac{\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i - \theta_1)^2}{2\sigma^2}}}{\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i - \theta_0)^2}{2\sigma^2}}} = \left(\frac{\theta_0}{\theta_1}\right)^n e^{\left(\frac{1}{2\theta_0^2} - \frac{1}{2\theta_1^2}\right)\sum (x_i - \mu)^2} \implies $$
+    $$C = \left\{ \vec{x} : \left(\frac{\theta_0}{\theta_1}\right)^n e^{\left(\frac{1}{2\theta_0^2} - \frac{1}{2\theta_1^2}\right)\sum (x_i - \mu)^2} \geq k \right\} 
+    = \left\{ \vec{x} : n\ln\left(\frac{\theta_0}{\theta_1}\right) + \left(\frac{1}{2\theta_0^2} - \frac{1}{2\theta_1^2}\right) \sum (x_i - \mu)^2 \geq \ln k \right\} = $$
+    $$ = C\left\{\vec{x} : \frac{\sum(x_i  \mu)^2}{\theta_0^2} \geq c\right\}$$
+    con $c$ una constante que depende de $k$, $\theta_0$ y $\theta_1$.
+    $$P_{\theta_0}(C) = P_{\theta_0}\left(\frac{\sum(x_i - \mu)^2}{\sigma^2} = \chi_{n-1}^2 \geq c\right) = \alpha \iff c = \chi_{n-1, \alpha}^2$$
+}
+
+\ejemplo{
+    Sea una m.a.s. de tamño $n$ de una población que sigue una distribución $X \sim Bin(1, \theta)$. Se quiere encontrar el TUMP de tamaño $\alpha$ para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta = \theta_1$, con $\theta_0 < \theta_1$.
+    $$\frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} = \frac{\prod_{i=1}^n \theta_1^{x_i} (1 - \theta_1)^{(1 - x_i)}}{\prod_{i=1}^n \theta_0^{x_i} (1 - \theta_0)^{(1 - x_i)}} = \left(\frac{\theta_1}{\theta_0}\right)^{\sum x_i} \left(\frac{(1 - \theta_1)}{(1 - \theta_0)}\right)^{n - \sum x_i} = \left(\frac{(1 - \theta_1)}{(1 - \theta_0)}\right)^{n} \cdot \left(\frac{\theta_1}{\theta_0}\frac{1-\theta_0}{1 - \theta_1}\right)^{\sum x_i}$$
+    $$\implies C = \left\{ \vec{x} : \left(\frac{(1 - \theta_1)}{(1 - \theta_0)}\right)^{n} \cdot \left(\frac{\theta_1}{\theta_0}\frac{1-\theta_0}{1 - \theta_1}\right)^{\sum x_i} \geq k \right\} = $$ 
+    $$= \left\{ \vec{x} : n\ln\left(\frac{(1 - \theta_1)}{(1 - \theta_0)}\right) + \sum x_i \ln\left(\frac{\theta_1}{\theta_0}\frac{1-\theta_0}{1 - \theta_1}\right) \geq \ln k \right\} = \{\vec{x} : \sum x_i \geq c\}$$
+    con $c$ una constante que depende de $k$, $\theta_0$ y $\theta_1$.
+    $$P_{\theta_0}(C) = P_{\theta_0}\left(\sum x_i \geq c\right) = \alpha = \sum_{i=c}^n \binom{n}{i} \theta_0^i (1 - \theta_0)^{n - i}$$
 
 }
+
+\begin{teorema}[Teorema de Neyman-Pearson Parte II]
+    Para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta = \theta_1$ si para algún $k > 0$ existe un test con región crítica $C$ tal que $P_{\theta_0}(C) = \alpha$ con
+    $$\left\{(x_1, \ldots, x_n) \in \chi^n : \frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} > k \right\} \subset C \subset \left\{(x_1, \ldots, x_n) \in \chi^n : \frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} \geq k \right\} $$
+    entonces cualquier test $C \prime$ uniformemente de máxima potencia de nivel $\alpha$, es de tamaño $\alpha$ y verifica
+    $$\left\{(x_1, \ldots, x_n) \in \chi^n : \frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} > k \right\} \subset C\prime \subset \left\{(x_1, \ldots, x_n) \in \chi^n : \frac{f_{\theta_1}(x_1, \ldots, x_n)}{f_{\theta_0}(x_1, \ldots, x_n)} \geq k \right\} $$
+    salvo quizás en un conjunto $A \subset \chi^n$ tal que $P_{\theta_0}(A) = P_{\theta_1}(A)$.
+\end{teorema}
 
 \begin{definición}[Contraste de la razón de verosimilitudes]
     Para contrastar $H_0: \theta \in \Theta_0$ frente a $H_1: \theta \in \Theta_1$ con una m.a.s. de tamaño $n$ el test de la razón de verosimilitudes (RV) es el que tiene por región crítica $C = \{\vec{x} : \lambda(\vec{x}) \leq k\}$, donde

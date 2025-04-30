@@ -36,4 +36,6 @@
 \contentsline {section}{\numberline {6}Contraste de Hipótesis}{101}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Principios básicos de un contraste de hipótesis}{101}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Errores de tipo I y de tipo II}{103}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Métodos de construcción de hipótesis}{107}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{106}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{106}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Métodos de construcción de hipótesis}{108}{subsection.6.5}%
