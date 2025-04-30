@@ -176,7 +176,7 @@ Sea $C$ una región crítica para el contraste $H_{0}: \theta \in \Theta_{0}$ fr
 \subsection{Hipótesis nula simple frente a alternativa simple}
 
 \begin{teorema} [Teorema de Neyman-Pearson - Parte I] 
-Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k \geq 0$ existe un test con región crítica $c=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots, x_{n}\right)} \geq k\right\}$ y región de aceptación $C^{c}=\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}<k\right\}$ tal que $\alpha=P_{\theta_{0}}(C)$, entonces $C$ es uniformemente de máxima potencia de tamaño $\alpha$
+Para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, si para algún $k \geq 0$ existe un test con región crítica $c=\left\{\left(x_{1}, \cdots, x_{n}\right) \in \chi^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_0}\left(x_{1}, \cdots, x_{n}\right)} \geq k\right\}$ y región de aceptación $C^{c}=\left\{\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: \frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}<k\right\}$ tal que $\alpha=P_{\theta_{0}}(C)$, entonces $C$ es uniformemente de máxima potencia de tamaño $\alpha$
 \end{teorema}
 
 \begin{proof}
@@ -242,13 +242,13 @@ La probabilidad de error de tipo I ($\alpha$) y la función de potencia ($\beta(
 
 \ejemplo{
 Para una m.a.s.(n) de $X \sim N(\theta, \sigma)$, con $\sigma$ conocida, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
-$\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{0}\left(x_{1}, \cdots x_{n}\right)}=e^{\frac{1}{\sigma^{2}} n\left(\theta_{0}^{2}-\theta_{1}^{2}\right)} e^{\frac{1}{\sigma^{n} n} n\left(\theta_{1}-\theta_{0}\right)} \geq k \Leftrightarrow \bar{x} \geq c$\\
+$\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_0}\left(x_{1}, \cdots x_{n}\right)}=e^{\frac{1}{\sigma^{2}} n\left(\theta_{0}^{2}-\theta_{1}^{2}\right)} e^{\frac{1}{\sigma^{n} n} n\left(\theta_{1}-\theta_{0}\right)} \geq k \Leftrightarrow \bar{x} \geq c$\\
 donde $c$ es tal que $P_{\theta_{0}}\{\bar{x} \geq c\}=\alpha$, es decir $c=\theta_{0}+z_{\alpha} \frac{\sigma}{\sqrt{n}}$
 }
 
 \ejemplo{
 Para una m.a.s.(n) de $X \sim \operatorname{Exp}(\theta)$, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
-$\frac{f_{9}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{\theta_{1}}{\theta_{0}}\right)^{n} e^{\left(\theta_{0}-\theta_{1}\right) \sum_{i=1}^{n} x_{i}} \geq k \Leftrightarrow 2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c$\\
+$\frac{f_{\theta_1}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{\theta_{1}}{\theta_{0}}\right)^{n} e^{\left(\theta_{0}-\theta_{1}\right) \sum_{i=1}^{n} x_{i}} \geq k \Leftrightarrow 2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c$\\
 donde $c$ es tal que $P_{\theta_{0}}\left\{2 \theta_{0} \sum_{i=1}^{n} x_{i} \leq c\right\}=\alpha$, es decir $c=\chi_{2 n, \alpha}^{2}$
 }
 
@@ -259,7 +259,7 @@ $\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1
 
 \ejemplo{
 Para una m.a.s.(n) de $X \sim \operatorname{Bin}(1, \theta)$, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
-$\frac{f_{0}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{1-\theta_{1}}{1-\theta_{0}}\right)^{n}\left(\frac{\theta_{1}}{\theta_{0}} \frac{1-\theta_{0}}{1-\theta_{1}}\right)^{\sum_{i=1}^{n} x_{i}} \Leftrightarrow \sum_{i=1}^{n} x_{i} \geq c$\\
+$\frac{f_{\theta_1}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_{0}}\left(x_{1}, \cdots x_{n}\right)}=\left(\frac{1-\theta_{1}}{1-\theta_{0}}\right)^{n}\left(\frac{\theta_{1}}{\theta_{0}} \frac{1-\theta_{0}}{1-\theta_{1}}\right)^{\sum_{i=1}^{n} x_{i}} \Leftrightarrow \sum_{i=1}^{n} x_{i} \geq c$\\
 donde $c$ es tal que $P_{\theta_{0}}\left\{\sum_{i=1}^{n} x_{i} \geq c\right\}=\sum_{j=c}^{n}\binom{n}{j} \theta_{0}^{j}\left(1-\theta_{0}\right)^{n-j}=\alpha_{c}, c=0,1,2, \ldots, n$
 }
 
