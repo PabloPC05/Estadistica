@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1746054091.54826 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/main.tex" "main.pdf" "main" 1746054103.63641 0
+["pdflatex"] 1746141844.5092 "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/main.tex" "main.pdf" "main" 1746141862.87062 0
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1745317414 81245 e934491651270ee8e50db9289c70f8a4 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1744013569 12668 34cd0b7211141c24d914262480788b27 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbold/dpi600/bbold8.pk" 1744013572 10576 a2235faf37de72466379ed4e3e679354 ""
@@ -340,13 +340,13 @@
   "Theory/3 - Reduccion de Datos.tex" 1744962776 75352 4ace95f3c574eea12287cde360c5cf05 ""
   "Theory/4 - Estimacion Puntual Parametrica.tex" 1745416528 106375 9d9a332338d4474f3880cf81b60e8498 ""
   "Theory/5 - Estimacion por Regiones de Confianza.tex" 1745927015 53027 a8aebe87c47d868010a1aff37724cec6 ""
-  "Theory/6 - Contraste de Hipotesis.tex" 1746054090 50666 116b100eb5b6b79e416950fbae760c4f ""
+  "Theory/6 - Contraste de Hipotesis.tex" 1746141832 46173 8d4462444d1325ade9e6bcf1284b2798 ""
   "Theory/Theory.tex" 1745927015 425 19b2edf4cdd8b54c9f82c316f2d0480b ""
   "c:/Users/pablo/OneDriveUCM/Universidad/Estadística/Practica_y_latex/Estadistica/main.tex" 1744962776 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.aux" 1746054102 52586 4de3894f2e681f810febaa6af0e236a7 "pdflatex"
-  "main.out" 1746054102 8506 00d8400015dce848c277e219f694a5a3 "pdflatex"
+  "main.aux" 1746141860 52384 1d42ccd6fd84c7caf74413cf572d030e "pdflatex"
+  "main.out" 1746141861 8506 00d8400015dce848c277e219f694a5a3 "pdflatex"
   "main.tex" 1744962776 613 195bb5095c479341b496b2851fe950e8 ""
-  "main.toc" 1746054103 3894 0ef678e9b5cd6ec67b616bcb4de0cb7b "pdflatex"
+  "main.toc" 1746141861 3894 0ef678e9b5cd6ec67b616bcb4de0cb7b "pdflatex"
   (generated)
   "main.aux"
   "main.log"
