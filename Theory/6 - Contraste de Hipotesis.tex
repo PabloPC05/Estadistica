@@ -392,8 +392,65 @@ $$
 }
 
 \begin{definición}[Familia de distribuciones de razón de verosimilitud monótona]
-    Una familia $\{f_\theta : \theta \in \Theta\}$ tiene razón de verosimilitud monótona (RLVM) respecto a $T(\vec{X}) \text{ si, para } \theta_1 < \theta_2$ la razón $\frac{f_{\theta_2}(\vec{x})}{f_{\theta_1}(\vec{x})}$ es monótona en $T(\vec{x})$.
+    Una familia de distribuciones $\{f_{\theta}(x) : \theta \in \Theta\}$ sobre un espacio de observación $\chi$ se dice que tiene una razón de verosimilitud monótona (RLVM) en un estadístico suficiente $T(X)$ si para cualquier par de valores $\theta_0, \theta_1 \in \Theta : \theta_0 < \theta_1$. la razón de verosimilitud $$\lambda(x) = \frac{f_{\theta_1}(x)}{f_{\theta_0}(x)}$$ es una función monótona de $T(x)$, es decir, existe una función $g$ tal que $\lambda(x) = g(T(x))$ y $g$ es estrictamente monótona.
 \end{definición}
+
+\ejemplo{
+    $N(\theta, \sigma)$, con $\sigma$ conocido, pertenece a la famila de distribuciones de razón de verosimilitud monótona, ya que la razón de verosimilitud es:
+    $$\lambda(x) = \frac{f_{\theta_1}(x)}{f_{\theta_0}(x)} = \frac{\frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x - \theta_1)^2}{2\sigma^2}}}{\frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x - \theta_0)^2}{2\sigma^2}}} = e^{\frac{(\theta_0 - \theta_1)(\theta_0 + \theta_1 -2x)}{2\sigma^2}} \implies$$ 
+    $$\implies \frac{\partial}{\partial x}(\ln(\lambda(x))) = \frac{-2(\theta_0 -\theta_1)}{2\sigma^2} = \frac{\theta_1-\theta_0}{\sigma^2} > 0 \implies \text{crece monótonamente}$$
+    Siedo el estadístico $T(X) = X$ un estadístico suficiente para la familia de distribuciones de razón de verosimilitud monótona.
+}
+
+\ejemplo{
+    Demostremos que la familia exponencial uniparamétrica $f_{\theta}(x) = c(\theta)h(x)e^{q_1(\theta)t_1(x)}$ pertenece a la familia de distribuciones de razón de verosimilitud monótona si $q_1(\theta)$ es monótona: 
+    $$\frac{f_{\theta_1}(x)}{f_{\theta_0}(x)} = \frac{c(\theta_1)h(x)e^{q_1(\theta_1)t_1(x)}}{c(\theta_0)h(x)e^{q_1(\theta_0)t_1(x)}} = \frac{c(\theta_1)}{c(\theta_0)} e^{t_1(x)(q_1(\theta_1) - q_1(\theta_0))} \implies$$
+    $$\implies \frac{\partial}{\partial x}(\ln(\lambda(x))) = t_1(x)(q_1(\theta_1) - q_1(\theta_0)) > 0 \iff q_1(\theta) \text{es monótona creciente}$$
+    Obivamos el término de $c(\theta)$ ya que no depende de la muestra y además es positivo así que no influye en el signo de la derivada. 
+}
+
+\ejemplo{
+    Sea una m.a.s. de taamaño $n = 1$ de una población que sigue una distribución $X \sim U(0, \theta)$ con $\theta$ desconocido. Demostremos que dicha distribución pertenece a la familia de distribuciones de razón de verosimilitud monótona:
+    $$\lambda(x) = \frac{f_{\theta_1}(x)}{f_{\theta_0}(x)} = \frac{\frac{1}{\theta_1}\cdot I_{[0, \theta_0]}(x)}{\frac{1}{\theta_0} \cdot I_{[0, \theta_1]}(x)} = \frac{\theta_0\cdot I_{[0, \theta_1]}(x)}{\theta_1\cdot I_{[0, \theta_0]}(x)} = \begin{cases}
+        \text{indefinido} & \text{ si } < 0 \\
+        \frac{\theta_0}{\theta_1} & \text{ si } 0 < x < \theta_0 \\
+        +\infty & \text{ si } \theta_0 < x < \theta_1 \\
+        \text{indefinido} & \text{ si } x > \theta_1 \\
+    \end{cases}$$
+    Podemos ver que la razón de verosimilitud para los intervalos que nos interesan es creciente en el intervalo $[0, \theta_1]$, por lo tanto pertenece a la familia de distribuciones de razón de verosimilitud monótona. 
+}
+
+\begin{teorema}[Teorema de Karlin-Rubin]
+    Si $\{F_\theta : \theta \in \Theta\}$ es una familia de distribuciones de razón de verosimilitud monótona creciente en el estadístico $T  = T(X_1, \ldots, X_n)$, entonces: 
+    \begin{enumerate}
+        \item Para cada $\alpha \in (0,1)$ existe un TUMP de tamaño $\alpha$ para contrastar $H_0: \theta \leq \theta_0$ frente a $H_1: \theta > \theta_0$ de la forma:
+        $$\varphi(\vec{x}) = \begin{cases} 1 & \text{ si } T(\vec{x}) > c \\ \gamma & \text{ si } T(\vec{x}) = c \\ 0 & \text{ si } T(\vec{x}) < c \end{cases}$$
+        es decir que para cualquier test $\varphi\prime$ tal que $\sup_{\theta \in \Theta_0} \beta_{\varphi\prime}(\theta) \leq \alpha$ (es decir, que controla el error de tipo I) se cumple que $\beta_{\varphi}(\theta) = E_{\theta}[\varphi(\vec{x})] \geq E_{\theta}[\varphi\prime(\vec{x})] = \beta_{\varphi\prime}(\theta) $ para todo $\theta \in \Theta_1$.
+        \item Cualquier test $\varphi$ de la forma anterior tiene función de potencia $\beta_{\varphi}(\theta) = E_{\theta}[\varphi(\vec{x})]$ monótona no decreciente. 
+    \end{enumerate}
+    Una reformulación de las consecuencias del teorema más simple es la siguiente:
+    \begin{enumerate}
+        \item El test con región crítica $C = \{x : T(x) > c\}$ y con región de aceptación $A = \{x : T(x) \leq c\}$ es el test de máxima potencia para el contraste $H_0: \theta \leq \theta_0$ frente a $H_1: \theta > \theta_0$.
+        \item La función de potencia del test dado en el apartado anterior es no decreciente en $\theta$.
+    \end{enumerate}
+\end{teorema}
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población con distribución $X \sim N(\mu, \sigma)$ con $\mu$ conocida. Se quiere encontrar el TUMP de tamaño $\alpha$ para contrastar $H_0: \sigma \leq \sigma_0$ frente a $H_1: \sigma > \sigma_0$: \\
+    Para ello haremos uso del Teorema de Karlin-Rubin, para el que necesitamos la razón de verosimilitud:
+    $$\Theta_0 = \{\sigma : \sigma \leq \sigma_0\} \quad \Theta_1 = \{\sigma : \sigma > \sigma_0\} \implies \sigma_0 < \sigma_1$$
+    $$\lambda(\vec{x}) = \frac{f_{\sigma_1}(x)}{f_{\sigma_0}(x)} = \frac{\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_1}} e^{-\frac{(x_i - \mu)^2}{2\sigma_1^2}}}{\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_0}} e^{-\frac{(x_i - \mu)^2}{2\sigma_0^2}}} = \left(\frac{\sigma_0}{\sigma_1}\right)^n e^{\sum (x_i - \mu)^2 \left(\frac{1}{2\sigma_0^2} - \frac{1}{2\sigma_1^2}\right)}$$
+    Entonces podemos ver que la distribución es monótona creciente en el estadístico $T(X) = \sum (x_i - \mu)^2$, por lo que podemos aplicar el teorema de Karlin-Rubin y obtener así la región crítica del TUMP: 
+    $$C = \left\{ \vec{x} : \sum (x_i - \mu)^2 > c \right\} = \left\{\vec{x} : \sum (x_i - \mu)^2 > \chi_{n, 1-\alpha}^2\sigma_0^2 \right\}$$
+}
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población con distribución $X \sim Exp(\frac{1}{\theta})$ con $\theta$ desconocido. Se quiere encontrar el TUMP de tamaño $\alpha$ para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta > \theta_0$: 
+    Para ello aplicamos el teorema de Karlin-Rubin, para el que necesitamos la razón de verosimilitud:
+    $$\lambda(\vec{x}) = \frac{f_{\theta_1}(x)}{f_{\theta_0}(x)} = \frac{\prod_{i=1}^n \frac{1}{\theta_1} e^{-\frac{x_i}{\theta_1}}}{\prod_{i=1}^n \frac{1}{\theta_0} e^{-\frac{x_i}{\theta_0}}} = \left(\frac{\theta_0}{\theta_1}\right)^n e^{\sum x_i \left(\frac{1}{\theta_0} - \frac{1}{\theta_1}\right)}$$
+    Entonces, podemos ver que el cociente de verosimilitud es monótono creciente respecto al estadístico $T(X) = \sum x_i$, por lo que podemos aplicar el teorema de Karlin-Rubin y obtener así la región crítica del TUMP:
+    $$X_i \sim Exp(\frac{1}{\theta}) \implies \sum x_i \sim \Gamma(n, \frac{1}{\theta}) \implies C = \left\{ \vec{x} : \sum x_i > c \right\} = \left\{\vec{x} : \sum x_i > \frac{\chi_{2n; 1 - \alpha}^2\theta_0}{2} \right\}$$
+}
 
 \begin{definición}[Contraste de la razón de verosimilitudes]
     Para contrastar $H_0: \theta \in \Theta_0$ frente a $H_1: \theta \in \Theta_1$ con una m.a.s. de tamaño $n$ el test de la razón de verosimilitudes (RV) es el que tiene por región crítica $C = \{\vec{x} : \lambda(\vec{x}) \leq k\}$, donde
@@ -431,6 +488,32 @@ $$
     Dado que $\theta_0$ es un valor fijo, podemos fijarnos en el segundo caso, que a medida que aumente $\bar{x}$, la razón de verosimilitud $\lambda(\vec{x})$ decrece. Ésto es equivalente a decir que a medida que aumenta $\bar{x}$, los datos se hacen menos verosímiles o equivalentemente a medida que aumente $\bar{x}$ la evidencia en contra de $H_0$ (y a favor de $H_1$) se hace más fuerte. Por lo tanto, la región crítica $C$ se puede definir como $C = \{\vec{x} : \bar{x} \geq c\}$ para una constante $c$ y tal que $P(\bar{x} \geq c \mid H_0) \leq \alpha$. 
 }
 
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población con distribución $X \sim N(\mu, \sigma)$ con $\sigma$ conocido. Se quiere construir el test de la razón de verosimilitudes para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta \neq \theta_0$:
+    $$\Delta(\vec{x}) = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \vec{x})}{\sup_{\theta \in \Theta} L(\theta \mid \vec{x})} = e^{\frac{1}{2\sigma^2} \left(\sum (x_i - \theta_0)^2 + (x_i - \theta_1)^2\right)} = \frac{\left(\frac{1}{\sqrt{2\pi\sigma^2}}\right)^n e^{-\frac{1}{2\sigma^2} \left(\sum (x_i - \theta_0)^2\right)}}{\left(\frac{1}{\sqrt{2\pi\sigma^2}}\right)^n e^{-\frac{1}{2\sigma^2} \left(\sum (x_i - \bar{x})^2\right)}} = e^{-\frac{n(\bar{x} - \theta_0^2)}{2\sigma^2}} \implies$$
+    Por el contraste de la razón de verosimilitudes, la region crítica $C$ se puede definir como:
+    $$C = \left\{\vec{x} : e^{-\frac{n(\bar{x} - \theta_0)^2}{\sigma^2}} \geq k \right\} = \left\{\vec{x} : \frac{-n(\bar{x} - \theta_0)^2}{\sigma^2} \geq \ln(k)\right\} = \left\{\vec{x} : (\bar{x} - \theta_0)^2 \geq \frac{\ln(k)\sigma^2}{n}\right\} = $$ $$ = \left\{\vec{x} : \bar{x} - \theta_0 \geq \mp \sqrt{\frac{\ln(k)\sigma^2}{n}} \right\} = \left\{\vec{x} : \left| \frac{\bar{x} - \theta_0}{\sigma^2} \right| = Z \sim N(0,1) \geq c \right\} \implies c = z_{\alpha/2}$$
+}
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población con distribución $X \sim N(\mu, \sigma)$ con $\mu$ conocida, asumimos que $\sigma^2 = \theta^2$. Se quiere construir el test de la razón de verosimilitudes para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta \neq \theta_0$:
+    $$\Delta(\vec{x}) = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \vec{x})}{\sup_{\theta \in \Theta} L(\theta \mid \vec{x})} = \frac{\left(\frac{1}{\sqrt{2\pi\theta_0^2}}\right)^n e^{-\frac{1}{2\theta_0^2} \left(\sum (x_i - \mu)^2\right)}}{\left(\frac{1}{\sqrt{2\pi S_{\mu}^2}}\right)^n e^{-\frac{1}{2 S_{\mu}^2} \left(\sum (x_i - \mu)^2\right)}} = \left(\frac{S_\mu^2}{\theta_0^2}\right)^{\frac{n}{2}} e^{\frac{n}{2} \left(1 - \frac{S_{\mu}^2}{\theta_0^2}\right)} = c(S_\mu^2) \implies$$
+    $$\implies \frac{\partial}{\partial \sum (x_i - \mu)^2}(\ln(\Delta(\vec{x}))) = \frac{1}{2 S_{\mu}^2} - \frac{1}{2\theta_0^2} \implies \begin{cases}
+        \text{ si } S_{\mu}^2 < \theta_0^2 \implies \Delta(\vec{x}) \text{ crece } \\
+        \text{ si } S_{\mu}^2 > \theta_0^2 \implies \Delta(\vec{x}) \text{ decrece } \\
+    \end{cases} \implies$$
+    Por tanto existe un umbral $(c_1, c_2)$ tal que $c_1 < \theta_0 < c_2$ y la región crítica $C$ se puede definir como:
+    $$C = \left\{ \vec{x} : S_{\mu}^2 < c_1 \right\} \cup \left\{ \vec{x} : S_{\mu}^2 > c_2 \right\}$$
+    Sabemos que $\frac{n S_{\mu}^2}{\theta_0^2} \sim \chi_n^2$ y por lo tanto la región crítica se puede definir como:
+    $$C = \left\{ \vec{x} : \frac{n S_{\mu}^2}{\theta_0^2} \sim \chi_n^2 < \frac{n c_1}{\theta_0^2} \right\} \cup \left\{ \vec{x} : \frac{n S_{\mu}^2}{\theta_0^2} \sim \chi_n^2 > \frac{n c_2}{\theta_0^2} \right\} \iff \begin{cases}
+        c_1 = \frac{\theta_0^2}{n} \chi_{n, \alpha/2}^2 \\
+        c_2 = \frac{\theta_0^2}{n} \chi_{n, 1 - \alpha/2}^2
+    \end{cases}$$
+}
+
+\begin{comment} NO SÉ A QUÉ PERTENECIA ESTE EJEMPLO
+
 \ejemplo{
 
 Para una muestra de tamaño $n=12$, extraída de una distribución de Poisson con parámetro $\theta$, donde $\theta \in [0, 0.5]$, se plantea el siguiente contraste de hipótesis:
@@ -466,7 +549,90 @@ La probabilidad de error de tipo I ($\alpha$) y la función de potencia ($\beta(
 \end{align*}
 
 }
+\end{comment}
 
+\begin{teorema}
+    $\Theta_0 = \{\theta \in \Theta : \theta_i = g_(\vec{\omega}), \vec{\omega} \in \Omega, i = 1, \ldots, k\}$ siendo $\Omega \subset \mathbb{R}^q$ y $g_i$ funciones de clase $C^1$, entonces si se verifican ciertas condiciones de regularidad:
+    \begin{enumerate}
+        \item El soporte de la distribución no depende de $\theta$.
+        \item $\ln(f_\theta(x))$ es declase $C^2$ en $\theta$ y $\forall \vec{x}$
+        \item $I_1(\theta) \in (0, \infty)$ 
+        \item Los operadores derivada e integral son interacambiables
+    \end{enumerate}
+     para cada $\theta \in \Theta_0$ se cumple que: 
+    $$-2 \ln \Delta (x_1, \dots, x_n) \xrightarrow[n \to \infty]{d} \chi^2_{k-q}$$
+\end{teorema}
+
+
+\subsection{Contrastes bayesianos}
+
+\begin{definición}[Probabilidad final de la hipótesis nula y alternativa y region crítica]
+    $$P(\Theta_0 | \vec{x}) = \int_{\Theta_0} \pi(\theta | \vec{x}) d\theta \quad \quad P(\Theta_1 | \vec{x}) = \int_{\Theta_1} \pi(\theta | \vec{x}) d\theta$$
+    Por tanto la región crítica es:
+    $$C = \{\vec{x} : P(\theta \in \Theta_1 | \vec{x}) > P(\theta \in \Theta_0 | \vec{x}) \}$$
+\end{definición}
+
+\ejemplo{
+    Para contrastar $H_0: \theta = \theta_0$ frente a $H_1: \theta = \theta_1$ tales que $\theta_1 > \theta_0$ con una m.a.s. de tamaño $n$ y $X \sim N(\mu, \sigma)$ con $\sigma$ conocido si la distribución inicial viene dada por $\pi(\theta) = p$ veamos cual es la región crítica: \\
+    Dado que la distribución inicial es discreta, tenemos que:  
+    $$P(\Theta_0 | \vec{x}) = \pi(\theta_0 | \vec{x}) = \frac{L(\theta_0 | \vec{x})p}{pL(\theta_0 | \vec{x}) + (1 - p)L(\theta_1 | \vec{x})}$$
+    $$P(\Theta_1 | \vec{x}) = \pi(\theta_1 | \vec{x}) = \frac{L(\theta_1 | \vec{x})(1 - p)}{pL(\theta_0 | \vec{x}) + (1 - p)L(\theta_1 | \vec{x})}$$
+    $$\implies C = \left\{ \frac{L(\theta_1 | \vec{x})(1 - p)}{pL(\theta_0 | \vec{x}) + (1 - p)L(\theta_1 | \vec{x})} > \frac{L(\theta_0 | \vec{x})p}{pL(\theta_0 | \vec{x}) + (1 - p)L(\theta_1 | \vec{x})}\right\} = \left\{\frac{L(\theta_1 | \vec{x})}{L(\theta_0 | \vec{x})} > \frac{p}{1 - p}\right\} = $$
+    $$ = \left\{e^{\frac{1}{2\sigma^2}n(\theta_1 - \theta_0)(2\bar{x} - \theta_0 - \theta_1)} > \frac{p}{1-p}\right\} = \left\{\frac{n}{2\sigma^2}(\theta_1 - \theta_0)(2\bar{x} - \theta_0 - \theta_1) > \ln\left(\frac{p}{1-p}\right)\right\} = $$
+    $$ =  \left\{\bar{x} > \frac{(\ln(p) - \ln(1 - p))\sigma^2}{n(\theta_1-\theta_0)} + \frac{\theta_0}{2} + \frac{\theta_1}{2}\right\}$$
+}
+
+\begin{definición}[Factor Bayes]
+    Para contrastar $H_0: \theta \in \Theta_0$ frente a $H_1: \theta \in \Theta_1$ se define el factor bayes como:
+    $$BF(\vec{x}, H_0, H_1) = \frac{\frac{P(\Theta_0 \mid \vec{x})}{P(\Theta_1 \mid \vec{x})}}{\frac{P(\Theta_0)}{P(\Theta_1)}}$$
+    donde $h_0$ es la hipótesis nula y $H_1$ la alternativa. El factor bayes mide la fuerza de la evidencia a favor de $H_0$ frente a $H_1$. Si $BF > 1$ se dice que hay evidencia a favor de $H_0$, si $BF < 1$ se dice que hay evidencia a favor de $H_1$ y si $BF = 1$ no hay evidencia a favor de ninguna de las dos hipótesis.
+\end{definición}
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una población con distribución $X \sim Bin(1, \theta)$ para contrastar $H_0: \theta = \frac{1}{2}$ frente a $H_1: \theta = \frac{2}{3}$, calculemos el Factor Bayes a favor de $H_0$ y particularicemos para $n = 10$ y se observan $2, 5$ y $8$ éxitos:
+    $$BF(\vec{x}, H_0, H_1) = \frac{\frac{P(\theta = \frac{1}{2} \mid \vec{x})}{P(\theta = \frac{2}{3} \mid \vec{x})}}{\frac{\frac{1}{2}}{\frac{1}{2}}} = \frac{\frac{1}{2}^{\sum x_i} (1 - \frac{1}{2})^{n - \sum x_i}}{\frac{2}{3}^{\sum x_i} (1 - \frac{2}{3})^{n - \sum x_i}} = \frac{\frac{1}{2}^n}{\frac{2}{3}^{\sum x_i} (\frac{1}{3})^{n - \sum x_i}} = \left(\frac{3}{2}\right)^n \left(\frac{1}{2}\right)^{\sum x_i}$$
+    Ahora particularicemos para $n = 10$ y $\sum x_i = 2, 5, 8$:
+    \begin{enumerate}
+        \item Para $\sum x_i = 2$: $$BF(\vec{x}, H_0, H_1) = \left(\frac{3}{2}\right)^{10} \left(\frac{1}{2}\right)^{2} \approx 14.4162$$
+        \item Para $\sum x_i = 5$: $$BF(\vec{x}, H_0, H_1) = \left(\frac{3}{2}\right)^{10} \left(\frac{1}{2}\right)^{5} \approx 1.8020$$
+        \item Para $\sum x_i = 8$: $$BF(\vec{x}, H_0, H_1) = \left(\frac{3}{2}\right)^{10} \left(\frac{1}{2}\right)^{8} \approx 0.2252$$
+    \end{enumerate}
+}
+
+\ejemplo{
+    Sea una m.a.s. de tamaño $n$ de una poblacion $N(\theta, \sigma)$ con $\sigma$ conocida. se pretende contrastar $H_0: \theta = 0$ frente a $H_1: \theta \neq 0$. Si se supone que la información inicial asigna probabilidad $p$ a la hipótesis nula y reparte la restante, $1 - p$ con densidad $N(0, \sigma_0)$ con $\sigma_0$ conocida, calculemos el factor bayesiano:
+$$
+f(\vec{x}\mid 0)
+=
+\Bigl(\tfrac{1}{\sigma\sqrt{2\pi}}\Bigr)^n
+\exp\!\Bigl(-\tfrac{1}{2\sigma^2}\sum_{i=1}^n x_i^2\Bigr)
+$$    $$
+\int_{\Theta} f(\vec{x}\mid \theta)\,\pi(\theta)\,d\theta
+=
+\int_{\Theta}
+\Bigl(\tfrac{1}{\sigma\sqrt{2\pi}}\Bigr)^n
+\exp\!\Bigl(-\tfrac{1}{2\sigma^2}\sum_{i=1}^n (x_i - \theta)^2\Bigr)
+\;\cdot\;
+\tfrac{1}{\sigma_0\sqrt{2\pi}}
+\exp\!\Bigl(-\tfrac{1}{2\sigma_0^2}\,\theta^2\Bigr)
+\,d\theta
+$$
+    Desarrollando llegamos a que: 
+$$
+C
+=
+\Bigl\{
+\sqrt{1 + n\,\tfrac{\sigma_0^2}{\sigma^2}}\;
+\exp\!\Bigl(-\tfrac{1}{2}\,n^2\,\tfrac{\bar{x}^2}{\sigma^2}\,
+\tfrac{\sigma_0^2}{\sigma^2 + n\,\sigma_0^2}\Bigr)
+<
+\tfrac{1 - p}{p}
+\Bigr\}
+$$
+}
+
+
+\begin{comment} NO SÉ DE DÓNDE SON ESTOS EJEMPLOS SI LO SABEIS RESOLVEDLOS Y PONEDLOS EN SU SITIO
 \ejemplo{
 Para una m.a.s.(n) de $X \sim N(\theta, \sigma)$, con $\sigma$ conocida, encontrar el TUMP de tamaño $\alpha$ para contrastar $H_{0}: \theta=\theta_{0}$ frente a $H_{1}: \theta=\theta_{1}$, con $\theta_{0}<\theta_{1}$\\
 $\frac{f_{\theta_{1}}\left(x_{1}, \cdots, x_{n}\right)}{f_{\theta_0}\left(x_{1}, \cdots x_{n}\right)}=e^{\frac{1}{\sigma^{2}} n\left(\theta_{0}^{2}-\theta_{1}^{2}\right)} e^{\frac{1}{\sigma^{n} n} n\left(\theta_{1}-\theta_{0}\right)} \geq k \Leftrightarrow \bar{x} \geq c$\\
@@ -508,3 +674,4 @@ Familia de distribuciones de razón de verosimilitud monótona Sea $X \approx\le
     equivalentemente podríamos haber escrito que el valor de $\theta \in \Theta_0$ tal que $f_{\theta}(\vec{x})$ alcance el supremo en $\theta_0$ es el valor crítico $k$ y también podríamos haber escrito que el valor de $\theta \in \Theta_1$ tal que $f_{\theta}(\vec{x})$ alcance el supremo en $\theta_1$ es el valor crítico $k$. Por lo tanto, la región crítica se puede escribir como:
     $$C = \left\{\vec{x} : \frac{f_{\theta_1}(\vec{x})}{f_{\theta_0}(\vec{x})} \geq k \right\} = \left\{\vec{x} : \frac{(\theta_1)^n \cdot e^{-\theta_1 \sum_{i=1}^n x_i} \cdot I_{(0, +\infty)}(X_{(1)})}{(\theta_0)^n \cdot e^{-\theta_0 \sum_{i=1}^n x_i} \cdot I_{(0, +\infty)}(X_{(1)})} \geq k \right\}.$$
 }
+\end{comment}

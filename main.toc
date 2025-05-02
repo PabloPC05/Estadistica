@@ -39,3 +39,4 @@
 \contentsline {subsection}{\numberline {6.3}Test uniformemente más potente de tamaño $\alpha $}{106}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Hipótesis nula simple frente a alternativa simple}{106}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Métodos de construcción de hipótesis}{108}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Contrastes bayesianos}{116}{subsection.6.6}%
