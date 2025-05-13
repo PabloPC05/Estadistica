@@ -700,12 +700,27 @@ Sea $X \approx\left(\chi, \beta_{\chi}, F_{\theta}\right)_{\theta \in \Theta \su
 \end{definición}
 
 \begin{teorema}[Cota de Fréchet-Cramér-Rao]
-  Si $T=T\left(X_{1}, \cdots, X_{n}\right)$ es un estadístico unidimensional tal que $E_{\theta}\left[T^{2}\right]<\infty, \quad E_{\theta}[T]=d(\theta)$ y $$d^{\prime}(\theta) = \frac{d}{d\theta} E[T] =\int_{\chi^{n}} T\left(x_{1}, \cdots, x_{n}\right) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right) d x_{1} \cdots d x_{n}$$ entonces $d^{\prime}(\theta)^{2} \leq V_{\theta}(T) I_{n}(\theta), \quad \forall \theta \in \Theta$, con igualdad si y solo si existe una función $k(\theta)$ tal que
-
+  Sea $T = T(X_1, \dots, X_n)$ un estadístico unidimensional tal que cumple:
+  \begin{itemize}
+    \item $E_\theta[T^2] < \infty$ (el segundo momento existe),
+    \item $E_\theta[T] = d(\theta)$, donde $d(\theta)$ es una función diferenciable respecto a $\theta$,
+    \item Se puede intercambiar la derivada con la integral, es decir:
+    $$
+    d'(\theta) = \frac{d}{d\theta} E_\theta[T] = \int_{\chi^n} T(x_1, \dots, x_n) \frac{\partial}{\partial \theta} f_\theta(x_1, \dots, x_n) \, dx_1 \cdots dx_n.
+    $$
+  \end{itemize}
+  Entonces, se cumple que:
   $$
-    P_{\theta}\left(\left(x_{1}, \cdots, x_{n}\right) \in x^{n}: T\left(x_{1}, \cdots, x_{n}\right)=d(\theta)+k(\theta) \frac{\partial}{\partial \theta} f_{\theta}\left(x_{1}, \cdots, x_{n}\right)\right)=1, \forall \theta \in \theta
+  \left(d'(\theta)\right)^2 \leq V_\theta(T) \cdot I_n(\theta), \quad \forall \theta \in \Theta,
+  $$
+  donde $V_\theta(T)$ es la varianza de $T$ bajo el parámetro $\theta$, e $I_n(\theta)$ es la información de Fisher basada en la muestra de tamaño $n$.
+
+  La igualdad se alcanza si y solo si existe una función $k(\theta)$ tal que:
+  $$
+    P_\theta\left(\left(x_1, \dots, x_n\right) \in \chi^n : T(x_1, \dots, x_n) = d(\theta) + k(\theta) \cdot \frac{\partial}{\partial \theta} \log f_\theta(x_1, \dots, x_n)\right) = 1, \quad \forall \theta \in \Theta.
   $$
 \end{teorema}
+
 
 \begin{proof}
   $\exists d^{\prime}(\theta)$ puesto que
@@ -987,7 +1002,7 @@ $$
 
 \subsubsection{Método de máxima verosimilitud}
 
-\begin{definición}[Estimador de máxima verosimilitud]
+\begin{definición}[Región de confianza]
   Dada $C(X_1, \ldots, X_n) \subset \Theta$ región aleatoria del espacio paramétrico tal que $P_{\theta}\{\theta \in C(X_1, \ldots, X_n)\} \geq 1 - \alpha \forall \theta \in \Theta$, entonces para cada posible valor $(x_1, \ldots, x_n) \in \chi^n$, $C(x_1, \ldots, x_n)$ se denomina región de confianza para $\theta$ de nivel $1 - \alpha$
 \end{definición}
 
